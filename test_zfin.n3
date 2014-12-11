@@ -1,0 +1,535 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.obolibrary.org/obo/zfin_n3.owl> .
+
+<http://purl.obolibrary.org/obo/zfin_n3.owl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000118
+
+<http://purl.obolibrary.org/obo/IAO_0000118> rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000382
+
+<http://purl.obolibrary.org/obo/GENO_0000382> rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000385
+
+<http://purl.obolibrary.org/obo/GENO_0000385> rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000410
+
+<http://purl.obolibrary.org/obo/GENO_0000410> rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000400
+
+<http://purl.obolibrary.org/obo/GENO_0000400> rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:label "shha"^^xsd:string ;
+                                                            
+                                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000047> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:label "fgf8a"^^xsd:string ;
+                                                           
+                                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/GENO_0000047> .
+
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000000
+
+<http://purl.obolibrary.org/obo/GENO_0000000> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000002
+
+<http://purl.obolibrary.org/obo/GENO_0000002> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000009
+
+<http://purl.obolibrary.org/obo/GENO_0000009> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000010
+
+<http://purl.obolibrary.org/obo/GENO_0000010> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000030
+
+<http://purl.obolibrary.org/obo/GENO_0000030> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000047
+
+<http://purl.obolibrary.org/obo/GENO_0000047> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/SO_0000159
+
+<http://purl.obolibrary.org/obo/SO_0000159> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/SO_0001218
+
+<http://purl.obolibrary.org/obo/SO_0001218> rdf:type owl:Class .
+
+
+
+###  http://purl.obolibrary.org/obo/SO_1000008
+
+<http://purl.obolibrary.org/obo/SO_1000008> rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/2002/07/owl#Class
+
+owl:Class rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/2002/07/owl#DatatypeProperty
+
+owl:DatatypeProperty rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/2002/07/owl#NamedIndividual
+
+owl:NamedIndividual rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/2002/07/owl#ObjectProperty
+
+owl:ObjectProperty rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-ALT-010426-4
+
+<http://monarchinitiaive.org/data/zfin/ZDB-ALT-010426-4> rdf:type <http://purl.obolibrary.org/obo/SO_0000159> ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         rdfs:label "Df(Chr07)t4"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/IAO_0000118> "t4"^^xsd:string .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-ALT-010427-8
+
+<http://monarchinitiaive.org/data/zfin/ZDB-ALT-010427-8> rdf:type <http://purl.obolibrary.org/obo/SO_1000008> ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         rdfs:label "tbx392"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/IAO_0000118> "tbx392"^^xsd:string .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-ALT-011017-8
+
+<http://monarchinitiaive.org/data/zfin/ZDB-ALT-011017-8> rdf:type <http://purl.obolibrary.org/obo/GENO_0000002> ,
+                                                                  <http://purl.obolibrary.org/obo/SO_0001218> ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         rdfs:label "<Tg(fli1a:EGFP)y1>"^^xsd:string ,
+                                                                    "Tg(fli1a:EGFP)y1"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/IAO_0000118> "y1"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-011017-8> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-ALT-080528-1
+
+<http://monarchinitiaive.org/data/zfin/ZDB-ALT-080528-1> rdf:type <http://purl.obolibrary.org/obo/GENO_0000002> ,
+                                                                  <http://purl.obolibrary.org/obo/SO_0001218> ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         rdfs:label "<Tg(5xUAS:EGFP)nkuasgfp1a>"^^xsd:string ,
+                                                                    "Tg(5xUAS:EGFP)nkuasgfp1a"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/IAO_0000118> "nkuasgfp1a"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-080528-1> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-ALT-080528-6
+
+<http://monarchinitiaive.org/data/zfin/ZDB-ALT-080528-6> rdf:type <http://purl.obolibrary.org/obo/GENO_0000002> ,
+                                                                  <http://purl.obolibrary.org/obo/SO_0001218> ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         rdfs:label "<Gt(Gal4FF)nk31b>"^^xsd:string ,
+                                                                    "Gt(Gal4FF)nk31b"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/IAO_0000118> "nk31b"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-080528-6> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-ALT-100519-1
+
+<http://monarchinitiaive.org/data/zfin/ZDB-ALT-100519-1> rdf:type <http://purl.obolibrary.org/obo/GENO_0000002> ,
+                                                                  <http://purl.obolibrary.org/obo/SO_0001218> ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         rdfs:label "<Tg(TETRE:Mmu.Axin1-YFP)tud1>"^^xsd:string ,
+                                                                    "Tg(TETRE:Mmu.Axin1-YFP)tud1"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/IAO_0000118> "tud1"^^xsd:string ;
+                                                         
+                                                         <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-100519-1> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-ALT-980203-1091
+
+<http://monarchinitiaive.org/data/zfin/ZDB-ALT-980203-1091> rdf:type <http://purl.obolibrary.org/obo/SO_1000008> ,
+                                                                     owl:NamedIndividual ;
+                                                            
+                                                            rdfs:label "ti282a"^^xsd:string ;
+                                                            
+                                                            <http://purl.obolibrary.org/obo/IAO_0000118> "ti282a"^^xsd:string .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-ALT-980413-636
+
+<http://monarchinitiaive.org/data/zfin/ZDB-ALT-980413-636> rdf:type <http://purl.obolibrary.org/obo/SO_1000008> ,
+                                                                    owl:NamedIndividual ;
+                                                           
+                                                           rdfs:label "tq252"^^xsd:string ;
+                                                           
+                                                           <http://purl.obolibrary.org/obo/IAO_0000118> "tq252"^^xsd:string .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166> rdf:type owl:NamedIndividual .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-010426-4
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-010426-4> rdf:type <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166> ,
+                                                                                      <http://purl.obolibrary.org/obo/GENO_0000002> ,
+                                                                                      owl:NamedIndividual ;
+                                                                             
+                                                                             rdfs:label "shha<Df(Chr07)t4>"^^xsd:string ;
+                                                                             
+                                                                             <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-010426-4> ;
+                                                                             
+                                                                             <http://purl.obolibrary.org/obo/GENO_0000410> <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-010427-8
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-010427-8> rdf:type <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166> ,
+                                                                                      <http://purl.obolibrary.org/obo/GENO_0000002> ,
+                                                                                      owl:NamedIndividual ;
+                                                                             
+                                                                             rdfs:label "shha<tbx392>"^^xsd:string ;
+                                                                             
+                                                                             <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-010427-8> ;
+                                                                             
+                                                                             <http://purl.obolibrary.org/obo/GENO_0000410> <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-980413-636
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-980413-636> rdf:type <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166> ,
+                                                                                        <http://purl.obolibrary.org/obo/GENO_0000002> ,
+                                                                                        owl:NamedIndividual ;
+                                                                               
+                                                                               rdfs:label "shha<tq252>"^^xsd:string ;
+                                                                               
+                                                                               <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-980413-636> ;
+                                                                               
+                                                                               <http://purl.obolibrary.org/obo/GENO_0000410> <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72> rdf:type owl:NamedIndividual .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72_ZDB-ALT-980203-1091
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72_ZDB-ALT-980203-1091> rdf:type <http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72> ,
+                                                                                        <http://purl.obolibrary.org/obo/GENO_0000002> ,
+                                                                                        owl:NamedIndividual ;
+                                                                               
+                                                                               rdfs:label "fgf8a<ti282a>"^^xsd:string ;
+                                                                               
+                                                                               <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-980203-1091> ;
+                                                                               
+                                                                               <http://purl.obolibrary.org/obo/GENO_0000410> <http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENO-070209-1
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENO-070209-1> rdf:type <http://purl.obolibrary.org/obo/GENO_0000000> ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          <http://purl.obolibrary.org/obo/GENO_0000385> <http://monarchinitiaive.org/data/zfin/ZDB-GENO-960809-7> ;
+                                                          
+                                                          <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ti282a_1_U_U_AB> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENO-080529-2
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENO-080529-2> rdf:type <http://purl.obolibrary.org/obo/GENO_0000000> ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/nk31b_U_U_U_-nkuasgfp1a_U_U_U_> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENO-080804-4
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENO-080804-4> rdf:type <http://purl.obolibrary.org/obo/GENO_0000000> ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/t4_1_U_U_-tbx392_1_U_U_> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENO-100520-3
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENO-100520-3> rdf:type <http://purl.obolibrary.org/obo/GENO_0000000> ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/tud1_U_U_U_> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENO-111025-3
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENO-111025-3> rdf:type <http://purl.obolibrary.org/obo/GENO_0000000> ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/tq252_1_U_U_-y1_U_U_U_> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ZDB-GENO-960809-7
+
+<http://monarchinitiaive.org/data/zfin/ZDB-GENO-960809-7> rdf:type <http://purl.obolibrary.org/obo/GENO_0000010> ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          rdfs:label "AB"^^xsd:string .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/nk31b_U_U_U_
+
+<http://monarchinitiaive.org/data/zfin/nk31b_U_U_U_> rdf:type <http://purl.obolibrary.org/obo/GENO_0000030> ,
+                                                              owl:NamedIndividual ;
+                                                     
+                                                     rdfs:label "<Gt(Gal4FF)nk31b>/<?>"^^xsd:string ;
+                                                     
+                                                     <http://purl.obolibrary.org/obo/GENO_0000400> "unspecified zygosity" ;
+                                                     
+                                                     <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-080528-6> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/nk31b_U_U_U_-nkuasgfp1a_U_U_U_
+
+<http://monarchinitiaive.org/data/zfin/nk31b_U_U_U_-nkuasgfp1a_U_U_U_> rdf:type <http://purl.obolibrary.org/obo/GENO_0000009> ,
+                                                                                owl:NamedIndividual ;
+                                                                       
+                                                                       rdfs:label "<Gt(Gal4FF)nk31b>/<?>; <Tg(5xUAS:EGFP)nkuasgfp1a>/<?>"^^xsd:string ;
+                                                                       
+                                                                       <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/nk31b_U_U_U_> ,
+                                                                                                                     <http://monarchinitiaive.org/data/zfin/nkuasgfp1a_U_U_U_> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/nkuasgfp1a_U_U_U_
+
+<http://monarchinitiaive.org/data/zfin/nkuasgfp1a_U_U_U_> rdf:type <http://purl.obolibrary.org/obo/GENO_0000030> ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          rdfs:label "<Tg(5xUAS:EGFP)nkuasgfp1a>/<?>"^^xsd:string ;
+                                                          
+                                                          <http://purl.obolibrary.org/obo/GENO_0000400> "unspecified zygosity" ;
+                                                          
+                                                          <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-080528-1> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/t4_1_U_U_-tbx392_1_U_U_
+
+<http://monarchinitiaive.org/data/zfin/t4_1_U_U_-tbx392_1_U_U_> rdf:type <http://purl.obolibrary.org/obo/GENO_0000009> ,
+                                                                         <http://purl.obolibrary.org/obo/GENO_0000030> ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                rdfs:label "shha<Df(Chr07)t4>/shha<tbx392>"^^xsd:string ;
+                                                                
+                                                                <http://purl.obolibrary.org/obo/GENO_0000400> "complex heterozygous" ;
+                                                                
+                                                                <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-010426-4> ,
+                                                                                                              <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-010427-8> ,
+                                                                                                              <http://monarchinitiaive.org/data/zfin/t4_1_U_U_-tbx392_1_U_U_> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/ti282a_1_U_U_AB
+
+<http://monarchinitiaive.org/data/zfin/ti282a_1_U_U_AB> rdf:type <http://purl.obolibrary.org/obo/GENO_0000009> ,
+                                                                 <http://purl.obolibrary.org/obo/GENO_0000030> ,
+                                                                 owl:NamedIndividual ;
+                                                        
+                                                        rdfs:label "fgf8a<ti282a>/fgf8a<+>"^^xsd:string ;
+                                                        
+                                                        <http://purl.obolibrary.org/obo/GENO_0000400> "simple heterozygous" ;
+                                                        
+                                                        <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-GENE-990415-72_ZDB-ALT-980203-1091> ,
+                                                                                                      <http://monarchinitiaive.org/data/zfin/ti282a_1_U_U_AB> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/tq252_1_U_U_
+
+<http://monarchinitiaive.org/data/zfin/tq252_1_U_U_> rdf:type <http://purl.obolibrary.org/obo/GENO_0000030> ,
+                                                              owl:NamedIndividual ;
+                                                     
+                                                     rdfs:label "shha<tq252>/shha<+>"^^xsd:string ;
+                                                     
+                                                     <http://purl.obolibrary.org/obo/GENO_0000400> "simple heterozygous" ;
+                                                     
+                                                     <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-GENE-980526-166_ZDB-ALT-980413-636> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/tq252_1_U_U_-y1_U_U_U_
+
+<http://monarchinitiaive.org/data/zfin/tq252_1_U_U_-y1_U_U_U_> rdf:type <http://purl.obolibrary.org/obo/GENO_0000009> ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               rdfs:label "shha<tq252>/shha<+>; <Tg(fli1a:EGFP)y1>/<?>"^^xsd:string ;
+                                                               
+                                                               <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/tq252_1_U_U_> ,
+                                                                                                             <http://monarchinitiaive.org/data/zfin/y1_U_U_U_> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/tud1_U_U_U_
+
+<http://monarchinitiaive.org/data/zfin/tud1_U_U_U_> rdf:type <http://purl.obolibrary.org/obo/GENO_0000009> ,
+                                                             <http://purl.obolibrary.org/obo/GENO_0000030> ,
+                                                             owl:NamedIndividual ;
+                                                    
+                                                    rdfs:label "<Tg(TETRE:Mmu.Axin1-YFP)tud1>/<?>"^^xsd:string ;
+                                                    
+                                                    <http://purl.obolibrary.org/obo/GENO_0000400> "unspecified zygosity" ;
+                                                    
+                                                    <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-100519-1> ,
+                                                                                                  <http://monarchinitiaive.org/data/zfin/tud1_U_U_U_> .
+
+
+
+###  http://monarchinitiaive.org/data/zfin/y1_U_U_U_
+
+<http://monarchinitiaive.org/data/zfin/y1_U_U_U_> rdf:type <http://purl.obolibrary.org/obo/GENO_0000030> ,
+                                                           owl:NamedIndividual ;
+                                                  
+                                                  rdfs:label "<Tg(fli1a:EGFP)y1>/<?>"^^xsd:string ;
+                                                  
+                                                  <http://purl.obolibrary.org/obo/GENO_0000400> "unspecified zygosity" ;
+                                                  
+                                                  <http://purl.obolibrary.org/obo/GENO_0000382> <http://monarchinitiaive.org/data/zfin/ZDB-ALT-011017-8> .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
