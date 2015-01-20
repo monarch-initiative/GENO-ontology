@@ -9,4 +9,5 @@ Ongoing development is extending GENO to describe attributes of genetic variants
 
 GENO  is orthogonal to but has contact points with a number of existing community ontologies, including the sequence ontology (SO), the Human Phenotype Ontology (HPO), FALDO, and the Variation Ontology (VariO). We will work with developers of these models to align representations and re-use common terms where possible. Official documentation is under development. A high level overview can be found in the slide deck here  (http://www.slideshare.net/mhb120/brush-icbo-2013). 
 
+
 GENO is an open source ontology, implemented in OWL2 under a Creative Commons 3.0 BY-SA license.
