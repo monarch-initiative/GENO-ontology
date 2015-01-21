@@ -11,7 +11,7 @@ GENO is an OWL2 ontology that represents the levels of genetic variation specifi
 
 <img src="docs/genotype_partonomy_figure(1-20-15)V3.png"/> 
 
-_**Figure 1**: Decomposition of a Genotype. **(A)** Top level breakdown into reference and variant components. **(B)** Further decomposition of the genomic variation complement into its more fundamental parts. Class labels are in blue, and instances of each class in the partonomy are shown in green for an example zebrafish genotype, which exhibits a heterozygous ti282a variant of the fgf8a gene, and a homozygous tq252 variant of the shha gene. Schematics illustrate the genomic content represented at each level in the example._
+_**Figure 1**: Decomposition of a Genotype. **(A)** Top level breakdown into reference and variant components. **(B)** Further decomposition of the genomic variation complement into its more fundamental parts. Class labels are in blue, and instances of each class in the partonomy are shown in green for an example zebrafish genotype, which exhibits a homozygous ti282 variant of the fgf8 gene, and a heterozygous hu745 variant of the apc gene. Schematics illustrate the genomic content represented at each level in the example._
 
 
 
