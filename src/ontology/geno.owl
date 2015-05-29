@@ -1378,7 +1378,11 @@ RDF triples composed using this relationship are the result of phenotype propaga
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENO_0000348"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000407"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -1386,11 +1390,7 @@ RDF triples composed using this relationship are the result of phenotype propaga
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -5452,7 +5452,7 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
     <!-- http://purl.obolibrary.org/obo/GENO_0000460 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000460">
-        <rdfs:label>DNA construct sequence feature</rdfs:label>
+        <rdfs:label>transgene feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000415"/>
     </owl:Class>
     
@@ -5788,7 +5788,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000495">
         <rdfs:label xml:lang="en">expression construct feature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000460"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000415"/>
     </owl:Class>
     
 
@@ -7076,8 +7076,8 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/GENO_0000637 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000637">
-        <rdfs:label xml:lang="en">regulatory expression construct feature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000495"/>
+        <rdfs:label xml:lang="en">regulatory transgene feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000460"/>
     </owl:Class>
     
 
@@ -7085,8 +7085,8 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/GENO_0000638 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000638">
-        <rdfs:label xml:lang="en">coding expression construct feature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000495"/>
+        <rdfs:label xml:lang="en">coding transgene feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000460"/>
     </owl:Class>
     
 
