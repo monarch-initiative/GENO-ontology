@@ -3,7 +3,7 @@ GENO-ontology
 
 ##Status
 
-This repository holds the GENO ontology, currently housed in a single OWL file [here](src/ontology/geno.owl). The current ontology is undergoing significant refactoring to clean up exploratory and outdated modeling and align with emerging use cases. Expect significant changes over the coming weeks. The default branch in Github is set to the 'develop' branch, so as to reflect the latest changes during this period of active development. No official release has been made as of yet, but one is expected in Spring 2015.
+This repository holds the GENO ontology, currently housed in a single OWL file [here](src/ontology/geno.owl). The current ontology is undergoing **significant refactoring** to clean up exploratory and outdated modeling and align with emerging use cases. Expect significant changes over the coming weeks. The default branch in Github is set to the 'develop' branch, so as to reflect the latest changes during this period of active development. No official release has been made as of yet, but one is expected in Summer 2015.
 
 ##Overview
 
