@@ -1382,11 +1382,11 @@ RDF triples composed using this relationship are the result of phenotype propaga
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000448"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000448"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -4002,7 +4002,9 @@ Note that at present, a material genome and genetic material are necessarily par
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000110">
         <rdfs:label>collection of organisms</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
-        <obo:GENO_0000261>consider OBI:population - a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area  (although this seems to be a narrower class - covering populations based on geographic commonalities)</obo:GENO_0000261>
+        <obo:GENO_0000261>consider OBI:population - a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area  (although this seems to be a narrower class - covering populations based on geographic commonalities)
+
+or PCO:0000000 &apos;collection of organisms&apos;, and the subtree here</obo:GENO_0000261>
         <obo:IAO_0000115>a group of organisms of the same taxonomic group grouped together in virtue of their sharing some commonality (either an inherent attribute or an externally assigned role)</obo:IAO_0000115>
     </owl:Class>
     
