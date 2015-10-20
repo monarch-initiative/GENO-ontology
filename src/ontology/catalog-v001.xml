@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1434414896065" name="http://purl.obolibrary.org/obo/geno-developer.owl" uri="geno-developer.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1434414896065" name="http://purl.obolibrary.org/obo/geno.owl" uri="geno.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1434414896065" name="http://purl.obolibrary.org/obo/geno_d2rtest_merged.owl" uri="archive/geno_d2rq_test_merged.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1444334119351" name="http://purl.obolibrary.org/obo/geno-developer.owl" uri="geno-developer.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1444334119351" name="http://purl.obolibrary.org/obo/geno.owl" uri="geno.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1444334119351" name="http://purl.obolibrary.org/obo/geno_d2rtest_merged.owl" uri="archive/geno_d2rq_test_merged.owl"/>
     </group>
 </catalog>

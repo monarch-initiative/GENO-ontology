@@ -1378,6 +1378,10 @@ RDF triples composed using this relationship are the result of phenotype propaga
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENO_0000348"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000407"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000448"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
@@ -1387,10 +1391,6 @@ RDF triples composed using this relationship are the result of phenotype propaga
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -1883,7 +1883,7 @@ Would expand to something lilke &apos;is_realized_by some (planned process and (
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000578">
         <rdfs:label>has_stage_qualifier</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000581"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
     </owl:ObjectProperty>
     
 
@@ -1891,8 +1891,8 @@ Would expand to something lilke &apos;is_realized_by some (planned process and (
     <!-- http://purl.obolibrary.org/obo/GENO_0000579 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000579">
-        <rdfs:label>has_component_genotype</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000581"/>
+        <rdfs:label>has_environment_qualifier</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
     </owl:ObjectProperty>
     
 
@@ -1900,17 +1900,7 @@ Would expand to something lilke &apos;is_realized_by some (planned process and (
     <!-- http://purl.obolibrary.org/obo/GENO_0000580 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000580">
-        <rdfs:label>has_environment_qualifier</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000581"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000581 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000581">
-        <rdfs:label>has_projection</rdfs:label>
-        <rdfs:comment>temp grouping class to hold relations that link a reified relation to its &apos;projections&apos; (i.e. the classes linked by the relation that is reified)</rdfs:comment>
+        <rdfs:label>has_qualifier</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2031,11 +2021,9 @@ Range = a punned gene class IRI</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/GENO_0000639 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000639">
-        <rdfs:label xml:lang="en">derives_sequence_from_gene</rdfs:label>
-        <obo:IAO_0000115>Relationship between a reagent sequence (e.g. an experimental transgene or construct) and a gene from which it derives sequence.  
-
-Note that the reagent sequence is not an allele of or variant of the gene, because being an allele or variant requires sharing genomic position.</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000418"/>
+        <rdfs:label xml:lang="en">sequence_derives_from</rdfs:label>
+        <obo:IAO_0000115>Relationship between a sequence and another sequence from which it derives part or all of its sequence (through one or more proceses of replication)</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -2460,8 +2448,8 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000385"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000010"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000023"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2472,20 +2460,24 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000382"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000009"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000385"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000010"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000023"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000382"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000009"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000118>genotype</obo:IAO_0000118>
         <obo:IAO_0000116>1. Genotype vs Genome: Genotypes are indirect syntaxes for specifying a genome sequence.  This syntax has reference and variant components -  ie a &apos;reference genome&apos; and &apos;genomic alteration complement&apos; - that must be operated on to resolve a specifie genome sequence.  Specifically, the genome sequence is resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the &apos;reference genome&apos;. So, while the total sequence content held in a genotype may be greater than that in a genome, the intended resolution of these sequences is to arrive at a single genome sequence.  It is this end-point that we consider when asserting that a genotype &apos;specifies&apos; a genome.
 
 2. Note that we indicate a genotype as necessarily having part some &apos;genetic alteration complement&apos; (which represents the sum of all &apos;single locus variant complements&apos; in an organism).  But in cases where there is only one variant locus, our genotype instances are asserted to have part a background and have part a &apos;single locus variant complement&apos;, where this &apos;single locus variant compliment&apos; is also the total &apos;genetic alteration complement&apos;. Don&apos;t think this is problematic, but wanted to make note of it.  Is there anyway to infer that if a genotype has only one alternate locus, then the &apos;alternate single locus complement&apos; is the same as a &apos;genetic alteration complement&apos;?</obo:IAO_0000116>
+        <rdfs:comment>Intrinsic genotypes as defined are inherently sex-agnostic.  That is, they do not specify whether the portion of the genome defining organismal sex is male or female.  So male and female mice that contain the same background and genetic variation complement will have the same &apos;intrinsic genotype&apos;, despite their genomes varying in their sex-chromosome complement.  By contrast, these two mice would have different &apos;sex-qualified genotypes&apos;, as this concept takes sex chromosome sequences into account in the identity criteria for its instances.
+	
+This modeling approach allows use to create separate genotype instances for data sources that report sex-specific phenotypes to ensure that sex-specific G2P differences are accurately described.  These sex specific genotypes can be linked to the broader intrinsic genotype that is shared by make and female mice of the same strain, to aggregate associated phenotypes at this level, and allow aggregation with G2P association data about the same strains from sources that distinguish sex-specific phenotypes (e.g. IMPC) and those that do not (e.g. MGI).</rdfs:comment>
+        <obo:IAO_0000115>a genotype that describes the total variation in genomic sequence of a cell or organism, typically in terms of alterations from some reference genome.</obo:IAO_0000115>
         <obo:GENO_0000256>Example ZFIN Genotype:
 
 Genotype = fgf8a&lt;ti282a/+&gt;; shha&lt;tb392/tb392&gt; (AB)
@@ -2502,7 +2494,6 @@ and within each of these alternate &apos;allele complements&apos; there is at le
 in complement 1: fgf8a&lt;ti282a&gt;
 in complement 2: shha&lt;ttb392&gt;
 </obo:GENO_0000256>
-        <obo:IAO_0000115>a genotype that describes the total variation in genomic sequence of a cell or organism, typically in terms of alterations from some reference genome.</obo:IAO_0000115>
         <obo:GENO_0000261>consider:
 SO:genotype,
 OBI:genotype information</obo:GENO_0000261>
@@ -2695,6 +2686,12 @@ http://zfin.org/action/feature/feature-detail?zdbID=ZDB-ALT-111117-8
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
@@ -2703,12 +2700,6 @@ http://zfin.org/action/feature/feature-detail?zdbID=ZDB-ALT-111117-8
                     </owl:Restriction>
                 </owl:complementOf>
             </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000016"/>
-            </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000118>reference sequence</obo:IAO_0000118>
         <rdfs:comment>1. Being &apos;refercence&apos; does not imply anything about the nature, prevalence, or function of a sequence.  Only that somoe agent has used it to serve the role of being reference in characterizing variations from this reference.  A sequence becomes a &apos;reference sequence&apos; when this role is realized (ie when some alternate version is identified and compared against it).
@@ -2826,12 +2817,6 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
@@ -2840,6 +2825,12 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
                     </owl:Restriction>
                 </owl:complementOf>
             </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>a sequence collection that serves as a standard against which other sequence collections are compared</obo:IAO_0000115>
     </owl:Class>
@@ -2853,8 +2844,8 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000027"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000230"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2866,8 +2857,8 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000230"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>a collection of discontinuous sequence variations within a given genetic locus or genetic locus collection</obo:IAO_0000115>
@@ -2883,14 +2874,14 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000230"/>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000230"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>a collection of more than one version of a sequence at a particular genomic locus as present in a single genome (e.g. both copies of the shha gene in a wild-type zebrafish, or two of the three copies of chromosome 21 in a Down Syndrome patient)</obo:IAO_0000115>
@@ -2959,16 +2950,6 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000516"/>
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:complementOf>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000492"/>
-                    </owl:Restriction>
-                </owl:complementOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000230"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000036"/>
@@ -2980,6 +2961,16 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
                 <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000491"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
             </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000492"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -3142,6 +3133,7 @@ For example, a null locus can represent:
         <rdfs:comment>1. &apos;Reference&apos; is contrasted with &apos;alternate&apos;, where &apos;reference&apos; status is assigned based on factors such as being the most common in a population, being an ancestral allele, or being indentified first as a prototypical example of some locus or gene.  For example, &apos;reference loci&apos; in characterizing SNPs often represent the allele first characterized in a reference genome, or the most common allele in a population. By contrast, &apos;refernce loci&apos; in model organism genotypes are called &apos;wild-type loci&apos;, and represent an unaltered version characterized in some background strain, prior to some experimentally-induced modification.
 
 2. Note that a reference locus is a type of variant locus because more than one version of the locus must exist for it to be reference (ie the status of being reference is gained when an alternate version is discovered and contrasted to the reference).  So reference loci are necessarily sequence_variant_with some other locus. Accordingly, any locus part of a reference genome is not necessarily a reference locus, unless some different version of that locus is known to exist in another genome.  (But the genome as a whole is a reference genome because the sequence collection it represetns varies from other genomes)</rdfs:comment>
+        <obo:IAO_0000118>reference allele</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -3233,6 +3225,12 @@ empty locus</obo:GENO_0000259>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
@@ -3241,12 +3239,6 @@ empty locus</obo:GENO_0000259>
                     </owl:Restriction>
                 </owl:complementOf>
             </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
-            </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000118>paired junction locus</obo:IAO_0000118>
         <obo:IAO_0000116>To be recorded as &apos; / 0 &apos;, or &apos; [0] &apos; in our genotype syntax?</obo:IAO_0000116>
@@ -3832,7 +3824,7 @@ Note that ZFIN represents instances of SSLPs. e.g. http://zfin.org/action/marker
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000099">
         <rdfs:label>environment</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:GENO_0000261>ENVO:environmental feature/material?  MeSH environment (MeSH says : The external elements and conditions which surround, influence, and affect the life and development of an organism or population.)</obo:GENO_0000261>
+        <obo:GENO_0000261>&apos;environmental system&apos; ENVO:1000254?</obo:GENO_0000261>
         <obo:IAO_0000116>Not sure how to define this clearly.  ENVO has no &apos;environment&apos; class to borrow, but it does have an &apos;environmental material&apos; class and &apos;environmental feature&apos; class.  Not sure what difference is (seems like materials are more fundamental (e.g. sand, rock, mud), and comprise features, which are broader/more complex habitats (e.g. marine habitat). 
 
 Also has &apos;anthropogenic feature&apos; and &apos;anthropogenic material&apos; which describe man-made environments, such as those model organisms would live in.  There is no &apos;laboratory/experimetnal environment class, but there is a &apos;cultuvated habitat&apos; feature that has as children culture environments (e.g. &apos;tissue culture&apos;, &apos;cell culture&apos;).  And there is a &apos;research facility&apos; feature.
@@ -3916,6 +3908,12 @@ Seems like we may need to add an &apos;anthropogenic feature&apos; &gt; &apos;la
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000245"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000108"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000248"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -3925,12 +3923,6 @@ Seems like we may need to add an &apos;anthropogenic feature&apos; &gt; &apos;la
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000245"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000108"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>a nucleic acid macromolecule that is part of a cell or virion and has been inherited from an ancestor cell or virion, and/or is capable of being replicated and inherited through successive generations of progeny.</obo:IAO_0000115>
@@ -3962,14 +3954,20 @@ Seems like we may need to add an &apos;anthropogenic feature&apos; &gt; &apos;la
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000106"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000023"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000023"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000208"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000139"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000106"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3983,12 +3981,6 @@ Seems like we may need to add an &apos;anthropogenic feature&apos; &gt; &apos;la
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000208"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000139"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4119,13 +4111,13 @@ species</obo:GENO_0000259>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000230"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000096"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000096"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000230"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000096"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000096"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5736,14 +5728,14 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
         </owl:equivalentClass>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000440"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000036"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000382"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000492"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000382"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000492"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000440"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000036"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>&apos;Mutant&apos; is typically contrasted with &apos;wild-type&apos;, where &apos;mutant&apos; indicates a natural but very rare allele in a population (typically &lt;1%), and/or an experimentally-induced alteration that derives from a wild-type locus, and can be selected for in establishing a mutant strain.</rdfs:comment>
@@ -5933,6 +5925,12 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000529"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000447"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000533"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000488"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000184"/>
             </owl:Restriction>
@@ -5941,12 +5939,6 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000231"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000534"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000447"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000533"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>a gene that is targeted by a knock-down reagent such as a morpholino or siRNA, which results in a reduced expression level in the context of some experiment.</obo:IAO_0000115>
@@ -5961,6 +5953,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000184"/>
         <rdfs:comment>&apos;Trangenes&apos; are contextually defined, so a gene sequence is not considered a &apos;transgene&apos; until it is present in a foreign cell (ie one form whcih it did not derive).  Accordingly, construct inserts are not transgenes until they are experimentally delivered in the construct into a foreign cell.</rdfs:comment>
         <obo:IAO_0000115>a gene that has been transferred naturally or by any of a number of genetic engineering techniques into a cell or organism where it is foreign. </obo:IAO_0000115>
+        <rdfs:comment>Does not have to be integrated into the host cell genome, however?</rdfs:comment>
     </owl:Class>
     
 
@@ -6054,6 +6047,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000118>variant allele</obo:IAO_0000118>
         <rdfs:comment>&apos;Alternate&apos; is contrasted with &apos;reference&apos;, where &apos;alternate&apos; status is assigned based on factors such as being less common in a population, being a non-ancestral allele, or differing from the first identified/prototypical example of some locus or gene.  For example, &apos;reference loci&apos; in characterizing SNPs often represent the allele first characterized in a reference genome, or the most common allele in a population, and all other varaints are &apos;alternate&apos;.</rdfs:comment>
         <obo:IAO_0000115>a sequence-variant locus that is variant witih some reference locus</obo:IAO_0000115>
     </owl:Class>
@@ -6199,14 +6193,14 @@ Requires a view of sequence alterations that includes cases where the sequence i
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000028"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000531"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000516"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000531"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000516"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>a sequence collection of all &apos;variant single locus complements&apos; in a single genome, which comprise the variant component of a genotype.</obo:IAO_0000115>
@@ -6296,14 +6290,14 @@ Requires a view of sequence alterations that includes cases where the sequence i
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000027"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000532"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000485"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000488"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000488"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000532"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000485"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6419,15 +6413,8 @@ Requires a view of sequence alterations that includes cases where the sequence i
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000220"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000094"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000095"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000242"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000033"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6438,8 +6425,15 @@ Requires a view of sequence alterations that includes cases where the sequence i
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000242"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000033"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000220"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000094"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000095"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>a genetic sequence collection that describes the total variation in genomic sequence and/or expression level in the genetic material of a cell or organism.
@@ -6774,14 +6768,14 @@ http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
         <rdfs:label>phenotypic context</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000578"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000562"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000579"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000579"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000578"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000562"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6914,14 +6908,14 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000390"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000614"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000626"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000618"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000626"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000618"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000614"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000116>Use SO:chromosome band SO_0000341 .</obo:IAO_0000116>
@@ -7137,9 +7131,50 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/GENO_0000644 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000644">
-        <rdfs:label xml:lang="en">karyotype variation complement</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000027"/>
-        <rdfs:comment>the complement of all variant features represented in a  karyotype</rdfs:comment>
+        <rdfs:label xml:lang="en">karyotype feature complement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000022"/>
+        <rdfs:comment>the complement of all  features represented in a  karyotype.  Note that at present we use this class to type even wt karyotypes (such as 46XY) - and thus do not commit yet to these being variant.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000645 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000645">
+        <rdfs:label xml:lang="en">sex-qualified genotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
+        <rdfs:comment>Intrinsic genotypes as defined are inherently sex-agnostic.  That is, they do not specify whether the portion of the genome defining organismal sex is male or female.  So male and female mice that contain the same background and genetic variation complement will have the same &apos;intrinsic genotype&apos;, despite their genomes varying in their sex-chromosome complement.  By contrast, these two mice would have different &apos;sex-qualified genotypes&apos;, as this concept takes sex chromosome sequences into account in the identity criteria for its instances.
+	
+This modeling approach allows use to create separate genotype instances for data sources that report sex-specific phenotypes to ensure that sex-specific G2P differences are accurately described.  These sex specific genotypes can be linked to the broader intrinsic genotype that is shared by make and female mice of the same strain, to aggregate associated phenotypes at this level, and allow aggregation with G2P association data about the same strains from sources that distinguish sex-specific phenotypes (e.g. IMPC) and those that do not (e.g. MGI).</rdfs:comment>
+        <obo:IAO_0000115>A genotype that includes specification of the sex of its bearer, and thereby distinguishes separate genotypes for males and females of the same strain that differ only in their sex-chromosome complement.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000646 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000646">
+        <rdfs:label xml:lang="en">male genotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000645"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000647 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000647">
+        <rdfs:label xml:lang="en">female genotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000645"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000649 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000649">
+        <rdfs:label xml:lang="en">uspecified background genotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000611"/>
+        <obo:IAO_0000116>organizational class to group all instances of backgrounds that are not known or specified (as these receive distince IRIs for each genotype with an unspecified background in the data)</obo:IAO_0000116>
     </owl:Class>
     
 
