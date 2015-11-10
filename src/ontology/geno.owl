@@ -1395,10 +1395,6 @@ RDF triples composed using this relationship are the result of phenotype propaga
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000407"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000448"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
@@ -1408,6 +1404,10 @@ RDF triples composed using this relationship are the result of phenotype propaga
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000448"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -4688,7 +4688,21 @@ is meant to provide a context in which a given locus is considered a refernce - 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000340">
         <rdfs:label>aneusomic chromosome feature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000513"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <obo:IAO_0000115>a genomic locus that is a complete or portion of a chromosome that has been abnormally duplicated or lost</obo:IAO_0000115>
         <obo:GENO_0000258>Placed into &apos;Exploratory Class&apos; hierarchy to explore in future when this use case arises.
 
@@ -4768,6 +4782,12 @@ http://en.wikipedia.org/wiki/Aneuploidy</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000346">
         <rdfs:label>aneusomic chromosome</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000513"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000118>complete aneusomic chromosome</obo:IAO_0000118>
         <obo:GENO_0000258>Placed in Exploratory Class hierarchy until we address this use cases.
 
@@ -5067,12 +5087,14 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000482"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:GENO_0000257>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
+
+The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
+
+Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or positionin the reference genome.</obo:GENO_0000257>
         <obo:IAO_0000115>A sequence feature that is part of the heritable genome of a cell or organism, whose identity is defined by its sequence and position in the genome.</obo:IAO_0000115>
         <obo:GENO_0000257>The difference between a &apos;genetic locus&apos; and &apos;genomic locus&apos; is subtle, and the labels of these classes are not particularly intuitive. But I think distinguishing these concepts is important.  A &apos;genetic locus&apos; covers any sequence that is about a region of a physical sequence molecule that is a template for gene expression in some biological system (ie a cell or virion). &apos;Genomic locus&apos; references only regions of heritable nucleic acid molecule parts of a cell or virion (ie parts of the genome). So things like transiently-expressed transgene sequences that are introduced to a cell or organism only at the time of experiment would be considered &apos;&apos;genetic material&apos; but not &apos;genomic material&apos;.</obo:GENO_0000257>
         <rdfs:comment>A &apos;genomic locus&apos; represents any extent of sequence at a defined position in a genome, not the position itself (as the term &apos;locus&apos; can also be used). This includes structurally or functionally &apos;defined&apos; features such as genes, QTLs, or complete chromosomes and extrachromosomal replicons, but also arbitrary/undefined extents of sequence such as single base pairs, repeat regions, and junctions.</rdfs:comment>
-        <obo:IAO_0000116>The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
-
-Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or positionin the reference genome.</obo:IAO_0000116>
     </owl:Class>
     
 
@@ -5427,9 +5449,14 @@ The notion of wild-type alleles is more common in model organism databases, wher
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
+        <rdfs:comment>The notion of an allele spans broad scale and context.  Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
 
-Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or position in the reference genome.</rdfs:comment>
+We also consider larger features such as chromosomes and their parts, or extrachromosomal replicons that are stably incorporated into a genome, to be alleles.</rdfs:comment>
+        <obo:GENO_0000257>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
+
+The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
+
+Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or position in the reference genome.</obo:GENO_0000257>
         <obo:IAO_0000115>A seqeunce feature representing one of a set of coexisting sequence variants of a defined genetic locus.</obo:IAO_0000115>
     </owl:Class>
     
@@ -7073,7 +7100,17 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000830">
         <rdfs:label>chromosome_part</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <obo:IAO_0000118>chromosomal feature</obo:IAO_0000118>
         <obo:IAO_0000118>gross chromosomal part</obo:IAO_0000118>
         <obo:IAO_0000115>An extended region of sequence corresponding to a defined feature of a chromosome, e.g. a chromosomal &apos;arm&apos;, &apos;region&apos;, or &apos;band&apos;.</obo:IAO_0000115>
