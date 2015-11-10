@@ -1395,15 +1395,15 @@ RDF triples composed using this relationship are the result of phenotype propaga
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000407"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000448"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -1807,7 +1807,7 @@ Links an instance of a reagent sequence to the gene locus class of which it is a
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000487">
         <rdfs:label xml:lang="en">is_allelic_with</rdfs:label>
         <obo:IAO_0000118>is_sequence_variant_with</obo:IAO_0000118>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000486"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000683"/>
     </owl:ObjectProperty>
     
 
@@ -2131,6 +2131,16 @@ Range = a punned gene class IRI</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000683 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000683">
+        <rdfs:label xml:lang="en">is_sequence_variant_with</rdfs:label>
+        <obo:IAO_0000116>Extrachromoosomal replicons are sequence_variant_with some null locus, but not allelic_with the null locus, becaue being allelic_with a locus requires the locus being an establlished marker/position in a reference genome.</obo:IAO_0000116>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000486"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002091 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002091">
@@ -2206,6 +2216,14 @@ Range = a punned gene class IRI</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000461">
         <rdfs:label>has_genomic_coordinate_range</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000678 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000678">
+        <rdfs:label xml:lang="en">has_extent</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -3236,8 +3254,8 @@ Any instance of a &apos;variant defined locus&apos; will necessarily contain a &
     <!-- http://purl.obolibrary.org/obo/GENO_0000035 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000035">
-        <rdfs:label>null genetic locus</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+        <rdfs:label>obsolete_null genetic locus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
         <obo:IAO_0000115>A locus which is about some unspecified, absent, or conceptual locus that is treated as a homologous partner for types of &apos;variant loci&apos; that have no actual or known homologous sequence partner.  Null loci are required in the GENO model to preserve the modeling of &apos;single locus complements&apos; as &apos;seqeunce collections&apos;, as certain types of variants (outlined below) require a null locus to pair some variation and instantiate a &apos;variant single locus complement&apos; as a sequence feature collection with a zygosity. 
 
 For example, a null locus can represent:
@@ -3286,9 +3304,10 @@ In model organism datasets, &apos;reference&apos; alleles are typically the &apo
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000037">
         <rdfs:label>unspecified locus</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000035"/>
-        <obo:IAO_0000116>To be recorded as &apos; / ? &apos;, or &apos; [?] &apos; in our genotype syntax</obo:IAO_0000116>
-        <obo:IAO_0000115>a locus with an unknown extent or identity, that is partnered with a variant whose zygosity is unknown.  </obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+        <obo:IAO_0000116>Typlically recorded in genotype syntaxes as a &apos;?&apos;.</obo:IAO_0000116>
+        <obo:IAO_0000115>A genomic locus with an unknown extent or identity.</obo:IAO_0000115>
+        <rdfs:comment>An unspecified locus  is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).</rdfs:comment>
     </owl:Class>
     
 
@@ -3296,14 +3315,14 @@ In model organism datasets, &apos;reference&apos; alleles are typically the &apo
     <!-- http://purl.obolibrary.org/obo/GENO_0000039 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000039">
-        <rdfs:label>absent locus</rdfs:label>
-        <owl:equivalentClass>
+        <rdfs:label>obsolete_absent locus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000241"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000347"/>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000035"/>
+        </rdfs:subClassOf>
         <obo:GENO_0000258>A lot of what is below is required because of how we model variants - where they are required to be variant with some locus.  So for things like transient transgenes we need to conceptualize some &apos;absent locus&apos; that these are variant with.  But there should be a better way to model these as variant without resorting to absent/conceptual classes suich as these.
 
 For absent chromosomes and segments, we may be able to do away with this bad modeling if we focus on the unpaired chromosome/segment as being a member of some VSLC that is variant in having only one member. There should be no need to model the absent chromosome.</obo:GENO_0000258>
@@ -3360,7 +3379,7 @@ empty locus</obo:GENO_0000259>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000035"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000699"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
@@ -3384,11 +3403,10 @@ empty locus</obo:GENO_0000259>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000118>paired junction locus</obo:IAO_0000118>
-        <obo:IAO_0000116>To be recorded as &apos; / 0 &apos;, or &apos; [0] &apos; in our genotype syntax?</obo:IAO_0000116>
-        <obo:IAO_0000115>A locus with an extent of zero, representing the junction that is paired with an insertion in a homologous chromosome.  The junction-insertion pair represents a &apos;variant single locus complement&apos;.</obo:IAO_0000115>
-        <obo:IAO_0000118>variant-paired junction</obo:IAO_0000118>
-        <obo:IAO_0000118>insertion-paired junction</obo:IAO_0000118>
+        <obo:IAO_0000118>hemizygous junction</obo:IAO_0000118>
+        <rdfs:comment>In the case of a chromosomal insertion variant, the refernce locus it is variant_with in the genom is the junction on the homologous chromosome at the same position where the insertion occurred. 
+The junction-insertion pair represents the allelic complement at that locus, which is considered to be hhemizygous. Most genotype syntaxes represent this hemizygous state with a &apos;/0&apos; notation.</rdfs:comment>
+        <obo:IAO_0000115>A junction that represents the reference feature at a given position where an insertion is found in the homologous chromosome.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -4629,8 +4647,14 @@ is meant to provide a context in which a given locus is considered a refernce - 
     <!-- http://purl.obolibrary.org/obo/GENO_0000338 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000338">
-        <rdfs:label>extra aneusomic chromosome</rdfs:label>
+        <rdfs:label>novel aneusomic chromosome</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000346"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>an aneuploid chromosomal alement that is a complete duplicated chromosome resulting from a meiotic non-disjunction event.</obo:IAO_0000115>
         <obo:IAO_0000118>duplicate chromosome</obo:IAO_0000118>
         <obo:IAO_0000118>non-disjunct duplicate chromosome</obo:IAO_0000118>
@@ -4646,8 +4670,8 @@ is meant to provide a context in which a given locus is considered a refernce - 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000346"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000241"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000347"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000678"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:GENO_0000258>Here, we may be able to do away with this bad modeling if we focus on the unpaired chromosome as being a member of some VSLC that is variant in having only one member. There should be no need to model the absent chromosome.</obo:GENO_0000258>
@@ -4671,9 +4695,7 @@ is meant to provide a context in which a given locus is considered a refernce - 
 Asserted parent: sequence_alteration.
 
 SC axiom: is_direct_part_of some chromosome</obo:GENO_0000258>
-        <obo:IAO_0000116>Note that in the case of complete aneuploidy (a trisomy for example), it is not possible to specify which of the three homologous chromosomes is the aneuploid one - only that one is aneuploid.
-
-Use &apos;aneusomic&apos; instead of &apos;aneuploid&apos; here given this from Wikipedia: &quot;Aneuploidy is the state of not having euploidy. In humans, examples include having a single extra chromosome (such as Down syndrome), or missing a chromosome (such as Turner syndrome). Aneuploid karyotypes are given names with the suffix -somy (rather than -ploidy, used for euploid karyotypes), such as trisomy and monosomy.&quot;</obo:IAO_0000116>
+        <obo:IAO_0000116>Use &apos;aneusomic&apos; instead of &apos;aneuploid&apos; here given this from Wikipedia: &quot;Aneuploidy is the state of not having euploidy. In humans, examples include having a single extra chromosome (such as Down syndrome), or missing a chromosome (such as Turner syndrome). Aneuploid karyotypes are given names with the suffix -somy (rather than -ploidy, used for euploid karyotypes), such as trisomy and monosomy.&quot;</obo:IAO_0000116>
         <obo:IAO_0000118>aneusomic chromosomal element/region</obo:IAO_0000118>
     </owl:Class>
     
@@ -4723,12 +4745,12 @@ http://en.wikipedia.org/wiki/Aneuploidy</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/GENO_0000345 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000345">
-        <rdfs:label>absent chromosomal segment</rdfs:label>
+        <rdfs:label>missing chromosomal segment</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000343"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000241"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000347"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000678"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>this is an absent locus that is conceptually paired with an chromosomal region whose homologous complement has been lost through an unbalanced translocation to another chromosome.  The translocated segment itself is a &apos;variant locus&apos; &gt; &apos;sequence alteration&apos; &gt; &apos;chromosomal translocation&apos; </rdfs:comment>
@@ -4745,7 +4767,7 @@ http://en.wikipedia.org/wiki/Aneuploidy</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000346">
         <rdfs:label>aneusomic chromosome</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000340"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
         <obo:IAO_0000118>complete aneusomic chromosome</obo:IAO_0000118>
         <obo:GENO_0000258>Placed in Exploratory Class hierarchy until we address this use cases.
 
@@ -5045,11 +5067,12 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000482"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:GENO_0000658>Note that i changed the label from &apos;genetic&apos; to &apos;genomic&apos;, as we will not include things like transiently expressed plasmids under this concept, and that was the reason for using &apos;genetic&apos; instead of &apos;genomic&apos;.</obo:GENO_0000658>
+        <obo:IAO_0000115>A sequence feature that is part of the heritable genome of a cell or organism, whose identity is defined by its sequence and position in the genome.</obo:IAO_0000115>
         <obo:GENO_0000257>The difference between a &apos;genetic locus&apos; and &apos;genomic locus&apos; is subtle, and the labels of these classes are not particularly intuitive. But I think distinguishing these concepts is important.  A &apos;genetic locus&apos; covers any sequence that is about a region of a physical sequence molecule that is a template for gene expression in some biological system (ie a cell or virion). &apos;Genomic locus&apos; references only regions of heritable nucleic acid molecule parts of a cell or virion (ie parts of the genome). So things like transiently-expressed transgene sequences that are introduced to a cell or organism only at the time of experiment would be considered &apos;&apos;genetic material&apos; but not &apos;genomic material&apos;.</obo:GENO_0000257>
-        <obo:IAO_0000115>A sequence feature that is defined by its location in a genome.</obo:IAO_0000115>
-        <obo:IAO_0000118>genetic locus</obo:IAO_0000118>
-        <rdfs:comment>A &apos;genomic locus&apos; represents any extent of sequence at a defined position, not the position itself (as the term &apos;locus&apos; can also be used). This includes structurally or functionally &apos;defined&apos; features such as genes, QTLs, or complete chromosomes, but also arbitrary/undefined extents of sequence such as single base pairs, repeat regions, and junctions.</rdfs:comment>
+        <rdfs:comment>A &apos;genomic locus&apos; represents any extent of sequence at a defined position in a genome, not the position itself (as the term &apos;locus&apos; can also be used). This includes structurally or functionally &apos;defined&apos; features such as genes, QTLs, or complete chromosomes and extrachromosomal replicons, but also arbitrary/undefined extents of sequence such as single base pairs, repeat regions, and junctions.</rdfs:comment>
+        <obo:IAO_0000116>The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
+
+Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or positionin the reference genome.</obo:IAO_0000116>
     </owl:Class>
     
 
@@ -5068,7 +5091,7 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
     <!-- http://purl.obolibrary.org/obo/GENO_0000483 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000483">
-        <rdfs:label xml:lang="en">variant locus</rdfs:label>
+        <rdfs:label xml:lang="en">effective variant locus</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -5076,10 +5099,9 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000116>Note that sequence variations include the addition of sequences carried on entirely new macromolecules, such as the addition of an extra chromosome in trisomies.  While such an addition does not alter the sequence of an existing nucleic acid, it does change/add to the total sequence content of the genome and as such is considered a sequence variation (and therefore also a variant genetic locus.</obo:IAO_0000116>
-        <obo:IAO_0000118>effective variant locus</obo:IAO_0000118>
-        <obo:IAO_0000115>a genetic locus that is variable - either in its intrinsic sequence in virtue containing a sequence variation that makes it one of a set of different sequences known for a given locus; or in its expression level in virtue of being expressed at a level that differs from some baseline in the context of an experiment.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genetic locus that is variant  - either in its intrinsic sequence in virtue containing a sequence variation or being novel sequence feature; or in its expression level in virtue of being experimentally targeted to express at an altered level from that nornally found in a cell or tissue.</obo:IAO_0000115>
         <obo:IAO_0000118>variant genetic locus</obo:IAO_0000118>
+        <obo:IAO_0000116>Note that sequence variations include the addition of sequences carried on entirely new macromolecules, such as the addition of an extra chromosome in trisomies.  While such an addition does not alter the sequence at an existing locus in the genome, it does change/add to the total sequence content of the genome and as such is considered a sequence variation.</obo:IAO_0000116>
         <obo:GENO_0000258>The logical definition here is simple because we model conceptual/absent loci so that we can say that variants such as extrachromosomal replicons and transient transgenes are variant_with something, andthus classify as variants.  But this is shoddy modeling.  We need a different way to classify these things as variant, which may require changing the logical definition of the variant locus class. 
 
 Some thoughts: we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci that it is &apos;variant_with&apos;.
@@ -5181,7 +5203,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000494">
         <rdfs:label xml:lang="en">extrachromosomal replicon</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000018"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
         <obo:IAO_0000115>A genetic locus that is not part of the chromosomal genome of a cell or virion, but rather a stable and heritable element that is replilcated and passed on to progeny (e.g a replicative plasmid or transposon)</obo:IAO_0000115>
         <obo:IAO_0000116>Consider replacing with SO_0001038 ! extrachromosomal_mobile_genetic_element</obo:IAO_0000116>
         <obo:IAO_0000118>episomal replicon</obo:IAO_0000118>
@@ -5398,25 +5420,17 @@ The notion of wild-type alleles is more common in model organism databases, wher
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000512">
         <rdfs:label xml:lang="en">allele</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000476"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000487"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A seqeunce feature representing one of a set of coexisting sequence variants of a genetic locus.</obo:IAO_0000115>
-        <rdfs:comment>Alleles are typically variants of or within a defined genomic locus such as a gene, microsatellite, or QTL. The notion of an allele appllies for genomic loci where more than one seqeucne has been identified. Larger features such as chromosomes and chromosomal regions are not considered under the scope of the term &apos;allele&apos;.</rdfs:comment>
+        <rdfs:comment>The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
+
+Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or position in the reference genome.</rdfs:comment>
+        <obo:IAO_0000115>A seqeunce feature representing one of a set of coexisting sequence variants of a defined genetic locus.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -6432,6 +6446,111 @@ In our genotype partonomy design pattern, a sex qualified genotype has as part a
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000680 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000680">
+        <rdfs:label xml:lang="en">null locus</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000678"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>A genomic locus that has an extent of zero.</obo:IAO_0000115>
+        <obo:IAO_0000112>A junction between bases, a deletion variant, a terminus at the end of a chromosome.</obo:IAO_0000112>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000681 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000681">
+        <rdfs:label>novel extrachromosomal replicon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000494"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Extrachromosomal replicons are stably incorparated and thus part of the heritable genome of a cell or organism. In cases where the presence of such a replicon is abberant (i.e. not included in the reference specifeid for that genome), the replicon is considered a variant locus.</rdfs:comment>
+        <obo:IAO_0000115>An extrachromosomal replicon that is variant in a genome in virtue of it being absent in the reference specified for the genome in which it is found.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">transgenic extrachromosomal replicon</obo:IAO_0000118>
+        <obo:IAO_0000118>variant extrachromosomal replicon</obo:IAO_0000118>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000682 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000682">
+        <rdfs:label xml:lang="en">obsolete_reference null locus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Had defined this class to enable classificaiton of things like extrachromosomal replicons as being variant, wiht the axiom is_variant_with some &apos;reference null locus&apos;.  But decided Ididnt like the idea of a null locus applying to the absence of a replicon - so pursued new approach using &apos;novel&apos; to classify replocons as variant.</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000684 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000684">
+        <rdfs:label xml:lang="en">novel locus</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000116>Defined to support classification of things like extrachromosomal replicon variants, and aneusomic third chromosomes, as being variant loci in a genome.</obo:IAO_0000116>
+        <obo:IAO_0000115>A genomic locus that represents a feature not previously found in a given genome, e.g. an extrachromosomal replicon or aneusomic third copy of a chromosome.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000685 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000685">
+        <rdfs:label xml:lang="en">novel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000475"/>
+        <obo:IAO_0000115>An attribute of a genomic locus that represents a feature not previously found in a given genome, e.g. an extrachromosomal replicon or aneusomic third copy of a chromosome.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000686 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000686">
+        <rdfs:label xml:lang="en">sequence-variant locus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000483"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000687 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000687">
+        <rdfs:label xml:lang="en">expression-variant locus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000483"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0003674 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003674">
@@ -6906,6 +7025,16 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
         <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single nucleotide polymorphism</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000699 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000699">
+        <rdfs:label xml:lang="en">junction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000680"/>
+        <rdfs:comment>A junction is a boundary between regions. A boundary has an extent of zero.</rdfs:comment>
     </owl:Class>
     
 
