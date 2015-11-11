@@ -118,6 +118,14 @@ Documentation is under development as well, and for now a slidedeck is available
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000700 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000700">
+        <rdfs:label xml:lang="en">GENO_alternate_label</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111">
@@ -1395,11 +1403,7 @@ RDF triples composed using this relationship are the result of phenotype propaga
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000407"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000448"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -1407,7 +1411,11 @@ RDF triples composed using this relationship are the result of phenotype propaga
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000448"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -2135,7 +2143,11 @@ Range = a punned gene class IRI</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000683">
         <rdfs:label xml:lang="en">is_sequence_variant_with</rdfs:label>
-        <obo:IAO_0000116>Extrachromoosomal replicons are sequence_variant_with some null locus, but not allelic_with the null locus, becaue being allelic_with a locus requires the locus being an establlished marker/position in a reference genome.</obo:IAO_0000116>
+        <obo:GENO_0000257>This comment is obsolete for now because I went back to considering chromosomes, replicons to fall uner the notion of alleles.
+
+-------
+
+Extrachromoosomal replicons are sequence_variant_with some null locus, but not allelic_with the null locus, because being allelic_with a locus requires the locus being an establlished marker/position in a reference genome.</obo:GENO_0000257>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000486"/>
     </owl:ObjectProperty>
     
@@ -2732,8 +2744,9 @@ OBI:genotype information</obo:GENO_0000261>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000118>variant locus</obo:IAO_0000118>
         <obo:IAO_0000118>alternate allele</obo:IAO_0000118>
+        <obo:GENO_0000700>variant locus</obo:GENO_0000700>
+        <obo:IAO_0000118>variant locus</obo:IAO_0000118>
         <obo:IAO_0000116>Labels chosen for variant allele and its subtypes conform  to recommendations from the ACMG here (PMID: 25741868), where &apos;variant&apos; is used to cover mutant and polymorphic alleles.</obo:IAO_0000116>
         <obo:IAO_0000115>An allele that contains a sequence alteration, or is itself a sequence alteration.</obo:IAO_0000115>
         <obo:IAO_0000119>PMID: 25741868 ACMG Guidelines</obo:IAO_0000119>
@@ -3130,6 +3143,7 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
         </rdfs:subClassOf>
         <obo:IAO_0000115>a single locus complement that serves as a standard against which &apos;alternate&apos; sequences are compared</obo:IAO_0000115>
         <rdfs:comment>formerly reference single locus complement</rdfs:comment>
+        <obo:GENO_0000700>reference single locus complement</obo:GENO_0000700>
         <obo:IAO_0000118>single locus reference complement</obo:IAO_0000118>
     </owl:Class>
     
@@ -3162,6 +3176,7 @@ There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos;
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000002"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:GENO_0000700>variant single locus complement</obo:GENO_0000700>
         <rdfs:comment>Instances of this class are collections comprised of all versions of a specific genomic locus present in a cell or virion (typically a pair of loci/sequences in cells of a diploid organism), where at least one locus is variant (ie non-wild type).  Most commonly, these are the two gene locus sequences on homologous chromosomes.  Additionally, this class covers cases where deviant numbers of wild-type loci are present (e.g. trisomy of chromosome 21).  Here, any additional or missing loci are considered variant, even if their sequence is wild type.</rdfs:comment>
         <obo:GENO_0000257>Note that we are able to classify a &apos;variant single locus complement&apos; as being a &apos;sequence feature collection&apos; (ie necessarily having 2 or more member sequences), despite the fact that the variant single locus complement of some genotypes consists only of a single feature (ie not a collection) - such as the case of a single transgenic insertion, hemizgous X-linked variant, or extrachromosomal array.  This is because conceptually, we assign a &apos;null locus&apos; partner to such loci to complete the complement as a collection.  This null locus has an extent of zero (see notes in the &apos;null locus&apos; branch), and can either be a proper junction (in the case of a transgenic insertion), or an &apos;absent/conceptual locus&apos; that has no true genomic location (in the case of X-linked or extrachromosonal variants).  This enables us to consistently and clearly conceptualize, display, and operate on instances of variant single locus complements that take any of these forms.
 
@@ -3296,6 +3311,7 @@ For example, a null locus can represent:
 In human variation datasets, &apos;reference&apos; status is typically assigned based on factors such as being the most common in a population, being an ancestral allele, or being indentified first as a prototypical example of some locus or gene.  For example, &apos;reference loci&apos; in characterizing SNPs often represent the allele first characterized in a reference genome, or the most common allele in a population.
 
 In model organism datasets, &apos;reference&apos; alleles are typically the &apos;wild-type&apos; allele for a given locus, representing a functional and unaltered version of the locus that is part of a defined genomic background, and againnst which natural or experimentally-induced alterations are compared.</rdfs:comment>
+        <obo:GENO_0000700>reference locus</obo:GENO_0000700>
     </owl:Class>
     
 
@@ -5037,6 +5053,7 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000475">
         <rdfs:label xml:lang="en">allele attribute</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000400"/>
+        <obo:GENO_0000700>variable locus attribute</obo:GENO_0000700>
         <obo:IAO_0000115>A sequence attribute that inheres in an allele of a genomic locus.</obo:IAO_0000115>
     </owl:Class>
     
@@ -5089,8 +5106,8 @@ The diifference between a genomic loci and an allele is one of scale and context
 
 Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or positionin the reference genome.</obo:GENO_0000257>
         <obo:IAO_0000115>A sequence feature that is part of the heritable genome of a cell or organism, whose identity is defined by its sequence and position in the genome.</obo:IAO_0000115>
+        <rdfs:comment>Here we use the term &apos;locus&apos; to represent an extent of sequence (not a defined *position* or *location* in the genome as the term can also be used.  As an extent of sequence, a locus can span a complete chromosome, a large chromosomal region, a gene, down to a single base pair or junction between base pairs (i.e. feature with an extent of zero).  A &apos;genomic&apos; locus has a defined position in a genome, and instances are defined by both their sequence and their position.</rdfs:comment>
         <obo:GENO_0000257>The difference between a &apos;genetic locus&apos; and &apos;genomic locus&apos; is subtle, and the labels of these classes are not particularly intuitive. But I think distinguishing these concepts is important.  A &apos;genetic locus&apos; covers any sequence that is about a region of a physical sequence molecule that is a template for gene expression in some biological system (ie a cell or virion). &apos;Genomic locus&apos; references only regions of heritable nucleic acid molecule parts of a cell or virion (ie parts of the genome). So things like transiently-expressed transgene sequences that are introduced to a cell or organism only at the time of experiment would be considered &apos;&apos;genetic material&apos; but not &apos;genomic material&apos;.</obo:GENO_0000257>
-        <rdfs:comment>A &apos;genomic locus&apos; represents any extent of sequence at a defined position in a genome, not the position itself (as the term &apos;locus&apos; can also be used). This includes structurally or functionally &apos;defined&apos; features such as genes, QTLs, or complete chromosomes and extrachromosomal replicons, but also arbitrary/undefined extents of sequence such as single base pairs, repeat regions, and junctions.</rdfs:comment>
     </owl:Class>
     
 
@@ -5180,6 +5197,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:GENO_0000658>formerly mutant single locus complement</obo:GENO_0000658>
+        <obo:GENO_0000700>mutant single locus complement</obo:GENO_0000700>
     </owl:Class>
     
 
@@ -5203,6 +5221,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
         </rdfs:subClassOf>
         <rdfs:comment>&apos;Mutant&apos; is typically contrasted with &apos;wild-type&apos;, where &apos;mutant&apos; indicates a natural but very rare allele in a population (typically &lt;1%), or an experimentally-induced variation that derives from a wild-type background locus for a given strain, which can be selected for in establishing a mutant line.</rdfs:comment>
         <obo:IAO_0000115>A variant allele that is variant with respect to some wild-type allele, in virtue of being a very rare allele in a population (typically &lt;1%), or an experimentally-induced variation that derives from a wild-type background locus for a given strain.</obo:IAO_0000115>
+        <obo:GENO_0000700>mutant locus</obo:GENO_0000700>
         <obo:IAO_0000119>PMID: 25741868 ACMG Guidelines</obo:IAO_0000119>
     </owl:Class>
     
@@ -5252,6 +5271,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
         </rdfs:subClassOf>
         <obo:GENO_0000258>Note that a SNP should classify here.  Need to create a logical definition somewhere so SNP is inferred under sequence variation and polymorphic locus.</obo:GENO_0000258>
         <obo:IAO_0000119>PMID: 25741868 ACMG Guidelines</obo:IAO_0000119>
+        <obo:GENO_0000700>polymorphic locus</obo:GENO_0000700>
         <rdfs:comment>Polymorphic loci/alleles are contrasted with mutant alleles (extremely rare variants that exist in &lt;1% of a population), and &apos;wild-type alleles&apos; (extremenly common variants present in &gt;99% of a population).</rdfs:comment>
         <obo:IAO_0000115>A variant allele  that is fixed in a population at some stable level, typically &gt; 1%. Polymorphic alleles are variants of features where more than one alleles exist at signifcant frequencies in a population.</obo:IAO_0000115>
     </owl:Class>
@@ -5265,6 +5285,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000497"/>
         <obo:IAO_0000115>A polymorphic allele that is present at the highest frequency relative to other polymorphic alleles of the same locus.</obo:IAO_0000115>
         <obo:IAO_0000118>major polymorphic allele</obo:IAO_0000118>
+        <obo:GENO_0000700>major polymorphic locus</obo:GENO_0000700>
     </owl:Class>
     
 
@@ -5274,6 +5295,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000499">
         <rdfs:label xml:lang="en">minor allele</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000497"/>
+        <obo:GENO_0000700>minor polymorphic locus</obo:GENO_0000700>
         <obo:IAO_0000118>minor polymorphic allele</obo:IAO_0000118>
         <obo:IAO_0000115>A polymorphic allele that is not the major polymorphic allele for a given locus - i.e. not present at the highest frequency among all fixed alleles at the locus.</obo:IAO_0000115>
     </owl:Class>
@@ -5286,6 +5308,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
         <rdfs:label xml:lang="en">ancestral allele</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000497"/>
         <obo:IAO_0000118>ancestral polymorphic allele</obo:IAO_0000118>
+        <obo:GENO_0000700>ancestral locus</obo:GENO_0000700>
         <obo:IAO_0000115>A polymorphic allele that is determined from the sequence of a recent ancestor in a phylogentic tree.</obo:IAO_0000115>
     </owl:Class>
     
@@ -5310,6 +5333,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
         </rdfs:subClassOf>
         <obo:IAO_0000118>wild type locus</obo:IAO_0000118>
         <obo:IAO_0000115>wild type allele</obo:IAO_0000115>
+        <obo:GENO_0000700>wild-type locus</obo:GENO_0000700>
         <obo:IAO_0000118>WT allele</obo:IAO_0000118>
         <rdfs:comment>&apos;Wild-type&apos; is typically contrasted with &apos;mutant&apos;, where &apos;wild-type&apos; indicates a highly prevalent allele in a population (typically &gt;99%), and/or some prototypical allele in a background genome that serves as a basis for some experimental alteration to generate a mutant allele, which can be selected for in establishing a mutant strain.
 
@@ -5445,14 +5469,15 @@ The notion of wild-type alleles is more common in model organism databases, wher
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>The notion of an allele spans broad scale and context.  Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
+        <rdfs:comment>The notion of an allele spans broad scale and context.  Alleles exist at a known marker or position in a reference genome. They typically span the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
 
-We also consider larger features such as chromosomes and their parts, or extrachromosomal replicons that are stably incorporated into a genome, to be alleles.</rdfs:comment>
+But we also consider variants of larger features such as chromosomes and their parts, or extrachromosomal replicons that are stably incorporated into a genome, to be alleles.</rdfs:comment>
         <obo:GENO_0000257>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
 
 The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
 
 Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or position in the reference genome.</obo:GENO_0000257>
+        <obo:GENO_0000700>variable locus</obo:GENO_0000700>
         <obo:IAO_0000115>A seqeunce feature representing one of a set of coexisting sequence variants of a defined genetic locus.</obo:IAO_0000115>
     </owl:Class>
     
@@ -5487,6 +5512,7 @@ Larger features such as chromosomes and chromosomal regions qualify as genomic l
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:GENO_0000700>variant gene locus</obo:GENO_0000700>
         <obo:IAO_0000115>An allele of a gene that has as part some seqeucne alteration.</obo:IAO_0000115>
     </owl:Class>
     
@@ -5497,8 +5523,9 @@ Larger features such as chromosomes and chromosomal regions qualify as genomic l
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000516">
         <rdfs:label>allelic complement</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
-        <obo:IAO_0000118>single locus complement</obo:IAO_0000118>
         <obo:IAO_0000112>both copies of the shha gene in a wild-type zebrafish, e.g. fgf8a&lt;ti282a&gt;/fgf8a&lt;+&gt;</obo:IAO_0000112>
+        <obo:GENO_0000700>single locus complement</obo:GENO_0000700>
+        <obo:IAO_0000118>single locus complement</obo:IAO_0000118>
         <obo:IAO_0000115>An allele collection comprised of all versions of a sequence found at a given genitic locus in a single genome.</obo:IAO_0000115>
         <rdfs:comment>This complement is typically a pair in a diploid genome with two copies of each chromosome. (e.g. a gene pair, a QTL pair, a SNP pair, or a pair of entire chromosomes).</rdfs:comment>
         <obo:GENO_0000259>single-locus allele complement,
