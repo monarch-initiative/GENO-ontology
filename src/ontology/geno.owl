@@ -1395,15 +1395,15 @@ RDF triples composed using this relationship are the result of phenotype propaga
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000407"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000373"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -3305,9 +3305,9 @@ In model organism datasets, &apos;reference&apos; alleles are typically the &apo
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000037">
         <rdfs:label>unspecified locus</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
-        <obo:IAO_0000116>Typlically recorded in genotype syntaxes as a &apos;?&apos;.</obo:IAO_0000116>
         <obo:IAO_0000115>A genomic locus with an unknown extent or identity.</obo:IAO_0000115>
         <rdfs:comment>An unspecified locus  is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).</rdfs:comment>
+        <obo:IAO_0000116>Typlically recorded in genotype syntaxes as a &apos; /? &apos;.</obo:IAO_0000116>
     </owl:Class>
     
 
@@ -3375,7 +3375,7 @@ empty locus</obo:GENO_0000259>
     <!-- http://purl.obolibrary.org/obo/GENO_0000042 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000042">
-        <rdfs:label>reference junction</rdfs:label>
+        <rdfs:label>hemizygous reference junction</rdfs:label>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -3403,8 +3403,9 @@ empty locus</obo:GENO_0000259>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000118>hemizygous junction</obo:IAO_0000118>
-        <rdfs:comment>In the case of a chromosomal insertion variant, the refernce locus it is variant_with in the genom is the junction on the homologous chromosome at the same position where the insertion occurred. 
+        <obo:IAO_0000118>reference junction</obo:IAO_0000118>
+        <rdfs:comment>In the case of a transgenic insertion that creates a hemizygous locus, the refernce locus that this insertion is variant_with is the junction on the homologous chromosome at the same position where the insertion occurred. This is the &apos;hemizygous reference&apos; junction.
+
 The junction-insertion pair represents the allelic complement at that locus, which is considered to be hhemizygous. Most genotype syntaxes represent this hemizygous state with a &apos;/0&apos; notation.</rdfs:comment>
         <obo:IAO_0000115>A junction that represents the reference feature at a given position where an insertion is found in the homologous chromosome.</obo:IAO_0000115>
     </owl:Class>
@@ -4647,7 +4648,7 @@ is meant to provide a context in which a given locus is considered a refernce - 
     <!-- http://purl.obolibrary.org/obo/GENO_0000338 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000338">
-        <rdfs:label>novel aneusomic chromosome</rdfs:label>
+        <rdfs:label>gained aneusomic chromosome</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000346"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -4655,9 +4656,10 @@ is meant to provide a context in which a given locus is considered a refernce - 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>an aneuploid chromosomal alement that is a complete duplicated chromosome resulting from a meiotic non-disjunction event.</obo:IAO_0000115>
+        <obo:IAO_0000118>novel aneusomic chromosome</obo:IAO_0000118>
         <obo:IAO_0000118>duplicate chromosome</obo:IAO_0000118>
         <obo:IAO_0000118>non-disjunct duplicate chromosome</obo:IAO_0000118>
+        <obo:IAO_0000115>An aneuploid chromosomal alement that is a complete duplicated chromosome resulting from a meiotic non-disjunction event.</obo:IAO_0000115>
         <rdfs:comment>Such a &apos;duplicate&apos; chromosome is conceptually located in any cell (and its descendants) that received extra copies of a chromosome in a cell division following a non-disjunction event.</rdfs:comment>
     </owl:Class>
     
@@ -4666,7 +4668,7 @@ is meant to provide a context in which a given locus is considered a refernce - 
     <!-- http://purl.obolibrary.org/obo/GENO_0000339 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000339">
-        <rdfs:label>absent aneusomic chromosome</rdfs:label>
+        <rdfs:label>lost aneusomic chromosome</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000346"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -4677,9 +4679,9 @@ is meant to provide a context in which a given locus is considered a refernce - 
         <obo:GENO_0000258>Here, we may be able to do away with this bad modeling if we focus on the unpaired chromosome as being a member of some VSLC that is variant in having only one member. There should be no need to model the absent chromosome.</obo:GENO_0000258>
         <obo:IAO_0000118>non-disjunct absent chromosome</obo:IAO_0000118>
         <obo:IAO_0000118>absent monosomic chromosome complement</obo:IAO_0000118>
-        <obo:IAO_0000118>dropped chromosome</obo:IAO_0000118>
         <rdfs:comment>Such an &apos;absent&apos; chromosome is conceptually located in any cell (and its descendants) that received zero copies of a chromosome in a cell division following a non-disjunction event. Instantiating &apos;absent&apos; loci in this way is important for conforming with our model that conceptualies each locus to have at least two members (for diploid cells/organisms), and allows us to be clear and explicit about there being missing loci and describing them.</rdfs:comment>
-        <obo:IAO_0000115>an absent/conceptual locus that represents a missing chromosome resulting from a meiotic non-disjunction event</obo:IAO_0000115>
+        <obo:IAO_0000115>A null locus that represents a missing chromosome resulting from a meiotic non-disjunction event</obo:IAO_0000115>
+        <obo:IAO_0000118>absent aneusomic chromosome</obo:IAO_0000118>
     </owl:Class>
     
 
@@ -4687,42 +4689,22 @@ is meant to provide a context in which a given locus is considered a refernce - 
     <!-- http://purl.obolibrary.org/obo/GENO_0000340 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000340">
-        <rdfs:label>aneusomic chromosome feature</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000513"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+        <rdfs:label>obsolete_aneusomic chromosome feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
         <obo:IAO_0000115>a genomic locus that is a complete or portion of a chromosome that has been abnormally duplicated or lost</obo:IAO_0000115>
         <obo:GENO_0000258>Placed into &apos;Exploratory Class&apos; hierarchy to explore in future when this use case arises.
 
 Asserted parent: sequence_alteration.
 
-SC axiom: is_direct_part_of some chromosome</obo:GENO_0000258>
+SC axiom: is_direct_part_of some chromosome
+
+--------------
+
+
+11-10-15 Decided this organizational class is not needed.  former EC: (has_sequence_attribute some aneusomic)
+ and (is_direct_part_of some chromosome)</obo:GENO_0000258>
         <obo:IAO_0000116>Use &apos;aneusomic&apos; instead of &apos;aneuploid&apos; here given this from Wikipedia: &quot;Aneuploidy is the state of not having euploidy. In humans, examples include having a single extra chromosome (such as Down syndrome), or missing a chromosome (such as Turner syndrome). Aneuploid karyotypes are given names with the suffix -somy (rather than -ploidy, used for euploid karyotypes), such as trisomy and monosomy.&quot;</obo:IAO_0000116>
         <obo:IAO_0000118>aneusomic chromosomal element/region</obo:IAO_0000118>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000342 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000342">
-        <rdfs:label>translocated chromosomal region</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:GENO_0000261>SO:translocation?</obo:GENO_0000261>
-        <obo:IAO_0000118>chromosomal translocation</obo:IAO_0000118>
-        <obo:IAO_0000115>A large region of a chromosomal nucleotide sequence that has been translocated to a non-homologous chromosome</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -4731,13 +4713,27 @@ SC axiom: is_direct_part_of some chromosome</obo:GENO_0000258>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000343">
         <rdfs:label>aneusomic chromosomal part</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000340"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000513"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000248"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>a genomic locus that is a portion of a chromosome that has been abnormally lost or duplicated (as a fusion to a non-homologous chromosome), as the result of an unbalanced translocation.</obo:IAO_0000115>
         <obo:IAO_0000118>aneuploid chromosomal segment</obo:IAO_0000118>
+        <rdfs:comment>Partial aneuploidy: The terms &quot;partial monosomy&quot; and &quot;partial trisomy&quot; are used to describe an imbalance of genetic material caused by loss or gain of part of a chromosome. In particular, these terms would be used in the situation of an unbalanced translocation, where an individual carries a derivative chromosome formed through the breakage and fusion of two different chromosomes. In this situation, the individual would have three copies of part of one chromosome (two normal copies and the portion that exists on the derivative chromosome) and only one copy of part of the other chromosome involved in the derivative chromosome.
+http://en.wikipedia.org/wiki/Aneuploidy
+
+We consider novel sequence features gained in a genome to be sequence alterations, including aneusomic chromosome segments gained through unbalanced translocation events, entrie aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that becoome part of the heritable gneme of a cell or organism.</rdfs:comment>
         <obo:IAO_0000118>partial aneusomic chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>aneusomic chromosomal subregion/segment</obo:IAO_0000118>
-        <rdfs:comment>Partial aneuploidy: The terms &quot;partial monosomy&quot; and &quot;partial trisomy&quot; are used to describe an imbalance of genetic material caused by loss or gain of part of a chromosome. In particular, these terms would be used in the situation of an unbalanced translocation, where an individual carries a derivative chromosome formed through the breakage and fusion of two different chromosomes. In this situation, the individual would have three copies of part of one chromosome (two normal copies and the portion that exists on the derivative chromosome) and only one copy of part of the other chromosome involved in the derivative chromosome.
-http://en.wikipedia.org/wiki/Aneuploidy</rdfs:comment>
     </owl:Class>
     
 
@@ -4745,7 +4741,7 @@ http://en.wikipedia.org/wiki/Aneuploidy</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/GENO_0000344 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000344">
-        <rdfs:label>extra chromosomal segment</rdfs:label>
+        <rdfs:label>gained aneusomic chromosomal segment</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000343"/>
         <obo:IAO_0000118>duplicate partial aneuploid chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>translocated duplicate chromosomal element</obo:IAO_0000118>
@@ -4759,7 +4755,7 @@ http://en.wikipedia.org/wiki/Aneuploidy</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/GENO_0000345 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000345">
-        <rdfs:label>missing chromosomal segment</rdfs:label>
+        <rdfs:label>lost aneusomic chromosomal segment</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000343"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -4767,12 +4763,16 @@ http://en.wikipedia.org/wiki/Aneuploidy</rdfs:comment>
                 <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>this is an absent locus that is conceptually paired with an chromosomal region whose homologous complement has been lost through an unbalanced translocation to another chromosome.  The translocated segment itself is a &apos;variant locus&apos; &gt; &apos;sequence alteration&apos; &gt; &apos;chromosomal translocation&apos; </rdfs:comment>
         <obo:IAO_0000118>truncated chromosome terminus</obo:IAO_0000118>
+        <obo:IAO_0000115>A sequence alteration representing the absence of sequence resulting from an unbalanced translocation to another chromosome.</obo:IAO_0000115>
+        <rdfs:comment>This is not a deletion in the sense defined by the Sequence Ontology in that is is not the result of an &apos;excision&apos; of nucleotides, but an unbalanced translocation event.
+
+The allelic complement that results is comprised of the null allele (terminus or junction) represented by this lost chromosomal segment, and the remaining normal segment in the homologous chromosome.
+
+The lost aneusommic chromosomal segment is typically accommpanied by a gained aneusomic chromosomal segment from another chromosome.</rdfs:comment>
         <obo:IAO_0000116>In our model, we consider this chromosomal region to be monosomic, and thus a variant single locus complement</obo:IAO_0000116>
         <obo:IAO_0000118>dropped partial anneuploid chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>translocated absent chromosomal segment</obo:IAO_0000118>
-        <obo:IAO_0000115>a genomic locus that represents conceptually the absence of a chromosomal region lost through an unbalanced translocation to another chromosome.  This absent locus is conceptually paired with the remaining holologous region that is not monosomic.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -4782,6 +4782,7 @@ http://en.wikipedia.org/wiki/Aneuploidy</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000346">
         <rdfs:label>aneusomic chromosome</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
@@ -4798,6 +4799,7 @@ Formely asserted under chromosome as well as &apos;aneusomic chronosome feature&
 This should also be a child of chromosome . . . need to enable this inference so I can remove the asserted multiple inheritance.
 
 Consider asserting all as chromosomes, and defining seq variation with a new property is_completely_variant_with</obo:GENO_0000258>
+        <rdfs:comment>We consider novel sequence features gained in a genome to be sequence alterations, including aneusomic chromosome segments gained through unbalanced translocation events, entrie aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that becoome part of the heritable gneme of a cell or organism.</rdfs:comment>
         <obo:IAO_0000115>a genomic locus that is a complete chromosome that has been abnormally duplicated or lost, as the result of a non-disjunction event or unbalanced translocation</obo:IAO_0000115>
     </owl:Class>
     
@@ -4906,12 +4908,6 @@ Consider asserting all as chromosomes, and defining seq variation with a new pro
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000415">
         <rdfs:label>reagent sequence feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000018"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000210"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000086"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>a sequence feature that references some biological macromolecule applied as a reagent in an experiment or technique (e.g. a morpholino expression plasmid, or oligonucleotide probe)</obo:IAO_0000115>
         <obo:IAO_0000118>extra-genomic sequence</obo:IAO_0000118>
         <obo:IAO_0000116>import SO:reagent here?</obo:IAO_0000116>
@@ -6142,7 +6138,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000830"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000105"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -6165,7 +6161,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000830"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000341"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -6499,13 +6495,15 @@ In our genotype partonomy design pattern, a sex qualified genotype has as part a
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000681">
         <rdfs:label>novel extrachromosomal replicon</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000494"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Extrachromosomal replicons are stably incorparated and thus part of the heritable genome of a cell or organism. In cases where the presence of such a replicon is abberant (i.e. not included in the reference specifeid for that genome), the replicon is considered a variant locus.</rdfs:comment>
+        <rdfs:comment>Extrachromosomal replicons are stably incorparated and thus part of the heritable genome of a cell or organism. In cases where the presence of such a replicon is abberant (i.e. not included in the reference specifeid for that genome), the replicon is considered a variant allele &gt; sequence alteration.</rdfs:comment>
+        <obo:GENO_0000258>For now have to aassert multiple inheritance as a sequence_alteration and extrachromosomal replicon.</obo:GENO_0000258>
         <obo:IAO_0000115>An extrachromosomal replicon that is variant in a genome in virtue of it being absent in the reference specified for the genome in which it is found.</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">transgenic extrachromosomal replicon</obo:IAO_0000118>
         <obo:IAO_0000118>variant extrachromosomal replicon</obo:IAO_0000118>
@@ -6574,6 +6572,16 @@ In our genotype partonomy design pattern, a sex qualified genotype has as part a
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000687">
         <rdfs:label xml:lang="en">expression-variant locus</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000483"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000688 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000688">
+        <rdfs:label xml:lang="en">terminus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000680"/>
+        <obo:IAO_0000115>A null locus representing the end of a sequence feature that is bounded only on one side (e.g. at the end of an chromosome or oligonucleotide.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -6820,7 +6828,7 @@ Previous. An information content entity is a non-realizable information entity t
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000830"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000830"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -6970,7 +6978,7 @@ Note that ZFIN represents instances of SSLPs. e.g. http://zfin.org/action/marker
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000830"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000245"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000614"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -7099,13 +7107,13 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
     <!-- http://purl.obolibrary.org/obo/SO_0000830 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000830">
-        <rdfs:label>chromosome_part</rdfs:label>
+        <rdfs:label>chromosome part</rdfs:label>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000466"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000248"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -7113,8 +7121,8 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
         </owl:equivalentClass>
         <obo:IAO_0000118>chromosomal feature</obo:IAO_0000118>
         <obo:IAO_0000118>gross chromosomal part</obo:IAO_0000118>
-        <obo:IAO_0000115>An extended region of sequence corresponding to a defined feature of a chromosome, e.g. a chromosomal &apos;arm&apos;, &apos;region&apos;, or &apos;band&apos;.</obo:IAO_0000115>
         <obo:IAO_0000116>Formerly GENO_0000390 ! chromosome feature, but replaced by SO_0000830 ! chromosome_part</obo:IAO_0000116>
+        <obo:IAO_0000115>An extended region of sequence corresponding to a defined feature that is a proper part of a chromosome, e.g. a chromosomal &apos;arm&apos;, &apos;region&apos;, or &apos;band&apos;.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -7177,7 +7185,9 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence variation</obo:IAO_0000118>
         <rdfs:comment>Most variant alleles differ at specific altered bases within the complete sequence of the allele.  For example, the CFTRdF508 variant of the cystic fibrosis transmembrane receptor gene is a &apos;variant gene allele&apos; that is several thousand bases long, and contains a deletion of just three nucleotides that comprise the codon for phenylalanine (F) at position 508.  
 
-When a variant allele is variant in its full extent, it is a &apos;sequence alteration&apos;.  Thus, &apos;sequence_alteration&apos; is modeled as a subtype of variant allele that differs in its entirety from another sequence. For example, a SNP is a sequence variation that represents a variant of a locus with an extent of the one base. Similarly, an insertion of transgenic sequence is a sequence variation that represents a variant locus that differs along its full extent from the some reference sequence (which in this case is just a junction where the transgene was inserted).</rdfs:comment>
+When a variant allele is variant in its full extent, it is a &apos;sequence alteration&apos;.  Thus, &apos;sequence_alteration&apos; is modeled as a subtype of variant allele that differs in its entirety from another sequence. For example, a SNP is a sequence variation that represents a variant of a locus with an extent of the one base. Similarly, an insertion of transgenic sequence is a sequence variation that represents a variant locus that differs along its full extent from the some reference sequence (which in this case is just a junction where the transgene was inserted).
+
+Here we also consider novel sequence features gained in a genome to be sequence alterations, including aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that becoome part of the heritable gneme of a cell or organism.</rdfs:comment>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
     </owl:Class>
     
