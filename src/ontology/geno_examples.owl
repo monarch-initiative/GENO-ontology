@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/geno.owl#"
+     xml:base="http://purl.obolibrary.org/obo/geno.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:oban="http://purl.org/oban/">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno_examples.owl">
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://zfin.org/ZDB-GENE-040123-1 -->
+
+    <owl:Class rdf:about="http://zfin.org/ZDB-GENE-040123-1">
+        <rdfs:label xml:lang="en">danio rerio cdkn1ca</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000047"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000743 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZP_0000782 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000782">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
+        <rdfs:label xml:lang="en">abnormal(ly) disrupted  diencephalon development</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZP_0005692 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0005692">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
+        <rdfs:label xml:lang="en">abnormal(ly) absent adaxial cell</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.monarchinitiative.org/MONARCH_9611b74ec8f982e3a7814665263937b9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.monarchinitiative.org/MONARCH_9611b74ec8f982e3a7814665263937b9">
+        <rdf:type rdf:resource="http://purl.org/oban/association"/>
+        <rdfs:label xml:lang="en">association1</rdfs:label>
+        <obo:GENO_0000747 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000743"/>
+        <oban:association_has_object rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
+        <oban:association_has_subject rdf:resource="http://zfin.org/ZDB-FISH-150901-8451"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000524"/>
+        <rdfs:label xml:lang="en">cdkn1ca&lt;MO3-cdkn1ca&gt;</rdfs:label>
+        <obo:GENO_0000443 rdf:resource="http://zfin.org/ZDB-GENE-040123-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000002"/>
+        <rdfs:label xml:lang="en">shha&lt;tbx392&gt;</rdfs:label>
+        <obo:GENO_0000408 rdf:resource="http://www.ncbi.nlm.nih.gov/gene/30269"/>
+        <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-ALT-010427-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8-ZDB-ALT-010427-8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8-ZDB-ALT-010427-8">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000009"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000030"/>
+        <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt;</rdfs:label>
+        <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ncbi.nlm.nih.gov/gene/30269 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ncbi.nlm.nih.gov/gene/30269"/>
+    
+
+
+    <!-- http://zfin.org/ZDB-ALT-010427-8 -->
+
+    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-ALT-010427-8">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_1000008"/>
+        <rdfs:label xml:lang="en">tbx392</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://zfin.org/ZDB-FISH-150901-8451 -->
+
+    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-FISH-150901-8451">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000525"/>
+        <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]; cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;</rdfs:label>
+        <obo:GENO_0000743 rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
+        <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3"/>
+        <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://zfin.org/ZDB-GENE-040123-1 -->
+
+    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENE-040123-1"/>
+    
+
+
+    <!-- http://zfin.org/ZDB-GENO-070215-11 -->
+
+    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-070215-11">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000000"/>
+        <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]</rdfs:label>
+        <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8-ZDB-ALT-010427-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://zfin.org/ZDB-GENO-070215-11-m -->
+
+    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-070215-11-m">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000645"/>
+        <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB](male)</rdfs:label>
+        <obo:GENO_0000743 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
+        <obo:GENO_0000650 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://zfin.org/ZDB-GENO-960809-7 -->
+
+    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-960809-7">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000611"/>
+        <rdfs:label xml:lang="en">AB</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000410">
+        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000654">
+        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411">
+        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000418">
+        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000154">
+        <rdfs:comment>has_specified_output some 
+    (&apos;genomic material&apos;
+     and (bears_concretization_of some &apos;variant locus&apos;))</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445">
+        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000220">
+        <obo:GENO_0000658>Range: organism or (&apos;is part of&apos; some organism) or (&apos;derives from&apos; some organism)</obo:GENO_0000658>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
