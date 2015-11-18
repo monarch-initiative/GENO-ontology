@@ -16,37 +16,11 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://zfin.org/ZDB-GENE-040123-1 -->
-
-    <owl:Class rdf:about="http://zfin.org/ZDB-GENE-040123-1">
-        <rdfs:label xml:lang="en">danio rerio cdkn1ca</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000047"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Individuals
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000743 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
     
 
 
@@ -73,7 +47,6 @@
     <owl:NamedIndividual rdf:about="http://www.monarchinitiative.org/MONARCH_9611b74ec8f982e3a7814665263937b9">
         <rdf:type rdf:resource="http://purl.org/oban/association"/>
         <rdfs:label xml:lang="en">association1</rdfs:label>
-        <obo:GENO_0000747 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000743"/>
         <oban:association_has_object rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
         <oban:association_has_subject rdf:resource="http://zfin.org/ZDB-FISH-150901-8451"/>
     </owl:NamedIndividual>
@@ -86,7 +59,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000524"/>
         <rdfs:label xml:lang="en">cdkn1ca&lt;MO3-cdkn1ca&gt;</rdfs:label>
-        <obo:GENO_0000443 rdf:resource="http://zfin.org/ZDB-GENE-040123-1"/>
+        <obo:GENO_0000443 rdf:resource="http://www.ncbi.nlm.nih.gov/gene/399483"/>
     </owl:NamedIndividual>
     
 
@@ -119,6 +92,12 @@
     
 
 
+    <!-- http://www.ncbi.nlm.nih.gov/gene/399483 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ncbi.nlm.nih.gov/gene/399483"/>
+    
+
+
     <!-- http://zfin.org/ZDB-ALT-010427-8 -->
 
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-ALT-010427-8">
@@ -137,12 +116,6 @@
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3"/>
         <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://zfin.org/ZDB-GENE-040123-1 -->
-
-    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENE-040123-1"/>
     
 
 
