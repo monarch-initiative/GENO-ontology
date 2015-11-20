@@ -117,7 +117,7 @@
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-FISH-150901-8451">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000525"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]; cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;</rdfs:label>
-        <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
+        <obo:GENO_0000743 rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3"/>
         <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
     </owl:NamedIndividual>
@@ -139,8 +139,8 @@
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-070215-11-m">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000645"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB](male)</rdfs:label>
-        <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
-        <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
+        <obo:GENO_0000743 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
+        <obo:GENO_0000650 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
     </owl:NamedIndividual>
     
 
