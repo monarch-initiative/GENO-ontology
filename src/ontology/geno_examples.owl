@@ -16,6 +16,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000658 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000658"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Individuals
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -24,21 +41,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000786 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000786">
+        <rdf:type rdf:resource="http://purl.org/oban/association"/>
+        <obo:GENO_0000700 xml:lang="en">association2</obo:GENO_0000700>
+        <oban:association_has_object rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
+        <oban:association_has_subject rdf:resource="http://zfin.org/ZDB-GENO-070215-11-m"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ZP_0000782 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000782">
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
-        <rdfs:label xml:lang="en">abnormal(ly) disrupted  diencephalon development</rdfs:label>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000782"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/ZP_0005692 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0005692">
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
-        <rdfs:label xml:lang="en">abnormal(ly) absent adaxial cell</rdfs:label>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0005692"/>
     
 
 

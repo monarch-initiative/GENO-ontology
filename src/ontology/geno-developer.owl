@@ -59,6 +59,14 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000700 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000700">
+        <obo:GENO_0000700 xml:lang="en">GENO_alternate_label</obo:GENO_0000700>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -351,6 +359,7 @@ So we have two major forms of intrinsic variation: altered content vs novel cont
 -------
 
 Extrachromoosomal replicons are sequence_variant_with some null locus, but not allelic_with the null locus, because being allelic_with a locus requires the locus being an establlished marker/position in a reference genome.</obo:GENO_0000257>
+        <obo:GENO_0000257>Previously had a subproperty &apos;allelic_with&apos;, which applied only to sequence features. If describing sequence feature collections, used is_sequence_variant_with.</obo:GENO_0000257>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000704">
         <obo:GENO_0000258>Consider logical definition:

@@ -31,14 +31,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO_0000700 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000700">
-        <rdfs:label xml:lang="en">GENO_alternate_label</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112">
@@ -87,9 +79,7 @@ We also have the outstanding issue of how to aim different definitions to differ
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116">
-
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
     
 
 
@@ -110,9 +100,7 @@ We also have the outstanding issue of how to aim different definitions to differ
 
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
-
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
     
 
 
@@ -785,9 +773,7 @@ Range = a punned gene class IRI</rdfs:comment>
 
     <!-- http://purl.obolibrary.org/obo/GENO_0000712 -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000712">
-        <obo:GENO_0000700 xml:lang="en">ObsoleteDataProperty</obo:GENO_0000700>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000712"/>
     
 
 
@@ -1521,7 +1507,6 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000475">
         <rdfs:label xml:lang="en">allele attribute</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:GENO_0000700>variable locus attribute</obo:GENO_0000700>
         <obo:IAO_0000115>A sequence attribute that inheres in an allele of a genomic locus.</obo:IAO_0000115>
     </owl:Class>
     
@@ -1564,7 +1549,6 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000490">
         <rdfs:label xml:lang="en">mutant allelic complement</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:GENO_0000700>mutant single locus complement</obo:GENO_0000700>
     </owl:Class>
     
 
@@ -1977,9 +1961,7 @@ Consider how we might approach environments/condisitons using an EQ aproach anal
 
     <!-- http://purl.obolibrary.org/obo/GENO_0000514 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000514">
-        <rdfs:label xml:lang="en">temporary example term</rdfs:label>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000514"/>
     
 
 
