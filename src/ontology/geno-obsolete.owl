@@ -31,47 +31,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO_0000008 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000008">
-        <rdfs:label>monarch-preferred term</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000258 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000258">
-        <rdfs:label>open developer issue</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000261 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000261">
-        <rdfs:label>xref</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000658 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000658">
-        <rdfs:label xml:lang="en">refactor note</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000670 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000670">
-        <rdfs:label xml:lang="en">GENO editor note</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GENO_0000700 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000700">
@@ -92,9 +51,7 @@
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000114 -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000114">
-        <rdfs:label xml:lang="en">has curation status</rdfs:label>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000114"/>
     
 
 
@@ -131,9 +88,7 @@ We also have the outstanding issue of how to aim different definitions to differ
     <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116">
-        <rdfs:label xml:lang="en">editor note</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology.</obo:IAO_0000115>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+
     </owl:AnnotationProperty>
     
 
@@ -149,10 +104,14 @@ We also have the outstanding issue of how to aim different definitions to differ
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232">
-        <rdfs:label xml:lang="en">curator note</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">An administrative note of use for a curator but of no use for a user</obo:IAO_0000115>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
+
     </owl:AnnotationProperty>
     
 
@@ -244,7 +203,7 @@ strain has_member some (organism and (has_part some (&apos;genetic material&apos
         <obo:IAO_0000116>If we consider genotypes as differnet than genomes, then we need different properties for linking genomes and genotyeps to an organism.
 
 A possible difference between these properties is that genome_of is not a shorcut that can be expanded to link to an individual organism.  Becasue some genoems (e.g. reference genomes&apos; are not actially tied to a particular orgnaism individual (ie there may be no instance that bears a reference genome).  But they are still tied conceptually to the idea of being carried by a single organism.</obo:IAO_0000116>
-        <obo:GENO_0000261>SO:genome_of</obo:GENO_0000261>
+        <oboInOwl:hasDbXref>SO:genome_of</oboInOwl:hasDbXref>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000371"/>
     </owl:ObjectProperty>
     
@@ -271,7 +230,6 @@ organism has_part some (&apos;genetic material&apos; and (bears_concretization_o
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:label>has_homologous_locus</rdfs:label>
         <obo:IAO_0000115>a relation linking loci of the same feature in a single genome (e.g. two varaints of a certain gene)</obo:IAO_0000115>
-        <obo:GENO_0000258>exploratory property - could this be useful somehow?</obo:GENO_0000258>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000674"/>
     </owl:ObjectProperty>
     
@@ -492,7 +450,6 @@ For example, the triple &lt;fgf8a^ti282a&gt;  &lt;variant_has_phenotype&apos;&gt
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000388">
         <rdfs:label>is_phenotype_of_sequence</rdfs:label>
         <obo:IAO_0000115>a relation for linking a phenotype directly to any type of genomic variant (a full genotype, a genomic variation complement, a variant single locus complement, or a variant locus), where the phenotype is present in an organism whose genome contains the variation</obo:IAO_0000115>
-        <obo:GENO_0000258>consider updating to include extrinsic genotypes and experession variant loci in the range?</obo:GENO_0000258>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000407"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000674"/>
     </owl:ObjectProperty>
@@ -897,7 +854,7 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
         <rdfs:label>ethanol exposure</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000564"/>
         <rdfs:comment>ZDB-EXP-131219-8, chemical:Ethanol, 350mM</rdfs:comment>
-        <obo:GENO_0000261>see http://purl.obolibrary.org/obo/XCO_0000326 (controlled ethanol content saline)</obo:GENO_0000261>
+        <oboInOwl:hasDbXref>see http://purl.obolibrary.org/obo/XCO_0000326 (controlled ethanol content saline)</oboInOwl:hasDbXref>
         <obo:IAO_0000118>standard danio rerio water, ethanol-treated</obo:IAO_0000118>
     </owl:Class>
     
@@ -951,8 +908,6 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000016">
         <rdfs:label>sequence information entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:GENO_0000258>Need to decide what SO sequences are ‘about’/what do they ‘denote’? Is it a region of some material sequence molecule?  Or is it the sequence of such a molecular region (ie some sequence GDC or quality inhering in the molecule)?  And if the latter, is this ‘aboutness’ transitive over the inherence, such that they are also about the physical molecule? Has implications for how SO classes are defined textually and on design patterns linking them to other entities.
-</obo:GENO_0000258>
         <rdfs:comment>1. Types of  &apos;sequence information entities&apos; can be defined and classified based on many criteria, including:
   a. the type of biological monomeric component
   b. its biological structure or function of  the physical molecule it is_about, ie its physical referent (e.g. a promoter or gene)
@@ -1011,7 +966,6 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000026">
         <rdfs:label>obsolete_allele collection</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
-        <obo:GENO_0000658>formerly single locus collection</obo:GENO_0000658>
         <obo:IAO_0000115>a collection of more than one version of a sequence at a particular genomic locus as present in a single genome (e.g. both copies of the shha gene in a wild-type zebrafish, or two of the three copies of chromosome 21 in a Down Syndrome patient)</obo:IAO_0000115>
     </owl:Class>
     
@@ -1025,7 +979,7 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
         <obo:IAO_0000118>variant locus collection</obo:IAO_0000118>
         <obo:IAO_0000116>As defined, a &apos;reference locus&apos; can be a member of such a collection (e.g. a wt locus as part of a heterozygous variant single locus complement&apos;)</obo:IAO_0000116>
         <obo:IAO_0000115>A genetic locus collection that has as member at least one locus that is variant in its sequence or expression level</obo:IAO_0000115>
-        <obo:GENO_0000261>Not clear if this maps to SO:variant collection, because it is not clear whether this SO class includes the WT/reference sequence</obo:GENO_0000261>
+        <oboInOwl:hasDbXref>Not clear if this maps to SO:variant collection, because it is not clear whether this SO class includes the WT/reference sequence</oboInOwl:hasDbXref>
         <rdfs:comment>former EC axiom:
 &apos;genomic locus collection&apos;
  and (is_variant_with some &apos;genomic locus collection&apos;)</rdfs:comment>
@@ -1060,7 +1014,6 @@ Any instance of a &apos;variant defined locus&apos; will necessarily contain a &
         <obo:IAO_0000118>genetic element</obo:IAO_0000118>
         <obo:IAO_0000115>A genetic locus whose extent is defined by some functional, structural, or experimental criteria.</obo:IAO_0000115>
         <obo:IAO_0000118>defined genetic locus</obo:IAO_0000118>
-        <obo:GENO_0000258>Organizational class. Decide if this category is useful/valid, and work on a different name if we decide to keep it?  Consider &apos;functional or  structural locus&apos;.</obo:GENO_0000258>
     </owl:Class>
     
 
@@ -1092,18 +1045,8 @@ For example, a null locus can represent:
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000039">
         <rdfs:label>obsolete_absent locus</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
-        <obo:GENO_0000258>A lot of what is below is required because of how we model variants - where they are required to be variant with some locus.  So for things like transient transgenes we need to conceptualize some &apos;absent locus&apos; that these are variant with.  But there should be a better way to model these as variant without resorting to absent/conceptual classes suich as these.
-
-For absent chromosomes and segments, we may be able to do away with this bad modeling if we focus on the unpaired chromosome/segment as being a member of some VSLC that is variant in having only one member. There should be no need to model the absent chromosome.</obo:GENO_0000258>
         <obo:IAO_0000116>Instantiating &apos;absent&apos; loci in this way is important for conforming with our model that conceptualizes each locus to have at least two members (for diploid cells/organisms), and allows us to be clear and explicit about there being missing loci and describing them. Such classes are &apos;non-ontological&apos;, but are used here to better accommodate display and manipulation of the data to have instances of these &apos;null&apos; genetic loci&apos;.</obo:IAO_0000116>
         <obo:IAO_0000115>a null locus that is conceptually paired with some single locus variant in order to instantiate a &apos;single locus variant complement&apos; as a seqeunce feature collection with a zygosity.  Conceptual loci have no true genomic location or context because their partner has no true homologous locus.</obo:IAO_0000115>
-        <obo:GENO_0000258>In order to do away with this bad modeling, we need another way to qualify things like transient transgenes and stable extrachromosomal arrays as being variant. Perhaps we dont limit the definition of variants to being variant_with some other real locus (ie alternate versions of some reference locus or locus complement, which these are not), but also include the idea of being novel genetic/genomic content relative to some reference genome.  
-
-So we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci.
-
-1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant.  
-
-2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.</obo:GENO_0000258>
         <obo:IAO_0000118>conceptual locus</obo:IAO_0000118>
     </owl:Class>
     
@@ -1116,13 +1059,6 @@ So we have two major forms of intrinsic variation: altered content vs novel cont
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000039"/>
         <obo:IAO_0000116>To be recorded as &apos; / - &apos;, or &apos; [-] &apos; in our genotype syntax?</obo:IAO_0000116>
         <obo:IAO_0000118>absent episomal locus</obo:IAO_0000118>
-        <obo:GENO_0000258>In order to do away with this, we need another way to qualify things like transient transgenes and stable extrachromosomal arrays as being variant. Perhaps we dont limit the definition of variants to being variant_with some other real locus (ie alternate versions of some reference locus or locus complement, which these are not), but also include the idea of being novel genetic/genomic content relative to some reference genome.  
-
-So we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci.
-
-1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant.  
-
-2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.</obo:GENO_0000258>
         <obo:IAO_0000115>an absent locus that is conceptually paired with an artificially introduced genomic element such as an extrachromosomal array or replicative transposon, which has no homologous partner to complete a locus variant complement.</obo:IAO_0000115>
     </owl:Class>
     
@@ -1174,8 +1110,8 @@ So we have two major forms of intrinsic variation: altered content vs novel cont
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000053">
         <rdfs:label>obsolete_engineered gene</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
-        <obo:GENO_0000261>SO:engineered foreign gene</obo:GENO_0000261>
         <obo:IAO_0000116>maps to SO class, but not used so far in our model (rather, we use engineered gene member reegion class to represent the foreign elements in ZFIN)</obo:IAO_0000116>
+        <oboInOwl:hasDbXref>SO:engineered foreign gene</oboInOwl:hasDbXref>
     </owl:Class>
     
 
@@ -1199,8 +1135,6 @@ So we have two major forms of intrinsic variation: altered content vs novel cont
 Some gene variants will also be genes (those that are still able to produce a functional transcript).  Others will not qualify as genes (e.g. null alleles that are unable to produce a functional transcript)</obo:IAO_0000115>
         <obo:IAO_0000116>Note that as a defined class, any instance of a gene that is asserted to be a variant of a gene locus will be inferred to be a &apos;gene variant&apos; (e.g. if we had asserted  the &apos;ti282a&apos; instance as a type of &apos;danio rerio fgf8a gene&apos;, its object property assertion that it is a &apos;variant_of &apos;zebrafish fgf8a wt&apos; would make it infer to be a type of &apos;gene variant&apos;)</obo:IAO_0000116>
         <obo:IAO_0000118>variant gene allele</obo:IAO_0000118>
-        <obo:GENO_0000258>Considered this class to be the same thing as &apos;variant gene allele&apos;, and so obsoleted it.</obo:GENO_0000258>
-        <obo:GENO_0000258>Consider if this class is necessary, given our shift away from considering notions of variants/alleles and genes, and just thinking of all features as types of &apos;genomic loci&apos;.</obo:GENO_0000258>
     </owl:Class>
     
 
@@ -1358,7 +1292,7 @@ Some gene variants will also be genes (those that are still able to produce a fu
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000128">
         <rdfs:label>transcriptionally regulated</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:GENO_0000261>SO:transcriptionally_regulated</obo:GENO_0000261>
+        <oboInOwl:hasDbXref>SO:transcriptionally_regulated</oboInOwl:hasDbXref>
     </owl:Class>
     
 
@@ -1368,7 +1302,7 @@ Some gene variants will also be genes (those that are still able to produce a fu
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000129">
         <rdfs:label>transcriptionally inducible</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000128"/>
-        <obo:GENO_0000261>SO:transcriptionally_inducible</obo:GENO_0000261>
+        <oboInOwl:hasDbXref>SO:transcriptionally_inducible</oboInOwl:hasDbXref>
     </owl:Class>
     
 
@@ -1378,7 +1312,7 @@ Some gene variants will also be genes (those that are still able to produce a fu
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000130">
         <rdfs:label>transcriptionally repressible</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000128"/>
-        <obo:GENO_0000261>SO:transcriptionally_repressible</obo:GENO_0000261>
+        <oboInOwl:hasDbXref>SO:transcriptionally_repressible</oboInOwl:hasDbXref>
     </owl:Class>
     
 
@@ -1470,17 +1404,6 @@ Some gene variants will also be genes (those that are still able to produce a fu
         <rdfs:label>obsolete_aneusomic chromosome feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
         <obo:IAO_0000115>a genomic locus that is a complete or portion of a chromosome that has been abnormally duplicated or lost</obo:IAO_0000115>
-        <obo:GENO_0000258>Placed into &apos;Exploratory Class&apos; hierarchy to explore in future when this use case arises.
-
-Asserted parent: sequence_alteration.
-
-SC axiom: is_direct_part_of some chromosome
-
---------------
-
-
-11-10-15 Decided this organizational class is not needed.  former EC: (has_sequence_attribute some aneusomic)
- and (is_direct_part_of some chromosome)</obo:GENO_0000258>
         <obo:IAO_0000116>Use &apos;aneusomic&apos; instead of &apos;aneuploid&apos; here given this from Wikipedia: &quot;Aneuploidy is the state of not having euploidy. In humans, examples include having a single extra chromosome (such as Down syndrome), or missing a chromosome (such as Turner syndrome). Aneuploid karyotypes are given names with the suffix -somy (rather than -ploidy, used for euploid karyotypes), such as trisomy and monosomy.&quot;</obo:IAO_0000116>
         <obo:IAO_0000118>aneusomic chromosomal element/region</obo:IAO_0000118>
     </owl:Class>
@@ -1493,7 +1416,6 @@ SC axiom: is_direct_part_of some chromosome
         <rdfs:label>obsolete_immaterial genetic locus</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
         <obo:IAO_0000118>conceptual genetic locus</obo:IAO_0000118>
-        <obo:GENO_0000258>This is a terrible class. The modeling needs work, as does the whole notion of null loci</obo:GENO_0000258>
         <obo:IAO_0000118>absent genetic locus</obo:IAO_0000118>
         <obo:IAO_0000116>Exploratory class. Used in testing approaches for representing null/conceptual loci. </obo:IAO_0000116>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
@@ -1507,7 +1429,7 @@ SC axiom: is_direct_part_of some chromosome
         <rdfs:label>comparative phenotype assignment</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000428"/>
         <obo:IAO_0000116>As a subtype of drawing a conclusion, I prefer the label &apos;comparative phenotype assignment&apos; over &apos;comparative phenotype assessment&apos; because the former sounds more like the drawing of a final conclusion.</obo:IAO_0000116>
-        <obo:GENO_0000261>OBI:comparative phenotypic assessment</obo:GENO_0000261>
+        <oboInOwl:hasDbXref>OBI:comparative phenotypic assessment</oboInOwl:hasDbXref>
         <obo:IAO_0000115>Interpreting data from assays that evaluate the qualities or dispositions inhering in an organism or organism part and comparing it to data from other organisms to make a conclusion about a phenotypic difference (from OBI)</obo:IAO_0000115>
         <obo:IAO_0000118>comparative phenotypic assessment</obo:IAO_0000118>
     </owl:Class>
@@ -1613,14 +1535,6 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
         <obo:IAO_0000115>A genetic locus that is variant  - either in its intrinsic sequence in virtue containing a sequence variation or being novel sequence feature; or in its expression level in virtue of being experimentally targeted to express at an altered level from that nornally found in a cell or tissue.</obo:IAO_0000115>
         <obo:IAO_0000118>variant genetic locus</obo:IAO_0000118>
         <obo:IAO_0000116>Note that sequence variations include the addition of sequences carried on entirely new macromolecules, such as the addition of an extra chromosome in trisomies.  While such an addition does not alter the sequence at an existing locus in the genome, it does change/add to the total sequence content of the genome and as such is considered a sequence variation.</obo:IAO_0000116>
-        <obo:GENO_0000258>The logical definition here is simple because we model conceptual/absent loci so that we can say that variants such as extrachromosomal replicons and transient transgenes are variant_with something, andthus classify as variants.  But this is shoddy modeling.  We need a different way to classify these things as variant, which may require changing the logical definition of the variant locus class. 
-
-Some thoughts: we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci that it is &apos;variant_with&apos;.
-
-1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant (e.g. so that a monoploid chromosome is a variant locus - but have not modeled this yet)
-
-2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.
-</obo:GENO_0000258>
     </owl:Class>
     
 
@@ -1711,7 +1625,7 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000523">
         <rdfs:label xml:lang="en">obsolete_data item</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
-        <obo:GENO_0000261>placeholder for IAO/OBI class</obo:GENO_0000261>
+        <oboInOwl:hasDbXref>placeholder for IAO/OBI class</oboInOwl:hasDbXref>
     </owl:Class>
     
 
@@ -1750,11 +1664,6 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000536">
         <rdfs:label xml:lang="en">genotype</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:GENO_0000658>Decided to leave out for now as this is more likely to confuse than help, as the concept most people refer to as &apos;geneotype&apos; is what we call an &apos;intrinsic genotype&apos;, and what we are calling a &apos;genotype&apos; is much broader/different.
-
-EC: &apos;effective genotype&apos; or &apos;extrinsic genotype&apos; or &apos;intrinsic genotype&apos; or &apos;sex-qualified genotype&apos;
-
-SC: is_genotype_of some (cell or organism)</obo:GENO_0000658>
         <obo:IAO_0000115>A genetic sequence collection that describes the total variation in genomic sequence and/or expression level in the genetic material of a cell or organism.</obo:IAO_0000115>
     </owl:Class>
     
@@ -2007,7 +1916,6 @@ has_sequence_variant_part some &apos;variant allele&apos;</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000687">
         <rdfs:label xml:lang="en">expression-variant feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:GENO_0000658>Changed label from expression-variant locus to account for the fact that transiently expressed transgenes wouldn&apos;t qualify as genomic loci.</obo:GENO_0000658>
         <rdfs:comment>&apos;Qualifying&apos; modifications/interventions may include direct epigentic modification that impact expression level, targeting by a gene-knockdown reagent, or being transiently expressed as part of a transgenic construct in a host cell or organism.
 
 The identity of a given isntance of a experssion-variant feature is dependent on how its level of expression is manipulated in a biological system (i.e. via targeting by gene-knockdown reagents, or being transiently overexpressed). So expression-variant features have the additional identity criteria of a genetic context of its material bearer (external to its sequence and position) that impacts its level of expression in a biological system.</rdfs:comment>
@@ -2021,7 +1929,6 @@ The identity of a given isntance of a experssion-variant feature is dependent on
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000716">
         <rdfs:label xml:lang="en">qualified sequence feature collection</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:GENO_0000658>Moved to be Exploratory as I decided extrinsic genotypes fit as a complement.</obo:GENO_0000658>
     </owl:Class>
     
 
@@ -2031,11 +1938,6 @@ The identity of a given isntance of a experssion-variant feature is dependent on
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000718">
         <rdfs:label xml:lang="en">expression-variant gene complement</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:GENO_0000658>For now I removed as i decided this is for now the same thing as the exrinsic genotype - the colleciton of all genes variant in their expression as a result of external (non sequence/position) factors.
-
-----
-
-Consider how / if this is a different concept form an extrinsic genotype.  If the same, merge.  I would say the difference is that when we consider epigenetic modifications, these would be included in an extrinsic genotype but may not affect genes?</obo:GENO_0000658>
         <obo:IAO_0000115>A set of all genes in a single genome exhibiting transient alteration in their expression level in the context of a given experiment (e.g. both copies of the WT shha gene in a zebrafish exposed to shha-targeting mmorpholinos)</obo:IAO_0000115>
     </owl:Class>
     
