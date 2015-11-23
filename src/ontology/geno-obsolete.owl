@@ -1643,16 +1643,6 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO_0000536 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000536">
-        <rdfs:label xml:lang="en">genotype</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
-        <obo:IAO_0000115>A genetic sequence collection that describes the total variation in genomic sequence and/or expression level in the genetic material of a cell or organism.</obo:IAO_0000115>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GENO_0000537 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000537">
@@ -1923,6 +1913,16 @@ The identity of a given isntance of a experssion-variant feature is dependent on
         <rdfs:label xml:lang="en">expression-variant gene complement</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
         <obo:IAO_0000115>A set of all genes in a single genome exhibiting transient alteration in their expression level in the context of a given experiment (e.g. both copies of the WT shha gene in a zebrafish exposed to shha-targeting mmorpholinos)</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000814 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000814">
+        <rdfs:label xml:lang="en">genotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000664"/>
+        <obo:IAO_0000115>A genetic sequence collection that describes the total variation in genomic sequence and/or expression level in the genetic material of a cell or organism.</obo:IAO_0000115>
     </owl:Class>
     
 

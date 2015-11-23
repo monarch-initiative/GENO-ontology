@@ -114,13 +114,6 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000347">
         <obo:GENO_0000258>This is a terrible class. The modeling needs work, as does the whole notion of null loci</obo:GENO_0000258>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536">
-        <obo:GENO_0000658>Decided to leave out for now as this is more likely to confuse than help, as the concept most people refer to as &apos;geneotype&apos; is what we call an &apos;intrinsic genotype&apos;, and what we are calling a &apos;genotype&apos; is much broader/different.
-
-EC: &apos;effective genotype&apos; or &apos;extrinsic genotype&apos; or &apos;intrinsic genotype&apos; or &apos;sex-qualified genotype&apos;
-
-SC: is_genotype_of some (cell or organism)</obo:GENO_0000658>
-    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000152">
         <obo:GENO_0000257>The exploratory axiom: 
 
@@ -247,6 +240,13 @@ genetically_codes_for some &apos;homo sapiens SHH protein&apos;</obo:GENO_000025
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000062">
         <obo:GENO_0000258>Considered this class to be the same thing as &apos;variant gene allele&apos;, and so obsoleted it.</obo:GENO_0000258>
         <obo:GENO_0000258>Consider if this class is necessary, given our shift away from considering notions of variants/alleles and genes, and just thinking of all features as types of &apos;genomic loci&apos;.</obo:GENO_0000258>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000814">
+        <obo:GENO_0000658>Decided to leave out for now as this is more likely to confuse than help, as the concept most people refer to as &apos;geneotype&apos; is what we call an &apos;intrinsic genotype&apos;, and what we are calling a &apos;genotype&apos; is much broader/different.
+
+EC: &apos;effective genotype&apos; or &apos;extrinsic genotype&apos; or &apos;intrinsic genotype&apos; or &apos;sex-qualified genotype&apos;
+
+SC: is_genotype_of some (cell or organism)</obo:GENO_0000658>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <obo:GENO_0000257>At the class level, it is important to use has_part at the level of decomposing genomic variation complements into their variant single locus complements, because often this is a refelxive relation (ie in cases where there is only one variant single locus complement).  At the instance level, choose has_proper_part when the genomic variation complement individual has more than one variant single locus complement as part.

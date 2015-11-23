@@ -35,6 +35,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ZP_0000199 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000199"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ZP_0000782 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000782"/>
@@ -44,6 +50,12 @@
     <!-- http://purl.obolibrary.org/obo/ZP_0005692 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0005692"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZP_011538 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_011538"/>
     
 
 
@@ -108,6 +120,7 @@
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-ALT-010427-8">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_1000008"/>
         <rdfs:label xml:lang="en">tbx392</rdfs:label>
+        <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000199"/>
     </owl:NamedIndividual>
     
 
@@ -129,6 +142,7 @@
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-070215-11">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000000"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]</rdfs:label>
+        <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_011538"/>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8-ZDB-ALT-010427-8"/>
     </owl:NamedIndividual>
     
@@ -140,7 +154,7 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000645"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB](male)</rdfs:label>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
-        <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
+        <obo:GENO_0000650 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
     </owl:NamedIndividual>
     
 
