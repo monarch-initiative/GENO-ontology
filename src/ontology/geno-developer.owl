@@ -62,7 +62,15 @@
     <!-- http://purl.obolibrary.org/obo/GENO_0000700 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000700">
-        <obo:GENO_0000700 xml:lang="en">GENO_alternate_label</obo:GENO_0000700>
+        <rdfs:label xml:lang="en">GENO_alternate_label</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000819 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000819">
+        <rdfs:label xml:lang="en">use case note</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -75,6 +83,9 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000102">
+        <obo:GENO_0000658>former IRI: http://purl.obolibrary.org/obo/GENO_0000594</obo:GENO_0000658>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000000">
         <obo:GENO_0000257>Not a type of &apos;genomic locus collection&apos; because its sequence components are not from the genome of a single organism.</obo:GENO_0000257>
         <obo:GENO_0000258>1. Consider if we want genotypes to be defined to necessarily have alternate and reference parts, or just variant parts.  As defined now, therear enecessarily reference and alternate parts (ie either a genomic background or a reference locus for each variant position genotyped).  but we can always generalize things if we find genotypes that are just collections of variant data - e.g. what SNP is present for a set of variant loci, with no indication of a reference locus at each of these sites.  If this is the case, we will have to rework or conception of a genotype that is comprised of reference and alternate components.
@@ -172,6 +183,9 @@ Side Note: A problematic case (if we classify a genome as a sequence feature col
 Other option is to keep this strict distinction, and just assert all complements outside of this divide (as children of sequence information entity)
 </obo:GENO_0000258>
     </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000763">
+        <obo:IAO_0000118>ObsoleteObjectProperty(active)</obo:IAO_0000118>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000359">
         <obo:GENO_0000258>consider updating to include extrinsic genotypes and expression variants in the range?</obo:GENO_0000258>
     </rdf:Description>
@@ -248,10 +262,8 @@ EC: &apos;effective genotype&apos; or &apos;extrinsic genotype&apos; or &apos;in
 
 SC: is_genotype_of some (cell or organism)</obo:GENO_0000658>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
-        <obo:GENO_0000257>At the class level, it is important to use has_part at the level of decomposing genomic variation complements into their variant single locus complements, because often this is a refelxive relation (ie in cases where there is only one variant single locus complement).  At the instance level, choose has_proper_part when the genomic variation complement individual has more than one variant single locus complement as part.
-
-Similarly, at the class level we use has_part to relate a variant single locus to a sequence alteration part, because there are cases where this is a reflexive relation (e.g. transgenic insertions where the sequence alteration spans the entire variant locus).  At the instance level, we can choose has_proper_part when the variant single locus individual is not variant in its entire extent, and therefore the sequence alteration it contains is not equivalent in extent to the variant locus.</obo:GENO_0000257>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000611">
+        <obo:GENO_0000258>Consider how i want to define/use this class - only for genotypes that are background for some variant genotype, or for any standard strain genotype without defined variations.  Is relevant for typing the intrinsic genotype node in MPD data.</obo:GENO_0000258>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000512">
         <obo:GENO_0000257>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
@@ -259,6 +271,11 @@ Similarly, at the class level we use has_part to relate a variant single locus t
 The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
 
 Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or position in the reference genome.</obo:GENO_0000257>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <obo:GENO_0000257>At the class level, it is important to use has_part at the level of decomposing genomic variation complements into their variant single locus complements, because often this is a refelxive relation (ie in cases where there is only one variant single locus complement).  At the instance level, choose has_proper_part when the genomic variation complement individual has more than one variant single locus complement as part.
+
+Similarly, at the class level we use has_part to relate a variant single locus to a sequence alteration part, because there are cases where this is a reflexive relation (e.g. transgenic insertions where the sequence alteration spans the entire variant locus).  At the instance level, we can choose has_proper_part when the variant single locus individual is not variant in its entire extent, and therefore the sequence alteration it contains is not equivalent in extent to the variant locus.</obo:GENO_0000257>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000513">
         <obo:GENO_0000258>Should this be considered an attribute of a chromosome, or a chromosomal complement?  It is currently considered an attribute of a chromosome because this could help us classify the chromosome as being variant/alternate.</obo:GENO_0000258>
@@ -286,6 +303,11 @@ So we have two major forms of intrinsic variation: altered content vs novel cont
 1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant.  
 
 2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.</obo:GENO_0000258>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000742">
+        <obo:GENO_0000819>Need for this would be in cases where there is representation of the sequence alteration but not of the variant locus/allele level in the genotype partonomy (where the link to the gene normally occurs), and we still want to reference the geen(s) affected in the genotype.  This is the case in the coriell data - where we cant always accurately represent the variant locus if there is more than one seqauence alteration affecting a gene, because we dont know if the two alterations are cis or trans. 
+
+But ideally we would always go through the variant locus to get to the gene - so as to only have one possibility for traversing/querying the gene.  So ideally we wouldnt ever need to use this property.</obo:GENO_0000819>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000034">
         <obo:GENO_0000258>Organizational class. Decide if this category is useful/valid, and work on a different name if we decide to keep it?  Consider &apos;functional or  structural locus&apos;.</obo:GENO_0000258>
@@ -323,6 +345,7 @@ SC axiom: is_direct_part_of some chromosome
  and (is_direct_part_of some chromosome)</obo:GENO_0000258>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000714">
+        <obo:GENO_0000258>At present the definitions of qualified features link them to variaton in expression - ultimately may not want to make this committment - e.g. the context doesnt have to be something that affects expression level.  Revisit definitions and comments on these classes after I make this decision.</obo:GENO_0000258>
         <obo:GENO_0000257>In GENO we define three levels of sequence artifacts: (1) biological sequences, (2) sequence features, and (3) qualified sequence features.
 
 (1) The identify criteria for a &apos;biological sequence&apos; include only its inherent sequence (the ordered string of units that comprise it).

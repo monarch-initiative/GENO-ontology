@@ -76,6 +76,10 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000524"/>
         <rdfs:label xml:lang="en">cdkn1ca&lt;MO3-cdkn1ca&gt;</rdfs:label>
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 0
+Inferred Phenos: 1</obo:IAO_0000116>
         <obo:GENO_0000443 rdf:resource="http://www.ncbi.nlm.nih.gov/gene/399483"/>
     </owl:NamedIndividual>
     
@@ -86,6 +90,10 @@
     <owl:NamedIndividual rdf:about="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000002"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;</rdfs:label>
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 0
+Inferred Phenos: 4</obo:IAO_0000116>
         <obo:GENO_0000408 rdf:resource="http://www.ncbi.nlm.nih.gov/gene/30269"/>
         <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-ALT-010427-8"/>
     </owl:NamedIndividual>
@@ -98,6 +106,10 @@
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000009"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000030"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt;</rdfs:label>
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 0
+Inferred Phenos: 4</obo:IAO_0000116>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8"/>
     </owl:NamedIndividual>
     
@@ -105,13 +117,23 @@
 
     <!-- http://www.ncbi.nlm.nih.gov/gene/30269 -->
 
-    <owl:NamedIndividual rdf:about="http://www.ncbi.nlm.nih.gov/gene/30269"/>
+    <owl:NamedIndividual rdf:about="http://www.ncbi.nlm.nih.gov/gene/30269">
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 0
+Inferred Phenos: 4</obo:IAO_0000116>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.ncbi.nlm.nih.gov/gene/399483 -->
 
-    <owl:NamedIndividual rdf:about="http://www.ncbi.nlm.nih.gov/gene/399483"/>
+    <owl:NamedIndividual rdf:about="http://www.ncbi.nlm.nih.gov/gene/399483">
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 0
+Inferred Phenos: 1</obo:IAO_0000116>
+    </owl:NamedIndividual>
     
 
 
@@ -120,6 +142,10 @@
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-ALT-010427-8">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_1000008"/>
         <rdfs:label xml:lang="en">tbx392</rdfs:label>
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 1
+Inferred Phenos: 3</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000199"/>
     </owl:NamedIndividual>
     
@@ -130,6 +156,10 @@
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-FISH-150901-8451">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000525"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]; cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;</rdfs:label>
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 1
+Inferred Phenos: 2</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3"/>
         <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
@@ -142,6 +172,10 @@
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-070215-11">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000000"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]</rdfs:label>
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 1
+Inferred Phenos: 3</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_011538"/>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8-ZDB-ALT-010427-8"/>
     </owl:NamedIndividual>
@@ -153,6 +187,10 @@
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-070215-11-m">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000645"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB](male)</rdfs:label>
+        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+This individual should have: 
+Asserted Phenos: 1
+Inferred Phenos: 0</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
         <obo:GENO_0000650 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
     </owl:NamedIndividual>

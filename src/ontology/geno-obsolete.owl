@@ -355,7 +355,7 @@ genotype and (specifies some (genome and (is_about some (&apos;material genome&a
     <!-- http://purl.obolibrary.org/obo/GENO_0000371 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000371">
-        <rdfs:label>ObsoleteObjectProperty</rdfs:label>
+        <rdfs:label>ObsoleteObjectProperty(archived)</rdfs:label>
     </owl:ObjectProperty>
     
 
