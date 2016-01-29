@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/geno.owl#"
      xml:base="http://purl.obolibrary.org/obo/geno.owl"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oban="http://purl.org/oban/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:oban="http://purl.org/oban/">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno_examples.owl">
+        <rdfs:comment>1-29-16: One effective genotype example created here, containing an intrinsic sex-qualified genotype component, and an extrinsic genotype component. Four phenotype annotations are asserted at different levels of the genotype:</rdfs:comment>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </owl:Ontology>
     
@@ -24,9 +25,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO_0000786 -->
+    <!-- http://purl.obolibrary.org/obo/MONARCH_8712b54bc8e957f3b71463462737b9 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000786">
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/MONARCH_8712b54bc8e957f3b71463462737b9">
         <rdf:type rdf:resource="http://purl.org/oban/association"/>
         <rdfs:label xml:lang="en">association2</rdfs:label>
         <oban:association_has_object rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
@@ -79,7 +80,7 @@
         <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
 This individual should have: 
 Asserted Phenos: 0
-Inferred Phenos: 1</obo:IAO_0000116>
+Inferred Phenos: 1 (from asserton on effective genotype)</obo:IAO_0000116>
         <obo:GENO_0000443 rdf:resource="http://www.ncbi.nlm.nih.gov/gene/399483"/>
     </owl:NamedIndividual>
     
@@ -156,10 +157,10 @@ Inferred Phenos: 3</obo:IAO_0000116>
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-FISH-150901-8451">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000525"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]; cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;</rdfs:label>
-        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+        <obo:IAO_0000116>11-25-15 (3 phenotype assertions).
 This individual should have: 
 Asserted Phenos: 1
-Inferred Phenos: 2</obo:IAO_0000116>
+Inferred Phenos: 2 (1 from the assertion on its component variant allelic complement, and 1 from the assertion on its &lt;tbx392&gt; point mutation)</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3"/>
         <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
@@ -214,15 +215,6 @@ Inferred Phenos: 0</obo:IAO_0000116>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000410">
-        <obo:IAO_0000116>Strictly an organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000654">
-        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411">
-        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
-    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000418">
         <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
     </rdf:Description>
@@ -231,11 +223,20 @@ Inferred Phenos: 0</obo:IAO_0000116>
     (&apos;genomic material&apos;
      and (bears_concretization_of some &apos;variant locus&apos;))</rdfs:comment>
     </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000220">
+        <obo:IAO_0000116>Range: organism or (&apos;is part of&apos; some organism) or (&apos;derives from&apos; some organism)</obo:IAO_0000116>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000410">
+        <obo:IAO_0000116>Strictly an organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445">
         <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000220">
-        <obo:IAO_0000116>Range: organism or (&apos;is part of&apos; some organism) or (&apos;derives from&apos; some organism)</obo:IAO_0000116>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000654">
+        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000411">
+        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
     </rdf:Description>
 </rdf:RDF>
 
