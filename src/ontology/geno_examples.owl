@@ -215,7 +215,7 @@ Inferred Phenos: 0</obo:IAO_0000116>
      -->
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000410">
-        <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
+        <obo:IAO_0000116>Strictly an organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000654">
         <obo:IAO_0000116>Strictlyand organizational to group subrelations - should not be used directly.</obo:IAO_0000116>
