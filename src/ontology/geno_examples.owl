@@ -8,7 +8,27 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno_examples.owl">
-        <rdfs:comment>1-29-16: One effective genotype example created here, containing an intrinsic sex-qualified genotype component, and an extrinsic genotype component. Four phenotype annotations are asserted at different levels of the genotype:</rdfs:comment>
+        <rdfs:comment>1-29-16: Created an exemplar effective genotype containing an intrinsic sex-qualified genotype component, and an extrinsic genotype component:
+
+        shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB](male); cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;
+
+Four phenotype annotations are asserted at different levels of the genotype:
+   1. abnormal(ly) absent adaxial cell -&gt; shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB](male);cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;  
+   2. abnormal(ly) disrupted  diencephalon development -&gt;  shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB]male
+   3. abnormal(ly) increased occurrence neutrophil migration -&gt;  shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB]
+   4. abnormal(ly) malformed endocardium cell  -&gt;  tbx392
+
+A second effective genotype was also created, whose intrinsic component is sex-agnostic and unlike the sex-qualified effective genotype, will inherit all phenotypes asserted on its component sex-agnostic genotype and its parts):
+
+         shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB]; cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;
+
+----------
+
+Recall that we don&apos;t want to propagate phenotypes up from sex-agnostic genotypes (or their parts) up to sex-qualified ones (or their parent effective genotype) For example, from shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB] to shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB]male. This is because it may not be the case that a phenotype assessed without consideration to sex will apply on a sex-specific background (i.e. it may be a sex-specific phenotype). 
+
+So, the sex-qualified effective genotype shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB](male);cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt; will NOT inherit phenotypes asserted on its component sex-agnostic genotype and its parts). It therefore inherits only two phenotypes: 1 from its component sex-qualified intrinsic genotype, and 1 from its component extrinsic genotype. It does not inherit phenotypes asserted on its component sex-agnostic  intrinsic genotype, or the parts of this genotype.
+
+By contrast, the sex-agnostic effective genotype shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB];cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt; will inherit phenotypes asserted on its component sex-agnostic genotype and its parts.</rdfs:comment>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </owl:Ontology>
     
@@ -25,13 +45,38 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000828 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000828">
+        <rdfs:label xml:lang="en">abnormal(ly) absent dorso-rostral cluster</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/MONARCH_8712b54bc8e957f3b71463462737b9 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/MONARCH_8712b54bc8e957f3b71463462737b9">
         <rdf:type rdf:resource="http://purl.org/oban/association"/>
         <rdfs:label xml:lang="en">association2</rdfs:label>
-        <oban:association_has_object rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
+        <oban:association_has_object rdf:resource="http://purl.obolibrary.org/obo/ZP_0000755"/>
         <oban:association_has_subject rdf:resource="http://zfin.org/ZDB-GENO-070215-11-m"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZDB-FISH-150901-8451 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZDB-FISH-150901-8451">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000525"/>
+        <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]; cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;</rdfs:label>
+        <obo:IAO_0000116>Second effective genotype created to test propagation to sex-agnostic effective genotypes.
+
+11-25-15 (4 total phenotype assertions).
+This individual should have: 
+Asserted Phenos: 1
+Inferred Phenos: 3 (1 from the assertion on its component sex-agnostic intrinsic genotype, 1 from the assertion on the point mutation part of this genotype, and 1 from the assertion on its component extrinsic genotype)</obo:IAO_0000116>
+        <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3"/>
+        <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
     </owl:NamedIndividual>
     
 
@@ -42,9 +87,15 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ZP_0000782 -->
+    <!-- http://purl.obolibrary.org/obo/ZP_0000386 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000782"/>
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000386"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZP_0000755 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000755"/>
     
 
 
@@ -66,7 +117,7 @@
         <rdf:type rdf:resource="http://purl.org/oban/association"/>
         <rdfs:label xml:lang="en">association1</rdfs:label>
         <oban:association_has_object rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
-        <oban:association_has_subject rdf:resource="http://zfin.org/ZDB-FISH-150901-8451"/>
+        <oban:association_has_subject rdf:resource="http://zfin.org/ZDB-FISH-150901-8451-M"/>
     </owl:NamedIndividual>
     
 
@@ -80,7 +131,8 @@
         <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
 This individual should have: 
 Asserted Phenos: 0
-Inferred Phenos: 1 (from asserton on effective genotype)</obo:IAO_0000116>
+Inferred Phenos: 1 (from asserton on its parent effective genotype)</obo:IAO_0000116>
+        <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000386"/>
         <obo:GENO_0000443 rdf:resource="http://www.ncbi.nlm.nih.gov/gene/399483"/>
     </owl:NamedIndividual>
     
@@ -91,10 +143,10 @@ Inferred Phenos: 1 (from asserton on effective genotype)</obo:IAO_0000116>
     <owl:NamedIndividual rdf:about="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000002"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;</rdfs:label>
-        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+        <obo:IAO_0000116>11-25-15 (4 total phenotype assertions).
 This individual should have: 
 Asserted Phenos: 0
-Inferred Phenos: 4</obo:IAO_0000116>
+Inferred Phenos: 4 (1 from the assertion on its parent effective genotype, 1 from the assertion on its parent sex-qualified intrinsic genotype, 1 from the assertion on its parent sex-agnostic intrinsic genotype, and 1 from the assertion on its component point mutation)</obo:IAO_0000116>
         <obo:GENO_0000408 rdf:resource="http://www.ncbi.nlm.nih.gov/gene/30269"/>
         <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-ALT-010427-8"/>
     </owl:NamedIndividual>
@@ -107,10 +159,10 @@ Inferred Phenos: 4</obo:IAO_0000116>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000009"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000030"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt;</rdfs:label>
-        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+        <obo:IAO_0000116>11-25-15 (4 total phenotype assertions).
 This individual should have: 
 Asserted Phenos: 0
-Inferred Phenos: 4</obo:IAO_0000116>
+Inferred Phenos: 4 (1 from the assertion on its parent effective genotype, 1 from the assertion on its parent sex-qualified intrinsic genotype, 1 from the assertion on its parent sex-agnostic intrinsic genotype, and 1 from the assertion on its component point mutation)</obo:IAO_0000116>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8"/>
     </owl:NamedIndividual>
     
@@ -143,27 +195,29 @@ Inferred Phenos: 1</obo:IAO_0000116>
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-ALT-010427-8">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_1000008"/>
         <rdfs:label xml:lang="en">tbx392</rdfs:label>
-        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+        <obo:IAO_0000116>11-25-15 (4 total phenotype assertions).
 This individual should have: 
 Asserted Phenos: 1
-Inferred Phenos: 3</obo:IAO_0000116>
+Inferred Phenos: 3 (1 from the assertion on its parent effective genotype, 1 from the assertion on its parent sex-qualified intrinsic genotype, and 1 from the assertion on its parent sex-agnostic intrinsic genotype)</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000199"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://zfin.org/ZDB-FISH-150901-8451 -->
+    <!-- http://zfin.org/ZDB-FISH-150901-8451-M -->
 
-    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-FISH-150901-8451">
+    <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-FISH-150901-8451-M">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000525"/>
-        <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]; cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;</rdfs:label>
-        <obo:IAO_0000116>11-25-15 (3 phenotype assertions).
+        <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB](male); cdkn1ca&lt;MO3-cdkn1ca (n.s.)&gt;</rdfs:label>
+        <obo:IAO_0000116>11-25-15 (3 total phenotype assertions).
 This individual should have: 
 Asserted Phenos: 1
-Inferred Phenos: 2 (1 from the assertion on its component variant allelic complement, and 1 from the assertion on its &lt;tbx392&gt; point mutation)</obo:IAO_0000116>
+Inferred Phenos: 2 (1 from the assertion on its component sex-qualified intrinsic genotype, and 1 from the assesrtion on its component extrinsic genotype)
+
+Recall that we don&apos;t want to propagate phenotypes up from sex-agnostic genotypes (or their parts) up to sex-qualified ones (or their parent effective genotype) For example, from shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB] to shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB]male. This is because it may not be the case that a phenotype assessed without consideration to sex will apply on a sex-specific background (i.e. it may be a sex-specific phenotype). This is why phenotypes asserted on the sex-agnostic genotype and its parts are not inherited by the sex-qualified genotype, or sex-qualified effective genotype.</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0005692"/>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-040123-1-ZDB-MRPHLNO-110323-3"/>
-        <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
+        <obo:GENO_0000382 rdf:resource="http://zfin.org/ZDB-GENO-070215-11-m"/>
     </owl:NamedIndividual>
     
 
@@ -173,10 +227,10 @@ Inferred Phenos: 2 (1 from the assertion on its component variant allelic comple
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-070215-11">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000000"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB]</rdfs:label>
-        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+        <obo:IAO_0000116>11-25-15 (4 total phenotype assertions).
 This individual should have: 
 Asserted Phenos: 1
-Inferred Phenos: 3</obo:IAO_0000116>
+Inferred Phenos: 3 (1 from the assertion on its parent effective genotype, 1 from the assertion on its parent sex-qualified intrinsic genotype, and 1 from the assertion on its component point mutation)</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_011538"/>
         <obo:GENO_0000382 rdf:resource="http://www.monarchinitiative.org/_ZDB-GENE-980526-166-ZDB-ALT-010427-8-ZDB-ALT-010427-8"/>
     </owl:NamedIndividual>
@@ -188,11 +242,13 @@ Inferred Phenos: 3</obo:IAO_0000116>
     <owl:NamedIndividual rdf:about="http://zfin.org/ZDB-GENO-070215-11-m">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000645"/>
         <rdfs:label xml:lang="en">shha&lt;tbx392&gt;/shha&lt;tbx392&gt; [AB](male)</rdfs:label>
-        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+        <obo:IAO_0000116>11-25-15 (2 total phenotype assertions).
 This individual should have: 
 Asserted Phenos: 1
-Inferred Phenos: 0</obo:IAO_0000116>
-        <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000782"/>
+Inferred Phenos: 1 (from assertion on its parent effective genotype)
+
+Recall that we don&apos;t want to propagate phenotypes up from sex-agnostic genotypes (or their parts) up to sex-qualified ones (or their parent effective genotype) For example, from shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB] to shha&lt;tbx392&gt;/shha&lt;tbx392&gt;[AB]male. This is because it may not be the case that a phenotype assessed without consideration to sex will apply on a sex-specific background (i.e. it may be a sex-specific phenotype). This is why phenotypes asserted on the sex-agnostic genotype and its parts are not inherited by the sex-qualified genotype, or sex-qualified effective genotype.</obo:IAO_0000116>
+        <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000755"/>
         <obo:GENO_0000650 rdf:resource="http://zfin.org/ZDB-GENO-070215-11"/>
     </owl:NamedIndividual>
     
