@@ -85,7 +85,7 @@
      -->
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000515">
-        <obo:GENO_0000700>variant gene allele</obo:GENO_0000700>
+        <obo:GENO_0000700>variant gene locus</obo:GENO_0000700>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000714">
         <obo:GENO_0000257>In GENO we define three levels of sequence artifacts: (1) biological sequences, (2) sequence features, and (3) qualified sequence features.
@@ -101,6 +101,9 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000716">
         <obo:GENO_0000658>Moved to be Exploratory as I decided extrinsic genotypes fit as a complement.</obo:GENO_0000658>
     </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000639">
+        <rdfs:comment>The entity from which sequence is derived can be another sequence feature or collection (e.g. a genome or gene), or a bearer of such a featur ( e.g. a cell line or organism). See examples.</rdfs:comment>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000718">
         <obo:GENO_0000658>For now I removed as i decided this is for now the same thing as the exrinsic genotype - the colleciton of all genes variant in their expression as a result of external (non sequence/position) factors.
 
@@ -112,7 +115,7 @@ Consider how / if this is a different concept form an extrinsic genotype.  If th
         <obo:GENO_0000258>Organizational class. Decide if this category is useful/valid, and work on a different name if we decide to keep it?  Consider &apos;functional or  structural locus&apos;.</obo:GENO_0000258>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000036">
-        <obo:GENO_0000700>reference allele</obo:GENO_0000700>
+        <obo:GENO_0000700>reference locus</obo:GENO_0000700>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000577">
         <obo:GENO_0000658>Formerly GENO_0000627 ! centromere, but replaced with SO term.</obo:GENO_0000658>
@@ -136,7 +139,7 @@ So we have two major forms of intrinsic variation: altered content vs novel cont
 2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.</obo:GENO_0000258>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000512">
-        <obo:GENO_0000700>allele</obo:GENO_0000700>
+        <obo:GENO_0000700>variable locus</obo:GENO_0000700>
         <obo:GENO_0000257>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
 
 The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
@@ -196,6 +199,9 @@ Some thoughts: we have two major forms of intrinsic variation: altered content v
 
 Similarly, at the class level we use has_part to relate a variant single locus to a sequence alteration part, because there are cases where this is a reflexive relation (e.g. transgenic insertions where the sequence alteration spans the entire variant locus).  At the instance level, we can choose has_proper_part when the variant single locus individual is not variant in its entire extent, and therefore the sequence alteration it contains is not equivalent in extent to the variant locus.</obo:GENO_0000257>
     </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000703">
+        <obo:GENO_0000258>previously used more generic has_value label for this proeprty.</obo:GENO_0000258>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000102">
         <obo:GENO_0000658>former IRI: http://purl.obolibrary.org/obo/GENO_0000594</obo:GENO_0000658>
     </rdf:Description>
@@ -206,7 +212,7 @@ Similarly, at the class level we use has_part to relate a variant single locus t
         <obo:GENO_0000258>consider updating to include extrinsic genotypes and experession variant loci in the range?</obo:GENO_0000258>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000500">
-        <obo:GENO_0000700>ancestral polymorphic allele</obo:GENO_0000700>
+        <obo:GENO_0000700>ancestral locus</obo:GENO_0000700>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000346">
         <obo:GENO_0000258>Asserted multiple inheritance
@@ -239,13 +245,13 @@ genetically_codes_for some &apos;homo sapiens SHH protein&apos;</obo:GENO_000025
 
 Note that ZFIN represents instances of SSLPs. e.g. http://zfin.org/action/marker/view/ZDB-SSLP-980528-1507</obo:GENO_0000258>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000501">
-        <obo:GENO_0000700>wild-type allele</obo:GENO_0000700>
-    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000666">
         <obo:GENO_0000257>1.Regarding a name for this class, the term &apos;part&apos; is used because it is most general and can cover parts of a gene that are individual subregions, as well as collections of subregions that are defeind by some functional or structural criteria (e.g. coding gene part, which is the collection of all translated seqeunce in the exons in a gene).  Other terms such as &apos;subregion&apos;, segment&apos;, or &apos;member&apos; are not general enough to cover all such cases, but are used to label subclasses where they are appropriate.
 
 2. Modeling not complete here yet. These will be useful for modeling transgene components, when we get to that stage. Note that ZFIN describes parts of constructs used in creating transgenic strains as being either &quot;coding regions&quot;, &quot;regulatory regions&quot;, or &quot;engineered regions&quot;.  We have created these classes here to record this information.</obo:GENO_0000257>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000501">
+        <obo:GENO_0000700>wild-type locus</obo:GENO_0000700>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000347">
         <obo:GENO_0000258>This is a terrible class. The modeling needs work, as does the whole notion of null loci</obo:GENO_0000258>
@@ -291,10 +297,10 @@ EC: &apos;effective genotype&apos; or &apos;extrinsic genotype&apos; or &apos;in
 SC: is_genotype_of some (cell or organism)</obo:GENO_0000658>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000498">
-        <obo:GENO_0000700>major polymorphic allele</obo:GENO_0000700>
+        <obo:GENO_0000700>major polymorphic locus</obo:GENO_0000700>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000497">
-        <obo:GENO_0000700>polymorphic allele</obo:GENO_0000700>
+        <obo:GENO_0000700>polymorphic locus</obo:GENO_0000700>
         <obo:GENO_0000258>Note that a SNP should classify here.  Need to create a logical definition somewhere so SNP is inferred under sequence variation and polymorphic locus.</obo:GENO_0000258>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000016">
@@ -305,13 +311,13 @@ SC: is_genotype_of some (cell or organism)</obo:GENO_0000658>
         <obo:GENO_0000658>Formerly GENO_0000390 ! chromosome feature, but replaced by SO_0000830 ! chromosome_part</obo:GENO_0000658>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000499">
-        <obo:GENO_0000700>minor polymorphic allele</obo:GENO_0000700>
+        <obo:GENO_0000700>minor polymorphic locus</obo:GENO_0000700>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000611">
         <obo:GENO_0000258>Consider how i want to define/use this class - only for genotypes that are background for some variant genotype, or for any standard strain genotype without defined variations.  Is relevant for typing the intrinsic genotype node in MPD data.</obo:GENO_0000258>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000060">
-        <obo:GENO_0000700>reference gene allele</obo:GENO_0000700>
+        <obo:GENO_0000700>reference gene locus</obo:GENO_0000700>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382">
         <rdfs:comment>formerly used http://purl.obolibrary.org/obo/GENO_0000532</rdfs:comment>
@@ -391,9 +397,6 @@ Extrachromoosomal replicons are sequence_variant_with some null locus, but not a
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000443">
         <obo:GENO_0000258>May end up not using this property (or its inverse) as a link from transgene to gene, and instead use sequence_derived_from to make this link. This is the pattern currently outlined in our cmaps</obo:GENO_0000258>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000002">
-        <obo:GENO_0000700>variant allele</obo:GENO_0000700>
-    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UPHENO_0001001">
         <obo:GENO_0000257>1. To link a phenotype to provenance info, assert that a particular phenoytpe is_subject_of some &apos;phenotype annotation&apos; that: 
 (1) has_agent some &apos;agent&apos; (to document who made the assertion), and
@@ -436,6 +439,9 @@ and
 
 And we may not need this class - consider removing.</obo:GENO_0000258>
     </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000002">
+        <obo:GENO_0000700>variant locus</obo:GENO_0000700>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000687">
         <obo:GENO_0000658>Changed label from expression-variant locus to account for the fact that transiently expressed transgenes wouldn&apos;t qualify as genomic loci.</obo:GENO_0000658>
     </rdf:Description>
@@ -451,7 +457,8 @@ And we may not need this class - consider removing.</obo:GENO_0000258>
 2. Given that a transgene isnt actually &apos;transgenic&apos; until it is integrated into a genome of a different organism, there may be no difference between a SO:transgene and a GENO:integrated transgene. (Unless we consider something like a non-integrated expression plasmid to be a trasngene when introduced into another cell or organism (despite not being integrated into the host genome).</obo:GENO_0000258>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000491">
-        <obo:GENO_0000700>mutant allele</obo:GENO_0000700>
+        <obo:GENO_0000258>Consider if mutant alleles can be refernece in some cases, in whcih this should not classify under variant allele (which is disjoint with reference)</obo:GENO_0000258>
+        <obo:GENO_0000700>mutant locus</obo:GENO_0000700>
     </rdf:Description>
 </rdf:RDF>
 

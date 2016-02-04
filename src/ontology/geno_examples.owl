@@ -48,7 +48,9 @@ By contrast, the sex-agnostic effective genotype shha&lt;tbx392&gt;/shha&lt;tbx3
 
     <!-- http://purl.obolibrary.org/obo/GENO_0000700 -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000700"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000700">
+        <rdfs:label>GENO_alternative_label</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
@@ -127,7 +129,7 @@ Inferred Phenos: 4 (1 from the assertion on its component sex-agnostic intrinsic
     <!-- http://purl.obolibrary.org/obo/ZP_0000199 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000199">
-        <obo:GENO_0000700>phenotype4 asserted on tbx392 point mutation</obo:GENO_0000700>
+        <obo:GENO_0000700>phenotype4 asserted on point mutation</obo:GENO_0000700>
     </owl:NamedIndividual>
     
 
@@ -135,8 +137,7 @@ Inferred Phenos: 4 (1 from the assertion on its component sex-agnostic intrinsic
     <!-- http://purl.obolibrary.org/obo/ZP_0000386 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/ZP_0000386">
-        <rdfs:label xml:lang="en">abnormal(ly) absent dorso-rostral cluster</rdfs:label>
-        <obo:GENO_0000700>phenotype5 asserted on cdkn1na extrinsic genotype</obo:GENO_0000700>
+        <obo:GENO_0000700>phenotype5 asserted on extrinsic genotype</obo:GENO_0000700>
     </owl:NamedIndividual>
     
 
@@ -182,9 +183,9 @@ Inferred Phenos: 4 (1 from the assertion on its component sex-agnostic intrinsic
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/GENO_0000524"/>
         <rdfs:label xml:lang="en">cdkn1ca&lt;MO3-cdkn1ca(n.s.)&gt;</rdfs:label>
-        <obo:IAO_0000116>11-25-15 (4 phenotype assertions).
+        <obo:IAO_0000116>11-25-15 (2 total phenotype assertions).
 This individual should have: 
-Asserted Phenos: 0
+Asserted Phenos: 1
 Inferred Phenos: 1 (from asserton on its parent effective genotype)</obo:IAO_0000116>
         <obo:RO_0003303 rdf:resource="http://purl.obolibrary.org/obo/ZP_0000386"/>
         <obo:GENO_0000443 rdf:resource="http://www.ncbi.nlm.nih.gov/gene/399483"/>
