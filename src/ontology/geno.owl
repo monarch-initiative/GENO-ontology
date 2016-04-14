@@ -1047,6 +1047,18 @@ Used in GENO to describe physical context of materialized sequence features that
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
         </owl:propertyChainAxiom>
@@ -1059,38 +1071,7 @@ Used in GENO to describe physical context of materialized sequence features that
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
         </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
-        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
-    <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred phenotype associations from an intrinsic genotype component (e.g. a (sequence-)variant locus instance) to a gene class.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
-        <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred phenotype associations from a (sequence-)variant locus instance to a gene class (to support cases where the phenotype association is made at the level of the variant gene locus).</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
-        <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
-        </owl:annotatedTarget>
-    </owl:Axiom>
     <owl:Axiom>
         <rdfs:comment>Property chain to propagate inferred phenotype associations &apos;down&apos; a genotype partonomy in the direction of genotype -&gt; GVC -&gt; VSLC -&gt; VL -&gt; sequence alteration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
@@ -1101,20 +1082,39 @@ Used in GENO to describe physical context of materialized sequence features that
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred phenotype associations from an expression-variant gene instance to a gene class (to support cases where the phenotype association is made at the level of the expression-variant gene).</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
-        <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Property chain to propagate inferred phenotype associations &apos;down&apos; a genotype partonomy just from a sex-qualified intrinsic genotype to the immediate sex-agnostic intrinsic genotype. (An additional property chain is needed to then propagate to the intrinsic genotype components)</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
         <owl:annotatedTarget rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Property chain to propagate inferred phenotype associations from an extrinnsic genotype component (e.g. a expression-variant gene instance) to a gene class.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Property chain to propagate inferred phenotype associations &apos;up&apos; a genotype partonomy in the direction of sequence alteration -&gt; VL -&gt; VSLC -&gt; GVC -&gt; genotype.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Property chain to propagate inferred phenotype associations from a (sequence-)variant locus instance to a gene class (to support cases where the phenotype association is made at the level of the variant gene locus).</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1129,21 +1129,21 @@ Used in GENO to describe physical context of materialized sequence features that
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred phenotype associations &apos;up&apos; a genotype partonomy in the direction of sequence alteration -&gt; VL -&gt; VSLC -&gt; GVC -&gt; genotype.</rdfs:comment>
+        <rdfs:comment>Property chain to propagate inferred phenotype associations from an intrinsic genotype component (e.g. a (sequence-)variant locus instance) to a gene class.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
         <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred phenotype associations from an extrinnsic genotype component (e.g. a expression-variant gene instance) to a gene class.</rdfs:comment>
+        <rdfs:comment>Property chain to propagate inferred phenotype associations from an expression-variant gene instance to a gene class (to support cases where the phenotype association is made at the level of the expression-variant gene).</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000740"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
         <owl:annotatedTarget rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000449"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000743"/>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1269,8 +1269,11 @@ Note that we do not want to propagate phenotypes up from sex-agnostic genotyeps 
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000790"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -1279,15 +1282,10 @@ Note that we do not want to propagate phenotypes up from sex-agnostic genotyeps 
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:propertyChainAxiom>
@@ -1299,21 +1297,19 @@ Note that we do not want to propagate phenotypes up from sex-agnostic genotyeps 
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -1325,18 +1321,56 @@ Note that we do not want to propagate phenotypes up from sex-agnostic genotyeps 
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     <owl:Axiom>
-        <rdfs:comment>This is a case of inter-gneotype phenotype propagation, requiring propagation down oen genotype and then up another.  Given the data in hand, however, the conditions for this will likely never occur, so probably ok not to have this chain.
+        <rdfs:comment>Property chain to propagate inferred condition associations &apos;down&apos; a genotype partonomy from a sex-qualified intrinsic genotype to the components of a sex-agnostic intrinsic genotype.  This chain in particuular is needed to get the conditions to move past the sex-agnostic genotype and down to its parts.
 
-This property chain propagates a phenotype asserted on a sex-qualified intrinsic genotype, down to its sex-agnostic genotype part, and then up to a parent effective genotype that has it as a variant part. I think this is OK in all cases, so we can implement this as the one case where we can have inter-genotype pheno propagation.  But as noted, there will likely be no data that actually meets criteria to use this chain, so we can probably leave it out.</rdfs:comment>
+The following shorter chain would also suffice here:
+is_variant_part_of  o  inferred_to_cause_condition</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Property chain to propagate inferred condition associations from a variant locus instance to a gene class (to support cases where the phenotype association is made directly at the level of the variant locus/allele).</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Property chain to propagate inferred condition associations &apos;up&apos; a genotype partonomy in the direction of sequence alteration -&gt; VL -&gt; VSLC -&gt; GVC -&gt; genotype.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
         <owl:annotatedTarget rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Property chain to propagate inferred condition associations from an sequence alteration through the variant locus to a gene class. (separate chains are needed to propagate from the variant locus to the gene class, and another to propagate from a genotype, GVC, or VSLC to the gene class).
+
+
+NOTE that i dont need this property chain if I have a property chain to infer a has_affected_locus link from a sequence alteration to a gene when the link is asserted from the variant locus to the gene:
+
+is_variant_part_of  o  has_affected_locus  --&gt; has_affected_locus</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1355,20 +1389,11 @@ has_allele o inferred_to_cause_condition</rdfs:comment>
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred condition associations &apos;down&apos; a genotype partonomy in the direction of genotype -&gt; GVC -&gt; VSLC -&gt; VL -&gt; sequence alteration.</rdfs:comment>
+        <rdfs:comment>Property chain to propagate inferred condition associations &apos;down&apos; a genotype partonomy just from a sex-qualified intrinsic genotype to the immediate sex-agnostic intrinsic genotype. (An additional property chain is needed to then propagate to the intrinsic genotype components)</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
         <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred condition associations &apos;up&apos; a genotype partonomy in the direction of sequence alteration -&gt; VL -&gt; VSLC -&gt; GVC -&gt; genotype.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
-        <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1392,18 +1417,6 @@ has_allele  o  inferred_to_cause_condition   -&gt;    inferred_to_cause_conditio
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred condition associations from an effective genotype through a sex-qualified intrinsic genotype, through a sex-agnostic intrinsic genotype, through the coompnent variant parts of this sex-agnostic genotype, and to the affected gene.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
-        <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Property chain to propagate inferred condition associations from an effective genotype through a sex-qualified intrinsic genotype, through a sex-agnostic intrinsic genotype, to the coompnent variant parts of this sex-agnostic genotype.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
@@ -1415,11 +1428,23 @@ has_allele  o  inferred_to_cause_condition   -&gt;    inferred_to_cause_conditio
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred condition associations from a variant locus instance to a gene class (to support cases where the phenotype association is made directly at the level of the variant locus/allele).</rdfs:comment>
+        <rdfs:comment>Property chain to propagate inferred condition associations &apos;down&apos; a genotype partonomy in the direction of genotype -&gt; GVC -&gt; VSLC -&gt; VL -&gt; sequence alteration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
         <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>This is a case of inter-gneotype phenotype propagation, requiring propagation down oen genotype and then up another.  Given the data in hand, however, the conditions for this will likely never occur, so probably ok not to have this chain.
+
+This property chain propagates a phenotype asserted on a sex-qualified intrinsic genotype, down to its sex-agnostic genotype part, and then up to a parent effective genotype that has it as a variant part. I think this is OK in all cases, so we can implement this as the one case where we can have inter-genotype pheno propagation.  But as noted, there will likely be no data that actually meets criteria to use this chain, so we can probably leave it out.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1434,39 +1459,14 @@ has_allele  o  inferred_to_cause_condition   -&gt;    inferred_to_cause_conditio
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred condition associations &apos;down&apos; a genotype partonomy just from a sex-qualified intrinsic genotype to the immediate sex-agnostic intrinsic genotype. (An additional property chain is needed to then propagate to the intrinsic genotype components)</rdfs:comment>
+        <rdfs:comment>Property chain to propagate inferred condition associations from an effective genotype through a sex-qualified intrinsic genotype, through a sex-agnostic intrinsic genotype, through the coompnent variant parts of this sex-agnostic genotype, and to the affected gene.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
         <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred condition associations &apos;down&apos; a genotype partonomy from a sex-qualified intrinsic genotype to the components of a sex-agnostic intrinsic genotype.  This chain in particuular is needed to get the conditions to move past the sex-agnostic genotype and down to its parts.
-
-The following shorter chain would also suffice here:
-is_variant_part_of  o  inferred_to_cause_condition</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
-        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000413"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000661"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Property chain to propagate inferred condition associations from an sequence alteration through the variant locus to a gene class. (separate chains are needed to propagate from the variant locus to the gene class, and another to propagate from a genotype, GVC, or VSLC to the gene class).
-
-
-NOTE that i dont need this property chain if I have a property chain to infer a has_affected_locus link from a sequence alteration to a gene when the link is asserted from the variant locus to the gene:
-
-is_variant_part_of  o  has_affected_locus  --&gt; has_affected_locus</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000791"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
-        <owl:annotatedTarget rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000445"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003303"/>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -2587,13 +2587,6 @@ This design allows us to classify genes and any variants of those genes (be they
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000002"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000036"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2601,6 +2594,13 @@ This design allows us to classify genes and any variants of those genes (be they
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000036"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000002"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A single locus complement that serves as a standard against which &apos;alternate&apos; sequences are compared</obo:IAO_0000115>
@@ -2895,12 +2895,6 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000482"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000091"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000139"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000108"/>
             </owl:Restriction>
@@ -2916,6 +2910,12 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000091"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000139"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>1. Genomic material here is considered as a DNA or RNA molecule that is found in a cell or virus, and capable of being replicated and inherited by progeny cells or virus. As such, this nucleic acid is either chromosomal DNA, or some replicative epi-chromosomal plasmid or transposon. Genetic material is necessarily part of some &apos;material genome&apos;, and both are necessarily part of some cell or virion. So a genomic library is not considered a material genome/genetic material - rather, we could say that this genomic library is a &apos;genomic material sample&apos; that bears the concretization of some genome.
@@ -3098,8 +3098,8 @@ Note that at present, a material genome and genetic material are necessarily par
         <obo:IAO_0000118>no-call zygosity</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>no-call zygosity</owl:annotatedTarget>
         <rdfs:comment>(this is how the GVF10 format/standard refers to loci without enough data to make an accurate call . . . see http://www.sequenceontology.org/resources/gvf.html#quick_gvf_examples)</rdfs:comment>
+        <owl:annotatedTarget>no-call zygosity</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000137"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -3454,14 +3454,14 @@ Note that at present, a material genome and genetic material are necessarily par
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000248"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000513"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000513"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000248"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000340"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000118>aneusomic chromosomal subregion/segment</obo:IAO_0000118>
@@ -3862,12 +3862,6 @@ The notion of wild-type alleles is more common in model organism databases, wher
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000817"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000231"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000534"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000382"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
             </owl:Restriction>
@@ -3876,6 +3870,12 @@ The notion of wild-type alleles is more common in model organism databases, wher
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000447"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000533"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000231"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000534"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.</obo:IAO_0000115>
@@ -3959,14 +3959,14 @@ But we also consider variants of larger features such as chromosomal regions, or
         </owl:equivalentClass>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000683"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000014"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000641"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000641"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000683"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000014"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An allele of a gene that has as part some sequence alteration.</obo:IAO_0000115>
@@ -4174,14 +4174,14 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000719"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000010"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000010"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000118>reference genotype</obo:IAO_0000118>
@@ -4573,13 +4573,13 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000139"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000139"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4713,14 +4713,14 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000713"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112>Consider wild-type zebrafish shha gene in the context of being targeted by morpholino1 vs  morpholino 2 in separate experiments. These shha genes share identical sequence and position, but represent distinct  instances of a &apos;qualified sequence feature&apos; because of their different external context. This is important because these qualified features could have distinct phenotypes associated with them (just as two different sequence variants of the same gene can have potentially different associated phenotypes).</obo:IAO_0000112>
@@ -5090,6 +5090,28 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/oban/association_has_subject"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
@@ -5115,28 +5137,6 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/oban/association_has_object"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/oban/association_has_subject"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
-                            </owl:Restriction>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000116>Exploratory class looking at creating more specific subtypes of associatiosn, and defining identity criteria for each.</obo:IAO_0000116>
@@ -5170,6 +5170,27 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/oban/association_has_subject"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -5193,27 +5214,6 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
-    <owl:Axiom>
-        <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/oban/association_has_subject"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
-                            </owl:Restriction>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
     
 
 
@@ -5228,6 +5228,34 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000846 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000846">
+        <rdfs:label xml:lang="en">repeat region alteration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000847 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000847">
+        <rdfs:label xml:lang="en">microsatellite alteration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000846"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000848 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000848">
+        <rdfs:label xml:lang="en">coding sequence alteration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+        <obo:IAO_0000115>A sequence alteration within the coding sequence of a gene.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -5314,7 +5342,7 @@ Previous. An information content entity is a non-realizable information entity t
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_10090 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10090">
-        <rdfs:label>mus musculus</rdfs:label>
+        <rdfs:label>Mus musculus</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
     </owl:Class>
     
@@ -5333,7 +5361,7 @@ Previous. An information content entity is a non-realizable information entity t
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_7955 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7955">
-        <rdfs:label>danio rerio</rdfs:label>
+        <rdfs:label>Danio rerio</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
     </owl:Class>
     
@@ -5342,7 +5370,7 @@ Previous. An information content entity is a non-realizable information entity t
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
-        <rdfs:label>homo sapiens</rdfs:label>
+        <rdfs:label>Homo sapiens</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
     </owl:Class>
     
@@ -5566,6 +5594,18 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     </owl:Class>
     <owl:Axiom>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
+        <rdfs:comment>Formalizes the first identity criteria for a sequence feature of its sequence.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>Formalizes the second identify criteiria for a sequence feature of its genomic position. We use the FALDO model to represent positional information, which links features to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence. (But features can also be linked to Positions directly through the location property).</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
@@ -5580,18 +5620,6 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
-        <rdfs:comment>Formalizes the first identity criteria for a sequence feature of its sequence.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -5743,14 +5771,14 @@ Includes things like loxP sites, inducible promoters, ires elements, etc.</obo:I
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000830"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000618"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000614"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000614"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000618"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000119>http://ghr.nlm.nih.gov/handbook/howgeneswork/genelocation and http://people.rit.edu/rhrsbi/GeneticsPages/Handouts/ChromosomeNomenclature.pdf, both of which define the nomenclature for the banding hierarchy we use here:
