@@ -9,7 +9,7 @@ This repository holds the GENO ontology, currently housed in a single OWL file [
 
 GENO is an OWL2 ontology that represents the levels of genetic variation specified in genotypes, to support genotype-to-phenotype (G2P) data aggregation and analysis across diverse research communities and sources. The core of the ontology is a graph decomposing a genotype into smaller components of variation, from a complete genotype specifying sequence variation across an entire genome, down to specific allelic variants and sequence alterations (**Figure 1**). Structuring genotype instance data according to this model supports a primary use case of GENO to enable integrated analysis of G2P data where phenotype annotations are made at different levels of granularity in this genotype partonomy. 
 
-<img src="docs/genotype_partonomy_figure(1-20-15)V3.png"/> 
+<img src="docs/Old/genotype_partonomy_figure%281-20-15%29V3.png"/>
 
 _**Figure 1**: Decomposition of a Genotype. **(A)** Top level breakdown into reference and variant components. **(B)** Further decomposition of the genomic variation complement into its more fundamental parts. Class labels are in blue, and exemplar instances of each class are shown in green, for a zebrafish genotype which contains a homozygous ti282 variant of the fgf8 gene, and a heterozygous hu745 variant of the apc gene. Schematics graphically illustrate extent of genomic DNA represented at each level in the partonomy._
 
