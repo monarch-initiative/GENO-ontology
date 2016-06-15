@@ -5,7 +5,7 @@ GENO-ontology
 
 This repository holds the GENO ontology, currently housed in a single OWL file [here](src/ontology/geno.owl). The ontology is undergoing significant refactoring to clean up exploratory and outdated modeling and align with emerging use cases. Expect significant changes over the coming months. The default branch in Github is set to the 'develop' branch, so as to reflect the latest changes during this period of active development. No official release has been made as of yet, but one is expected in Summer 2015.
 
-**In addition to the brief description below, a more extensive overview of the modeling implemented in GENO and application in Monarch Initiative use cases can be found in the slide deck [here] (https://github.com/monarch-initiative/GENO-ontology/blob/develop/docs/GENO_Overview%282016-06-12%29.pptx).**
+**In addition to the brief description below, a more extensive overview of the modeling implemented in GENO and its application in Monarch Initiative use cases can be found in the slide deck [here] (https://github.com/monarch-initiative/GENO-ontology/blob/develop/docs/GENO_Overview%282016-06-12%29.pptx).**
 
 
 ##Overview
