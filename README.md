@@ -2,7 +2,7 @@ GENO-ontology
 =============
 
 
-This repository holds the GENO ontology, which can be found in the OWL file [here](src/ontology/geno.owl). An detailed review of the scope and modeling supported in GENO, and its applications in Monarch Initiative use cases, can be found in the slide deck [here] (https://github.com/monarch-initiative/GENO-ontology/blob/develop/docs/GENO_Overview%282016-06-12%29.pptx). A brief overview is also provided below.
+This repository holds the GENO ontology, which can be found in the OWL file [here](src/ontology/geno.owl). A review of the scope and modeling supported in GENO, and its applications in Monarch Initiative use cases, is available in the slide deck [here] (https://github.com/monarch-initiative/GENO-ontology/blob/develop/docs/GENO_Overview%282016-06-12%29.pptx). A brief overview is also provided below.
 
 
 ##Overview
