@@ -3,7 +3,10 @@ GENO-ontology
 
 ##Status
 
-This repository holds the GENO ontology, currently housed in a single OWL file [here](src/ontology/geno.owl). The current ontology is undergoing **significant refactoring** to clean up exploratory and outdated modeling and align with emerging use cases. Expect significant changes over the coming weeks. The default branch in Github is set to the 'develop' branch, so as to reflect the latest changes during this period of active development. No official release has been made as of yet, but one is expected in Summer 2015.
+This repository holds the GENO ontology, currently housed in a single OWL file [here](src/ontology/geno.owl). The ontology is undergoing **significant refactoring** to clean up exploratory and outdated modeling and align with emerging use cases. Expect significant changes over the coming months. The default branch in Github is set to the 'develop' branch, so as to reflect the latest changes during this period of active development. No official release has been made as of yet, but one is expected in Summer 2015.
+
+A more detailed overview of the modeling implemented in GENO and application in Monarch Initiative use cases can be found in the slide deck [here] (https://github.com/monarch-initiative/GENO-ontology/blob/develop/docs/GENO_Overview%282016-06-12%29.pptx).
+
 
 ##Overview
 
@@ -19,6 +22,6 @@ In addition to heritable variation in genomic sequence specified by traditional 
 
 Ongoing development is extending GENO to describe attributes of genotypes and genetic variants.  These attributes include zygosity, genomic position, expression, dominance, and functional dependencies or consequences of a given variant. Finally, GENO will also model the structure of G2P associations, focusing on the interplay between genotype, phenotype, and environment, but also describing provenance and experimental evidence for these associations. 
 
-GENO  is orthogonal to but has contact points with a number of existing community ontologies, including the [Sequence Ontology (SO)](http://www.sequenceontology.org/), the [Human Phenotype Ontology (HPO)](http://www.human-phenotype-ontology.org/), the [Feature Annotation Location Description Ontology(FALDO)](https://github.com/JervenBolleman/FALDO), and the [Variation Ontology (VariO)](http://variationontology.org/). We will work with developers of these models to align representations and re-use common terms where possible. Further documentation for GENO is under development, but at present a high level overview of its core model can be found in the slide deck [here](http://www.slideshare.net/mhb120/brush-icbo-2013).
+GENO  is orthogonal to but has contact points with a number of existing community ontologies, including the [Sequence Ontology (SO)](http://www.sequenceontology.org/), the [Human Phenotype Ontology (HPO)](http://www.human-phenotype-ontology.org/), the [Feature Annotation Location Description Ontology(FALDO)](https://github.com/JervenBolleman/FALDO), and the [Variation Ontology (VariO)](http://variationontology.org/). We will work with developers of these models to align representations and re-use common terms where possible. Further documentation for GENO is under development, but at present a high level overview of its core model can be found in the slide deck [here](https://github.com/monarch-initiative/GENO-ontology/blob/develop/docs/GENO_Overview%282016-06-12%29.pptx).
 
 GENO is an open source ontology, implemented in OWL2 under a Creative Commons 3.0 BY-SA license.
