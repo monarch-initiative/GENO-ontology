@@ -5,74 +5,17 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:obo="http://purl.obolibrary.org/obo/">
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno-developer.owl">
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno-developer-annotations.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno-developer.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno-obsolete.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno-developer-defs.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000257 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000257">
-        <rdfs:label>obsolete annotation</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000258 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000258">
-        <rdfs:label>open developer issue</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000470 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000470">
-        <rdfs:label xml:lang="en">SO feedback</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000658 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000658">
-        <rdfs:label xml:lang="en">refactor note</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000700 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000700">
-        <rdfs:label xml:lang="en">GENO_alternate_label</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000819 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000819">
-        <rdfs:label xml:lang="en">use case note</rdfs:label>
-    </owl:AnnotationProperty>
     
 
 
@@ -84,201 +27,36 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000515">
-        <obo:GENO_0000700>variant gene locus</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000714">
-        <obo:GENO_0000257>In GENO we define three levels of sequence artifacts: (1) biological sequences, (2) sequence features, and (3) qualified sequence features.
-
-(1) The identify criteria for a &apos;biological sequence&apos; include only its inherent sequence (the ordered string of units that comprise it).
-(2) The identity criteria for a &apos;sequence feature&apos; include its sequence and position (where it resides - i.e. its location based on how it maps to a reference or standard)
-(3) The identity criteria for a &apos;qualified sequence feature&apos; include its sequence, position, and the material context or state of its bearer in a cell or organism. This context can include its direct epigenetic modification, its being targeted by gene knockdown reagents such as morpholinos or RNAi, its being transiently overexpressed from a transgenic construct in a cell or organism, or its residing in a specific subcellular or anatomical location.</obo:GENO_0000257>
-        <obo:GENO_0000258>At present the definitions of qualified features link them to variaton in expression - ultimately may not want to make this committment - e.g. the context doesnt have to be something that affects expression level.  Revisit definitions and comments on these classes after I make this decision.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000516">
-        <obo:GENO_0000700>allelic complement</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000716">
-        <obo:GENO_0000658>Moved to be Exploratory as I decided extrinsic genotypes fit as a complement.</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000639">
-        <rdfs:comment>The entity from which sequence is derived can be another sequence feature or collection (e.g. a genome or gene), or a bearer of such a featur ( e.g. a cell line or organism). See examples.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000718">
-        <obo:GENO_0000658>For now I removed as i decided this is for now the same thing as the exrinsic genotype - the colleciton of all genes variant in their expression as a result of external (non sequence/position) factors.
-
-----
-
-Consider how / if this is a different concept form an extrinsic genotype.  If the same, merge.  I would say the difference is that when we consider epigenetic modifications, these would be included in an extrinsic genotype but may not affect genes?</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000034">
-        <obo:GENO_0000258>Organizational class. Decide if this category is useful/valid, and work on a different name if we decide to keep it?  Consider &apos;functional or  structural locus&apos;.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000036">
-        <obo:GENO_0000700>reference locus</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000577">
-        <obo:GENO_0000658>Formerly GENO_0000627 ! centromere, but replaced with SO term.</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000513">
-        <obo:GENO_0000258>Should this be considered an attribute of a chromosome, or a chromosomal complement?  It is currently considered an attribute of a chromosome because this could help us classify the chromosome as being variant/alternate.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000359">
-        <obo:GENO_0000258>consider updating to include extrinsic genotypes and expression variants in the range?</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000039">
-        <obo:GENO_0000258>A lot of what is below is required because of how we model variants - where they are required to be variant with some locus.  So for things like transient transgenes we need to conceptualize some &apos;absent locus&apos; that these are variant with.  But there should be a better way to model these as variant without resorting to absent/conceptual classes suich as these.
-
-For absent chromosomes and segments, we may be able to do away with this bad modeling if we focus on the unpaired chromosome/segment as being a member of some VSLC that is variant in having only one member. There should be no need to model the absent chromosome.</obo:GENO_0000258>
-        <obo:GENO_0000258>In order to do away with this bad modeling, we need another way to qualify things like transient transgenes and stable extrachromosomal arrays as being variant. Perhaps we dont limit the definition of variants to being variant_with some other real locus (ie alternate versions of some reference locus or locus complement, which these are not), but also include the idea of being novel genetic/genomic content relative to some reference genome.  
-
-So we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci.
-
-1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant.  
-
-2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000512">
-        <obo:GENO_0000700>variable locus</obo:GENO_0000700>
-        <obo:GENO_0000257>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
-
-The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
-
-Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or position in the reference genome.</obo:GENO_0000257>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001026">
-        <obo:GENO_0000658>Formerly http://purl.obolibrary.org/obo/GENO_0000023</obo:GENO_0000658>
-        <obo:GENO_0000257>Should a &apos;genomic locus&apos; and a &apos;genome&apos; necessarily be about the &apos;genetic material&apos; that is part_of some cell or virion, or should they be able to be encoded in nucleic acids that are not part of a cell or virion&apos;s genome. At present, we do not require this parthood. This is because these seqeunce classes will be aligned with/taken from SO, and in SO they are considered ICEs.  So we need not be concerned with whether a genomic locus or a gene must be encoded in the material genome of an organism or not.  Because these are sequence information entities that are about some nucleic acid, and not sequence that is encoded in some nucleic acid. Thus, the context of the physical nucleid acid is of no import.  These classes are loci in virtue of the fact that they are associated with some specific coordinates in some genomic sequence record, and not in virtue of the fact that they are encoded in the actual genetic material that is defined/delimited by such coordinates.
-
-There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos; with &apos;genetic material&apos; (ie the nucleic acid part of a cell or virion that encodes its genome).  A &apos;genomic locus&apos; sequence need not be about some &apos;genetic material&apos;.  Rather, it can be about some plasmid insert that carries sequence of a genomic locus (e.g. a gene).  What is true is that a genomic locus must be about/ some nucleic acid that represents abstract sequence information that is encoded somewhere in the genetic material of a cell or virion (even if the instance under consideration is not so encoded).</obo:GENO_0000257>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000341">
-        <obo:GENO_0000658>Formerly http://purl.obolibrary.org/obo/GENO_0000615, replaced by SO term.</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000340">
-        <obo:GENO_0000658>Formerly http://purl.obolibrary.org/obo/GENO_0000323, replaced by SO term.</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481">
-        <obo:GENO_0000257>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
-
-The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
-
-Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or positionin the reference genome.</obo:GENO_0000257>
-        <obo:GENO_0000257>The difference between a &apos;genetic locus&apos; and &apos;genomic locus&apos; is subtle, and the labels of these classes are not particularly intuitive. But I think distinguishing these concepts is important.  A &apos;genetic locus&apos; covers any sequence that is about a region of a physical sequence molecule that is a template for gene expression in some biological system (ie a cell or virion). &apos;Genomic locus&apos; references only regions of heritable nucleic acid molecule parts of a cell or virion (ie parts of the genome). So things like transiently-expressed transgene sequences that are introduced to a cell or organism only at the time of experiment would be considered &apos;&apos;genetic material&apos; but not &apos;genomic material&apos;.</obo:GENO_0000257>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000040">
-        <obo:GENO_0000258>In order to do away with this, we need another way to qualify things like transient transgenes and stable extrachromosomal arrays as being variant. Perhaps we dont limit the definition of variants to being variant_with some other real locus (ie alternate versions of some reference locus or locus complement, which these are not), but also include the idea of being novel genetic/genomic content relative to some reference genome.  
-
-So we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci.
-
-1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant.  
-
-2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000483">
-        <obo:GENO_0000258>The logical definition here is simple because we model conceptual/absent loci so that we can say that variants such as extrachromosomal replicons and transient transgenes are variant_with something, andthus classify as variants.  But this is shoddy modeling.  We need a different way to classify these things as variant, which may require changing the logical definition of the variant locus class. 
-
-Some thoughts: we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci that it is &apos;variant_with&apos;.
-
-1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant (e.g. so that a monoploid chromosome is a variant locus - but have not modeled this yet)
-
-2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.
-</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001505">
-        <obo:GENO_0000658>Formerly http://purl.obolibrary.org/obo/GENO_0000032</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000681">
-        <obo:GENO_0000258>For now have to aassert multiple inheritance as a sequence_alteration and extrachromosomal replicon.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000108">
-        <obo:GENO_0000258>Consider if all material genomes are object aggregates - are some single chromosomes (e.g. a circular bacterial chromosomal genome?)</obo:GENO_0000258>
-    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
-        <obo:GENO_0000257>At the class level, it is important to use has_part at the level of decomposing genomic variation complements into their variant single locus complements, because often this is a refelxive relation (ie in cases where there is only one variant single locus complement).  At the instance level, choose has_proper_part when the genomic variation complement individual has more than one variant single locus complement as part.
+        <obo:DAO_0000001>At the class level, it is important to use has_part at the level of decomposing genomic variation complements into their variant single locus complements, because often this is a refelxive relation (ie in cases where there is only one variant single locus complement).  At the instance level, choose has_proper_part when the genomic variation complement individual has more than one variant single locus complement as part.
 
-Similarly, at the class level we use has_part to relate a variant single locus to a sequence alteration part, because there are cases where this is a reflexive relation (e.g. transgenic insertions where the sequence alteration spans the entire variant locus).  At the instance level, we can choose has_proper_part when the variant single locus individual is not variant in its entire extent, and therefore the sequence alteration it contains is not equivalent in extent to the variant locus.</obo:GENO_0000257>
+Similarly, at the class level we use has_part to relate a variant single locus to a sequence alteration part, because there are cases where this is a reflexive relation (e.g. transgenic insertions where the sequence alteration spans the entire variant locus).  At the instance level, we can choose has_proper_part when the variant single locus individual is not variant in its entire extent, and therefore the sequence alteration it contains is not equivalent in extent to the variant locus.</obo:DAO_0000001>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000703">
-        <obo:GENO_0000258>previously used more generic has_value label for this proeprty.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000102">
-        <obo:GENO_0000658>former IRI: http://purl.obolibrary.org/obo/GENO_0000594</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000223">
-        <obo:GENO_0000258>exploratory property - could this be useful somehow?</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000388">
-        <obo:GENO_0000258>consider updating to include extrinsic genotypes and experession variant loci in the range?</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000500">
-        <obo:GENO_0000700>ancestral locus</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000346">
-        <obo:GENO_0000258>Asserted multiple inheritance
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000000">
+        <obo:DAO_0000002>1. Consider if we want genotypes to be defined to necessarily have alternate and reference parts, or just variant parts.  As defined now, therear enecessarily reference and alternate parts (ie either a genomic background or a reference locus for each variant position genotyped).  but we can always generalize things if we find genotypes that are just collections of variant data - e.g. what SNP is present for a set of variant loci, with no indication of a reference locus at each of these sites.  If this is the case, we will have to rework or conception of a genotype that is comprised of reference and alternate components.
 
-This should also be a child of chromosome . . . need to enable this inference so I can remove the asserted multiple inheritance.
+2. Consider that &apos;genotype&apos; is used to refer to variation of a whole genome, of a single locus, or even a single base (see http://snpedia.com/index.php/Appearance) . . . . should we model these different types of genotypes into our model as &apos;genomic genotype&apos;, &apos;locus genotype&apos;, &apos;sequence genotype&apos;, etc.</obo:DAO_0000002>
+        <obo:DAO_0000001>Not a type of &apos;genomic locus collection&apos; because its sequence components are not from the genome of a single organism.</obo:DAO_0000001>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000002">
+        <obo:GENO_0000700>variant locus</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000009">
+        <obo:DAO_0000001>1. Note that we are able to classify a &apos;genomic variation complement&apos; as being a &apos;sequence feature collection&apos; (ie necessarily having 2 or more member sequences), despite the fact that the genomic variation complement of some genotypes consists only of a single feature (ie not a collection) - such as the case of a single transgenic insertion, hemizgous X-linked variant, or extrachromosomal array. This is because conceptually, we assign a &apos;null locus&apos; partner to such loci to complete the complement as a collection.  This &apos;null locus&apos; has an extent of zero, and can either be a proper junction (in the case of a transgenic insertion), or a &apos;conceptual locus&apos; that has no true genomic location (in the case of X-linked or extrachromosonal variants). This enables us to consistently and clearly conceptualize, display, and operate on instances of genomic variation complements that take any of these forms.
 
-Consider asserting all as chromosomes, and defining seq variation with a new property is_completely_variant_with</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000742">
-        <obo:GENO_0000819>Need for this would be in cases where there is representation of the sequence alteration but not of the variant locus/allele level in the genotype partonomy (where the link to the gene normally occurs), and we still want to reference the geen(s) affected in the genotype.  This is the case in the clinvar data. And in the coriell data - where we cant always accurately represent the variant locus if there is more than one seqauence alteration affecting a gene, because we dont know if the two alterations are cis or trans. 
 
-But ideally we would always go through the variant locus to get to the gene - so as to only have one possibility for traversing/querying the gene.  So ideally we wouldnt ever need to use this property.</obo:GENO_0000819>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000026">
-        <obo:GENO_0000658>formerly single locus collection</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000502">
-        <obo:GENO_0000258>Note that this class has asserted multiple inheritance.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000029">
-        <obo:GENO_0000700>reference allelic complement</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/gene/6469">
-        <obo:GENO_0000258>When we get to modleing the central dogma, consdier simple patterns such as:
+2. The fact that in some cases, a variant single locus complement is also a genetic variation complement (e.g. fgf8a^ti282a/+ in test instance #1), means we have to be careful about parthood axioms on these classes.
 
-genetically_codes_for some &apos;homo sapiens SHH protein&apos;</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000289">
-        <obo:GENO_0000258>Decide how important these are to model in more detail (ie distinguish VNTRs from SSRs, SSLPs, minisatellites from microsatellites, etc).  Possible alternate terms include VNTR, variable number tandem repeat, single sequence length polymorphism, SSLP.
+    A. Previously had the axiom has_member only &apos;single locus variant complement&apos;, but because some single locus variant complements (e.g. fgf8a^ti282a/+) are typed as both genetic variation complements and single locus variant complements, this meant that a gene variant such as ti282a, being a member_of fgf8a^ti282a/+,  was beign inferred incorrectly as a single locus variant complement. 
 
-Note that ZFIN represents instances of SSLPs. e.g. http://zfin.org/action/marker/view/ZDB-SSLP-980528-1507</obo:GENO_0000258>
+    B. Likewise, cannot say has_part only  &apos;single locus variant complement&apos;, because this wont hold in cases where there is only one single locus variant complement in the genetic variation complement (because has_part is transitive, and single locus variant complements have_member some genomic variant)</obo:DAO_0000001>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000666">
-        <obo:GENO_0000257>1.Regarding a name for this class, the term &apos;part&apos; is used because it is most general and can cover parts of a gene that are individual subregions, as well as collections of subregions that are defeind by some functional or structural criteria (e.g. coding gene part, which is the collection of all translated seqeunce in the exons in a gene).  Other terms such as &apos;subregion&apos;, segment&apos;, or &apos;member&apos; are not general enough to cover all such cases, but are used to label subclasses where they are appropriate.
-
-2. Modeling not complete here yet. These will be useful for modeling transgene components, when we get to that stage. Note that ZFIN describes parts of constructs used in creating transgenic strains as being either &quot;coding regions&quot;, &quot;regulatory regions&quot;, or &quot;engineered regions&quot;.  We have created these classes here to record this information.</obo:GENO_0000257>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000501">
-        <obo:GENO_0000700>wild-type locus</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000347">
-        <obo:GENO_0000258>This is a terrible class. The modeling needs work, as does the whole notion of null loci</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000771">
-        <obo:GENO_0000658>Formerly http://purl.obolibrary.org/obo/GENO_0000205, replaced with SO term.</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000030">
-        <obo:GENO_0000700>variant allelic complement</obo:GENO_0000700>
-        <obo:GENO_0000257>Note that we are able to classify a &apos;variant single locus complement&apos; as being a &apos;sequence feature collection&apos; (ie necessarily having 2 or more member sequences), despite the fact that the variant single locus complement of some genotypes consists only of a single feature (ie not a collection) - such as the case of a single transgenic insertion, hemizgous X-linked variant, or extrachromosomal array.  This is because conceptually, we assign a &apos;null locus&apos; partner to such loci to complete the complement as a collection.  This null locus has an extent of zero (see notes in the &apos;null locus&apos; branch), and can either be a proper junction (in the case of a transgenic insertion), or an &apos;absent/conceptual locus&apos; that has no true genomic location (in the case of X-linked or extrachromosonal variants).  This enables us to consistently and clearly conceptualize, display, and operate on instances of variant single locus complements that take any of these forms.
-
-As a specific example, consider  a single transgenic insertion on one chromosome.  Here, we can treat the resulting &apos;variant single locus complement&apos; as a &apos;sequence feature collection&apos; with at least two members (the second being a junction with an extent of zero, located at the corresponding position on the homologous chromosome where the transgene is inserted). Again, in this way, we can consistently model &apos;genomic variation complements&apos; and &apos;variant single locus complements&apos; as necessarily being &apos;sequence feature collections&apos;, the former being comprised of one or more of the latter.  And we can consistently apply the zygosity attribute to this &apos;sequence feature collection&apos;&gt;&apos;single locus complement&apos;.</obo:GENO_0000257>
-        <obo:GENO_0000658>formerly alternate single locus complement</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000152">
-        <obo:GENO_0000257>The exploratory axiom: 
-
-is_realized_in_context_of some &apos;genomic data set&apos;
-
-is meant to provide a context in which a given locus is considered a refernce - as depending on the reference data set used in a giveen experiment/annotation, a particular locus may or may not be considered to be a &apos;reference&apos;.</obo:GENO_0000257>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536">
-        <oboInOwl:hasDbXref>EFO:0000513 ! genotype 
-The total sum of the genetic information of an organism that is known and relevant to the experiment being performed, including chromosomal, plasmid, viral or other genetic material which has been introduced into the organism either prior to or during the experiment). Information, making the distinction between the actual physical material (e.g. a cell) and the information about the genetic content (genotype).</oboInOwl:hasDbXref>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000016">
+        <obo:DAO_0000002>Need to decide what SO sequences are ‘about’/what do they ‘denote’? Is it a region of some material sequence molecule?  Or is it the sequence of such a molecular region (ie some sequence GDC or quality inhering in the molecule)?  And if the latter, is this ‘aboutness’ transitive over the inherence, such that they are also about the physical molecule? Has implications for how SO classes are defined textually and on design patterns linking them to other entities.
+</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000019">
-        <obo:GENO_0000258>1. Confer with SO to determine if this is OK to map to SO:sequence collection. It may be that out &apos;sequence feature collection&apos; is defined here more broadly than in SO (in that it is a collection of one or more discontinuous sequence features). This allows us to handle cases where, for example, a variant collection&gt;variant single locus complement is just one sequence region (e.g. hemizygous allele, or a transgenic insertion in only one chromosome). In such cases, because we allow for members of a sequence collection to be features (as opposed to regions), there can exist a seqeunce collection even for single transgenic insertions - by pairing with the corresponding location/feature on the homologous chromosome where the insert is absent (so this feature is a junction having an extent of zero). In this way, we can say that &apos;genomic variation complements&apos; are always collections.  
+        <obo:DAO_0000002>1. Confer with SO to determine if this is OK to map to SO:sequence collection. It may be that out &apos;sequence feature collection&apos; is defined here more broadly than in SO (in that it is a collection of one or more discontinuous sequence features). This allows us to handle cases where, for example, a variant collection&gt;variant single locus complement is just one sequence region (e.g. hemizygous allele, or a transgenic insertion in only one chromosome). In such cases, because we allow for members of a sequence collection to be features (as opposed to regions), there can exist a seqeunce collection even for single transgenic insertions - by pairing with the corresponding location/feature on the homologous chromosome where the insert is absent (so this feature is a junction having an extent of zero). In this way, we can say that &apos;genomic variation complements&apos; are always collections.  
 
 Side Note: If we pursue this apporoach, we dont have to define sequence collection loosely to allow for collections (single-locus variant collections) with only one member (because the second member could always be a junction).  We still need to figure out how to model cases where they zygosity of a transgenic insertion is not known - as there are many of these case in MODs such as ZFIN.
 
@@ -287,47 +65,80 @@ Side Note: A problematic case (if we classify a genome as a sequence feature col
 2.  CONSIDER allowing for sequence collections to not be disjoint from features, and possible have only one member (ie treat them like SETS).  Because there are cases where things are often collections with more than one member, but we want to allow for cases where there is only one member (e.g. genomes on a single chromosome, single locus alteration complements that have only one alteration, genomic variation complements that have only one variant single locus complement as part). In general, the notion of a &apos;complement&apos; is tricky because these are often collections but often not. Question is, do we need this disjoint and logically strict definition of collections for some reasoning or inference task?  If not, it would make things easier to do as suggested here. Note that this could also eliminate the need to use null loci  - because the purpose of these is to fulfill the requirement that collections/complements have more than one member.
 
 Other option is to keep this strict distinction, and just assert all complements outside of this divide (as children of sequence information entity)
-</obo:GENO_0000258>
+</obo:DAO_0000002>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000814">
-        <obo:GENO_0000658>Decided to leave out for now as this is more likely to confuse than help, as the concept most people refer to as &apos;geneotype&apos; is what we call an &apos;intrinsic genotype&apos;, and what we are calling a &apos;genotype&apos; is much broader/different.
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000026">
+        <obo:DAO_0000003>formerly single locus collection</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000029">
+        <obo:GENO_0000700>reference allelic complement</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000030">
+        <obo:DAO_0000001>Note that we are able to classify a &apos;variant single locus complement&apos; as being a &apos;sequence feature collection&apos; (ie necessarily having 2 or more member sequences), despite the fact that the variant single locus complement of some genotypes consists only of a single feature (ie not a collection) - such as the case of a single transgenic insertion, hemizgous X-linked variant, or extrachromosomal array.  This is because conceptually, we assign a &apos;null locus&apos; partner to such loci to complete the complement as a collection.  This null locus has an extent of zero (see notes in the &apos;null locus&apos; branch), and can either be a proper junction (in the case of a transgenic insertion), or an &apos;absent/conceptual locus&apos; that has no true genomic location (in the case of X-linked or extrachromosonal variants).  This enables us to consistently and clearly conceptualize, display, and operate on instances of variant single locus complements that take any of these forms.
 
-EC: &apos;effective genotype&apos; or &apos;extrinsic genotype&apos; or &apos;intrinsic genotype&apos; or &apos;sex-qualified genotype&apos;
+As a specific example, consider  a single transgenic insertion on one chromosome.  Here, we can treat the resulting &apos;variant single locus complement&apos; as a &apos;sequence feature collection&apos; with at least two members (the second being a junction with an extent of zero, located at the corresponding position on the homologous chromosome where the transgene is inserted). Again, in this way, we can consistently model &apos;genomic variation complements&apos; and &apos;variant single locus complements&apos; as necessarily being &apos;sequence feature collections&apos;, the former being comprised of one or more of the latter.  And we can consistently apply the zygosity attribute to this &apos;sequence feature collection&apos;&gt;&apos;single locus complement&apos;.</obo:DAO_0000001>
+        <obo:GENO_0000700>variant allelic complement</obo:GENO_0000700>
+        <obo:DAO_0000003>formerly alternate single locus complement</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000034">
+        <obo:DAO_0000002>Organizational class. Decide if this category is useful/valid, and work on a different name if we decide to keep it?  Consider &apos;functional or  structural locus&apos;.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000036">
+        <obo:GENO_0000700>reference locus</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000039">
+        <obo:DAO_0000002>A lot of what is below is required because of how we model variants - where they are required to be variant with some locus.  So for things like transient transgenes we need to conceptualize some &apos;absent locus&apos; that these are variant with.  But there should be a better way to model these as variant without resorting to absent/conceptual classes suich as these.
 
-SC: is_genotype_of some (cell or organism)</obo:GENO_0000658>
+For absent chromosomes and segments, we may be able to do away with this bad modeling if we focus on the unpaired chromosome/segment as being a member of some VSLC that is variant in having only one member. There should be no need to model the absent chromosome.</obo:DAO_0000002>
+        <obo:DAO_0000002>In order to do away with this bad modeling, we need another way to qualify things like transient transgenes and stable extrachromosomal arrays as being variant. Perhaps we dont limit the definition of variants to being variant_with some other real locus (ie alternate versions of some reference locus or locus complement, which these are not), but also include the idea of being novel genetic/genomic content relative to some reference genome.  
+
+So we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci.
+
+1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant.  
+
+2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.</obo:DAO_0000002>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000498">
-        <obo:GENO_0000700>major polymorphic locus</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000497">
-        <obo:GENO_0000700>polymorphic locus</obo:GENO_0000700>
-        <obo:GENO_0000258>Note that a SNP should classify here.  Need to create a logical definition somewhere so SNP is inferred under sequence variation and polymorphic locus.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000016">
-        <obo:GENO_0000258>Need to decide what SO sequences are ‘about’/what do they ‘denote’? Is it a region of some material sequence molecule?  Or is it the sequence of such a molecular region (ie some sequence GDC or quality inhering in the molecule)?  And if the latter, is this ‘aboutness’ transitive over the inherence, such that they are also about the physical molecule? Has implications for how SO classes are defined textually and on design patterns linking them to other entities.
-</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000830">
-        <obo:GENO_0000658>Formerly GENO_0000390 ! chromosome feature, but replaced by SO_0000830 ! chromosome_part</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000499">
-        <obo:GENO_0000700>minor polymorphic locus</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000611">
-        <obo:GENO_0000258>Consider how i want to define/use this class - only for genotypes that are background for some variant genotype, or for any standard strain genotype without defined variations.  Is relevant for typing the intrinsic genotype node in MPD data.</obo:GENO_0000258>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000040">
+        <obo:DAO_0000002>In order to do away with this, we need another way to qualify things like transient transgenes and stable extrachromosomal arrays as being variant. Perhaps we dont limit the definition of variants to being variant_with some other real locus (ie alternate versions of some reference locus or locus complement, which these are not), but also include the idea of being novel genetic/genomic content relative to some reference genome.  
+
+So we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci.
+
+1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant.  
+
+2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000060">
         <obo:GENO_0000700>reference gene locus</obo:GENO_0000700>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382">
-        <rdfs:comment>formerly used http://purl.obolibrary.org/obo/GENO_0000532</rdfs:comment>
-    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000062">
-        <obo:GENO_0000258>Considered this class to be the same thing as &apos;variant gene allele&apos;, and so obsoleted it.</obo:GENO_0000258>
-        <obo:GENO_0000258>Consider if this class is necessary, given our shift away from considering notions of variants/alleles and genes, and just thinking of all features as types of &apos;genomic loci&apos;.</obo:GENO_0000258>
+        <obo:DAO_0000002>Considered this class to be the same thing as &apos;variant gene allele&apos;, and so obsoleted it.</obo:DAO_0000002>
+        <obo:DAO_0000002>Consider if this class is necessary, given our shift away from considering notions of variants/alleles and genes, and just thinking of all features as types of &apos;genomic loci&apos;.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000093">
+        <obo:DAO_0000002>1. Asserted multiple inheritance
+
+2. Given that a transgene isnt actually &apos;transgenic&apos; until it is integrated into a genome of a different organism, there may be no difference between a SO:transgene and a GENO:integrated transgene. (Unless we consider something like a non-integrated expression plasmid to be a trasngene when introduced into another cell or organism (despite not being integrated into the host genome).</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000108">
+        <obo:DAO_0000002>Consider if all material genomes are object aggregates - are some single chromosomes (e.g. a circular bacterial chromosomal genome?)</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000141">
+        <obo:DAO_0000002>This should really be a disposition of the phenotype, right? Should I make a shortcut relation if I want to link it to the variant?
+
+e.g. causes_phenotype_with_heritability -&gt; results_in some (phenotype and (has_disposition some &apos;phenotypic heritability&apos;))</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000152">
+        <obo:DAO_0000001>The exploratory axiom: 
+
+is_realized_in_context_of some &apos;genomic data set&apos;
+
+is meant to provide a context in which a given locus is considered a refernce - as depending on the reference data set used in a giveen experiment/annotation, a particular locus may or may not be considered to be a &apos;reference&apos;.</obo:DAO_0000001>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000223">
+        <obo:DAO_0000002>exploratory property - could this be useful somehow?</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000340">
-        <obo:GENO_0000258>Placed into &apos;Exploratory Class&apos; hierarchy to explore in future when this use case arises.
+        <obo:DAO_0000002>Placed into &apos;Exploratory Class&apos; hierarchy to explore in future when this use case arises.
 
 Asserted parent: sequence_alteration.
 
@@ -337,68 +148,221 @@ SC axiom: is_direct_part_of some chromosome
 
 
 11-10-15 Decided this organizational class is not needed.  former EC: (has_sequence_attribute some aneusomic)
- and (is_direct_part_of some chromosome)</obo:GENO_0000258>
+ and (is_direct_part_of some chromosome)</obo:DAO_0000002>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000460">
-        <obo:GENO_0000258>Modeling in this hierarhcy is still under development.</obo:GENO_0000258>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000346">
+        <obo:DAO_0000002>Asserted multiple inheritance
+
+This should also be a child of chromosome . . . need to enable this inference so I can remove the asserted multiple inheritance.
+
+Consider asserting all as chromosomes, and defining seq variation with a new property is_completely_variant_with</obo:DAO_0000002>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000141">
-        <obo:GENO_0000258>This should really be a disposition of the phenotype, right? Should I make a shortcut relation if I want to link it to the variant?
-
-e.g. causes_phenotype_with_heritability -&gt; results_in some (phenotype and (has_disposition some &apos;phenotypic heritability&apos;))</obo:GENO_0000258>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000347">
+        <obo:DAO_0000002>This is a terrible class. The modeling needs work, as does the whole notion of null loci</obo:DAO_0000002>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000009">
-        <obo:GENO_0000257>1. Note that we are able to classify a &apos;genomic variation complement&apos; as being a &apos;sequence feature collection&apos; (ie necessarily having 2 or more member sequences), despite the fact that the genomic variation complement of some genotypes consists only of a single feature (ie not a collection) - such as the case of a single transgenic insertion, hemizgous X-linked variant, or extrachromosomal array. This is because conceptually, we assign a &apos;null locus&apos; partner to such loci to complete the complement as a collection.  This &apos;null locus&apos; has an extent of zero, and can either be a proper junction (in the case of a transgenic insertion), or a &apos;conceptual locus&apos; that has no true genomic location (in the case of X-linked or extrachromosonal variants). This enables us to consistently and clearly conceptualize, display, and operate on instances of genomic variation complements that take any of these forms.
-
-
-2. The fact that in some cases, a variant single locus complement is also a genetic variation complement (e.g. fgf8a^ti282a/+ in test instance #1), means we have to be careful about parthood axioms on these classes.
-
-    A. Previously had the axiom has_member only &apos;single locus variant complement&apos;, but because some single locus variant complements (e.g. fgf8a^ti282a/+) are typed as both genetic variation complements and single locus variant complements, this meant that a gene variant such as ti282a, being a member_of fgf8a^ti282a/+,  was beign inferred incorrectly as a single locus variant complement. 
-
-    B. Likewise, cannot say has_part only  &apos;single locus variant complement&apos;, because this wont hold in cases where there is only one single locus variant complement in the genetic variation complement (because has_part is transitive, and single locus variant complements have_member some genomic variant)</obo:GENO_0000257>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000359">
+        <obo:DAO_0000002>consider updating to include extrinsic genotypes and expression variants in the range?</obo:DAO_0000002>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000525">
-        <obo:GENO_0000658>Note that the definition of EFO:genotype sounds a lot like an effective genotype.
-EFO:0000513 ! genotype: (descendant of information entity)
-The total sum of the genetic information of an organism that is known and relevant to the experiment being performed, including chromosomal, plasmid, viral or other genetic material which has been introduced into the organism either prior to or during the experiment.</obo:GENO_0000658>
-        <obo:GENO_0000257>&apos;Effective genotype&apos; is not classified as a qualified feature collection because it is an aggregate object comprised of sequence features (the intrinsic genotype) and qualified features (the extrinsic genotype). Thus if falls outside these categories, living directly as a generically dependent continuant.</obo:GENO_0000257>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382">
+        <rdfs:comment>formerly used http://purl.obolibrary.org/obo/GENO_0000532</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000388">
+        <obo:DAO_0000002>consider updating to include extrinsic genotypes and experession variant loci in the range?</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000408">
-        <obo:GENO_0000257>Note that it is not always the case that a gene variant will be an instance of (rdf:type) the gene class, as SO:genes are defined as necessarily producing a functional transcript and not all varaints are capable of this (e.g. null variants/major deletions).  For this reason we use the is_allele_of property to link alleles to their parent gene locus class.</obo:GENO_0000257>
+        <obo:DAO_0000001>Note that it is not always the case that a gene variant will be an instance of (rdf:type) the gene class, as SO:genes are defined as necessarily producing a functional transcript and not all varaints are capable of this (e.g. null variants/major deletions).  For this reason we use the is_allele_of property to link alleles to their parent gene locus class.</obo:DAO_0000001>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902">
-        <obo:GENO_0000658>Formerly http://purl.obolibrary.org/obo/GENO_0000505, replaced with SO term.</obo:GENO_0000658>
-        <obo:GENO_0000258>&apos;Trangenes&apos; are contextually defined, so a gene sequence is not considered a &apos;transgene&apos; until it is present in a foreign cell (ie one form whcih it did not derive).  Accordingly, construct inserts are not transgenes until they are experimentally delivered in the construct into a foreign cell. This means that perhaps there is no distinction between a transgene and  an integrated transgene (unless beign present extra-chromosomally, e.g. as a transient expression construct, qualifies it as being transgenec - which i think it does.)</obo:GENO_0000258>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000443">
+        <obo:DAO_0000002>May end up not using this property (or its inverse) as a link from transgene to gene, and instead use sequence_derived_from to make this link. This is the pattern currently outlined in our cmaps</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000460">
+        <obo:DAO_0000002>Modeling in this hierarhcy is still under development.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481">
+        <obo:DAO_0000001>The difference between a &apos;genetic locus&apos; and &apos;genomic locus&apos; is subtle, and the labels of these classes are not particularly intuitive. But I think distinguishing these concepts is important.  A &apos;genetic locus&apos; covers any sequence that is about a region of a physical sequence molecule that is a template for gene expression in some biological system (ie a cell or virion). &apos;Genomic locus&apos; references only regions of heritable nucleic acid molecule parts of a cell or virion (ie parts of the genome). So things like transiently-expressed transgene sequences that are introduced to a cell or organism only at the time of experiment would be considered &apos;&apos;genetic material&apos; but not &apos;genomic material&apos;.</obo:DAO_0000001>
+        <obo:DAO_0000001>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
+
+The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
+
+Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or positionin the reference genome.</obo:DAO_0000001>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000483">
+        <obo:DAO_0000002>The logical definition here is simple because we model conceptual/absent loci so that we can say that variants such as extrachromosomal replicons and transient transgenes are variant_with something, andthus classify as variants.  But this is shoddy modeling.  We need a different way to classify these things as variant, which may require changing the logical definition of the variant locus class. 
+
+Some thoughts: we have two major forms of intrinsic variation: altered content vs novel content.  We need a way to model novel content without resorting to absent/conceptual loci that it is &apos;variant_with&apos;.
+
+1. The idea of being *altered content* relative to some reference genome (i.e. a different version of a genomic locus or locus complement present in this reference).  This covers sequence-based variants, and aneusomic chromosomes/segments.  Here, we allow for variation from a euploid number of copies of a given locus to qualify as variant (e.g. so that a monoploid chromosome is a variant locus - but have not modeled this yet)
+
+2. The idea of being *novel content* relative to some reference genome (i.e. representing a new locus that is not present in the reference genome).  This covers variation resulting from entirely new loci (ie those not found in the reference), such as heritable extrachromosomal arrays, and transient transgenes/constructs.  Note that we would consider chromosomally integrated transgenes to be &apos;altered content&apos;, not &apos;novel content&apos;, because they represent an altered version of the junction where they were integrated, and potentiall disrupt the function of a defined locus containing this junction.
+</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000491">
+        <obo:GENO_0000700>mutant locus</obo:GENO_0000700>
+        <obo:DAO_0000002>Consider if mutant alleles can be refernece in some cases, in whcih this should not classify under variant allele (which is disjoint with reference)</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000497">
+        <obo:GENO_0000700>polymorphic locus</obo:GENO_0000700>
+        <obo:DAO_0000002>Note that a SNP should classify here.  Need to create a logical definition somewhere so SNP is inferred under sequence variation and polymorphic locus.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000498">
+        <obo:GENO_0000700>major polymorphic locus</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000499">
+        <obo:GENO_0000700>minor polymorphic locus</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000500">
+        <obo:GENO_0000700>ancestral locus</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000501">
+        <obo:GENO_0000700>wild-type locus</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000502">
+        <obo:DAO_0000002>Note that this class has asserted multiple inheritance.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000512">
+        <obo:DAO_0000001>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
+
+The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
+
+Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or position in the reference genome.</obo:DAO_0000001>
+        <obo:GENO_0000700>variable locus</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000513">
+        <obo:DAO_0000002>Should this be considered an attribute of a chromosome, or a chromosomal complement?  It is currently considered an attribute of a chromosome because this could help us classify the chromosome as being variant/alternate.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000515">
+        <obo:GENO_0000700>variant gene locus</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000516">
+        <obo:GENO_0000700>allelic complement</obo:GENO_0000700>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000525">
+        <obo:DAO_0000001>&apos;Effective genotype&apos; is not classified as a qualified feature collection because it is an aggregate object comprised of sequence features (the intrinsic genotype) and qualified features (the extrinsic genotype). Thus if falls outside these categories, living directly as a generically dependent continuant.</obo:DAO_0000001>
+        <obo:DAO_0000003>Note that the definition of EFO:genotype sounds a lot like an effective genotype.
+EFO:0000513 ! genotype: (descendant of information entity)
+The total sum of the genetic information of an organism that is known and relevant to the experiment being performed, including chromosomal, plasmid, viral or other genetic material which has been introduced into the organism either prior to or during the experiment.</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536">
+        <oboInOwl:hasDbXref>EFO:0000513 ! genotype 
+The total sum of the genetic information of an organism that is known and relevant to the experiment being performed, including chromosomal, plasmid, viral or other genetic material which has been introduced into the organism either prior to or during the experiment). Information, making the distinction between the actual physical material (e.g. a cell) and the information about the genetic content (genotype).</oboInOwl:hasDbXref>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000611">
+        <obo:DAO_0000002>Consider how i want to define/use this class - only for genotypes that are background for some variant genotype, or for any standard strain genotype without defined variations.  Is relevant for typing the intrinsic genotype node in MPD data.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000639">
+        <rdfs:comment>The entity from which sequence is derived can be another sequence feature or collection (e.g. a genome or gene), or a bearer of such a featur ( e.g. a cell line or organism). See examples.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000666">
+        <obo:DAO_0000001>1.Regarding a name for this class, the term &apos;part&apos; is used because it is most general and can cover parts of a gene that are individual subregions, as well as collections of subregions that are defeind by some functional or structural criteria (e.g. coding gene part, which is the collection of all translated seqeunce in the exons in a gene).  Other terms such as &apos;subregion&apos;, segment&apos;, or &apos;member&apos; are not general enough to cover all such cases, but are used to label subclasses where they are appropriate.
+
+2. Modeling not complete here yet. These will be useful for modeling transgene components, when we get to that stage. Note that ZFIN describes parts of constructs used in creating transgenic strains as being either &quot;coding regions&quot;, &quot;regulatory regions&quot;, or &quot;engineered regions&quot;.  We have created these classes here to record this information.</obo:DAO_0000001>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000681">
+        <obo:DAO_0000002>For now have to aassert multiple inheritance as a sequence_alteration and extrachromosomal replicon.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000683">
+        <obo:DAO_0000001>Previously had a subproperty &apos;allelic_with&apos;, which applied only to sequence features. If describing sequence feature collections, used is_sequence_variant_with.</obo:DAO_0000001>
+        <obo:DAO_0000001>This comment is obsolete for now because I went back to considering chromosomes, replicons to fall uner the notion of alleles.
+
+-------
+
+Extrachromoosomal replicons are sequence_variant_with some null locus, but not allelic_with the null locus, because being allelic_with a locus requires the locus being an establlished marker/position in a reference genome.</obo:DAO_0000001>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000684">
+        <obo:DAO_0000002>Going with the &apos;allele&apos; naming scheme for GENO may pose problems here, because we want to classify these as variants, but they are not alleles of any exisitng locus.  So while we can justify plaing this class under &apos;variant locus&apos;, it is harder to place them if the class is called &apos;variiant allele&apos;.  
+
+And we may not need this class - consider removing.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000687">
+        <obo:DAO_0000003>Changed label from expression-variant locus to account for the fact that transiently expressed transgenes wouldn&apos;t qualify as genomic loci.</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000703">
+        <obo:DAO_0000002>previously used more generic has_value label for this proeprty.</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000714">
+        <obo:DAO_0000002>At present the definitions of qualified features link them to variaton in expression - ultimately may not want to make this committment - e.g. the context doesnt have to be something that affects expression level.  Revisit definitions and comments on these classes after I make this decision.</obo:DAO_0000002>
+        <obo:DAO_0000001>In GENO we define three levels of sequence artifacts: (1) biological sequences, (2) sequence features, and (3) qualified sequence features.
+
+(1) The identify criteria for a &apos;biological sequence&apos; include only its inherent sequence (the ordered string of units that comprise it).
+(2) The identity criteria for a &apos;sequence feature&apos; include its sequence and position (where it resides - i.e. its location based on how it maps to a reference or standard)
+(3) The identity criteria for a &apos;qualified sequence feature&apos; include its sequence, position, and the material context or state of its bearer in a cell or organism. This context can include its direct epigenetic modification, its being targeted by gene knockdown reagents such as morpholinos or RNAi, its being transiently overexpressed from a transgenic construct in a cell or organism, or its residing in a specific subcellular or anatomical location.</obo:DAO_0000001>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000716">
+        <obo:DAO_0000003>Moved to be Exploratory as I decided extrinsic genotypes fit as a complement.</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000718">
+        <obo:DAO_0000003>For now I removed as i decided this is for now the same thing as the exrinsic genotype - the colleciton of all genes variant in their expression as a result of external (non sequence/position) factors.
+
+----
+
+Consider how / if this is a different concept form an extrinsic genotype.  If the same, merge.  I would say the difference is that when we consider epigenetic modifications, these would be included in an extrinsic genotype but may not affect genes?</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000742">
+        <obo:DAO_0000004>Need for this would be in cases where there is representation of the sequence alteration but not of the variant locus/allele level in the genotype partonomy (where the link to the gene normally occurs), and we still want to reference the geen(s) affected in the genotype.  This is the case in the clinvar data. And in the coriell data - where we cant always accurately represent the variant locus if there is more than one seqauence alteration affecting a gene, because we dont know if the two alterations are cis or trans. 
+
+But ideally we would always go through the variant locus to get to the gene - so as to only have one possibility for traversing/querying the gene.  So ideally we wouldnt ever need to use this property.</obo:DAO_0000004>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000763">
+        <obo:IAO_0000118>ObsoleteObjectProperty(active)</obo:IAO_0000118>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000814">
+        <obo:DAO_0000003>Decided to leave out for now as this is more likely to confuse than help, as the concept most people refer to as &apos;geneotype&apos; is what we call an &apos;intrinsic genotype&apos;, and what we are calling a &apos;genotype&apos; is much broader/different.
+
+EC: &apos;effective genotype&apos; or &apos;extrinsic genotype&apos; or &apos;intrinsic genotype&apos; or &apos;sex-qualified genotype&apos;
+
+SC: is_genotype_of some (cell or organism)</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000102">
+        <obo:DAO_0000003>former IRI: http://purl.obolibrary.org/obo/GENO_0000594</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000110">
+        <obo:DAO_0000002>Previously used the SC axiom based on faldo to define the positional aspect of a sequence feature: &quot;location some Region&quot;</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000289">
+        <obo:DAO_0000002>Decide how important these are to model in more detail (ie distinguish VNTRs from SSRs, SSLPs, minisatellites from microsatellites, etc).  Possible alternate terms include VNTR, variable number tandem repeat, single sequence length polymorphism, SSLP.
+
+Note that ZFIN represents instances of SSLPs. e.g. http://zfin.org/action/marker/view/ZDB-SSLP-980528-1507</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000340">
+        <obo:DAO_0000003>Formerly http://purl.obolibrary.org/obo/GENO_0000323, replaced by SO term.</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000341">
+        <obo:DAO_0000003>Formerly http://purl.obolibrary.org/obo/GENO_0000615, replaced by SO term.</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000577">
+        <obo:DAO_0000003>Formerly GENO_0000627 ! centromere, but replaced with SO term.</obo:DAO_0000003>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000704">
-        <obo:GENO_0000658>Formerly http://purl.obolibrary.org/obo/GENO_000018, replaced by SO term.</obo:GENO_0000658>
-        <obo:GENO_0000257>We do not require a &apos;gene&apos; to be naturally occuring in some genome, such that engineered transgenes capable of producing some product when in the context of a biological system will qualify.</obo:GENO_0000257>
-        <obo:GENO_0000258>Consider logical definition:
+        <obo:DAO_0000001>We do not require a &apos;gene&apos; to be naturally occuring in some genome, such that engineered transgenes capable of producing some product when in the context of a biological system will qualify.</obo:DAO_0000001>
+        <obo:DAO_0000002>Consider logical definition:
 
 &apos;gene locus&apos;
  and (is_about some (has_sequence_attribute some 
     (&apos;information template role&apos;
-     and (is_realized_by some transcription))))</obo:GENO_0000258>
+     and (is_realized_by some transcription))))</obo:DAO_0000002>
+        <obo:DAO_0000003>Formerly http://purl.obolibrary.org/obo/GENO_000018, replaced by SO term.</obo:DAO_0000003>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000683">
-        <obo:GENO_0000257>This comment is obsolete for now because I went back to considering chromosomes, replicons to fall uner the notion of alleles.
-
--------
-
-Extrachromoosomal replicons are sequence_variant_with some null locus, but not allelic_with the null locus, because being allelic_with a locus requires the locus being an establlished marker/position in a reference genome.</obo:GENO_0000257>
-        <obo:GENO_0000257>Previously had a subproperty &apos;allelic_with&apos;, which applied only to sequence features. If describing sequence feature collections, used is_sequence_variant_with.</obo:GENO_0000257>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000771">
+        <obo:DAO_0000003>Formerly http://purl.obolibrary.org/obo/GENO_0000205, replaced with SO term.</obo:DAO_0000003>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000000">
-        <obo:GENO_0000258>1. Consider if we want genotypes to be defined to necessarily have alternate and reference parts, or just variant parts.  As defined now, therear enecessarily reference and alternate parts (ie either a genomic background or a reference locus for each variant position genotyped).  but we can always generalize things if we find genotypes that are just collections of variant data - e.g. what SNP is present for a set of variant loci, with no indication of a reference locus at each of these sites.  If this is the case, we will have to rework or conception of a genotype that is comprised of reference and alternate components.
-
-2. Consider that &apos;genotype&apos; is used to refer to variation of a whole genome, of a single locus, or even a single base (see http://snpedia.com/index.php/Appearance) . . . . should we model these different types of genotypes into our model as &apos;genomic genotype&apos;, &apos;locus genotype&apos;, &apos;sequence genotype&apos;, etc.</obo:GENO_0000258>
-        <obo:GENO_0000257>Not a type of &apos;genomic locus collection&apos; because its sequence components are not from the genome of a single organism.</obo:GENO_0000257>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000830">
+        <obo:DAO_0000003>Formerly GENO_0000390 ! chromosome feature, but replaced by SO_0000830 ! chromosome_part</obo:DAO_0000003>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000443">
-        <obo:GENO_0000258>May end up not using this property (or its inverse) as a link from transgene to gene, and instead use sequence_derived_from to make this link. This is the pattern currently outlined in our cmaps</obo:GENO_0000258>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902">
+        <obo:DAO_0000003>Formerly http://purl.obolibrary.org/obo/GENO_0000505, replaced with SO term.</obo:DAO_0000003>
+        <obo:DAO_0000002>&apos;Trangenes&apos; are contextually defined, so a gene sequence is not considered a &apos;transgene&apos; until it is present in a foreign cell (ie one form whcih it did not derive).  Accordingly, construct inserts are not transgenes until they are experimentally delivered in the construct into a foreign cell. This means that perhaps there is no distinction between a transgene and  an integrated transgene (unless beign present extra-chromosomally, e.g. as a transient expression construct, qualifies it as being transgenec - which i think it does.)</obo:DAO_0000002>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001026">
+        <obo:DAO_0000001>Should a &apos;genomic locus&apos; and a &apos;genome&apos; necessarily be about the &apos;genetic material&apos; that is part_of some cell or virion, or should they be able to be encoded in nucleic acids that are not part of a cell or virion&apos;s genome. At present, we do not require this parthood. This is because these seqeunce classes will be aligned with/taken from SO, and in SO they are considered ICEs.  So we need not be concerned with whether a genomic locus or a gene must be encoded in the material genome of an organism or not.  Because these are sequence information entities that are about some nucleic acid, and not sequence that is encoded in some nucleic acid. Thus, the context of the physical nucleid acid is of no import.  These classes are loci in virtue of the fact that they are associated with some specific coordinates in some genomic sequence record, and not in virtue of the fact that they are encoded in the actual genetic material that is defined/delimited by such coordinates.
+
+There is then no simple/direct way to associate a GENO:&apos;genomic locus&apos; with &apos;genetic material&apos; (ie the nucleic acid part of a cell or virion that encodes its genome).  A &apos;genomic locus&apos; sequence need not be about some &apos;genetic material&apos;.  Rather, it can be about some plasmid insert that carries sequence of a genomic locus (e.g. a gene).  What is true is that a genomic locus must be about/ some nucleic acid that represents abstract sequence information that is encoded somewhere in the genetic material of a cell or virion (even if the instance under consideration is not so encoded).</obo:DAO_0000001>
+        <obo:DAO_0000003>Formerly http://purl.obolibrary.org/obo/GENO_0000023</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001505">
+        <obo:DAO_0000003>Formerly http://purl.obolibrary.org/obo/GENO_0000032</obo:DAO_0000003>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UPHENO_0001001">
-        <obo:GENO_0000257>1. To link a phenotype to provenance info, assert that a particular phenoytpe is_subject_of some &apos;phenotype annotation&apos; that: 
+        <obo:DAO_0000001>1. To link a phenotype to provenance info, assert that a particular phenoytpe is_subject_of some &apos;phenotype annotation&apos; that: 
 (1) has_agent some &apos;agent&apos; (to document who made the assertion), and
 (2)  occurs_at some time (to document when it was made), and
 (3) is_output_of some &apos;comaparative phenotype assessment&apos; process to link to the assay/data used to make the annotation
@@ -416,8 +380,8 @@ has_specified_output some
             (organism
              or (&apos;is part of&apos; some organism))))))
 
-This would suggest that a phenotype can be a quality OR a disposition.</obo:GENO_0000257>
-        <obo:GENO_0000658>removed following SC axiom:
+This would suggest that a phenotype can be a quality OR a disposition.</obo:DAO_0000001>
+        <obo:DAO_0000003>removed following SC axiom:
 
 quality
  and (inheres_in some 
@@ -432,37 +396,16 @@ and
  and (inheres_in some 
     (&apos;biological process&apos; or organism or (is_part_of some organism) or (derived_from some organism))))
 
-(This axiom is based on a more OBI-ish approach, where phenotypes are considered as qualities or dispositions. Dispositional phenotypes are meant to account for processes phenotypes.  E.g.  &apos;delayed kidney development&apos; - the phenotype here is a disposition that is realized by some biological process (kidney development).)</obo:GENO_0000658>
+(This axiom is based on a more OBI-ish approach, where phenotypes are considered as qualities or dispositions. Dispositional phenotypes are meant to account for processes phenotypes.  E.g.  &apos;delayed kidney development&apos; - the phenotype here is a disposition that is realized by some biological process (kidney development).)</obo:DAO_0000003>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000684">
-        <obo:GENO_0000258>Going with the &apos;allele&apos; naming scheme for GENO may pose problems here, because we want to classify these as variants, but they are not alleles of any exisitng locus.  So while we can justify plaing this class under &apos;variant locus&apos;, it is harder to place them if the class is called &apos;variiant allele&apos;.  
+    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/gene/6469">
+        <obo:DAO_0000002>When we get to modleing the central dogma, consdier simple patterns such as:
 
-And we may not need this class - consider removing.</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000002">
-        <obo:GENO_0000700>variant locus</obo:GENO_0000700>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000687">
-        <obo:GENO_0000658>Changed label from expression-variant locus to account for the fact that transiently expressed transgenes wouldn&apos;t qualify as genomic loci.</obo:GENO_0000658>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000763">
-        <obo:IAO_0000118>ObsoleteObjectProperty(active)</obo:IAO_0000118>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000110">
-        <obo:GENO_0000258>Previously used the SC axiom based on faldo to define the positional aspect of a sequence feature: &quot;location some Region&quot;</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000093">
-        <obo:GENO_0000258>1. Asserted multiple inheritance
-
-2. Given that a transgene isnt actually &apos;transgenic&apos; until it is integrated into a genome of a different organism, there may be no difference between a SO:transgene and a GENO:integrated transgene. (Unless we consider something like a non-integrated expression plasmid to be a trasngene when introduced into another cell or organism (despite not being integrated into the host genome).</obo:GENO_0000258>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000491">
-        <obo:GENO_0000258>Consider if mutant alleles can be refernece in some cases, in whcih this should not classify under variant allele (which is disjoint with reference)</obo:GENO_0000258>
-        <obo:GENO_0000700>mutant locus</obo:GENO_0000700>
+genetically_codes_for some &apos;homo sapiens SHH protein&apos;</obo:DAO_0000002>
     </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
 
