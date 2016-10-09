@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/geno/geno_imports.owl" uri="imports/geno_imports.owl"/>
+    <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/iao/dev/ontology-metadata.owl" uri="imports/ontology-metadata.owl"/>
+    <uri id="User Edited Redirect" name="http://www.geneontology.org/formats/oboInOwl" uri="imports/oboInOwl.owl"/>
+    <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/geno-developer-defs.owl" uri="geno-developer-defs.owl"/>
     <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/geno_examples.owl" uri="geno_examples.owl"/>
     <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/geno-se.owl" uri="geno-se.owl"/>
     <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/geno-obsolete.owl" uri="geno-obsolete.owl"/>
-    <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/geno-developer-annotations.owl" uri="geno-developer-annotations.owl"/>
     <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/geno-developer.owl" uri="geno-developer.owl"/>
     <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/geno.owl" uri="geno.owl"/>
 </catalog>
