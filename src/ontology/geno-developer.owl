@@ -6,6 +6,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
@@ -179,12 +180,12 @@ Consider asserting all as chromosomes, and defining seq variation with a new pro
         <obo:DAO_0000002>Modeling in this hierarhcy is still under development.</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481">
-        <obo:DAO_0000001>The difference between a &apos;genetic locus&apos; and &apos;genomic locus&apos; is subtle, and the labels of these classes are not particularly intuitive. But I think distinguishing these concepts is important.  A &apos;genetic locus&apos; covers any sequence that is about a region of a physical sequence molecule that is a template for gene expression in some biological system (ie a cell or virion). &apos;Genomic locus&apos; references only regions of heritable nucleic acid molecule parts of a cell or virion (ie parts of the genome). So things like transiently-expressed transgene sequences that are introduced to a cell or organism only at the time of experiment would be considered &apos;&apos;genetic material&apos; but not &apos;genomic material&apos;.</obo:DAO_0000001>
         <obo:DAO_0000001>(obsolete because i went back to considering chromsomes and replicons as alleles - so that i could continnue to house sequence_alteration (which includes chromosomal translocations) under variant_allele)
 
 The diifference between a genomic loci and an allele is one of scale and context.  The notion of an allele appllies for genomic loci where more than one sequecne has been identified. Alleles exist at known marker or position in a reference genome  - typically spanning the extent of a gene, QTL, or microsattelite region, or the extent of a specific subsequence of such features down to a single nucleotide. (So it is common to talk about alleles of a gene, QTL, microsattelite, or base)
 
 Larger features such as chromosomes and chromosomal regions qualify as genomic loci but are not considered under the scope of the term &apos;allele&apos;. Likewise, extrachromosomal material/replicons that are stably incorporated into a genome are genomic loci but not considered alleles in the context of that genome - because they don&apos;t represent a marker or positionin the reference genome.</obo:DAO_0000001>
+        <obo:DAO_0000001>The difference between a &apos;genetic locus&apos; and &apos;genomic locus&apos; is subtle, and the labels of these classes are not particularly intuitive. But I think distinguishing these concepts is important.  A &apos;genetic locus&apos; covers any sequence that is about a region of a physical sequence molecule that is a template for gene expression in some biological system (ie a cell or virion). &apos;Genomic locus&apos; references only regions of heritable nucleic acid molecule parts of a cell or virion (ie parts of the genome). So things like transiently-expressed transgene sequences that are introduced to a cell or organism only at the time of experiment would be considered &apos;&apos;genetic material&apos; but not &apos;genomic material&apos;.</obo:DAO_0000001>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000483">
         <obo:DAO_0000002>The logical definition here is simple because we model conceptual/absent loci so that we can say that variants such as extrachromosomal replicons and transient transgenes are variant_with something, andthus classify as variants.  But this is shoddy modeling.  We need a different way to classify these things as variant, which may require changing the logical definition of the variant locus class. 
@@ -312,8 +313,14 @@ EC: &apos;effective genotype&apos; or &apos;extrinsic genotype&apos; or &apos;in
 
 SC: is_genotype_of some (cell or organism)</obo:DAO_0000003>
     </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000856">
+        <obo:DAO_0000002>Consider use of REO:DNA  construct?  SO:engineered plasmid?</obo:DAO_0000002>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000102">
         <obo:DAO_0000003>former IRI: http://purl.obolibrary.org/obo/GENO_0000594</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
+        <obo:DAO_0000002>Consider importing the property chains defined in RO for this relation.</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000110">
         <obo:DAO_0000002>Previously used the SC axiom based on faldo to define the positional aspect of a sequence feature: &quot;location some Region&quot;</obo:DAO_0000002>
@@ -397,6 +404,9 @@ and
     (&apos;biological process&apos; or organism or (is_part_of some organism) or (derived_from some organism))))
 
 (This axiom is based on a more OBI-ish approach, where phenotypes are considered as qualities or dispositions. Dispositional phenotypes are meant to account for processes phenotypes.  E.g.  &apos;delayed kidney development&apos; - the phenotype here is a disposition that is realized by some biological process (kidney development).)</obo:DAO_0000003>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/oban/association_has_predicate">
+        <obo:IAO_0000116>Formerly a placeholder class (http://purl.obolibrary.org/obo/GENO_0000747).  Replaced with OBAN IRI that they implemneted oin Mar 9 2016.</obo:IAO_0000116>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/gene/6469">
         <obo:DAO_0000002>When we get to modleing the central dogma, consdier simple patterns such as:
