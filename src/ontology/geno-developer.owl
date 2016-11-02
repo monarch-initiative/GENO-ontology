@@ -23,6 +23,62 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000382 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000382">
+        <rdfs:comment>formerly used http://purl.obolibrary.org/obo/GENO_0000532</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000862 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000862">
+        <obo:GENO_0000382 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000863"/>
+        <rdfs:label xml:lang="en">transgene1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000863 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000863">
+        <obo:GENO_0000382 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000864"/>
+        <rdfs:label xml:lang="en">cistron1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000864 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GENO_0000864">
+        <rdfs:label xml:lang="en">regulatoryregion1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Annotations
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -118,7 +174,9 @@ So we have two major forms of intrinsic variation: altered content vs novel cont
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000093">
         <obo:DAO_0000002>1. Asserted multiple inheritance
 
-2. Given that a transgene isnt actually &apos;transgenic&apos; until it is integrated into a genome of a different organism, there may be no difference between a SO:transgene and a GENO:integrated transgene. (Unless we consider something like a non-integrated expression plasmid to be a trasngene when introduced into another cell or organism (despite not being integrated into the host genome).</obo:DAO_0000002>
+2. Given that a transgene isnt actually &apos;transgenic&apos; until it is integrated into a genome of a different organism, there may be no difference between a SO:transgene and a GENO:integrated transgene. (Unless we consider something like a non-integrated expression plasmid to be a transgene when introduced into another cell or organism, despite not being integrated into the host genome - which i thing we do. So perhaps then the distinction is valid - both are necessarily part of a foreign genome, but one is chromosomally integrated and the other is not.
+
+3. For now I am not asserting integrated transgenes under variant allele or sequence alteration, because most integrated transgenes is part of a transgenic insertion, and the transgenic insertion is the variant allele-&gt; sequence alteration.   It doesn&apos;t make sense to be able to say that some subsequence or an insertion is a distinct instance of a sequence alteration.  This is a slippery slope to saying that each base comprising an insertion is itself a distinct sequence alteration.  But that is not true - the sequence alteration is a variant bounded by the beginning and end of its deviation from the reference sequence.  So a proper subsequence of the insertion does not qualify.</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000108">
         <obo:DAO_0000002>Consider if all material genomes are object aggregates - are some single chromosomes (e.g. a circular bacterial chromosomal genome?)</obo:DAO_0000002>
@@ -163,9 +221,6 @@ Consider asserting all as chromosomes, and defining seq variation with a new pro
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000359">
         <obo:DAO_0000002>consider updating to include extrinsic genotypes and expression variants in the range?</obo:DAO_0000002>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000382">
-        <rdfs:comment>formerly used http://purl.obolibrary.org/obo/GENO_0000532</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000388">
         <obo:DAO_0000002>consider updating to include extrinsic genotypes and experession variant loci in the range?</obo:DAO_0000002>
@@ -251,7 +306,10 @@ The total sum of the genetic information of an organism that is known and releva
         <obo:DAO_0000002>Consider how i want to define/use this class - only for genotypes that are background for some variant genotype, or for any standard strain genotype without defined variations.  Is relevant for typing the intrinsic genotype node in MPD data.</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000639">
-        <rdfs:comment>The entity from which sequence is derived can be another sequence feature or collection (e.g. a genome or gene), or a bearer of such a featur ( e.g. a cell line or organism). See examples.</rdfs:comment>
+        <rdfs:comment>The entity from which sequence is derived can be another sequence feature or collection (e.g. a genome or gene), or a bearer of such a feature ( e.g. a cell line or organism). See examples.
+
+Not appropriate to use when the subject has sequence that overlaps with the object (e.g. you would not say that a transgene sequence_derives_from a transgenic insertion. But you would say that a transgene sequence_derives_from an engineered construct, or a gene)</rdfs:comment>
+        <obo:DAO_0000002>Reconsider allowing for this property to be used to link features to non-features (see examples 3 and 4).</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000666">
         <obo:DAO_0000001>1.Regarding a name for this class, the term &apos;part&apos; is used because it is most general and can cover parts of a gene that are individual subregions, as well as collections of subregions that are defeind by some functional or structural criteria (e.g. coding gene part, which is the collection of all translated seqeunce in the exons in a gene).  Other terms such as &apos;subregion&apos;, segment&apos;, or &apos;member&apos; are not general enough to cover all such cases, but are used to label subclasses where they are appropriate.
@@ -356,8 +414,8 @@ Note that ZFIN represents instances of SSLPs. e.g. http://zfin.org/action/marker
         <obo:DAO_0000003>Formerly GENO_0000390 ! chromosome feature, but replaced by SO_0000830 ! chromosome_part</obo:DAO_0000003>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902">
+        <obo:DAO_0000002>&apos;Trangenes&apos; are contextually defined, so a gene sequence is not considered a &apos;transgene&apos; until it is present in a foreign cell (ie one form whcih it did not derive).  Accordingly, construct inserts are not transgenes until they are experimentally delivered in the construct into a foreign cell. This means that perhaps there is no distinction between a transgene and  an integrated transgene (unless being present extra-chromosomally, e.g. as a transient expression construct, qualifies it as being transgenic - which i think it does. So perhaps then the distinction is valid - both are necessarily part of a foreign genome, but one is chromosomally integrated and the other is not.)</obo:DAO_0000002>
         <obo:DAO_0000003>Formerly http://purl.obolibrary.org/obo/GENO_0000505, replaced with SO term.</obo:DAO_0000003>
-        <obo:DAO_0000002>&apos;Trangenes&apos; are contextually defined, so a gene sequence is not considered a &apos;transgene&apos; until it is present in a foreign cell (ie one form whcih it did not derive).  Accordingly, construct inserts are not transgenes until they are experimentally delivered in the construct into a foreign cell. This means that perhaps there is no distinction between a transgene and  an integrated transgene (unless beign present extra-chromosomally, e.g. as a transient expression construct, qualifies it as being transgenec - which i think it does.)</obo:DAO_0000002>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001026">
         <obo:DAO_0000001>Should a &apos;genomic locus&apos; and a &apos;genome&apos; necessarily be about the &apos;genetic material&apos; that is part_of some cell or virion, or should they be able to be encoded in nucleic acids that are not part of a cell or virion&apos;s genome. At present, we do not require this parthood. This is because these seqeunce classes will be aligned with/taken from SO, and in SO they are considered ICEs.  So we need not be concerned with whether a genomic locus or a gene must be encoded in the material genome of an organism or not.  Because these are sequence information entities that are about some nucleic acid, and not sequence that is encoded in some nucleic acid. Thus, the context of the physical nucleid acid is of no import.  These classes are loci in virtue of the fact that they are associated with some specific coordinates in some genomic sequence record, and not in virtue of the fact that they are encoded in the actual genetic material that is defined/delimited by such coordinates.

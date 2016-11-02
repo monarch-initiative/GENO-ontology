@@ -141,26 +141,6 @@ Documentation is under development as well, and for now a slidedeck is available
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO0000846 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO0000846">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-        <obo:IAO_0000115>A relation used to describe  a process contextualizing the identity of an entity.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has_qualifying_process</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO0000847 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO0000847">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-        <obo:IAO_0000115>A relation used to describe  an environment contextualizing the identity of an entity.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has_qualifying_environment</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GENO_0000207 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000207">
@@ -631,12 +611,12 @@ Used in GENO to describe physical context of materialized sequence features that
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000639"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000112>1. Used to specify derivation of transgene components from a given gene. 
+        <obo:IAO_0000112>1. Used to specify derivation of transgene components from a gene class, or a engineered construct instance. 
 
 2. Used to specify the strain of origin of an allele  (i.e. that an allele was originally isolated from a specific background strain, and propagated into new genetic backgrounds.
 
 3. Used to indicate derivation of a variant mouse genotype from an ES cell line used in generating the modified mice (IMPC)</obo:IAO_0000112>
-        <obo:IAO_0000115>Relationship between a sequence feature and an entity from which it derives part or all of its sequence.</obo:IAO_0000115>
+        <obo:IAO_0000115>Relationship between a sequence feature and a distinct, non-overlapping feature from which it derives part or all of its sequence.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">sequence_derives_from</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1262,6 +1242,22 @@ Note that a separate chain is needed to propagate from the variant locus to the 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000845">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000790"/>
         <rdfs:label xml:lang="en">has_uncertain_significance_for_condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000846 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000846">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000847 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000847">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
     </owl:ObjectProperty>
     
 
@@ -2629,7 +2625,7 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A transgene that has been integrated into a chrromosome in the host genome.</obo:IAO_0000115>
-        <rdfs:comment>An integrated transgene differs from a transgenic inseriton in that a transgenic insertion may contain no actual transgenes, multiple transgenes, and it may contain sequences in addition to its transgene(s). For example, sequences flanking the transgene, or the insertion may be polycistronic and contain more than on transgene. So the term &apos;integrated transgene&apos; covers only a single transgene integrated as part of a transgenic insertion.
+        <rdfs:comment>An integrated transgene differs from a transgenic insertion in that a transgenic insertion may contain no actual transgenes, multiple transgenes, and it may contain sequences in addition to its transgene(s). For example, sequences flanking the transgene, or the insertion may be polycistronic and contain more than on transgene. So the term &apos;integrated transgene&apos; covers only a single transgene integrated as part of a transgenic insertion.
 
 An &apos;integrated transgene&apos; differs from its parent &apos;transgene&apos; in that transgenes can include genes introduced into a cell/organism on an extra-chromosomal plasmid that is never integrated into the host genome.</rdfs:comment>
         <rdfs:label>integrated transgene</rdfs:label>
@@ -3782,7 +3778,7 @@ If this human gene is inserted to replace the mouse SMN2 gene, it becomes an all
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000527">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000715"/>
-        <obo:IAO_0000115>A set of all targeted genes in a single genome in the context of a given experiment (e.g. both copies of the WT shha gene in a zebrafish exposed to shha-targeting mmorpholinos)</obo:IAO_0000115>
+        <obo:IAO_0000115>A set of all targeted genes in a single genome in the context of a given experiment (e.g. both copies of the WT shha gene in a zebrafish exposed to shha-targeting morpholinos)</obo:IAO_0000115>
         <obo:IAO_0000118>reagent-targeted gene complement</obo:IAO_0000118>
         <rdfs:label xml:lang="en">targeted gene complement</rdfs:label>
     </owl:Class>
@@ -3912,7 +3908,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000606">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000134"/>
-        <rdfs:label xml:lang="en">hemizygous insertion</rdfs:label>
+        <rdfs:label xml:lang="en">hemizygous insertion-linked</rdfs:label>
     </owl:Class>
     
 
@@ -4625,7 +4621,6 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
     <!-- http://purl.obolibrary.org/obo/GENO_0000762 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000762">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
         <rdfs:label xml:lang="en">ObsoleteClass</rdfs:label>
     </owl:Class>
     
@@ -4986,7 +4981,6 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000846">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <rdfs:label xml:lang="en">repeat region alteration</rdfs:label>
     </owl:Class>
     
 
@@ -4995,7 +4989,6 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000847">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000846"/>
-        <rdfs:label xml:lang="en">microsatellite alteration</rdfs:label>
     </owl:Class>
     
 
@@ -5041,6 +5034,30 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
         <obo:IAO_0000115>A transgene that is not chromosomally integrated in the host genome, but instead exists as part of an extra-chromosomal construct.</obo:IAO_0000115>
         <obo:IAO_0000118>non-integrated transgene</obo:IAO_0000118>
         <rdfs:label xml:lang="en">extra-chromosomal transgene</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000865 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000865">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000002"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000009"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000030"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000504"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000839"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001059"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <obo:IAO_0000115>Convenience class for grouping genotype components at all levels of granularity.</obo:IAO_0000115>
+        <rdfs:comment>Along with genotypes and genes, the classes collected here complete the set of genotypic entities that are asserted to cause phenotypes in different data sources.</rdfs:comment>
+        <rdfs:label xml:lang="en">genotype component</rdfs:label>
     </owl:Class>
     
 
@@ -6624,6 +6641,16 @@ Codes for: http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000628_">
         <obo:IAO_0000118>p-arm</obo:IAO_0000118>
         <obo:IAO_0000118>stalk</obo:IAO_0000118>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000846">
+        <rdfs:label xml:lang="en">repeat region alteration</rdfs:label>
+        <obo:IAO_0000115>A relation used to describe  a process contextualizing the identity of an entity.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has_qualifying_process</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000847">
+        <obo:IAO_0000115>A relation used to describe  an environment contextualizing the identity of an entity.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">microsatellite alteration</rdfs:label>
+        <rdfs:label xml:lang="en">has_qualifying_environment</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
 
