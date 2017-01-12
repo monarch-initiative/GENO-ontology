@@ -1706,6 +1706,16 @@ Environments include natural environments or exposures, experimentally applied c
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000866 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000866">
+        <obo:IAO_0000112>The &apos;rank&apos; quantifier in Bgee gene-anatomy associations, that indicates the imporatnace/specificity of a gene expression in a given anatommy relative to expressionin other anatomies for  the same gene.</obo:IAO_0000112>
+        <obo:IAO_0000115>Property to link an assertion or association with some value quantifying its relevance or  ranking.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has_quantifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
