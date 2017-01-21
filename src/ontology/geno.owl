@@ -46,6 +46,14 @@ Documentation is under development as well, and for now a slidedeck is available
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000867 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000867">
+        <rdfs:label xml:lang="en">proabalistic_quantifier</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_alt_id -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_alt_id"/>
