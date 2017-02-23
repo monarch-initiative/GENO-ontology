@@ -1548,6 +1548,24 @@ Example 2: a collection of information entities such as a genotype being compris
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002528 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002528">
+        <obo:IAO_0000115>inverse of downstream of sequence of</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">is upstream of sequence of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002529 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002529">
+        <obo:IAO_0000115>x is downstream of the sequence of y iff either (1) x and y have sequence units, and all units of x are downstream of all units of y, or (2) x and y are sequence units, and x is either immediately downstream of y, or transitively downstream of y.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">is downstream of sequence of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0003301 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003301">
@@ -2228,7 +2246,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000029"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A sequence collection comprised of all &apos;variant slingle locus complements&apos; in a single genome, which together constitute the variant component of an intrinsic genotype.</obo:IAO_0000115>
+        <obo:IAO_0000115>A sequence collection comprised of all &apos;variant single locus complements&apos; in a single genome, which together constitute the variant component of an intrinsic genotype.</obo:IAO_0000115>
         <rdfs:comment>1. Note that even a reference locus (e.g. a wild-type gene) that is a member of a single locus complement that contains a variant allele is included in this &apos;genomic variation complement&apos;.  Thus, the members of this &apos;genomic variation complement&apos; (which is a sequence collection) are &apos;single locus variant complements&apos;.  Our axiom below uses has_part rather than has_member, however, to account for the fact that many &apos;genomic variation complements&apos; have only one &apos;single locus variant complement&apos; as members.  So because has_member is not reflexive, it is not appropriate for these cases.
 
 2. Most genotypes have only one altered locus (ie only one &apos;single-locus variant complement&apos;)  that distinguish it from some reference background. For example, the genotype instance &apos;fgf8a&lt;sup&gt;t1282a/+&lt;/sup&gt;(AB)&apos;) exhibits a mutation at only one locus. But some genotypes vary at more than one locus (e.g. a double mutant that has alterations in the fgf8a gene and the shh gene)).</rdfs:comment>
@@ -4254,6 +4272,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000659">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000701"/>
         <obo:IAO_0000115>An exhaustive collection of all sequence features in a collection that meet some specified criteria (e.g. all chromosomes in a genome, all variant loci in a genome, all copies of a given gene or locus in a genome).</obo:IAO_0000115>
+        <rdfs:comment>Not all sequence feature complements will be sets or collections - i.e. in some cases the complement of all features of type X will consist of a single feature.  For example, an x-linked hemizygous &apos;single locus complement&apos; in a XY male.</rdfs:comment>
         <rdfs:label xml:lang="en">seqeunce feature complement</rdfs:label>
     </owl:Class>
     
@@ -4382,7 +4401,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <obo:IAO_0000115>A genomic locus that represents an entirely new replicon in the genome, e.g. an extrachromosomal replicon or an extra copy of a chromosome.</obo:IAO_0000115>
-        <obo:IAO_0000116>This class is defined so as to support classification of things like nocel extrachromosomal replicons and aneusomic chromosomes as being variant loci/alleles in a genome. These represent entirely new loci in the genome - not variants of an existing locus.</obo:IAO_0000116>
+        <obo:IAO_0000116>This class is defined so as to support classification of things like novel extrachromosomal replicons and aneusomic chromosomes as being variant loci/alleles in a genome. These represent entirely new loci in the genome - not variants of an existing locus.</obo:IAO_0000116>
         <rdfs:comment>Novel replicons are considered as an &apos;insertion&apos; in a genome, and as such, qualify as types of sequence_alterations and variant alleles.  There is no pre-existing locus that it modifies, however, and thus it is not really an &apos;allele of&apos; a named locus.  But conceptually, we still consider these to represent genetic variants and classify them as variant alleles.</rdfs:comment>
         <rdfs:label xml:lang="en">novel replicon</rdfs:label>
     </owl:Class>
@@ -5076,6 +5095,41 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
         <obo:IAO_0000115>Convenience class for grouping genotype components at all levels of granularity.</obo:IAO_0000115>
         <rdfs:comment>Along with genotypes and genes, the classes collected here complete the set of genotypic entities that are asserted to cause phenotypes in different data sources.</rdfs:comment>
         <rdfs:label xml:lang="en">genotype component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000870 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000870">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000701"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A collection of more than one sequence feature.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/SO_0001260 ! sequence_collection</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">sequence feature collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000871 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000871">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000870"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A set of sequence alterations (typically single-nucleotide polymorphisms) on one chromosome that tend to always occur together.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">haplotype</rdfs:label>
     </owl:Class>
     
 
