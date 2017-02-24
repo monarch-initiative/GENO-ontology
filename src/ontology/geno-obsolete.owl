@@ -786,7 +786,30 @@ Range = a punned gene class IRI</rdfs:comment>
      -->
 
     
+  <!-- http://purl.obolibrary.org/obo/GENO_0000865 -->
 
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000865">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000002"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000009"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000030"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000504"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000644"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000839"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000871"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001059"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <obo:IAO_0000115>Convenience class for grouping genotype components at all levels of granularity.</obo:IAO_0000115>
+        <rdfs:comment>Along with genotypes and genes, the classes collected here complete the set of genotypic entities that are asserted to cause phenotypes in different data sources.</rdfs:comment>
+        <rdfs:label xml:lang="en">genotype component</rdfs:label>
+    </owl:Class>
+    
 
     <!-- http://monarch.org/zfin/ZDB-EXP-041102-1 -->
 
