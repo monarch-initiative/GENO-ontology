@@ -3779,7 +3779,7 @@ If this human gene is inserted to replace the mouse SMN2 gene, it becomes an all
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
         <obo:IAO_0000112>In an experiment where shha is targeted by MO1 and shhb is overexpressed from a transgenic expression construct, the extrinsic genotype describes the &apos;expression altered&apos;  shha gene targeted by MO-1, and the shhb gene as overexpressed from its construct.</obo:IAO_0000112>
-        <obo:IAO_0000115>A genotype that describes the total variation the level of gene expression in a cell or organism.  An extrinsic genotype includes all genes and transgenes whose expression is altered in a biological system, as it relates to a measured phenotype.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genotype that describes the total variation the level of gene expression in a cell or organism.  An extrinsic genotype includes the set of all genes in a cell or organism whose expression is transiently increased or decreased in an experiment.</obo:IAO_0000115>
         <obo:IAO_0000118>experimental genotype</obo:IAO_0000118>
         <rdfs:comment>An extrinsic genotype describes the total variation in the level of expression of targeted or overexpressed genes in a cell or organism at the time of an experiment where phenotypic assessment is made.</rdfs:comment>
         <rdfs:label xml:lang="en">extrinsic genotype</rdfs:label>
@@ -6702,6 +6702,29 @@ Codes for: http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
         <rdfs:label xml:lang="en">microsatellite alteration</rdfs:label>
         <rdfs:label xml:lang="en">has_qualifying_environment</rdfs:label>
     </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Axiom>
+        <owl:annotatedSource>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+                <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+            </owl:Restriction>
+        </owl:annotatedSource>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+        <rdfs:comment>Initially created such that integrated transgene infers as child of sequence_alteration.</rdfs:comment>
+    </owl:Axiom>
 </rdf:RDF>
 
 
