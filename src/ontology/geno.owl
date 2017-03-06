@@ -3650,12 +3650,6 @@ The notion of wild-type alleles is more common in model organism databases, wher
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000382"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000447"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000533"/>
             </owl:Restriction>
@@ -3779,9 +3773,9 @@ If this human gene is inserted to replace the mouse SMN2 gene, it becomes an all
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
         <obo:IAO_0000112>In an experiment where shha is targeted by MO1 and shhb is overexpressed from a transgenic expression construct, the extrinsic genotype describes the &apos;expression altered&apos;  shha gene targeted by MO-1, and the shhb gene as overexpressed from its construct.</obo:IAO_0000112>
-        <obo:IAO_0000115>A genotype that describes the total variation the level of gene expression in a cell or organism.  An extrinsic genotype includes the set of all genes in a cell or organism whose expression is transiently increased or decreased in an experiment.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genotype that describes the transient variation in gene expression in a cell or organism during an experiment, as mediated through gene-specific interventions (e.g. gene knockdown reagents such as RNAi or morpholinos, overexpression constructs).</obo:IAO_0000115>
         <obo:IAO_0000118>experimental genotype</obo:IAO_0000118>
-        <rdfs:comment>An extrinsic genotype describes the total variation in the level of expression of targeted or overexpressed genes in a cell or organism at the time of an experiment where phenotypic assessment is made.</rdfs:comment>
+        <rdfs:comment>Extrinsic genotypes describe all genes in a cell or organism whose expression is transiently increased or decreased  through gene-specific interventions in an experiment where phenotypic assessment is made.</rdfs:comment>
         <rdfs:label xml:lang="en">extrinsic genotype</rdfs:label>
     </owl:Class>
     
@@ -3803,8 +3797,9 @@ If this human gene is inserted to replace the mouse SMN2 gene, it becomes an all
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000719"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A genotype that describes the total variation in both genomic sequence and the level of gene expression in a cell or organism.  An effective genotype is meant to summarize all factors related to genes and their expression that influence an observed phenotype.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genotype that describes the total variation in genomic sequence, along with transient variation in gene expression during an experiment as mediated through gene-specific interventions (e.g. gene knockdown reagents such as RNAi or morpholinos, or overexpression constructs). An effective genotype is meant to summarize all factors related to genes and their expression that influence an observed phenotype.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EFO:0000513 ! genotype: &quot;The total sum of the genetic information of an organism that is known and relevant to the experiment being performed, including chromosomal, plasmid, viral or other genetic material which has been introduced into the organism either prior to or during the experiment.&quot;</oboInOwl:hasDbXref>
+        <rdfs:comment>A genotype that describes the total variation in genomic sequence, along with all genes whose expression is transiently increased or decreased  through gene-specific interventions in an experiment.  An effective genotype is meant to summarize all factors related to genes and their expression that influence an observed phenotype.</rdfs:comment>
         <rdfs:label xml:lang="en">effective genotype</rdfs:label>
     </owl:Class>
     
@@ -3891,7 +3886,7 @@ The identity of a given instance of a experssion-variant gene is dependent on ho
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background.</obo:IAO_0000115>
-        <rdfs:comment>A genotype specifies the total variation in genetic sequence and/or expression across a genome.</rdfs:comment>
+        <rdfs:comment>The concept of a &apos;genotype&apos; is considered broadly in GENO to describe the total variation in genetic sequence and/or expression across a genome.  The more specific concept of an &apos;intrinsic genotype&apos; describes varaition in heritable genomic *sequence*, while the concpet of an &apos;extrinsic genotype&apos; describes the set of genes that varies transiently in *expression* as a result of some experimentally induced, gene-specific targeted knowck-down or overexpression. The concept of an &apos;effective genotype&apos; describes  both intrinsic and extrinsic variation (i.e. = intrinsic + extrinnsic genotype infoormation).</rdfs:comment>
         <rdfs:label xml:lang="en">genotype</rdfs:label>
     </owl:Class>
     
@@ -4570,7 +4565,9 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
         </rdfs:subClassOf>
         <obo:IAO_0000115>A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.</obo:IAO_0000115>
         <obo:IAO_0000116>Genotype vs Genome in GENO: An (intrinsic) genotype is an information artifact representing an indirect syntax for specifying a genome sequence.  This syntax has reference and variant components -  a &apos;background genotype&apos; and &apos;genomic variation complement&apos; - that must be operated on to resolve a specifie genome sequence.  Specifically, the genome sequence is resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the &apos;reference genome&apos;.  So, while the total sequence content represented in a genotype may be greater than that in a genome, the intended resolution of these sequences is to arrive at a single genome sequence. It is this end-point that we consider when holding that a genotype &apos;specifies&apos; a genome.</obo:IAO_0000116>
-        <rdfs:comment>A genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome (&apos;genomic background&apos;), and all specific variants from this reference (the &apos;genomic variation complement&apos;).  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the reference  &apos;genomic background&apos; sequence.</rdfs:comment>
+        <rdfs:comment>1. A genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome (&apos;genomic background&apos;), and all specific variants from this reference (the &apos;genomic variation complement&apos;).  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the reference  &apos;genomic background&apos; sequence.
+
+2. *Heritable* genomic sequence is that which is passed on to subsequence generations of ccells/organisms, and includes all chromosomal sequences, the mitochondrial genome, and any heritable extrachromosomal sequences.</rdfs:comment>
         <rdfs:label xml:lang="en">intrinsic genotype</rdfs:label>
     </owl:Class>
     
@@ -5045,7 +5042,7 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
         <rdfs:comment>Constructs can be engineered to carry inserts of DNA from external sources, for purposes of cloning and propagation or gene expression in host cells.  
 
 Constructs are typically packaged as part  of delivery systems such as plasmids or viral vectors.</rdfs:comment>
-        <rdfs:label xml:lang="en">engineered_genetic_construct</rdfs:label>
+        <rdfs:label xml:lang="en">engineered genetic construct</rdfs:label>
     </owl:Class>
     
 
@@ -5808,7 +5805,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
         <obo:IAO_0000115>A gene that has been transferred naturally or by any of a number of genetic engineering techniques into a cell or organism where it is foreign (i.e. exogenous/extraneous to the host genome).</obo:IAO_0000115>
         <rdfs:comment>Transgenes can exist as integrated into the host genome, or extra-chromosomally on replicons or transiently carried/expressed vectors.  What matters is that they are active in the context of a foreign biological system (typically a cell or organism).
 
-Note that transgenes as defined here are not necessarily from a differnet taxon than that of the host geneme.  For example, a Mus musculus gene over-expressed from a chromosomally-integrated expression construct in a Mus musculus genome qualifies as a transgene because it is exognous to the endogenous host genome.</rdfs:comment>
+Note that transgenes as defined here are not necessarily from a different taxon than that of the host genome.  For example, a Mus musculus gene over-expressed from a chromosomally-integrated expression construct in a Mus musculus genome qualifies as a transgene because it is exogenous to the endogenous host genome.</rdfs:comment>
         <rdfs:label xml:lang="en">transgene</rdfs:label>
     </owl:Class>
     
