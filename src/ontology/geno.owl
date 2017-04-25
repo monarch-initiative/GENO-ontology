@@ -246,7 +246,7 @@ Documentation is under development as well, and for now a slidedeck is available
     <!-- http://purl.obolibrary.org/obo/GENO_0000242 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000242">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000253"/>
         <obo:IAO_0000112>A geno:intrinnsic genotype &apos;specifies&apos; a SO:genome.
 A geno:karyotype &apos;specifies&apos; a geno:karyotype feature collection.</obo:IAO_0000112>
@@ -259,7 +259,7 @@ A geno:karyotype &apos;specifies&apos; a geno:karyotype feature collection.</obo
     <!-- http://purl.obolibrary.org/obo/GENO_0000243 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000243">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <obo:IAO_0000116>Created subproperties &apos;approximates_sequence&apos; and &apos;resolves to sequence&apos;. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The &apos;resolves_to_sequence&apos; property can be used when the sequence variant artifact is able to completely resolve a sequence, and the &apos;approximates_sequence&apos; property can be used when it does not. </obo:IAO_0000116>
         <rdfs:label>obsolete_approximates_sequence</rdfs:label>
     </owl:ObjectProperty>
@@ -269,7 +269,7 @@ A geno:karyotype &apos;specifies&apos; a geno:karyotype feature collection.</obo
     <!-- http://purl.obolibrary.org/obo/GENO_0000244 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000244">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <obo:IAO_0000116>Created subproperties &apos;approximates_sequence&apos; and &apos;resolves to sequence&apos;. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The &apos;resolves_to_sequence&apos; property can be used when the sequence variant artifact is able to completely resolve a sequence, and the &apos;approximates_sequence&apos; property can be used when it does not. </obo:IAO_0000116>
         <rdfs:label>obsolete_resolves_to_sequence</rdfs:label>
     </owl:ObjectProperty>
@@ -308,7 +308,7 @@ A geno:karyotype &apos;specifies&apos; a geno:karyotype feature collection.</obo
     <!-- http://purl.obolibrary.org/obo/GENO_0000253 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000253">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <rdfs:label>obsolete_is_specified_by</rdfs:label>
     </owl:ObjectProperty>
     
@@ -317,7 +317,7 @@ A geno:karyotype &apos;specifies&apos; a geno:karyotype feature collection.</obo
     <!-- http://purl.obolibrary.org/obo/GENO_0000359 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000359">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <obo:IAO_0000115>shortcut relation used to link a phenotype directly to a genotype of an organism</obo:IAO_0000115>
         <obo:IAO_0000118>is_phenotype_of_organism_with_genotype</obo:IAO_0000118>
@@ -334,7 +334,7 @@ phenotype and (is_phenotype_of some (organism and (has_part some (&apos;material
     <!-- http://purl.obolibrary.org/obo/GENO_0000368 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000368">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENO_0000141"/>
         <obo:IAO_0000115>A relation to link variant loci, phenotypes, or disease to the type of inheritance process they are involved in, based on how the genetic interactions between alleles at the causative locus determine the pattern of inheritance of a specific phenotype/disease from one generation to the next.</obo:IAO_0000115>
         <obo:IAO_0000116>Exploratory/temporary property, as we formalize our phenotypic inheritance model.</obo:IAO_0000116>
@@ -410,7 +410,7 @@ In owl models where alleles are instances of gene classes, this relation links a
     <!-- http://purl.obolibrary.org/obo/GENO_0000410 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000410">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000411"/>
         <obo:IAO_0000115>A relation used to link a variant locus instance to the gene class it is a variant of (in terms of its sequence or expression level).</obo:IAO_0000115>
         <obo:IAO_0000118>is_variant_instance_of</obo:IAO_0000118>
@@ -425,7 +425,7 @@ Range = punned gene class IRI</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/GENO_0000411 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000411">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <obo:IAO_0000115>A relation linking a gene class to a sequence-varaint or expression-variant of the gene.</obo:IAO_0000115>
         <obo:IAO_0000118>has_variant_instance</obo:IAO_0000118>
         <obo:IAO_0000231>formerly grouped has_allele and has_expression_variant proerpties under cllass to feature property (now renamed locus_affected_by)</obo:IAO_0000231>
@@ -534,7 +534,7 @@ Range = expression variant locus</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/GENO_0000486 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000486">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <obo:IAO_0000115>A relation between two sequence features at a given genomic locus that vary in their sequence or level of expression.</obo:IAO_0000115>
         <obo:IAO_0000231>Decided there was no need for a contrasting is_expression_variant_with property, so removed it and this parent grouping property.</obo:IAO_0000231>
         <rdfs:comment>This proeprty is most commonly used to relate two different alleles of a given gene.  It is not a relation between an allele and the gene it is a variant of.</rdfs:comment>
@@ -546,7 +546,7 @@ Range = expression variant locus</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/GENO_0000488 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000488">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <obo:IAO_0000115>A relation between two instances of a given gene that vary in their level of expression as a result of external factors influencing expression (e.g. gnee-knockdown reagents, epigenetic modification, alteration of endogenous gene-regulation pathways).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">obsolete_is_expression_variant_with</rdfs:label>
     </owl:ObjectProperty>
@@ -870,7 +870,7 @@ Used in GENO to describe physical context of materialized sequence features that
     <!-- http://purl.obolibrary.org/obo/GENO_0000741 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000741">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <rdfs:comment>Proposal for a property linking variants to smaller components that are regulatory, and therefore should not inherit phenotypes.</rdfs:comment>
         <rdfs:label xml:lang="en">obsolete_has_regulatory_part</rdfs:label>
     </owl:ObjectProperty>
@@ -880,7 +880,7 @@ Used in GENO to describe physical context of materialized sequence features that
     <!-- http://purl.obolibrary.org/obo/GENO_0000742 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000742">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000408"/>
@@ -912,18 +912,10 @@ Used in GENO to describe physical context of materialized sequence features that
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO_0000763 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000763">
-        <rdfs:label xml:lang="en">ObsoleteObjectProperty</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GENO_0000767 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000767">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <obo:IAO_0000115>A relation linking a sequence feature to its component Position that represents an identifying criteria for sequence feature instances.</obo:IAO_0000115>
         <obo:IAO_0000116>For representing positional data, we advocate use of the FALDO model, which links to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence.  The positional_component property in GENO is meant primarily to formalize the identity criteria or sequence features and qualified sequence features, to illustrate the distinction between them.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">obsolete_has_position_component</rdfs:label>
@@ -1259,6 +1251,8 @@ Note that a separate chain is needed to propagate from the variant locus to the 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000846">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
+		<obo:IAO_0000115>A relation used to describe  a process contextualizing the identity of an entity.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has_qualifying_process</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1267,6 +1261,8 @@ Note that a separate chain is needed to propagate from the variant locus to the 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000847">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
+		<obo:IAO_0000115>A relation used to describe  an environment contextualizing the identity of an entity.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has_qualifying_environment</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1523,8 +1519,17 @@ Example 2: a collection of information entities such as a genotype being compris
     <!-- http://purl.obolibrary.org/obo/RO_0002354 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002354">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000763"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
         <rdfs:label xml:lang="en">obsolete_formed as result of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_000244 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_000244">
+        <obo:IAO_0000115>Holds between molecular entities a and b when the execution of a activates or inhibits the activity of b</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">molecularly controls</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2305,7 +2310,7 @@ This design allows us to classify genes and any variants of those genes (be they
     <!-- http://purl.obolibrary.org/obo/GENO_0000019 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000019">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000762"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
@@ -2624,7 +2629,7 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
     <!-- http://purl.obolibrary.org/obo/GENO_0000091 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000091">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000762"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
@@ -2799,7 +2804,7 @@ Note that at present, a material genome and genetic material are necessarily par
     <!-- http://purl.obolibrary.org/obo/GENO_0000125 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000125">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000762"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>sequence attribute that can inhere only in a collection of more than one sequence features</obo:IAO_0000115>
         <rdfs:label>obsolete_sequence feature collection attribute</rdfs:label>
     </owl:Class>
@@ -3381,7 +3386,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
     <!-- http://purl.obolibrary.org/obo/GENO_0000415 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000415">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000762"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature that references some biological macromolecule applied as a reagent in an experiment or technique (e.g. a morpholino expression plasmid, or oligonucleotide probe)</obo:IAO_0000115>
         <obo:IAO_0000116>replaced with SO:engineered_region</obo:IAO_0000116>
         <obo:IAO_0000118>extra-genomic sequence</obo:IAO_0000118>
@@ -4622,7 +4627,7 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
     <!-- http://purl.obolibrary.org/obo/GENO_0000724 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000724">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000762"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <rdfs:label xml:lang="en">obsolete_biological sequence or collection</rdfs:label>
     </owl:Class>
     
@@ -4655,14 +4660,6 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
         <obo:IAO_0000115>A sequence feature whose identity is additionally dependent on factors specifically influencing its level of expression in the context of a biological system (e.g. being targeted by gene-knockdown reagents, or driven from exogneous expression system like recombinant construct)</obo:IAO_0000115>
         <rdfs:label xml:lang="en">expression-qualified sequence feature</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000762 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000762">
-        <rdfs:label xml:lang="en">ObsoleteClass</rdfs:label>
     </owl:Class>
     
 
@@ -4998,17 +4995,6 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO_0000846 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000846"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000847 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000847"/>
-    
-
 
     <!-- http://purl.obolibrary.org/obo/GENO_0000848 -->
 
@@ -5341,7 +5327,7 @@ Previous. An information content entity is a non-realizable information entity t
     <!-- http://purl.obolibrary.org/obo/PATO_0000016 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000016">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000762"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000116>&apos;Value&apos; label chosen here according to http://www.uwgb.edu/heuerc/2D/ColorTerms.html</obo:IAO_0000116>
         <obo:IAO_0000116>Was parent of chromosomal band intensity before moving this class to live as a sequence feature attribute.</obo:IAO_0000116>
         <obo:IAO_0000118>color value</obo:IAO_0000118>
@@ -5682,7 +5668,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
     <!-- http://purl.obolibrary.org/obo/SO_0000637 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000637">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000762"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000116>Obsoleted as we didnt want to commit to constructs being plasmids - but rather wanted a classification of more general types of engineered regions used to replicate and deliver sequence to target cells/genomes. Replaced by GENO:0000856 ! engineered genetic construct.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">obsolete_engineered_plasmid</rdfs:label>
     </owl:Class>
@@ -6702,19 +6688,6 @@ Codes for: http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000628_">
-        <obo:IAO_0000118>p-arm</obo:IAO_0000118>
-        <obo:IAO_0000118>stalk</obo:IAO_0000118>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000846">
-        <obo:IAO_0000115>A relation used to describe  a process contextualizing the identity of an entity.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has_qualifying_process</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000847">
-        <obo:IAO_0000115>A relation used to describe  an environment contextualizing the identity of an entity.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has_qualifying_environment</rdfs:label>
-    </rdf:Description>
-    
 
 
     <!-- 
