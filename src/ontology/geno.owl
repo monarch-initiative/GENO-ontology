@@ -1251,7 +1251,7 @@ Note that a separate chain is needed to propagate from the variant locus to the 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000846">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-		<obo:IAO_0000115>A relation used to describe  a process contextualizing the identity of an entity.</obo:IAO_0000115>
+        <obo:IAO_0000115>A relation used to describe  a process contextualizing the identity of an entity.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has_qualifying_process</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1261,7 +1261,7 @@ Note that a separate chain is needed to propagate from the variant locus to the 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000847">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-		<obo:IAO_0000115>A relation used to describe  an environment contextualizing the identity of an entity.</obo:IAO_0000115>
+        <obo:IAO_0000115>A relation used to describe  an environment contextualizing the identity of an entity.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has_qualifying_environment</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2834,14 +2834,15 @@ Note that at present, a material genome and genetic material are necessarily par
     <!-- http://purl.obolibrary.org/obo/GENO_0000133 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000133">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000875"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000516"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A quality inhering in a single locus complement in virtue its allelic composition.</obo:IAO_0000115>
+        <obo:IAO_0000115>An allelic state that specifically describes the degree of similarity of alleles at a particular locus in the chromosomal (i.e. non-mitochondrial) genome (i.e. whetehr the alleles are the same or different).</obo:IAO_0000115>
+        <obo:IAO_0000118>allelic state</obo:IAO_0000118>
         <oboInOwl:hasDbXref>http://semanticscience.org/resource/SIO_001263</oboInOwl:hasDbXref>
         <rdfs:label>zygosity</rdfs:label>
     </owl:Class>
@@ -3912,7 +3913,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
     <!-- http://purl.obolibrary.org/obo/GENO_0000602 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000602">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000133"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000875"/>
         <rdfs:comment>describes state where all copies of a mtDNA locus in a given cell/organism are identical</rdfs:comment>
         <rdfs:label xml:lang="en">homoplasmic</rdfs:label>
     </owl:Class>
@@ -3922,7 +3923,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
     <!-- http://purl.obolibrary.org/obo/GENO_0000603 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000603">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000133"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000875"/>
         <rdfs:comment>describes state where  copies of a mtDNA locus in a given cell/organism are not identical</rdfs:comment>
         <rdfs:label xml:lang="en">heteroplasmic</rdfs:label>
     </owl:Class>
@@ -4835,11 +4836,12 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000823">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000778"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A sequence information entity that specifies an allele present at a given locus (and often the zygosity of the allele at that locus).</obo:IAO_0000115>
-        <rdfs:comment>The term &apos;genotype&apos; has varied meanings/scopes in the domains of research and medicine.  In some settings we talk about the genotype of an organism, which describes an entire genome in terms of a background and variations/diffs from this background. But we also talk about the genotype at a specific locus, which describes more narrowly the allele or variant or SNP present at the locus, and  possibly its zygosity.  In GENO, we reserve the term &apos;genotype&apos; for the former case, describing the full genome of an organism, and use the term &apos;allelotype&apos; to refer to the latter, to describe a more focused scale of variation.
+        <obo:IAO_0000112>An example &apos;allelotype&apos; for a human locus might describe the &apos;NM_007294.3(BRCA1):c.2521C&gt;T&apos; variant in a heterozygous state.
 
-An example allelotypefor a human locus would be and HGVS syntax variant description such as &apos;NM_007294.3(BRCA1):c.2521C&gt;T&apos;. An example of a genotype for azebrafish would be  &quot;fgf8a&lt;ti282a/+&gt;; shha&lt;tb392/tb392&gt; (AB)&quot;.</rdfs:comment>
+An example of a genotype for a zebrafish might describe a specific combination of variants and their zygosity against a known genetic background, e.g. &quot;fgf8a&lt;ti282a/+&gt;; shha&lt;tb392/tb392&gt; (AB)&quot;.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
+        <obo:IAO_0000115>A sequence information entity that specifies the &apos;allelic state&apos; of a defined locus in the genome - i.e. what allele(s) are present and their zygosity.</obo:IAO_0000115>
+        <rdfs:comment>The term &apos;genotype&apos; has varied meanings/scopes in the domains of research and medicine.  In some settings we talk about the genotype of a cell or organism, which describes an entire genome in terms of a background and variations/diffs from this background. But we also talk about the genotype at a specific locus, which describes more narrowly the &apos;allelic state&apos; at a particular locus in the genome (i.e. the allele(s) present and their zygosity).  In GENO, we reserve the term &apos;genotype&apos; for the former case, describing variation across a full genome of a cell or organism, and use the term &apos;allelotype&apos; to refer to the latter, to describe variation at a defiend locus in the genome.</rdfs:comment>
         <rdfs:label xml:lang="en">allelotype</rdfs:label>
     </owl:Class>
     
@@ -4995,7 +4997,6 @@ An example allelotypefor a human locus would be and HGVS syntax variant descript
     
 
 
-
     <!-- http://purl.obolibrary.org/obo/GENO_0000848 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000848">
@@ -5102,6 +5103,16 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <obo:IAO_0000115>A relation used to describe  a process contextualizing the identity of an entity.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">repeat region alteration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000875 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000875">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <obo:IAO_0000115>A quality inhering in an allelic complement (i.e. a single locus complement) that describes the allelic variability found at a locus in a single genome.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">allelic state</rdfs:label>
     </owl:Class>
     
 
@@ -6678,16 +6689,6 @@ Codes for: http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
         <rdfs:label xml:lang="en">exemplar term</rdfs:label>
     </owl:NamedIndividual>
     
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
 
 
     <!-- 
