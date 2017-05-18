@@ -2841,7 +2841,7 @@ Note that at present, a material genome and genetic material are necessarily par
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000516"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An allelic state that specifically describes the degree of similarity of alleles at a particular locus in the chromosomal (i.e. non-mitochondrial) genome (i.e. whetehr the alleles are the same or different).</obo:IAO_0000115>
+        <obo:IAO_0000115>An allelic state that specifically describes the degree of similarity of alleles at a particular locus in the *chromosomal* genome (i.e. whether the alleles are the same or different).</obo:IAO_0000115>
         <obo:IAO_0000118>allelic state</obo:IAO_0000118>
         <oboInOwl:hasDbXref>http://semanticscience.org/resource/SIO_001263</oboInOwl:hasDbXref>
         <rdfs:label>zygosity</rdfs:label>
@@ -2903,10 +2903,11 @@ Note that at present, a material genome and genetic material are necessarily par
     <!-- http://purl.obolibrary.org/obo/GENO_0000138 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000138">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
-        <obo:IAO_0000115>An attributethat inheres in some animate bearer in virtue of its being transmitted or bearing features that are transmitted to subsequent generations following a replication or reproduction event.</obo:IAO_0000115>
-        <obo:IAO_0000116>Consider if this can apply to genetic material at the physical level (the original intent), and also phenotypic qualities (a secondary use case).  Here, we allow this, and accordingly subclass &apos;heritable&apos; according to different modes of inheritance related to disposition of phenotypic appearance associated with how varaints are inherited.</obo:IAO_0000116>
-        <rdfs:comment>genetic material has a heritable disposition in a cell or virion, in virtue of its being replicated in its cellular host and inherited by progeny cells (such that the sequence content it encodes is stably propagated in the genetic material of subsequence generations of cells)</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <obo:IAO_0000115>The disposition of an entity to be transmitted to subsequent generations following a genetic replication or organismal reproduction event.</obo:IAO_0000115>
+        <rdfs:comment>We can use these terms to describe the heritability of genetic matieral or sequence features - e.g. chromosomal DNA or genes are heritable in that they are passed on to child cells/organisms).  Such genetic material has a heritable disposition in a cell or virion, in virtue of its being replicated in its cellular host and inherited by progeny cells (such that the sequence content it encodes is stably propagated in the genetic material of subsequence generations of cells).
+
+We can also use these terms to describe the heritability of phenotypes/conditions - e.g. the passage of a particular trait or disease across generations of reproducing cells/organisms.</rdfs:comment>
         <rdfs:label>heritabililty</rdfs:label>
     </owl:Class>
     
@@ -2934,11 +2935,13 @@ Note that at present, a material genome and genetic material are necessarily par
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000141">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
-        <obo:IAO_0000115>a disposition related to the phenotypic effect of a particular gene locus variant (allele) when inherited as part of a heterozygous single locus complement</obo:IAO_0000115>
-        <obo:IAO_0000116>Note that MGI has this data for many alleles. ZFIN does not.</obo:IAO_0000116>
+        <obo:IAO_0000115>the disposition of an allele to cause a particular phenotype or condition based on its allelic state (e.g. heterozygouse vs homozygous)</obo:IAO_0000115>
+        <obo:IAO_0000116>Considering alternate definitions: 
+- a disposition related to the phenotypic effect of a particular allele based on its inherited allelic state (i.e., the complement of alleles present at a particular locus)
+- the disposition of an allele in a particular allelic state (e.g. heterozygouse vs homozygous) to cause a particular phenotype.</obo:IAO_0000116>
         <obo:IAO_0000118>phenotypic heritability</obo:IAO_0000118>
         <obo:IAO_0000118>phenotypic inheritance pattern</obo:IAO_0000118>
-        <rdfs:label>phenotypic dominance</rdfs:label>
+        <rdfs:label>condition inheritance</rdfs:label>
     </owl:Class>
     
 
@@ -3914,7 +3917,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000602">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000875"/>
-        <rdfs:comment>describes state where all copies of a mtDNA locus in a given cell/organism are identical</rdfs:comment>
+        <obo:IAO_0000115>an allelic state where a single allele exists at a particular locus in the organellar genome (mitochondrial or plastid) of a cell/organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">homoplasmic</rdfs:label>
     </owl:Class>
     
@@ -3924,7 +3927,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000603">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000875"/>
-        <rdfs:comment>describes state where  copies of a mtDNA locus in a given cell/organism are not identical</rdfs:comment>
+        <obo:IAO_0000115>an allelic state where more than one type of allele exists at a particular locus in the organellar genome (mitochondrial or plastid) of a cell/organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">heteroplasmic</rdfs:label>
     </owl:Class>
     
@@ -5080,7 +5083,7 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
     <!-- http://purl.obolibrary.org/obo/GENO_0000872 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000872">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000876"/>
         <obo:IAO_0000115>A attribute describing the number of copies of a feature present in a genome.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">copy number</rdfs:label>
     </owl:Class>
@@ -5110,9 +5113,51 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
     <!-- http://purl.obolibrary.org/obo/GENO_0000875 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000875">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
-        <obo:IAO_0000115>A quality inhering in an allelic complement (i.e. a single locus complement) that describes the allelic variability found at a locus in a single genome.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000876"/>
+        <obo:IAO_0000115>A quality inhering in an &apos;allelic complement&apos; (aka a &apos;single locus complement&apos;) that describes the allelic variability found at a particular locus in the genome of a single cell/organism</obo:IAO_0000115>
         <rdfs:label xml:lang="en">allelic state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000876 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000876">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <obo:IAO_0000118>allelic dosage</obo:IAO_0000118>
+        <obo:IAO_0000118>an attribute inhering in a feature based on the total number or relative stoichiometry of copies present in a particular genome.</obo:IAO_0000118>
+        <obo:IAO_0000118>gene dosage</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">genetic dosage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000877 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000877">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <obo:IAO_0000115>A quality inhering in an allele based on the parent from which it was inherited.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">parental inheritance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000878 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000878">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
+        <obo:IAO_0000115>the quality of an allele having been inheriited from the female parent.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">maternal inheritance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000879 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000879">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
+        <obo:IAO_0000115>the quality of an allele having been inheriited from the male parent.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">paternal inheritance</rdfs:label>
     </owl:Class>
     
 
