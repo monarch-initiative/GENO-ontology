@@ -5136,8 +5136,8 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000877">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
-        <obo:IAO_0000115>A quality inhering in an allele based on the parent from which it was inherited.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">parental inheritance</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in an allele based on its source/origin - typically the parent from which it was inherited.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">allelic origin</rdfs:label>
     </owl:Class>
     
 
@@ -5146,8 +5146,8 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000878">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
-        <obo:IAO_0000115>the quality of an allele having been inheriited from the female parent.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">maternal inheritance</rdfs:label>
+        <obo:IAO_0000115>a quality of an allele in virtue of its having been inheriited from a female parent.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">maternal origin</rdfs:label>
     </owl:Class>
     
 
@@ -5156,8 +5156,49 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000879">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
-        <obo:IAO_0000115>the quality of an allele having been inheriited from the male parent.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">paternal inheritance</rdfs:label>
+        <obo:IAO_0000115>a quality of an allele in virtue of its having been inheriited from a male parent.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">paternal origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000880 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000880">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
+        <obo:IAO_0000115>a quality of an allele in virtue of its having occurred through a de novo mutaiton, rather than inherited from a parent..</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">de novo origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000881 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000881">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
+        <obo:IAO_0000115>a quality of an allele in virtue of its origin not being known.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">unknown origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000882 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000882">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <obo:IAO_0000115>a quality inhering in a feature in virtue of its presence only in the genome of non-germ cells.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">somatic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000883 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000883">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <obo:IAO_0000115>a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells).</obo:IAO_0000115>
+        <obo:IAO_0000118>germ-line</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">gametic</rdfs:label>
     </owl:Class>
     
 
