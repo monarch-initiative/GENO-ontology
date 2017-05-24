@@ -500,7 +500,7 @@ Range = punned gene class</obo:IAO_0000116>
         <obo:IAO_0000115>A relation between a genomic locus class (typically a gene class) and an instance of a sequence feature or qualified sequence feature that represents or affects some change in the sequence or expression of the genomic locus.</obo:IAO_0000115>
         <obo:IAO_0000118>class_to_feature_relation</obo:IAO_0000118>
         <rdfs:comment>This is an organizational grouping class to collect all relations used to link genokmic locus classes (typically genes) to instance of a genomic locus sequence feature or qualified sequence feature. For example, linking a gene class IRI to an instance of an allele of that gene class. Such links support phenotype propagation from features/variants to genes (e.g. for Monarch Initiative use cases)</rdfs:comment>
-        <rdfs:label>locus_affected_by</rdfs:label>
+        <rdfs:label>is_locus_affected_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -3381,8 +3381,8 @@ Similarly, large sequence features lost from genome are akin to deletions and th
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000402">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000135"/>
-        <obo:IAO_0000115>a heterozygous quality inhering in a locus complement comprised of two different varaint loci and no wild type locus. (e.g.fgf8a&lt;ti282a&gt;/fgf8a&lt;x15&gt;)</obo:IAO_0000115>
-        <rdfs:label>complex heterozygous</rdfs:label>
+        <obo:IAO_0000115>A heterozygous quality inhering in a single locus complement comprised of two different varaint alleles and no wild type locus. (e.g.fgf8a&lt;ti282a&gt;/fgf8a&lt;x15&gt;)</obo:IAO_0000115>
+        <rdfs:label>compound heterozygous</rdfs:label>
     </owl:Class>
     
 
@@ -5199,6 +5199,25 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
         <obo:IAO_0000115>a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells).</obo:IAO_0000115>
         <obo:IAO_0000118>germ-line</obo:IAO_0000118>
         <rdfs:label xml:lang="en">gametic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000885 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000885">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000870"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000871"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A sequence feature collection comprised of two haplotypes on homologous chromosomes a particular locus.</obo:IAO_0000115>
+        <rdfs:comment>&quot;Humans are diploid organisms; they have paired homologous chromosomes in their somatic cells, which contain two copies of each gene. An allele is one member of a pair of genes occupying a specific spot on a chromosome (called locus). Two alleles at the same locus on homologous chromosomes make up the individual’s genotype. A haplotype (a contraction of the term ‘haploid genotype’) is a combination of alleles at multiple loci that are transmitted together on the same chromosome. Haplotype may refer to as few as two loci or to an entire chromosome depending on the number of recombination events that have occurred between a given set of loci. Genewise haplotypes are established with markers within a gene; familywise haplotypes are established with markers within members of a gene family; and regionwise haplotypes are established within different genes in a region at the same chromosome. Finally, a diplotype is a matched pair of haplotypes on homologous chromosomes.&quot;
+From https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/</rdfs:comment>
+        <rdfs:label xml:lang="en">diplotype</rdfs:label>
     </owl:Class>
     
 
