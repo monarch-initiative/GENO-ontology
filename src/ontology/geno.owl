@@ -3768,11 +3768,25 @@ If this human gene is inserted to replace the mouse SMN2 gene, it becomes an all
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000516">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
-        <obo:IAO_0000112>The set of two copies of the shha gene in a diiploid zebrafish genome, e.g. fgf8a&lt;ti282a&gt;/fgf8a&lt;+&gt;</obo:IAO_0000112>
-        <obo:IAO_0000115>A genomic locus complement comprised of all versions of a sequence found at a given genetic locus in a single genome.</obo:IAO_0000115>
+        <obo:IAO_0000112>The set of two copies of the shha gene in a diiploid zebrafish genome, e.g. fgf8a&lt;ti282a/+&gt;.
+
+The collection of the individual nucleotides present at the position 24126737 on across all copies of chromosome 5 in a particular human genome.
+TO DO: show a VCF representation of this example.</obo:IAO_0000112>
+        <obo:IAO_0000115>A genomic locus complement comprised of the set of all homologous features in a single genome that are found at a particular genomic location/span.</obo:IAO_0000115>
+        <obo:IAO_0000116>Possible definitions for this concept: 
+1. the set of all homologous features in a single genome that are found at a particular genomic location/span.
+
+2. the set of all homologous instances of a particular feature in a single genome.
+
+3. the set of all versions of a sequence found at a particular genetic locus in a single genome.</obo:IAO_0000116>
         <obo:IAO_0000118>allelic complement</obo:IAO_0000118>
         <obo:IAO_0000118>allelic set</obo:IAO_0000118>
-        <rdfs:comment>This complement is typically a pair in a diploid genome with two copies of each chromosome. (e.g. a gene pair, a QTL pair, a a base pair for a SNP, or a pair of entire chromosomes).</rdfs:comment>
+        <rdfs:comment>- A genomic locus is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. 
+- A single locus defines a feature present at a particular location in a genome 
+- The notion of a &quot;complement&quot; describes the collection of all elements in some defined set.
+- The notion of &quot;homologous&quot; genomic features describes those that occupy the same position on homologous chromosomes.
+- Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic location/span.
+- This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
         <rdfs:label>single locus complement</rdfs:label>
     </owl:Class>
     
@@ -4293,8 +4307,9 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000660">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000659"/>
-        <obo:IAO_0000115>An exhaustive collection of all genomic loci in a single genome of a specified type (e.g. all chromosomes in a genome, all variant loci in a genome, all copies of a given gene or locus in a genome).</obo:IAO_0000115>
+        <obo:IAO_0000115>An exhaustive collection of all features (genomic loci) in a single genome that complete a set defined by some specified inclusion criteria. (e.g. all chromosomes in a genome, all variant loci in a genome, all copies of a given gene or locus in a genome).</obo:IAO_0000115>
         <obo:IAO_0000116>In some cases there may be zero or only one member of such a complement, which is why this class is not necessarily a &apos;sequence feature collection&apos; (which has 2 or more members).</obo:IAO_0000116>
+        <rdfs:comment>A genomic locus is any located feature in the genome, from a single nucleotide to a gene into an entire chromosome. A complement is the collection of all elements in a set (i.e. &quot;the full number of things in a set&quot;).  Here, a &apos;genomic  locus complement&apos; is here the set of all features in a single genome that complete a set defined by some specified inclusion criteria.</rdfs:comment>
         <rdfs:label xml:lang="en">genomic locus complement</rdfs:label>
     </owl:Class>
     
@@ -5214,9 +5229,10 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
                 <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000871"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A sequence feature collection comprised of two haplotypes on homologous chromosomes a particular locus.</obo:IAO_0000115>
+        <obo:IAO_0000115>A sequence feature collection comprised of two haplotypes at a given locus on paired homologous chromosomes.</obo:IAO_0000115>
         <rdfs:comment>&quot;Humans are diploid organisms; they have paired homologous chromosomes in their somatic cells, which contain two copies of each gene. An allele is one member of a pair of genes occupying a specific spot on a chromosome (called locus). Two alleles at the same locus on homologous chromosomes make up the individual’s genotype. A haplotype (a contraction of the term ‘haploid genotype’) is a combination of alleles at multiple loci that are transmitted together on the same chromosome. Haplotype may refer to as few as two loci or to an entire chromosome depending on the number of recombination events that have occurred between a given set of loci. Genewise haplotypes are established with markers within a gene; familywise haplotypes are established with markers within members of a gene family; and regionwise haplotypes are established within different genes in a region at the same chromosome. Finally, a diplotype is a matched pair of haplotypes on homologous chromosomes.&quot;
-From https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/</rdfs:comment>
+From https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/</rdfs:comment>
         <rdfs:label xml:lang="en">diplotype</rdfs:label>
     </owl:Class>
     
