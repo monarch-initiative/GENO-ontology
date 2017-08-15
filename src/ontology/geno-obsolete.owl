@@ -786,30 +786,7 @@ Range = a punned gene class IRI</rdfs:comment>
      -->
 
     
-  <!-- http://purl.obolibrary.org/obo/GENO_0000865 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000865">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000002"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000009"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000030"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000504"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000644"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000839"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000871"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001059"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-        <obo:IAO_0000115>Convenience class for grouping genotype components at all levels of granularity.</obo:IAO_0000115>
-        <rdfs:comment>Along with genotypes and genes, the classes collected here complete the set of genotypic entities that are asserted to cause phenotypes in different data sources.</rdfs:comment>
-        <rdfs:label xml:lang="en">genotype component</rdfs:label>
-    </owl:Class>
-    
 
     <!-- http://monarch.org/zfin/ZDB-EXP-041102-1 -->
 
@@ -894,6 +871,12 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01000313 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000313">
@@ -909,6 +892,18 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
         <rdfs:label>obsolete_non-viral organism</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000002"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000009"/>
     
 
 
@@ -932,18 +927,6 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO_0000017 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000017">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000201"/>
-        <obo:IAO_0000115>a sequence information entity representing a sequence or sequence collection that serves as a standard against which &apos;alternate&apos; versions of the sequence information entity collection are compared.</obo:IAO_0000115>
-        <obo:IAO_0000116>This is a defined organizational class to collect all &apos;reference&apos; sequence entities.</obo:IAO_0000116>
-        <obo:IAO_0000118>reference sequence</obo:IAO_0000118>
-        <rdfs:comment>1. Being &apos;refercence&apos; does not imply anything about the nature, prevalence, or function of a sequence.  Only that somoe agent has used it to serve the role of being reference in characterizing variations from this reference.  A sequence becomes a &apos;reference sequence&apos; when this role is realized (ie when some alternate version is identified and compared against it).
-
-2. Note that a &apos;reference sequence entity&apos; is modeled as a type of &apos;variant sequence entity&apos; because more than one version of the entity must exist for its reference role to be realized (ie the status of being reference is gained only when an alternate version is discovered and contrasted to the reference).  So a reference entity is necessarily sequence_variant_with some other sequence entity. Accordingly, any part of a reference genome is not necessarily a reference sequence entity, unless some different version of that entity is known to exist in another genome.  (But the genome as a whole is a reference genome because the sequence collection it represetns varies from other genomes)</rdfs:comment>
-        <rdfs:label>obsolete_reference sequence information entity</rdfs:label>
-    </owl:Class>
     
 
 
@@ -1007,6 +990,12 @@ salinity:stable, 0mg/ml (standard, wild-type environment for Danio rerio), tempe
         <rdfs:comment>This complement is typically a pair in a diploid genome with two copies of each chromosome. (e.g. a gene pair, a QTL pair, a SNP pair, or a pair of entire chromosomes).</rdfs:comment>
         <rdfs:label>obsolete_single locus complement</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000030"/>
     
 
 
@@ -1576,6 +1565,12 @@ As a subtype of drawing a conclusion, I prefer the label &apos;phenotype assignm
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000504 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000504"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GENO_0000509 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000509">
@@ -1890,6 +1885,12 @@ has_sequence_variant_part some &apos;variant allele&apos;</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000644 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000644"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GENO_0000664 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000664">
@@ -1950,6 +1951,56 @@ The identity of a given isntance of a experssion-variant feature is dependent on
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000839 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000839"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000865 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000865">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000002"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000009"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000030"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000504"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000644"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000839"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000871"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001059"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <obo:IAO_0000115>Convenience class for grouping genotype components at all levels of granularity.</obo:IAO_0000115>
+        <rdfs:comment>Along with genotypes and genes, the classes collected here complete the set of genotypic entities that are asserted to cause phenotypes in different data sources.</rdfs:comment>
+        <rdfs:label xml:lang="en">genotype component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000871 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000871"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000902 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0001059 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001059"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/XCO_0000000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/XCO_0000000">
@@ -2004,5 +2055,5 @@ Consider how we might approach environments/condisitons using an EQ aproach anal
 
 
 
-<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 

@@ -396,9 +396,9 @@ phenotype and (is_phenotype_of some (organism and (has_part some (&apos;material
         <obo:IAO_0000112>The allele instance &lt;fgf8a^ti282a&gt; is_allele_of the gene class  &apos;danio rerio fgf8a&apos;.
 
 Note that  the allele &lt;fgf8a^ti282a&gt;  may not be an instance of the  danio rerio fgf8a gene class, given that we adopt the SO definition of genes as &apos;producing a functional product&apos;.  If the &lt;fgf8a^ti282a&gt; allele is nonfunctional or null, it is an allele_of the danio rerio fgf8a gene class, but not an instance (rdf:type) of this class. It is, however, an instance of the &apos;danio rerio fgf8a gene locus&apos; class, as being a &apos;gene locus&apos; as defined in GENO requires only occupying the genomic position where for a gene, but not necessarily producing a functional product.</obo:IAO_0000112>
-        <obo:IAO_0000115>A relation linking an instance of a variable locus (aka an allele) to a class of genomic locus it is an instance of (typically a gene class).</obo:IAO_0000115>
-        <obo:IAO_0000116>Domain = allele (variable locus)
-Range = punned gene class
+        <obo:IAO_0000115>A relation linking an instance of a variable feature (aka an allele) to a class of genomic feature it is an instance of (typically a gene class).</obo:IAO_0000115>
+        <obo:IAO_0000116>Domain = allele 
+		Range = punned gene class
 
 In owl models where alleles are instances of gene classes, this relation links an owl:Individual to an owl:Class, and thus &apos;puns&apos; the gene class IRI.</obo:IAO_0000116>
         <obo:IAO_0000118>is_sequence_variant_of</obo:IAO_0000118>
@@ -415,7 +415,7 @@ In owl models where alleles are instances of gene classes, this relation links a
         <obo:IAO_0000115>A relation used to link a variant locus instance to the gene class it is a variant of (in terms of its sequence or expression level).</obo:IAO_0000115>
         <obo:IAO_0000118>is_variant_instance_of</obo:IAO_0000118>
         <obo:IAO_0000231>formerly grouped is_allele_of and is_expression_variant_of proerpties under feature to class proeprty (now renmaed has_affected_locus)</obo:IAO_0000231>
-        <rdfs:comment>Domain = genomic locus instance
+        <rdfs:comment>Domain = genomic feature instance
 Range = punned gene class IRI</rdfs:comment>
         <rdfs:label>obsolete_is_genetic_variant_of</rdfs:label>
     </owl:ObjectProperty>
@@ -430,7 +430,7 @@ Range = punned gene class IRI</rdfs:comment>
         <obo:IAO_0000118>has_variant_instance</obo:IAO_0000118>
         <obo:IAO_0000231>formerly grouped has_allele and has_expression_variant proerpties under cllass to feature property (now renamed locus_affected_by)</obo:IAO_0000231>
         <rdfs:comment>Domain = punned gene class
-Range = genomic locus</rdfs:comment>
+Range = genomic feature</rdfs:comment>
         <rdfs:label>obsolete_has_genetic_variant</rdfs:label>
     </owl:ObjectProperty>
     
@@ -473,9 +473,10 @@ Range = allele/variable locus</obo:IAO_0000116>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000418"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>A relation that holds between an instance of a genotype or variant sequence feature or collection, and a genomic locus class (typically a gene) that is affected in its sequence or expression.</obo:IAO_0000115>
-        <rdfs:comment>This is an organizational grouping class to collect all relations used to link instances of sequence features or qualified sequence features to genomic locus classes. For example, is_allele_of links a gene allele instance to its gene class (genes are represented as classes in our OWL model). Such links support phenotype propagation from alleles to genes for Monarch Initiative use cases. Use of these properties effectively puns gene class IRIs into owl:individuals in a given rdf datset.</rdfs:comment>
-        <rdfs:label>has_affected_locus</rdfs:label>
+        <obo:IAO_0000115>A relation that holds between an instance of a genotype or variant sequence feature or collection, and a genomic feature class (typically a gene) that is affected in its sequence or expression.</obo:IAO_0000115>
+        <obo:IAO_0000118>has_affected_locus</obo:IAO_0000118>
+        <rdfs:comment>This is an organizational grouping class to collect all relations used to link instances of sequence features or qualified sequence features to genomic feature classes. For example, is_allele_of links a gene allele instance to its gene class (genes are represented as classes in our OWL model). Such links support phenotype propagation from alleles to genes for Monarch Initiative use cases. Use of these properties effectively puns gene class IRIs into owl:individuals in a given rdf datset.</rdfs:comment>
+        <rdfs:label>has_affected_feature</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -497,9 +498,9 @@ Range = punned gene class</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/GENO_0000445 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000445">
-        <obo:IAO_0000115>A relation between a genomic locus class (typically a gene class) and an instance of a sequence feature or qualified sequence feature that represents or affects some change in the sequence or expression of the genomic locus.</obo:IAO_0000115>
+        <obo:IAO_0000115>A relation between a genomic feature class (typically a gene class) and an instance of a sequence feature or qualified sequence feature that represents or affects some change in the sequence or expression of the genomic feature.</obo:IAO_0000115>
         <obo:IAO_0000118>class_to_feature_relation</obo:IAO_0000118>
-        <rdfs:comment>This is an organizational grouping class to collect all relations used to link genokmic locus classes (typically genes) to instance of a genomic locus sequence feature or qualified sequence feature. For example, linking a gene class IRI to an instance of an allele of that gene class. Such links support phenotype propagation from features/variants to genes (e.g. for Monarch Initiative use cases)</rdfs:comment>
+        <rdfs:comment>This is an organizational grouping class to collect all relations used to link genokmic locus classes (typically genes) to instance of a genomic feature sequence feature or qualified sequence feature. For example, linking a gene class IRI to an instance of an allele of that gene class. Such links support phenotype propagation from features/variants to genes (e.g. for Monarch Initiative use cases)</rdfs:comment>
         <rdfs:label>is_locus_affected_by</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1791,6 +1792,7 @@ Environments include natural environments or exposures, experimentally applied c
 
     <owl:Class rdf:about="http://biohackathon.org/resource/faldo#Position">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
+        <obo:IAO_0000115>Superclass for the general concept of a position on a sequence. The sequence is designated with the reference predicate.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">Position</rdfs:label>
     </owl:Class>
     
@@ -2294,15 +2296,38 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
 http://useast.ensembl.org/Danio_rerio/Gene/Summary?g=ENSDARG00000056722
 
 http://zfin.org/action/feature/feature-detail?zdbID=ZDB-ALT-111117-8</obo:IAO_0000112>
-        <obo:IAO_0000115>A genomic locus that is defined positionally, as the sequence present where a gene resides in some reference genome (ie the extent of genomic sequence that corresponds to the location of functional gene in some reference genome).</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature that is defined positionally, as the sequence present where a gene resides in some reference genome (ie the extent of genomic sequence that corresponds to the location of functional gene in some reference genome).</obo:IAO_0000115>
         <obo:IAO_0000116>Regarding the distinction between a &apos;gene&apos; and a &apos;gene locus&apos;: Every zebrafish genome contains a &apos;gene locus&apos; for every zebrafish gene. The majority are likely to be &apos;wild-type&apos; or at least functional variants. But some may be variants that are mutated or truncated so as to lack functionality.  According to current SO criteria defining genes, a &apos;gene&apos; no longer exists in the case of a non-functional or deleted variant.  But a &apos;gene locus&apos; does exist -  and its extent is that of the remaining/altered sequence as it aligns with the reference gene.  Even for completely deleted genes, the gene locus remains (and here is equivalent to the junction corresponding to the where gene would live according to this alignment).
 
 This design allows us to classify genes and any variants of those genes (be they functional or not) as the same type of thing (ie a &apos;gene locus&apos;), since classification is based on genomic context rather than some functional capability. This is practical for treatment of MOD alleles and genotypes where many alleles repesent non-functional variants of a gene at a particular locus (ie &apos;null alleles&apos;). What is important here is specifying what is present at a locus associated with a particular gene, whether or not it is a functional gene or not.</obo:IAO_0000116>
-        <obo:IAO_0000118>gene allele</obo:IAO_0000118>
+        <obo:IAO_0000118>gene locus</obo:IAO_0000118>
         <rdfs:comment>1. The concept of a &apos;gene&apos; in the Sequence Ontology is functionally defined, in that a gene necessarily produces a functional product. The notion of a &apos;gene locus&apos; in GENO is positionally-defined, based on an alignment with some reference genome. So an Shh &apos;gene locus&apos;, for example, need not produce a functional product - only be located at the position of the Shh gene based on alignment with a reference genome. This is important in the context of representing gneetic variation, where and Shh allele may be non-functional, incomplete, or even completely deleted fom a genome. In all these cases, the &apos;Shh gene locus&apos; remains at the position where the gene resides in the reference genome. 
 
 2. The extent of a gene locus is typically that of a functional reference gene located here, as defined by a reference genome build.  In some cases, sequence alteration(s) create can a &apos;gene variant&apos; whose sequence and/or length varies from that of the reference locus. The extent of such variants is defined relative to that of the reference gene sequence, based on alignment of the variant sequence.  Gene variants might simply contain one or several point mutations and maintain the core functionality of the wild-type gene, or they may be null alleles that lack complete functionality as a result of deletion and/or replacement of all or a portion of the gene.  In the case of a completely deleted gene, its extent is zero - ie the junction that aligns with where the gene would exist in a reference genome. For engineered transgenes where there is no reference gene to align with, the extent is that of the cistron responsible for producing the gene product.</rdfs:comment>
-        <rdfs:label>gene locus</rdfs:label>
+        <rdfs:label>gene allele</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000017">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000110"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>A sequence feature that serves as a standard against which &apos;variant&apos; versions of the sequence feature are compared, or against which located sequence features within the reference region are aligned in order to assign position information.</obo:IAO_0000115>
+        <obo:IAO_0000116>This is a defined organizational class to collect all &apos;reference&apos; sequence entities.</obo:IAO_0000116>
+        <obo:IAO_0000118>reference sequence</obo:IAO_0000118>
+        <rdfs:comment>Being &apos;refercence&apos; does not imply anything about the nature, prevalence, or function of a sequence.  Only that some agent has used it to serve a reference role in defining a variant or locting a sequence.</rdfs:comment>
+        <rdfs:label>reference sequence feature</rdfs:label>
     </owl:Class>
     
 
@@ -2487,10 +2512,11 @@ In model organism datasets, &apos;reference&apos; loci/alleles are typically (bu
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>A genomic locus known to exist, but remaining uncharacterized with respect to its identity (e.g. which allele exists at a given gene locus).</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature known to exist, but remaining uncharacterized with respect to its identity (e.g. which allele exists at a given gene locus).</obo:IAO_0000115>
         <obo:IAO_0000116>Uses as a term of convenience for describing data reporting unspecified alleles in a genotype (i.e. in cases where zygosoty for a given locus is not known).  Typlically recorded in genotype syntaxes as a &apos; /? &apos;.</obo:IAO_0000116>
-        <rdfs:comment>An unspecified locus  is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).</rdfs:comment>
-        <rdfs:label>unspecified locus</rdfs:label>
+        <obo:IAO_0000118>unspecified locus</obo:IAO_0000118>
+        <rdfs:comment>An unspecified feature is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).</rdfs:comment>
+        <rdfs:label>unspecified feature</rdfs:label>
     </owl:Class>
     
 
@@ -2814,9 +2840,9 @@ Note that at present, a material genome and genetic material are necessarily par
     <!-- http://purl.obolibrary.org/obo/GENO_0000131 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000131">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
-        <obo:IAO_0000115>a quality inhering in a collection of discontinuous sequences of a single genome that reside on the same macromolecule (eg the same chromosomes).</obo:IAO_0000115>
-        <rdfs:label>cis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000886"/>
+        <obo:IAO_0000115>A quality inhering in a collection of discontinuous sequence features in a single genome that reside on the same macromolecule (eg the same chromosomes).</obo:IAO_0000115>
+        <rdfs:label>in cis</rdfs:label>
     </owl:Class>
     
 
@@ -2824,9 +2850,9 @@ Note that at present, a material genome and genetic material are necessarily par
     <!-- http://purl.obolibrary.org/obo/GENO_0000132 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000132">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
-        <obo:IAO_0000115>a quality inhering in a collection of discontinuous sequences of a single genome that reside on different macromolecules (e.g. different chromosomes).</obo:IAO_0000115>
-        <rdfs:label>trans</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000886"/>
+        <obo:IAO_0000115>A quality inhering in a collection of discontinuous sequence features in a single genome that reside on different macromolecules (e.g. different chromosomes).</obo:IAO_0000115>
+        <rdfs:label>in trans</rdfs:label>
     </owl:Class>
     
 
@@ -3255,7 +3281,7 @@ We can also use these terms to describe the heritability of phenotypes/condition
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A genomic locus that is a portion of a chromosome that has been abnormally lost or duplicated (as a fusion to a non-homologous chromosome), as the result of an unbalanced translocation.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature that is a portion of a chromosome that has been abnormally lost or duplicated (as a fusion to a non-homologous chromosome), as the result of an unbalanced translocation.</obo:IAO_0000115>
         <obo:IAO_0000118>aneuploid chromosomal segment</obo:IAO_0000118>
         <obo:IAO_0000118>aneusomic chromosomal subregion/segment</obo:IAO_0000118>
         <obo:IAO_0000118>partial aneusomic chromosomal element</obo:IAO_0000118>
@@ -3273,7 +3299,7 @@ We consider novel sequence features gained in a genome to be sequence alteration
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000344">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000343"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A genomic locus that is a portion of a chromosome that has been abnormally duplicated as a fusion to a non-homologous chromosome as the result of an unbalanced translocation.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature that is a portion of a chromosome that has been abnormally duplicated as a fusion to a non-homologous chromosome as the result of an unbalanced translocation.</obo:IAO_0000115>
         <obo:IAO_0000116>In our model, we consider this chromosomal region to be trisomic, and thus a variant single locus complement</obo:IAO_0000116>
         <obo:IAO_0000118>duplicate partial aneuploid chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>translocated duplicate chromosomal element</obo:IAO_0000118>
@@ -3321,7 +3347,7 @@ The lost aneusommic chromosomal segment is typically accommpanied by a gained an
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A genomic locus that is a complete chromosome that has been abnormally duplicated or lost, typically as the result of a non-disjunction event or unbalanced translocation</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature that is a complete chromosome that has been abnormally duplicated or lost, typically as the result of a non-disjunction event or unbalanced translocation</obo:IAO_0000115>
         <obo:IAO_0000118>complete aneusomic chromosome</obo:IAO_0000118>
         <rdfs:comment>We consider large sequence features gained in a genome to be sequence alterations (akin to insertions), including aneusomic chromosome segments gained through unbalanced translocation events, entrie aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that become part of the heritable gneme of a cell or organism.
 
@@ -3470,10 +3496,11 @@ Similarly, large sequence features lost from genome are akin to deletions and th
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A sequence feature that is part of the heritable genome of a cell or organism, whose identity is defined by its sequence and genomic position.</obo:IAO_0000115>
-        <rdfs:comment>Here we use the term &apos;locus&apos; to represent an *extent of sequence* at a particular location in a genome (not the *position* or *location* itself, as the term can also be used).  A locus can span any size extent of sequence - from a complete chromosome, to chromosomal bands or regions, to single genes, to a single base pair or even junction between base pairs (i.e. feature with an extent of zero).  
+        <obo:IAO_0000118>genomic locus</obo:IAO_0000118>
+        <rdfs:comment>A genomic feature (aka genomic locus) is an extent of sequence at a particular location in a genome, which can span any size from a complete chromosome, to chromosomal bands or regions, to single genes, to a single base pair or even junction between base pairs (i.e. feature with an extent of zero).  
 
-A *genomic* locus has a defined position in a genome, determined by its alignment with a genomic reference sequence. Instances of such genomic loci are identified by both their sequence and their position.</rdfs:comment>
-        <rdfs:label xml:lang="en">genomic locus</rdfs:label>
+It has a defined position in a genome, determined by its alignment with a genomic reference sequence.  Instances of genomic features are identified by both their sequence and their position in a genome.</rdfs:comment>
+        <rdfs:label xml:lang="en">genomic feature</rdfs:label>
     </owl:Class>
     
 
@@ -3547,7 +3574,7 @@ A *genomic* locus has a defined position in a genome, determined by its alignmen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>A genetic locus that is not part of the chromosomal genome of a cell or virion, but rather a stable and heritable element that is replilcated and passed on to progeny (e.g a replicative plasmid or transposon)</obo:IAO_0000115>
+        <obo:IAO_0000115>A genetic feature that is not part of the chromosomal genome of a cell or virion, but rather a stable and heritable element that is replilcated and passed on to progeny (e.g a replicative plasmid or transposon)</obo:IAO_0000115>
         <obo:IAO_0000116>Consider replacing with SO_0001038 ! extrachromosomal_mobile_genetic_element</obo:IAO_0000116>
         <obo:IAO_0000118>episomal replicon</obo:IAO_0000118>
         <obo:IAO_0000231>Extrachromosomal replicons are replicated and passed on to descendents, and thus part of the heritable genome of a cell or organism. In cases where the presence of such a replicon is novel or aberrant (i.e. not included in the reference for that genome), the replicon is considered a &apos;sequence alteration&apos;.</obo:IAO_0000231>
@@ -3666,7 +3693,7 @@ The notion of wild-type alleles is more common in model organism databases, wher
         </rdfs:subClassOf>
         <obo:IAO_0000115>A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.</obo:IAO_0000115>
         <rdfs:comment>The identity of a given instance of a reagent-targeted gene is dependent on the experimental context of its knock-down - specifically what reagent was used and at what level.  For example, the wild-type shha zebrafish gene targeted in epxeriment 1 by morpholino1 annd in experiment 2 by morpholino 2 represent two distinct instances of a &apos;reagent-targeted gene&apos;, despite sharing the same sequence and position.</rdfs:comment>
-        <rdfs:label xml:lang="en">knockdown reagent targeted gene</rdfs:label>
+        <rdfs:label xml:lang="en">reagent targeted gene</rdfs:label>
     </owl:Class>
     
 
@@ -3696,6 +3723,17 @@ The notion of wild-type alleles is more common in model organism databases, wher
     <!-- http://purl.obolibrary.org/obo/GENO_0000512 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000512">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000408"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -3758,7 +3796,7 @@ The notion of wild-type alleles is more common in model organism databases, wher
 
 If this human gene is inserted to replace the mouse SMN2 gene, it becomes an allele_of the mouse SMN2 gene (one that happens to match the sequence of the human ortholog of the gene).  If this human gene is randomly inserted at an unspecified location in the mouse genome, it does not create/represent an allele of any gene - because it is not tied to a known genomic locus.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">variant gene locus</obo:IAO_0000118>
-        <rdfs:comment>A gene allele is &apos;variant&apos; in virtue of its contianing a sequence alteration that varies from some reference gene standard.  But note that a gene allele that is variant in one context/dataset can be considered a reference in another context/dataset.</rdfs:comment>
+        <rdfs:comment>A gene allele is &apos;variant&apos; in virtue of its containing a sequence alteration that varies from some reference gene standard.  But note that a gene allele that is variant in one context/dataset can be considered a reference in another context/dataset.</rdfs:comment>
         <rdfs:label>variant gene allele</rdfs:label>
     </owl:Class>
     
@@ -3772,7 +3810,7 @@ If this human gene is inserted to replace the mouse SMN2 gene, it becomes an all
 
 The collection of the individual nucleotides present at the position 24126737 on across all copies of chromosome 5 in a particular human genome.
 TO DO: show a VCF representation of this example.</obo:IAO_0000112>
-        <obo:IAO_0000115>A genomic locus complement comprised of the set of all homologous features in a single genome that are found at a particular genomic location/span.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature complement comprised of the set of all homologous features in a single genome that are found at a particular genomic location/span.</obo:IAO_0000115>
         <obo:IAO_0000116>Possible definitions for this concept: 
 1. the set of all homologous features in a single genome that are found at a particular genomic location/span.
 
@@ -3781,11 +3819,10 @@ TO DO: show a VCF representation of this example.</obo:IAO_0000112>
 3. the set of all versions of a sequence found at a particular genetic locus in a single genome.</obo:IAO_0000116>
         <obo:IAO_0000118>allelic complement</obo:IAO_0000118>
         <obo:IAO_0000118>allelic set</obo:IAO_0000118>
-        <rdfs:comment>- A genomic locus is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. 
-- A single locus defines a feature present at a particular location in a genome 
+        <rdfs:comment>- A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. 
 - The notion of a &quot;complement&quot; describes the collection of all elements in some defined set.
-- The notion of &quot;homologous&quot; genomic features describes those that occupy the same position on homologous chromosomes.
-- Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic location/span.
+- The notion of &quot;homologous&quot; genomic features describes those that occupy the same locus on homologous chromosomes.
+- Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus.
 - This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
         <rdfs:label>single locus complement</rdfs:label>
     </owl:Class>
@@ -3833,9 +3870,15 @@ TO DO: show a VCF representation of this example.</obo:IAO_0000112>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000527">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000715"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A set of all targeted genes in a single genome in the context of a given experiment (e.g. both copies of the WT shha gene in a zebrafish exposed to shha-targeting morpholinos)</obo:IAO_0000115>
         <obo:IAO_0000118>reagent-targeted gene complement</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">targeted gene complement</rdfs:label>
+        <rdfs:label xml:lang="en">reagent-targeted gene complement</rdfs:label>
     </owl:Class>
     
 
@@ -4309,8 +4352,9 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000659"/>
         <obo:IAO_0000115>An exhaustive collection of all features (genomic loci) in a single genome that complete a set defined by some specified inclusion criteria. (e.g. all chromosomes in a genome, all variant loci in a genome, all copies of a given gene or locus in a genome).</obo:IAO_0000115>
         <obo:IAO_0000116>In some cases there may be zero or only one member of such a complement, which is why this class is not necessarily a &apos;sequence feature collection&apos; (which has 2 or more members).</obo:IAO_0000116>
+        <obo:IAO_0000118>genomic locus complement</obo:IAO_0000118>
         <rdfs:comment>A genomic locus is any located feature in the genome, from a single nucleotide to a gene into an entire chromosome. A complement is the collection of all elements in a set (i.e. &quot;the full number of things in a set&quot;).  Here, a &apos;genomic  locus complement&apos; is here the set of all features in a single genome that complete a set defined by some specified inclusion criteria.</rdfs:comment>
-        <rdfs:label xml:lang="en">genomic locus complement</rdfs:label>
+        <rdfs:label xml:lang="en">genomic feature complement</rdfs:label>
     </owl:Class>
     
 
@@ -4329,7 +4373,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>A genomic locus that is part of a gene, and delineated by some functional or structural function or role it serves (e.g.a promoter element, coding region, etc).</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature that is part of a gene, and delineated by some functional or structural function or role it serves (e.g.a promoter element, coding region, etc).</obo:IAO_0000115>
         <obo:IAO_0000118>defined gene part</obo:IAO_0000118>
         <obo:IAO_0000118>gene locus part</obo:IAO_0000118>
         <rdfs:label>gene part</rdfs:label>
@@ -4368,8 +4412,9 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000112>A junction between bases, a deletion variant, a terminus at the end of a chromosome.</obo:IAO_0000112>
-        <obo:IAO_0000115>A genomic locus that has an extent of zero.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">null locus</rdfs:label>
+        <obo:IAO_0000115>A genomic feature that has an extent of zero.</obo:IAO_0000115>
+        <obo:IAO_0000118>null locus</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">null feature</rdfs:label>
     </owl:Class>
     
 
@@ -4426,7 +4471,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A genomic locus that represents an entirely new replicon in the genome, e.g. an extrachromosomal replicon or an extra copy of a chromosome.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature that represents an entirely new replicon in the genome, e.g. an extrachromosomal replicon or an extra copy of a chromosome.</obo:IAO_0000115>
         <obo:IAO_0000116>This class is defined so as to support classification of things like novel extrachromosomal replicons and aneusomic chromosomes as being variant loci/alleles in a genome. These represent entirely new loci in the genome - not variants of an existing locus.</obo:IAO_0000116>
         <rdfs:comment>Novel replicons are considered as an &apos;insertion&apos; in a genome, and as such, qualify as types of sequence_alterations and variant alleles.  There is no pre-existing locus that it modifies, however, and thus it is not really an &apos;allele of&apos; a named locus.  But conceptually, we still consider these to represent genetic variants and classify them as variant alleles.</rdfs:comment>
         <rdfs:label xml:lang="en">novel replicon</rdfs:label>
@@ -4438,7 +4483,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000685">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000773"/>
-        <obo:IAO_0000115>An attribute of a genomic locus that represents a feature not previously found in a given genome, e.g. an extrachromosomal replicon or aneusomic third copy of a chromosome.</obo:IAO_0000115>
+        <obo:IAO_0000115>An attribute of a genomic feature that represents a feature not previously found in a given genome, e.g. an extrachromosomal replicon or aneusomic third copy of a chromosome.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">novel</rdfs:label>
     </owl:Class>
     
@@ -4687,7 +4732,7 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000768">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-        <obo:IAO_0000115>A sequence feature position based on a genomic coordinate system, where the position specifies start and end coordinates based on its alignment with some refernece genomic sequence.</obo:IAO_0000115>
+        <obo:IAO_0000115>A sequence feature position based on a genomic coordinate system, where the position specifies start and end coordinates based on its alignment with some reference genomic sequence.</obo:IAO_0000115>
         <obo:IAO_0000116>This &apos;genomic position&apos; concept differs from the faldo:Position concecpt in that the former describes the start AND end points/coordinates of a feature, while the latter describes a single point/coordinate at the beginning OR end of a feature.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">genomic coordinates</obo:IAO_0000118>
         <rdfs:label>genomic position</rdfs:label>
@@ -4833,7 +4878,7 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000815">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
-        <obo:IAO_0000115>An attribute of a sequence feature related to the location of its starting and ending residues according to coordinate system.</obo:IAO_0000115>
+        <obo:IAO_0000115>An attribute of a sequence feature related to the location of its starting and ending residues according to some reference coordinate system.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">sequence feature position</rdfs:label>
     </owl:Class>
     
@@ -5238,6 +5283,16 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000886 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000886">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <obo:IAO_0000115>A quality inhering in a collection of discontinuous sequence features in a single genome in virtue of their relative position on the same or separate chromosomes.</obo:IAO_0000115>
+        <rdfs:label>allelic phase</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0003674 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003674">
@@ -5502,6 +5557,16 @@ Previous. An information content entity is a non-realizable information entity t
         <obo:IAO_0000115>A material entity that consists of two or more organisms, viruses, or viroids.</obo:IAO_0000115>
         <rdfs:comment>A group of organisms of the same taxonomic group grouped together in virtue of their sharing some commonality (either an inherent attribute or an externally assigned role).</rdfs:comment>
         <rdfs:label>collection of organisms</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PCO_0000020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PCO_0000020">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PCO_0000000"/>
+        <obo:IAO_0000115>A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption.</obo:IAO_0000115>
+        <rdfs:label>family</rdfs:label>
     </owl:Class>
     
 
