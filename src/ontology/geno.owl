@@ -730,9 +730,9 @@ Used in GENO to describe physical context of materialized sequence features that
     <!-- http://purl.obolibrary.org/obo/GENO_0000683 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000683">
-        <obo:IAO_0000115>A relation between two sequence features at a given genomic locus that vary in their sequence at at least one position.</obo:IAO_0000115>
+        <obo:IAO_0000115>A relation between two sequence features at a particular genomic locus that vary in their sequence (in whole or in part).</obo:IAO_0000115>
         <obo:IAO_0000118>is_sequence_variant_with</obo:IAO_0000118>
-        <rdfs:comment>This property is most commonly used to relate two different alleles of a given gene.  It is not a relation between an allele and the gene it is a variant of.</rdfs:comment>
+        <rdfs:comment>This property is most commonly used to relate two different alleles of a given gene (e.g. a wt and mutant instance of the BRCA2 gene).  It is not a relation between an allele and the class-level gene it is a variant of (for this use is_allele_of)</rdfs:comment>
         <rdfs:label xml:lang="en">is_variant_with</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2259,12 +2259,11 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An allele that contains a sequence alteration, or is itself a sequence alteration, making it variant with some reference allele.</obo:IAO_0000115>
-        <obo:IAO_0000116>The use of the descriptor &apos;variant&apos; here is consistent with naming recommendations from PMID: 25741868 ACMG Guidelines. And generally, the descriptive labels chosen for subtypes of variant allele/locus conform  these recommendations as well, where &apos;variant&apos; is used to cover mutant and polymorphic alleles.</obo:IAO_0000116>
+        <obo:IAO_0000116>The use of the descriptor &apos;variant&apos; here is consistent with naming recommendations from the ACMG Guidelines paper here: PMID:25741868.  Generally, the descriptive labels chosen for subtypes of variant allele conform  these recommendations as well, where &apos;variant&apos; is used to cover mutant and polymorphic alleles.</obo:IAO_0000116>
         <obo:IAO_0000118>alterante allele</obo:IAO_0000118>
-        <obo:IAO_0000118>alternate locus</obo:IAO_0000118>
-        <obo:IAO_0000118>sequence-variant locus</obo:IAO_0000118>
-        <obo:IAO_0000118>variant locus</obo:IAO_0000118>
-        <rdfs:comment>A given locus/allele is &apos;variant&apos; in virtue of its containing a sequence alteration that varies from some reference locus standard.  But note that a locus/allele that is variant in one context/dataset can be considered a reference in another context/dataset.</rdfs:comment>
+        <obo:IAO_0000118>sequence-variant feature</obo:IAO_0000118>
+        <obo:IAO_0000118>variant feature</obo:IAO_0000118>
+        <rdfs:comment>A particular allele is &apos;variant&apos; in virtue of its containing a sequence alteration that differs from some reference allele standard.  But note that an allele that is variant in one context/dataset can be considered a reference in another context/dataset.</rdfs:comment>
         <rdfs:label>variant allele</rdfs:label>
     </owl:Class>
     
@@ -2321,12 +2320,18 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000408"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000683"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000408"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>The reference/wild-type cd99l2 danio rerio gene locus spans bases 27,004,426-27,021,059 on Chromosome 7. &quot;mn004Gt&quot; represents an experimentally created variant of this gene, in which sequence from a gene trap construct containing an RFP marker has been inserted into the cd99l2 gene locus. The resulting sequence-variant gene locus includes sequence from this construct that make it longer than the reference gene sequence, and result in it no longer producing a functional transcript. The sequence extent of this variant cd99l2 gene is determined based on how its remaining sequences align with that of the reference gene and surrounding sequence.
 
 http://useast.ensembl.org/Danio_rerio/Gene/Summary?g=ENSDARG00000056722
@@ -3764,27 +3769,18 @@ The notion of wild-type alleles is more common in model organism databases, wher
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000408"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
-                    <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000683"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>A seqeunce feature representing one of a set of coexisting sequence variants of a defined genetic locus.</obo:IAO_0000115>
+        <obo:IAO_0000115>A sequence feature representing one of a set of coexisting sequence variants at a particular genomic  locus.</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">variable locus</obo:IAO_0000118>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/SO_0001023 ! allele</oboInOwl:hasDbXref>
-        <rdfs:comment>The most common use of the term refers to alleles of defined genes.  But GENO uses the term broadly to include variants of any defined marker or extent of sequence in a genome. So in addition to genes, we can talk about alleles of single nucleotides, QTLs, microsattelite regions, or even large/structural chromosomal regions.</rdfs:comment>
+        <rdfs:comment>The notion of an &apos;allele&apos; defined here is distinct from that of a genetic &apos;variant&apos; - as &apos;allele&apos; includes features considered to be the &apos;reference&apos; at a particular locus. Thus, alleles capture the state of the sequence found at a genetic locus, be it variant or reference. 
+
+The most common use of the term refers to alleles of defined genes. But GENO uses the term broadly to include variants of any defined marker or extent of sequence in a genome. So in addition to genes, we can talk about alleles of single nucleotides (e.g. SNVs / SNPs), QTLs, microsattelite regions, or even large/structural chromosomal regions.</rdfs:comment>
         <rdfs:label>allele</rdfs:label>
     </owl:Class>
     
@@ -4943,13 +4939,15 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000823">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000778"/>
-        <obo:IAO_0000112>An example &apos;allelotype&apos; for a human locus might describe the &apos;NM_007294.3(BRCA1):c.2521C&gt;T&apos; variant in a heterozygous state.
-
-An example of a genotype for a zebrafish might describe a specific combination of variants and their zygosity against a known genetic background, e.g. &quot;fgf8a&lt;ti282a/+&gt;; shha&lt;tb392/tb392&gt; (AB)&quot;.</obo:IAO_0000112>
+        <obo:IAO_0000112>An example of an allelotype for a zebrafish might describe a specific combination of variants and their zygosity at a specific locus in the genome, e.g. &quot;fgf8a&lt;ti282a&gt;/fgf8a&lt;+&gt;&quot;.  An example allelotype for a human locus might similarly describe a heterozygous state at a specific position on human chromosome 12 as &quot;GRCh38 Chr12:258635(A;T)&quot;</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A sequence information entity that specifies the &apos;allelic state&apos; of a defined locus in the genome - i.e. what allele(s) are present across homologous chromosomes and their zygosity.</obo:IAO_0000115>
-        <rdfs:comment>The term &apos;genotype&apos; has varied meanings/scopes in the domains of research and medicine.  In some settings we talk about the genotype of a cell or organism, which describes an entire genome in terms of a background and variations/diffs from this background. But we also talk about the genotype at a specific locus, which describes more narrowly the &apos;allelic state&apos; at a particular locus in the genome (i.e. the allele(s) present and their zygosity).  In GENO, we reserve the term &apos;genotype&apos; for the former case, describing variation across a full genome of a cell or organism, and use the term &apos;allelotype&apos; to refer to the latter, to describe variation at a defiend locus in the genome.</rdfs:comment>
-        <rdfs:label xml:lang="en">allelotype</rdfs:label>
+        <obo:IAO_0000115>A sequence information entity that specifies the &apos;allelic state&apos; of a defined locus in the genome - i.e. what allele(s) are present at this locus across all homologous chromosomes and their zygosity.</obo:IAO_0000115>
+        <obo:IAO_0000118>allelic state information</obo:IAO_0000118>
+        <obo:IAO_0000118>single locus genotype</obo:IAO_0000118>
+        <rdfs:comment>The term &apos;genotype&apos; has varied meanings/scopes in the domains of research and medicine.  In some settings we talk about the genotype of a cell or organism, which describes an entire genome in terms of a background and variations/diffs from this background. But we also talk about the genotype at a particular locus, which describes more narrowly the &apos;allelic state&apos; at a single location in the genome (i.e. the alleles present at a location and their zygosity).  
+
+In GENO, we reserve the term &apos;genotype&apos; for the former case, describing variation across a full genome of a cell or organism, and use the term &apos;allelic genotype&apos; to refer to the latter, to describe variation present across all features at a single defiend locus in the genome (i.e. the allelic state of the locus).</rdfs:comment>
+        <rdfs:label xml:lang="en">allelic genotype</rdfs:label>
     </owl:Class>
     
 
@@ -5178,7 +5176,8 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
                 <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A set of two or more sequence alterations, typically single-nucleotide polymorphisms, on the same chromosomal strand that tend to always occur together.</obo:IAO_0000115>
+        <obo:IAO_0000115>A set of two or more sequence alterations on the same chromosomal strand that tend to be transmitted together.</obo:IAO_0000115>
+        <rdfs:comment>Haplotypes are most commonly comprised of two or more single-nucleotide polymorphisms or other small alterations that affect a particular gene.</rdfs:comment>
         <rdfs:label xml:lang="en">haplotype</rdfs:label>
     </owl:Class>
     
@@ -5318,7 +5317,7 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
                 <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000871"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A sequence feature collection comprised of two haplotypes at a given locus on paired homologous chromosomes.</obo:IAO_0000115>
+        <obo:IAO_0000115>A sequence feature collection comprised of two haplotypes at a particular locus on paired homologous chromosomes.</obo:IAO_0000115>
         <rdfs:comment>&quot;Humans are diploid organisms; they have paired homologous chromosomes in their somatic cells, which contain two copies of each gene. An allele is one member of a pair of genes occupying a specific spot on a chromosome (called locus). Two alleles at the same locus on homologous chromosomes make up the individual’s genotype. A haplotype (a contraction of the term ‘haploid genotype’) is a combination of alleles at multiple loci that are transmitted together on the same chromosome. Haplotype may refer to as few as two loci or to an entire chromosome depending on the number of recombination events that have occurred between a given set of loci. Genewise haplotypes are established with markers within a gene; familywise haplotypes are established with markers within members of a gene family; and regionwise haplotypes are established within different genes in a region at the same chromosome. Finally, a diplotype is a matched pair of haplotypes on homologous chromosomes.&quot;
 From https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/</rdfs:comment>
