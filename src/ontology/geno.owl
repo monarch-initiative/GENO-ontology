@@ -1740,8 +1740,9 @@ Environments include natural environments or exposures, experimentally applied c
     <!-- http://purl.obolibrary.org/obo/GENO_0000703 -->
 
     <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000703">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <obo:IAO_0000115>Property linking a sequence to a string representing the ordered units that comprise the sequence (e.g. &apos;atgcagctagctaccgtcgatcg&apos;).</obo:IAO_0000115>
+        <obo:IAO_0000115>Property linking a sequence feature to a string representing the ordered units that comprise its sequence (e.g. &apos;atgcagctagctaccgtcgatcg&apos;).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has_sequence_string</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1781,6 +1782,17 @@ Environments include natural environments or exposures, experimentally applied c
         <obo:IAO_0000115>The ending position of a sequence region in 0-based coordinates.</obo:IAO_0000115>
         <obo:IAO_0000119>ClinGen Allele Model (http://datamodel.clinicalgenome.org/allele/)</obo:IAO_0000119>
         <rdfs:label>end_position</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000896 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000896">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <obo:IAO_0000115>Property linking a sequence to a string representing the ordered units that comprise the sequence (e.g. &apos;atgcagctagctaccgtcgatcg&apos;).</obo:IAO_0000115>
+        <rdfs:label>has_string</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2377,13 +2389,6 @@ This design allows us to classify genes and any variants of those genes (be they
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000019">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <obo:IAO_0000115>a collection more than one sequence features (ie a collection of discontinuous sequence features)</obo:IAO_0000115>
         <oboInOwl:hasDbXref>perhaps not same as SO:sequence collection, as here we explicitly include features that can have an extent of zero (and SO:sequence collection is a collection of regions that have an extent of at least one)</oboInOwl:hasDbXref>
@@ -2396,20 +2401,7 @@ This design allows us to classify genes and any variants of those genes (be they
     <!-- http://purl.obolibrary.org/obo/GENO_0000022 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000022">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000019"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001026"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature collection comprised of discontiguous sequences from a single genome</obo:IAO_0000115>
         <obo:IAO_0000116>Previously called &apos;genetic locus collection&apos;.  Difference between &apos;genetic&apos; and &apos;genomic&apos;, as used here, is that &apos;genomic&apos; implies a feature is a heritable part of some genome, while &apos;genetic&apos; implies that it is part of some feature that is capable of contributing to gene expression in a cell or other biological system.</obo:IAO_0000116>
         <obo:IAO_0000118>genetic locus collection</obo:IAO_0000118>
@@ -2697,12 +2689,6 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000091">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000164"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label>obsolete_experimental insertion</rdfs:label>
     </owl:Class>
     
@@ -4559,7 +4545,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000703"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000896"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4577,7 +4563,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000703"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000896"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </owl:annotatedTarget>
