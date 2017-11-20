@@ -485,7 +485,6 @@ Range = allele</obo:IAO_0000116>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000418"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>A relation that holds between an instance of a genotype or variant sequence feature or collection, and a genomic feature class (typically a gene) that is affected in its sequence or expression.</obo:IAO_0000115>
-        <obo:IAO_0000118>has_affected_locus</obo:IAO_0000118>
         <rdfs:comment>This is an organizational grouping class to collect all relations used to link instances of sequence features or qualified sequence features to genomic feature classes. For example, is_allele_of links a gene allele instance to its gene class (genes are represented as classes in our OWL model). Such links support phenotype propagation from alleles to genes for Monarch Initiative use cases. Use of these properties effectively puns gene class IRIs into owl:individuals in a given rdf datset.</rdfs:comment>
         <rdfs:label>has_affected_feature</rdfs:label>
     </owl:ObjectProperty>
@@ -512,7 +511,7 @@ Range = punned gene class</obo:IAO_0000116>
         <obo:IAO_0000115>A relation between a genomic feature class (typically a gene class) and an instance of a sequence feature or qualified sequence feature that represents or affects some change in the sequence or expression of the genomic feature.</obo:IAO_0000115>
         <obo:IAO_0000118>class_to_feature_relation</obo:IAO_0000118>
         <rdfs:comment>This is an organizational grouping class to collect all relations used to link genomic feature classes (typically genes) to instance of a genomic feature sequence feature or qualified sequence feature. For example, linking a gene class IRI to an instance of an allele of that gene class. Such links support phenotype propagation from features/variants to genes (e.g. for Monarch Initiative use cases)</rdfs:comment>
-        <rdfs:label>is_locus_affected_by</rdfs:label>
+        <rdfs:label>is_feature_affected_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2353,7 +2352,6 @@ http://zfin.org/action/feature/feature-detail?zdbID=ZDB-ALT-111117-8</obo:IAO_00
         <obo:IAO_0000116>Regarding the distinction between a &apos;gene&apos; and a &apos;gene allele&apos;:  Every zebrafish genome contains a &apos;gene allele&apos; for every zebrafish gene. Many will be &apos;wild-type&apos; or at least functional gene alleles. But some may be alleles that are mutated or truncated so as to lack functionality.  According to current SO criteria defining genes, a &apos;gene&apos; no longer exists in the case of a non-functional or deleted variant. But the &apos;gene allele&apos; does exist -  and its extent is that of the remaining/altered sequence based on alignment with a  reference gene.  Even for completely deleted genes, an allele of the gene exists (and here is equivalent to the junction corresponding to the where gene would live based on a reference alignment).
 
 This design allows us to classify genes and any variants of those genes (be they functional or not) as the same type of thing (ie a &apos;gene allele&apos;), since classification is based on genomic position rather than functional capacity. This is practical for representation of variant genotypes which often carry non-functional versions  of a gene at a particular locus. What is important here is specifying what is present at a locus associated with a particular gene, whether or not it is a functional gene or not.</obo:IAO_0000116>
-        <obo:IAO_0000118>gene locus</obo:IAO_0000118>
         <rdfs:comment>1. In SO, the concept of a &apos;gene&apos; is functioanlly defined, in that a gene necessarily produces a functional product. By contrast, the concept of a &apos;gene allele&apos; here is positionally defined - representing the sequence present at the location a gene resides in a reference genome (based on sequence alignment).  An Shh gene allele, for example, may be a fully functional wild-type version of the gene, a non-functional version carrying a deleterious point mutation, a truncated version of the gene, or even a complete deletion. In all these cases, an &apos;Shh gene allele&apos; exists at the position where the canonical gene resides in the reference genome - even if the extent of this allele different than the wild-type, or even zero in the case of the complete deletion.
 
 2. A genomic feature being an allele_of a gene is based on its location in a host genome - not on its sequence. This means, for example, that the insertion of the human SMN2 gene into the genome of a mouse (see http://www.informatics.jax.org/allele/MGI:3056903) DOES NOT represent an allele_of the human SMN2 gene according to the GENO model - because it is located in a mouse genome, not a human one.  Rather, this is a transgenic insertion that derives_sequence_from the human SMN2 gene.  If this human SMN2 gene is inserted within the mouse SMN2 gene locus (e.g. used to replace mouse SMN2 gene), the feature it creates is an allele_of the mouse SMN2 gene (one that happens to match the sequence of the human ortholog of the gene).  But again, it is not an allele_of the human SMN2 gene.</rdfs:comment>
@@ -2404,10 +2402,9 @@ This design allows us to classify genes and any variants of those genes (be they
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature collection comprised of discontiguous sequences from a single genome</obo:IAO_0000115>
         <obo:IAO_0000116>Previously called &apos;genetic locus collection&apos;.  Difference between &apos;genetic&apos; and &apos;genomic&apos;, as used here, is that &apos;genomic&apos; implies a feature is a heritable part of some genome, while &apos;genetic&apos; implies that it is part of some feature that is capable of contributing to gene expression in a cell or other biological system.</obo:IAO_0000116>
-        <obo:IAO_0000118>genetic locus collection</obo:IAO_0000118>
         <obo:IAO_0000118>genomic feature collection</obo:IAO_0000118>
         <rdfs:comment>Conceptually, members of this collection are meant to be about the sum total genetic material in a single cell or organism. But these members need not be associated with an actual material in a real cell or organism individual.  For example, things like a &apos;reference genome&apos; may not actually represent the material genome of any individual cell or organism in reality. Here, there may be no genomic material referents of the sequences in such a collection because the genome is tied to an idealized, hypothetical cell or organism instance. The key is that conceptually, they are still tied to the idea of being contained in a single genome. In the case of a genotype, the individual seqeunce members are not all about the genetic material of a singel cell or organism. Rather, it is the resolved sequence contained in the genotype that is meant to be about the total genomic sequence content of a genome - which we deem acceptable for classifying as a genetic locus collection.</rdfs:comment>
-        <rdfs:label>obsolete_genomic locus collection</rdfs:label>
+        <rdfs:label>obsolete_genomic feature collection</rdfs:label>
     </owl:Class>
     
 
@@ -2448,8 +2445,9 @@ This design allows us to classify genes and any variants of those genes (be they
         </rdfs:subClassOf>
         <obo:IAO_0000115>A single locus complement that serves as a standard against which &apos;variant&apos; sequences are compared</obo:IAO_0000115>
         <obo:IAO_0000118>reference allelic complement</obo:IAO_0000118>
+        <obo:IAO_0000118>reference single locus complement</obo:IAO_0000118>
         <rdfs:comment>formerly reference single locus complement</rdfs:comment>
-        <rdfs:label>reference single locus complement</rdfs:label>
+        <rdfs:label>reference single locus feature complement</rdfs:label>
     </owl:Class>
     
 
@@ -2476,8 +2474,9 @@ This design allows us to classify genes and any variants of those genes (be they
         </rdfs:subClassOf>
         <obo:IAO_0000115>A single locus complement in which at least one member feature is &apos;variant&apos;, and/or the total number of features in the complement deviates from the normal count of member features in the reference genome (e.g. cases of aneuploidy such as a trisomic chromosome).</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">variant allelic complement</obo:IAO_0000118>
+        <obo:IAO_0000118>variant single locus complement</obo:IAO_0000118>
         <rdfs:comment>Instances of this class are collections comprised of all versions of a defined feature (e.g. alleles of a specific gene) present in a genome where at least one member is variant (ie non-wild type). In diploid genomes this complement is typically the two alleles found on homologous chromosomes.  This class also covers cases where deviant numbers of genes or chromosomes are present in a genome (e.g. trisomy of chromosome 21), even if their sequence is wild-type.</rdfs:comment>
-        <rdfs:label>variant single locus complement</rdfs:label>
+        <rdfs:label>variant single locus feature complement</rdfs:label>
     </owl:Class>
     
 
@@ -2520,7 +2519,6 @@ This design allows us to classify genes and any variants of those genes (be they
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An allele that serves as a standard against which other alleles at the same locus are compared.</obo:IAO_0000115>
-        <obo:IAO_0000118>reference locus</obo:IAO_0000118>
         <rdfs:comment>Being a &apos;reference allele&apos; is a role or status assigned in the context of a specific dataset or analysis.  In human variation datasets, &apos;reference&apos; status is typically assigned based on factors such as being the most common in a population, being an ancestral allele, or being indentified first as a prototypical example of some feature or gene.  For example, &apos;reference alleles&apos; in characterizing SNPs often represent the allele first characterized in a reference genome, or the most common allele in a population.
 
 In model organism datasets, &apos;reference&apos; alleles are typically (but not always) the &apos;wild-type&apos; variant at a given locus, representing a functional and unaltered version of the feature that is part of a defined genomic background, and against which natural or experimentally-induced alterations are compared.</rdfs:comment>
@@ -2545,7 +2543,6 @@ In model organism datasets, &apos;reference&apos; alleles are typically (but not
         </owl:equivalentClass>
         <obo:IAO_0000115>A genomic feature known to exist, but remaining uncharacterized with respect to its identity (e.g. which allele exists at a given gene locus).</obo:IAO_0000115>
         <obo:IAO_0000116>Uses as a term of convenience for describing data reporting unspecified alleles in a genotype (i.e. in cases where zygosoty for a given locus is not known).  Typlically recorded in genotype syntaxes as a &apos; /? &apos;.</obo:IAO_0000116>
-        <obo:IAO_0000118>unspecified locus</obo:IAO_0000118>
         <rdfs:comment>An unspecified feature is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).</rdfs:comment>
         <rdfs:label>unspecified feature</rdfs:label>
     </owl:Class>
@@ -2674,7 +2671,6 @@ http://useast.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000164690
 Note that this may be slightly different than the extend described in other gene databases, such as Entrez Gene:http://www.ncbi.nlm.nih.gov/gene/6469</obo:IAO_0000112>
         <obo:IAO_0000115>A version/allele of a gene that serves as a standard against which variant genes are compared.</obo:IAO_0000115>
         <obo:IAO_0000118>reference gene</obo:IAO_0000118>
-        <obo:IAO_0000118>reference gene locus</obo:IAO_0000118>
         <rdfs:comment>Being a &apos;reference gene&apos; is a role or status assigned in the context of a specific dataset or analysis.  In human variation datasets, &apos;reference&apos; status is typically assigned based on factors such as being the most common version/allele in a population, being an ancestral allele, or being indentified first as a prototypical example of a gene.
 
 In model organism datasets, &apos;reference&apos; genes are typically the &apos;wild-type&apos; allele for a given gene, representing a functional and unaltered version of the gene that is part of a defined genomic background, and against which natural or experimentally-induced versions are compared.</rdfs:comment>
@@ -3522,7 +3518,6 @@ Similarly, large sequence features lost from genome are akin to deletions and th
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A sequence feature that is part of the heritable genome of a cell or organism.</obo:IAO_0000115>
-        <obo:IAO_0000118>genomic locus</obo:IAO_0000118>
         <rdfs:comment>A genomic feature is a continuous extent of sequence at a particular location in a genome, which can span any size from a complete chromosome, to a chromosomal band or region, to a gene, to a single base pair or even junction between base pairs (this would be a sequence feature with an extent of zero).  
 
 As sequence features, instances of genomic features are identified by both their inherent *sequence* and their *position* in a genome - as determined by an alignment with some reference sequence. Accordingly, the &apos;ATG&apos; start codon in the coding DNA sequence of the human AKT gene and the &apos;ATG&apos; start codon in the human SHH gene represent two distinct genomic features despite having he same sequence, in virtue of their different positions in the genome.</rdfs:comment>
@@ -3554,7 +3549,6 @@ As sequence features, instances of genomic features are identified by both their
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An allele that is variant with respect to some wild-type allele, in virtue of its being very rare in a population (typically &lt;1%), or being an experimentally-induced alteration that derives from a wild-type feature in a given strain.</obo:IAO_0000115>
-        <obo:IAO_0000118 xml:lang="en">mutant locus</obo:IAO_0000118>
         <obo:IAO_0000119>Based on use of &apos;mutant&apos; as described in PMID: 25741868 ACMG Guidelines</obo:IAO_0000119>
         <rdfs:comment>&apos;Mutant&apos; is typically contrasted with &apos;wild-type&apos;, where &apos;mutant&apos; indicates a natural but very rare allele in a population (typically &lt;1%), or an experimentally-induced variation that derives from a wild-type background locus for a given strain, which can be selected for in establishing a mutant line.</rdfs:comment>
         <rdfs:label>mutant allele</rdfs:label>
@@ -3624,7 +3618,6 @@ As sequence features, instances of genomic features are identified by both their
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000497">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000002"/>
         <obo:IAO_0000115>A variant allele that is fixed in a population at some stable level, typically &gt; 1%. Polymorphic alleles are variants of loci where more than one version exists at signifcant frequencies in a population.</obo:IAO_0000115>
-        <obo:IAO_0000118 xml:lang="en">polymorphic locus</obo:IAO_0000118>
         <obo:IAO_0000119>PMID: 25741868 ACMG Guidelines</obo:IAO_0000119>
         <rdfs:comment>Polymorphic alleles are contrasted with mutant alleles (extremely rare variants that exist in &lt;1% of a population), and &apos;wild-type alleles&apos; (extremenly common variants present in &gt;99% of a population).</rdfs:comment>
         <rdfs:label>polymorphic allele</rdfs:label>
@@ -3638,7 +3631,6 @@ As sequence features, instances of genomic features are identified by both their
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000497"/>
         <obo:IAO_0000115>A polymorphic allele  that is present at the highest frequency relative to other polymorphic variants at the same locus.</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">major allele</obo:IAO_0000118>
-        <obo:IAO_0000118>major polymorphic locus</obo:IAO_0000118>
         <rdfs:label>major polymorphic allele</rdfs:label>
     </owl:Class>
     
@@ -3650,7 +3642,6 @@ As sequence features, instances of genomic features are identified by both their
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000497"/>
         <obo:IAO_0000115>A polymorphic allele that is not present at the highest frequency among all fixed variants at the locus (i.e. not the major polymorphic allele at a given locus).</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">minor allele</obo:IAO_0000118>
-        <obo:IAO_0000118>minor polymorphic locus</obo:IAO_0000118>
         <rdfs:label>minor polymorphic allele</rdfs:label>
     </owl:Class>
     
@@ -3662,7 +3653,6 @@ As sequence features, instances of genomic features are identified by both their
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000497"/>
         <obo:IAO_0000115>A polymorphic allele that is determined from the sequence of a recent ancestor in a phylogentic tree.</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">ancestral allele</obo:IAO_0000118>
-        <obo:IAO_0000118>ancestral polymorphic locus</obo:IAO_0000118>
         <rdfs:label>ancestral polymorphic allele</rdfs:label>
     </owl:Class>
     
@@ -3679,7 +3669,6 @@ As sequence features, instances of genomic features are identified by both their
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An allele representing a highly common varaint (typically &gt;99% in a population), that typically exhibits canonical function, and against which rare and/or non-functional mutant alleles are compared.</obo:IAO_0000115>
-        <obo:IAO_0000118>WT locus</obo:IAO_0000118>
         <obo:IAO_0000118>wild-type allele</obo:IAO_0000118>
         <rdfs:comment>&apos;Wild-type&apos; is typically contrasted with &apos;mutant&apos;, where &apos;wild-type&apos; indicates a highly prevalent allele in a population (typically &gt;99%), and/or some prototypical allele in a background genome that serves as a basis for some experimental alteration to generate a mutant allele, which can be selected for in establishing a mutant strain.
 
@@ -3761,7 +3750,7 @@ The notion of wild-type alleles is more common in model organism databases, wher
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000115>A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.</obo:IAO_0000115>
-        <obo:IAO_0000118 xml:lang="en">variable locus</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">variable feature</obo:IAO_0000118>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/SO_0001023 ! allele</oboInOwl:hasDbXref>
         <rdfs:comment>The notion of an &apos;allele&apos; defined here is distinct from that of a genetic &apos;variant&apos; - as &apos;allele&apos; includes features considered to be the &apos;reference&apos; at a particular locus. Thus, alleles capture the state of the sequence found at a genetic locus, be it variant or reference. 
 
@@ -3809,7 +3798,6 @@ The most common use of the term refers to alleles of defined genes. But GENO use
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An allele of a gene that contains some sequence alteration.</obo:IAO_0000115>
-        <obo:IAO_0000118 xml:lang="en">variant gene locus</obo:IAO_0000118>
         <rdfs:comment>A gene allele is &apos;variant&apos; in virtue of its containing a sequence alteration that varies from some reference gene standard.  But note that a gene allele that is variant in one context/dataset can be considered a reference in another context/dataset.</rdfs:comment>
         <rdfs:label>variant gene allele</rdfs:label>
     </owl:Class>
@@ -3832,13 +3820,13 @@ TO DO: show a VCF representation of this example.</obo:IAO_0000112>
 
 3. the set of all versions of a sequence found at a particular genetic locus in a single genome.</obo:IAO_0000116>
         <obo:IAO_0000118>allelic complement</obo:IAO_0000118>
-        <obo:IAO_0000118>allelic set</obo:IAO_0000118>
+        <obo:IAO_0000118>single locus complement</obo:IAO_0000118>
         <rdfs:comment>- A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. 
 - The notion of a &quot;complement&quot; describes the collection of all elements in some defined set.
 - The notion of &quot;homologous&quot; genomic features describes those that occupy the same locus on homologous chromosomes.
 - Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus.
 - This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
-        <rdfs:label>single locus complement</rdfs:label>
+        <rdfs:label>single locus feature complement</rdfs:label>
     </owl:Class>
     
 
@@ -4389,7 +4377,6 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         </owl:equivalentClass>
         <obo:IAO_0000115>A genomic feature that is part of a gene, and delineated by some functional or structural function or role it serves (e.g.a promoter element, coding region, etc).</obo:IAO_0000115>
         <obo:IAO_0000118>defined gene part</obo:IAO_0000118>
-        <obo:IAO_0000118>gene locus part</obo:IAO_0000118>
         <rdfs:label>gene part</rdfs:label>
     </owl:Class>
     
@@ -4427,7 +4414,6 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         </owl:equivalentClass>
         <obo:IAO_0000112>A junction between bases, a deletion variant, a terminus at the end of a chromosome.</obo:IAO_0000112>
         <obo:IAO_0000115>A genomic feature that has an extent of zero.</obo:IAO_0000115>
-        <obo:IAO_0000118>null locus</obo:IAO_0000118>
         <rdfs:label xml:lang="en">null feature</rdfs:label>
     </owl:Class>
     
