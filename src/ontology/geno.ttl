@@ -103,7 +103,8 @@ obo:BFO_0000050 rdf:type owl:ObjectProperty ;
 ###  http://purl.obolibrary.org/obo/BFO_0000051
 obo:BFO_0000051 rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf obo:RO_0002131 ;
-                rdf:type owl:TransitiveProperty ;
+                rdf:type owl:TransitiveProperty ,
+                         owl:ReflexiveProperty ;
                 rdfs:label "has part" .
 
 
@@ -349,7 +350,7 @@ obo:GENO_0000418 rdf:type owl:ObjectProperty ;
                                         ( obo:GENO_0000383
                                           obo:GENO_0000418
                                         ) ;
-                 obo:IAO_0000115 "A relation that holds between an instance of a genotype or variant sequence feature or collection, and a genomic feature class (typically a gene) that is affected in its sequence or expression." ;
+                 obo:IAO_0000115 "A relation that holds between an instance of a genotype or variant sequence feature or collection, and a type of genomic feature (typically a gene class) that is affected in its sequence or expression by the genotype or variant." ;
                  obo:IAO_0000118 "has_affected_locus" ;
                  rdfs:comment "This is an organizational grouping class to collect all relations used to link instances of sequence features or qualified sequence features to genomic feature classes. For example, is_allele_of links a gene allele instance to its gene class (genes are represented as classes in our OWL model). Such links support phenotype propagation from alleles to genes for Monarch Initiative use cases. Use of these properties effectively puns gene class IRIs into owl:individuals in a given rdf datset." ;
                  rdfs:label "has_affected_feature" .
@@ -1312,7 +1313,10 @@ obo:GENO_0000703 rdf:type owl:DatatypeProperty ;
                  rdfs:domain obo:SO_0000110 ;
                  rdfs:range xsd:string ;
                  obo:IAO_0000115 "Property linking a sequence feature to a string representing the ordered units that comprise its sequence (e.g. 'atgcagctagctaccgtcgatcg')." ;
-                 rdfs:label "has_sequence_string"@en .
+                 rdfs:comment """This is a shortcut relation that traverses Sequence Feature - has_sequence - Sequence - sequence_state - xsd:string.
+
+So it could be consisdered a property chain over has_sequence o sequence_state""" ;
+                 rdfs:label "has_sequence_with_state"@en .
 
 
 ###  http://purl.obolibrary.org/obo/GENO_0000712
@@ -1345,8 +1349,8 @@ obo:GENO_0000895 rdf:type owl:DatatypeProperty ;
 obo:GENO_0000896 rdf:type owl:DatatypeProperty ;
                  rdfs:domain obo:GENO_0000702 ;
                  rdfs:range xsd:string ;
-                 obo:IAO_0000115 "Property linking a sequence to a string representing the ordered units that comprise the sequence (e.g. 'atgcagctagctaccgtcgatcg')." ;
-                 rdfs:label "has_string" .
+                 obo:IAO_0000115 "Property linking a sequence to a string representing the state of the ordered units that comprise the sequence (e.g. 'atgcagctagctaccgtcgatcg')." ;
+                 rdfs:label "sequence_state" .
 
 
 #################################################################
@@ -1852,9 +1856,8 @@ obo:GENO_0000029 rdf:type owl:Class ;
                                    owl:qualifiedCardinality "0"^^xsd:nonNegativeInteger ;
                                    owl:onClass obo:GENO_0000002
                                  ] ;
-                 obo:IAO_0000115 "A single locus complement that serves as a standard against which 'alternate' sequences are compared" ;
+                 obo:IAO_0000115 "A single locus complement that serves as a standard against which 'alternate' single locus complements are compared" ;
                  obo:IAO_0000118 "reference allelic complement" ;
-                 rdfs:comment "formerly reference single locus complement" ;
                  rdfs:label "reference single locus complement" .
 
 
@@ -1862,21 +1865,17 @@ obo:GENO_0000029 rdf:type owl:Class ;
 obo:GENO_0000030 rdf:type owl:Class ;
                  owl:equivalentClass [ owl:intersectionOf ( obo:GENO_0000516
                                                             [ rdf:type owl:Restriction ;
-                                                              owl:onProperty obo:GENO_0000382 ;
-                                                              owl:someValuesFrom obo:GENO_0000002
+                                                              owl:onProperty obo:GENO_0000683 ;
+                                                              owl:someValuesFrom obo:GENO_0000029
                                                             ]
                                                           ) ;
                                        rdf:type owl:Class
                                      ] ;
-                 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                   owl:onProperty obo:GENO_0000683 ;
-                                   owl:someValuesFrom obo:GENO_0000029
-                                 ] ;
-                 obo:IAO_0000115 "A single locus complement complement where at least one member variant, and/or the total number of members of the locus deviates from the normal ploidy of the genome (e.g. a trisomic chromosome)." ;
+                 obo:IAO_0000115 "A single locus complement complement where at least one member variant, and/or the total number of features present at the locus deviates from the normal ploidy of the genome (e.g. a trisomic chromosome)." ;
                  obo:IAO_0000118 "variant allelic complement"@en ;
-                 rdfs:comment """Instances of this class are collections comprised of all versions of a specific locus present in a cell or virion where at least one locus is variant (ie non-wild type). This is most commonly a pair of two gene loci  on homologous chromosomes in a diploid genome. 
+                 rdfs:comment """Instances of this class are collections comprised of all features at a specific locus present in a genome where at least one locus is variant (ie non-wild type). This class also covers cases where deviant numbers of genes or chromosomes are present (e.g. trisomy of chromosome 21), even if their sequence is wild-type.
 
-This class also covers cases where deviant numbers of genes or chromosomes are present (e.g. trisomy of chromosome 21), even if their sequence is wild-type.""" ;
+The most common example of a variant single locus complement  is a pair of genes on homologous chromosomes in a diploid genome, where at least one contains a sequence alteration making it variant.""" ;
                  rdfs:label "variant single locus complement" .
 
 
@@ -2423,8 +2422,9 @@ obo:GENO_0000175 rdf:type owl:Class ;
 ###  http://purl.obolibrary.org/obo/GENO_0000324
 obo:GENO_0000324 rdf:type owl:Class ;
                  rdfs:subClassOf obo:GENO_0000516 ;
-                 obo:IAO_0000115 "A single locus complement that represents the collection of all chromosome sequences for a given chromosome in a single genome" ;
-                 rdfs:label "chromosome complement" .
+                 obo:IAO_0000112 "All copies of chromosome 13 in the human genome (two copies in a normal diploid genome, three copies in cases of trisomy 13)." ;
+                 obo:IAO_0000115 "A single locus complement that represents the collection of all homologous chromosome sequences in a single genome" ;
+                 rdfs:label "homologous chromosome complement" .
 
 
 ###  http://purl.obolibrary.org/obo/GENO_0000338
@@ -2807,9 +2807,9 @@ obo:GENO_0000512 rdf:type owl:Class ;
                  obo:IAO_0000115 "A sequence feature representing one of a set of coexisting sequence variants at a particular genomic  locus." ;
                  obo:IAO_0000118 "variable locus"@en ;
                  oboInOwl:hasDbXref "http://purl.obolibrary.org/obo/SO_0001023 ! allele" ;
-                 rdfs:comment """The notion of an 'allele' defined here is distinct from that of a genetic 'variant' - as 'allele' includes features considered to be the 'reference' at a particular locus. Thus, alleles capture the state of the sequence found at a genetic locus, be it variant or reference. 
+                 rdfs:comment """The notion of an 'allele' defined here is distinct from that of a genetic 'variant' - as 'allele' includes features considered to be the 'reference' at a particular locus. Thus, alleles capture the state of the sequence found at a genetic locus, be it variant or reference. 'Variants' implies a difference from some sequence that is considered a 'reference' for the purposes of a particular analysis. 
 
-The most common use of the term refers to alleles of defined genes. But GENO uses the term broadly to include variants of any defined marker or extent of sequence in a genome. So in addition to genes, we can talk about alleles of single nucleotides (e.g. SNVs / SNPs), QTLs, microsattelite regions, or even large/structural chromosomal regions.""" ;
+While a common use of the term 'allele' refers to a version of a gene, GENO uses the term broadly to include variants of any defined feature or extent of sequence in a genome. So in addition to genes, we can talk about alleles of single nucleotides (e.g. SNVs / SNPs), alleles of QTLs, alleles of microsattelite regions, or even alleles of large/structural chromosomal regions.""" ;
                  rdfs:label "allele" .
 
 
@@ -2851,24 +2851,13 @@ If this human gene is inserted to replace the mouse SMN2 gene, it becomes an all
 ###  http://purl.obolibrary.org/obo/GENO_0000516
 obo:GENO_0000516 rdf:type owl:Class ;
                  rdfs:subClassOf obo:GENO_0000660 ;
-                 obo:IAO_0000112 """The set of two copies of the shha gene in a diiploid zebrafish genome, e.g. fgf8a<ti282a/+>.
-
-The collection of the individual nucleotides present at the position 24126737 on across all copies of chromosome 5 in a particular human genome.
-TO DO: show a VCF representation of this example.""" ;
-                 obo:IAO_0000115 "A genomic feature complement comprised of the set of all homologous features in a single genome that are found at a particular genomic location/span." ;
-                 obo:IAO_0000116 """Possible definitions for this concept: 
-1. the set of all homologous features in a single genome that are found at a particular genomic location/span.
-
-2. the set of all homologous instances of a particular feature in a single genome.
-
-3. the set of all versions of a sequence found at a particular genetic locus in a single genome.""" ;
+                 obo:IAO_0000112 """1. The set of two copies of the shha gene in a diiploid zebrafish genome, e.g. fgf8a<ti282a/+>.
+2. The set of the nucleotides present at the position 24126737 on across all copies of chromosome 5 in a particular human genome.
+3. The set of all copies of chromosome 13 in the human genome (two copies in a normal diploid genome, three copies in cases of trisomy 13).""" ;
+                 obo:IAO_0000115 "A genomic feature complement comprised of the set of all homologous features in a single genome that are found at a particular genomic location." ;
                  obo:IAO_0000118 "allelic complement" ,
                                  "allelic set" ;
-                 rdfs:comment """- A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. 
-- The notion of a \"complement\" describes the collection of all elements in some defined set.
-- The notion of \"homologous\" genomic features describes those that occupy the same locus on homologous chromosomes.
-- Therefore, we use the term \"single locus complement\" to describe the set of all homologous features present at a particular genomic locus.
-- This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.""" ;
+                 rdfs:comment "A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome.   The notion of a \"complement\" describes the collection of all elements in some defined set. The notion of \"homologous\" genomic features describes those that occupy the same locus on homologous chromosomes. Therefore, we use the term \"single locus complement\" to describe the set of all homologous features present at a particular genomic locus. This complement is typically a pair of two features in a diploid genome - e.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes." ;
                  rdfs:label "single locus complement" .
 
 
@@ -3357,7 +3346,7 @@ obo:GENO_0000701 rdf:type owl:Class ;
                                                      obo:SO_0000110
                                                    )
                                      ] ;
-                 rdfs:subClassOf obo:BFO_0000031 ;
+                 rdfs:subClassOf obo:GENO_0000897 ;
                  obo:IAO_0000115 "An extent of biological sequence, or a collection of such extents, whose identity is dependent on both its sequence and its position." ;
                  rdfs:comment """GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. 'Biological sequence' identity is dependent only on the ordering of units that comprise the sequence.
@@ -3395,7 +3384,7 @@ obo:GENO_0000702 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/GENO_0000713
 obo:GENO_0000713 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:BFO_0000031 ;
+                 rdfs:subClassOf obo:GENO_0000897 ;
                  obo:IAO_0000115 "A sequence feature (or collection of features) whose identity is dependent on the context or state of its material bearer (in addition to its sequence an position).  This context/state describes factors external to its inherent sequence and position that can influences its expression, such as being targeted by gene-knockdown reagents, or an epigenetic modification." ;
                  rdfs:comment """GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. 'Biological sequence' identity is dependent only on the ordering of units that comprise the sequence.
@@ -3824,12 +3813,7 @@ obo:GENO_0000870 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/GENO_0000871
 obo:GENO_0000871 rdf:type owl:Class ;
-                 rdfs:subClassOf obo:GENO_0000870 ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty obo:RO_0002351 ;
-                                   owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                   owl:onClass obo:SO_0001059
-                                 ] ;
+                 rdfs:subClassOf obo:GENO_0000512 ;
                  obo:IAO_0000115 "A set of two or more sequence alterations on the same chromosomal strand that tend to be transmitted together." ;
                  rdfs:comment "Haplotypes are most commonly comprised of two or more single-nucleotide polymorphisms or other small alterations that affect a particular gene." ;
                  rdfs:label "haplotype"@en .
@@ -3973,18 +3957,13 @@ obo:GENO_0000889 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/GENO_0000890
 obo:GENO_0000890 rdf:type owl:Class ;
-                 owl:equivalentClass [ rdf:type owl:Class ;
-                                       owl:unionOf ( obo:GENO_0000512
-                                                     obo:GENO_0000871
-                                                   )
-                                     ] ;
-                 rdfs:subClassOf obo:GENO_0000701 ;
+                 rdfs:subClassOf obo:GENO_0000481 ;
                  obo:IAO_0000112 "The canonical allele that represents a single nucleotide variation in the BRCA2 gene, which can be described by various contextual alleles such as “NC_000013.11:g.32319070T>A” and “NG_012772.3:g.8591T>A”." ;
                  obo:IAO_0000115 "One of a set of sequence features or haplotypes that exist at a particular genetic locus." ;
                  obo:IAO_0000116 "The notion of a 'canonical allele' is taken from the ClinGen Allele model (http://datamodel.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model." ;
                  obo:IAO_0000119 "http://datamodel.clinicalgenome.org/allele/resource/canonical_allele/" ;
                  terms:source "ClinGen Allele Model (http://datamodel.clinicalgenome.org/allele/)" ;
-                 rdfs:comment """As a 'sequence feature or collection' (sensu SO), a 'canonical allele' is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence).  Canonical alleles can include haplotypes that consist of more than one discontinuous sequence feature that exist in cis on the same chromosomal strand (as such haplotypes are often linked to a particular disease).
+                 rdfs:comment """As a 'sequence feature or collection' (sensu SO), a 'canonical allele' is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence).  Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand. Such haplotypes are often linked to a particular disease.
 
 In the ClinGen allele model, 'canonical alleles  are contrasted with 'contextual alleles'. Contextual alleles are informational representation that describe a canonical allele, using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation.""" ;
                  rdfs:label "canonical allele" .
@@ -4017,6 +3996,13 @@ obo:GENO_0000893 rdf:type owl:Class ;
                  rdfs:subClassOf obo:GENO_0000141 ;
                  obo:IAO_0000115 "A mode of inheritance whereby manifestation of a trait or condition occurs only when affected mitochondria are inherited (i.e. mitochondria containing the causative allele)" ;
                  rdfs:label "Homoplasmic mitochondrial inheritance" .
+
+
+###  http://purl.obolibrary.org/obo/GENO_0000897
+obo:GENO_0000897 rdf:type owl:Class ;
+                 rdfs:subClassOf obo:BFO_0000031 ;
+                 obo:IAO_0000115 "An entity that carries genetic sequence - i.e. a sequence feature or collection, or qualified sequence feature or collection." ;
+                 rdfs:label "genetic entity" .
 
 
 ###  http://purl.obolibrary.org/obo/GO_0003674
@@ -4590,7 +4576,7 @@ obo:SO_0001026 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/SO_0001059
 obo:SO_0001059 rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( obo:GENO_0000002
+               owl:equivalentClass [ owl:intersectionOf ( obo:GENO_0000512
                                                           [ rdf:type owl:Restriction ;
                                                             owl:onProperty obo:GENO_0000784 ;
                                                             owl:someValuesFrom obo:SO_0000110
