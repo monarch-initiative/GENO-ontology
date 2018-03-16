@@ -103,8 +103,7 @@ obo:BFO_0000050 rdf:type owl:ObjectProperty ;
 ###  http://purl.obolibrary.org/obo/BFO_0000051
 obo:BFO_0000051 rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf obo:RO_0002131 ;
-                rdf:type owl:TransitiveProperty ,
-                         owl:ReflexiveProperty ;
+                rdf:type owl:TransitiveProperty ;
                 rdfs:label "has part" .
 
 
@@ -4576,7 +4575,7 @@ obo:SO_0001026 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/SO_0001059
 obo:SO_0001059 rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( obo:GENO_0000512
+               owl:equivalentClass [ owl:intersectionOf ( obo:GENO_0000002
                                                           [ rdf:type owl:Restriction ;
                                                             owl:onProperty obo:GENO_0000784 ;
                                                             owl:someValuesFrom obo:SO_0000110
