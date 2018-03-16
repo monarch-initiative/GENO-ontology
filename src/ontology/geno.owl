@@ -3752,9 +3752,9 @@ The notion of wild-type alleles is more common in model organism databases, wher
         <obo:IAO_0000115>A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">variable feature</obo:IAO_0000118>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/SO_0001023 ! allele</oboInOwl:hasDbXref>
-        <rdfs:comment>The notion of an &apos;allele&apos; defined here is distinct from that of a genetic &apos;variant&apos; - as &apos;allele&apos; includes features considered to be the &apos;reference&apos; at a particular locus. Thus, alleles capture the state of the sequence found at a genetic locus, be it variant or reference. 
+        <rdfs:comment>The notion of an &apos;allele&apos; defined here is distinct from that of a genetic &apos;variant&apos; - as &apos;allele&apos; includes features considered to be the &apos;reference&apos; at a particular locus. Thus, alleles capture the state of the sequence found at a genetic locus, be it variant or reference. &apos;Variants&apos; implies a difference from some sequence that is considered a &apos;reference&apos; for the purposes of a particular analysis. 
 
-The most common use of the term refers to alleles of defined genes. But GENO uses the term broadly to include variants of any defined marker or extent of sequence in a genome. So in addition to genes, we can talk about alleles of single nucleotides (e.g. SNVs / SNPs), QTLs, microsattelite regions, or even large/structural chromosomal regions.</rdfs:comment>
+While a common use of the term &apos;allele&apos; refers to a version of a gene, GENO uses the term broadly to include variants of any defined feature or extent of sequence in a genome. So in addition to genes, we can talk about alleles of single nucleotides (e.g. SNVs / SNPs), alleles of QTLs, alleles of microsattelite regions, or even alleles of large/structural chromosomal regions.</rdfs:comment>
         <rdfs:label>allele</rdfs:label>
     </owl:Class>
     
@@ -5136,15 +5136,8 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
     <!-- http://purl.obolibrary.org/obo/GENO_0000871 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000871">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000870"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A set of two or more sequence alterations on the same chromosomal strand that tend to be transmitted together.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000512"/>
+        <obo:IAO_0000115>A version of some defined extent of &quot;co-inherited&quot; sequence on the same chromosomal strand where variation is known to occur. Haplotypes often contain several discrete sequence alterations that are seen to be inhereited togther.</obo:IAO_0000115>
         <rdfs:comment>Haplotypes are most commonly comprised of two or more single-nucleotide polymorphisms or other small alterations that affect a particular gene.</rdfs:comment>
         <rdfs:label xml:lang="en">haplotype</rdfs:label>
     </owl:Class>
@@ -5347,21 +5340,13 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
     <!-- http://purl.obolibrary.org/obo/GENO_0000890 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000890">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000701"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000512"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000871"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000512"/>
         <obo:IAO_0000112>The canonical allele that represents a single nucleotide variation in the BRCA2 gene, which can be described by various contextual alleles such as “NC_000013.11:g.32319070T&gt;A” and “NG_012772.3:g.8591T&gt;A”.</obo:IAO_0000112>
         <obo:IAO_0000115>One of a set of sequence features or haplotypes that exist at a particular genetic locus.</obo:IAO_0000115>
         <obo:IAO_0000116>The notion of a &apos;canonical allele&apos; is taken from the ClinGen Allele model (http://datamodel.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.</obo:IAO_0000116>
         <obo:IAO_0000119>http://datamodel.clinicalgenome.org/allele/resource/canonical_allele/</obo:IAO_0000119>
         <terms:source>ClinGen Allele Model (http://datamodel.clinicalgenome.org/allele/)</terms:source>
-        <rdfs:comment>As a &apos;sequence feature or collection&apos; (sensu SO), a &apos;canonical allele&apos; is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence).  Canonical alleles can include haplotypes that consist of more than one discontinuous sequence feature that exist in cis on the same chromosomal strand (as such haplotypes are often linked to a particular disease).
+        <rdfs:comment>As a &apos;sequence feature or collection&apos; (sensu SO), a &apos;canonical allele&apos; is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence).  Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand. Such haplotypes are often linked to a particular disease.
 
 In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;contextual alleles&apos;. Contextual alleles are informational representation that describe a canonical allele, using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation.</rdfs:comment>
         <rdfs:label>canonical allele</rdfs:label>
