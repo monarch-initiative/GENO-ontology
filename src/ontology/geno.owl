@@ -2257,7 +2257,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001059"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002524"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
                     </owl:Restriction>
                 </owl:unionOf>
@@ -3258,10 +3258,8 @@ We can also use these terms to describe the heritability of phenotypes/condition
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>An aneuploid chromosomal alement that is a complete duplicated chromosome resulting from a meiotic non-disjunction event.</obo:IAO_0000115>
+        <obo:IAO_0000115>A complete chromosome that has been abnormally duplicated in a genome, typically as the result of a meiotic non-disjunction event or unbalanced translocation</obo:IAO_0000115>
         <obo:IAO_0000118>duplicate chromosome</obo:IAO_0000118>
-        <obo:IAO_0000118>non-disjunct duplicate chromosome</obo:IAO_0000118>
-        <obo:IAO_0000118>novel aneusomic chromosome</obo:IAO_0000118>
         <rdfs:comment>This &apos;gained&apos; chromosome is conceptually an &apos;insertion&apos; in a genome  that received two copies of a chromosome in a cell division following a non-disjunction event. As such, it qualifies as a type of sequence_alteration, and as a &apos;extra&apos; chromosome.</rdfs:comment>
         <rdfs:label>gained aneusomic chromosome</rdfs:label>
     </owl:Class>
@@ -3279,11 +3277,9 @@ We can also use these terms to describe the heritability of phenotypes/condition
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A null feature that represents a missing chromosome, typically resulting from a meiotic non-disjunction event</obo:IAO_0000115>
-        <obo:IAO_0000116>This &apos;lost&apos; chromosome is conceptually a &apos;deletion&apos; in a genome  that received zero copies of a chromosome in a cell division following a non-disjunction event. As such, it qualifies as a type of sequence_alteration, and as a &apos;null&apos; chromosome.  But it doesnt classify under SO:deletion because this class is defined as &quot;the point at which one or more contiguous nucleotides were excised&quot;.</obo:IAO_0000116>
+        <obo:IAO_0000115>A &apos;deletion&apos; resulting from the loss of a complete chromosome, typically as the result of a meiotic non-disjunction event or unbalanced translocation.</obo:IAO_0000115>
+        <obo:IAO_0000116>This &apos;lost&apos; chromosome is conceptually a &apos;deletion&apos; in a genome that received zero copies of a chromosome in a cell division following a non-disjunction event. As such, it qualifies as a type of sequence_alteration. But it doesn&apos;t classify under SO:deletion because this class is defined as &quot;the point at which one or more contiguous nucleotides were excised&quot;.</obo:IAO_0000116>
         <obo:IAO_0000118>absent aneusomic chromosome</obo:IAO_0000118>
-        <obo:IAO_0000118>absent monosomic chromosome complement</obo:IAO_0000118>
-        <obo:IAO_0000118>non-disjunct absent chromosome</obo:IAO_0000118>
         <rdfs:label>lost aneusomic chromosome</rdfs:label>
     </owl:Class>
     
@@ -3306,14 +3302,12 @@ We can also use these terms to describe the heritability of phenotypes/condition
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A genomic feature that is a portion of a chromosome that has been abnormally lost or duplicated (as a fusion to a non-homologous chromosome), as the result of an unbalanced translocation.</obo:IAO_0000115>
+        <obo:IAO_0000115>A large deletion or terminal addition of part of some non-homologous chromsosome, as the result of an unbalanced translocation.</obo:IAO_0000115>
+        <obo:IAO_0000116>Novel sequence features gained in a genome are considered to be sequence alterations, including aneusomic chromosome segments gained through unbalanced translocation events, entire aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that becoome part of the heritable genome of a cell or organism.</obo:IAO_0000116>
         <obo:IAO_0000118>aneuploid chromosomal segment</obo:IAO_0000118>
         <obo:IAO_0000118>aneusomic chromosomal subregion/segment</obo:IAO_0000118>
         <obo:IAO_0000118>partial aneusomic chromosomal element</obo:IAO_0000118>
-        <rdfs:comment>Partial aneuploidy: The terms &quot;partial monosomy&quot; and &quot;partial trisomy&quot; are used to describe an imbalance of genetic material caused by loss or gain of part of a chromosome. In particular, these terms would be used in the situation of an unbalanced translocation, where an individual carries a derivative chromosome formed through the breakage and fusion of two different chromosomes. In this situation, the individual would have three copies of part of one chromosome (two normal copies and the portion that exists on the derivative chromosome) and only one copy of part of the other chromosome involved in the derivative chromosome.
-http://en.wikipedia.org/wiki/Aneuploidy
-
-We consider novel sequence features gained in a genome to be sequence alterations, including aneusomic chromosome segments gained through unbalanced translocation events, entrie aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that becoome part of the heritable gneme of a cell or organism.</rdfs:comment>
+        <rdfs:comment>Aneusomic chromosomal parts are examples of &quot;partial aneuploidy&quot; as described in http://en.wikipedia.org/wiki/Aneuploidy: &quot;The terms &quot;partial monosomy&quot; and &quot;partial trisomy&quot; are used to describe an imbalance of genetic material caused by loss or gain of part of a chromosome. In particular, these terms would be used in the situation of an unbalanced translocation, where an individual carries a derivative chromosome formed through the breakage and fusion of two different chromosomes. In this situation, the individual would have three copies of part of one chromosome (two normal copies and the portion that exists on the derivative chromosome) and only one copy of part of the other chromosome involved in the derivative chromosome.&quot;</rdfs:comment>
         <rdfs:label>aneusomic chromosomal part</rdfs:label>
     </owl:Class>
     
@@ -3324,11 +3318,11 @@ We consider novel sequence features gained in a genome to be sequence alteration
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000344">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000343"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A genomic feature that is a portion of a chromosome that has been abnormally duplicated as a fusion to a non-homologous chromosome as the result of an unbalanced translocation.</obo:IAO_0000115>
-        <obo:IAO_0000116>In our model, we consider this chromosomal region to be trisomic, and thus a variant single locus complement</obo:IAO_0000116>
+        <obo:IAO_0000115>A part of some non-homologous chromosome that has been gained as the result of an unbalanced translocation event.</obo:IAO_0000115>
         <obo:IAO_0000118>duplicate partial aneuploid chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>translocated duplicate chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>translocated duplicate chromosomal segment</obo:IAO_0000118>
+        <rdfs:comment>Such additions of translocated chromosomal parts confer a trisomic condition to the duplicated region of the chromsome, and are thus considered to be &apos;variant single locus complements&apos; in virtue of an abnormal number of features at a particular locus, rather than abnormal sequence within the locus.</rdfs:comment>
         <rdfs:label>gained aneusomic chromosomal segment</rdfs:label>
     </owl:Class>
     
@@ -3345,16 +3339,14 @@ We consider novel sequence features gained in a genome to be sequence alteration
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A sequence alteration representing the absence of sequence resulting from an unbalanced translocation to another chromosome.</obo:IAO_0000115>
+        <obo:IAO_0000115>A deletion of a terminal portion of a chromosome resulting from an unbalanced translocation to another chromosome.</obo:IAO_0000115>
         <obo:IAO_0000116>In our model, we consider this chromosomal region to be monosomic, and thus a variant single locus complement</obo:IAO_0000116>
         <obo:IAO_0000118>dropped partial anneuploid chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>translocated absent chromosomal segment</obo:IAO_0000118>
         <obo:IAO_0000118>truncated chromosome terminus</obo:IAO_0000118>
-        <rdfs:comment>This is not a deletion in the sense defined by the Sequence Ontology in that is is not the result of an &apos;excision&apos; of nucleotides, but an unbalanced translocation event.
+        <rdfs:comment>This is not a deletion in the sense defined by the Sequence Ontology in that it is not the result of an &apos;excision&apos; of nucleotides, but an unbalanced translocation event.  The allelic complement that results is comprised of the terminus or junction represented by this lost chromosomal segment, and the remaining normal segment in the homologous chromosome. The lost aneusommic chromosomal segment is typically accommpanied by a gained aneusomic chromosomal segment from another chromosome.
 
-The allelic complement that results is comprised of the null allele (terminus or junction) represented by this lost chromosomal segment, and the remaining normal segment in the homologous chromosome.
-
-The lost aneusommic chromosomal segment is typically accommpanied by a gained aneusomic chromosomal segment from another chromosome.</rdfs:comment>
+Loss of translocated chromosomal parts can confer a monosomic condition to a region of the chromsome. This results in a &apos;variant single locus complement&apos; - in virtue of an abnormal number of features at a particular locus, rather than abnormal sequence within the locus.</rdfs:comment>
         <rdfs:label>lost aneusomic chromosomal segment</rdfs:label>
     </owl:Class>
     
@@ -3372,11 +3364,11 @@ The lost aneusommic chromosomal segment is typically accommpanied by a gained an
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
-        <obo:IAO_0000115>A genomic feature that is a complete chromosome that has been abnormally duplicated or lost, typically as the result of a non-disjunction event or unbalanced translocation</obo:IAO_0000115>
+        <obo:IAO_0000115>A complete chromosome that has been abnormally duplicated, or the absense of a chromosome that has been lost, typically as the result of a non-disjunction event or unbalanced translocation</obo:IAO_0000115>
         <obo:IAO_0000118>complete aneusomic chromosome</obo:IAO_0000118>
-        <rdfs:comment>We consider large sequence features gained in a genome to be sequence alterations (akin to insertions), including aneusomic chromosome segments gained through unbalanced translocation events, entrie aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that become part of the heritable gneme of a cell or organism.
+        <rdfs:comment>Large sequence features gained in a genome are considered to be sequence alterations (akin to insertions), including aneusomic chromosome segments gained through unbalanced translocation events, entrie aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that become part of the heritable gneme of a cell or organism.
 
-Similarly, large sequence features lost from genome are akin to deletions and therefore also considered sequence alterations. This includes the loss of chromosome segments through unbalanced translocation events, and the loss of entrie chromosomes through a non-disjunction event during replication.</rdfs:comment>
+Similarly, large sequence features lost from genome are akin to deletions and therefore also considered sequence alterations. This includes the loss of chromosomal segments through unbalanced translocation events, and the loss of entire chromosomes through a non-disjunction event during replication.</rdfs:comment>
         <rdfs:label>aneusomic chromosome</rdfs:label>
     </owl:Class>
     
@@ -3597,7 +3589,7 @@ As sequence features, instances of genomic features are identified by both their
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>A genetic feature that is not part of the chromosomal genome of a cell or virion, but rather a stable and heritable element that is replilcated and passed on to progeny (e.g a replicative plasmid or transposon)</obo:IAO_0000115>
+        <obo:IAO_0000115>A genetic feature that is not part of the chromosomal genome of a cell or virion, but rather a stable and heritable element that is replilcated and passed on to progeny (e.g. a replicative plasmid or transposon)</obo:IAO_0000115>
         <obo:IAO_0000116>Consider replacing with SO_0001038 ! extrachromosomal_mobile_genetic_element</obo:IAO_0000116>
         <obo:IAO_0000118>episomal replicon</obo:IAO_0000118>
         <obo:IAO_0000231>Extrachromosomal replicons are replicated and passed on to descendents, and thus part of the heritable genome of a cell or organism. In cases where the presence of such a replicon is novel or aberrant (i.e. not included in the reference for that genome), the replicon is considered a &apos;sequence alteration&apos;.</obo:IAO_0000231>
@@ -4408,20 +4400,13 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000680 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000680">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000678"/>
-                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000112>A junction between bases, a deletion variant, a terminus at the end of a chromosome.</obo:IAO_0000112>
         <obo:IAO_0000115>A genomic feature that has an extent of zero.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">null feature</rdfs:label>
+        <obo:IAO_0000116>Former logical def: 
+&apos;genomic feature&apos;
+ and (has_extent value 0)</obo:IAO_0000116>
+        <rdfs:label xml:lang="en">obsolete_null feature</rdfs:label>
     </owl:Class>
     
 
@@ -4465,18 +4450,13 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000684 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000684">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000685"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <obo:IAO_0000115>A genomic feature that represents an entirely new replicon in the genome, e.g. an extrachromosomal replicon or an extra copy of a chromosome.</obo:IAO_0000115>
         <obo:IAO_0000116>This class is defined so as to support classification of things like novel extrachromosomal replicons and aneusomic chromosomes as being variant alleles in a genome. These represent entirely new features in the genome - not variants of an existing feature.</obo:IAO_0000116>
@@ -4499,8 +4479,8 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000688 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000688">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000680"/>
-        <obo:IAO_0000115>A null feature representing the end of a sequence feature that is bounded only on one side (e.g. at the end of an chromosome or oligonucleotide.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <obo:IAO_0000115>A sequence feature representing the end of a sequence that is bounded only on one side (e.g. at the end of an chromosome or oligonucleotide).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">terminus</rdfs:label>
     </owl:Class>
     
@@ -4517,7 +4497,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000897"/>
         <obo:IAO_0000115>An extent of biological sequence, or a collection of such extents, whose identity is dependent on both its sequence and its position.</obo:IAO_0000115>
         <rdfs:comment>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
@@ -4538,13 +4518,13 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000112>&apos;Sequences&apos; differ from &apos;sequence features&apos; in that instances are distinguished only by their inherent ordering of units, and not by any positional aspect related to alignment with some reference sequence. Accordingly, the &apos;ATG&apos; translational start codon of the human AKT gene is the same *sequence* as the &apos;ATG&apos; start codon of the human SHH gene, but these represent two distinct sequence features in virtue of their different positions in the genome.</obo:IAO_0000112>
         <obo:IAO_0000115>An ordered collection units representing successive monomers of a biological macromolecule.</obo:IAO_0000115>
-        <obo:IAO_0000118>biomacromolecular sequence</obo:IAO_0000118>
-        <rdfs:comment>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
+        <obo:IAO_0000116>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
 2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic position if the sequence (aligns with definition of &apos;sequence feature&apos; in the Sequence Ontology).
-3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material bearing the feature, extrinsic to its sequence and its genomic position.  For example, its being targeted by gene knockdown reagents, its being transgenically expressed in a foreign cell from a recombinant expression construct, its having been epigenetically modified in a way that alters its expression level or pattern, or its being located in a specific cellular or anatomical location.</rdfs:comment>
+3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material bearing the feature, extrinsic to its sequence and its genomic position.  For example, its being targeted by gene knockdown reagents, its being transgenically expressed in a foreign cell from a recombinant expression construct, its having been epigenetically modified in a way that alters its expression level or pattern, or its being located in a specific cellular or anatomical location.</obo:IAO_0000116>
+        <obo:IAO_0000118>biomacromolecular sequence</obo:IAO_0000118>
+        <rdfs:comment>&apos;Sequences&apos; differ from &apos;sequence features&apos; in that instances are distinguished only by their inherent ordering of units, and not by any positional aspect related to alignment with some reference sequence. Accordingly, the &apos;ATG&apos; translational start codon of the human AKT gene is the same *sequence* as the &apos;ATG&apos; start codon of the human SHH gene, but these represent two distinct sequence features in virtue of their different positions in the genome.</rdfs:comment>
         <rdfs:label xml:lang="en">biological sequence</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -4564,7 +4544,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000713 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000713">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000897"/>
         <obo:IAO_0000115>A sequence feature (or collection of features) whose identity is dependent on the context or state of its material bearer (in addition to its sequence an position).  This context/state describes factors external to its inherent sequence and position that can influences its expression, such as being targeted by gene-knockdown reagents, or an epigenetic modification.</obo:IAO_0000115>
         <rdfs:comment>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
@@ -6058,7 +6038,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
     <!-- http://purl.obolibrary.org/obo/SO_0000699 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000699">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000680"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <rdfs:comment>A junction is a boundary between regions. A boundary has an extent of zero.</rdfs:comment>
         <rdfs:label xml:lang="en">junction</rdfs:label>
     </owl:Class>
@@ -6068,7 +6048,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
     <!-- http://purl.obolibrary.org/obo/SO_0000704 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000704">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000014"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
         <obo:IAO_0000115>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</obo:IAO_0000115>
         <obo:IAO_0000116>Regarding the distinction between a &apos;gene&apos; and a &apos;gene allele&apos;: 
 Every zebrafish genome contains a &apos;gene allele&apos; for every zebrafish gene. Many will be &apos;wild-type&apos; or at least functional gene alleles. But some may be alleles that are mutated or truncated so as to lack functionality.  According to current SO criteria defining genes, a &apos;gene&apos; no longer exists in the case of a non-functional or deleted variant. But the &apos;gene allele&apos; does exist -  and its extent is that of the remaining/altered sequence based on alignment with a  reference gene.  Even for completely deleted genes, an allele of the gene exists (and here is equivalent to the junction corresponding to the where gene would live based on a reference alignment).</obo:IAO_0000116>
