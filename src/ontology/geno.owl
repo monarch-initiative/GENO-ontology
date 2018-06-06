@@ -3832,12 +3832,6 @@ The collection of the individual base-pairs present at the position 24126737 in 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000715"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000112>In an experiment where shha is targeted by MO1 and shhb is overexpressed from a transgenic expression construct, the extrinsic genotype captures the altered expression status of these two genes. A notation for representing such a genotype might describe this scenario as:
 
    shha&lt;MO1-1ng/ul&gt;; shhb&lt;pFLAG-mmusShhb&gt;
@@ -4713,18 +4707,6 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000719">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000385"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000611"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.</obo:IAO_0000115>
         <obo:IAO_0000116>Genotype vs Genome in GENO: An (intrinsic) genotype is an information artifact representing an indirect syntax for specifying a genome sequence.  This syntax has reference and variant components -  a &apos;background genotype&apos; and &apos;genomic variation complement&apos; - that must be operated on to resolve a specifie genome sequence.  Specifically, the genome sequence is resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the &apos;reference genome&apos;.  So, while the total sequence content represented in a genotype may be greater than that in a genome, the intended resolution of these sequences is to arrive at a single genome sequence. It is this end-point that we consider when holding that a genotype &apos;specifies&apos; a genome.</obo:IAO_0000116>
         <rdfs:comment>1. A genomic genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome (&apos;genomic background&apos;), and all specific variants from this reference (the &apos;genomic variation complement&apos;).  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the reference  &apos;genomic background&apos; sequence.
@@ -4957,6 +4939,9 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000815">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <obo:IAO_0000115>The location of a sequence feature as defined by its start and end position on some reference coordinate system.</obo:IAO_0000115>
+        <rdfs:comment>1. The notion of a sequence feature location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be &apos;occupied by&apos; physical objects, while a location is &apos;occupied by&apos; sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a location is distinct from a sequence feature that occupies it.  A more concrete analogy can be drawn to the distinction between a street address (the location) and the building that occupies it (the sequence feature).
+
+2. A sequence feature location is defined by its begin and end coordinates on a reference sequence, but it is not identified by a particular sequence that may reside there.  The same location, defined by a alignment to some reference, may be occupied by different sequences in  the genome of organism 1 vs that of organism 2.</rdfs:comment>
         <rdfs:label xml:lang="en">sequence feature location</rdfs:label>
     </owl:Class>
     
@@ -5556,6 +5541,12 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000385"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000611"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.</obo:IAO_0000115>
         <obo:IAO_0000116>&apos;Genomic Genotype&apos; vs &apos;Genome&apos; in GENO: 
 A genomic genotype is an information artifact with a representational syntax that can specify what is known about the complete sequence of a genome. This syntax describes &apos;reference&apos; and &apos;variant&apos; components - namely a &apos;background genotype&apos; and &apos;genomic variation complement&apos; - that must be operated on to resolve the genome sequence.  Specifically, the genome sequence is determined by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the reference &apos;background genotype&apos;.  So, while the total sequence content described in a genotype may exceed that of a single a genome (in that it includes a reference genome and variatoin complement), the intended resolution of these sequences is to arrive at a single genome sequence. It is this end-point that we consider when asserting that a genotype &apos;specifies&apos; a genome.</obo:IAO_0000116>
@@ -5593,7 +5584,7 @@ A genomic genotype is an information artifact with a representational syntax tha
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000902">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-        <obo:IAO_0000115>the location of a sequence feature in a genome, defined by its start and end position on some reference genomic coordinate system</obo:IAO_0000115>
+        <obo:IAO_0000115>The location of a sequence feature in a genome, defined by its start and end position on some reference genomic coordinate system</obo:IAO_0000115>
         <obo:IAO_0000116>In practice, GENO advocates describing biology at the level of genomic features - i.e. define specific terms for genes as genomic features, and not duplicate representation of the loci where each gene resides. So we would have a class representing the human Shh gene as a &apos;genomic feature&apos;, but not parallel this with a &apos;human Shh gene locus&apos; class.   The utility of the &apos;genomic locus&apos; class in the ontology is primarily to be clear about the distinction, but we would only use it in modeling data if absolutely needed.
 
 For example, we would define an  &apos;HLA gene block&apos; as a subclass of &apos;genomic feature&apos;, and assert that  HLA-A, HLA-B, and HLA-C genes are part/subsequences of this HLA gene block (as opposed to modeling this as an &apos;HLA locus&apos;  and asserting that the HLA-A, HLA-B, and HLA-C genes occupy this locus).</obo:IAO_0000116>
