@@ -55,6 +55,24 @@ Documentation is under development as well, and for now a slidedeck is available
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000905 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000905">
+        <rdfs:comment>Used to flag terms that are created for organizational purposes, e.g. to support groupings useful for defining GENO-based data models.</rdfs:comment>
+        <rdfs:label xml:lang="en">mixin</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000909 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000909">
+        <rdfs:label xml:lang="en">gene symbol</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_alt_id -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_alt_id"/>
@@ -246,7 +264,7 @@ Documentation is under development as well, and for now a slidedeck is available
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000239">
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000251"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
-        <obo:IAO_0000115>A relationship between an entity that carries a sequence (e.g. a sequence feature), and the sequence itself.</obo:IAO_0000115>
+        <obo:IAO_0000115>A relationship between an entity that carries a sequence (e.g. a sequence feature or collection), and the sequence it bears.</obo:IAO_0000115>
         <obo:IAO_0000118>has_sequence_component</obo:IAO_0000118>
         <obo:IAO_0000118>has_state</obo:IAO_0000118>
         <oboInOwl:hasDbXref>VMC:state</oboInOwl:hasDbXref>
@@ -634,7 +652,7 @@ Used in GENO to describe physical context of materialized sequence features that
         </owl:propertyChainAxiom>
         <obo:IAO_0000112>1. Used to specify derivation of transgene components from a gene class, or a engineered construct instance. 
 
-2. Used to specify the strain of origin of an allele  (i.e. that an allele was originally isolated from a specific background strain, and propagated into new genetic backgrounds.
+2. Used to specify the genetic background/strain of origin of an allele  (i.e. that an allele was originally isolated from a specific background strain, and propagated into new genetic backgrounds.
 
 3. Used to indicate derivation of a variant mouse genotype from an ES cell line used in generating the modified mice (IMPC)</obo:IAO_0000112>
         <obo:IAO_0000115>Relationship between a sequence feature and a distinct, non-overlapping feature from which it derives part or all of its sequence.</obo:IAO_0000115>
@@ -751,7 +769,14 @@ Used in GENO to describe physical context of materialized sequence features that
     <!-- http://purl.obolibrary.org/obo/GENO_0000726 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000726">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000714"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000715"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <obo:IAO_0000115>A relation linking a qualified sequence feature to its component sequence feature.</obo:IAO_0000115>
         <obo:IAO_0000118>has_sequence_feature_component</obo:IAO_0000118>
@@ -1301,6 +1326,15 @@ Note that a separate chain is needed to propagate from the variant locus to the 
         <obo:IAO_0000115>A relation linking a sequence feature to the location it occupies on some reference sequence.</obo:IAO_0000115>
         <obo:IAO_0000118>occupies</obo:IAO_0000118>
         <rdfs:label xml:lang="en">has_location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000906 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000906">
+        <rdfs:comment>Can be used to a genomic feature to the chromosomal strand it resides on in the genome (+ or - strand, or both strands). Commonly used to link a gene to the strand it is transcribed from.</rdfs:comment>
+        <rdfs:label xml:lang="en">on strand</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1864,6 +1898,7 @@ Environments include natural environments or exposures, experimentally applied c
     <owl:Class rdf:about="http://biohackathon.org/resource/faldo#Position">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000902"/>
         <obo:IAO_0000115>Superclass for the general concept of a position on a sequence. The sequence is designated with the reference predicate.</obo:IAO_0000115>
+        <obo:IAO_0000116>Placing the FALDO:Position class under GENO:genomic locus, as it represents a type of genomic location  with the same start and end coordinates (i.e. a single position as opposed to a location spanning a longer region)</obo:IAO_0000116>
         <rdfs:label xml:lang="en">Position</rdfs:label>
     </owl:Class>
     
@@ -1872,7 +1907,7 @@ Environments include natural environments or exposures, experimentally applied c
     <!-- http://biohackathon.org/resource/faldo#Region -->
 
     <owl:Class rdf:about="http://biohackathon.org/resource/faldo#Region">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000017"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1890,7 +1925,7 @@ Environments include natural environments or exposures, experimentally applied c
             </owl:Class>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A region describes a length of sequence with a start position and end position that represents a feature on a sequence, e.g. a gene.</obo:IAO_0000115>
-        <obo:IAO_0000116>Here we place FALDO:Region under GENO:reference sequence. From what I can tell, feature instances in data whose position is to be defined using FALDO are always mapped to a Region, and then the position of this Region is defiend according to its location within some larger reference sequence. The exception is feature instances that are explicitly part of the reference sequence on which its location is being defined (such that no &apos;mapping&apos; to a reference is required).  This suggests that, conceptually, we can think of a FALDO:Region as the region of a reference sequence onto which a feature of interest is mapped in order to define its position.  For this reason, we initially are classifying FALDO:Regions as &apos;reference genomic features&apos;.</obo:IAO_0000116>
+        <obo:IAO_0000116>From what I can tell, feature instances in data whose position is to be defined using FALDO are always mapped to a Region, and then the position of this Region is defined according to its location within some larger reference sequence. The exception may be feature instances that are explicitly part of the reference sequence on which its location is being defined (such that no &apos;mapping&apos; to a reference is required).  This suggests that, conceptually, we can think of a FALDO:Region as a subregion of a reference sequence that is mapped to from a feature of interest, in order to define its position with respect to that reference sequence.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">Region</rdfs:label>
     </owl:Class>
     
@@ -2183,6 +2218,12 @@ Environments include natural environments or exposures, experimentally applied c
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CLO_0000031">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history (i.e. has been successively passaged together in culture).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">cell line</rdfs:label>
     </owl:Class>
@@ -2340,7 +2381,7 @@ GENO classifies a feature as &apos;variant&apos; only in cases where we can be c
     <!-- http://purl.obolibrary.org/obo/GENO_0000010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000010">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001505"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000914"/>
         <obo:IAO_0000112>The ZFIN background &apos;AB&apos; that serves as a reference as part of the genotype fgf8a^ti282a/+ (AB)</obo:IAO_0000112>
         <obo:IAO_0000115>A reference genome that represents the sequence of a genome from which a variant genome is derived  (through the introduction of sequence alterations).</obo:IAO_0000115>
         <obo:IAO_0000116>Here, a &apos;genomic background&apos; would differ form a &apos;reference genome&apos; in that &apos;background&apos; implies a derivation of the variant from the background (which is the case for most MOD strains), whereas a reference is simply meant as a target for comparison. But in a sense all background genomes are by default reference, in that the derived variant genome is compared against it.</obo:IAO_0000116>
@@ -2357,7 +2398,7 @@ GENO classifies a feature as &apos;variant&apos; only in cases where we can be c
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000512"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000915"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000683"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
@@ -2376,7 +2417,7 @@ GENO classifies a feature as &apos;variant&apos; only in cases where we can be c
 http://useast.ensembl.org/Danio_rerio/Gene/Summary?g=ENSDARG00000056722
 
 http://zfin.org/action/feature/feature-detail?zdbID=ZDB-ALT-111117-8</obo:IAO_0000112>
-        <obo:IAO_0000115>A genomic feature that represents one of a set of versions of a gene.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genomic feature that represents one of a set of versions of a gene (i.e. a haplotype whose extent is that of a gene)</obo:IAO_0000115>
         <obo:IAO_0000116>Regarding the distinction between a &apos;gene&apos; and a &apos;gene allele&apos;:  Every zebrafish genome contains a &apos;gene allele&apos; for every zebrafish gene. Many will be &apos;wild-type&apos; or at least functional gene alleles. But some may be alleles that are mutated or truncated so as to lack functionality.  According to current SO criteria defining genes, a &apos;gene&apos; no longer exists in the case of a non-functional or deleted variant. But the &apos;gene allele&apos; does exist -  and its extent is that of the remaining/altered sequence based on alignment with a  reference gene.  Even for completely deleted genes, an allele of the gene exists (and here is equivalent to the junction corresponding to the where gene would live based on a reference alignment).
 
 This design allows us to classify genes and any variants of those genes (be they functional or not) as the same type of thing (ie a &apos;gene allele&apos;), since classification is based on genomic position rather than functional capacity. This is practical for representation of variant genotypes which often carry non-functional versions  of a gene at a particular locus. What is important here is specifying what is present at a locus associated with a particular gene, whether or not it is a functional gene or not.</obo:IAO_0000116>
@@ -2395,7 +2436,7 @@ A genomic feature being an allele_of a gene is based on its location in a host g
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000702"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
@@ -2403,10 +2444,11 @@ A genomic feature being an allele_of a gene is based on its location in a host g
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>A genomic feature that serves as a standard against which &apos;variant&apos; versions of the feature are compared, or against which located sequence features within the reference region are aligned in order to assign position information.</obo:IAO_0000115>
+        <obo:IAO_0000115>A sequence that serves as a standard against which other sequences at the same location are compared.</obo:IAO_0000115>
+        <obo:IAO_0000116>The notion of a &apos;reference&apos; in GENO is implemented at the level of &apos;biological sequence&apos; rather than at the level of a sequence feature - i.e.  we define a class for &apos;reference sequence&apos; rather than reference sequence feature&apos;. This is because it is at the *sequence* level that features of interest are determined to be variant or not.  It is taken for granted that the *location* of the feature of interest  is the same as that of the reference sequence to which it is compared, becasue an alignment process establishing common location always precedes the sequence comparison that determines if the feature is variant.</obo:IAO_0000116>
         <obo:IAO_0000118>reference sequence</obo:IAO_0000118>
-        <rdfs:comment>Being &apos;reference&apos; does not imply anything about the frequency or function of a sequence. Only that some agent has used it to serve a reference role in defining a variant or locating a sequence.</rdfs:comment>
-        <rdfs:label>reference genomic feature</rdfs:label>
+        <rdfs:comment>A reference sequence is one that serves as a standard against which &apos;variant&apos; versions of the feature are compared, or against which located sequence features within the reference region are aligned in order to assign position information.  Being &apos;reference&apos; does not imply anything about the frequency or function of features bearing the sequence. Only that some agent has used it to serve a reference role in defining a variant or locating a sequence.</rdfs:comment>
+        <rdfs:label>reference sequence</rdfs:label>
     </owl:Class>
     
 
@@ -2493,7 +2535,7 @@ This class also covers cases where deviant numbers of genes or chromosomes are p
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001026"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000683"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001505"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000914"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -2525,7 +2567,7 @@ This class also covers cases where deviant numbers of genes or chromosomes are p
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>An allele that serves as a standard against which other alleles at the same locus are compared.</obo:IAO_0000115>
+        <obo:IAO_0000115>An allele whose sequence matches what is consdiered to be the reference sequence at that location in the genome.</obo:IAO_0000115>
         <rdfs:comment>Being a &apos;reference allele&apos; is a role or status assigned in the context of a specific dataset or analysis.  In human variation datasets, &apos;reference&apos; status is typically assigned based on factors such as being the most common in a population, being an ancestral allele, or being indentified first as a prototypical example of some feature or gene.  For example, &apos;reference alleles&apos; in characterizing SNPs often represent the allele first characterized in a reference genome, or the most common allele in a population.
 
 In model organism datasets, &apos;reference&apos; alleles are typically (but not always) the &apos;wild-type&apos; variant at a given locus, representing a functional and unaltered version of the feature that is part of a defined genomic background, and against which natural or experimentally-induced alterations are compared.</rdfs:comment>
@@ -2694,7 +2736,7 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A transgene that has been integrated into a chrromosome in the host genome.</obo:IAO_0000115>
-        <rdfs:comment>An integrated transgene differs from a transgenic insertion in that a transgenic insertion may contain no actual transgenes, multiple transgenes, and it may contain sequences in addition to its transgene(s). For example, sequences flanking the transgene, or the insertion may be polycistronic and contain more than on transgene. So the term &apos;integrated transgene&apos; covers only a single transgene integrated as part of a transgenic insertion.
+        <rdfs:comment>An integrated transgene differs from a transgenic insertion in that a transgenic insertion may contain single transgene, a partial transgene that needs endognous sequences from the host genome to become functional (e.g. an enhancer trap), or multiple transgenes (i.e. be polycistronic). Fiurthermore, the transgenic insertion may contain sequences in addition to its transgene(s - e.g. sequences flanking the transgene reqired for integration or replicaiton/maintenance in the host genome.  The term &apos;integrated transgene&apos; covers individual transgenes that were delivered in whole or in part by a transgenic insertion.
 
 An &apos;integrated transgene&apos; differs from its parent &apos;transgene&apos; in that transgenes can include genes introduced into a cell/organism on an extra-chromosomal plasmid that is never integrated into the host genome.</rdfs:comment>
         <rdfs:label>integrated transgene</rdfs:label>
@@ -2782,7 +2824,7 @@ Note that at present, a material genome and genetic material are necessarily par
         </rdfs:subClassOf>
         <obo:IAO_0000115>A maximal collection of organisms of a single species that have been bred or experimentally manipulated with the goal of being genetically identical.</obo:IAO_0000115>
         <obo:IAO_0000118>organism strain or breed</obo:IAO_0000118>
-        <rdfs:comment>two mice with the same genotype ionformation, but maintained in different labs, are different strains (many examples of this in MGI/IMSR)</rdfs:comment>
+        <rdfs:comment>Two mice colonies with the same genotype information, but maintained in different labs, are different strains (many examples of this in MGI/IMSR)</rdfs:comment>
         <rdfs:label>strain or breed</rdfs:label>
     </owl:Class>
     
@@ -3402,6 +3444,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000402">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000135"/>
         <obo:IAO_0000115>A heterozygous quality inhering in a single locus complement comprised of two different varaint alleles and no wild type locus. (e.g.fgf8a&lt;ti282a&gt;/fgf8a&lt;x15&gt;)</obo:IAO_0000115>
+        <obo:IAO_0000118>trans-heterozygous</obo:IAO_0000118>
         <rdfs:label>compound heterozygous</rdfs:label>
     </owl:Class>
     
@@ -3743,9 +3786,11 @@ The notion of wild-type alleles is more common in model organism databases, wher
         <obo:IAO_0000115>One of a set of sequence features that exist at a particular genomic locus.</obo:IAO_0000115>
         <obo:IAO_0000116>The notion of an &apos;allele&apos; defined here is distinct from that of a genetic &apos;variant&apos; - as &apos;allele&apos; includes features considered to be the &apos;reference&apos; at a particular locus. The notion of an &apos;allele&apos; captures the state of the sequence found at a genetic locus, be it variant or reference. The notion of a &apos;variant&apos; implies a state that differs from some &apos;reference&apos; sequence at that location. What is considered the &apos;reference&apos; state at a particular locus may vary, depending on the context/goal of a particular analysis.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">variable feature</obo:IAO_0000118>
-        <rdfs:comment>An allele is a continuous extent of genomic sequence that spans a locus where variation is known to occur (i.e. where &gt;1 version is known to exist). Our research found most definitions to consider &apos;alleles&apos; to represent a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6].  But we also found &apos;allele&apos; used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11]. Here these variations don&apos;t neccessarily impact a gene.
+        <rdfs:comment>An allele is a continuous extent of genomic sequence that spans a locus where variation is known to occur (i.e. where &gt;1 version is known to exist).  The minimal extent of an allele is the variable sequence itself (i.e. a &apos;sequence alteration&apos;), but the notion of an allele includes larger regions that contain as proper parts one or more such alterations (e.g. a &apos;haplotype&apos;).
 
-To be maximally accommodating of how this term is used across research communities, GENO defines &apos;allele&apos; broadly and allow alleles can span any locus or extent of sequence. While typically this locus overlaps with a gene, GENO allows for alleles that do not. But we do define the subtype &apos;gene allele&apos; that refers more specifically to a particular version of a gene.
+Our landsacpe analysis found mostly gene-centric definitions of &apos;allele&apos; that represented a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6].  But we also found &apos;allele&apos; used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11]. where such variations don&apos;t neccessarily impact a gene.
+
+To be maximally accommodating of how this term is used across research communities, GENO defines &apos;allele&apos; broadly and allow alleles can span any locus or extent of sequence. While &apos;alleles&apos; encountered in public datases typically overlap a gene, GENO allows for alleles that do not. But we do define the subtype &apos;gene allele&apos; that refers more specifically to a particular version of a gene.
 	
 [1] https://isogg.org/wiki/Allele (retrieved 2018-03-17)
 [2] http://semanticscience.org/resource/allele (retrieved 2018-03-17)
@@ -4292,7 +4337,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000640">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000638"/>
-        <rdfs:label xml:lang="en">reporter feature</rdfs:label>
+        <rdfs:label xml:lang="en">reporter region</rdfs:label>
     </owl:Class>
     
 
@@ -4300,7 +4345,17 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/GENO_0000642 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000642">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000902"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000911"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
@@ -4411,6 +4466,12 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000659"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
             </owl:Restriction>
@@ -4448,7 +4509,23 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000667 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000667">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000902"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000910"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000640"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
@@ -4640,7 +4717,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4677,7 +4754,7 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
         <owl:annotatedTarget>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </owl:annotatedTarget>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
@@ -4690,6 +4767,18 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000715">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000713"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
@@ -4707,6 +4796,19 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000719">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000516"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001026"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.</obo:IAO_0000115>
         <obo:IAO_0000116>Genotype vs Genome in GENO: An (intrinsic) genotype is an information artifact representing an indirect syntax for specifying a genome sequence.  This syntax has reference and variant components -  a &apos;background genotype&apos; and &apos;genomic variation complement&apos; - that must be operated on to resolve a specifie genome sequence.  Specifically, the genome sequence is resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the &apos;reference genome&apos;.  So, while the total sequence content represented in a genotype may be greater than that in a genome, the intended resolution of these sequences is to arrive at a single genome sequence. It is this end-point that we consider when holding that a genotype &apos;specifies&apos; a genome.</obo:IAO_0000116>
         <rdfs:comment>1. A genomic genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome (&apos;genomic background&apos;), and all specific variants from this reference (the &apos;genomic variation complement&apos;).  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the reference  &apos;genomic background&apos; sequence.
@@ -4853,18 +4955,12 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000899"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000382"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000009"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000033"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000033"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>An intrinsic genotype that specifies variation from a reference or background.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">variant genomic genotype</rdfs:label>
     </owl:Class>
@@ -5206,14 +5302,11 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
     <!-- http://purl.obolibrary.org/obo/GENO_0000871 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000871">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000512"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A set of genetically-linked alleles, that reside at different locations on the same chromosomal strand and are typically inherited/transmitted together.</obo:IAO_0000115>
+        <obo:IAO_0000231>reconsiderd defintion of haplotype to better align with SO and GA4GH/VMC definitions.
+
+Former SC axiom: has_member some allele.</obo:IAO_0000231>
         <terms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</terms:source>
         <rdfs:comment>Haplotypes are &apos;complements&apos; in that they include the set of all alleles in a defined region of the genome.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction.  Haplotypes are located within &apos;haplotype blocks&apos; - regions of DNA where no recombination occurs between alleles on the same chromosomal strand. The &apos;haplotype&apos; within a &apos;haplotype block&apos; may be comprised of any number of distinct alleles.
 
@@ -5225,7 +5318,7 @@ As described at https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotyp
 Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project. 
 
 The GENO definition is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked and thus tend to be co-inherited across successive generations.</rdfs:comment>
-        <rdfs:label xml:lang="en">haplotype</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete_haplotype</rdfs:label>
     </owl:Class>
     
 
@@ -5500,9 +5593,50 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
     <!-- http://purl.obolibrary.org/obo/GENO_0000897 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000897">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000660"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000660"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000715"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:GENO_0000905 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000905>
         <obo:IAO_0000115>An generically dependent continuant that carries biological sequence that is part of or derived from a genome.</obo:IAO_0000115>
-        <obo:IAO_0000116>An abstract/organizational class to support data modeling, that includes genomic features, genomic feature complements, as well as qualified genomic features and their complements.</obo:IAO_0000116>
+        <obo:IAO_0000116>An abstract/organizational class to support data modeling, that includes genomic features, genomic feature complements, qualified genomic features and their complements, as well as genotypes that denote such entities.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">genomic entity</rdfs:label>
     </owl:Class>
     
@@ -5511,18 +5645,15 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
     <!-- http://purl.obolibrary.org/obo/GENO_0000898 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000898">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000871"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A sequence feature spanning a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations.</obo:IAO_0000115>
         <obo:IAO_0000116>Consider http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block. And consider whether, as a defined region of genomic sequence where variation is known to occur, a haplotype block should be classified as a subtype of allele.</obo:IAO_0000116>
         <obo:IAO_0000119>From DOI: 10.1126/science.1069424</obo:IAO_0000119>
+        <obo:IAO_0000231>reconsiderd defintion of haplotype to better align with SO and GA4GH/VMC definitions.
+
+Former SC axiom: has_part some haplotype</obo:IAO_0000231>
         <rdfs:comment>A &apos;haplotype block&apos; is a continuous region of sequence that contains &apos;haplotypes&apos; -  sets of discontinuous, genetically-linked sequence alterations on the same chromosomal strand that are typically co-inherited within this haplotype block. The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations.  A haplotype block may span one sequence alteration or several, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.</rdfs:comment>
-        <rdfs:label xml:lang="en">haplotype block</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete_haplotype block</rdfs:label>
     </owl:Class>
     
 
@@ -5585,6 +5716,9 @@ A genomic genotype is an information artifact with a representational syntax tha
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000902">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
         <obo:IAO_0000115>The location of a sequence feature in a genome, defined by its start and end position on some reference genomic coordinate system</obo:IAO_0000115>
+        <obo:IAO_0000116>In GENO, the notion of a Genomic Locus plays the same role as that of a FALDO:Region in the design pattern for describing the location of a feature of interest.  We define this specific GENO class because the ontological semantics FALDO:Region class are not clear, nor is how it fits into the GENO model. We will work to resolve these questions and ideally converge these concepts in the future.
+
+We don&apos;t link a Genomic Locus to a specific reference sequence because in the FALDO model (which GENO adopts with the exception of swapping GENO:Genomic Locus for FALDO:Region), allows the start and end positions of a region to be defined on separate reference sequences. So while a given locus is conceptually associated with a single reference, in practice it can be pragmatic to define start and stop on different references sequences.</obo:IAO_0000116>
         <obo:IAO_0000116>In practice, GENO advocates describing biology at the level of genomic features - i.e. define specific terms for genes as genomic features, and not duplicate representation of the loci where each gene resides. So we would have a class representing the human Shh gene as a &apos;genomic feature&apos;, but not parallel this with a &apos;human Shh gene locus&apos; class.   The utility of the &apos;genomic locus&apos; class in the ontology is primarily to be clear about the distinction, but we would only use it in modeling data if absolutely needed.
 
 For example, we would define an  &apos;HLA gene block&apos; as a subclass of &apos;genomic feature&apos;, and assert that  HLA-A, HLA-B, and HLA-C genes are part/subsequences of this HLA gene block (as opposed to modeling this as an &apos;HLA locus&apos;  and asserting that the HLA-A, HLA-B, and HLA-C genes occupy this locus).</obo:IAO_0000116>
@@ -5596,6 +5730,135 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
 
 3. The notion of a genomic locus in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic locus is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.  A more concrete analogy can be drawn to the distinction between a street address (the locus) and the building that occupies it (the sequence feature).</rdfs:comment>
         <rdfs:label xml:lang="en">genomic locus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000904 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000904">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <obo:GENO_0000905 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000905>
+        <obo:IAO_0000115>A material entity that is an organism, derived from an organism, or composed of organisms (e.g. a cell line, biosample, tissue culture, population, etc).</obo:IAO_0000115>
+        <obo:IAO_0000116>useful organizational term to collect entities that have genomes/genotypes.</obo:IAO_0000116>
+        <rdfs:label xml:lang="en">organismal entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000907 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000907">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <obo:IAO_0000115>The molecular product resulting from transcription of a single gene (either a protein or RNA molecule)</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">gene product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000910 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000910">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000086"/>
+        <rdfs:label xml:lang="en">reporter role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000911 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000911">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000086"/>
+        <rdfs:label xml:lang="en">selectable marker role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000912 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000912">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000638"/>
+        <rdfs:label xml:lang="en">selectable marker region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000914 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000914">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001026"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001505"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A genome whose sequence is identical to that of a genome sequence considered to be the reference.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">reference genome</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000915 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000915">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000512"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000408"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000916"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A haplotype is an allele that represents one of many possible versions of a &apos;haplotype block&apos;, which defines a region of genomic sequence that is typically &apos;co-inherited&apos; across generations due to a lack of historically observed recombination within it.</obo:IAO_0000115>
+        <obo:IAO_0000119>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype and http://purl.obolibrary.org/obo/SO_0001024 ! haplotype.</obo:IAO_0000119>
+        <rdfs:comment>1. Haplotypes typically contain &apos;genetically-linked&apos; sequence alterations that are likely to be co-inherited and survive descent across many generations of reproduction.  A common use of &apos;haplotype&apos; is in phasing of patient WGS or WES data, where theis term refers to sequence containing two or more  alterations that are beleived to be &apos;in cis&apos; on the same chromosomal strand.  GENO&apos;s definition is consistent with but more inclusive than this view, allowing for haplotypes with one or zero established alterations as long as there is a low probability of recombination within the region it spans (such that alterations found in cis are likely to remain in cis across successive generations). As a result,  GENO considers any allele that spans an extent greater than that of a single sequence alteration to represent a haplotype, if there is an expectation of low recombination frequency within the allele. For example, a &apos;gene allele&apos; is a particular version of a gene that contains one or more sequence alterations, and represents a haplotype that spans the extent of a gene.
+ 
+2. The relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos;  - a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while  a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.  In this sense, a gene allele can be considered to be a haplotype whose extent is that of a gene (if it is the case that there is a lack of historic recombination within the extent of the gene)
+
+3. As described at https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is commonly used to describe three specific cases of genetically-linked alleles within a haplotype block:
+  a. The first is a set of linked &apos;gene alleles&apos; - specific versions of entire genes that reside in tightly linked clusters on a single chromosome.  
+  b. The second is a region containing linked &apos;single nucleotide polymorphism&apos; (SNP) alleles that tend to occur together on a chromosomal strand (i.e. be statistically associated).
+  c. A third and less common use is describing individual collections of specific mutations within a given genetic segment - typically short tandem repeats. 
+
+Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project. 
+
+The GENO definition of haplotype is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked and thus tend to be co-inherited across successive generations. This typically covers the case of a &apos;gene allele&apos;  (a particular version of a gene) - as most genes span regions of a size that there is little chance of recombination events moving cis alterations onto separate chromosomes.</rdfs:comment>
+        <rdfs:label xml:lang="en">haplotype</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000916 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000916">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+        <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations.</obo:IAO_0000115>
+        <obo:IAO_0000119>Derived from DOI: 10.1126/science.1069424 and http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block.</obo:IAO_0000119>
+        <rdfs:comment>A haplotype block is a class of genomic sequence defined by a  lack of evidence for historical recombination, such that sequence alterations within it tend to be co-inherited across successive generations. A haplotype is considered to be one of many possible versions of a &apos;haplotype block&apos; - defined by the set of co-inherited alterations it contains.  In this sense, the relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos;  - a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while  a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.  
+
+The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations.  A haplotype block may span one sequence alteration or several, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.</rdfs:comment>
+        <rdfs:label xml:lang="en">haplotype block</rdfs:label>
     </owl:Class>
     
 
@@ -5691,7 +5954,7 @@ Previous. An information content entity is a non-realizable information entity t
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_10239 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
         <rdfs:comment>Stub class to serve as root of hierarchy for imports of virus types from relevant ontologies or terminologies.</rdfs:comment>
         <rdfs:label>Viruses</rdfs:label>
     </owl:Class>
@@ -5864,6 +6127,12 @@ Previous. An information content entity is a non-realizable information entity t
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PCO_0000000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A material entity that consists of two or more organisms, viruses, or viroids.</obo:IAO_0000115>
         <rdfs:comment>A group of organisms of the same taxonomic group grouped together in virtue of their sharing some commonality (either an inherent attribute or an externally assigned role).</rdfs:comment>
         <rdfs:label>collection of organisms</rdfs:label>
@@ -6290,10 +6559,10 @@ Every zebrafish genome contains a &apos;gene allele&apos; for every zebrafish ge
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000902">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <obo:IAO_0000115>A gene that has been transferred naturally or by any of a number of genetic engineering techniques into a cell or organism where it is foreign (i.e. exogenous/extraneous to the host genome).</obo:IAO_0000115>
+        <obo:IAO_0000115>A gene that has been transferred naturally or by any of a number of genetic engineering techniques into a cell or organism where it is foreign (i.e. does not belong to the host genome).</obo:IAO_0000115>
         <rdfs:comment>Transgenes can exist as integrated into the host genome, or extra-chromosomally on replicons or transiently carried/expressed vectors.  What matters is that they are active in the context of a foreign biological system (typically a cell or organism).
 
-Note that transgenes as defined here are not necessarily from a different taxon than that of the host genome.  For example, a Mus musculus gene over-expressed from a chromosomally-integrated expression construct in a Mus musculus genome qualifies as a transgene because it is exogenous to the endogenous host genome.</rdfs:comment>
+Note that transgenes as defined here are not necessarily from a different taxon than that of the host genome.  For example, a Mus musculus gene over-expressed from a chromosomally-integrated expression construct in a Mus musculus genome qualifies as a transgene because it is exogenous to the host genome.</rdfs:comment>
         <rdfs:label xml:lang="en">transgene</rdfs:label>
     </owl:Class>
     
@@ -6479,20 +6748,16 @@ For a particular instance of a sequence alteration, howver, we may in some cases
     <!-- http://purl.obolibrary.org/obo/SO_0001505 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001505">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0001026"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000017"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>&apos;GRCh37.p10&apos; (a human reference genome build)</obo:IAO_0000112>
-        <obo:IAO_0000115>A genome that is used as a standard against which other genome sequences are compared, or into which alterations are intentionally introduced.</obo:IAO_0000115>
-        <rdfs:label>reference genome</rdfs:label>
+        <obo:IAO_0000115>A genome sequence that is used as a standard against which other genome sequences are compared, or into which alterations are intentionally introduced.</obo:IAO_0000115>
+        <rdfs:label>reference genome sequence</rdfs:label>
     </owl:Class>
     
 
@@ -7006,6 +7271,12 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000116>Stub class to serve as root of hierarchy for imports of anatomical entities from UBERON, CARO, or taxon-specific anatomy ontologies.</obo:IAO_0000116>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/CARO_0000000</oboInOwl:hasDbXref>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
