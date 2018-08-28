@@ -3072,7 +3072,7 @@ We can also use these terms to describe the heritability of phenotypes/condition
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000147">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000144"/>
-        <rdfs:label>autosomal dominant iniheritance</rdfs:label>
+        <rdfs:label>autosomal dominant inheritance</rdfs:label>
     </owl:Class>
     
 
@@ -5541,7 +5541,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
         <obo:IAO_0000115>One of a set of sequence features or haplotypes that exist at a particular genetic locus. &lt;see ClinGen Allele Model&gt;</obo:IAO_0000115>
         <obo:IAO_0000116>The notion of a &apos;canonical allele&apos; is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.</obo:IAO_0000116>
         <obo:IAO_0000119>http://dataexchange.clinicalgenome.org/allele/resource/canonical_allele/</obo:IAO_0000119>
-        <terms:source>ClinGen Allele Model (http://datamodel.clinicalgenome.org/allele/)</terms:source>
+        <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
         <rdfs:comment>As a &apos;sequence feature or collection&apos; (sensu SO), a &apos;canonical allele&apos; is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence). Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand.
 
 In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;contextual alleles&apos;. Contextual alleles are informational representation that describe a canonical allele using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation (e.g. different chromosomal or transcript references)</rdfs:comment>
