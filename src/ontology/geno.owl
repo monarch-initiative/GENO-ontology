@@ -1628,6 +1628,17 @@ Example 2: a collection of information entities such as a genotype being compris
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002526 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002526">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+        <obo:IAO_0000115>x overlaps the sequence of x if and only if x has a subsequence z and z is a subsequence of y.</obo:IAO_0000115>
+        <terms:source>http://biorxiv.org/content/early/2014/06/27/006650.abstract</terms:source>
+        <rdfs:label>overlaps sequence of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002528 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002528">
@@ -1850,6 +1861,16 @@ Environments include natural environments or exposures, experimentally applied c
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <obo:IAO_0000115>Property linking a biological sequence to a string representing the ordered units that comprise the sequence (e.g. &apos;atgcagctagctaccgtcgatcg&apos;).</obo:IAO_0000115>
         <rdfs:label>has_string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000917 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000917">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GENO_0000659"/>
+        <obo:IAO_0000115>Describes the number of features comprising a sequence feaature complement.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has_feature_count</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -3005,13 +3026,18 @@ We can also use these terms to describe the heritability of phenotypes/condition
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000141">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
-        <obo:IAO_0000115>The disposition of a genetic variant to cause a particular phenotype or disease based on its allelic state (e.g. heterozygous vs homozygous)</obo:IAO_0000115>
+        <obo:IAO_0000115>The pattern in which a genetic trait or condition is passed from one generation to the next, as determined by the interactions between alleles of the causal gene, and between these alleles and the environment.</obo:IAO_0000115>
         <obo:IAO_0000116>Considering alternate definitions: 
 - a disposition related to the phenotypic effect of a particular allele based on its inherited allelic state (i.e., the complement of alleles present at a particular locus)
 - the disposition of an allele in a particular allelic state (e.g. heterozygouse vs homozygous) to cause a particular phenotype.</obo:IAO_0000116>
-        <obo:IAO_0000118>phenotypic heritability</obo:IAO_0000118>
+        <obo:IAO_0000116>The subtypes of inheritance pattern in this hierarchy are largely distinguished based on the underlying genetic mechanism, which will manifest in a characteristic pattern of traits in affected and unaffected family members. For example, &apos;autosomal dominant inheritance&apos; defines an inheritance pattern that is caused by the interaction of alleles on non-sex chromosomes wherein the trait manifests even in heterozygotes - resulting in a characteristic pattern of &apos;dominant&apos; inheritance across generations of individuals in a family.</obo:IAO_0000116>
+        <obo:IAO_0000118>condition inheritance</obo:IAO_0000118>
+        <obo:IAO_0000118>mode of inheritance</obo:IAO_0000118>
         <obo:IAO_0000118>phenotypic inheritance pattern</obo:IAO_0000118>
-        <rdfs:label>condition inheritance</rdfs:label>
+        <rdfs:comment>Ontologically, an inheritance pattern can be considered a disposition of a genetic variant to cause a particular trait or phenotype when it is present in a particular genetic and environmental context.  Here, &quot;genetic context&quot; refers to the allelic state of the variant, which depends on what other alleles exist at the same  locus.  Zygosities such as heterozygous and homozygous are simple, common examples of &apos;states&apos; of an allele. 
+
+These genetic and environmental &quot;interactions&quot; of alleles play out at the level of the gene products produced by the causal alleles, and are observable in the pattern with which the trait caused by an allele is inherited across generations of individuals. Thus, an inheritance pattern such as dominance is not inherent to a single allele or its phenotype, but rather a result of the relationship between two alleles of a gene and the phenotype that results in a given environment. This also means that the &apos;dominance&apos; of an allele is context dependent - Allele 1 can be dominant over Allele 2 in the context of Phenotype X, but recessive to Allele 3 in the context of Phenotype Y.</rdfs:comment>
+        <rdfs:label>inheritance pattern</rdfs:label>
     </owl:Class>
     
 
@@ -3863,11 +3889,7 @@ The collection of the individual base-pairs present at the position 24126737 in 
         <obo:IAO_0000116>TO DO: show a VCF representation of this example.</obo:IAO_0000116>
         <obo:IAO_0000118>allelic complement</obo:IAO_0000118>
         <obo:IAO_0000118>single locus feature complement</obo:IAO_0000118>
-        <rdfs:comment>- A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. 
-- The notion of a &quot;complement&quot; describes the collection of all elements in some defined set.
-- The notion of &quot;homologous&quot; genomic features describes those that occupy the same locus on homologous chromosomes.
-- Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus.
-- This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
+        <rdfs:comment>A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. The notion of a &quot;complement&quot; describes the collection of all elements in some defined set. The notion of &quot;homologous&quot; genomic features describes those that occupy the same locus on homologous chromosomes. Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus. This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
         <rdfs:label>single locus complement</rdfs:label>
     </owl:Class>
     
@@ -4453,7 +4475,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000659">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000701"/>
-        <obo:IAO_0000115>An exhaustive collection of all genetic entities of a specified type present as part of some larger genetic entity (e.g. all chromosomes in a genome, all variant alleles in a genome, all copies of a particular gene or allele in a genome, all allleles defined  in a haplotype).</obo:IAO_0000115>
+        <obo:IAO_0000115>An exhaustive collection of all sequence features that make up an enumerated sequence feature collection with a well-defined set of members (e.g. all chromosomes in a genome, all variant alleles in a genome, all copies of a particular gene or allele in a genome, all allleles defined  in a haplotype).</obo:IAO_0000115>
         <rdfs:comment>Not all sequence feature complements will be collections - i.e. in some cases the complement of all features of type X will consist of a single feature.  For example, a &apos;single locus complement&apos; for an X-linked locus in a XY male.</rdfs:comment>
         <rdfs:label xml:lang="en">sequence feature complement</rdfs:label>
     </owl:Class>
@@ -4639,7 +4661,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-        <obo:IAO_0000115>An extent of biological sequence, or a collection of such extents, whose identity is dependent on both its sequence and its position.</obo:IAO_0000115>
+        <obo:IAO_0000115>An extent of continuous biological sequence, or a collection of such sequences, whose identity is dependent on both its sequence and its position.</obo:IAO_0000115>
         <rdfs:comment>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
 2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic position if the sequence (aligns with definition of &apos;sequence feature&apos; in the Sequence Ontology).
