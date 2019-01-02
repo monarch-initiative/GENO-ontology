@@ -1919,7 +1919,8 @@ Environments include natural environments or exposures, experimentally applied c
     <owl:Class rdf:about="http://biohackathon.org/resource/faldo#Position">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000902"/>
         <obo:IAO_0000115>Superclass for the general concept of a position on a sequence. The sequence is designated with the reference predicate.</obo:IAO_0000115>
-        <obo:IAO_0000116>Placing the FALDO:Position class under GENO:genomic locus, as it represents a type of genomic location  with the same start and end coordinates (i.e. a single position as opposed to a location spanning a longer region)</obo:IAO_0000116>
+        <obo:IAO_0000116>We place the FALDO:Position class under GENO:genomic locus, as it represents a type of genomic location with an extent of 1 (i.e.has the same start and end coordinates - representing a single position as opposed to a location spanning a longer region).</obo:IAO_0000116>
+        <obo:IAO_0000412>FALDO</obo:IAO_0000412>
         <rdfs:label xml:lang="en">Position</rdfs:label>
     </owl:Class>
     
@@ -4084,7 +4085,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
     <!-- http://purl.obolibrary.org/obo/GENO_0000602 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000602">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000875"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000918"/>
         <obo:IAO_0000115>an allelic state where a single allele exists at a particular locus in the organellar genome (mitochondrial or plastid) of a cell/organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">homoplasmic</rdfs:label>
     </owl:Class>
@@ -4094,7 +4095,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
     <!-- http://purl.obolibrary.org/obo/GENO_0000603 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000603">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000875"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000918"/>
         <obo:IAO_0000115>an allelic state where more than one type of allele exists at a particular locus in the organellar genome (mitochondrial or plastid) of a cell/organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">heteroplasmic</rdfs:label>
     </owl:Class>
@@ -4521,6 +4522,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         </owl:equivalentClass>
         <obo:IAO_0000115>A genomic feature that is part of a gene, and delineated by some functional or structural function or role it serves (e.g.a promoter element, coding region, etc).</obo:IAO_0000115>
         <obo:IAO_0000118>defined gene part</obo:IAO_0000118>
+        <oboInOwl:hasDbXref>SO:0000831 (gene member region)</oboInOwl:hasDbXref>
         <rdfs:label>gene part</rdfs:label>
     </owl:Class>
     
@@ -5055,7 +5057,7 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000815">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <obo:IAO_0000115>The location of a sequence feature as defined by its start and end position on some reference coordinate system.</obo:IAO_0000115>
-        <rdfs:comment>1. The notion of a sequence feature location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be &apos;occupied by&apos; physical objects, while a location is &apos;occupied by&apos; sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a location is distinct from a sequence feature that occupies it.  A more concrete analogy can be drawn to the distinction between a street address (the location) and the building that occupies it (the sequence feature).
+        <rdfs:comment>1. The notion of a sequence feature location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be &apos;occupied by&apos; physical objects, while a genomic locus is &apos;occupied by&apos; sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.   As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the sequence feature that resides there.
 
 2. A sequence feature location is defined by its begin and end coordinates on a reference sequence, but it is not identified by a particular sequence that may reside there.  The same location, defined by a alignment to some reference, may be occupied by different sequences in  the genome of organism 1 vs that of organism 2.</rdfs:comment>
         <rdfs:label xml:lang="en">sequence feature location</rdfs:label>
@@ -5744,11 +5746,11 @@ We don&apos;t link a Genomic Locus to a specific reference sequence because in t
 For example, we would define an  &apos;HLA gene block&apos; as a subclass of &apos;genomic feature&apos;, and assert that  HLA-A, HLA-B, and HLA-C genes are part/subsequences of this HLA gene block (as opposed to modeling this as an &apos;HLA locus&apos;  and asserting that the HLA-A, HLA-B, and HLA-C genes occupy this locus).</obo:IAO_0000116>
         <obo:IAO_0000118>genomic location</obo:IAO_0000118>
         <oboInOwl:hasDbXref>VMC:Location</oboInOwl:hasDbXref>
-        <rdfs:comment>1. A genomic locus is defined by its begin and end coordinates on a reference genome, but it is not identified by a particular sequence that may reside there.  In GENO, we say that a genomic locus is *occupied_by* a sequence feature. This sequence feature is identified by its sequence and its position in the genome (i.e. the locus it occupies).  So the ATG sequence beginning the ORF of the human Shh gene shares the same sequence as the ATG beginning the ORF of the human Akt gene. But these are distinct sequence features because they occupy different loci in the genome. We call sequence features that are located in a genome &apos;genomic features&apos;.
+        <rdfs:comment>1. A genomic locus is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic locus is occupied_by a &apos;sequence feature&apos; - whose identity depends on both it ssequence, and location in the genome (i.e. the locus it occupies).  For example, the ATG sequence beginning the ORF of the human Shh gene shares the same sequence as the ATG beginning the ORF of the human Akt gene. But these are distinct sequence features because they occupy different genomic loci. We call sequence features that are located in a genome &apos;genomic features&apos;.
 	
-2. A particular locus (e.g. the human Shh gene locus) may be occupied by different sequence features (e.g. different &apos;alleles&apos; of the Shh gene).  Within the genome of a single (diploid) organism, there is potential for two sequence features to exit at such a locus (i.e. two different Shh alleles).  Across the genomes of all cells comprising members of a species, many more alleles of the Shh gene may exist.  These alleles occupy the same genomic locus with different sequences (or no sequence at all in the case of a complete Shh deletion).
+2. Across different chromosomes, a given genomic locus (e.g. the human Shh gene locus) may be occupied by different sequence features (e.g. different &apos;alleles&apos; of the Shh gene). e.g. within the genome of a single diploid organism, there is potential for two sequence features to exit at such a locus (i.e. two different Shh alleles).  And across the genomes of all cells comprising members of a species, many more alleles of the Shh gene may exist. These alleles occupy/populate the same genomic locus with different sequences (or no sequence at all in the case of a complete Shh deletion).
 
-3. The notion of a genomic locus in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic locus is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.  A more concrete analogy can be drawn to the distinction between a street address (the locus) and the building that occupies it (the sequence feature).</rdfs:comment>
+3. The notion of a genomic locus in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic locus is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.   As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the sequence feature that resides there.</rdfs:comment>
         <rdfs:label xml:lang="en">genomic locus</rdfs:label>
     </owl:Class>
     
@@ -5852,18 +5854,19 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
         </rdfs:subClassOf>
         <obo:IAO_0000115>A haplotype is an allele that represents one of many possible versions of a &apos;haplotype block&apos;, which defines a region of genomic sequence that is typically &apos;co-inherited&apos; across generations due to a lack of historically observed recombination within it.</obo:IAO_0000115>
         <obo:IAO_0000119>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype and http://purl.obolibrary.org/obo/SO_0001024 ! haplotype.</obo:IAO_0000119>
-        <rdfs:comment>1. Haplotypes typically contain &apos;genetically-linked&apos; sequence alterations that are likely to be co-inherited and survive descent across many generations of reproduction.  A common use of &apos;haplotype&apos; is in phasing of patient WGS or WES data, where theis term refers to sequence containing two or more  alterations that are beleived to be &apos;in cis&apos; on the same chromosomal strand.  GENO&apos;s definition is consistent with but more inclusive than this view, allowing for haplotypes with one or zero established alterations as long as there is a low probability of recombination within the region it spans (such that alterations found in cis are likely to remain in cis across successive generations). As a result,  GENO considers any allele that spans an extent greater than that of a single sequence alteration to represent a haplotype, if there is an expectation of low recombination frequency within the allele. For example, a &apos;gene allele&apos; is a particular version of a gene that contains one or more sequence alterations, and represents a haplotype that spans the extent of a gene.
- 
-2. The relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos;  - a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while  a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.  In this sense, a gene allele can be considered to be a haplotype whose extent is that of a gene (if it is the case that there is a lack of historic recombination within the extent of the gene)
+        <rdfs:comment>1. The relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos; - a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.  In this sense, a gene allele can be considered to be a haplotype whose extent is that of a gene (as it is generally true that there is a low probability of recombination within any given gene).
 
-3. As described at https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is commonly used to describe three specific cases of genetically-linked alleles within a haplotype block:
-  a. The first is a set of linked &apos;gene alleles&apos; - specific versions of entire genes that reside in tightly linked clusters on a single chromosome.  
-  b. The second is a region containing linked &apos;single nucleotide polymorphism&apos; (SNP) alleles that tend to occur together on a chromosomal strand (i.e. be statistically associated).
-  c. A third and less common use is describing individual collections of specific mutations within a given genetic segment - typically short tandem repeats. 
+2. Haplotypes typically contain &apos;genetically-linked&apos; sequence alterations that are likely to be co-inherited and survive descent across many generations of reproduction.  A common use of &apos;haplotype&apos; is in phasing of patient WGS or WES data, where this term refers to sequence containing two or more  alterations that are beleived to occur &apos;in cis&apos; on the same chromosomal strand.  
 
-Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project. 
+GENO&apos;s definition is consistent with but more inclusive than this view, allowing for haplotypes with one or zero established alterations as long as there is a low probability of recombination within the region it spans (such that alterations found in cis are likely to remain in cis across successive generations). As a result, GENO considers any allele that spans an extent greater than that of a single sequence alteration to be a haplotype - as long as there is an expectation of low recombination frequency within the haplotype block occupied by the allele. For example, a &apos;gene allele&apos; is a haplotype representing a particular version of a gene that contains one or more sequence alterations - as a &apos;gene&apos; is a region of sequence with a low probability of recombination that is generally expeted to be inherited as a unit. 
 
-The GENO definition of haplotype is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked and thus tend to be co-inherited across successive generations. This typically covers the case of a &apos;gene allele&apos;  (a particular version of a gene) - as most genes span regions of a size that there is little chance of recombination events moving cis alterations onto separate chromosomes.</rdfs:comment>
+3. As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is most commonly used to describe regions of genetic linkage between three types of &apos;alleles&apos;:
+
+  a. The first is regions containing multiple linked &apos;gene alleles&apos; - i.e. specific versions of entire genes that reside in tightly linked clusters on a single chromosome.  
+  b. The second is a region containing multiple linked single nucleotide polymorphism (SNP) alleles that tend to occur together on a chromosomal strand (i.e. be statistically associated). In many cases the extent of this region is that of a single gene - such that the haplotype here represents a single &apos;gene allele&apos; (as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes).
+  c. A third and less common use is a region containing individual collections of specific mutations within a given genetic segment - typically short tandem repeats. 
+
+Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project. The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
         <rdfs:label xml:lang="en">haplotype</rdfs:label>
     </owl:Class>
     
@@ -5879,6 +5882,17 @@ The GENO definition of haplotype is broadly inclusive of these and any other sce
 
 The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations.  A haplotype block may span one sequence alteration or several, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.</rdfs:comment>
         <rdfs:label xml:lang="en">haplotype block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000918 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000918">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000875"/>
+        <obo:IAO_0000115>An allelic state that describes the number of different alleles of a gene from an organellar genome (i.e. mitochondrial, plastid) that may exist in a cell.</obo:IAO_0000115>
+        <rdfs:comment>Cells with a population of organelles from a single origin that all share the same organellar genome will contain only one allele of each organellar gene, while cells with populations of organelles of  different origins may contain more than one allele of a given organellar gene.</rdfs:comment>
+        <rdfs:label xml:lang="en">organellar plasmy</rdfs:label>
     </owl:Class>
     
 
@@ -6630,9 +6644,9 @@ Note that transgenes as defined here are not necessarily from a different taxon 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A collection of sequence features (typically a collection of chromosomes) that covers the sum genetic material within a cell or virion (where &apos;genetic material&apos; refers to any nucleic acid that is part of a cell or virion and has been inherited from an ancestor cell or virion, and/or can be replicated and inherited by its progeny)</obo:IAO_0000115>
-        <obo:IAO_0000116>Genotype vs Genome in GENO: An (intrinsic) genotype is an information artifact representing an indirect syntax for specifying a genome sequence.  This syntax has reference and variant components -  a &apos;referrence genome&apos; and &apos;genomic variation complement&apos; - that must be operated on to resolve a specifie genome sequence.  Specifically, the genome sequence is resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the &apos;reference genome&apos;.  So, while the total sequence content represented in a genotype may be greater than that in a genome, the intended resolution of these sequences is to arrive at a single genome sequence.</obo:IAO_0000116>
+        <obo:IAO_0000116>Genotype vs Genome in GENO: An (genomic) genotype is an information artifact representing a shorthand syntax for specifying what is known about variation in a genome sequence.  This syntax has reference and variant components - a &apos;reference genome&apos; and &apos;genomic variation complement&apos; - that must be operated on to resolve a final genome sequence (i.e. substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the &apos;reference genome&apos;). So, while the total sequence content represented in a genotype may be greater than that in a genome, the intended resolution of these sequences is to arrive at a single genome sequence.</obo:IAO_0000116>
         <obo:IAO_0000118>&apos;genome sequence&apos;</obo:IAO_0000118>
-        <rdfs:comment>A genome is considered the complement of all heritable sequence features in a given cell or organism (chromosomal or extrachromosomal). This is typically a collection of chromosomes, but in some organisms (e.g. bacteria) it may be a single chromosomal entity. For this reason &apos;genome&apos; classifies under &apos;sequence feature complement&apos; rather than &apos;sequence feature collection&apos;.</rdfs:comment>
+        <rdfs:comment>A genome is considered the complement of all heritable sequence features in a given cell or organism (chromosomal or extrachromosomal). This is typically a collection of &gt;1 sequence molecules (e.g. chromosomes), but in some organisms (e.g. bacteria) it may be a single sequence macromolecule (e.g. a circular plasmid). For this reason &apos;genome&apos; classifies under &apos;sequence feature complement&apos;.</rdfs:comment>
         <rdfs:label>genome</rdfs:label>
     </owl:Class>
     
