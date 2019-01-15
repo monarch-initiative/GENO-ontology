@@ -1868,9 +1868,9 @@ Environments include natural environments or exposures, experimentally applied c
     <!-- http://purl.obolibrary.org/obo/GENO_0000917 -->
 
     <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000917">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GENO_0000659"/>
-        <obo:IAO_0000115>Describes the number of features comprising a sequence feaature complement.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has_feature_count</rdfs:label>
+        <obo:IAO_0000115>Describes the number of members in some set.</obo:IAO_0000115>
+        <rdfs:comment>In GENO, this is used to describe things like the number of sequence features comprising a sequence feaature complement, or the number of sequences in a genetic dosage complement.</rdfs:comment>
+        <rdfs:label xml:lang="en">has_count</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -3555,16 +3555,16 @@ Similarly, large sequence features lost from genome are akin to deletions and th
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000110"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001026"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000903"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000902"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000903"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000902"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3573,11 +3573,11 @@ Similarly, large sequence features lost from genome are akin to deletions and th
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A sequence feature (continuous extent of located biological sequence) that is located in the heritable genome of a cell or organism.</obo:IAO_0000115>
-        <obo:IAO_0000116>This class was created largely as a modeling cnvenience to support organizing data for schema definitions.  We may consider obsoleting it if it ends up causing confusion or complicating classification of terms in the ontology.</obo:IAO_0000116>
-        <rdfs:comment>1. A genomic feature is a continuous extent of sequence at a particular location in a genome, which can span any size from a complete chromosome, to a chromosomal band or region, to a gene, to a single base pair or even junction between base pairs (this would be a sequence feature with an extent of zero).  
+        <obo:IAO_0000115>A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)</obo:IAO_0000115>
+        <obo:IAO_0000116>This class was created largely as a modeling convenience to support organizing data for schema definitions.  We may consider obsoleting it if it ends up causing confusion or complicating classification of terms in the ontology.</obo:IAO_0000116>
+        <rdfs:comment>1. A feature being &apos;of genomic origin&apos; here means only that the abstract sequence they contain can be located to the genome of some organism by alignment with some reference genomic sequence. This is because the sequence was originally identified in, or artificially created to replicate, sequence from the genome. 
 
-2. A feature being &apos;located in&apos; a genome here means only that the abstract sequence they contain can be positioned in the genome of some organism by alignment with some reference genomic sequence. In this way, we can distinguish features that can be associated with a particular taxa and assigned genomic coordinates. 
+2. The location of a genomic feature is defined by start and end coordinates based on alignment with a reference genome. Genomic features can span any size from a complete chromosome, to a chromosomal band or region, to a gene, to a single base pair or even junction between base pairs (this would be a sequence feature with an extent of zero). 
 
 3. As sequence features, instances of genomic features are identified by both their inherent *sequence* and their *position* in a genome - as determined by an alignment with some reference sequence. Accordingly, the &apos;ATG&apos; start codon in the coding DNA sequence of the human AKT gene and the &apos;ATG&apos; start codon in the human SHH gene represent two distinct genomic features despite having he same sequence, in virtue of their different positions in the genome.</rdfs:comment>
         <rdfs:label xml:lang="en">genomic feature</rdfs:label>
@@ -3884,11 +3884,11 @@ To be maximally accommodating of how this term is used across research communiti
         <obo:IAO_0000112>The set of both shha gene alleles in a diiploid zebrafish genome, e.g. fgf8a&lt;ti282a/+&gt;.
 
 The collection of the individual base-pairs present at the position 24126737 in both copies of chromosome 5 in a diploid human genome.</obo:IAO_0000112>
-        <obo:IAO_0000115>The set of all sequence features occupying a particular genomic location across all homologous chromosomes in a genome.</obo:IAO_0000115>
+        <obo:IAO_0000115>The set of all sequence features occupying a particular genomic locus across all homologous chromosomes in the genome of a single organism.</obo:IAO_0000115>
         <obo:IAO_0000116>TO DO: show a VCF representation of this example.</obo:IAO_0000116>
         <obo:IAO_0000118>allelic complement</obo:IAO_0000118>
         <obo:IAO_0000118>single locus feature complement</obo:IAO_0000118>
-        <rdfs:comment>A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. The notion of a &quot;complement&quot; describes the collection of all elements in some defined set. The notion of &quot;homologous&quot; genomic features describes those that occupy the same locus on homologous chromosomes. Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus. This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
+        <rdfs:comment>A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. The notion of a &quot;complement&quot; describes the collection of all elements in some defined set. The notion of &quot;homologous&quot; features describes those that occupy the same locus on homologous chromosomes in a genome. Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus. This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
         <rdfs:label>single locus complement</rdfs:label>
     </owl:Class>
     
@@ -4474,8 +4474,19 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000659">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000701"/>
-        <obo:IAO_0000115>An exhaustive collection of all sequence features that make up an enumerated sequence feature collection with a well-defined set of members (e.g. all chromosomes in a genome, all variant alleles in a genome, all copies of a particular gene or allele in a genome, all allleles defined  in a haplotype).</obo:IAO_0000115>
-        <rdfs:comment>Not all sequence feature complements will be collections - i.e. in some cases the complement of all features of type X will consist of a single feature.  For example, a &apos;single locus complement&apos; for an X-linked locus in a XY male.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>1. The set of all alleles at a particular locus in a genome (a &apos;single locus complement&apos;)  - e.g. {APOE-epsilon2 / APOE-epsilon4} at the APOE locus
+
+2. The set of all alleles that comprise a haplotype - e.g. the SNPs {rs7412-T, rs429358-T} in the APOEɛ2 allele.
+
+3. The set of all chromosomes in a genome - e.g. {human Chr1, 2, 3,  . . . 22, X, Y}</obo:IAO_0000112>
+        <obo:IAO_0000115>An exhaustive collection of all sequence features that make up some well-defined set.</obo:IAO_0000115>
+        <rdfs:comment>Not all sequence feature complements will be collections of more than one member- i.e. in some cases a complement of all features of some defined type or set will consist of a single member.  For example, a &apos;single locus complement&apos; at an X-linked locus in a XY male will consist of only one allele, as there is only one X-chromosome in the genome.</rdfs:comment>
         <rdfs:label xml:lang="en">sequence feature complement</rdfs:label>
     </owl:Class>
     
@@ -4487,14 +4498,14 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000659"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An exhaustive collection of all features of a specified type in a single genome (e.g. all chromosomes in a genome, all variant features in a genome, all copies of a given gene or allele in a genome).</obo:IAO_0000115>
@@ -4674,7 +4685,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000702 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000702">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000921"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000896"/>
@@ -4684,8 +4695,8 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <obo:IAO_0000115>An ordered collection units representing successive monomers of a biological macromolecule.</obo:IAO_0000115>
         <obo:IAO_0000116>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
-2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic position if the sequence (aligns with definition of &apos;sequence feature&apos; in the Sequence Ontology).
-3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material bearing the feature, extrinsic to its sequence and its genomic position.  For example, its being targeted by gene knockdown reagents, its being transgenically expressed in a foreign cell from a recombinant expression construct, its having been epigenetically modified in a way that alters its expression level or pattern, or its being located in a specific cellular or anatomical location.</obo:IAO_0000116>
+2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of &apos;sequence feature&apos; in the Sequence Ontology).
+3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material in which the feature is concretized. This third criteria is extrinsic to its sequence and its genomic location. For example, the feature&apos;s physical concretization being targeted by a gene knockdown reagent in a cell (e.g. the zebrafish Shha gene as targeted by the morpholino &apos;Shha-MO1&apos;), or its being transiently expressed from a recombinant expression construct (e.g. the human SHH gene as expressed in a  mouse Shh knock-out cell line), or its having been epigenetically modified in a way that alters its expression level or pattern (e.g. the human SHH gene with a specific methylation pattern).</obo:IAO_0000116>
         <obo:IAO_0000118>biomacromolecular sequence</obo:IAO_0000118>
         <obo:IAO_0000118>state</obo:IAO_0000118>
         <oboInOwl:hasDbXref>VMC:State</oboInOwl:hasDbXref>
@@ -4717,10 +4728,6 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000713">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <obo:IAO_0000115>A sequence feature (or collection of features) whose identity is dependent on the context or state of its material bearer (in addition to its sequence an position).  This context/state describes factors external to its inherent sequence and position that can influences its expression, such as being targeted by gene-knockdown reagents, or an epigenetic modification.</obo:IAO_0000115>
-        <rdfs:comment>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
-1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
-2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic position if the sequence (aligns with definition of &apos;sequence feature&apos; in the Sequence Ontology).
-3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material bearing the feature, extrinsic to its sequence and its genomic position.  For example, its being targeted by gene knockdown reagents, its being transgenically expressed in a foreign cell from a recombinant expression construct, its having been epigenetically modified in a way that alters its expression level or pattern, or its being located in a specific cellular or anatomical location.</rdfs:comment>
         <rdfs:label xml:lang="en">qualified sequence feature or collection</rdfs:label>
     </owl:Class>
     
@@ -4729,7 +4736,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000714 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000714">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000713"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000919"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
@@ -4748,14 +4755,8 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000112>Consider wild-type zebrafish shha gene in the context of being targeted by morpholino1 vs  morpholino 2 in separate experiments. These shha genes share identical sequence and position, but represent distinct  instances of a &apos;qualified sequence feature&apos; because of their different external context. This is important because these qualified features could have distinct phenotypes associated with them (just as two different sequence variants of the same gene can have potentially different associated phenotypes).</obo:IAO_0000112>
-        <obo:IAO_0000115>A sequence feature whose identity is dependent on the context or state of its material bearer (in addition to its sequence and position).  This context describes factors external to its inherent sequence and position. Examples include the context of being targeted by gene-knockdown reagents, or the context of being the target of an epigenetic modification.</obo:IAO_0000115>
-        <rdfs:comment>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
-1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
-2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic position if the sequence (aligns with definition of &apos;sequence feature&apos; in the Sequence Ontology).
-3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material bearing the feature, extrinsic to its sequence and its genomic position.  For example, its being targeted by gene knockdown reagents, its being transgenically expressed in a foreign cell from a recombinant expression construct, its having been epigenetically modified in a way that alters its expression level or pattern, or its being located in a specific cellular or anatomical location.
-
-Modeling sequence entities at this &apos;qualified&apos; level useful when it is important to distinguish features with identical sequence and position as separate instances - based on their material bearers being found in different contexts. For  example, a situation where the shha gene is targeted by two different morpholinos and phenotypes assessed for each.  This is analogous to two different alleles of the shha gene at the sequence feature level, and similarly worthy of being distinguished when considering how the resulting alteration in gene expression impacts the measured phenotypes of the host zebrafish.</rdfs:comment>
+        <obo:IAO_0000112>Consider wild-type zebrafish shha gene in the context of being targeted by morpholino MO-1 vs morpholino MO-2 in separate experiments. These shha genes share identical sequence and position, but represent distinct instances of a &apos;qualified sequence feature&apos; because of their different external contexts. This is important because these qualified features could have distinct phenotypes associated with them (just as two different sequence variants (alleles) of the same gene can have potentially different associated phenotypes).</obo:IAO_0000112>
+        <obo:IAO_0000115>A qualified sequence feature that carries sequence derived from the genome of a cell or organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">qualified genomic feature</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -4788,13 +4789,7 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
     <!-- http://purl.obolibrary.org/obo/GENO_0000715 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000715">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000713"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000920"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
@@ -4807,7 +4802,13 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A set of all qualified sequence features of a specified type in a single genome.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A qualified sequence feature complement consisting of all qualified sequence features of a specified type in a single genome (e.g. all reagent-targeted genes in the genome of an organism assessed in a phenotypic assay).</obo:IAO_0000115>
         <obo:IAO_0000116>In some cases there may be zero or only one member of such a complement, which is why this class is not defened to necessarily have some &apos;qualified genomic feature&apos; as a member.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">qualified genomic feature complement</rdfs:label>
     </owl:Class>
@@ -5044,7 +5045,7 @@ Modeling sequence entities at this &apos;qualified&apos; level useful when it is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000788">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
-        <obo:IAO_0000115>An attribute, quality, or state of a sequence or sequence feature.</obo:IAO_0000115>
+        <obo:IAO_0000115>An attribute, quality, or state of a sequence feature or collection.</obo:IAO_0000115>
         <obo:IAO_0000116>Sequence feature attributes can be based on qualities of the material bearers of the feature, for example, the staining intensity of a chromosomal band feature.</obo:IAO_0000116>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/SO_0000400</oboInOwl:hasDbXref>
         <rdfs:label>sequence feature attribute</rdfs:label>
@@ -5325,21 +5326,23 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000871">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <obo:IAO_0000115>A set of genetically-linked alleles, that reside at different locations on the same chromosomal strand and are typically inherited/transmitted together.</obo:IAO_0000115>
+        <obo:IAO_0000115>A set of genetically-linked sequence alterations, that reside at different locations on the same chromosomal strand and are typically inherited/transmitted together.</obo:IAO_0000115>
+        <obo:IAO_0000116>Former comment: &quot;Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project.&quot;</obo:IAO_0000116>
         <obo:IAO_0000231>reconsiderd defintion of haplotype to better align with SO and GA4GH/VMC definitions.
 
 Former SC axiom: has_member some allele.</obo:IAO_0000231>
         <terms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</terms:source>
-        <rdfs:comment>Haplotypes are &apos;complements&apos; in that they include the set of all alleles in a defined region of the genome.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction.  Haplotypes are located within &apos;haplotype blocks&apos; - regions of DNA where no recombination occurs between alleles on the same chromosomal strand. The &apos;haplotype&apos; within a &apos;haplotype block&apos; may be comprised of any number of distinct alleles.
+        <rdfs:comment>Haplotypes are &apos;complements&apos; in that they include the set of all alterations in a defined region of the genome.  Because they are genetically linked, the alterations comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction.  Haplotypes are located within &apos;haplotype blocks&apos; - regions of DNA where no recombination occurs between the included alterations on a chromosomal strand. The &apos;haplotype&apos; within a &apos;haplotype block&apos; may be comprised of any number of distinct alterations.
 
-As described at https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is commonly used to describe three specific cases of genetically-linked alleles within a haplotype block:
-  1. The first is a set of linked &apos;gene alleles&apos; - specific versions of entire genes that reside in tightly linked clusters on a single chromosome.  
-  2. The second is a set of linked &apos;single nucleotide polymorphism&apos; (SNP) alleles that tend to occur together (i.e. be statistically associated).
-  3. A third and less common use is describing individual collections of specific mutations within a given genetic segment - typically short tandem repeats. 
+--------
 
-Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project. 
+As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is most commonly used to describe the following scenarios of genetic linkage between &apos;alleles&apos;:
 
-The GENO definition is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked and thus tend to be co-inherited across successive generations.</rdfs:comment>
+a. Each &apos;allele&apos; comprising a haplotype is a &apos;gene allele&apos; (i.e. a specific version of an entire gene), and multiple such &apos;gene alleles&apos; are co-inherited because they reside in tightly linked clusters on a single chromosome.  
+b. Each &apos;allele&apos; in the haplotype is a single nucleotide polymorphisms (SNPs) that tends to occur together on a chromosomal strand (i.e. be statistically associated). This use of &apos;haplotype&apos; is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur &apos;in cis&apos; on the same chromosomal strand.  
+c. Each &apos;allele&apos; in the haplotype is a SNP or other small alteration, and these alterations collectively define a specific version of a gene.  In this case, the haplotype represents a &apos;gene allele&apos; - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this to be a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.
+
+The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
         <rdfs:label xml:lang="en">obsolete_haplotype</rdfs:label>
     </owl:Class>
     
@@ -5348,9 +5351,9 @@ The GENO definition is broadly inclusive of these and any other scenarios where 
     <!-- http://purl.obolibrary.org/obo/GENO_0000872 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000872">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000876"/>
-        <obo:IAO_0000115>A attribute describing the number of copies of a feature present in a genome.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">copy number</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000922"/>
+        <obo:IAO_0000115>The collection of all copies of a specific sequence present in a genome.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">copy number complement</rdfs:label>
     </owl:Class>
     
 
@@ -5378,7 +5381,7 @@ The GENO definition is broadly inclusive of these and any other scenarios where 
     <!-- http://purl.obolibrary.org/obo/GENO_0000875 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000875">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000876"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
         <obo:IAO_0000115>A quality inhering in an &apos;allelic complement&apos; (aka a &apos;single locus complement&apos;) that describes the allelic variability found at a particular locus in the genome of a single cell/organism</obo:IAO_0000115>
         <rdfs:label xml:lang="en">allelic state</rdfs:label>
     </owl:Class>
@@ -5388,11 +5391,15 @@ The GENO definition is broadly inclusive of these and any other scenarios where 
     <!-- http://purl.obolibrary.org/obo/GENO_0000876 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000876">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000118>allelic dosage</obo:IAO_0000118>
-        <obo:IAO_0000118>an attribute inhering in a feature based on the total number or relative stoichiometry of copies present in a particular genome.</obo:IAO_0000118>
+        <obo:IAO_0000118>an attribute inhering in a feature based on the total number or relative stoichiometry of functional copies present in a particular genome.</obo:IAO_0000118>
         <obo:IAO_0000118>gene dosage</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">genetic dosage</rdfs:label>
+        <obo:IAO_0000231>Remodeled this concept as a &apos;genetic dosage complement&apos; - a sequence-level class, as opposed to a sequence feature attribute.</obo:IAO_0000231>
+        <rdfs:comment>Genetic dosage reflects how many &apos;functional&apos; copies of a sequence are present in a genome. In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This sets it apart from the notion of &apos;copy number&apos;, which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its copy number, but not increase its dosage.
+
+Duplications of a sequence can occur at new locations in the genome, such that the resulting sequence represents a distinct sequence feature from the copy at its native locus.  For example, duplication of a region containing the human APOE gene on a different chromosome creates a sequence feature that shares sequence from the original gene, but not location, and therefore represents a different sequence feature.  The notions of dosage and copy number are therefore concerned with sequence-level entities (how many copies of a &apos;sequence&apos; exist), as opposed to sequence feature-level entities.  The notion of a single-locus complement would be used to describe how many of a particular features are present in a genome - and describe which alleles of this feature are found.</rdfs:comment>
+        <rdfs:label xml:lang="en">obsolete_genetic dosage</rdfs:label>
     </owl:Class>
     
 
@@ -5401,7 +5408,7 @@ The GENO definition is broadly inclusive of these and any other scenarios where 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000877">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
-        <obo:IAO_0000115>A quality inhering in an allele based on its source/origin - typically the parent from which it was inherited.</obo:IAO_0000115>
+        <obo:IAO_0000115>A quality inhering in an allele based on how it came to be part of a genome -  i.e. whether it occurred de novo thorugh some spontaneous mutation event, or was inherited from a parent (and if so which one).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">allele origin</rdfs:label>
     </owl:Class>
     
@@ -5738,19 +5745,19 @@ A genomic genotype is an information artifact with a representational syntax tha
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000902">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
         <obo:IAO_0000115>The location of a sequence feature in a genome, defined by its start and end position on some reference genomic coordinate system</obo:IAO_0000115>
-        <obo:IAO_0000116>In GENO, the notion of a Genomic Locus plays the same role as that of a FALDO:Region in the design pattern for describing the location of a feature of interest.  We define this specific GENO class because the ontological semantics FALDO:Region class are not clear, nor is how it fits into the GENO model. We will work to resolve these questions and ideally converge these concepts in the future.
+        <obo:IAO_0000116>In GENO, the notion of a Genomic Locus plays the same role as that of a FALDO:Region in the design pattern for describing the location of a feature of interest.  We define this specific GENO class because the ontological nature of FALDO:Region class is not clear in the context of the BFO and SO-based GENO model. We will work to resolve these questions and ideally converge these concepts in the future.
 
 We don&apos;t link a Genomic Locus to a specific reference sequence because in the FALDO model (which GENO adopts with the exception of swapping GENO:Genomic Locus for FALDO:Region), allows the start and end positions of a region to be defined on separate reference sequences. So while a given locus is conceptually associated with a single reference, in practice it can be pragmatic to define start and stop on different references sequences.</obo:IAO_0000116>
-        <obo:IAO_0000116>In practice, GENO advocates describing biology at the level of genomic features - i.e. define specific terms for genes as genomic features, and not duplicate representation of the loci where each gene resides. So we would have a class representing the human Shh gene as a &apos;genomic feature&apos;, but not parallel this with a &apos;human Shh gene locus&apos; class.   The utility of the &apos;genomic locus&apos; class in the ontology is primarily to be clear about the distinction, but we would only use it in modeling data if absolutely needed.
+        <obo:IAO_0000116>In practice, GENO advocates describing biology at the level of genomic features - i.e. define specific terms for genes as genomic features, and not duplicate representation of the loci where each gene resides. So we might define a class representing the human Shh gene as a &apos;genomic feature&apos;, but not parallel this with a &apos;human Shh gene locus&apos; class.   The utility of the &apos;genomic locus&apos; class in the ontology is primarily to be clear about the distinction, but we would only use it in modeling data if absolutely needed.
 
 For example, we would define an  &apos;HLA gene block&apos; as a subclass of &apos;genomic feature&apos;, and assert that  HLA-A, HLA-B, and HLA-C genes are part/subsequences of this HLA gene block (as opposed to modeling this as an &apos;HLA locus&apos;  and asserting that the HLA-A, HLA-B, and HLA-C genes occupy this locus).</obo:IAO_0000116>
         <obo:IAO_0000118>genomic location</obo:IAO_0000118>
         <oboInOwl:hasDbXref>VMC:Location</oboInOwl:hasDbXref>
-        <rdfs:comment>1. A genomic locus is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic locus is occupied_by a &apos;sequence feature&apos; - whose identity depends on both it ssequence, and location in the genome (i.e. the locus it occupies).  For example, the ATG sequence beginning the ORF of the human Shh gene shares the same sequence as the ATG beginning the ORF of the human Akt gene. But these are distinct sequence features because they occupy different genomic loci. We call sequence features that are located in a genome &apos;genomic features&apos;.
+        <rdfs:comment>1. A genomic locus is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic locus is occupied_by a &apos;sequence feature&apos; - whose identity depends on both it ssequence, and location in the genome (i.e. the locus it occupies).  For example, the &apos;ATG&apos; sequence beginning the ORF of the human SHH gene shares the same sequence as the &apos;ATG&apos; beginning the ORF of the human AKT gene. But these are distinct sequence features because they occupy different genomic loci - and therefore have different positions. We call sequence features that are located in a genome &apos;genomic features&apos;.
 	
-2. Across different chromosomes, a given genomic locus (e.g. the human Shh gene locus) may be occupied by different sequence features (e.g. different &apos;alleles&apos; of the Shh gene). e.g. within the genome of a single diploid organism, there is potential for two sequence features to exit at such a locus (i.e. two different Shh alleles).  And across the genomes of all cells comprising members of a species, many more alleles of the Shh gene may exist. These alleles occupy/populate the same genomic locus with different sequences (or no sequence at all in the case of a complete Shh deletion).
+2. A given genomic locus (e.g. the human SHH gene locus) may be occupied by different alleles of the feature that resides there (e.g. different alleles of the SHH gene). Within the genome of a single diploid organism, there is potential for two genomic features to exist at such a locus (i.e. two different SHH alleles).  And across the genomes of all cells comprising members of a species, many more alleles of the SHH gene may exist and occupy this same locus.
 
-3. The notion of a genomic locus in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic locus is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.   As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the sequence feature that resides there.</rdfs:comment>
+3. The notion of a genomic locus in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic locus is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.  As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the feature that resides there.</rdfs:comment>
         <rdfs:label xml:lang="en">genomic locus</rdfs:label>
     </owl:Class>
     
@@ -5853,20 +5860,21 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A haplotype is an allele that represents one of many possible versions of a &apos;haplotype block&apos;, which defines a region of genomic sequence that is typically &apos;co-inherited&apos; across generations due to a lack of historically observed recombination within it.</obo:IAO_0000115>
+        <obo:IAO_0000116>Former comment: &quot;Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project.&quot;</obo:IAO_0000116>
         <obo:IAO_0000119>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype and http://purl.obolibrary.org/obo/SO_0001024 ! haplotype.</obo:IAO_0000119>
-        <rdfs:comment>1. The relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos; - a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.  In this sense, a gene allele can be considered to be a haplotype whose extent is that of a gene (as it is generally true that there is a low probability of recombination within any given gene).
+        <rdfs:comment>1. The relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos;:  a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.  In this sense, a gene allele can be considered to be a haplotype whose extent is that of a gene (as it is generally true that there is a low probability of recombination within any given gene).
 
-2. Haplotypes typically contain &apos;genetically-linked&apos; sequence alterations that are likely to be co-inherited and survive descent across many generations of reproduction.  A common use of &apos;haplotype&apos; is in phasing of patient WGS or WES data, where this term refers to sequence containing two or more  alterations that are beleived to occur &apos;in cis&apos; on the same chromosomal strand.  
+2. Haplotypes typically contain more than one &apos;genetically-linked&apos; loci where sequence alterations are known to exist, such that a set of alterations will be co-inherited together across many generations of reproduction.  A common use of &apos;haplotype&apos; is in phasing of patient WGS or WES data, where this term refers to sequence containing two or more alterations that are beleived to occur &apos;in cis&apos; on the same chromosomal strand.  
 
 GENO&apos;s definition is consistent with but more inclusive than this view, allowing for haplotypes with one or zero established alterations as long as there is a low probability of recombination within the region it spans (such that alterations found in cis are likely to remain in cis across successive generations). As a result, GENO considers any allele that spans an extent greater than that of a single sequence alteration to be a haplotype - as long as there is an expectation of low recombination frequency within the haplotype block occupied by the allele. For example, a &apos;gene allele&apos; is a haplotype representing a particular version of a gene that contains one or more sequence alterations - as a &apos;gene&apos; is a region of sequence with a low probability of recombination that is generally expeted to be inherited as a unit. 
 
-3. As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is most commonly used to describe regions of genetic linkage between three types of &apos;alleles&apos;:
+3. As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is most commonly used to describe the following scenarios of genetic linkage between &apos;alleles&apos;:
 
-  a. The first is regions containing multiple linked &apos;gene alleles&apos; - i.e. specific versions of entire genes that reside in tightly linked clusters on a single chromosome.  
-  b. The second is a region containing multiple linked single nucleotide polymorphism (SNP) alleles that tend to occur together on a chromosomal strand (i.e. be statistically associated). In many cases the extent of this region is that of a single gene - such that the haplotype here represents a single &apos;gene allele&apos; (as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes).
-  c. A third and less common use is a region containing individual collections of specific mutations within a given genetic segment - typically short tandem repeats. 
+a. The first is regions containing multiple linked &apos;gene alleles&apos; - i.e. specific versions of entire genes that are co-inherited because they reside in tightly linked clusters on a single chromosome.  
+b. The second is a region containing multiple linked single nucleotide polymorphisms (SNPs) that tend to occur together on a chromosomal strand (i.e. be statistically associated).  This use of &apos;haplotype&apos; is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur &apos;in cis&apos; on the same chromosomal strand.  
+c. A third, which is related to the previous case, occurs when the extent of region containing linked SNPs is that of a single gene.  In this case, the haplotype represents a &apos;gene allele&apos; - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.
 
-Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project. The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
+The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
         <rdfs:label xml:lang="en">haplotype</rdfs:label>
     </owl:Class>
     
@@ -5893,6 +5901,76 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
         <obo:IAO_0000115>An allelic state that describes the number of different alleles of a gene from an organellar genome (i.e. mitochondrial, plastid) that may exist in a cell.</obo:IAO_0000115>
         <rdfs:comment>Cells with a population of organelles from a single origin that all share the same organellar genome will contain only one allele of each organellar gene, while cells with populations of organelles of  different origins may contain more than one allele of a given organellar gene.</rdfs:comment>
         <rdfs:label xml:lang="en">organellar plasmy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000919 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000919">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000713"/>
+        <obo:IAO_0000112>Consider wild-type zebrafish shha gene in the context of being targeted by morpholino MO-1 vs morpholino MO-2 in separate experiments. These shha genes share identical sequence and position, but represent distinct instances of a &apos;qualified sequence feature&apos; because of their different external contexts. This is important because these qualified features could have distinct phenotypes associated with them (just as two different sequence variants (alleles) of the same gene can have potentially different associated phenotypes).</obo:IAO_0000112>
+        <obo:IAO_0000115>A sequence feature whose identity is additionally dependent on the context or state of the material sequence molecule in which the feature is concretized. This context/state describes factors external to the feature&apos;s intrinsic  sequence and position that can influences its expression, such as being targeted by gene-knockdown reagents, or an epigenetic modification.</obo:IAO_0000115>
+        <rdfs:comment>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
+1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
+2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of &apos;sequence feature&apos; in the Sequence Ontology).
+3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical state or context of the genetic material in which the feature is concretized. This third criteria is extrinsic to its sequence and its genomic location. For example, the feature&apos;s physical concretization being targeted by a gene knockdown reagent in a cell (e.g. the zebrafish Shha gene as targeted by the morpholino &apos;Shha-MO1&apos;), or its being transiently expressed from a recombinant expression construct (e.g. the human SHH gene as expressed in a  mouse Shh knock-out cell line), or its having been epigenetically modified in a way that alters its expression level or pattern (e.g. the human SHH gene with a specific methylation pattern).</rdfs:comment>
+        <rdfs:comment>Modeling sequence entities at this &apos;qualified&apos; level is useful for distinguishing cases where features with identical sequence and position as separate instances - based on their material bearers being found in different contexts. For example, consider a situation where the zebrafish shha gene (a sequence feature) is targeted in two experimental groups of fish by two different morpholinos, and phenotypes are assessed for each.  We want to be able to represent two &apos;variants&apos; of the shha gene in this scenario as separate &apos;qualified sequence feature&apos; instances so we can capture data about the phenotypes resulting from each - just as we would separately represent to different sequence variants (alleles) of the shha gene at the sequence feature level so that we can track their associated phenotypes.</rdfs:comment>
+        <rdfs:label xml:lang="en">qualified sequence feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000920 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000920">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000713"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000919"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000659"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An exhaustive collection of all qualified sequence features that make up a qualified sequence feature collection with a well-defined set of members (e.g. all reagent-targeted genes in the genome of an organism assessed in a phenotypic assay).</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">qualified sequence feature complement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000921 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000921">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:label xml:lang="en">biological sequence or collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000922 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000922">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000921"/>
+        <rdfs:label xml:lang="en">biological sequence complement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000923 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000923">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000922"/>
+        <obo:IAO_0000115>The collection of all copies of a particular sequence that exist in a genome.</obo:IAO_0000115>
+        <rdfs:comment>The notion of genetic dosage reflects how many &apos;functional&apos; copies of a sequence are present in a genome. In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its copy number, but not increase its dosage.
+
+The notions of dosage and copy number are defined as sequence-level entities (how many copies of a &apos;sequence&apos; exist), as opposed to sequence feature-level entities.  This is because duplications of a sequence will often occur at new locations in the genome, such that the resulting sequence represents a distinct sequence feature from the original copy at its native locus.  For example, duplication of a region containing the human APOE gene on a different chromosome creates a sequence feature that shares sequence from the original gene, but not location, and therefore represents a different sequence feature. 
+The notion of a single-locus complement, by contrast,  would be used to describe how many of a particular features are present in a genome - and describe which alleles of this feature are found.</rdfs:comment>
+        <rdfs:label xml:lang="en">sequence dosage complement</rdfs:label>
     </owl:Class>
     
 
@@ -6236,9 +6314,9 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
         <obo:IAO_0000115>Any extent of continuous biological sequence.</obo:IAO_0000115>
         <obo:IAO_0000116>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
-2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic position if the sequence (aligns with definition of &apos;sequence feature&apos; in the Sequence Ontology).
-3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material bearing the feature, extrinsic to its sequence and its genomic position.  For example, its being targeted by gene knockdown reagents, its being transgenically expressed in a foreign cell from a recombinant expression construct, its having been epigenetically modified in a way that alters its expression level or pattern, or its being located in a specific cellular or anatomical location.</obo:IAO_0000116>
-        <rdfs:comment>A sequence feature is an extent of biological sequence. An instance of a sequence feature is identified by both its sequence (inherent ordering of units representing nucleic acid or animo acid monomers) and its position (start and stop coordinates based on alignment with some reference feature). By contrast, &apos;biological sequences&apos; are identified and distinguished only by their inehrent sequence, and not their position.  Accordingly, the &apos;ATG&apos; start codon in the coding DNA sequence of the human AKT gene is the same &apos;sequence&apos; as the &apos;ATG&apos; start codon in the human SHH gene, but these represent two distinct &apos;sequence features&apos; in virtue of their different positions in the genome.</rdfs:comment>
+2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of &apos;sequence feature&apos; in the Sequence Ontology).
+3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material in which the feature is concretized. This third criteria is extrinsic to its sequence and its genomic location. For example, the feature&apos;s physical concretization being targeted by a gene knockdown reagent in a cell (e.g. the zebrafish Shha gene as targeted by the morpholino &apos;Shha-MO1&apos;), or its being transiently expressed from a recombinant expression construct (e.g. the human SHH gene as expressed in a  mouse Shh knock-out cell line), or its having been epigenetically modified in a way that alters its expression level or pattern (e.g. the human SHH gene with a specific methylation pattern).</obo:IAO_0000116>
+        <rdfs:comment>A sequence feature is an extent of &apos;located&apos; biological sequence, whose identity is determined by both its inherent sequence (ordering of monomeric units) and its position (start and end coordinates based on alignment with some reference). By contrast, &apos;biological sequences&apos; are identified and distinguished only by their inehrent sequence, and not their position.  Accordingly, the &apos;ATG&apos; start codon in the coding DNA sequence of the human AKT gene is the same &apos;sequence&apos; as the &apos;ATG&apos; start codon in the human SHH gene, but these represent two distinct &apos;sequence features&apos; in virtue of their different positions in the genome.</rdfs:comment>
         <rdfs:label>sequence_feature</rdfs:label>
     </owl:Class>
     <owl:Axiom>
