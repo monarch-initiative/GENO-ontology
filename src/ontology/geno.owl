@@ -4458,12 +4458,6 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000649">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000611"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000772"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>A background genotype whose sequence or identity is not known or specified.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">unspecified background genotype</rdfs:label>
     </owl:Class>
@@ -4952,9 +4946,9 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000772 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000772">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence attribute inhering in a feature whose identity is not specified.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">unspecified</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete_unspecified</rdfs:label>
     </owl:Class>
     
 
@@ -5046,8 +5040,8 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000788">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <obo:IAO_0000115>An attribute, quality, or state of a sequence feature or collection.</obo:IAO_0000115>
-        <obo:IAO_0000116>Sequence feature attributes can be based on qualities of the material bearers of the feature, for example, the staining intensity of a chromosomal band feature.</obo:IAO_0000116>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/SO_0000400</oboInOwl:hasDbXref>
+        <rdfs:comment>Sequence feature attributes can be &apos;intrinsic&apos; - reflecting feature-level characteristics that depend only on the sequence, location, or genomic context of a feature or collection, or &apos;extrinsic&apos; - reflecting characteristics of the physical molecule in which the feature is concretized (e.g. its cellular context, source of origin, physical appearance, etc.). Intrinsic attributes include things like allelic state, allelic phase.  Extrinsic attributes include things like its cellular distribution and chromosomal band intensity.</rdfs:comment>
         <rdfs:label>sequence feature attribute</rdfs:label>
     </owl:Class>
     
@@ -5408,7 +5402,9 @@ Duplications of a sequence can occur at new locations in the genome, such that t
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000877">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
-        <obo:IAO_0000115>A quality inhering in an allele based on how it came to be part of a genome -  i.e. whether it occurred de novo thorugh some spontaneous mutation event, or was inherited from a parent (and if so which one).</obo:IAO_0000115>
+        <obo:IAO_0000115>A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell&apos;s genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent.</obo:IAO_0000115>
+        <obo:IAO_0000118>genetic origin</obo:IAO_0000118>
+        <obo:IAO_0000118>variant origin</obo:IAO_0000118>
         <rdfs:label xml:lang="en">allele origin</rdfs:label>
     </owl:Class>
     
@@ -5418,7 +5414,8 @@ Duplications of a sequence can occur at new locations in the genome, such that t
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000878">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000888"/>
-        <obo:IAO_0000115>a quality of an allele in virtue of its having been inherited from a female parent.</obo:IAO_0000115>
+        <obo:IAO_0000115>Describes an allele that is inherited from a female parent in virtue of the allele being present in the mother&apos;s egg.</obo:IAO_0000115>
+        <obo:IAO_0000118>maternally inherited</obo:IAO_0000118>
         <rdfs:label xml:lang="en">maternal allele origin</rdfs:label>
     </owl:Class>
     
@@ -5428,7 +5425,8 @@ Duplications of a sequence can occur at new locations in the genome, such that t
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000879">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000888"/>
-        <obo:IAO_0000115>a quality of an allele in virtue of its having been inherited from a male parent.</obo:IAO_0000115>
+        <obo:IAO_0000115>Describes an allele that is inherited from a male parent in virtue of the allele being present in the father&apos;s sperm.</obo:IAO_0000115>
+        <obo:IAO_0000118>paternally inherited</obo:IAO_0000118>
         <rdfs:label xml:lang="en">paternal allele origin</rdfs:label>
     </owl:Class>
     
@@ -5438,7 +5436,11 @@ Duplications of a sequence can occur at new locations in the genome, such that t
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000880">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
-        <obo:IAO_0000115>a quality of an allele in virtue of its having occurred through a de novo mutaiton, rather than inherited from a parent..</obo:IAO_0000115>
+        <obo:IAO_0000115>Describes an attribute describing an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis.</obo:IAO_0000115>
+        <obo:IAO_0000119>Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/de-novo-mutation  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation</obo:IAO_0000119>
+        <rdfs:comment>De novo variants are heritable but not inherited - as they are not observed in either parent, but can be passed to offspring in virtue of their being present in the individual&apos;s germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. 
+		
+De novo variants appear for the first time in one family member. They often explain genetic disorders in which an affected child has a mutation in every cell in the body but the parents do not, and there is no family history of the disorder.</rdfs:comment>
         <rdfs:label xml:lang="en">de novo allele origin</rdfs:label>
     </owl:Class>
     
@@ -5448,7 +5450,7 @@ Duplications of a sequence can occur at new locations in the genome, such that t
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000881">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
-        <obo:IAO_0000115>a quality of an allele in virtue of its origin not being known.</obo:IAO_0000115>
+        <obo:IAO_0000115>Describes an allele  whose origin is not known.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">unknown allele origin</rdfs:label>
     </owl:Class>
     
@@ -5457,9 +5459,14 @@ Duplications of a sequence can occur at new locations in the genome, such that t
     <!-- http://purl.obolibrary.org/obo/GENO_0000882 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000882">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000901"/>
-        <obo:IAO_0000115>A quality inhering in a particular allele in virtue of its presence only in the genome of non-germ cells in an organism, and therefore not inherited by subsequent generations.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">somatic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
+        <obo:IAO_0000115>Describes an allele that result from some spontaneous mutation event in a somatic cell after fertilization, and thus are not present in every cell in the body.</obo:IAO_0000115>
+        <obo:IAO_0000118>acquired</obo:IAO_0000118>
+        <obo:IAO_0000119>Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/somatic-variant  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation</obo:IAO_0000119>
+        <rdfs:comment>Somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring). De novo mutations are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present in germ cells.
+		
+These acquired mutations are called &apos;somatic&apos; because they typically affect  somatic (non-germ) cells.  But when spontaneous do mutations occur in the germ cells of an organism, these can be passed on to offspring in whom they will be considered de novo mutations.</rdfs:comment>
+        <rdfs:label xml:lang="en">somatic allele origin</rdfs:label>
     </owl:Class>
     
 
@@ -5547,8 +5554,15 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000888">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
-        <obo:IAO_0000115>a quality of an allele in virtue of its having been inherited from either parent.</obo:IAO_0000115>
-        <rdfs:label>parental allele origin</rdfs:label>
+        <obo:IAO_0000115>Describes an allele that is inherited from a parent in virtue of the allele being present in one or both of the parent&apos;s germ cells (sperm or egg).</obo:IAO_0000115>
+        <obo:IAO_0000118>hereditary</obo:IAO_0000118>
+        <obo:IAO_0000118>parental origin</obo:IAO_0000118>
+        <obo:IAO_0000118>parentally inherited</obo:IAO_0000118>
+        <obo:IAO_0000119>Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/germline-variant  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation</obo:IAO_0000119>
+        <rdfs:comment>Germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  De novo mutations are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present in germ cells. 
+
+Germline, or hereditary, alleles are present throughout a person’s life in virtually every cell in the body, including the germ cells, and therefore will be passed on to any offspring.</rdfs:comment>
+        <rdfs:label xml:lang="en">germline allele origin</rdfs:label>
     </owl:Class>
     
 
@@ -5718,24 +5732,14 @@ A genomic genotype is an information artifact with a representational syntax tha
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GENO_0000900 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000900">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000901"/>
-        <obo:IAO_0000118>gametic</obo:IAO_0000118>
-        <rdfs:comment>A quality inhering in a particular allele in virtue of its presence in the genome of germ cells in an organism, and therefore having the potential to be inherited by subsequent generations.</rdfs:comment>
-        <rdfs:label xml:lang="en">germline</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GENO_0000901 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000901">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A quality inhering in a particular allele in virtue of its presence only in a particular type of cell in an organism (e.g. somatic vs germ cells)</obo:IAO_0000115>
+        <obo:IAO_0000231>decided this attribute is not needed, and moved its child &apos;germline&apos; and &apos;somatic&apos; concepts under allele origin</obo:IAO_0000231>
         <rdfs:comment>Cellular context of an allele is typically defined in the context of evaluating an individual organism, as alleles that are somatic in one organism can be germline in others.</rdfs:comment>
-        <rdfs:label>allele cellular context</rdfs:label>
+        <rdfs:label>obsolete_allele cellular context</rdfs:label>
     </owl:Class>
     
 
@@ -5971,6 +5975,56 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 The notions of dosage and copy number are defined as sequence-level entities (how many copies of a &apos;sequence&apos; exist), as opposed to sequence feature-level entities.  This is because duplications of a sequence will often occur at new locations in the genome, such that the resulting sequence represents a distinct sequence feature from the original copy at its native locus.  For example, duplication of a region containing the human APOE gene on a different chromosome creates a sequence feature that shares sequence from the original gene, but not location, and therefore represents a different sequence feature. 
 The notion of a single-locus complement, by contrast,  would be used to describe how many of a particular features are present in a genome - and describe which alleles of this feature are found.</rdfs:comment>
         <rdfs:label xml:lang="en">sequence dosage complement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000924 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000924">
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <obo:IAO_0000115>A sequence feature attribute that reflects feature-level characteristics that depend only on the sequence, location, or genomic context of a feature  or  collection, but are independent of how it may be concretized in physical form.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">obsolete_intrinsic sequence feature attribute</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000925 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000925">
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <obo:IAO_0000115>A sequence feature attribute that reflects characteristics of the physical molecule in which the feature is concretized (e.g. its cellular context, source of origin, etc.)</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">obsolete_extrinsic sequence feature attribute</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000926 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000926">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <obo:IAO_0000115>A quality inhering in an allele reflecting whether it is found in all cells of an organism&apos;s body, or just some clonal subset (e.g. in mosaicism).</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">allelic cellular distribution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000927 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000927">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000926"/>
+        <obo:IAO_0000115>A cellular distribution in which an allele is found in all cells of an organism&apos;s body, typically in virtue of its germline origin.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">constitutional</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000928 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000928">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000926"/>
+        <obo:IAO_0000115>A cellular distribuution in which an allele is found only in some clonal subset of cells in an organism, typically in virtue of its somatic origin.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">clonal</rdfs:label>
     </owl:Class>
     
 
