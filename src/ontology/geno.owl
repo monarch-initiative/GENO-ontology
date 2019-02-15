@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/geno.owl#"
      xml:base="http://purl.obolibrary.org/obo/geno.owl"
-     xmlns:urigen-plugin="http://urigen-plugin/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obi="http://purl.obolibrary.org/obo/obi.owl#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
-     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:genotype_model="http://www.lamhdi.org/obo/genotype_model/"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:obi="http://purl.obolibrary.org/obo/obi.owl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:property="http://property/"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:urigen-plugin="http://urigen-plugin/"
+     xmlns:genotype_model="http://www.lamhdi.org/obo/genotype_model/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno.owl">
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao/dev/ontology-metadata.owl"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/monarch-initiative/GENO-ontology/develop/src/ontology/imports/oboInOwl.owl"/>
@@ -424,15 +424,21 @@ phenotype and (is_phenotype_of some (organism and (has_part some (&apos;material
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000418"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000413"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
-        <obo:IAO_0000112>The allele instance &lt;fgf8a^ti282a&gt; is_allele_of the gene class  &apos;danio rerio fgf8a&apos;.
-
-Note that  the allele &lt;fgf8a^ti282a&gt;  may not be an instance of the  danio rerio fgf8a gene class, given that we adopt the SO definition of genes as &apos;producing a functional product&apos;.  If the &lt;fgf8a^ti282a&gt; allele is nonfunctional or null, it is an allele_of the danio rerio fgf8a gene class, but not an instance (rdf:type) of this class. It is, however, an instance of the &apos;danio rerio fgf8a gene allele&apos; class, as being a &apos;gene allele&apos; as defined in GENO requires only occupying the genomic position where for a gene, but not necessarily producing a functional product.</obo:IAO_0000112>
-        <obo:IAO_0000115>A relation linking an instance of a variable feature (aka an allele) to a class of genomic feature it is an instance of (typically a gene class).</obo:IAO_0000115>
+        <obo:IAO_0000112>&lt;fgf8a^ti282a&gt;  is_allele_of  the &apos;danio rerio fgf8a&apos; gene locus.</obo:IAO_0000112>
+        <obo:IAO_0000115>A relation linking an instance of a variable feature (aka an allele) to a genomic locus it occupies. This is typically a gene locus, but a feature may be an allele of other types of named loci such as QTLs, or alleles of some unnamed locus of arbitrary size.</obo:IAO_0000115>
         <obo:IAO_0000116>Domain = allele 
-		Range = punned gene class
-
-In owl models where alleles are instances of gene classes, this relation links an owl:Individual to an owl:Class, and thus &apos;puns&apos; the gene class IRI.</obo:IAO_0000116>
+Range = genomic locus (but in practice it is common to use a punned gene class IRI as the subject of this relation).</obo:IAO_0000116>
+        <obo:IAO_0000116>Note that  the allele &lt;fgf8a^ti282a&gt;  is not necessarily an instance of the danio rerio fgf8a gene class, given that we adopt the SO definition of genes as &apos;producing a functional product&apos;.  If the &lt;fgf8a^ti282a&gt; allele is nonfunctional or null, it is an allele_of the danio rerio fgf8a gene class, but not an instance (rdf:type) of this class. It would, however, bean instance of  a  &apos;danio rerio fgf8a gene allele&apos; class - because being a &apos;gene allele&apos; as defined in GENO requires only occupying the genomic position where for a gene, but not necessarily producing a functional product.</obo:IAO_0000116>
         <obo:IAO_0000118>is_sequence_variant_of</obo:IAO_0000118>
+        <rdfs:comment>To allow users to make important distinctions in discourse and modeling, GENO clearly separates the notions/levels of &apos;biological sequence&apos;, &apos;sequence feature&apos;, and &apos;sequence location&apos; (&apos;genomic locus&apos; when found in a genome). This sets up an important terminological nuance when it comes to alleles, where we believe it correct to say that a particular genomic feature is an alleles_of some genomic locus (as opposed to an allele_of some sequence or some feature). This is typically a gene locus, but even insertions falling outside of genes are considered alleles_of the locus they alter (e.g. alleles of other types of named loci such as QTLs, or alleles of some unnamed locus of arbitrary size).
+
+While conceptually it is most correct to say features are alleles_of some genomic locus, it is common practice to say that they are alleles of the class of feature defined to reside at that locus (typically a gene).  Accordingly, we may write things like &quot;fgf8a&lt;ti282a&gt; is an allele of the Danio rerio fgf8a gene&quot;, and we may create data where &quot;fgf8a&lt;ti282a&gt; is asserted as an allele_of  the fgf8a gene class IRI. But here we mean more precisely that it is an allele of the locus at which the fgf8a gene resides.
+
+It is important to be clear that the locus that a feature is an allele_of is defined exclusively by its genomic position, and not on the sequence it may contains. This is particularly relevant when considering transgenic insertions. For example, this means that the insertion of the S. cerevisiae GAL4 gene sequence within the D. melanogaster Bx gene locus would create an allele of the D. melanogaster Bx gene, but not an allele of the S. cerevisiae GAL4 gene. The transgene that results from such an insertion, while expressing S. cerevisiae GAL4 gene sequence, is not an allele of this gene because it does not reside at the S. cerevisiae GAL4 locus. 
+
+This departs from how some databases use the term &apos;allele&apos; - where transgenes expressing an exogenous gene are considered to be alleles of the exogenous genes they carry.  For example, in the example above, Flybase describes the S. cerevisiae GAL4 transgene as an allele_of the  S. cerevisiae GAL4 gene (and gives it the allele identifier FBal0040476). A GENO representation on the other hand would say that the S. cerevisiae GAL4 transgene derives_sequence_from the S. cerevisiae GAL4 gene, but is not an allele_of this gene. In a GENO model, FBal0040476 would be typed as a transgene insertion, but not considered an allele_of the Scer\GAL4 gene.
+
+At the end of the day, it&apos;s just semantics, but worth clarifying given the ubiquity and variable use of the term &apos;allele&apos;. The GENO model attempts to define and adhere to the principled notion of positionally-defined &apos;alleles&apos;, and functionally-defined &apos;transgenes&apos;.</rdfs:comment>
         <rdfs:label>is_allele_of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -750,7 +756,7 @@ Used in GENO to describe physical context of materialized sequence features that
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000683">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <obo:IAO_0000115>A relation between two sequence features at a particular genomic locus that vary in their sequence (in whole or in part).</obo:IAO_0000115>
+        <obo:IAO_0000115>A relation that holds between two sequence features at a particular genomic location that vary in their sequence.  These features will have the same position when mapped onto a reference sequence, but vary in their sequence (in whole or in part).</obo:IAO_0000115>
         <rdfs:comment>This property is most commonly used to relate two different alleles of a given gene (e.g. a wt and mutant instance of the BRCA2 gene).  It is not a relation between an allele and the class-level gene it is a variant of (for this use is_allele_of)</rdfs:comment>
         <rdfs:label xml:lang="en">varies_with</rdfs:label>
     </owl:ObjectProperty>
@@ -2364,7 +2370,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         </rdfs:subClassOf>
         <obo:IAO_0000115>An allele that varies in it sequence from what is considered the reference or canonical sequence at that locus.</obo:IAO_0000115>
         <obo:IAO_0000116>The use of the descriptor &apos;variant&apos; here is consistent with naming recommendations from the ACMG Guidelines paper here: PMID:25741868.  Generally, the descriptive labels chosen for subtypes of variant allele conform  these recommendations as well, where &apos;variant&apos; is used to cover mutant and polymorphic alleles.</obo:IAO_0000116>
-        <obo:IAO_0000118>alterante allele</obo:IAO_0000118>
+        <obo:IAO_0000118>alternate allele</obo:IAO_0000118>
         <obo:IAO_0000118>sequence-variant feature</obo:IAO_0000118>
         <obo:IAO_0000118>variant feature</obo:IAO_0000118>
         <rdfs:comment>Note that what is considered the &apos;reference&apos; vs. &apos;variant&apos; sequence at a given locus may be context-dependent - so being &apos;variant&apos; is more a role played in a particular situation. A &apos;variant allele&apos; contains a &apos;sequence alteration&apos;, or is itself a &apos;sequence alteration&apos;, that makes it vary_with some other allele to which it is being compared. But in any comparison of alternative sequences at a particular genomic location, the choice of a &apos;reference&apos; vs the &apos;variant&apos; is context-dependent - as comparisons in other contexts might consider a different feature to be the reference.  So being &apos;variant&apos; is more a role played in a particular situation - as an allele that is variant in one context/analysis may be considered reference in another.
@@ -3814,13 +3820,9 @@ The notion of wild-type alleles is more common in model organism databases, wher
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000115>One of a set of sequence features that exist at a particular genomic locus.</obo:IAO_0000115>
-        <obo:IAO_0000116>The notion of an &apos;allele&apos; defined here is distinct from that of a genetic &apos;variant&apos; - as &apos;allele&apos; includes features considered to be the &apos;reference&apos; at a particular locus. The notion of an &apos;allele&apos; captures the state of the sequence found at a genetic locus, be it variant or reference. The notion of a &apos;variant&apos; implies a state that differs from some &apos;reference&apos; sequence at that location. What is considered the &apos;reference&apos; state at a particular locus may vary, depending on the context/goal of a particular analysis.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">variable feature</obo:IAO_0000118>
-        <rdfs:comment>An allele is a continuous extent of genomic sequence that spans a locus where variation is known to occur (i.e. where &gt;1 version is known to exist).  The minimal extent of an allele is the variable sequence itself (i.e. a &apos;sequence alteration&apos;), but the notion of an allele includes larger regions that contain as proper parts one or more such alterations (e.g. a &apos;gene allele&apos; that spans an entire gene contianing known alterations).
+        <obo:IAO_0000116>A landsacpe review found mostly gene-centric definitions of &apos;allele&apos; that represented a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6].  But we also found &apos;allele&apos; used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11], where such variations don&apos;t neccessarily impact a gene.
 
-A landsacpe review found mostly gene-centric definitions of &apos;allele&apos; that represented a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6].  But we also found &apos;allele&apos; used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11], where such variations don&apos;t neccessarily impact a gene.
-
-To be maximally accommodating of how this term is used across research communities, GENO defines &apos;allele&apos; broadly and allow alleles can span any locus or extent of sequence. While &apos;alleles&apos; encountered in public datases typically overlap a gene, GENO allows for alleles that do not. But we do define the subtype &apos;gene allele&apos; that refers more specifically to a particular version of a gene.
+To be maximally accommodating of how this term is used across research communities, GENO defines &apos;allele&apos; broadly and allow alleles can span any locus or extent of sequence. While &apos;alleles&apos; encountered in public datases typically overlap a gene, many do not. But GENO does define the &apos;gene allele&apos; class as a subtype of &apos;allele&apos; to refers more specifically to a specifc version of an entire gene.
 	
 [1] https://isogg.org/wiki/Allele (retrieved 2018-03-17)
 [2] http://semanticscience.org/resource/allele (retrieved 2018-03-17)
@@ -3832,7 +3834,11 @@ To be maximally accommodating of how this term is used across research communiti
 [8]  https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism (retrieved 2018-03-17)
 [9] http://purl.obolibrary.org/obo/OGI_0000008 (retrieved 2018-03-17)
 [10] http://purl.obolibrary.org/obo/OBI_0001352 (retrieved 2018-03-17)
-[11] http://purl.phyloviz.net/ontology/typon#Allele (retrieved 2018-03-17)</rdfs:comment>
+[11] http://purl.phyloviz.net/ontology/typon#Allele (retrieved 2018-03-17)</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">variable feature</obo:IAO_0000118>
+        <rdfs:comment>An allele is a seqeunce feature at a genomic locus where variation occurs (i.e. where &gt;1 different sequence is known to exist). The minimal extent of an allele is the variable sequence itself (i.e. a &apos;sequence alteration&apos;), but the notion of an allele here may include larger regions that contain one or more sequence alterations as part (e.g. a &apos;gene allele&apos; that spans an entire gene contianing known alterations).
+
+The notion of an &apos;allele&apos; captures the state of the sequence found at a genetic locus, be it variant or reference. In this way an &apos;allele&apos; is distinct from the concept of a  genetic &apos;variant&apos; - which implies a state that differs from some &apos;reference&apos; sequence at tNotably, what is considered the &apos;reference&apos; state at a particular locus may vary, depending on the context/goal of a particular analysis.</rdfs:comment>
         <rdfs:label>allele</rdfs:label>
     </owl:Class>
     
@@ -6251,10 +6257,23 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000949">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000141"/>
-        <obo:IAO_0000115>An inheritance pattern with a genetic component determined by alleles of mitochondrial genes.</obo:IAO_0000115>
+        <obo:IAO_0000115>An inheritance pattern observed for traits related to a gene encoded on the mitochondrial genome.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/HP_0001427</oboInOwl:hasDbXref>
+        <rdfs:comment>Because the mitochondrial genome is essentially always maternally inherited, a mitochondrial condition can only be transmitted by females, although the condition can affect both sexes. The proportion of mutant mitochondria can vary (heteroplasmy).</rdfs:comment>
         <rdfs:label xml:lang="en">mitochondrial inheritance</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000949"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An inheritance pattern observed for traits related to a gene encoded on the mitochondrial genome.</owl:annotatedTarget>
+        <terms:source>Human Phenotype Ontology (HPO)</terms:source>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000949"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Because the mitochondrial genome is essentially always maternally inherited, a mitochondrial condition can only be transmitted by females, although the condition can affect both sexes. The proportion of mutant mitochondria can vary (heteroplasmy).</owl:annotatedTarget>
+        <terms:source>Human Phenotype Ontology (HPO)</terms:source>
+    </owl:Axiom>
     
 
 
@@ -6977,6 +6996,12 @@ Every zebrafish genome contains a &apos;gene allele&apos; for every zebrafish ge
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000902">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
         <obo:IAO_0000115>A gene that has been transferred naturally or by any of a number of genetic engineering techniques into a cell or organism where it is foreign (i.e. does not belong to the host genome).</obo:IAO_0000115>
+        <rdfs:comment>On the relationship between &apos;transgenic insertions&apos;, &apos;transgenes&apos;, and &apos;alleles&apos;
+Transgenic insertions are sequence alterations comprised of foreign/exogenous sequence. This sequence can be from the same or different species  as the host cell or genome - it is exogenous in virtue of it being additional sequence inserted into the original host genome. A given transgenic insertion may create one or more transgenes when introduced into a host genome. The extent of a transgene is spans all features needed to drive its expression in the host genome.  In most cases a transgenic insertion completely contains one or more transgenes that are fully competent to drive expression in the host genome.  But in some cases, a transgenic insertion may carry only part of the final transgene it creates - which requires additional endogenous sequences in the vicinity of its insertion site to complete a functional gene (e.g. this is the case for enhancer traps or gene  traps) to complete.
+
+In addition to the transgenes they create upon genomic integration, transgenic insertions can create variant alleles by disrupting a known endogenous gene/locus. Variant alleles are versions of a particular genomic features (typically genes), that are altered in their sequence relative to some reference.  An insertion that disrupts an endogenous gene would be considered a &apos;sequence alteration&apos; (sensu SO) which creates a &apos;variant gene allele&apos;. From the perspective of this disrupted gene, the origin or transgenic nature of this insertion is irrelevant - what matters here is that the gene&apos;s sequence has been altered to create an allele.  
+
+For the purposes of modeling, any transgene(s) created when an endogenous gene is interrupted by an insertion is considered/modeled separately from the allele of the endogenous gene that is created by the insertion.  The transgenic insertion, which is simply a sequence alteration in the host genome, is then linked to any transgenes that it contributes to or overlaps with or contains.  The model of the Flybase example HERE illustrates this approach.</rdfs:comment>
         <rdfs:comment>Transgenes can exist as integrated into the host genome, or extra-chromosomally on replicons or transiently carried/expressed vectors.  What matters is that they are active in the context of a foreign biological system (typically a cell or organism).
 
 Note that transgenes as defined here are not necessarily from a different taxon than that of the host genome.  For example, a Mus musculus gene over-expressed from a chromosomally-integrated expression construct in a Mus musculus genome qualifies as a transgene because it is exogenous to the host genome.</rdfs:comment>
@@ -7880,5 +7905,5 @@ Codes for: http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
