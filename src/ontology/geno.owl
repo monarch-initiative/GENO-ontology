@@ -1370,7 +1370,7 @@ Note that a separate chain is needed to propagate from the variant locus to the 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000959">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000957"/>
         <obo:IAO_0000115>Holds between a copy number complement (or functional copy number complement) and a feature-based location on a reference sequence that defines sequence features qualifying for membership in the complement. The location here is specified indirectly by reference to a named feature (typically a gene) that has a precise location in a reference genome</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has_defining_feature_location</rdfs:label>
+        <rdfs:label xml:lang="en">has_defining_feature-based_location</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -3867,9 +3867,9 @@ To be maximally accommodating of how this term is used across research communiti
 [10] http://purl.obolibrary.org/obo/OBI_0001352 (retrieved 2018-03-17)
 [11] http://purl.phyloviz.net/ontology/typon#Allele (retrieved 2018-03-17)</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">variable feature</obo:IAO_0000118>
-        <rdfs:comment>An allele is a seqeunce feature at a genomic locus where variation occurs (i.e. where &gt;1 different sequence is known to exist). The minimal extent of an allele is the variable sequence itself (i.e. a &apos;sequence alteration&apos;), but the notion of an allele here may include larger regions that contain one or more sequence alterations as part (e.g. a &apos;gene allele&apos; that spans an entire gene contianing known alterations).
+        <rdfs:comment>An allele is a seqeunce feature at a genomic locus where variation occurs (i.e. where &gt;1 different sequence is known to exist). An allele can span only the extent of sequence known to vary (e.g. a single base SNP, or short insertion), or it can span a larger extent that includes one or more variable features as proper parts (e.g. a &apos;gene allele&apos; that spans the extent of an entire gene which contains several sequence alterations).
 
-The notion of an &apos;allele&apos; captures the state of the sequence found at a genetic locus, be it variant or reference. In this way an &apos;allele&apos; is distinct from the concept of a  genetic &apos;variant&apos; - which implies a state that differs from some &apos;reference&apos; sequence at tNotably, what is considered the &apos;reference&apos; state at a particular locus may vary, depending on the context/goal of a particular analysis.</rdfs:comment>
+Alleles can carry &apos;reference&apos; or &apos;variant&apos; sequence - depending on whether the its &apos;state&apos; matches that considered to be the reference at that location. Alleles whose state differs from the reference are called &apos;variant alleles&apos;, and those that match the reference are called &apos;reference alleles&apos;. What is considered the &apos;reference&apos; state at a particular locus may vary, depending on the context/goal of a particular analysis. A &apos;sequence alteration&apos; is a &apos;variant allele&apos; that varies along its entire extent (i.e every position varies from that of some defined reference sequence).</rdfs:comment>
         <rdfs:label>allele</rdfs:label>
     </owl:Class>
     
@@ -4734,7 +4734,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An ordered collection units representing successive monomers of a biological macromolecule.</obo:IAO_0000115>
+        <obo:IAO_0000115>A linear ordering of units representing monomers of a biological macromolecule (e.g. nucleotides in DNA and RNA, amino acids in polypeptides).</obo:IAO_0000115>
         <obo:IAO_0000116>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
 2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of &apos;sequence feature&apos; in the Sequence Ontology).
@@ -5636,16 +5636,17 @@ Germline, or hereditary, alleles are present throughout a person’s life in vir
     <!-- http://purl.obolibrary.org/obo/GENO_0000890 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000890">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000701"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000112>The canonical allele that represents a single nucleotide variation in the BRCA2 gene, which can be described by various contextual alleles such as “NC_000013.11:g.32319070T&gt;A” and “NG_012772.3:g.8591T&gt;A”.</obo:IAO_0000112>
         <obo:IAO_0000115>One of a set of sequence features or haplotypes that exist at a particular genetic locus. &lt;see ClinGen Allele Model&gt;</obo:IAO_0000115>
         <obo:IAO_0000116>The notion of a &apos;canonical allele&apos; is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.</obo:IAO_0000116>
         <obo:IAO_0000119>http://dataexchange.clinicalgenome.org/allele/resource/canonical_allele/</obo:IAO_0000119>
+        <obo:IAO_0000231>No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs.</obo:IAO_0000231>
         <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
         <rdfs:comment>As a &apos;sequence feature or collection&apos; (sensu SO), a &apos;canonical allele&apos; is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence). Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand.
 
 In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;contextual alleles&apos;. Contextual alleles are informational representation that describe a canonical allele using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation (e.g. different chromosomal or transcript references)</rdfs:comment>
-        <rdfs:label>canonical allele</rdfs:label>
+        <rdfs:label>obsolete_canonical allele</rdfs:label>
     </owl:Class>
     
 
@@ -5653,19 +5654,16 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
     <!-- http://purl.obolibrary.org/obo/GENO_0000891 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000891">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000890"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>An informational artifact that describes a canonical allele by defining its sequence and position relative to a particular reference sequence.</obo:IAO_0000115>
         <obo:IAO_0000116>The notion of a &apos;contextual allele&apos; is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.</obo:IAO_0000116>
         <obo:IAO_0000119>http://dataexchange.clinicalgenome.org/allele/resource/contextual_allele/</obo:IAO_0000119>
+        <obo:IAO_0000231>No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs.
+
+Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_0000231>
         <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
         <rdfs:comment>The notion of a &apos;contextual allele&apos; derives from the ClinGen Allele model. Here, each genetic allele in a patient corresponds to a single &apos;canonical allele&apos;, which in turn may aggregate any number of &apos;contextual allele&apos; representations that are may be defined against different reference sequences. Accordingly, many contextual alleles can describe a single canonical allele. For example, the contextual alleles “NC_000013.11:g.32319070T&gt;A” and “NG_012772.3:g.8591T&gt;A” both describe the same underlying canonical allele, a single nucleotide variation, in the BRCA2 gene.</rdfs:comment>
-        <rdfs:label>contextual allele</rdfs:label>
+        <rdfs:label>obsolete_contextual allele</rdfs:label>
     </owl:Class>
     
 
@@ -6760,7 +6758,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000143">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001410"/>
         <obo:IAO_0000115>A region of known length which may be used to manufacture a longer region.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">assembly_component</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete_assembly_component</rdfs:label>
     </owl:Class>
     
 
@@ -6770,7 +6768,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000149">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000143"/>
         <obo:IAO_0000115>A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N&apos;s from unavailable bases.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">contig</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete_contig</rdfs:label>
     </owl:Class>
     
 
@@ -7209,9 +7207,10 @@ For a particular instance of a sequence alteration, howver, we may in some cases
     <!-- http://purl.obolibrary.org/obo/SO_0001410 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001410">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">experimental_feature</rdfs:label>
+        <obo:IAO_0000231>not currently needed to support modeling use cases. can re-introduce if becomes necessary.</obo:IAO_0000231>
+        <rdfs:label xml:lang="en">obsolete_experimental_feature</rdfs:label>
     </owl:Class>
     
 
