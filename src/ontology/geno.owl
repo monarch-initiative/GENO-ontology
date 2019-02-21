@@ -2464,17 +2464,7 @@ A variant allele can be variant along its entire extent, in which case it is con
     <!-- http://purl.obolibrary.org/obo/GENO_0000014 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000014">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000915"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000683"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000512"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000408"/>
@@ -5422,7 +5412,7 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
     <!-- http://purl.obolibrary.org/obo/GENO_0000871 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000871">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
         <obo:IAO_0000115>A set of discrete, genetically-linked sequence alterations that reside on the same chromosomal strand and are typically co-inherited within a haplotype block.</obo:IAO_0000115>
         <terms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</terms:source>
         <rdfs:comment>A haplotype is a set of non-overlapping alleles that reside in close proximity on the same DNA strand. We model them as &apos;complements&apos; because they include all known/relevant alleles within a defined region in the genome (e.g. a &apos;gene&apos;, or a &apos;haplotype block&apos;) - where this set may consist of 0, 1, or more alterations from some reference.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction. 
@@ -5436,7 +5426,7 @@ As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplot
 3. Each of the &apos;alleles&apos; comprising the haplotype is itself a &apos;gene allele&apos; (i.e. a specific version of an entire gene), such that the haolotype contains multiple complete &apos;gene alleles&apos; that are co-inherited because they reside in tightly linked clusters on a single chromosome. 
 
 Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case. The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
-        <rdfs:label xml:lang="en">obsolete_haplotype</rdfs:label>
+        <rdfs:label xml:lang="en">haplotype</rdfs:label>
     </owl:Class>
     
 
@@ -5797,7 +5787,7 @@ Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_000023
     <!-- http://purl.obolibrary.org/obo/GENO_0000898 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000898">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
         <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.</obo:IAO_0000115>
         <obo:IAO_0000116>Consider whether we might better model a &apos;haplotype block&apos; at the level of a sequence location, rather than a sequence region - e.g. as 
 &quot;A genomic location over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.&quot;
@@ -5805,7 +5795,7 @@ Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_000023
 Current definition is based on http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block (def = A region of the genome which is co-inherited as the result of the lack of historic recombination within it). If we stick with a region-level treatment, consdier if as a defined region of genomic sequence where variation is known to occur, a haplotype block should be classified as a subtype of allele.</obo:IAO_0000116>
         <obo:IAO_0000119>Informed by http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block, and  DOI: 10.1126/science.1069424.</obo:IAO_0000119>
         <rdfs:comment>A particular haplotype block is defined by the set of sequence alterations it is known to contain, which collectively represent a &apos;haplotype&apos;.  The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations.  A haplotype block may span any number of sequence alterations, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.</rdfs:comment>
-        <rdfs:label xml:lang="en">obsolete_haplotype block</rdfs:label>
+        <rdfs:label xml:lang="en">haplotype block</rdfs:label>
     </owl:Class>
     
 
@@ -5959,22 +5949,15 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
     <!-- http://purl.obolibrary.org/obo/GENO_0000915 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000915">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000512"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000408"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000916"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A haplotype is an allele that represents one of many possible versions of a &apos;haplotype block&apos;, which defines a region of genomic sequence that is typically &apos;co-inherited&apos; across generations due to a lack of historically observed recombination within it.</obo:IAO_0000115>
         <obo:IAO_0000116>Former comment: &quot;Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project.&quot;</obo:IAO_0000116>
         <obo:IAO_0000119>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype and http://purl.obolibrary.org/obo/SO_0001024 ! haplotype.</obo:IAO_0000119>
+        <obo:IAO_0000231>Decided to represent haplotypes as collections of discrete alleles, rather than continuous features defined by such sets.
+
+Former SC axioms:
+- is_allele_of some &apos;haplotype block&apos;
+- &apos;has part&apos; some sequence_alteration</obo:IAO_0000231>
         <rdfs:comment>1. The relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos;:  a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.  In this sense, a gene allele can be considered to be a haplotype whose extent is that of a gene (as it is generally true that there is a low probability of recombination within any given gene).
 
 2. Haplotypes typically contain more than one &apos;genetically-linked&apos; loci where sequence alterations are known to exist, such that a set of alterations will be co-inherited together across many generations of reproduction.  A common use of &apos;haplotype&apos; is in phasing of patient WGS or WES data, where this term refers to sequence containing two or more alterations that are beleived to occur &apos;in cis&apos; on the same chromosomal strand.  
@@ -5988,7 +5971,7 @@ b. The second is a region containing multiple linked single nucleotide polymorph
 c. A third, which is related to the previous case, occurs when the extent of region containing linked SNPs is that of a single gene.  In this case, the haplotype represents a &apos;gene allele&apos; - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.
 
 The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
-        <rdfs:label xml:lang="en">haplotype</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete_haplotype</rdfs:label>
     </owl:Class>
     
 
@@ -5996,9 +5979,10 @@ The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and a
     <!-- http://purl.obolibrary.org/obo/GENO_0000916 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000916">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations.</obo:IAO_0000115>
         <obo:IAO_0000119>Derived from DOI: 10.1126/science.1069424 and http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block.</obo:IAO_0000119>
+        <obo:IAO_0000231>Decided to represent haplotypes as collections of discrete alleles, rather than continuous features defined by such sets.</obo:IAO_0000231>
         <rdfs:comment>A haplotype block is a class of genomic sequence defined by a  lack of evidence for historical recombination, such that sequence alterations within it tend to be co-inherited across successive generations. A haplotype is considered to be one of many possible versions of a &apos;haplotype block&apos; - defined by the set of co-inherited alterations it contains.  In this sense, the relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos;* - a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while  a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.
 
 The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations. A haplotype block may span any number of sequence alterations, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.
@@ -6006,7 +5990,7 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 -----------------------
 
 * One difference however is that gene instnaces are necessarily &apos;functional&apos; - so non-functional  alleles of a gene locus wont qualify as gene instances. no such requirement exists for haplotype block instnaces.</rdfs:comment>
-        <rdfs:label xml:lang="en">haplotype block</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete_haplotype block</rdfs:label>
     </owl:Class>
     
 
