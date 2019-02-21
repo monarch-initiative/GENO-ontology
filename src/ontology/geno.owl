@@ -778,8 +778,8 @@ Used in GENO to describe physical context of materialized sequence features that
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000714"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000715"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000919"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000920"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1329,6 +1329,8 @@ Note that a separate chain is needed to propagate from the variant locus to the 
     <!-- http://purl.obolibrary.org/obo/GENO_0000903 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000903">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
         <obo:IAO_0000115>A relation linking a sequence feature to the location it occupies on some reference sequence.</obo:IAO_0000115>
         <obo:IAO_0000118>occupies</obo:IAO_0000118>
         <rdfs:label xml:lang="en">has_location</rdfs:label>
@@ -1644,6 +1646,17 @@ Example 2: a collection of information entities such as a genotype being compris
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002522 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002522">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000654"/>
+        <obo:IAO_0000115>x bounds the sequence of y iff the upstream-most part of x is upstream of or coincident with the upstream-most part of y, and the downstream-most part of x is downstream of or coincident with the downstream-most part of y</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
+        <rdfs:label>bounds sequence of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002524 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002524">
@@ -1835,7 +1848,7 @@ Environments include natural environments or exposures, experimentally applied c
 
     <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000678">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-        <obo:IAO_0000115>Property linking a sequence or sequence feature to an integer representing its length iin terms of the number of units in the sequence.</obo:IAO_0000115>
+        <obo:IAO_0000115>Property linking a sequence or sequence feature to an integer representing its length in terms of the number of units in the sequence.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has_extent</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -3611,6 +3624,12 @@ Similarly, large sequence features lost from genome are akin to deletions and th
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000960"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
             </owl:Restriction>
@@ -4553,7 +4572,9 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
         <obo:IAO_0000115>An exhaustive collection of all features of a specified type in a single genome (e.g. all chromosomes in a genome, all variant features in a genome, all copies of a given gene or allele in a genome).</obo:IAO_0000115>
         <obo:IAO_0000116>In some cases there may be zero or only one member of such a complement, which is why this class is not defened to necessarily have some &apos;genomic feature&apos; as a member.</obo:IAO_0000116>
         <obo:IAO_0000118>genomic locus complement</obo:IAO_0000118>
-        <rdfs:comment>A genomic feature is any located sequence feature in the genome, from a single nucleotide to a gene into an entire chromosome. A complement is the collection of all elements in a set (i.e. &quot;the full number of things in a set&quot;).  Here, a &apos;genomic feature complement&apos; is here the set of all features in a single genome of a specified type (according to some defined inclusion criteria).</rdfs:comment>
+        <rdfs:comment>A genomic feature is any located sequence feature in the genome, from a single nucleotide to a gene into an entire chromosome. A complement is the collection of all elements in a set (i.e. &quot;the full number of things in a set&quot;).  Here, a &apos;genomic feature complement&apos; is here the set of all features in a single genome of a specified type (according to some defined inclusion criteria).
+
+The notion of a &apos;genomic feature complement&apos; differs from that of a &apos;genomic sequence complement&apos; in that we are counting how many copies of a particular &apos;feature&apos; exist in a genome, as opposed to how many copies of the same sequence exist in a genome. Consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates an entirely new sequence feature at a distinct locus from that of the original APOE gene.  The complement of APOE alleles, as genomic features, would not increase as a result, because the newly created feature is not an APOE allele (due to its location).  The complement of APOE gene sequence, however, would increase as a result, because membership in this complement is independent of location.</rdfs:comment>
         <rdfs:label xml:lang="en">genomic feature complement</rdfs:label>
     </owl:Class>
     
@@ -4727,7 +4748,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000702 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000702">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000921"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000896"/>
@@ -4887,13 +4908,21 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000720 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000720">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000780"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000702"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000780"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000780"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:label xml:lang="en">DNA sequence</rdfs:label>
     </owl:Class>
     
@@ -4902,13 +4931,21 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000721 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000721">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000781"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000702"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000781"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000781"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:label xml:lang="en">RNA sequence</rdfs:label>
     </owl:Class>
     
@@ -4917,13 +4954,21 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000722 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000722">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000782"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000702"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000782"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000783"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000782"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:label xml:lang="en">amino acid sequence</rdfs:label>
     </owl:Class>
     
@@ -5046,7 +5091,17 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <!-- http://purl.obolibrary.org/obo/GENO_0000779 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000779">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000702"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000678"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <obo:IAO_0000118>biological sequence residue</obo:IAO_0000118>
         <obo:IAO_0000118>monomeric residue</obo:IAO_0000118>
         <rdfs:label xml:lang="en">biological sequence unit</rdfs:label>
@@ -5368,23 +5423,19 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000871">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <obo:IAO_0000115>A set of genetically-linked sequence alterations, that reside at different locations on the same chromosomal strand and are typically inherited/transmitted together.</obo:IAO_0000115>
-        <obo:IAO_0000116>Former comment: &quot;Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project.&quot;</obo:IAO_0000116>
-        <obo:IAO_0000231>reconsiderd defintion of haplotype to better align with SO and GA4GH/VMC definitions.
-
-Former SC axiom: has_member some allele.</obo:IAO_0000231>
+        <obo:IAO_0000115>A set of discrete, genetically-linked sequence alterations that reside on the same chromosomal strand and are typically co-inherited within a haplotype block.</obo:IAO_0000115>
         <terms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</terms:source>
-        <rdfs:comment>Haplotypes are &apos;complements&apos; in that they include the set of all alterations in a defined region of the genome.  Because they are genetically linked, the alterations comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction.  Haplotypes are located within &apos;haplotype blocks&apos; - regions of DNA where no recombination occurs between the included alterations on a chromosomal strand. The &apos;haplotype&apos; within a &apos;haplotype block&apos; may be comprised of any number of distinct alterations.
-
---------
+        <rdfs:comment>A haplotype is a set of non-overlapping alleles that reside in close proximity on the same DNA strand. We model them as &apos;complements&apos; because they include all known/relevant alleles within a defined region in the genome (e.g. a &apos;gene&apos;, or a &apos;haplotype block&apos;) - where this set may consist of 0, 1, or more alterations from some reference.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction. 
 
 As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is most commonly used to describe the following scenarios of genetic linkage between &apos;alleles&apos;:
 
-a. Each &apos;allele&apos; comprising a haplotype is a &apos;gene allele&apos; (i.e. a specific version of an entire gene), and multiple such &apos;gene alleles&apos; are co-inherited because they reside in tightly linked clusters on a single chromosome.  
-b. Each &apos;allele&apos; in the haplotype is a single nucleotide polymorphisms (SNPs) that tends to occur together on a chromosomal strand (i.e. be statistically associated). This use of &apos;haplotype&apos; is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur &apos;in cis&apos; on the same chromosomal strand.  
-c. Each &apos;allele&apos; in the haplotype is a SNP or other small alteration, and these alterations collectively define a specific version of a gene.  In this case, the haplotype represents a &apos;gene allele&apos; - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this to be a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.
+1. The &apos;alleles&apos; comprising the haplotype are &apos;single nucleotide polymorphisms&apos; (SNPs) that collectively tend to occur together on a chromosomal strand). This use of &apos;haplotype&apos; is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur &apos;in cis&apos; on the same chromosomal strand.  
 
-The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
+2. The &apos;alleles&apos; comprising the haplotype are SNPs or other short alterations, which collectively define a specific version of a gene. In this case, the locaiton bounding the haplotype corresponds to the location of a gene, and the haplotype defines a specific allele of that gene (i.e &apos;gene allele&apos;). &quot;Star alleles&quot; of PGx genes are examples of this category of haplotype (e.g. https://www.ebi.ac.uk/cgi-bin/ipd/imgt/hla/get_allele_hgvs.cgi?A*33:01:01, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4724253/).
+
+3. Each of the &apos;alleles&apos; comprising the haplotype is itself a &apos;gene allele&apos; (i.e. a specific version of an entire gene), such that the haolotype contains multiple complete &apos;gene alleles&apos; that are co-inherited because they reside in tightly linked clusters on a single chromosome. 
+
+Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case. The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
         <rdfs:label xml:lang="en">obsolete_haplotype</rdfs:label>
     </owl:Class>
     
@@ -5394,15 +5445,18 @@ The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and a
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000872">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000922"/>
-        <obo:IAO_0000115>The collection of all copies of a particular sequence present in a genome. The count of sequences in a genomic sequence complement is called its &apos;copy number&apos;.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000957"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The collection of all copies of a biological sequence present in a particular genome.</obo:IAO_0000115>
         <obo:IAO_0000118>copy number complement</obo:IAO_0000118>
-        <obo:IAO_0000231>Decided to implement copy number concepts at the sequence feature complement level</obo:IAO_0000231>
-        <rdfs:comment>The count of sequences in a genomic sequence complement is called its &apos;copy number&apos;. In diploid organisms, the normal count, or copy number, is 2 for autosomal genes/regions. &apos;Copy number variations&apos; occur if this count increases due to a duplication of the gene/region, or decreases due to a deletion of a gene/region. 
+        <rdfs:comment>The notion of a &apos;genomic sequence complement&apos; differs from that of a &apos;genomic feature complement&apos; in that we are counting how many copies of the same *sequence* exist in a genome, as opposed to how many of the same *feature*.  Consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates an entirely new sequence feature at a distinct locus from that of the original APOE gene.  The &apos;genomic sequence complement&apos; based on the APOE gene locus would have a count of three, as this sequence is present three times in the genome.  But the &apos;genomic feature complement&apos; for the APOE gene locus would still have a count of two - because the duplicated copy is at a different location in the genome, and therefore does not represent a copy of the APOE locus.
 
-The notion of a &apos;genomic sequence complement&apos; differs from that of a &apos;genomic feature complement&apos; in that we are counting how many copies of the same *sequence* exist in a genome, as opposed to how many of the same *feature*.  Consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates a new sequence feature at a distinct locus from that of the original APOE gene.  The genomic sequence complement would have a count of three, as the sequence of the APOE gene is present three times in the genome.  But the genomic feature complement for the APOE gene locus would still have a count of two - because the duplicated copy is at a different location that does not align with the APOE locus when mapped to a genomic reference.   
-
-The notion of a genomic  sequence complement is useful for describing copy number variations, which are concerned only with how many copies of a sequence exist in a genome, regardless of the locus where these reside.</rdfs:comment>
-        <rdfs:label xml:lang="en">obsolete_genomic sequence complement</rdfs:label>
+The notion of a genomic  sequence complement is useful for describing copy number variations, which are concerned only with how many copies of a sequence exist in a genome, regardless of the locus where these reside.  See annotations on &apos;copy number complement&apos; for more.</rdfs:comment>
+        <rdfs:label xml:lang="en">genomic sequence complement</rdfs:label>
     </owl:Class>
     
 
@@ -5744,13 +5798,13 @@ Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_000023
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000898">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations.</obo:IAO_0000115>
-        <obo:IAO_0000116>Consider http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block. And consider whether, as a defined region of genomic sequence where variation is known to occur, a haplotype block should be classified as a subtype of allele.</obo:IAO_0000116>
-        <obo:IAO_0000119>From DOI: 10.1126/science.1069424</obo:IAO_0000119>
-        <obo:IAO_0000231>reconsiderd defintion of haplotype to better align with SO and GA4GH/VMC definitions.
+        <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.</obo:IAO_0000115>
+        <obo:IAO_0000116>Consider whether we might better model a &apos;haplotype block&apos; at the level of a sequence location, rather than a sequence region - e.g. as 
+&quot;A genomic location over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.&quot;
 
-Former SC axiom: has_part some haplotype</obo:IAO_0000231>
-        <rdfs:comment>A &apos;haplotype block&apos; is a continuous region of sequence that contains &apos;haplotypes&apos; -  sets of discontinuous, genetically-linked sequence alterations on the same chromosomal strand that are typically co-inherited within this haplotype block. The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations.  A haplotype block may span one sequence alteration or several, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.</rdfs:comment>
+Current definition is based on http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block (def = A region of the genome which is co-inherited as the result of the lack of historic recombination within it). If we stick with a region-level treatment, consdier if as a defined region of genomic sequence where variation is known to occur, a haplotype block should be classified as a subtype of allele.</obo:IAO_0000116>
+        <obo:IAO_0000119>Informed by http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block, and  DOI: 10.1126/science.1069424.</obo:IAO_0000119>
+        <rdfs:comment>A particular haplotype block is defined by the set of sequence alterations it is known to contain, which collectively represent a &apos;haplotype&apos;.  The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations.  A haplotype block may span any number of sequence alterations, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.</rdfs:comment>
         <rdfs:label xml:lang="en">obsolete_haplotype block</rdfs:label>
     </owl:Class>
     
@@ -5945,9 +5999,13 @@ The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and a
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
         <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations.</obo:IAO_0000115>
         <obo:IAO_0000119>Derived from DOI: 10.1126/science.1069424 and http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block.</obo:IAO_0000119>
-        <rdfs:comment>A haplotype block is a class of genomic sequence defined by a  lack of evidence for historical recombination, such that sequence alterations within it tend to be co-inherited across successive generations. A haplotype is considered to be one of many possible versions of a &apos;haplotype block&apos; - defined by the set of co-inherited alterations it contains.  In this sense, the relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos;  - a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while  a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.  
+        <rdfs:comment>A haplotype block is a class of genomic sequence defined by a  lack of evidence for historical recombination, such that sequence alterations within it tend to be co-inherited across successive generations. A haplotype is considered to be one of many possible versions of a &apos;haplotype block&apos; - defined by the set of co-inherited alterations it contains.  In this sense, the relationship between &apos;haplotype&apos; and &apos;haplotype block&apos; is analogous to the relationship between &apos;gene allele&apos; and &apos;gene&apos;* - a &apos;gene allele&apos; is one of many possible instances of a &apos;gene&apos;, while  a &apos;haplotype&apos; is one of many possible instances of a &apos;haplotype block&apos;.
 
-The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations.  A haplotype block may span one sequence alteration or several, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.</rdfs:comment>
+The boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations. A haplotype block may span any number of sequence alterations, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.
+
+-----------------------
+
+* One difference however is that gene instnaces are necessarily &apos;functional&apos; - so non-functional  alleles of a gene locus wont qualify as gene instances. no such requirement exists for haplotype block instnaces.</rdfs:comment>
         <rdfs:label xml:lang="en">haplotype block</rdfs:label>
     </owl:Class>
     
@@ -6005,9 +6063,8 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
     <!-- http://purl.obolibrary.org/obo/GENO_0000921 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000921">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <obo:IAO_0000231>Decided to implement copy number concepts at the sequence feature complement level, and therefore dont need thenotion of a biological sequence complement.</obo:IAO_0000231>
-        <rdfs:label xml:lang="en">obsolete_biological sequence or collection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:label xml:lang="en">biological sequence or collection</rdfs:label>
     </owl:Class>
     
 
@@ -6016,8 +6073,7 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000922">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000921"/>
-        <obo:IAO_0000231>Decided to implement copy number concepts at the sequence feature complement level</obo:IAO_0000231>
-        <rdfs:label xml:lang="en">obsolete_biological sequence complement</rdfs:label>
+        <rdfs:label xml:lang="en">biological sequence complement</rdfs:label>
     </owl:Class>
     
 
@@ -6025,20 +6081,15 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
     <!-- http://purl.obolibrary.org/obo/GENO_0000923 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000923">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000957"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A set of all features representing *functional* versions of a specified sequence (typically that of a gene) in a particular genome.</obo:IAO_0000115>
         <obo:IAO_0000116>Formerly considered modeling this as an informational entity, defined as &quot;An information entity that describes the total number of functional copies of a gene or region of sequence in a particular genome.&quot;</obo:IAO_0000116>
         <obo:IAO_0000118>functional feature complement</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">genetic dosage</obo:IAO_0000118>
+        <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level.</obo:IAO_0000231>
         <rdfs:comment>As for copy number complements, the defining &apos;sequence&apos; here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a functional copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify if that alteration eliminates the function of the allele.  This represents an important distinction between &apos;copy number&apos; and &apos;functional copy number&apos;. The former is not concerned with the functionality of sequence copies - only that there is a duplication of sequence in the genome. Thus, the addition of a non-functional allele of a gene will increase its copy number, but not increase its &apos;functional copy number (aka its dosage).</rdfs:comment>
         <rdfs:comment>The notion of &apos;functional copy number&apos; (aka &apos;genetic dosage&apos;) describes how many &apos;functional&apos; copies of a sequence are present in a genome - i.e. sequences that retain their normal activity and/or produce gene products that retain their normal activity.  In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.</rdfs:comment>
-        <rdfs:label>functional copy number complement</rdfs:label>
+        <rdfs:label>obsolete_functional copy number complement</rdfs:label>
     </owl:Class>
     
 
@@ -6353,10 +6404,11 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000956"/>
         <obo:IAO_0000115>A copy number complement&apos; that has an abnormal number of members (e.g. more or less than two for an autosomal sequence in a diploid genome, as a result of deletion or duplication event(s).</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">copy number variation</obo:IAO_0000118>
+        <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level.</obo:IAO_0000231>
         <rdfs:comment>In a &apos;normal&apos; diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s).
 
 Note that the &apos;copy number variation&apos; class in GENO is related to but ontologically distinct form the SO &apos;copy_number_variation&apos; class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set is in conflict with the genome&apos;s normal ploidy (e.g. not two for a diploid genome). The SO class, which is defined as a sequence feature level concept and therefore represents a single continuous extent of sequence, refers to a single copy of duplicated (or deleted) sequence that comprises the set defined by the GENO CNV class.</rdfs:comment>
-        <rdfs:label>variant copy number complement</rdfs:label>
+        <rdfs:label>obsolete_variant copy number complement</rdfs:label>
     </owl:Class>
     
 
@@ -6364,20 +6416,73 @@ Note that the &apos;copy number variation&apos; class in GENO is related to but 
     <!-- http://purl.obolibrary.org/obo/GENO_0000956 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000956">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000957"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A set of all features in a particular genome whose sequence aligns with a particular location on a reference genome.  Such features are typically on the scale of complete genes or larger.</obo:IAO_0000115>
+        <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level.</obo:IAO_0000231>
         <rdfs:comment>1. Features described by &apos;copy number&apos; are larger regions of sequence spanning one or more complete genes, or large chromosomal segment. Copies of these regions often become distributed across a genome at unknown locations. By contrast, short repeats, such as tri-nucelotide &apos;CAG&apos; repeats in the Huntingtin gene, occur at defined locations (adjacent to the originating &apos;CAG&apos; sequence), and can therefore be modeled as proper alleles.  
 
 2. A copy number complement, like any sequence feature complement, is a set of features in a particular genome that meet some criterion. The criterion in this case is that their sequence maps to that of a particular location in a reference sequence.  So a copy number complement is the set of all features that share or align with a specified sequence defined on some reference. The sequence of member sequences need not exactly match that of the reference, as copies may accrue some alterations. What is important is that conceptually they represent exact or inexact copies of the reference sequence at a defining location.
 
 3. In a &apos;normal&apos; diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s). In GENO, a &apos;copy number variation&apos; refers to a copy number complement&apos; that has an abnormal number of members.</rdfs:comment>
+        <rdfs:label xml:lang="en">obsolete_copy number complement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000960 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000960">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000251"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
+        <obo:IAO_0000115>A biological sequence that is found in the genome of a cell or organism.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">genomic sequence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000961 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000961">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000872"/>
+        <obo:IAO_0000115>A collection of all copies of a particular biological sequence (typically at the scale of complete genes or larger) present in a particular genome.</obo:IAO_0000115>
+        <obo:IAO_0000116>The identity of a &apos;copy number complement&apos; instance is determined by its defining sequence, and its count (the number of times this sequence appears on a feature in a particular genome). In reality the sequence of each copy need not be identical, given the tendency of large regions to accumulate subtle variations. What matters is that they share a common origin/alignment with a defining location in a reference genome.
+
+We represent the notion of copy number at the &quot;sequence level&quot; (as opposed to the &quot;sequence feature level&quot;)  because we are concerned only with the number of copies of a sequence in a genome, and not the location of the features bearing this sequence. Consider a copy number complement comprised of three copies of the sequence defined by the location Chr8 100000-200000 on a GRCh38.2 reference genome.  In one person&apos;s genome, this sequence may appear on features located on chromosomes 2, 5, and 12, and in another genome they might be located on chromosomes 4, 9, and 15.  When representing association data linking copy number to disease, it is important that these are considered to be *the same* copy number complement - because what a curator associates with a disease is the presence of three copies of some sequence in a genome, independent of their location. The &quot;sequence level&quot; representation here supports this use case.  By contrast, a &quot;sequence feature level&quot; representation, where copy number identity would be based on the identity of member features), does not. From this perspective, two separate copy number complements would need to be created for the scenario above, because we have two sets comprised of entirely different features (based on their locations being tied to their identity).</obo:IAO_0000116>
+        <rdfs:comment>The count of how many of a particular sequence is present is called its &apos;copy number&apos;. In diploid organisms, the normal copy number for sequences at most locations is 2 (a notable exception being those on the X-chromosome where normal copy number is 1). &apos;Copy number variations&apos; occur if this count increases due to a duplication of the gene/region, or decreases due to a deletion of a gene/region. A driving use case for representing copy number is to support associations between variation in copy number of a particular sequence, and phenotypes or diseases that can result.</rdfs:comment>
         <rdfs:label xml:lang="en">copy number complement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000962 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000962">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000961"/>
+        <obo:IAO_0000115>A &apos;copy number complement&apos; that has an abnormal number of members, as the result of deletion or duplication event(s).</obo:IAO_0000115>
+        <obo:IAO_0000116>Note that this &apos;variant copy number complement&apos; class in GENO is related to but ontologically distinct from the SO &apos;copy number variation&apos; class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set departs from the genome&apos;s normal ploidy of sequences at that location. The SO class, which is defined as a &quot;sequence feature level&quot; concept (and therefore represents a single continuous extent of sequence), refers to a sequence alteration such as a deletion or duplication that changes the copy number of the affected sequence, and would result in the presence of  a &apos;variant copy number complement&apos;.  The presence of an SO &apos;copy number variation&apos; suggests, but does not guarantee, the existence of a GENO &apos;variant copy number complement&apos;.
+
+For example, the deletion variant reported in the ClinVar record here (https://www.ncbi.nlm.nih.gov/clinvar/variation/21009/) is a copy number variation in the SO sense - a deletion that likely results in a GENO &apos;variant copy number complement&apos;. Databases like ClinVar and dbVar type such alterations as &apos;copy number variants&apos;.  But ClinVar also describes &apos;variant copy number complements&apos; that may result from the presence of one or more SO &apos;copy number variations&apos; in a given genome, e.g. here ( https://www.ncbi.nlm.nih.gov/clinvar/variation/221691/).  In this case, the submitter is asserting that a state in which only one copy of the defined sequence (Chr2: 73601366 - 73673202) exists in a genome is pathogenic for &apos;Premature ovarian failure&apos;.  This requires more knowledge of the complete genomic state than an assertion that a specific SO &apos;copy number variation&apos; (here, a deletion variant) is pathogenic for the condition - as here we know that not only is one copy deleted, but also that only one copy remains.</obo:IAO_0000116>
+        <rdfs:comment>&apos;Abnormal&apos; is typically more or less than two for an autosomal sequence in a diploid genome, where a normal copy number complement contains two members.</rdfs:comment>
+        <rdfs:label xml:lang="en">variant copy number complement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000963 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000963">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000872"/>
+        <obo:IAO_0000115>A set of all features representing functional versions of a specified sequence (typically that of a gene) in a particular genome.</obo:IAO_0000115>
+        <obo:IAO_0000118>genetic dosage</obo:IAO_0000118>
+        <rdfs:comment>The notion of &apos;functional copy number&apos; (aka &apos;genetic dosage&apos;) describes how many &apos;functional&apos; copies of a sequence are present in a genome - i.e. sequences that retain their normal activity and/or produce gene products that retain their normal activity.  In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many copies of a sequence exist in a genome regardless of their functionality. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.
+
+As for &apos;copy number complement&apos;, the defining sequence here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a &apos;functional&apos; copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify as functional if that alteration eliminates the activity of the allele.</rdfs:comment>
+        <rdfs:label xml:lang="en">functional copy number complement</rdfs:label>
     </owl:Class>
     
 
