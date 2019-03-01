@@ -2438,7 +2438,7 @@ A variant allele can be variant along its entire extent, in which case it is con
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>A sequence collection comprised of all &apos;variant single locus complements&apos; in a single genome, which together constitute the variant component of an intrinsic genotype.</obo:IAO_0000115>
+        <obo:IAO_0000115>A set representing the complement of all &apos;variant single locus complements&apos; in a single genome, which together constitute the variant component of a genomic genotype.</obo:IAO_0000115>
         <rdfs:comment>1. Note that even a reference feature (e.g. a wild-type gene) that is a member of a single locus complement that contains a variant allele is included in this &apos;genomic variation complement&apos;.  Thus, the members of this &apos;genomic variation complement&apos; (which is a sequence collection) are &apos;single locus variant complements&apos;.  Our axiom below uses has_part rather than has_member, however, to account for the fact that many &apos;genomic variation complements&apos; have only one &apos;single locus variant complement&apos; as members.  So because has_member is not reflexive, it is not appropriate for these cases.
 
 2. Most genotypes have only one altered locus (ie only one &apos;single-locus variant complement&apos;)  that distinguish it from some reference background. For example, the genotype instance &apos;fgf8a&lt;t1282a/+&gt;(AB)&apos;) exhibits a mutation at only one locus. But some genotypes vary at more than one locus (e.g. a double mutant that has alterations in the fgf8a gene and the shh gene)).</rdfs:comment>
@@ -3860,7 +3860,7 @@ The notion of wild-type alleles is more common in model organism databases, wher
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000115>One of a set of sequence features that exist at a particular genomic locus.</obo:IAO_0000115>
-        <obo:IAO_0000116>A landsacpe review found mostly gene-centric definitions of &apos;allele&apos; that represented a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6].  But we also found &apos;allele&apos; used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11], where such variations don&apos;t neccessarily impact a gene.
+        <obo:IAO_0000116>A landsacpe review found mostly gene-centric definitions of &apos;allele&apos; that represented a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6][6a].  But we also found &apos;allele&apos; used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11], where such variations don&apos;t neccessarily impact a gene.
 
 To be maximally accommodating of how this term is used across research communities, GENO defines &apos;allele&apos; broadly and allow alleles can span any locus or extent of sequence. While &apos;alleles&apos; encountered in public datases typically overlap a gene, many do not. But GENO does define the &apos;gene allele&apos; class as a subtype of &apos;allele&apos; to refers more specifically to a specifc version of an entire gene.
 	
@@ -3870,6 +3870,7 @@ To be maximally accommodating of how this term is used across research communiti
 [4] https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/allele (retrieved 2018-03-17)
 [5] http://purl.obolibrary.org/obo/SO_0001023 (retrieved 2018-03-17)
 [6] http://purl.obolibrary.org/obo/NCIT_C16277 (retrieved 2018-03-17)
+[6a] https://www.ncbi.nlm.nih.gov/mesh/68000483
 [7] https://www.snpedia.com/index.php/Allele (retrieved 2018-03-17)
 [8]  https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism (retrieved 2018-03-17)
 [9] http://purl.obolibrary.org/obo/OGI_0000008 (retrieved 2018-03-17)
@@ -3935,11 +3936,12 @@ Alleles can carry &apos;reference&apos; or &apos;variant&apos; sequence - depend
         <obo:IAO_0000112>The set of both shha gene alleles in a diiploid zebrafish genome, e.g. fgf8a&lt;ti282a/+&gt;.
 
 The collection of the individual base-pairs present at the position 24126737 in both copies of chromosome 5 in a diploid human genome.</obo:IAO_0000112>
-        <obo:IAO_0000115>The set of all sequence features occupying a particular genomic locus across all homologous chromosomes in the genome of a single organism.</obo:IAO_0000115>
+        <obo:IAO_0000115>A set representing the complement of all sequence features occupying a particular genomic locus across all homologous chromosomes in the genome of a single organism.</obo:IAO_0000115>
         <obo:IAO_0000116>TO DO: show a VCF representation of this example.</obo:IAO_0000116>
         <obo:IAO_0000118>allelic complement</obo:IAO_0000118>
+        <obo:IAO_0000118>homologous allellic complement</obo:IAO_0000118>
         <obo:IAO_0000118>single locus feature complement</obo:IAO_0000118>
-        <rdfs:comment>A genomic feature is any located feature in the genome, be it a junction, a single nucleotide, a gene, or an entire chromosome. The notion of a &quot;complement&quot; describes the collection of all elements in some defined set. The notion of &quot;homologous&quot; features describes those that occupy the same locus on homologous chromosomes in a genome. Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus. This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
+        <rdfs:comment>The notion of a &quot;complement&quot; describes the collection of all elements in some defined set. The notion of &quot;homologous&quot; features describes those that occupy the same locus on homologous chromosomes in a genome. Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus. This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
         <rdfs:label>single locus complement</rdfs:label>
     </owl:Class>
     
@@ -4094,7 +4096,7 @@ The identity of a given instance of a experssion-variant gene is dependent on ho
         <obo:IAO_0000119>Core definition above adapted from the GA4GH VMC data model definition here: https://docs.google.com/document/d/12E8WbQlvfZWk5NrxwLytmympPby6vsv60RxCeD5wc1E/edit#heading=h.4e32jj4jtmsl (retrieved 2018-04-09). 
 Note however that the VMC genotype concept likely is not intended to cover &apos;effective&apos; and &apos;extrinsic&apos; genotype concepts defined in GENO.</obo:IAO_0000119>
         <rdfs:comment>1. Scope of &apos;Genetic State&apos;: 
-&apos;Genetic state&apos; is considered quite broadly in GENO to describe two general kinds of &apos;states&apos;.  First, is traditional notion of &apos;allelic state&apos; - defined as the complement of alleles present at a particular locus ofr loci in a genome (i.e. across all homologous chromosomes containing this locus). Here, a genotype can describe allelic state at a specific locus in a genome (an &apos;allelic genotype&apos;), or describe the allelic state across the entire genome (&apos;genomic genotype&apos;). Second, this concept can also describe states of genomic features &apos;extrinsic&apos; to their intrinsic sequence, such as the expression status of a gene as a result of being specifically targeted by experimental interventions such as RNAi, morpholinos, or CRISPRs.
+&apos;Genetic state&apos; is considered quite broadly in GENO to describe two general kinds of &apos;states&apos;.  First, is traditional notion of &apos;allelic state&apos; - defined as the complement of alleles present at a particular locus or loci in a genome (i.e. across all homologous chromosomes containing this locus). Here, a genotype can describe allelic state at a specific locus in a genome (an &apos;allelic genotype&apos;), or describe the allelic state across the entire genome (&apos;genomic genotype&apos;). Second, this concept can also describe states of genomic features &apos;extrinsic&apos; to their intrinsic sequence, such as the expression status of a gene as a result of being specifically targeted by experimental interventions such as RNAi, morpholinos, or CRISPRs.
 
 2. Genotype Subtypes:
 In GENO, we use the term &apos;intrinsic&apos; for genotypes describing variation in genomic sequence, and &apos;extrinsic&apos; for genotypes describing variation in gene expression (e.g. resulting from the targeted experimental knock-down or over-expression of endogenous genes).  We use the term &apos;effective genotype&apos; to describe the total intrinsic and extrinsic variation in a cell or organism at the time a phenotypic assessment is performed. 
@@ -4201,9 +4203,9 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A genomic genotype that specifies the baseline sequence of a genome from which a variant genome is derived (through the introduction of sequence alterations).</obo:IAO_0000115>
-        <obo:IAO_0000116>Being a &apos;background genotype&apos; implies the derivation of some variant from this background (which is the case for most model organism database genotypes/strains). This is a subtly different notion than being a &apos;reference genotype&apos; , which can be any genotype that serves as a basis for comparison. But in a sense all background genotypes are by default reference genotypes, in that the derived variant genotype is compared against it.</obo:IAO_0000116>
-        <obo:IAO_0000118>reference genotype</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">background genotype</rdfs:label>
+        <obo:IAO_0000116>Being a &apos;genomic background&apos; implies that a variant genotype was derived from this background (which is the case for most model organism database genotypes/strains). This is a subtly different notion than being a &apos;reference genotype&apos; , which can be any genotype that serves as a basis for comparison. But in a sense all background genotypes are by default reference genotypes, in that the derived variant genotype is compared against it.</obo:IAO_0000116>
+        <obo:IAO_0000118>background genotype</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">genomic background</rdfs:label>
     </owl:Class>
     
 
@@ -4510,7 +4512,8 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000649">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000611"/>
         <obo:IAO_0000115>A background genotype whose sequence or identity is not known or specified.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">unspecified background genotype</rdfs:label>
+        <obo:IAO_0000118>unspecified background genotype</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">unspecified genomic background</rdfs:label>
     </owl:Class>
     
 
@@ -5061,7 +5064,7 @@ The notion of a &apos;genomic feature complement&apos; differs from that of a &a
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>An intrinsic genotype that specifies variation from a reference or background.</obo:IAO_0000115>
+        <obo:IAO_0000115>An intrinsic genotype that specifies variation from a defined reference genome.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">variant genomic genotype</rdfs:label>
     </owl:Class>
     
@@ -5192,7 +5195,7 @@ The notion of a &apos;genomic feature complement&apos; differs from that of a &a
 3. Some allelic genotype formats encode the genotype as a single string - e.g.  &quot;GRCh38 Chr12:258635(A;T)&quot; describes a heterozygous A/T allelic genotype of SNPs present at a specific position 258635 on human chromosome 12.</obo:IAO_0000112>
         <obo:IAO_0000115>A genotype that specifies the &apos;allelic state&apos; at a particular locus in the genome - i.e. the set of alleles present at this locus across all homologous chromosomes.</obo:IAO_0000115>
         <obo:IAO_0000118>single locus genotype</obo:IAO_0000118>
-        <rdfs:comment>An &apos;allelic genotype&apos; describes the set of alleles present at a particular locus (&apos;allelic genotype&apos;) in the genome. This use of the term &apos;genotype&apos; reflects its use in clinical genetics where variation has historically been assessed at a specific locus, and a genotype describes the allelic state at that particular location.
+        <rdfs:comment>An &apos;allelic genotype&apos; describes the set of alleles present at a particular locus in the genome. This use of the term &apos;genotype&apos; reflects its use in clinical genetics where variation has historically been assessed at a specific locus, and a genotype describes the allelic state at that particular location.
 
 This contrasts to the use of the term &apos;genotype in model orgnaism communities where it commonly describes the allelic state at all loci in a genome known to vary from an established reference or background.</rdfs:comment>
         <rdfs:label xml:lang="en">allelic genotype</rdfs:label>
@@ -5413,17 +5416,26 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000871">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000512"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A set of discrete, genetically-linked sequence alterations that reside on the same chromosomal strand and are typically co-inherited within a haplotype block.</obo:IAO_0000115>
+        <obo:IAO_0000116>Consider if we dont want to define this as a &apos;complement&apos;, as it implies a complet set of memebrs of a defined type.  But many haplotypes will be incomplete, due to lack of knowledge of other variation bound by the haplotype block.
+
+Instead, we can create an &apos;allele set&apos; class as the haplotype parent?</obo:IAO_0000116>
         <terms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</terms:source>
         <rdfs:comment>A haplotype is a set of non-overlapping alleles that reside in close proximity on the same DNA strand. We model them as &apos;complements&apos; because they include all known/relevant alleles within a defined region in the genome (e.g. a &apos;gene&apos;, or a &apos;haplotype block&apos;) - where this set may consist of 0, 1, or more alterations from some reference.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction. 
 
 As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is most commonly used to describe the following scenarios of genetic linkage between &apos;alleles&apos;:
 
-1. The &apos;alleles&apos; comprising the haplotype are &apos;single nucleotide polymorphisms&apos; (SNPs) that collectively tend to occur together on a chromosomal strand). This use of &apos;haplotype&apos; is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur &apos;in cis&apos; on the same chromosomal strand.  
+1. The &apos;alleles&apos; comprising the haplotype are &apos;single nucleotide polymorphisms&apos; (SNPs) or other small alterations, which  collectively tend to occur together on a chromosomal strand). This use of &apos;haplotype&apos; is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur &apos;in cis&apos; on the same chromosomal strand.  
 
-2. The &apos;alleles&apos; comprising the haplotype are SNPs or other short alterations, which collectively define a specific version of a gene. In this case, the locaiton bounding the haplotype corresponds to the location of a gene, and the haplotype defines a specific allele of that gene (i.e &apos;gene allele&apos;). &quot;Star alleles&quot; of PGx genes are examples of this category of haplotype (e.g. https://www.ebi.ac.uk/cgi-bin/ipd/imgt/hla/get_allele_hgvs.cgi?A*33:01:01, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4724253/).
+2. The &apos;alleles&apos; comprising the haplotype are SNPs or other short alterations, which collectively define a specific version of a gene. In this case, the locaiton bounding the haplotype corresponds to a gene locus, and the haplotype defines a specific allele of that gene (i.e &apos;gene allele&apos;). &quot;Star alleles&quot; of PGx genes are examples of this category of haplotype (e.g. https://www.ebi.ac.uk/cgi-bin/ipd/imgt/hla/get_allele_hgvs.cgi?A*33:01:01, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4724253/).
 
-3. Each of the &apos;alleles&apos; comprising the haplotype is itself a &apos;gene allele&apos; (i.e. a specific version of an entire gene), such that the haolotype contains multiple complete &apos;gene alleles&apos; that are co-inherited because they reside in tightly linked clusters on a single chromosome. 
+3. Each of the &apos;alleles&apos; comprising the haplotype is itself a &apos;gene allele&apos; (i.e. a specific version of an entire gene), such that the haolotype contains multiple complete &apos;gene alleles&apos; that are co-inherited because they reside in tightly linked clusters on a single chromosome.   
 
 Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case. The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
         <rdfs:label xml:lang="en">haplotype</rdfs:label>
@@ -5790,7 +5802,7 @@ Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_000023
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
         <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.</obo:IAO_0000115>
         <obo:IAO_0000116>Consider whether we might better model a &apos;haplotype block&apos; at the level of a sequence location, rather than a sequence region - e.g. as 
-&quot;A genomic location over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.&quot;
+&quot;A genomic location over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.&quot; Look at how teh concept is used in research, and if people think of each version of sequence in a haplotype block to be an instance. I think we would just call these versions &apos;alleles&apos;, and then  could define haplotype block as a location.
 
 Current definition is based on http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block (def = A region of the genome which is co-inherited as the result of the lack of historic recombination within it). If we stick with a region-level treatment, consdier if as a defined region of genomic sequence where variation is known to occur, a haplotype block should be classified as a subtype of allele.</obo:IAO_0000116>
         <obo:IAO_0000119>Informed by http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block, and  DOI: 10.1126/science.1069424.</obo:IAO_0000119>
@@ -5823,6 +5835,7 @@ Current definition is based on http://purl.obolibrary.org/obo/SO_0000355 ! haplo
         <obo:IAO_0000115>A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.</obo:IAO_0000115>
         <obo:IAO_0000116>&apos;Genomic Genotype&apos; vs &apos;Genome&apos; in GENO: 
 A genomic genotype is an information artifact with a representational syntax that can specify what is known about the complete sequence of a genome. This syntax describes &apos;reference&apos; and &apos;variant&apos; components - namely a &apos;background genotype&apos; and &apos;genomic variation complement&apos; - that must be operated on to resolve the genome sequence.  Specifically, the genome sequence is determined by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the reference &apos;background genotype&apos;.  So, while the total sequence content described in a genotype may exceed that of a single a genome (in that it includes a reference genome and variatoin complement), the intended resolution of these sequences is to arrive at a single genome sequence. It is this end-point that we consider when asserting that a genotype &apos;specifies&apos; a genome.</obo:IAO_0000116>
+        <obo:IAO_0000118>complete genotype</obo:IAO_0000118>
         <rdfs:comment>1. A genomic genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome (&apos;genomic background&apos;), and all specific variants from this reference (the &apos;genomic variation complement&apos;).  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the &apos;genomic variation complement&apos; for the corresponding sequences in the reference  &apos;genomic background&apos; sequence.
 
 2. &apos;Heritable&apos; genomic sequence is that which is passed on to subsequent generations of cells/organisms, and includes all chromosomal sequences, the mitochondrial genome, and any transmissable extrachromosomal replicons.</rdfs:comment>
