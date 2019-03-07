@@ -425,7 +425,7 @@ phenotype and (is_phenotype_of some (organism and (has_part some (&apos;material
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000413"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
         <obo:IAO_0000112>&lt;fgf8a^ti282a&gt;  is_allele_of  the &apos;danio rerio fgf8a&apos; gene locus.</obo:IAO_0000112>
-        <obo:IAO_0000115>A relation linking an instance of a variable feature (aka an allele) to a genomic locus it occupies. This is typically a gene locus, but a feature may be an allele of other types of named loci such as QTLs, or alleles of some unnamed locus of arbitrary size.</obo:IAO_0000115>
+        <obo:IAO_0000115>A relation linking an instance of a variable feature (aka an allele) to a genomic location/locus it occupies. This is typically a gene locus, but a feature may be an allele of other types of named loci such as QTLs, or alleles of some unnamed locus of arbitrary size.</obo:IAO_0000115>
         <obo:IAO_0000116>Domain = allele 
 Range = genomic locus (but in practice it is common to use a punned gene class IRI as the subject of this relation).</obo:IAO_0000116>
         <obo:IAO_0000116>Note that  the allele &lt;fgf8a^ti282a&gt;  is not necessarily an instance of the danio rerio fgf8a gene class, given that we adopt the SO definition of genes as &apos;producing a functional product&apos;.  If the &lt;fgf8a^ti282a&gt; allele is nonfunctional or null, it is an allele_of the danio rerio fgf8a gene class, but not an instance (rdf:type) of this class. It would, however, bean instance of  a  &apos;danio rerio fgf8a gene allele&apos; class - because being a &apos;gene allele&apos; as defined in GENO requires only occupying the genomic position where for a gene, but not necessarily producing a functional product.</obo:IAO_0000116>
@@ -434,7 +434,7 @@ Range = genomic locus (but in practice it is common to use a punned gene class I
 
 While conceptually it is most correct to say features are alleles_of some genomic locus, it is common practice to say that they are alleles of the class of feature defined to reside at that locus (typically a gene).  Accordingly, we may write things like &quot;fgf8a&lt;ti282a&gt; is an allele of the Danio rerio fgf8a gene&quot;, and we may create data where &quot;fgf8a&lt;ti282a&gt; is asserted as an allele_of  the fgf8a gene class IRI. But here we mean more precisely that it is an allele of the locus at which the fgf8a gene resides.
 
-It is important to be clear that the locus that a feature is an allele_of is defined exclusively by its genomic position, and not on the sequence it may contains. This is particularly relevant when considering transgenic insertions. For example, this means that the insertion of the S. cerevisiae GAL4 gene sequence within the D. melanogaster Bx gene locus would create an allele of the D. melanogaster Bx gene, but not an allele of the S. cerevisiae GAL4 gene. The transgene that results from such an insertion, while expressing S. cerevisiae GAL4 gene sequence, is not an allele of this gene because it does not reside at the S. cerevisiae GAL4 locus. 
+It is important to be clear that the location/locus that a feature is an allele_of is defined exclusively by its genomic position, and not on the sequence it may contains. This is particularly relevant when considering transgenic insertions. For example, this means that the insertion of the S. cerevisiae GAL4 gene sequence within the D. melanogaster Bx gene locus would create an allele of the D. melanogaster Bx gene, but not an allele of the S. cerevisiae GAL4 gene. The transgene that results from such an insertion, while expressing S. cerevisiae GAL4 gene sequence, is not an allele of this gene because it does not reside at the S. cerevisiae GAL4 locus. 
 
 This departs from how some databases use the term &apos;allele&apos; - where transgenes expressing an exogenous gene are considered to be alleles of the exogenous genes they carry.  For example, in the example above, Flybase describes the S. cerevisiae GAL4 transgene as an allele_of the  S. cerevisiae GAL4 gene (and gives it the allele identifier FBal0040476). A GENO representation on the other hand would say that the S. cerevisiae GAL4 transgene derives_sequence_from the S. cerevisiae GAL4 gene, but is not an allele_of this gene. In a GENO model, FBal0040476 would be typed as a transgene insertion, but not considered an allele_of the Scer\GAL4 gene.
 
@@ -510,8 +510,8 @@ Range = allele</obo:IAO_0000116>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000383"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000418"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>A relation that holds between an instance of a genotype or variant sequence feature or collection, and a genomic feature class (typically a gene) that is affected in its sequence or expression.</obo:IAO_0000115>
-        <rdfs:comment>This is an organizational grouping class to collect all relations used to link instances of sequence features or qualified sequence features to genomic feature classes. For example, is_allele_of links a gene allele instance to its gene class (genes are represented as classes in our OWL model). Such links support phenotype propagation from alleles to genes for Monarch Initiative use cases. Use of these properties effectively puns gene class IRIs into owl:individuals in a given rdf datset.</rdfs:comment>
+        <obo:IAO_0000115>A relation that holds between an instance of a geneetic variation and a genomic feature (typically a gene class) that is affected in its sequence or expression.</obo:IAO_0000115>
+        <rdfs:comment>This class to organizes all relations used to link genetic variation instances of any type to genomic feature classes they effect. For example, is_allele_of links a gene allele instance to its gene class (genes are represented as classes in our OWL model). Such links support phenotype propagation from alleles to genes for Monarch Initiative use cases. Use of these properties effectively puns gene class IRIs into owl:individuals in a given rdf datset.</rdfs:comment>
         <rdfs:label>has_affected_feature</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1350,8 +1350,19 @@ Note that a separate chain is needed to propagate from the variant locus to the 
     <!-- http://purl.obolibrary.org/obo/GENO_0000957 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000957">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000961"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000963"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-        <obo:IAO_0000115>Holds between a copy number complement (or functional copy number complement) and a location on a reference sequence that defines sequence features qualifying for membership in the complement.</obo:IAO_0000115>
+        <obo:IAO_0000115>Holds between a copy number complement or functional copy number complement, and a genomic location that serves as a proxy for the sequence that defines the complement.</obo:IAO_0000115>
+        <rdfs:comment>Copy number complements represent sets of all copies of a particular biological sequence present in a particular genome. Their &quot;identity&quot; is based on their defining sequence, and the count of this sequence in the genome.The has_defining_location property is used to specify the sequence defining a copy number complement -  by using a &apos;sequence location&apos; as a proxy for a specific sequence that is found at this location.
+
+For copy number complements, it is the sequence at this location on some reference that defines sequences in a genome of interest that qualify for membership in the complement. For functional copy number complements (aka genetic dosage), it is the canonical function(s) performed by the sequence at this location (typically that of a gene) that helps to define sequences in a genome of interest that qualify for membership in the complement.</rdfs:comment>
         <rdfs:label xml:lang="en">has_defining_location</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1360,9 +1371,18 @@ Note that a separate chain is needed to propagate from the variant locus to the 
     <!-- http://purl.obolibrary.org/obo/GENO_0000958 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000958">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000957"/>
-        <obo:IAO_0000115>Holds between a copy number complement (or functional copy number complement) and a coordinate-based location on a reference sequence that defines sequence features qualifying for membership in the complement (specifically, the location here is a sequence feature location specified by start and end positions on a reference genome)</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has_defining_coordinate_location</rdfs:label>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000961"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000963"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
+        <obo:IAO_0000115>Holds between a copy number complement or functional copy number complement, and the biological sequence that defines the complement.</obo:IAO_0000115>
+        <rdfs:comment>Copy number complements represent sets of all copies of a particular biological sequence present in a particular genome. Their &quot;identity&quot; is based on their defining sequence, and the count of this sequence in the genome.The has_defining_sequence property is used to specify the sequence defining a copy number complement.</rdfs:comment>
+        <rdfs:label xml:lang="en">has_defining_sequence</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1370,9 +1390,20 @@ Note that a separate chain is needed to propagate from the variant locus to the 
     <!-- http://purl.obolibrary.org/obo/GENO_0000959 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000959">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000957"/>
-        <obo:IAO_0000115>Holds between a copy number complement (or functional copy number complement) and a feature-based location on a reference sequence that defines sequence features qualifying for membership in the complement. The location here is specified indirectly by reference to a named feature (typically a gene) that has a precise location in a reference genome</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has_defining_feature-based_location</rdfs:label>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000961"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000963"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <obo:IAO_0000115>Holds between a copy number complement or functional copy number complement and a genomic feature that serves as a proxy for the sequence that defines the complement.</obo:IAO_0000115>
+        <rdfs:comment>Copy number complements represent sets of all copies of a particular biological sequence present in a particular genome. Their &quot;identity&quot; is based on their defining sequence, and the count of this sequence in the genome.The has_defining_feature property is used to specify the sequence defining a copy number complement -  by using a &apos;sequence feature&apos; as a proxy for the specific sequence of this feature on some reference.
+
+For copy number complements, it is the sequence of this proxy feature on some reference that defines sequences in a genome of interest that qualify for membership in the complement. For functional copy number complements (aka genetic dosage), it is the canonical function(s) performed by the sequence of this proxy feature (typically a gene) that helps to define sequences in a genome of interest that qualify for membership in the complement.</rdfs:comment>
+        <rdfs:label xml:lang="en">has_defining_feature</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1918,8 +1949,9 @@ Environments include natural environments or exposures, experimentally applied c
 
     <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000917">
         <obo:IAO_0000115>Describes the number of members in some set.</obo:IAO_0000115>
-        <rdfs:comment>In GENO, this is used to describe things like the number of sequence features comprising a &apos;sequence feaature complement&apos;, the number of sequences in a &apos;genomic sequence complement&apos;, or the number of functional sequences defining a particular &apos;genetic dosage&apos;.</rdfs:comment>
-        <rdfs:label xml:lang="en">has_count</rdfs:label>
+        <obo:IAO_0000118>has_count</obo:IAO_0000118>
+        <rdfs:comment>In GENO, this is used to describe things like the number of sequence features comprising a &apos;sequence feature set&apos;, the number of sequences in a &apos;biological sequence set&apos;, or the number of functional sequences defining a particular &apos;functional copy number complement&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">has_member_count</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1968,7 +2000,7 @@ Environments include natural environments or exposures, experimentally applied c
     <owl:Class rdf:about="http://biohackathon.org/resource/faldo#Position">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000902"/>
         <obo:IAO_0000115>Superclass for the general concept of a position on a sequence. The sequence is designated with the reference predicate.</obo:IAO_0000115>
-        <obo:IAO_0000116>We place the FALDO:Position class under GENO:genomic locus, as it represents a type of genomic location with an extent of 1 (i.e.has the same start and end coordinates - representing a single position as opposed to a location spanning a longer region).</obo:IAO_0000116>
+        <obo:IAO_0000116>We place the FALDO:Position class under GENO:genomic location, as it represents a type of genomic location with an extent of 1 (i.e.has the same start and end coordinates - representing a single position as opposed to a location spanning a longer region).</obo:IAO_0000116>
         <obo:IAO_0000412>FALDO</obo:IAO_0000412>
         <rdfs:label xml:lang="en">Position</rdfs:label>
     </owl:Class>
@@ -2411,7 +2443,7 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An allele that varies in it sequence from what is considered the reference or canonical sequence at that locus.</obo:IAO_0000115>
+        <obo:IAO_0000115>An allele that varies in it sequence from what is considered the reference or canonical sequence at that location.</obo:IAO_0000115>
         <obo:IAO_0000116>The use of the descriptor &apos;variant&apos; here is consistent with naming recommendations from the ACMG Guidelines paper here: PMID:25741868.  Generally, the descriptive labels chosen for subtypes of variant allele conform  these recommendations as well, where &apos;variant&apos; is used to cover mutant and polymorphic alleles.</obo:IAO_0000116>
         <obo:IAO_0000118>alternate allele</obo:IAO_0000118>
         <obo:IAO_0000118>sequence-variant feature</obo:IAO_0000118>
@@ -2438,10 +2470,11 @@ A variant allele can be variant along its entire extent, in which case it is con
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>A set representing the complement of all &apos;variant single locus complements&apos; in a single genome, which together constitute the variant component of a genomic genotype.</obo:IAO_0000115>
-        <rdfs:comment>1. Note that even a reference feature (e.g. a wild-type gene) that is a member of a single locus complement that contains a variant allele is included in this &apos;genomic variation complement&apos;.  Thus, the members of this &apos;genomic variation complement&apos; (which is a sequence collection) are &apos;single locus variant complements&apos;.  Our axiom below uses has_part rather than has_member, however, to account for the fact that many &apos;genomic variation complements&apos; have only one &apos;single locus variant complement&apos; as members.  So because has_member is not reflexive, it is not appropriate for these cases.
+        <obo:IAO_0000115>A genomic feature set representing all &apos;variant single locus complements&apos; in a single genome, which together constitute the &apos;variant&apos; component of a genomic genotype.</obo:IAO_0000115>
+        <obo:IAO_0000116>Note that even a reference feature (e.g. a wild-type gene) that is a member of a single locus complement that contains a variant allele is included in this &apos;genomic variation complement&apos;. Thus, the members of this &apos;genomic variation complement&apos; (which is a sequence collection) are &apos;single locus variant complements&apos;. Our axiom below uses has_part rather than has_member, however, to account for the fact that many &apos;genomic variation complements&apos; have only one &apos;single locus variant complement&apos; as members.  So because has_member is not reflexive, it is not appropriate for these cases.</obo:IAO_0000116>
+        <rdfs:comment>A &apos;complement&apos; refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a complement may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features.  Here, a &apos;genomic variation complement&apos; is the set of all &apos;single locus complements&apos; in a particular genome that harbor some known variation.
 
-2. Most genotypes have only one altered locus (ie only one &apos;single-locus variant complement&apos;)  that distinguish it from some reference background. For example, the genotype instance &apos;fgf8a&lt;t1282a/+&gt;(AB)&apos;) exhibits a mutation at only one locus. But some genotypes vary at more than one locus (e.g. a double mutant that has alterations in the fgf8a gene and the shh gene)).</rdfs:comment>
+In model organisms, the majority of genotypes describe variation at a single  location in the genome (ie only one &apos;single-locus variant complement&apos;)  that are variant realtive to some reference background. For example, the genotype instance &apos;fgf8a&lt;t1282a/+&gt;(AB)&apos;) exhibits a mutation at only one locus. But some genotypes describe variation at more than one location (e.g. a double mutant that has alterations in the fgf8a gene and the shh gene)).</rdfs:comment>
         <rdfs:label>genomic variation complement</rdfs:label>
     </owl:Class>
     
@@ -2516,7 +2549,6 @@ A genomic feature being an allele_of a gene is based on its location in a host g
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000019">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <obo:IAO_0000115>a collection more than one sequence features (ie a collection of discontinuous sequence features)</obo:IAO_0000115>
         <oboInOwl:hasDbXref>perhaps not same as SO:sequence collection, as here we explicitly include features that can have an extent of zero (and SO:sequence collection is a collection of regions that have an extent of at least one)</oboInOwl:hasDbXref>
         <rdfs:comment>1. Note that members of this class can be features with extents of zero (e.g. junctions).  This is likely different than the SO:sequence feature class which has members that are regions.</rdfs:comment>
@@ -2576,10 +2608,9 @@ SC axioms:
         </owl:equivalentClass>
         <obo:IAO_0000115>A single locus complement in which at least one member allele is considered variant, and/or the total number of features in the complement deviates from the normal poloidy of the reference genome (e.g. trisomy 13).</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">variant allelic complement</obo:IAO_0000118>
-        <obo:IAO_0000118>variant single locus feature complement</obo:IAO_0000118>
-        <rdfs:comment>Instances of this class are collections comprised of all versions of some defined feature present in a genome  (e.g. alleles of a specific gene), where at least one member is variant (non-reference). In diploid genomes this complement is typically the two alleles at the same locus on homologous chromosomes.  
+        <rdfs:comment>Instances of this class are sets comprised of all allels at a specified genomic location where at least one allele is variant (non-reference). In diploid genomes this complement typically has two members.
 
-This class also covers cases where deviant numbers of genes or chromosomes are present in a genome (e.g. trisomy of chromosome 21), even if their sequence is not variant.</rdfs:comment>
+Note that this class also covers cases where deviant numbers of genes or chromosomes are present in a genome (e.g. trisomy of chromosome 21), even if their sequence is not variant.</rdfs:comment>
         <rdfs:label>variant single locus complement</rdfs:label>
     </owl:Class>
     
@@ -2969,7 +3000,7 @@ Note that at present, a material genome and genetic material are necessarily par
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000516"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An allelic state that describes the degree of similarity of features at a particular locus in the genome (i.e. whether the alleles or haplotypes are the same or different).</obo:IAO_0000115>
+        <obo:IAO_0000115>An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different).</obo:IAO_0000115>
         <obo:IAO_0000118>allelic state</obo:IAO_0000118>
         <obo:IAO_0000119>derived from https://en.wikipedia.org/wiki/Zygosity</obo:IAO_0000119>
         <oboInOwl:hasDbXref>http://semanticscience.org/resource/SIO_001263</oboInOwl:hasDbXref>
@@ -3070,7 +3101,7 @@ We can also use these terms to describe the heritability of phenotypes/condition
         <obo:IAO_0000118>phenotypic inheritance pattern</obo:IAO_0000118>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/HP_0000005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/NCIT_C45827</oboInOwl:hasDbXref>
-        <rdfs:comment>An inheritance pattern results from the disposition of a genetic variant to cause a particular trait or phenotype when it is present in a particular genetic and environmental context.  Here, &quot;genetic context&quot; refers to the allelic state of the variant, which depends on what other alleles exist at the same  locus. Zygosities such as heterozygous and homozygous are simple, common examples of &apos;states&apos; of an allele. 
+        <rdfs:comment>An inheritance pattern results from the disposition of a genetic variant to cause a particular trait or phenotype when it is present in a particular genetic and environmental context.  Here, &quot;genetic context&quot; refers to the allelic state of the variant, which depends on what other alleles exist at the same location/locus in the genome. Zygosities such as heterozygous and homozygous are simple, common examples of &apos;states&apos; of an allele. 
 
 These genetic and environmental &quot;interactions&quot; of alleles play out at the level of the gene products produced by the causal alleles, and are observable in the pattern with which the trait caused by an allele is inherited across generations of individuals. Thus, an inheritance pattern such as dominance is not inherent to a single allele or its phenotype, but rather a result of the relationship between two alleles of a gene and the phenotype that results in a given environment. This also means that the &apos;dominance&apos; of an allele is context dependent - Allele 1 can be dominant over Allele 2 in the context of Phenotype X, but recessive to Allele 3 in the context of Phenotype Y.</rdfs:comment>
         <rdfs:label>inheritance pattern</rdfs:label>
@@ -3180,7 +3211,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000152">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000773"/>
-        <obo:IAO_0000115>An attribute inhering in a feature that is designated to serve as a standard against which &apos;variant&apos; versions of the same locus are compared.</obo:IAO_0000115>
+        <obo:IAO_0000115>An attribute inhering in a feature that is designated to serve as a standard against which &apos;variant&apos; versions of the same location are compared.</obo:IAO_0000115>
         <rdfs:comment>Being &apos;reference&apos; is a role or status assigned in the context of a data set or analysis framework.  A given allele can be reference on one context and variant in another.</rdfs:comment>
         <rdfs:label>reference</rdfs:label>
     </owl:Class>
@@ -3411,7 +3442,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
         <obo:IAO_0000118>duplicate partial aneuploid chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>translocated duplicate chromosomal element</obo:IAO_0000118>
         <obo:IAO_0000118>translocated duplicate chromosomal segment</obo:IAO_0000118>
-        <rdfs:comment>Such additions of translocated chromosomal parts confer a trisomic condition to the duplicated region of the chromsome, and are thus considered to be &apos;variant single locus complements&apos; in virtue of an abnormal number of features at a particular locus, rather than abnormal sequence within the locus.</rdfs:comment>
+        <rdfs:comment>Such additions of translocated chromosomal parts confer a trisomic condition to the duplicated region of the chromsome, and are thus considered to be &apos;variant single locus complements&apos; in virtue of an abnormal number of features at a particular genomic location, rather than abnormal sequence within the location.</rdfs:comment>
         <rdfs:label>gained aneusomic chromosomal segment</rdfs:label>
     </owl:Class>
     
@@ -3566,7 +3597,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000476">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000773"/>
-        <obo:IAO_0000115>An attribute inhering in a locus that varies from some designated reference in virtue of alterations in its sequence or expression level</obo:IAO_0000115>
+        <obo:IAO_0000115>An attribute inhering in a sequence feature that varies from some designated reference in virtue of alterations in its sequence or expression level</obo:IAO_0000115>
         <rdfs:label xml:lang="en">variant</rdfs:label>
     </owl:Class>
     
@@ -3576,7 +3607,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000477">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000773"/>
-        <obo:IAO_0000115>An attribute inhereing in a locus for which there is more than one version fixed in a population at some significant percentage (typically 1% or greater), where the locus is not considered to be either reference or a variant.</obo:IAO_0000115>
+        <obo:IAO_0000115>An attribute inhereing in a sequence feature for which there is more than one version fixed in a population at some significant percentage (typically 1% or greater), where the locus is not considered to be either reference or a variant.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">polymorphic</rdfs:label>
     </owl:Class>
     
@@ -3626,7 +3657,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
         </rdfs:subClassOf>
         <obo:IAO_0000115>A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)</obo:IAO_0000115>
         <obo:IAO_0000116>This class was created largely as a modeling convenience to support organizing data for schema definitions.  We may consider obsoleting it if it ends up causing confusion or complicating classification of terms in the ontology.</obo:IAO_0000116>
-        <rdfs:comment>1. A feature being &apos;of genomic origin&apos; here means only that the abstract sequence they contain can be located to the genome of some organism by alignment with some reference genomic sequence. This is because the sequence was originally identified in, or artificially created to replicate, sequence from the genome. 
+        <rdfs:comment>1. A feature being &apos;of genomic origin&apos; here means only that its sequence has been located to the genome of some organism by alignment with some reference genome. This is because the sequence was originally identified in, or artificially created to replicate, sequence from an organism&apos;s genome. 
 
 2. The location of a genomic feature is defined by start and end coordinates based on alignment with a reference genome. Genomic features can span any size from a complete chromosome, to a chromosomal band or region, to a gene, to a single base pair or even junction between base pairs (this would be a sequence feature with an extent of zero). 
 
@@ -3739,7 +3770,7 @@ allele
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000498">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000497"/>
-        <obo:IAO_0000115>A polymorphic allele  that is present at the highest frequency relative to other polymorphic variants at the same locus.</obo:IAO_0000115>
+        <obo:IAO_0000115>A polymorphic allele  that is present at the highest frequency relative to other polymorphic variants at the same genomic location.</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">major allele</obo:IAO_0000118>
         <rdfs:label>major polymorphic allele</rdfs:label>
     </owl:Class>
@@ -3750,7 +3781,7 @@ allele
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000499">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000497"/>
-        <obo:IAO_0000115>A polymorphic allele that is not present at the highest frequency among all fixed variants at the locus (i.e. not the major polymorphic allele at a given locus).</obo:IAO_0000115>
+        <obo:IAO_0000115>A polymorphic allele that is not present at the highest frequency among all fixed variants at the locus (i.e. not the major polymorphic allele at a given location).</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">minor allele</obo:IAO_0000118>
         <rdfs:label>minor polymorphic allele</rdfs:label>
     </owl:Class>
@@ -3859,7 +3890,7 @@ The notion of wild-type alleles is more common in model organism databases, wher
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>One of a set of sequence features that exist at a particular genomic locus.</obo:IAO_0000115>
+        <obo:IAO_0000115>One of a set of sequence features known to exist at a particular genomic location.</obo:IAO_0000115>
         <obo:IAO_0000116>A landsacpe review found mostly gene-centric definitions of &apos;allele&apos; that represented a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6][6a].  But we also found &apos;allele&apos; used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11], where such variations don&apos;t neccessarily impact a gene.
 
 To be maximally accommodating of how this term is used across research communities, GENO defines &apos;allele&apos; broadly and allow alleles can span any locus or extent of sequence. While &apos;alleles&apos; encountered in public datases typically overlap a gene, many do not. But GENO does define the &apos;gene allele&apos; class as a subtype of &apos;allele&apos; to refers more specifically to a specifc version of an entire gene.
@@ -3877,9 +3908,9 @@ To be maximally accommodating of how this term is used across research communiti
 [10] http://purl.obolibrary.org/obo/OBI_0001352 (retrieved 2018-03-17)
 [11] http://purl.phyloviz.net/ontology/typon#Allele (retrieved 2018-03-17)</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">variable feature</obo:IAO_0000118>
-        <rdfs:comment>An allele is a seqeunce feature at a genomic locus where variation occurs (i.e. where &gt;1 different sequence is known to exist). An allele can span only the extent of sequence known to vary (e.g. a single base SNP, or short insertion), or it can span a larger extent that includes one or more variable features as proper parts (e.g. a &apos;gene allele&apos; that spans the extent of an entire gene which contains several sequence alterations).
+        <rdfs:comment>An allele is a seqeunce feature at a genomic location where variation occurs (i.e. where &gt;1 different sequence is known to exist). An allele can span only the extent of sequence known to vary (e.g. a single base SNP, or short insertion), or it can span a larger extent that includes one or more variable features as proper parts (e.g. a &apos;gene allele&apos; that spans the extent of an entire gene which contains several sequence alterations).
 
-Alleles can carry &apos;reference&apos; or &apos;variant&apos; sequence - depending on whether the its &apos;state&apos; matches that considered to be the reference at that location. Alleles whose state differs from the reference are called &apos;variant alleles&apos;, and those that match the reference are called &apos;reference alleles&apos;. What is considered the &apos;reference&apos; state at a particular locus may vary, depending on the context/goal of a particular analysis. A &apos;sequence alteration&apos; is a &apos;variant allele&apos; that varies along its entire extent (i.e every position varies from that of some defined reference sequence).</rdfs:comment>
+Alleles can carry &apos;reference&apos; or &apos;variant&apos; sequence - depending on whether the its &apos;state&apos; matches that considered to be the reference at that location. Alleles whose state differs from the reference are called &apos;variant alleles&apos;, and those that match the reference are called &apos;reference alleles&apos;. What is considered the &apos;reference&apos; state at a particular location may vary, depending on the context/goal of a particular analysis. A &apos;sequence alteration&apos; is a &apos;variant allele&apos; that varies along its entire extent (i.e every position varies from that of some defined reference sequence).</rdfs:comment>
         <rdfs:label>allele</rdfs:label>
     </owl:Class>
     
@@ -3936,12 +3967,14 @@ Alleles can carry &apos;reference&apos; or &apos;variant&apos; sequence - depend
         <obo:IAO_0000112>The set of both shha gene alleles in a diiploid zebrafish genome, e.g. fgf8a&lt;ti282a/+&gt;.
 
 The collection of the individual base-pairs present at the position 24126737 in both copies of chromosome 5 in a diploid human genome.</obo:IAO_0000112>
-        <obo:IAO_0000115>A set representing the complement of all sequence features occupying a particular genomic locus across all homologous chromosomes in the genome of a single organism.</obo:IAO_0000115>
-        <obo:IAO_0000116>TO DO: show a VCF representation of this example.</obo:IAO_0000116>
+        <obo:IAO_0000115>A set representing the complement of all sequence features occupying a particular genomic location across all homologous chromosomes in the genome of a single organism.</obo:IAO_0000115>
+        <obo:IAO_0000116>TO DO: show a VCF representation of this example. Consider making &apos;allelic complement&apos; the primary label.</obo:IAO_0000116>
         <obo:IAO_0000118>allelic complement</obo:IAO_0000118>
-        <obo:IAO_0000118>homologous allellic complement</obo:IAO_0000118>
+        <obo:IAO_0000118>homologous allele complement</obo:IAO_0000118>
         <obo:IAO_0000118>single locus feature complement</obo:IAO_0000118>
-        <rdfs:comment>The notion of a &quot;complement&quot; describes the collection of all elements in some defined set. The notion of &quot;homologous&quot; features describes those that occupy the same locus on homologous chromosomes in a genome. Therefore, we use the term &quot;single locus complement&quot; to describe the set of all homologous features present at a particular genomic locus. This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.</rdfs:comment>
+        <rdfs:comment>A &apos;complement&apos; refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a complement may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features. Here, a &apos;single locus complement&apos; is the set of all alleles at a specified location in a particular genome. This complement is typically a pair of two features in a diploid genome (with two copies of each chromosome). E.g. a gene pair, a QTL pair, a nucleotide pair for a SNP, or a pair of entire chromosomes.
+
+The fact that we are counting how many copies of the same *sequence* exist in a genome, as opposed to how many of the same *feature*, is what sets  feature-level concepts like &apos;single locus complement&apos;. apart from sequence-level concepts like &apos;copy number complement&apos;. To illustrate the difference, consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates an entirely new sequence feature at a distinct locus from that of the original APOE gene.  The &apos;copy number complement&apos; for sequence defined by the APOE gene locus would have a count of three, as this sequence is present three times in the genome.  But the &apos;single locus complement&apos; at the APOE gene locus would still have a count of two - because the duplicated copy is at a different location in the genome, and therefore does not represent a copy of the APOE locus.</rdfs:comment>
         <rdfs:label>single locus complement</rdfs:label>
     </owl:Class>
     
@@ -4006,8 +4039,8 @@ The &apos;extrinsic genotype&apos; concept is contrasted with the more familiar 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000504"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A set of all targeted genes in a single genome in the context of a given experiment (e.g. both copies of the WT shha gene in a zebrafish exposed to shha-targeting morpholinos)</obo:IAO_0000115>
-        <obo:IAO_0000118>reagent-targeted gene complement</obo:IAO_0000118>
+        <obo:IAO_0000115>A set comprised of *all* reagent-targeted genes in a single genome in the context of a given experiment (e.g. the zebrafish shha and shhb genes in a zebrafish exposed to morpholinos targeting both of these genes).</obo:IAO_0000115>
+        <rdfs:comment>A &apos;complement&apos; refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a complement may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features. For example, a &apos;reagent-targeted gene complement&apos; is the set of all genes in a particular genome that are targeted by reagents in the context of a particular experiment.</rdfs:comment>
         <rdfs:label xml:lang="en">reagent-targeted gene complement</rdfs:label>
     </owl:Class>
     
@@ -4096,12 +4129,12 @@ The identity of a given instance of a experssion-variant gene is dependent on ho
         <obo:IAO_0000119>Core definition above adapted from the GA4GH VMC data model definition here: https://docs.google.com/document/d/12E8WbQlvfZWk5NrxwLytmympPby6vsv60RxCeD5wc1E/edit#heading=h.4e32jj4jtmsl (retrieved 2018-04-09). 
 Note however that the VMC genotype concept likely is not intended to cover &apos;effective&apos; and &apos;extrinsic&apos; genotype concepts defined in GENO.</obo:IAO_0000119>
         <rdfs:comment>1. Scope of &apos;Genetic State&apos;: 
-&apos;Genetic state&apos; is considered quite broadly in GENO to describe two general kinds of &apos;states&apos;.  First, is traditional notion of &apos;allelic state&apos; - defined as the complement of alleles present at a particular locus or loci in a genome (i.e. across all homologous chromosomes containing this locus). Here, a genotype can describe allelic state at a specific locus in a genome (an &apos;allelic genotype&apos;), or describe the allelic state across the entire genome (&apos;genomic genotype&apos;). Second, this concept can also describe states of genomic features &apos;extrinsic&apos; to their intrinsic sequence, such as the expression status of a gene as a result of being specifically targeted by experimental interventions such as RNAi, morpholinos, or CRISPRs.
+&apos;Genetic state&apos; is considered quite broadly in GENO to describe two general kinds of &apos;states&apos;.  First, is traditional notion of &apos;allelic state&apos; - defined as the complement of alleles present at a particular location or locations in a genome (i.e. across all homologous chromosomes containing this location). Here, a genotype can describe allelic state at a specific locus in a genome (an &apos;allelic genotype&apos;), or describe the allelic state across the entire genome (&apos;genomic genotype&apos;). Second, this concept can also describe states of genomic features &apos;extrinsic&apos; to their intrinsic sequence, such as the expression status of a gene as a result of being specifically targeted by experimental interventions such as RNAi, morpholinos, or CRISPRs.
 
 2. Genotype Subtypes:
 In GENO, we use the term &apos;intrinsic&apos; for genotypes describing variation in genomic sequence, and &apos;extrinsic&apos; for genotypes describing variation in gene expression (e.g. resulting from the targeted experimental knock-down or over-expression of endogenous genes).  We use the term &apos;effective genotype&apos; to describe the total intrinsic and extrinsic variation in a cell or organism at the time a phenotypic assessment is performed. 
 
-Two more precise conccepts are subsumed by the notion of an &apos;intrinsic genotype&apos;: (1) &apos;allelic genotypes&apos;, which specify allelic state at a single genomic locus; and (2) &apos;genomic genotypes&apos;, which specify allelic state across an entire genome.  In both cases, allelic state is typically specified in terms of a differential between a reference and a set of 1 or more known variant features.
+Two more precise conccepts are subsumed by the notion of an &apos;intrinsic genotype&apos;: (1) &apos;allelic genotypes&apos;, which specify allelic state at a single genomic location; and (2) &apos;genomic genotypes&apos;, which specify allelic state across an entire genome.  In both cases, allelic state is typically specified in terms of a differential between a reference and a set of 1 or more known variant features.
 
 3. The Genotype Partonomy: 
 &apos;Genomic genotypes&apos; describing sequence variation across an entire genome are &apos;decomposed&apos; in GENO into a partonomy  of more granular levels of variation. These levels are defined to be meaningful to biologists in their attempts to relate genetic variation to phenotypic features. They include &apos;genomic variation complement&apos; (GVC), &apos;variant single locus complement&apos; (VSLC), &apos;allele&apos;, &apos;haplotype&apos;, &apos;sequence alteration&apos;, and &apos;genomic background&apos; classes.  For example, the components of the zebrafish genotype &quot;fgf8a&lt;ti282a/ti282a&gt;; fgf3&lt;t24149/+&gt;[AB]&quot;, described at  zfin.org/ZDB-FISH-150901-9362, include the following elements:
@@ -4139,7 +4172,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000602">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000918"/>
-        <obo:IAO_0000115>an allelic state where a single allele exists at a particular locus in the organellar genome (mitochondrial or plastid) of a cell/organism.</obo:IAO_0000115>
+        <obo:IAO_0000115>an allelic state where a single allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">homoplasmic</rdfs:label>
     </owl:Class>
     
@@ -4149,7 +4182,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000603">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000918"/>
-        <obo:IAO_0000115>an allelic state where more than one type of allele exists at a particular locus in the organellar genome (mitochondrial or plastid) of a cell/organism.</obo:IAO_0000115>
+        <obo:IAO_0000115>an allelic state where more than one type of allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">heteroplasmic</rdfs:label>
     </owl:Class>
     
@@ -4452,7 +4485,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A genotype that describes what is known about variation in a genome at a gross structural level, in terms of the number and appearance of chromosomes in the nucleus of a eukaryootic cell.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genotype that describes what is known about variation in a genome at a gross structural level, in terms of the number and appearance of chromosomes in the nucleus of a eukaryotic cell.</obo:IAO_0000115>
         <obo:IAO_0000119>Derived from http://en.wikipedia.org/wiki/Karyotype (accessed 2017-03-28)</obo:IAO_0000119>
         <rdfs:comment>Karyotypes describe structural variation across a genome at the level of chromosomal morphology and banding patterns detectable in stained chromosomal spreads. This coarser level does not capture more granular levels of variation commonly represented in other forms of genotypes (e.g. specific alleles and sequence alterations).   
 
@@ -4534,14 +4567,20 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000112>1. The set of all alleles at a particular locus in a genome (a &apos;single locus complement&apos;)  - e.g. {APOE-epsilon2 / APOE-epsilon4} at the APOE locus
+        <obo:IAO_0000112>1. The set of all alleles at a particular location in a genome (a &apos;single locus complement&apos;)  - e.g. {APOE-epsilon2 / APOE-epsilon4} at the APOE locus
 
 2. The set of all alleles that comprise a haplotype - e.g. the SNPs {rs7412-T, rs429358-T} in the APOEɛ2 allele.
 
 3. The set of all chromosomes in a genome - e.g. {human Chr1, 2, 3,  . . . 22, X, Y}</obo:IAO_0000112>
-        <obo:IAO_0000115>An exhaustive collection of all sequence features that make up some well-defined set.</obo:IAO_0000115>
-        <rdfs:comment>Not all sequence feature complements will be collections of more than one member- i.e. in some cases a complement of all features of some defined type or set will consist of a single member.  For example, a &apos;single locus complement&apos; at an X-linked locus in a XY male will consist of only one allele, as there is only one X-chromosome in the genome.</rdfs:comment>
-        <rdfs:label xml:lang="en">sequence feature complement</rdfs:label>
+        <obo:IAO_0000115>A set of sequence features.</obo:IAO_0000115>
+        <rdfs:comment>&apos;Sets&apos; are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an &apos;empty&apos; set) or 1 member (a &apos;singleton&apos; or &apos;unit&apos; set), consistent with the concept of &apos;mathematical sets&apos;. Sets may also include duplicates (i.e. contain more than one member representing the same feature).
+
+The notion of a &apos;complement&apos; is a special case of a set, where the members necessarily comprise an exhaustive collection of all objects that make up some well-defined set. It is useful for defining many biologically-relevant sets of sequence features. For example, a &apos;haplotype&apos; is the set of all genetically-linked alleles on a single chromosomal strand at a defined location - e.g. the SNP alleles {rs7412-C, rs429358-C} comprise the haplotype defining the APOEɛ4 gene allele [1]. And a &apos;single locus complement&apos; is the set of all alleles at a specified location in a particular genome  - e.g. the APOEɛ4 and APOEɛ4 gene alleles ([1], [2]) that make up the &apos;Gs270&apos; APOE genotype [3].
+
+[1] https://www.snpedia.com/index.php/APOE-%CE%B54
+[2] https://www.snpedia.com/index.php/APOE-%CE%B52
+[3] https://www.snpedia.com/index.php/Gs270</rdfs:comment>
+        <rdfs:label xml:lang="en">sequence feature set</rdfs:label>
     </owl:Class>
     
 
@@ -4562,13 +4601,13 @@ Conceptually, a sex-qualified phenotype represents a superset of sequence featur
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An exhaustive collection of all features of a specified type in a single genome (e.g. all chromosomes in a genome, all variant features in a genome, all copies of a given gene or allele in a genome).</obo:IAO_0000115>
+        <obo:IAO_0000115>A set of genomic features (i.e. sequence features that are of genomic origin).</obo:IAO_0000115>
         <obo:IAO_0000116>In some cases there may be zero or only one member of such a complement, which is why this class is not defened to necessarily have some &apos;genomic feature&apos; as a member.</obo:IAO_0000116>
         <obo:IAO_0000118>genomic locus complement</obo:IAO_0000118>
-        <rdfs:comment>A genomic feature is any located sequence feature in the genome, from a single nucleotide to a gene into an entire chromosome. A complement is the collection of all elements in a set (i.e. &quot;the full number of things in a set&quot;).  Here, a &apos;genomic feature complement&apos; is here the set of all features in a single genome of a specified type (according to some defined inclusion criteria).
+        <rdfs:comment>A genomic feature is any located sequence feature in the genome, from a single nucleotide to a gene into an entire chromosome. &apos;Sets&apos; are used to represent entities that are typically collections of more than one member - e.g. the set of chromosomes that make up the human genome. But we allow for sets that contain 0 members (an &apos;empty&apos; set) or 1 member (a &apos;singleton&apos; or &apos;unit&apos; set), consistent with the concept of &apos;mathematical sets&apos;. For example, a &apos;single locus complement&apos; at an X-linked locus in a XY male will consist of only one allele, as there is only one X-chromosome in the genome. Note also that sets may contain duplicates (i.e. more than one member representing the same feature). For example, a homozygous &apos;single locus complement&apos; is a set comprised of two of the same feature.
 
-The notion of a &apos;genomic feature complement&apos; differs from that of a &apos;genomic sequence complement&apos; in that we are counting how many copies of a particular &apos;feature&apos; exist in a genome, as opposed to how many copies of the same sequence exist in a genome. Consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates an entirely new sequence feature at a distinct locus from that of the original APOE gene.  The complement of APOE alleles, as genomic features, would not increase as a result, because the newly created feature is not an APOE allele (due to its location).  The complement of APOE gene sequence, however, would increase as a result, because membership in this complement is independent of location.</rdfs:comment>
-        <rdfs:label xml:lang="en">genomic feature complement</rdfs:label>
+The notion of a &apos;genomic feature set&apos; differs from that of a &apos;genomic sequence set&apos; in that we are counting how many copies of the same *sequence feature* exist in a genome, as opposed to how many of the same *sequence*. &apos;Genomic feature sets are useful for representing things like &apos;single locus complements&apos;, where members are sequence features whose identity is dependent on their location. By contrast, &apos;genomic sequence sets&apos; are useful for describing things like &apos;copy number complements&apos;, which are concerned only with how many copies of a sequence exist in a genome, regardless of the location where these reside.</rdfs:comment>
+        <rdfs:label xml:lang="en">genomic feature set</rdfs:label>
     </owl:Class>
     
 
@@ -4671,7 +4710,7 @@ The notion of a &apos;genomic feature complement&apos; differs from that of a &a
         <obo:IAO_0000118>aberrant extrachromosomal replicon</obo:IAO_0000118>
         <obo:IAO_0000118>exogenous extrachromosomal replicon</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">transgenic extrachromosomal replicon</obo:IAO_0000118>
-        <rdfs:comment>Extrachromosomal replicons are replicated and passed on to descendents, and thus part of the heritable genome of a cell or organism. In cases where the presence of such a replicon is exogenous or aberrant (i.e. not included in the reference for that genome), the replicon is considered a &apos;variant locus&apos; and a &apos;sequence alteration&apos;.</rdfs:comment>
+        <rdfs:comment>Extrachromosomal replicons are replicated and passed on to descendents, and thus part of the heritable genome of a cell or organism. In cases where the presence of such a replicon is exogenous or aberrant (i.e. not included in the reference for that genome), the replicon is considered a &apos;sequence alteration&apos;.</rdfs:comment>
         <rdfs:label>novel extrachromosomal replicon</rdfs:label>
     </owl:Class>
     
@@ -4728,12 +4767,13 @@ The notion of a &apos;genomic feature complement&apos; differs from that of a &a
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-        <obo:IAO_0000115>An extent of continuous biological sequence, or a collection of such sequences, whose identity is dependent on both its sequence and its position.</obo:IAO_0000115>
+        <obo:IAO_0000115>A sequence feature or a set of such features.</obo:IAO_0000115>
+        <obo:IAO_0000118>sequence feature or collection</obo:IAO_0000118>
         <rdfs:comment>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
 2. &apos;Sequence feature&apos; identity is dependent on its sequence and the genomic position if the sequence (aligns with definition of &apos;sequence feature&apos; in the Sequence Ontology).
 3. &apos;Qualified sequence feature&apos; identity is additionally dependent on some aspect of the physical context of the genetic material bearing the feature, extrinsic to its sequence and its genomic position.  For example, its being targeted by gene knockdown reagents, its being transgenically expressed in a foreign cell from a recombinant expression construct, its having been epigenetically modified in a way that alters its expression level or pattern, or its being located in a specific cellular or anatomical location.</rdfs:comment>
-        <rdfs:label xml:lang="en">sequence feature or collection</rdfs:label>
+        <rdfs:label xml:lang="en">sequence feature or set</rdfs:label>
     </owl:Class>
     
 
@@ -4748,6 +4788,8 @@ The notion of a &apos;genomic feature complement&apos; differs from that of a &a
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <obo:IAO_0000115>A linear ordering of units representing monomers of a biological macromolecule (e.g. nucleotides in DNA and RNA, amino acids in polypeptides).</obo:IAO_0000115>
         <obo:IAO_0000116>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
@@ -4864,9 +4906,12 @@ The notion of a &apos;genomic feature complement&apos; differs from that of a &a
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A qualified sequence feature complement consisting of all qualified sequence features of a specified type in a single genome (e.g. all reagent-targeted genes in the genome of an organism assessed in a phenotypic assay).</obo:IAO_0000115>
-        <obo:IAO_0000116>In some cases there may be zero or only one member of such a complement, which is why this class is not defened to necessarily have some &apos;qualified genomic feature&apos; as a member.</obo:IAO_0000116>
-        <rdfs:label xml:lang="en">qualified genomic feature complement</rdfs:label>
+        <obo:IAO_0000115>A set of qualified sequence features that carry genomic sequence.</obo:IAO_0000115>
+        <obo:IAO_0000116>Because there are cases there may be zero or only one member of such a set, this class is not asserted to necessarily have some &apos;qualified genomic feature&apos; as a member.</obo:IAO_0000116>
+        <rdfs:comment>A &apos;complement&apos; refers to an exhaustive collection of all objects that make up some well-defined set. This notion is useful for defining biologically-relevant sets of sequence features. For example, a haplotype is defined as the set of all genetically-linked alleles on a single chromosomal strand at a defined location - e.g. the SNP alleles {rs7412-C, rs429358-C} comprise the haplotype defining the APOEɛ4 gene allele.
+
+A complements may contain 0, 1, or more than one members. For example, the complement of alleles at a defined locus across homologous chromosomes in an individual&apos;s genome will consist of two members for autosomal locations, and one member for non-homologous locations on the X and Y chromosome.</rdfs:comment>
+        <rdfs:label xml:lang="en">qualified genomic feature set</rdfs:label>
     </owl:Class>
     
 
@@ -5147,10 +5192,11 @@ The notion of a &apos;genomic feature complement&apos; differs from that of a &a
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000815">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <obo:IAO_0000115>The location of a sequence feature as defined by its start and end position on some reference coordinate system.</obo:IAO_0000115>
-        <rdfs:comment>1. The notion of a sequence feature location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be &apos;occupied by&apos; physical objects, while a genomic locus is &apos;occupied by&apos; sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.   As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the sequence feature that resides there.
+        <rdfs:comment>1. The notion of a sequence feature location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be &apos;occupied by&apos; physical objects, while a genomic location is &apos;occupied by&apos; sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic location is distinct from a sequence feature that occupies it. As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the sequence feature that resides there.
 
-2. A sequence feature location is defined by its begin and end coordinates on a reference sequence, but it is not identified by a particular sequence that may reside there.  The same location, defined by a alignment to some reference, may be occupied by different sequences in  the genome of organism 1 vs that of organism 2.</rdfs:comment>
+2. A sequence feature location is defined by its begin and end coordinates on a reference sequence, but it is not identified by a particular sequence that may reside there. The same location, defined by a alignment to some reference, may be occupied by different sequences in  the genome of organism 1 vs that of organism 2.</rdfs:comment>
         <rdfs:label xml:lang="en">sequence feature location</rdfs:label>
     </owl:Class>
     
@@ -5193,9 +5239,9 @@ The notion of a &apos;genomic feature complement&apos; differs from that of a &a
    (derived from https://faculty.washington.edu/browning/beagle/intro-to-vcf.html)
 
 3. Some allelic genotype formats encode the genotype as a single string - e.g.  &quot;GRCh38 Chr12:258635(A;T)&quot; describes a heterozygous A/T allelic genotype of SNPs present at a specific position 258635 on human chromosome 12.</obo:IAO_0000112>
-        <obo:IAO_0000115>A genotype that specifies the &apos;allelic state&apos; at a particular locus in the genome - i.e. the set of alleles present at this locus across all homologous chromosomes.</obo:IAO_0000115>
+        <obo:IAO_0000115>A genotype that specifies the &apos;allelic state&apos; at a particular location in the genome - i.e. the set of alleles present at this locus across all homologous chromosomes.</obo:IAO_0000115>
         <obo:IAO_0000118>single locus genotype</obo:IAO_0000118>
-        <rdfs:comment>An &apos;allelic genotype&apos; describes the set of alleles present at a particular locus in the genome. This use of the term &apos;genotype&apos; reflects its use in clinical genetics where variation has historically been assessed at a specific locus, and a genotype describes the allelic state at that particular location.
+        <rdfs:comment>An &apos;allelic genotype&apos; describes the set of alleles present at a particular location in the genome. This use of the term &apos;genotype&apos; reflects its use in clinical genetics where variation has historically been assessed at a specific locus, and a genotype describes the allelic state at that particular location.
 
 This contrasts to the use of the term &apos;genotype in model orgnaism communities where it commonly describes the allelic state at all loci in a genome known to vary from an established reference or background.</rdfs:comment>
         <rdfs:label xml:lang="en">allelic genotype</rdfs:label>
@@ -5447,18 +5493,12 @@ Each of these more specific definition serves a purpose for a particular type of
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000872">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000922"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000957"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>The collection of all copies of a biological sequence present in a particular genome.</obo:IAO_0000115>
+        <obo:IAO_0000115>A set of genomic sequences (a biological sequence that is of genomic origin).</obo:IAO_0000115>
         <obo:IAO_0000118>copy number complement</obo:IAO_0000118>
-        <rdfs:comment>The notion of a &apos;genomic sequence complement&apos; differs from that of a &apos;genomic feature complement&apos; in that we are counting how many copies of the same *sequence* exist in a genome, as opposed to how many of the same *feature*.  Consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates an entirely new sequence feature at a distinct locus from that of the original APOE gene.  The &apos;genomic sequence complement&apos; based on the APOE gene locus would have a count of three, as this sequence is present three times in the genome.  But the &apos;genomic feature complement&apos; for the APOE gene locus would still have a count of two - because the duplicated copy is at a different location in the genome, and therefore does not represent a copy of the APOE locus.
+        <rdfs:comment>The notion of a &apos;complement&apos; is useful as a special case of a set, where the members necessarily comprise an exhaustive collection of *all* objects that make up some well-defined set. For example, a &apos;copy number complement&apos; represents &apos;represents the set of *all* copies of a specified sequence in a particular genome. Note that sequences can be duplicated in a set (i.e. contain more than one member representing the same sequence). In the &apos;copy number complement&apos; example, each set member is a copy of this same biological sequence.
 
-The notion of a genomic  sequence complement is useful for describing copy number variations, which are concerned only with how many copies of a sequence exist in a genome, regardless of the locus where these reside.  See annotations on &apos;copy number complement&apos; for more.</rdfs:comment>
-        <rdfs:label xml:lang="en">genomic sequence complement</rdfs:label>
+A &apos;genomic *sequence* set&apos; differs from a &apos;genomic *feature* set&apos; in that we are counting how many copies of the same *sequence* exist in a genome, as opposed to how many of the same *sequence feature*. &apos;Genomic sequence sets&apos; are useful for describing things like &apos;copy number complements&apos;, which are concerned only with how many copies of a sequence exist in a genome, regardless of the location where these reside. By contrast, &apos;genomic feature sets are useful for representing things like &apos;single locus complements&apos;, where members are sequence features whose identity is dependent on their location.</rdfs:comment>
+        <rdfs:label xml:lang="en">genomic sequence set</rdfs:label>
     </owl:Class>
     
 
@@ -5549,7 +5589,7 @@ Duplications of a sequence can occur at new locations in the genome, such that t
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
         <obo:IAO_0000115>Describes an attribute describing an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis.</obo:IAO_0000115>
         <obo:IAO_0000119>Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/de-novo-mutation  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation</obo:IAO_0000119>
-        <rdfs:comment>De novo variants are heritable but not inherited - as they are not observed in either parent, but can be passed to offspring in virtue of their being present in the individual&apos;s germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. 
+        <rdfs:comment>We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble&apos; by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed in either parent, but can be passed to offspring in virtue of their being present in the individual&apos;s germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. 
 		
 De novo variants appear for the first time in one family member. They often explain genetic disorders in which an affected child has a mutation in every cell in the body but the parents do not, and there is no family history of the disorder.</rdfs:comment>
         <rdfs:label xml:lang="en">de novo allele origin</rdfs:label>
@@ -5574,7 +5614,7 @@ De novo variants appear for the first time in one family member. They often expl
         <obo:IAO_0000115>Describes an allele that result from some spontaneous mutation event in a somatic cell after fertilization, and thus are not present in every cell in the body.</obo:IAO_0000115>
         <obo:IAO_0000118>acquired</obo:IAO_0000118>
         <obo:IAO_0000119>Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/somatic-variant  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation</obo:IAO_0000119>
-        <rdfs:comment>Somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring). De novo mutations are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present in germ cells.
+        <rdfs:comment>We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble&apos; by offspring. Somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring). De novo mutations are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present in germ cells.
 		
 These acquired mutations are called &apos;somatic&apos; because they typically affect  somatic (non-germ) cells.  But when spontaneous do mutations occur in the germ cells of an organism, these can be passed on to offspring in whom they will be considered de novo mutations.</rdfs:comment>
         <rdfs:label xml:lang="en">somatic allele origin</rdfs:label>
@@ -5619,9 +5659,9 @@ These acquired mutations are called &apos;somatic&apos; because they typically a
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>An allelic genotype specifying the set of two alleles present at a locus in a diploid genome (i.e., a diploid &apos;single locus complement&apos;)
+        <obo:IAO_0000115>An allelic genotype specifying the set of two alleles present at a particular location in a diploid genome (i.e., a diploid &apos;single locus complement&apos;)
 
-Alt: A sequence feature complement comprised of two haplotypes at a particular locus on paired homologous chromosomes in a diploid genome.</obo:IAO_0000115>
+Alt: A sequence feature complement comprised of two haplotypes at a particular location on paired homologous chromosomes in a diploid genome.</obo:IAO_0000115>
         <rdfs:comment>&quot;Humans are diploid organisms; they have paired homologous chromosomes in their somatic cells, which contain two copies of each gene. An allele is one member of a pair of genes occupying a specific spot on a chromosome (called locus). Two alleles at the same locus on homologous chromosomes make up the individual’s genotype. A haplotype (a contraction of the term ‘haploid genotype’) is a combination of alleles at multiple loci that are transmitted together on the same chromosome. Haplotype may refer to as few as two loci or to an entire chromosome depending on the number of recombination events that have occurred between a given set of loci. Genewise haplotypes are established with markers within a gene; familywise haplotypes are established with markers within members of a gene family; and regionwise haplotypes are established within different genes in a region at the same chromosome. Finally, a diplotype is a matched pair of haplotypes on homologous chromosomes.&quot;
 From https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/</rdfs:comment>
@@ -5670,9 +5710,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
         <obo:IAO_0000118>parental origin</obo:IAO_0000118>
         <obo:IAO_0000118>parentally inherited</obo:IAO_0000118>
         <obo:IAO_0000119>Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/germline-variant  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation</obo:IAO_0000119>
-        <rdfs:comment>Germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  De novo mutations are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present in germ cells. 
-
-Germline, or hereditary, alleles are present throughout a person’s life in virtually every cell in the body, including the germ cells, and therefore will be passed on to any offspring.</rdfs:comment>
+        <rdfs:comment>We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble&apos; by offspring. Germline variants are both *inherited* (passed down from a parent) and *heritable* (passable down to offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  De novo mutations in germ cells are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present a germ cells.</rdfs:comment>
         <rdfs:label xml:lang="en">germline allele origin</rdfs:label>
     </owl:Class>
     
@@ -5861,20 +5899,20 @@ A genomic genotype is an information artifact with a representational syntax tha
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000902">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
         <obo:IAO_0000115>The location of a sequence feature in a genome, defined by its start and end position on some reference genomic coordinate system</obo:IAO_0000115>
-        <obo:IAO_0000116>In GENO, the notion of a Genomic Locus plays the same role as that of a FALDO:Region in the design pattern for describing the location of a feature of interest.  We define this specific GENO class because the ontological nature of FALDO:Region class is not clear in the context of the BFO and SO-based GENO model. We will work to resolve these questions and ideally converge these concepts in the future.
+        <obo:IAO_0000116>In GENO, the notion of a Genomic Location (aka Genomic Locus) plays the same role as that of a FALDO:Region in the design pattern for describing the location of a feature of interest.  We define this specific GENO class because the ontological nature of FALDO:Region class is not clear in the context of the BFO and SO-based GENO model. We will work to resolve these questions and ideally converge these concepts in the future.
 
-We don&apos;t link a Genomic Locus to a specific reference sequence because in the FALDO model (which GENO adopts with the exception of swapping GENO:Genomic Locus for FALDO:Region), allows the start and end positions of a region to be defined on separate reference sequences. So while a given locus is conceptually associated with a single reference, in practice it can be pragmatic to define start and stop on different references sequences.</obo:IAO_0000116>
+We don&apos;t link a Genomic Location to a specific reference sequence because in the FALDO model (which GENO adopts with the exception of swapping GENO:Genomic Locus for FALDO:Region), allows the start and end positions of a region to be defined on separate reference sequences. So while a given Location is conceptually associated with a single reference, in practice it can be pragmatic to define start and stop on different references sequences.</obo:IAO_0000116>
         <obo:IAO_0000116>In practice, GENO advocates describing biology at the level of genomic features - i.e. define specific terms for genes as genomic features, and not duplicate representation of the loci where each gene resides. So we might define a class representing the human Shh gene as a &apos;genomic feature&apos;, but not parallel this with a &apos;human Shh gene locus&apos; class.   The utility of the &apos;genomic locus&apos; class in the ontology is primarily to be clear about the distinction, but we would only use it in modeling data if absolutely needed.
 
 For example, we would define an  &apos;HLA gene block&apos; as a subclass of &apos;genomic feature&apos;, and assert that  HLA-A, HLA-B, and HLA-C genes are part/subsequences of this HLA gene block (as opposed to modeling this as an &apos;HLA locus&apos;  and asserting that the HLA-A, HLA-B, and HLA-C genes occupy this locus).</obo:IAO_0000116>
-        <obo:IAO_0000118>genomic location</obo:IAO_0000118>
+        <obo:IAO_0000118>genomic locus</obo:IAO_0000118>
         <oboInOwl:hasDbXref>VMC:Location</oboInOwl:hasDbXref>
-        <rdfs:comment>1. A genomic locus is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic locus is occupied_by a &apos;sequence feature&apos; - whose identity depends on both it ssequence, and location in the genome (i.e. the locus it occupies).  For example, the &apos;ATG&apos; sequence beginning the ORF of the human SHH gene shares the same sequence as the &apos;ATG&apos; beginning the ORF of the human AKT gene. But these are distinct sequence features because they occupy different genomic loci - and therefore have different positions. We call sequence features that are located in a genome &apos;genomic features&apos;.
+        <rdfs:comment>1. A genomic location (aka locus) is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic location is occupied_by a &apos;sequence feature&apos; - whose identity depends on both it ssequence, and location in the genome (i.e. the locus it occupies).  For example, the &apos;ATG&apos; sequence beginning the ORF of the human SHH gene shares the same sequence as the &apos;ATG&apos; beginning the ORF of the human AKT gene. But these are distinct sequence features because they occupy different genomic loci - and therefore have different positions. We call sequence features that are located in a genome &apos;genomic features&apos;.
 	
-2. A given genomic locus (e.g. the human SHH gene locus) may be occupied by different alleles of the feature that resides there (e.g. different alleles of the SHH gene). Within the genome of a single diploid organism, there is potential for two genomic features to exist at such a locus (i.e. two different SHH alleles).  And across the genomes of all cells comprising members of a species, many more alleles of the SHH gene may exist and occupy this same locus.
+2. A given genomic location (e.g. the human SHH gene locus) may be occupied by different alleles of the feature that resides there (e.g. different alleles of the SHH gene). Within the genome of a single diploid organism, there is potential for two genomic features to exist at such a locus (i.e. two different SHH alleles).  And across the genomes of all cells comprising members of a species, many more alleles of the SHH gene may exist and occupy this same locus.
 
-3. The notion of a genomic locus in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic locus is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.  As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the feature that resides there.</rdfs:comment>
-        <rdfs:label xml:lang="en">genomic locus</rdfs:label>
+3. The notion of a genomic location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic location is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.  As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic location and the feature that resides there.</rdfs:comment>
+        <rdfs:label xml:lang="en">genomic location</rdfs:label>
     </owl:Class>
     
 
@@ -6051,8 +6089,9 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000659"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An exhaustive collection of all qualified sequence features that make up a qualified sequence feature collection with a well-defined set of members (e.g. all reagent-targeted genes in the genome of an organism assessed in a phenotypic assay).</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">qualified sequence feature complement</rdfs:label>
+        <obo:IAO_0000115>A set of qualified seqeunce features.</obo:IAO_0000115>
+        <rdfs:comment>&apos;Sets&apos; are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an &apos;empty&apos; set) or 1 member (a &apos;singleton&apos; or &apos;unit&apos; set), consistent with the concept of &apos;matehmatical sets&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">qualified sequence feature set</rdfs:label>
     </owl:Class>
     
 
@@ -6061,7 +6100,9 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000921">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-        <rdfs:label xml:lang="en">biological sequence or collection</rdfs:label>
+        <obo:IAO_0000115>A biolocical sequence, or set of such sequences.</obo:IAO_0000115>
+        <obo:IAO_0000118>biological sequence or collection</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">biological sequence or set</rdfs:label>
     </owl:Class>
     
 
@@ -6070,7 +6111,11 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000922">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000921"/>
-        <rdfs:label xml:lang="en">biological sequence complement</rdfs:label>
+        <obo:IAO_0000115>A set of biological sequences.</obo:IAO_0000115>
+        <rdfs:comment>&apos;Sets&apos; are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an &apos;empty&apos; set) or 1 member (a &apos;singleton&apos; or &apos;unit&apos; set), consistent with the concept of &apos;mathematical sets&apos;. 
+
+A set may also include multiple copies of the same sequence. For example, in a &apos;copy number complement&apos;, members are all copies of this same biological sequence.</rdfs:comment>
+        <rdfs:label xml:lang="en">biological sequence set</rdfs:label>
     </owl:Class>
     
 
@@ -6083,7 +6128,7 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
         <obo:IAO_0000116>Formerly considered modeling this as an informational entity, defined as &quot;An information entity that describes the total number of functional copies of a gene or region of sequence in a particular genome.&quot;</obo:IAO_0000116>
         <obo:IAO_0000118>functional feature complement</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">genetic dosage</obo:IAO_0000118>
-        <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level.</obo:IAO_0000231>
+        <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000963.</obo:IAO_0000231>
         <rdfs:comment>As for copy number complements, the defining &apos;sequence&apos; here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a functional copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify if that alteration eliminates the function of the allele.  This represents an important distinction between &apos;copy number&apos; and &apos;functional copy number&apos;. The former is not concerned with the functionality of sequence copies - only that there is a duplication of sequence in the genome. Thus, the addition of a non-functional allele of a gene will increase its copy number, but not increase its &apos;functional copy number (aka its dosage).</rdfs:comment>
         <rdfs:comment>The notion of &apos;functional copy number&apos; (aka &apos;genetic dosage&apos;) describes how many &apos;functional&apos; copies of a sequence are present in a genome - i.e. sequences that retain their normal activity and/or produce gene products that retain their normal activity.  In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.</rdfs:comment>
         <rdfs:label>obsolete_functional copy number complement</rdfs:label>
@@ -6395,6 +6440,17 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000954 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000954">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000660"/>
+        <obo:IAO_0000115>A set of discrete alleles within a particular genome.</obo:IAO_0000115>
+        <rdfs:comment>&apos;Sets&apos; are used to model entities that can be comprised of multiple discrete elements - but which can also contain zero or a single member.  An &quot;Allele Set&apos;  represents any collection of 0 or more discrete alleles found within a particular genome. The alleles in such a set can be located at distant or close locations in the genome, and if on the same chromosome can be in trans, in cis, or even overlapping  When the members of such a set are found &apos;in cis&apos; on the same chromosome, they may constitute a &apos;haplotype&apos;.  When found &apos;in trans&apos; at the same location on homologous chromosomes, they may constitute a &apos;single locus complement&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">allele set</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GENO_0000955 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000955">
@@ -6415,7 +6471,7 @@ Note that the &apos;copy number variation&apos; class in GENO is related to but 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000956">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A set of all features in a particular genome whose sequence aligns with a particular location on a reference genome.  Such features are typically on the scale of complete genes or larger.</obo:IAO_0000115>
-        <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level.</obo:IAO_0000231>
+        <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000961.</obo:IAO_0000231>
         <rdfs:comment>1. Features described by &apos;copy number&apos; are larger regions of sequence spanning one or more complete genes, or large chromosomal segment. Copies of these regions often become distributed across a genome at unknown locations. By contrast, short repeats, such as tri-nucelotide &apos;CAG&apos; repeats in the Huntingtin gene, occur at defined locations (adjacent to the originating &apos;CAG&apos; sequence), and can therefore be modeled as proper alleles.  
 
 2. A copy number complement, like any sequence feature complement, is a set of features in a particular genome that meet some criterion. The criterion in this case is that their sequence maps to that of a particular location in a reference sequence.  So a copy number complement is the set of all features that share or align with a specified sequence defined on some reference. The sequence of member sequences need not exactly match that of the reference, as copies may accrue some alterations. What is important is that conceptually they represent exact or inexact copies of the reference sequence at a defining location.
@@ -6436,7 +6492,8 @@ Note that the &apos;copy number variation&apos; class in GENO is related to but 
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
-        <obo:IAO_0000115>A biological sequence that is found in the genome of a cell or organism.</obo:IAO_0000115>
+        <obo:IAO_0000115>A biological sequence that is of genomic origin (i.e. carries sequence from the genome of a cell or organism).</obo:IAO_0000115>
+        <rdfs:comment>A sequence being &apos;of genomic origin&apos; here means only that it has been located to the genome of some organism by alignment with some reference genomic sequence. This is because the sequence was originally identified in, or artificially created to replicate, sequence from an organism&apos;s genome.</rdfs:comment>
         <rdfs:label xml:lang="en">genomic sequence</rdfs:label>
     </owl:Class>
     
@@ -6446,11 +6503,15 @@ Note that the &apos;copy number variation&apos; class in GENO is related to but 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000961">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000872"/>
-        <obo:IAO_0000115>A collection of all copies of a particular biological sequence (typically at the scale of complete genes or larger) present in a particular genome.</obo:IAO_0000115>
-        <obo:IAO_0000116>The identity of a &apos;copy number complement&apos; instance is determined by its defining sequence, and its count (the number of times this sequence appears on a feature in a particular genome). In reality the sequence of each copy need not be identical, given the tendency of large regions to accumulate subtle variations. What matters is that they share a common origin/alignment with a defining location in a reference genome.
+        <obo:IAO_0000115>A set representing the complement of all copies of a particular biological sequence (typically at the scale of complete genes or larger) present in a particular genome.</obo:IAO_0000115>
+        <obo:IAO_0000116>The identity of a &apos;copy number complement&apos; instance is determined by the sequence defining its members, and their count (the number of times this sequence appears in a particular genome). In reality the sequence of each copy may not be identical, given the tendency of large regions to accumulate subtle variations. What matters is that they share a common origin/alignment with a defining location in a reference genome.
 
-We represent the notion of copy number at the &quot;sequence level&quot; (as opposed to the &quot;sequence feature level&quot;)  because we are concerned only with the number of copies of a sequence in a genome, and not the location of the features bearing this sequence. Consider a copy number complement comprised of three copies of the sequence defined by the location Chr8 100000-200000 on a GRCh38.2 reference genome.  In one person&apos;s genome, this sequence may appear on features located on chromosomes 2, 5, and 12, and in another genome they might be located on chromosomes 4, 9, and 15.  When representing association data linking copy number to disease, it is important that these are considered to be *the same* copy number complement - because what a curator associates with a disease is the presence of three copies of some sequence in a genome, independent of their location. The &quot;sequence level&quot; representation here supports this use case.  By contrast, a &quot;sequence feature level&quot; representation, where copy number identity would be based on the identity of member features), does not. From this perspective, two separate copy number complements would need to be created for the scenario above, because we have two sets comprised of entirely different features (based on their locations being tied to their identity).</obo:IAO_0000116>
-        <rdfs:comment>The count of how many of a particular sequence is present is called its &apos;copy number&apos;. In diploid organisms, the normal copy number for sequences at most locations is 2 (a notable exception being those on the X-chromosome where normal copy number is 1). &apos;Copy number variations&apos; occur if this count increases due to a duplication of the gene/region, or decreases due to a deletion of a gene/region. A driving use case for representing copy number is to support associations between variation in copy number of a particular sequence, and phenotypes or diseases that can result.</rdfs:comment>
+We represent the notion of copy number at the &quot;sequence level&quot; (as opposed to the &quot;sequence feature level&quot;)  because we are concerned only with the number of copies of a sequence in a genome, and not the location of the features bearing this sequence. Consider a copy number complement comprised of three copies of the sequence defined by the location Chr8 100000-200000 on a GRCh38.2 reference genome.  In one person&apos;s genome, this sequence may appear at its normal location on Chromosome 8, as well as in duplications on chromosomes 5, and 12. In another genome the sequence might appear three times as well, but on chromosomes 8, 9, and 15.  When representing causal associations linking copy number to disease, it is important that these are considered to be *the same* copy number complement - because what a curator associates with a disease is the presence of three copies of some sequence in a genome, independent of their location. The &quot;sequence level&quot; representation here supports this use case.  By contrast, a &quot;feature level&quot; representation, where identity of a copy number complement would be based on the identity of member *features*), does not - because we have two sets comprised of entirely different features (based on location being tied to their identity).</obo:IAO_0000116>
+        <rdfs:comment>The count of how many of a particular sequences are found in a genome is the sequences &apos;copy number&apos;. In diploid organisms, the normal copy number for sequences at most locations is 2 (a notable exception being those on the X-chromosome where normal copy number is 1). Variations in copy number occur if this count increases due to a duplication of the gene/region, or decreases due to a deletion of a gene/region. A driving use case for representing copy number is to support associations between variation in copy number of a particular sequence, and phenotypes or diseases that can result.
+
+A &apos;complement&apos; refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a set may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features, such as &apos;copy number complements&apos; representing the set of all copies of a particular sequence in a genome. 
+
+The fact that we are counting how many copies of the same *sequence* exist in a genome here, as opposed to how many of the same *feature*, is what sets sequence-level concepts like &apos;copy number complement&apos; apart from feature-level concepts like &apos;single locus complement&apos;. To illustrate the difference, consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates an entirely new sequence feature at a distinct locus from that of the original APOE gene.  The &apos;copy number complement&apos; for sequence defined by the APOE gene locus would have a count of three, as this sequence is present three times in the genome.  But the &apos;single locus complement&apos; at the APOE gene locus would still have a count of two - because the duplicated copy is at a different location in the genome, and therefore does not represent a copy of the APOE locus.</rdfs:comment>
         <rdfs:label xml:lang="en">copy number complement</rdfs:label>
     </owl:Class>
     
@@ -6461,10 +6522,10 @@ We represent the notion of copy number at the &quot;sequence level&quot; (as opp
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000962">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000961"/>
         <obo:IAO_0000115>A &apos;copy number complement&apos; that has an abnormal number of members, as the result of deletion or duplication event(s).</obo:IAO_0000115>
-        <obo:IAO_0000116>Note that this &apos;variant copy number complement&apos; class in GENO is related to but ontologically distinct from the SO &apos;copy number variation&apos; class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set departs from the genome&apos;s normal ploidy of sequences at that location. The SO class, which is defined as a &quot;sequence feature level&quot; concept (and therefore represents a single continuous extent of sequence), refers to a sequence alteration such as a deletion or duplication that changes the copy number of the affected sequence, and would result in the presence of  a &apos;variant copy number complement&apos;.  The presence of an SO &apos;copy number variation&apos; suggests, but does not guarantee, the existence of a GENO &apos;variant copy number complement&apos;.
+        <obo:IAO_0000116>Note that this &apos;variant copy number complement&apos; class in GENO is related to but ontologically distinct from the SO &apos;copy number variation&apos; class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set departs from the genome&apos;s normal ploidy of sequences at that location. The SO class, which is defined as a &quot;sequence feature level&quot; concept (and therefore represents a single continuous extent of sequence), refers to a sequence alteration such as a deletion or duplication that changes the copy number of the affected sequence, and would result in the presence of  a &apos;variant copy number complement&apos;.  The presence of an SO &apos;copy number variation&apos; suggests, but does not guarantee, the existence of a GENO &apos;variant copy number complement&apos; (e.g. if a second balancing event has occurred).
 
 For example, the deletion variant reported in the ClinVar record here (https://www.ncbi.nlm.nih.gov/clinvar/variation/21009/) is a copy number variation in the SO sense - a deletion that likely results in a GENO &apos;variant copy number complement&apos;. Databases like ClinVar and dbVar type such alterations as &apos;copy number variants&apos;.  But ClinVar also describes &apos;variant copy number complements&apos; that may result from the presence of one or more SO &apos;copy number variations&apos; in a given genome, e.g. here ( https://www.ncbi.nlm.nih.gov/clinvar/variation/221691/).  In this case, the submitter is asserting that a state in which only one copy of the defined sequence (Chr2: 73601366 - 73673202) exists in a genome is pathogenic for &apos;Premature ovarian failure&apos;.  This requires more knowledge of the complete genomic state than an assertion that a specific SO &apos;copy number variation&apos; (here, a deletion variant) is pathogenic for the condition - as here we know that not only is one copy deleted, but also that only one copy remains.</obo:IAO_0000116>
-        <rdfs:comment>&apos;Abnormal&apos; is typically more or less than two for an autosomal sequence in a diploid genome, where a normal copy number complement contains two members.</rdfs:comment>
+        <rdfs:comment>&apos;Abnormal&apos; is typically more or less than two members for an autosomal sequence in a diploid genome, and more or less than one member for a sequence in a non-homologous region of a sex-chromosome.</rdfs:comment>
         <rdfs:label xml:lang="en">variant copy number complement</rdfs:label>
     </owl:Class>
     
@@ -6474,12 +6535,24 @@ For example, the deletion variant reported in the ClinVar record here (https://w
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000963">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000872"/>
-        <obo:IAO_0000115>A set of all features representing functional versions of a specified sequence (typically that of a gene) in a particular genome.</obo:IAO_0000115>
+        <obo:IAO_0000115>A set representing the complement of all functional versions of a specified sequence (typically that of a gene) in a particular genome.</obo:IAO_0000115>
         <obo:IAO_0000118>genetic dosage</obo:IAO_0000118>
-        <rdfs:comment>The notion of &apos;functional copy number&apos; (aka &apos;genetic dosage&apos;) describes how many &apos;functional&apos; copies of a sequence are present in a genome - i.e. sequences that retain their normal activity and/or produce gene products that retain their normal activity.  In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many copies of a sequence exist in a genome regardless of their functionality. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.
+        <rdfs:comment>A &apos;complement&apos; refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a set may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features, such as the set of all functional copies of a particular sequence in a genome. This is known as the &apos;functional copy number&apos; or &apos;genetic dosage&apos; of the sequence.
 
-As for &apos;copy number complement&apos;, the defining sequence here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a &apos;functional&apos; copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify as functional if that alteration eliminates the activity of the allele.</rdfs:comment>
+&apos;Functional copies&apos; of a sequence are those that exhibit normal activity and/or produce gene products that exhibit normal activity associated with the sequence. In diploid organisms, the normal &apos;dosage&apos; is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many copies of a sequence exist in a genome regardless of their functionality. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.
+
+As we saw for &apos;copy number complement&apos;, the defining sequence here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a &apos;functional&apos; copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify as functional if that alteration eliminates the activity of the allele.</rdfs:comment>
         <rdfs:label xml:lang="en">functional copy number complement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000964 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000964">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000928"/>
+        <rdfs:comment>A clonal distribution in which an allele arose during embryogenesis and is present in a subset of tissues derived from some common developmental cell or tissue type.</rdfs:comment>
+        <rdfs:label xml:lang="en">mosaic</rdfs:label>
     </owl:Class>
     
 
