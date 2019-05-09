@@ -432,7 +432,7 @@ Range = genomic locus (but in practice it is common to use a punned gene class I
         <obo:IAO_0000118>is_sequence_variant_of</obo:IAO_0000118>
         <rdfs:comment>To allow users to make important distinctions in discourse and modeling, GENO clearly separates the notions/levels of &apos;biological sequence&apos;, &apos;sequence feature&apos;, and &apos;sequence location&apos; (&apos;genomic locus&apos; when found in a genome). This sets up an important terminological nuance when it comes to alleles, where we believe it correct to say that a particular genomic feature is an alleles_of some genomic locus (as opposed to an allele_of some sequence or some feature). This is typically a gene locus, but even insertions falling outside of genes are considered alleles_of the locus they alter (e.g. alleles of other types of named loci such as QTLs, or alleles of some unnamed locus of arbitrary size).
 
-While conceptually it is most correct to say features are alleles_of some genomic locus, it is common practice to say that they are alleles of the class of feature defined to reside at that locus (typically a gene).  Accordingly, we may write things like &quot;fgf8a&lt;ti282a&gt; is an allele of the Danio rerio fgf8a gene&quot;, and we may create data where &quot;fgf8a&lt;ti282a&gt; is asserted as an allele_of  the fgf8a gene class IRI. But here we mean more precisely that it is an allele of the locus at which the fgf8a gene resides.
+While conceptually it is most correct to say features are alleles_of some genomic locus, it is common practice to say that they are alleles of the class of feature defined to reside at that locus (typically a gene).  Accordingly, we may write things like &quot;fgf8a&lt;ti282a&gt; is an allele of the Danio rerio fgf8a gene&quot;, and we may create data where fgf8a&lt;ti282a&gt; is asserted as an allele_of  the fgf8a gene class IRI. But here we mean more precisely that it is an allele of the locus at which the fgf8a gene resides.  Allowing for this means that we dont have to create &apos;feature-based location/locus&apos; terms mirroing all feature class terms already in exiistence (e.g. for every gene).
 
 It is important to be clear that the location/locus that a feature is an allele_of is defined exclusively by its genomic position, and not on the sequence it may contains. This is particularly relevant when considering transgenic insertions. For example, this means that the insertion of the S. cerevisiae GAL4 gene sequence within the D. melanogaster Bx gene locus would create an allele of the D. melanogaster Bx gene, but not an allele of the S. cerevisiae GAL4 gene. The transgene that results from such an insertion, while expressing S. cerevisiae GAL4 gene sequence, is not an allele of this gene because it does not reside at the S. cerevisiae GAL4 locus. 
 
@@ -6297,6 +6297,7 @@ A set may also include multiple copies of the same sequence. For example, in a &
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000938">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000146"/>
         <obo:IAO_0000115>An X-linked dominant inheritance pattern wherein the trait expressed in a heterozygous individual is intermediate between the trait expressed in individuals homozygous for either allele in the heterozygous locus.</obo:IAO_0000115>
+        <obo:IAO_0000118>semi-dominant X-linked inheritance</obo:IAO_0000118>
         <rdfs:label xml:lang="en">incomplete X-linked dominant inheritance</rdfs:label>
     </owl:Class>
     
@@ -6359,6 +6360,7 @@ A set may also include multiple copies of the same sequence. For example, in a &
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000945">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000943"/>
         <obo:IAO_0000115>A Z-linked dominant inheritance pattern wherein the trait expressed in a heterozygous individual is intermediate between the trait expressed in individuals homozygous for either allele in the heterozygous locus.</obo:IAO_0000115>
+        <obo:IAO_0000118>semi-dominant Z-linked inheritance</obo:IAO_0000118>
         <rdfs:label xml:lang="en">incomplete Z-linked dominant inheritance</rdfs:label>
     </owl:Class>
     
