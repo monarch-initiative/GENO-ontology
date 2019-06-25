@@ -1359,7 +1359,7 @@ Note that a separate chain is needed to propagate from the variant locus to the 
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-        <obo:IAO_0000115>Holds between a copy number complement or functional copy number complement, and a genomic location that serves as a proxy for the sequence that defines the complement.</obo:IAO_0000115>
+        <obo:IAO_0000115>Holds between a copy number complement or functional copy number complement, and a genomic location that serves as a proxy for the sequence or functional element that defines the complement.</obo:IAO_0000115>
         <rdfs:comment>Copy number complements represent sets of all copies of a particular biological sequence present in a particular genome. Their &quot;identity&quot; is based on their defining sequence, and the count of this sequence in the genome.The has_defining_location property is used to specify the sequence defining a copy number complement -  by using a &apos;sequence location&apos; as a proxy for a specific sequence that is found at this location.
 
 For copy number complements, it is the sequence at this location on some reference that defines sequences in a genome of interest that qualify for membership in the complement. For functional copy number complements (aka genetic dosage), it is the canonical function(s) performed by the sequence at this location (typically that of a gene) that helps to define sequences in a genome of interest that qualify for membership in the complement.</rdfs:comment>
@@ -1404,6 +1404,26 @@ For copy number complements, it is the sequence at this location on some referen
 
 For copy number complements, it is the sequence of this proxy feature on some reference that defines sequences in a genome of interest that qualify for membership in the complement. For functional copy number complements (aka genetic dosage), it is the canonical function(s) performed by the sequence of this proxy feature (typically a gene) that helps to define sequences in a genome of interest that qualify for membership in the complement.</rdfs:comment>
         <rdfs:label xml:lang="en">has_defining_feature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000966 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000966">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
+        <obo:IAO_0000115>Relates a sequence feature location to an interval that defines its start and end position.</obo:IAO_0000115>
+        <rdfs:comment>Can be used when Interval objects are employed in representing sequence location.  But start and end positions can also be directly attached to a location, avoiding the use of Interval objects.</rdfs:comment>
+        <rdfs:label>has_interval</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000967 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000967">
+        <obo:IAO_0000115>Relates a  &apos;sequence feature location&apos; to a sequence that it is anchored to.</obo:IAO_0000115>
+        <rdfs:label>has_reference_sequence</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1917,8 +1937,7 @@ Environments include natural environments or exposures, experimentally applied c
     <!-- http://purl.obolibrary.org/obo/GENO_0000894 -->
 
     <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000894">
-        <obo:IAO_0000115>The starting position of a sequence region in 0-based coordinates.</obo:IAO_0000115>
-        <obo:IAO_0000119>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</obo:IAO_0000119>
+        <obo:IAO_0000115>The starting position of a sequence feature or interval.</obo:IAO_0000115>
         <rdfs:label>start_position</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1927,8 +1946,7 @@ Environments include natural environments or exposures, experimentally applied c
     <!-- http://purl.obolibrary.org/obo/GENO_0000895 -->
 
     <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000895">
-        <obo:IAO_0000115>The ending position of a sequence region in 0-based coordinates.</obo:IAO_0000115>
-        <obo:IAO_0000119>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</obo:IAO_0000119>
+        <obo:IAO_0000115>The ending position of a sequence feature or interval.</obo:IAO_0000115>
         <rdfs:label>end_position</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -5194,9 +5212,9 @@ A complements may contain 0, 1, or more than one members. For example, the compl
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <obo:IAO_0000115>The location of a sequence feature as defined by its start and end position on some reference coordinate system.</obo:IAO_0000115>
-        <rdfs:comment>1. The notion of a sequence feature location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be &apos;occupied by&apos; physical objects, while a genomic location is &apos;occupied by&apos; sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic location is distinct from a sequence feature that occupies it. As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the sequence feature that resides there.
+        <rdfs:comment>1. A sequence feature location is defined by its begin and end coordinates on a reference sequence, but it is not identified by a particular sequence that may reside there. The same location, as defined on a particular reference, may be occupied by different sequences in the genome of organism 1 vs that of organism 2 (e.g. if a SNV exists within this location in only one of the organisms).
 
-2. A sequence feature location is defined by its begin and end coordinates on a reference sequence, but it is not identified by a particular sequence that may reside there. The same location, defined by a alignment to some reference, may be occupied by different sequences in  the genome of organism 1 vs that of organism 2.</rdfs:comment>
+2. The notion of a sequence feature location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be &apos;occupied by&apos; physical objects, while a genomic location is &apos;occupied by&apos; sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic location is distinct from a sequence feature that occupies it. As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic locus and the sequence feature that resides there.</rdfs:comment>
         <rdfs:label xml:lang="en">sequence feature location</rdfs:label>
     </owl:Class>
     
@@ -5495,9 +5513,7 @@ Each of these more specific definition serves a purpose for a particular type of
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000922"/>
         <obo:IAO_0000115>A set of genomic sequences (a biological sequence that is of genomic origin).</obo:IAO_0000115>
         <obo:IAO_0000118>copy number complement</obo:IAO_0000118>
-        <rdfs:comment>The notion of a &apos;complement&apos; is useful as a special case of a set, where the members necessarily comprise an exhaustive collection of *all* objects that make up some well-defined set. For example, a &apos;copy number complement&apos; represents &apos;represents the set of *all* copies of a specified sequence in a particular genome. Note that sequences can be duplicated in a set (i.e. contain more than one member representing the same sequence). In the &apos;copy number complement&apos; example, each set member is a copy of this same biological sequence.
-
-A &apos;genomic *sequence* set&apos; differs from a &apos;genomic *feature* set&apos; in that we are counting how many copies of the same *sequence* exist in a genome, as opposed to how many of the same *sequence feature*. &apos;Genomic sequence sets&apos; are useful for describing things like &apos;copy number complements&apos;, which are concerned only with how many copies of a sequence exist in a genome, regardless of the location where these reside. By contrast, &apos;genomic feature sets are useful for representing things like &apos;single locus complements&apos;, where members are sequence features whose identity is dependent on their location.</rdfs:comment>
+        <rdfs:comment>A &apos;genomic *sequence* set&apos; differs from a &apos;genomic *feature* set&apos; in that we are counting how many copies of the same *sequence* exist in a genome, as opposed to how many of the same *sequence feature*. &apos;Genomic sequence sets&apos; are useful for describing things like &apos;copy number complements&apos;, which are concerned only with how many copies of a sequence exist in a genome, regardless of the location where these reside. By contrast, &apos;genomic feature sets are useful for representing things like &apos;single locus complements&apos;, where members are sequence features whose identity is dependent on their location.</rdfs:comment>
         <rdfs:label xml:lang="en">genomic sequence set</rdfs:label>
     </owl:Class>
     
@@ -5905,14 +5921,15 @@ We don&apos;t link a Genomic Location to a specific reference sequence because i
         <obo:IAO_0000116>In practice, GENO advocates describing biology at the level of genomic features - i.e. define specific terms for genes as genomic features, and not duplicate representation of the loci where each gene resides. So we might define a class representing the human Shh gene as a &apos;genomic feature&apos;, but not parallel this with a &apos;human Shh gene locus&apos; class.   The utility of the &apos;genomic locus&apos; class in the ontology is primarily to be clear about the distinction, but we would only use it in modeling data if absolutely needed.
 
 For example, we would define an  &apos;HLA gene block&apos; as a subclass of &apos;genomic feature&apos;, and assert that  HLA-A, HLA-B, and HLA-C genes are part/subsequences of this HLA gene block (as opposed to modeling this as an &apos;HLA locus&apos;  and asserting that the HLA-A, HLA-B, and HLA-C genes occupy this locus).</obo:IAO_0000116>
+        <obo:IAO_0000118>genomic location</obo:IAO_0000118>
         <obo:IAO_0000118>genomic locus</obo:IAO_0000118>
         <oboInOwl:hasDbXref>VMC:Location</oboInOwl:hasDbXref>
-        <rdfs:comment>1. A genomic location (aka locus) is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic location is occupied_by a &apos;sequence feature&apos; - whose identity depends on both it ssequence, and location in the genome (i.e. the locus it occupies).  For example, the &apos;ATG&apos; sequence beginning the ORF of the human SHH gene shares the same sequence as the &apos;ATG&apos; beginning the ORF of the human AKT gene. But these are distinct sequence features because they occupy different genomic loci - and therefore have different positions. We call sequence features that are located in a genome &apos;genomic features&apos;.
+        <rdfs:comment>1. A genomic location (aka locus) is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic location is occupied_by a &apos;sequence feature&apos; - where the identity of this feature depends on both it sequence, and its location in the genome (i.e. the locus it occupies).  For example, the &apos;ATG&apos; sequence beginning the ORF of the human SHH gene shares the *same sequence* as the &apos;ATG&apos; beginning the ORF of the human AKT gene. But these are *distinct sequence features* because they occupy different genomic locations. 
 	
-2. A given genomic location (e.g. the human SHH gene locus) may be occupied by different alleles of the feature that resides there (e.g. different alleles of the SHH gene). Within the genome of a single diploid organism, there is potential for two genomic features to exist at such a locus (i.e. two different SHH alleles).  And across the genomes of all cells comprising members of a species, many more alleles of the SHH gene may exist and occupy this same locus.
+2. A given genomic location (e.g. the human SHH gene locus) may be occupied by different alleles (e.g. different alleles of the SHH gene). Within the genome of a single diploid organism, there is potential for two alleles to exist at such a locus (i.e. two different versions of the SHH gene).  And across genomes of all members of a species, many more alleles of the SHH gene may exist and occupy this same locus.
 
 3. The notion of a genomic location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic location is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.  As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic location and the feature that resides there.</rdfs:comment>
-        <rdfs:label xml:lang="en">genomic location</rdfs:label>
+        <rdfs:label xml:lang="en">genomic feature location</rdfs:label>
     </owl:Class>
     
 
@@ -6514,6 +6531,7 @@ We represent the notion of copy number at the &quot;sequence level&quot; (as opp
 A &apos;complement&apos; refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a set may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features, such as &apos;copy number complements&apos; representing the set of all copies of a particular sequence in a genome. 
 
 The fact that we are counting how many copies of the same *sequence* exist in a genome here, as opposed to how many of the same *feature*, is what sets sequence-level concepts like &apos;copy number complement&apos; apart from feature-level concepts like &apos;single locus complement&apos;. To illustrate the difference, consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates an entirely new sequence feature at a distinct locus from that of the original APOE gene.  The &apos;copy number complement&apos; for sequence defined by the APOE gene locus would have a count of three, as this sequence is present three times in the genome.  But the &apos;single locus complement&apos; at the APOE gene locus would still have a count of two - because the duplicated copy is at a different location in the genome, and therefore does not represent a copy of the APOE locus.</rdfs:comment>
+        <rdfs:comment>The notion of a &apos;complement&apos; is useful as a special case of a set, where the members necessarily comprise an exhaustive collection of *all* objects that make up some well-defined set. Here, a &apos;copy number complement&apos; represents &apos;represents the set of *all* copies of a specified sequence in a particular genome. Note that sequences can be duplicated in a set (i.e. contain more than one member representing the same sequence). In the &apos;copy number complement&apos; example, each set member is a copy of this same biological sequence.</rdfs:comment>
         <rdfs:label xml:lang="en">copy number complement</rdfs:label>
     </owl:Class>
     
@@ -6538,13 +6556,13 @@ For example, the deletion variant reported in the ClinVar record here (https://w
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000963">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000872"/>
         <obo:IAO_0000115>A set representing the complement of all functional versions of a specified sequence (typically that of a gene) in a particular genome.</obo:IAO_0000115>
-        <obo:IAO_0000118>genetic dosage</obo:IAO_0000118>
+        <obo:IAO_0000118>functional genetic dosage</obo:IAO_0000118>
         <rdfs:comment>A &apos;complement&apos; refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a set may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features, such as the set of all functional copies of a particular sequence in a genome. This is known as the &apos;functional copy number&apos; or &apos;genetic dosage&apos; of the sequence.
 
-&apos;Functional copies&apos; of a sequence are those that exhibit normal activity and/or produce gene products that exhibit normal activity associated with the sequence. In diploid organisms, the normal &apos;dosage&apos; is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many copies of a sequence exist in a genome regardless of their functionality. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.
+&apos;Functional copies&apos; of a sequence are those that exhibit normal activity and/or produce gene products that exhibit normal activity associated with the sequence. The count of functional copies of a gene is often referred to as its &apos;dosage&apos;. In diploid organisms, the normal &apos;dosage&apos; is 2 for autosomal genes/regions. Dosage increases if there is a duplication of a functional gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many copies of a sequence exist in a genome, regardless of their functionality. Addition of a non-functional allele of a gene will increase its copy number, but not increase its dosage.
 
 As we saw for &apos;copy number complement&apos;, the defining sequence here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a &apos;functional&apos; copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify as functional if that alteration eliminates the activity of the allele.</rdfs:comment>
-        <rdfs:label xml:lang="en">functional copy number complement</rdfs:label>
+        <rdfs:label xml:lang="en">functional copy complement</rdfs:label>
     </owl:Class>
     
 
@@ -6555,6 +6573,16 @@ As we saw for &apos;copy number complement&apos;, the defining sequence here is 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000928"/>
         <rdfs:comment>A clonal distribution in which an allele arose during embryogenesis and is present in a subset of tissues derived from some common developmental cell or tissue type.</rdfs:comment>
         <rdfs:label xml:lang="en">mosaic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000965 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000965">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000115>A pair of integers representing start and end position of a location on a sequence coordinate system.</obo:IAO_0000115>
+        <rdfs:label>sequence interval</rdfs:label>
     </owl:Class>
     
 
