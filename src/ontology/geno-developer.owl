@@ -12,7 +12,6 @@
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno-developer.owl">
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno-developer.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno-obsolete.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno-developer-defs.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/geno.owl"/>
