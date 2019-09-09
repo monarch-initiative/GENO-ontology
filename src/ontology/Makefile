@@ -16,7 +16,7 @@ ONTBASE=                    $(URIBASE)/$(ONT)
 EDIT_FORMAT=                owl
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
 CATALOG=                    catalog-v001.xml
-ROBOT=                      robot --catalog $(CATALOG)
+ROBOT=                      robot --catalog $(CATALOG) -vvv
 RELEASEDIR=                 ../..
 PATTERNDIR=                 ../patterns
 REPORTDIR=                 reports
@@ -63,7 +63,7 @@ all_main: $(MAIN_FILES)
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
 
-IMPORTS =  ro iao so
+IMPORTS =  ro iao
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(foreach f,$(FORMATS), $(n).$(f)))
@@ -270,16 +270,6 @@ mirror/iao.trigger: $(SRC)
 
 mirror/iao.owl: mirror/iao.trigger
 	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/iao.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-.PRECIOUS: mirror/%.owl
-
-
-## ONTOLOGY: so
-## Copy of so is re-downloaded whenever source changes
-mirror/so.trigger: $(SRC)
-
-mirror/so.owl: mirror/so.trigger
-	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/so.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: mirror/%.owl
 
