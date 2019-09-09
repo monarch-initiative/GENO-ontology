@@ -32,8 +32,8 @@
 
     <!-- http://www.geneontology.org/formats/oboInOwl#SubsetProperty -->
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SubsetProperty">
-        <rdfs:label xml:lang="en">subset_property</rdfs:label>
+		<owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SubsetProperty">
+        <rdfs:label>subset_property</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -41,6 +41,19 @@
     <!-- http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty">
+        <oboInOwl:hasDefinition>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.geneontology.org/formats/oboInOwl#Definition"/>
+                <oboInOwl:hasDbXref>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.geneontology.org/formats/oboInOwl#DbXref"/>
+                        <oboInOwl:hasURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/obo/owl/oboInOwl#oboInOwl_GOC</oboInOwl:hasURI>
+                        <rdfs:label>oboInOwl:GOC</rdfs:label>
+                    </rdf:Description>
+                </oboInOwl:hasDbXref>
+                <rdfs:label xml:lang="en">This annotation property groups all synonym types declared in the ontology</rdfs:label>
+            </rdf:Description>
+        </oboInOwl:hasDefinition>
         <rdfs:label xml:lang="en">synonym_type_property</rdfs:label>
     </owl:AnnotationProperty>
     
@@ -56,6 +69,19 @@
                 <rdfs:label>oboFormat:consider</rdfs:label>
             </rdf:Description>
         </oboInOwl:hasDbXref>
+        <oboInOwl:hasDefinition>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.geneontology.org/formats/oboInOwl#Definition"/>
+                <oboInOwl:hasDbXref>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.geneontology.org/formats/oboInOwl#DbXref"/>
+                        <oboInOwl:hasURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/obo/owl/oboInOwl#oboInOwl_cjm</oboInOwl:hasURI>
+                        <rdfs:label>oboInOwl:cjm</rdfs:label>
+                    </rdf:Description>
+                </oboInOwl:hasDbXref>
+                <rdfs:label xml:lang="en">Gives a term which may be an appropriate substitute for an obsolete term, but needs to be looked at carefully by a human expert before the replacement is done</rdfs:label>
+            </rdf:Description>
+        </oboInOwl:hasDefinition>
         <rdfs:label xml:lang="en">consider</rdfs:label>
     </owl:AnnotationProperty>
     

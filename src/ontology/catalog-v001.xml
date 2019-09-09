@@ -12,9 +12,7 @@
   <uri id="User Entered Import Resolution" name="http://purl.obolibrary.org/obo/geno/imports/so_import.owl" uri="imports/so_import.owl"/>
   <uri id="User Entered Import Resolution" name="http://purl.obolibrary.org/obo/geno/imports/so_import.obo" uri="imports/so_import.obo"/>
   
-
-
-  
+	<uri id="User Entered Import Resolution" name="http://purl.obolibrary.org/obo/geno/imports/oboInOwl.owl" uri="imports/oboInOwl.owl"/>
 
   <group id="Folder Repository, directory=, recursive=false, Auto-Update=false, version=2" prefer="public" xml:base=""/>
 </catalog>
