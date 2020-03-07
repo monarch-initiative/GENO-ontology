@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2019-09-09
+data-version: releases/2019-10-15
 ontology: geno
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
@@ -155,17 +155,6 @@ property_value: IAO:0000112 "the sequence of this protein molecule; the sequence
 property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
-id: BFO:0000034
-name: function
-is_a: BFO:0000016 ! disposition
-property_value: IAO:0000112 "the function of a hammer to drive in nails" xsd:string
-property_value: IAO:0000112 "the function of a heart pacemaker to regulate the beating of a heart through electricity" xsd:string
-property_value: IAO:0000112 "the function of amylase in saliva to break down starch into sugar" xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: In the past, we have distinguished two varieties of function, artifactual function and biological function. These are not asserted subtypes of BFO:function however, since the same function – for example: to pump, to transport – can exist both in artifacts and in biological entities. The asserted subtypes of function that would be needed in order to yield a separate monoheirarchy are not artifactual function, biological function, etc., but rather transporting function, pumping function, etc." xsd:string
-property_value: IAO:0000600 "A function is a disposition that exists in virtue of the bearer’s physical make-up and this physical make-up is something the bearer possesses because it came into being, either through evolution (in the case of natural biological entities) or through intentional design (in the case of artifacts), in order to realize processes of a certain sort. (axiom label in BFO2 Reference: [064-001])" xsd:string
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Term]
 id: BFO:0000040
 name: material entity
 is_a: BFO:0000004 ! independent continuant
@@ -230,24 +219,6 @@ name: environmental system
 comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
 is_a: BFO:0000040 ! material entity
 property_value: IAO:0000116 "1. Stub class to serve as root of hierarchy for imports from an ontology of environment and experimental conditions.\n\n2. Need to consdier how to model environments in a way that covers ENVO and XCO content in a consistent and coherent way. A couple classes under Exploratory Class are relvant here. Consider how we might approach environments/condisitons using an EQ aproach analogous to how phenotypes are defined (i.e. consider environments/coonditions as qualities inhereing in some entity)." xsd:string
-
-[Term]
-id: ERO:0000007
-name: technique
-def: "A technique is a planned process used to accomplish a specific activity or task." []
-is_a: OBI:0000011 ! planned process
-
-[Term]
-id: ERO:0002002
-name: embryonic stem cell line
-def: "A stem cell line comprised of embryonic stem cells, totipotent cells cultured from an early embryo." []
-is_a: ERO:0002003 ! stem cell line
-
-[Term]
-id: ERO:0002003
-name: stem cell line
-def: "A cell line comprised of stem cells,relatively undifferentiated cells that retain the ability to divide and proliferate provide progenitor cells that can differentiate into specialized cell types." []
-is_a: CLO:0000031 ! cell line
 
 [Term]
 id: ExactPosition
@@ -325,8 +296,8 @@ def: "A sequence that serves as a standard against which other sequences at the 
 comment: A reference sequence is one that serves as a standard against which 'variant' versions of the feature are compared, or against which located sequence features within the reference region are aligned in order to assign position information.  Being 'reference' does not imply anything about the frequency or function of features bearing the sequence. Only that some agent has used it to serve a reference role in defining a variant or locating a sequence.
 is_a: GENO:0000702 ! biological sequence
 intersection_of: GENO:0000702 ! biological sequence
-intersection_of: RO:0000087 GENO:0000152 ! has_role reference
-relationship: RO:0000087 GENO:0000152 ! has_role reference
+intersection_of: GENO:0000968 GENO:0000152 ! sequence role reference
+relationship: GENO:0000968 GENO:0000152 ! sequence role reference
 property_value: IAO:0000116 "The notion of a 'reference' in GENO is implemented at the level of 'biological sequence' rather than at the level of a sequence feature - i.e.  we define a class for 'reference sequence' rather than reference sequence feature'. This is because it is at the *sequence* level that features of interest are determined to be variant or not.  It is taken for granted that the *location* of the feature of interest  is the same as that of the reference sequence to which it is compared, becasue an alignment process establishing common location always precedes the sequence comparison that determines if the feature is variant." xsd:string
 property_value: IAO:0000118 "reference sequence" xsd:string
 
@@ -385,8 +356,8 @@ def: "An allele whose sequence matches what is consdiered to be the reference se
 comment: Being a 'reference allele' is a role or status assigned in the context of a specific dataset or analysis.  In human variation datasets, 'reference' status is typically assigned based on factors such as being the most common in a population, being an ancestral allele, or being indentified first as a prototypical example of some feature or gene.  For example, 'reference alleles' in characterizing SNPs often represent the allele first characterized in a reference genome, or the most common allele in a population.\n\nIn model organism datasets, 'reference' alleles are typically (but not always) the 'wild-type' variant at a given locus, representing a functional and unaltered version of the feature that is part of a defined genomic background, and against which natural or experimentally-induced alterations are compared.
 is_a: GENO:0000512 ! allele
 intersection_of: GENO:0000512 ! allele
-intersection_of: RO:0000087 GENO:0000152 ! has_role reference
-relationship: RO:0000087 GENO:0000152 ! has_role reference
+intersection_of: GENO:0000968 GENO:0000152 ! sequence role reference
+relationship: GENO:0000968 GENO:0000152 ! sequence role reference
 
 [Term]
 id: GENO:0000037
@@ -453,7 +424,6 @@ is_a: ObsoleteClass
 id: GENO:0000092
 name: gene trap insertion
 is_a: SO:0000667 ! insertion
-relationship: RO:0002353 GENO:0000172 ! output of gene trapping technique
 
 [Term]
 id: GENO:0000093
@@ -469,7 +439,6 @@ name: genomic material
 def: "A nucleic acid macromolecule that is part of a cell or virion and has been inherited from an ancestor cell or virion, and/or is capable of being replicated and inherited through successive generations of progeny." []
 comment: 1. Genomic material here is considered as a DNA or RNA molecule that is found in a cell or virus, and capable of being replicated and inherited by progeny cells or virus. As such, this nucleic acid is either chromosomal DNA, or some replicative epi-chromosomal plasmid or transposon. Genetic material is necessarily part of some 'material genome', and both are necessarily part of some cell or virion. So a genomic library is not considered a material genome/genetic material - rather, we could say that this genomic library is a 'genomic material sample' that bears the concretization of some genome.\n\n2. Genomic material need not be inherited from an immediate ancestor cell or organism (e.g. a replicative plasmid or transposon acquired through some experimental modification), but such cases must be capable of being inherited by progeny cells or organisms.
 is_a: GENO:0000482 ! genetic material
-relationship: BFO:0000050 GENO:0000108 ! is part of material genome
 relationship: RO:0000091 GENO:0000139 ! has disposition heritable
 property_value: IAO:0000114 GENO:0000484
 property_value: IAO:0000116 "1. Note that at present, a material genome and genetic material are necessarily part of some cell or virion. So a genomic library is not considered a material genome/genomic material - rather, we could say that this genomic library is a 'genomic material sample' that bears the concretization of some genome.\n\n2.  A challenging edge case is experimentally delivered DNA into a terminally differentiated cell that will never divide.  Such material does technically meet our definition - since we are careful to say that the material must be *capable of* being stably inherited through subsequent generations.  Thus, we would say that *if* the cell were resume replication, the material would be heritable in this way." xsd:string
@@ -670,62 +639,6 @@ is_a: GENO:0000773 ! variation attribute
 id: GENO:0000160
 name: unspecified life cycle stage
 is_a: UBERON:0000105 ! life cycle stage
-
-[Term]
-id: GENO:0000164
-name: genetic insertion technique
-comment: objective is to insert some specified sequence into the genome of a cell or virus
-is_a: OBI:0600043 ! genetic modification technique
-
-[Term]
-id: GENO:0000165
-name: mutagen treatment technique
-is_a: OBI:0600043 ! genetic modification technique
-
-[Term]
-id: GENO:0000166
-name: targeted gene mutation technique
-def: "a genetic alteration technique that creates a variant/allele of a known gene - either by prospective targeting of a specific the gene through homologous recombination, or by retrospective sequence analysis to determine the insertion locus of a randomly integrated transgene (e.g. as done in gene trapping)." []
-comment: This is represented axiomatically by the requirement that a 'gene variant' (ie an allele/variant of a known gene) is the specified_output of this technique.  This is contrasted to non-targted/random insertions/alterations where the altered locus is not known, and therefore no variant allele of a gene is created.
-is_a: OBI:0600043 ! genetic modification technique
-relationship: OBI:0000299 GENO:0000515 ! has_specified_output variant gene allele
-
-[Term]
-id: GENO:0000169
-name: random genetic insertion technique
-comment: Is considered to be 'non-targeted' in the sense that the insertion occurs randomly and not through homologous recombination.
-is_a: GENO:0000164 ! genetic insertion technique
-
-[Term]
-id: GENO:0000170
-name: targeted genetic insertion technique
-is_a: GENO:0000164 ! genetic insertion technique
-relationship: OBI:0000299 GENO:0000515 ! has_specified_output variant gene allele
-
-[Term]
-id: GENO:0000171
-name: enhancer trapping technique
-is_a: GENO:0000170 ! targeted genetic insertion technique
-
-[Term]
-id: GENO:0000172
-name: gene trapping technique
-is_a: GENO:0000170 ! targeted genetic insertion technique
-
-[Term]
-id: GENO:0000173
-name: promoter trapping technique
-is_a: GENO:0000170 ! targeted genetic insertion technique
-
-[Term]
-id: GENO:0000174
-name: targeted knock-in technique
-is_a: GENO:0000170 ! targeted genetic insertion technique
-
-[Term]
-id: GENO:0000175
-name: random transgene insertion technique
-is_a: GENO:0000169 ! random genetic insertion technique
 
 [Term]
 id: GENO:0000324
@@ -1150,9 +1063,9 @@ name: genomic background
 def: "A genomic genotype that specifies the baseline sequence of a genome from which a variant genome is derived (through the introduction of sequence alterations)." []
 is_a: GENO:0000899 ! genomic genotype
 intersection_of: GENO:0000899 ! genomic genotype
-intersection_of: RO:0000087 GENO:0000152 ! has_role reference
+intersection_of: GENO:0000968 GENO:0000152 ! sequence role reference
+relationship: GENO:0000968 GENO:0000152 ! sequence role reference
 relationship: IAO:0000219 GENO:0000010 ! denotes background genome
-relationship: RO:0000087 GENO:0000152 ! has_role reference
 property_value: IAO:0000116 "Being a 'genomic background' implies that a variant genotype was derived from this background (which is the case for most model organism database genotypes/strains). This is a subtly different notion than being a 'reference genotype' , which can be any genotype that serves as a basis for comparison. But in a sense all background genotypes are by default reference genotypes, in that the derived variant genotype is compared against it." xsd:string
 property_value: IAO:0000118 "background genotype" xsd:string
 
@@ -1267,8 +1180,8 @@ def: "A transgene whose product is used as a selectable marker." []
 is_a: SO:0000804 ! engineered_region
 is_a: SO:0000902 ! transgene
 intersection_of: SO:0000902 ! transgene
-intersection_of: RO:0000087 GENO:0000911 ! has_role selectable marker role
-relationship: RO:0000087 GENO:0000911 ! has_role selectable marker role
+intersection_of: GENO:0000207 GENO:0000911 ! has_sequence_attribute selectable marker
+relationship: GENO:0000207 GENO:0000911 ! has_sequence_attribute selectable marker
 
 [Term]
 id: GENO:0000644
@@ -1347,9 +1260,9 @@ def: "A transgene that codes for a product used as a reporter of gene expression
 is_a: SO:0000804 ! engineered_region
 is_a: SO:0000902 ! transgene
 intersection_of: SO:0000902 ! transgene
-intersection_of: RO:0000087 GENO:0000910 ! has_role reporter role
+intersection_of: GENO:0000207 GENO:0000910 ! has_sequence_attribute reporter
 relationship: BFO:0000051 GENO:0000640 ! has part reporter region
-relationship: RO:0000087 GENO:0000910 ! has_role reporter role
+relationship: GENO:0000207 GENO:0000910 ! has_sequence_attribute reporter
 
 [Term]
 id: GENO:0000680
@@ -1513,6 +1426,7 @@ property_value: IAO:0000231 "remodeling notion of sequence feature position arou
 id: GENO:0000770
 name: phenotypic inheritance process
 is_a: GENO:0000351 ! biological process
+property_value: IAO:0000114 GENO:0000484
 
 [Term]
 id: GENO:0000772
@@ -1884,6 +1798,7 @@ name: organismal entity
 def: "A material entity that is an organism, derived from an organism, or composed of organisms (e.g. a cell line, biosample, tissue culture, population, etc)." []
 is_a: BFO:0000040 ! material entity
 property_value: GENO:0000905 "true" xsd:boolean
+property_value: IAO:0000114 GENO:0000484
 property_value: IAO:0000116 "useful organizational term to collect entities that have genomes/genotypes." xsd:string
 
 [Term]
@@ -1894,13 +1809,13 @@ is_a: SO:0000110 ! sequence_feature
 
 [Term]
 id: GENO:0000910
-name: reporter role
-is_a: OBI:0000086 ! reagent role
+name: reporter
+is_a: GENO:0000788 ! sequence feature attribute
 
 [Term]
 id: GENO:0000911
-name: selectable marker role
-is_a: OBI:0000086 ! reagent role
+name: selectable marker
+is_a: GENO:0000788 ! sequence feature attribute
 
 [Term]
 id: GENO:0000912
@@ -2240,11 +2155,6 @@ def: "A pair of integers representing start and end position of a location on a 
 is_a: IAO:0000030 ! information content entity
 
 [Term]
-id: GO:0003674
-name: molecular function
-is_a: BFO:0000034 ! function
-
-[Term]
 id: GO:0032502
 name: developmental process
 def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition. [database_cross_reference: GOC:isa_complete]" []
@@ -2559,34 +2469,10 @@ def: "a population is a collection of individuals from the same taxonomic class 
 is_a: GENO:0000113 ! taxonomic group
 
 [Term]
-id: OBI:0000435
-name: genotyping assay
-def: "An assay which generates data about a genotype from a specimen of genomic DNA. A variety of techniques and instruments can be used to produce information about sequence variation at particular genomic positions." []
-is_a: ERO:0000007 ! technique
-
-[Term]
-id: OBI:0001148
-name: targeted gene knock-out technique
-def: "A genetic transformation that renders a gene non-functional, e.g. due to a point mutation, or the removal of all, or part of, the gene using recombinant methods." []
-comment: A genetic transformation that involves the insertion of a protein coding cDNA sequence at a particular locus in an organism's chromosome. Typically, this is done in mice since the technology for this process is more refined, and because mouse embryonic stem cells are easily manipulated. The difference between knock-in technology and transgenic technology is that a knock-in involves a gene inserted into a specific locus, and is a "targeted" insertion.
-is_a: GENO:0000166 ! targeted gene mutation technique
-
-[Term]
-id: OBI:0001149
-name: targeted gene knock-in technique
-is_a: GENO:0000166 ! targeted gene mutation technique
-
-[Term]
 id: OBI:0100026
 name: organism
 is_a: GENO:0000904 ! organismal entity
 property_value: IAO:0000116 "Stub class to serve as root of hierarchy for imports from NCBI Taxonomy." xsd:string
-
-[Term]
-id: OBI:0600043
-name: genetic modification technique
-def: "the introduction. alteration or integration of genetic material into a cell or organism" []
-is_a: ERO:0000007 ! technique
 
 [Term]
 id: PATO:0000016
@@ -3937,6 +3823,13 @@ name: has_reference_sequence
 def: "Relates a  'sequence feature location' to a sequence that it is anchored to." []
 
 [Typedef]
+id: GENO:0000968
+name: sequence role
+def: "A role assigned to a sequence feature, collection, or genotype, e.g. serving as a 'reference' against with other  sequences are compared." []
+comment: The RO:0000087 (has role) property cannot be used here because its domain is explicitly constrained to independent continuants, and sequence features in GENO are generically dependent contnuants.
+is_a: RO:0000053 ! bearer of
+
+[Typedef]
 id: IAO:0000136
 name: is about
 def: "is_about is a (currently) primitive relation that relates an information artifact to an entity." []
@@ -3995,7 +3888,7 @@ is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0000087
-name: has_role
+name: has role
 is_a: RO:0000053 ! bearer of
 
 [Typedef]

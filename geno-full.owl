@@ -12,7 +12,7 @@
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/geno-full.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2019-09-09/geno-full.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2019-10-15/geno-full.owl"/>
         <dc:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dc:description>
@@ -1999,6 +1999,17 @@ For copy number complements, it is the sequence of this proxy feature on some re
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000968 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/GENO_0000968">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <obo:IAO_0000115>A role assigned to a sequence feature, collection, or genotype, e.g. serving as a &apos;reference&apos; against with other  sequences are compared.</obo:IAO_0000115>
+        <rdfs:comment>The RO:0000087 (has role) property cannot be used here because its domain is explicitly constrained to independent continuants, and sequence features in GENO are generically dependent contnuants.</rdfs:comment>
+        <rdfs:label>sequence role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136">
@@ -2100,7 +2111,7 @@ For copy number complements, it is the sequence of this proxy feature on some re
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000087">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
-        <rdfs:label>has_role</rdfs:label>
+        <rdfs:label>has role</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2852,21 +2863,6 @@ Environments include natural environments or exposures, experimentally applied c
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000034 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000034">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
-        <obo:IAO_0000112 xml:lang="en">the function of a hammer to drive in nails</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the function of a heart pacemaker to regulate the beating of a heart through electricity</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the function of amylase in saliva to break down starch into sugar</obo:IAO_0000112>
-        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: In the past, we have distinguished two varieties of function, artifactual function and biological function. These are not asserted subtypes of BFO:function however, since the same function – for example: to pump, to transport – can exist both in artifacts and in biological entities. The asserted subtypes of function that would be needed in order to yield a separate monoheirarchy are not artifactual function, biological function, etc., but rather transporting function, pumping function, etc.</obo:IAO_0000116>
-        <obo:IAO_0000600 xml:lang="en">A function is a disposition that exists in virtue of the bearer’s physical make-up and this physical make-up is something the bearer possesses because it came into being, either through evolution (in the case of natural biological entities) or through intentional design (in the case of artifacts), in order to realize processes of a certain sort. (axiom label in BFO2 Reference: [064-001])</obo:IAO_0000600>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <rdfs:label xml:lang="en">function</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
@@ -2948,36 +2944,6 @@ Environments include natural environments or exposures, experimentally applied c
 2. Need to consdier how to model environments in a way that covers ENVO and XCO content in a consistent and coherent way. A couple classes under Exploratory Class are relvant here. Consider how we might approach environments/condisitons using an EQ aproach analogous to how phenotypes are defined (i.e. consider environments/coonditions as qualities inhereing in some entity).</obo:IAO_0000116>
         <rdfs:comment>In ENVO&apos;s alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class &quot;system&quot;. The relation &quot;environed_by&quot; is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class&apos; definition and the definitions of its subclasses will be revised.</rdfs:comment>
         <rdfs:label>environmental system</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ERO_0000007 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ERO_0000007">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000115>A technique is a planned process used to accomplish a specific activity or task.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ERO_0002002 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ERO_0002002">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ERO_0002003"/>
-        <obo:IAO_0000115>A stem cell line comprised of embryonic stem cells, totipotent cells cultured from an early embryo.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">embryonic stem cell line</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ERO_0002003 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ERO_0002003">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CLO_0000031"/>
-        <obo:IAO_0000115>A cell line comprised of stem cells,relatively undifferentiated cells that retain the ability to divide and proliferate provide progenitor cells that can differentiate into specialized cell types.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">stem cell line</rdfs:label>
     </owl:Class>
     
 
@@ -3140,7 +3106,7 @@ A genomic feature being an allele_of a gene is based on its location in a host g
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000702"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000968"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3149,7 +3115,7 @@ A genomic feature being an allele_of a gene is based on its location in a host g
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000968"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3282,7 +3248,7 @@ Note that this class also covers cases where deviant numbers of genes or chromos
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000512"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000968"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3291,7 +3257,7 @@ Note that this class also covers cases where deviant numbers of genes or chromos
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000512"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000968"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3463,12 +3429,6 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000092">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000667"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000172"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label>gene trap insertion</rdfs:label>
     </owl:Class>
     
@@ -3497,25 +3457,6 @@ An &apos;integrated transgene&apos; differs from its parent &apos;transgene&apos
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000106">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000482"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000108"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000248"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000091"/>
@@ -3882,112 +3823,6 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000160">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:label>unspecified life cycle stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000164 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000164">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600043"/>
-        <rdfs:comment>objective is to insert some specified sequence into the genome of a cell or virus</rdfs:comment>
-        <rdfs:label>genetic insertion technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000165 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000165">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600043"/>
-        <rdfs:label>mutagen treatment technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000166 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000166">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600043"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000515"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>a genetic alteration technique that creates a variant/allele of a known gene - either by prospective targeting of a specific the gene through homologous recombination, or by retrospective sequence analysis to determine the insertion locus of a randomly integrated transgene (e.g. as done in gene trapping).</obo:IAO_0000115>
-        <rdfs:comment>This is represented axiomatically by the requirement that a &apos;gene variant&apos; (ie an allele/variant of a known gene) is the specified_output of this technique.  This is contrasted to non-targted/random insertions/alterations where the altered locus is not known, and therefore no variant allele of a gene is created.</rdfs:comment>
-        <rdfs:label>targeted gene mutation technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000169 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000169">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000164"/>
-        <rdfs:comment>Is considered to be &apos;non-targeted&apos; in the sense that the insertion occurs randomly and not through homologous recombination.</rdfs:comment>
-        <rdfs:label>random genetic insertion technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000170 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000170">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000164"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000515"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label>targeted genetic insertion technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000171 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000171">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000170"/>
-        <rdfs:label>enhancer trapping technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000172 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000172">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000170"/>
-        <rdfs:label>gene trapping technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000173 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000173">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000170"/>
-        <rdfs:label>promoter trapping technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000174 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000174">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000170"/>
-        <rdfs:label>targeted knock-in technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GENO_0000175 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000175">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000169"/>
-        <rdfs:label>random transgene insertion technique</rdfs:label>
     </owl:Class>
     
 
@@ -4872,7 +4707,7 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000899"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000968"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -4881,14 +4716,14 @@ This ontology does not have a root &apos;phenotype&apos; class, however, and so 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000899"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000010"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000968"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000152"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000010"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A genomic genotype that specifies the baseline sequence of a genome from which a variant genome is derived (through the introduction of sequence alterations).</obo:IAO_0000115>
@@ -5102,7 +4937,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000911"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -5112,7 +4947,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000902"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000911"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5285,7 +5120,7 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000902"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000910"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -5301,7 +5136,7 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000910"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5714,6 +5549,7 @@ A complements may contain 0, 1, or more than one members. For example, the compl
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000770">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000351"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <rdfs:label xml:lang="en">phenotypic inheritance process</rdfs:label>
     </owl:Class>
     
@@ -6623,6 +6459,7 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:GENO_0000905 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000905>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <obo:IAO_0000115>A material entity that is an organism, derived from an organism, or composed of organisms (e.g. a cell line, biosample, tissue culture, population, etc).</obo:IAO_0000115>
         <obo:IAO_0000116>useful organizational term to collect entities that have genomes/genotypes.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">organismal entity</rdfs:label>
@@ -6643,8 +6480,8 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
     <!-- http://purl.obolibrary.org/obo/GENO_0000910 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000910">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000086"/>
-        <rdfs:label xml:lang="en">reporter role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:label xml:lang="en">reporter</rdfs:label>
     </owl:Class>
     
 
@@ -6652,8 +6489,8 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
     <!-- http://purl.obolibrary.org/obo/GENO_0000911 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000911">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000086"/>
-        <rdfs:label xml:lang="en">selectable marker role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:label xml:lang="en">selectable marker</rdfs:label>
     </owl:Class>
     
 
@@ -7250,15 +7087,6 @@ As we saw for &apos;copy number complement&apos;, the defining sequence here is 
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0003674 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003674">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
-        <rdfs:label>molecular function</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GO_0032502 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0032502">
@@ -7783,68 +7611,12 @@ No imports</obo:IAO_0000115>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000435 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000435">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ERO_0000007"/>
-        <obo:IAO_0000115>An assay which generates data about a genotype from a specimen of genomic DNA. A variety of techniques and instruments can be used to produce information about sequence variation at particular genomic positions.</obo:IAO_0000115>
-        <rdfs:label>genotyping assay</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0001148 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001148">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000166"/>
-        <obo:IAO_0000115>A genetic transformation that renders a gene non-functional, e.g. due to a point mutation, or the removal of all, or part of, the gene using recombinant methods.</obo:IAO_0000115>
-        <rdfs:comment>A genetic transformation that involves the insertion of a protein coding cDNA sequence at a particular locus in an organism&apos;s chromosome. Typically, this is done in mice since the technology for this process is more refined, and because mouse embryonic stem cells are easily manipulated. The difference between knock-in technology and transgenic technology is that a knock-in involves a gene inserted into a specific locus, and is a &quot;targeted&quot; insertion.</rdfs:comment>
-        <rdfs:label>targeted gene knock-out technique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0001149 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001149">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000166"/>
-        <rdfs:label xml:lang="en">targeted gene knock-in technique</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100026">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000904"/>
         <obo:IAO_0000116>Stub class to serve as root of hierarchy for imports from NCBI Taxonomy.</obo:IAO_0000116>
         <rdfs:label>organism</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0600043 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600043">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ERO_0000007"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000106"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000211"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000002"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>the introduction. alteration or integration of genetic material into a cell or organism</obo:IAO_0000115>
-        <rdfs:label>genetic modification technique</rdfs:label>
     </owl:Class>
     
 

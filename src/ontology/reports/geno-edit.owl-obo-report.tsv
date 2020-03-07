@@ -118,15 +118,6 @@ WARN	missing_definition	GENO:0000139	IAO:0000115
 WARN	missing_definition	GENO:0000140	IAO:0000115		
 WARN	missing_definition	GENO:0000150	IAO:0000115		
 WARN	missing_definition	GENO:0000160	IAO:0000115		
-WARN	missing_definition	GENO:0000164	IAO:0000115		
-WARN	missing_definition	GENO:0000165	IAO:0000115		
-WARN	missing_definition	GENO:0000169	IAO:0000115		
-WARN	missing_definition	GENO:0000170	IAO:0000115		
-WARN	missing_definition	GENO:0000171	IAO:0000115		
-WARN	missing_definition	GENO:0000172	IAO:0000115		
-WARN	missing_definition	GENO:0000173	IAO:0000115		
-WARN	missing_definition	GENO:0000174	IAO:0000115		
-WARN	missing_definition	GENO:0000175	IAO:0000115		
 WARN	missing_definition	GENO:0000220	IAO:0000115		
 WARN	missing_definition	GENO:0000243	IAO:0000115		
 WARN	missing_definition	GENO:0000244	IAO:0000115		
@@ -202,7 +193,6 @@ WARN	missing_definition	GENO:0000910	IAO:0000115
 WARN	missing_definition	GENO:0000911	IAO:0000115		
 WARN	missing_definition	GENO:0000912	IAO:0000115		
 WARN	missing_definition	GENO:0000964	IAO:0000115		
-WARN	missing_definition	GO:0003674	IAO:0000115		
 WARN	missing_definition	HP:0000118	IAO:0000115		
 WARN	missing_definition	HsapDv:0000000	IAO:0000115		
 WARN	missing_definition	IAO:0000102	IAO:0000115		
@@ -213,7 +203,6 @@ WARN	missing_definition	NCBITaxon:7955	IAO:0000115
 WARN	missing_definition	NCBITaxon:8090	IAO:0000115		
 WARN	missing_definition	NCBITaxon:9606	IAO:0000115		
 WARN	missing_definition	OBI:0000086	IAO:0000115		
-WARN	missing_definition	OBI:0001149	IAO:0000115		
 WARN	missing_definition	OBI:0100026	IAO:0000115		
 WARN	missing_definition	PATO:0000016	IAO:0000115		
 WARN	missing_definition	PATO:0000383	IAO:0000115		
@@ -277,7 +266,6 @@ INFO	lowercase_definition	GENO:0000019	IAO:0000115	a collection more than one se
 INFO	lowercase_definition	GENO:0000111	IAO:0000115	a population of homo sapiens grouped together in virtue of their sharing some commonality (either an inherent attribute or an externally assigned role)	
 INFO	lowercase_definition	GENO:0000125	IAO:0000115	sequence attribute that can inhere only in a collection of more than one sequence features	
 INFO	lowercase_definition	GENO:0000142	IAO:0000115	disposition inhering in a genetic locus variant that is realized in its inheritance by some offspring such that at least a partial variant-associated phenotype is apparent in heterozygotes	
-INFO	lowercase_definition	GENO:0000166	IAO:0000115	a genetic alteration technique that creates a variant/allele of a known gene - either by prospective targeting of a specific the gene through homologous recombination, or by retrospective sequence analysis to determine the insertion locus of a randomly integrated transgene (e.g. as done in gene trapping).	
 INFO	lowercase_definition	GENO:0000359	IAO:0000115	shortcut relation used to link a phenotype directly to a genotype of an organism	
 INFO	lowercase_definition	GENO:0000513	IAO:0000115	a sequence attribute of a chromosome or chromosomal region that has been abnormally duplicated or lost, as the result of a non-disjunction event or unbalanced translocation.	
 INFO	lowercase_definition	GENO:0000602	IAO:0000115	an allelic state where a single allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.	
@@ -288,7 +276,6 @@ INFO	lowercase_definition	GENO:0000883	IAO:0000115	a quality inhering in a featu
 INFO	lowercase_definition	IAO:0000030	IAO:0000115	an information content entity is an entity that is generically dependent on some artifact and stands in relation of aboutness to some entity@en	
 INFO	lowercase_definition	IAO:0000136	IAO:0000115	is_about is a (currently) primitive relation that relates an information artifact to an entity.	
 INFO	lowercase_definition	OBI:0000181	IAO:0000115	a population is a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area	
-INFO	lowercase_definition	OBI:0600043	IAO:0000115	the introduction. alteration or integration of genetic material into a cell or organism	
 INFO	lowercase_definition	RO:0000052	IAO:0000115	a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence	
 INFO	lowercase_definition	RO:0000053	IAO:0000115	a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence	
 INFO	lowercase_definition	RO:0000056	IAO:0000115	a relation between a continuant and a process, in which the continuant is somehow involved in the process	
