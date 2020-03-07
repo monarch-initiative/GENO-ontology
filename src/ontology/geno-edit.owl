@@ -295,6 +295,10 @@ Declaration(Class(obo:GENO_0000962))
 Declaration(Class(obo:GENO_0000963))
 Declaration(Class(obo:GENO_0000964))
 Declaration(Class(obo:GENO_0000965))
+Declaration(Class(obo:GENO_0000969))
+Declaration(Class(obo:GENO_0000970))
+Declaration(Class(obo:GENO_0000971))
+Declaration(Class(obo:GENO_0000972))
 Declaration(Class(obo:GO_0032502))
 Declaration(Class(obo:HP_0000118))
 Declaration(Class(obo:HsapDv_0000000))
@@ -3940,6 +3944,34 @@ SubClassOf(obo:GENO_0000964 obo:GENO_0000928)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000965 "A pair of integers representing start and end position of a location on a sequence coordinate system.")
 AnnotationAssertion(rdfs:label obo:GENO_0000965 "sequence interval")
 SubClassOf(obo:GENO_0000965 obo:IAO_0000030)
+
+# Class: obo:GENO_0000969 (chromosomal inheritance)
+
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000969 "An inheritance pattern wherein the trait is determined by inheritance of extra, missing, or re-arranged chromosomes possibly together with environmental factors.")
+AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000969 "The Alliance of Genomic Resources")
+AnnotationAssertion(rdfs:label obo:GENO_0000969 "chromosomal inheritance"@en)
+SubClassOf(obo:GENO_0000969 obo:GENO_0000141)
+
+# Class: obo:GENO_0000970 (chromosomal deletion inheritance)
+
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000970 "An inheritance pattern wherein the trait is determined by inheritance of missing sections of one or more chromosomes, encompassing either 0 or multiple genes, possibly together with environmental factors.")
+AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000970 "Alliance of Genomic Resources")
+AnnotationAssertion(rdfs:label obo:GENO_0000970 "chromosomal deletion inheritance"@en)
+SubClassOf(obo:GENO_0000970 obo:GENO_0000969)
+
+# Class: obo:GENO_0000971 (chromosomal duplication inheritance)
+
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000971 "An inheritance pattern wherein the trait is determined by inheritance of duplicated sections of one or more chromosomes, encompassing either 0 or multiple genes, possibly together with environmental factors.")
+AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000971 "Alliance of Genomic Resources")
+AnnotationAssertion(rdfs:label obo:GENO_0000971 "chromosomal duplication inheritance"@en)
+SubClassOf(obo:GENO_0000971 obo:GENO_0000969)
+
+# Class: obo:GENO_0000972 (chromosomal rearrangement inheritance)
+
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000972 "An inheritance pattern wherein the trait is determined by inheritance of translocation or inversion of sections of one or more chromosomes, possibly together with environmental factors.")
+AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000972 "Alliance of Genomic Resources")
+AnnotationAssertion(rdfs:label obo:GENO_0000972 "chromosomal rearrangement inheritance"@en)
+SubClassOf(obo:GENO_0000972 obo:GENO_0000969)
 
 # Class: obo:GO_0032502 (developmental process)
 
