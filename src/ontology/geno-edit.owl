@@ -42,16 +42,12 @@ Declaration(Class(obo:BFO_0000019))
 Declaration(Class(obo:BFO_0000020))
 Declaration(Class(obo:BFO_0000023))
 Declaration(Class(obo:BFO_0000031))
-Declaration(Class(obo:BFO_0000034))
 Declaration(Class(obo:BFO_0000040))
 Declaration(Class(obo:CHEBI_23367))
 Declaration(Class(obo:CHEBI_33696))
 Declaration(Class(obo:CLO_0000031))
 Declaration(Class(obo:CL_0000000))
 Declaration(Class(obo:ENVO_01000254))
-Declaration(Class(obo:ERO_0000007))
-Declaration(Class(obo:ERO_0002002))
-Declaration(Class(obo:ERO_0002003))
 Declaration(Class(obo:GENO_0000000))
 Declaration(Class(obo:GENO_0000002))
 Declaration(Class(obo:GENO_0000009))
@@ -103,16 +99,6 @@ Declaration(Class(obo:GENO_0000149))
 Declaration(Class(obo:GENO_0000150))
 Declaration(Class(obo:GENO_0000152))
 Declaration(Class(obo:GENO_0000160))
-Declaration(Class(obo:GENO_0000164))
-Declaration(Class(obo:GENO_0000165))
-Declaration(Class(obo:GENO_0000166))
-Declaration(Class(obo:GENO_0000169))
-Declaration(Class(obo:GENO_0000170))
-Declaration(Class(obo:GENO_0000171))
-Declaration(Class(obo:GENO_0000172))
-Declaration(Class(obo:GENO_0000173))
-Declaration(Class(obo:GENO_0000174))
-Declaration(Class(obo:GENO_0000175))
 Declaration(Class(obo:GENO_0000324))
 Declaration(Class(obo:GENO_0000338))
 Declaration(Class(obo:GENO_0000339))
@@ -309,7 +295,6 @@ Declaration(Class(obo:GENO_0000962))
 Declaration(Class(obo:GENO_0000963))
 Declaration(Class(obo:GENO_0000964))
 Declaration(Class(obo:GENO_0000965))
-Declaration(Class(obo:GO_0003674))
 Declaration(Class(obo:GO_0032502))
 Declaration(Class(obo:HP_0000118))
 Declaration(Class(obo:HsapDv_0000000))
@@ -324,11 +309,7 @@ Declaration(Class(obo:NCBITaxon_9606))
 Declaration(Class(obo:OBI_0000011))
 Declaration(Class(obo:OBI_0000086))
 Declaration(Class(obo:OBI_0000181))
-Declaration(Class(obo:OBI_0000435))
-Declaration(Class(obo:OBI_0001148))
-Declaration(Class(obo:OBI_0001149))
 Declaration(Class(obo:OBI_0100026))
-Declaration(Class(obo:OBI_0600043))
 Declaration(Class(obo:PATO_0000016))
 Declaration(Class(obo:PATO_0000383))
 Declaration(Class(obo:PATO_0000384))
@@ -420,6 +401,7 @@ Declaration(Class(obo:ZP_0000755))
 Declaration(Class(obo:ZP_0005531))
 Declaration(Class(obo:ZP_0005692))
 Declaration(Class(<http://purl.org/oban/association>))
+Declaration(Class(oboInOwl:ObsoleteClass))
 Declaration(Class(<http://www.ncbi.nlm.nih.gov/gene/20423>))
 Declaration(Class(<http://www.ncbi.nlm.nih.gov/gene/30269>))
 Declaration(Class(<http://www.ncbi.nlm.nih.gov/gene/399483>))
@@ -506,6 +488,7 @@ Declaration(ObjectProperty(obo:GENO_0000958))
 Declaration(ObjectProperty(obo:GENO_0000959))
 Declaration(ObjectProperty(obo:GENO_0000966))
 Declaration(ObjectProperty(obo:GENO_0000967))
+Declaration(ObjectProperty(obo:GENO_0000968))
 Declaration(ObjectProperty(obo:IAO_0000136))
 Declaration(ObjectProperty(obo:IAO_0000219))
 Declaration(ObjectProperty(obo:OBI_0000293))
@@ -551,6 +534,7 @@ Declaration(ObjectProperty(obo:RO_0003308))
 Declaration(ObjectProperty(<http://purl.org/oban/association_has_object>))
 Declaration(ObjectProperty(<http://purl.org/oban/association_has_predicate>))
 Declaration(ObjectProperty(<http://purl.org/oban/association_has_subject>))
+Declaration(ObjectProperty(oboInOwl:ObsoleteProperty))
 Declaration(DataProperty(<http://biohackathon.org/resource/faldo#position>))
 Declaration(DataProperty(obo:GENO_0000678))
 Declaration(DataProperty(obo:GENO_0000703))
@@ -576,6 +560,7 @@ Declaration(AnnotationProperty(dce:description))
 Declaration(AnnotationProperty(dce:title))
 Declaration(AnnotationProperty(dcterms:license))
 Declaration(AnnotationProperty(dcterms:source))
+Declaration(AnnotationProperty(oboInOwl:hasDbXref))
 ############################
 #   Annotation Properties
 ############################
@@ -1207,6 +1192,13 @@ ObjectPropertyDomain(obo:GENO_0000966 obo:GENO_0000815)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000967 "Relates a  'sequence feature location' to a sequence that it is anchored to.")
 AnnotationAssertion(rdfs:label obo:GENO_0000967 "has_reference_sequence")
 
+# Object Property: obo:GENO_0000968 (sequence role)
+
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000968 "A role assigned to a sequence feature, collection, or genotype, e.g. serving as a 'reference' against with other  sequences are compared.")
+AnnotationAssertion(rdfs:comment obo:GENO_0000968 "The RO:0000087 (has role) property cannot be used here because its domain is explicitly constrained to independent continuants, and sequence features in GENO are generically dependent contnuants.")
+AnnotationAssertion(rdfs:label obo:GENO_0000968 "sequence role")
+SubObjectPropertyOf(obo:GENO_0000968 obo:RO_0000053)
+
 # Object Property: obo:IAO_0000136 (is about)
 
 AnnotationAssertion(obo:IAO_0000115 obo:IAO_0000136 "is_about is a (currently) primitive relation that relates an information artifact to an entity.")
@@ -1264,9 +1256,9 @@ AnnotationAssertion(obo:IAO_0000115 obo:RO_0000086 "a relation between an indepe
 AnnotationAssertion(rdfs:label obo:RO_0000086 "has quality")
 SubObjectPropertyOf(obo:RO_0000086 obo:RO_0000053)
 
-# Object Property: obo:RO_0000087 (has_role)
+# Object Property: obo:RO_0000087 (has role)
 
-AnnotationAssertion(rdfs:label obo:RO_0000087 "has_role")
+AnnotationAssertion(rdfs:label obo:RO_0000087 "has role")
 SubObjectPropertyOf(obo:RO_0000087 obo:RO_0000053)
 
 # Object Property: obo:RO_0000091 (has disposition)
@@ -1739,17 +1731,6 @@ AnnotationAssertion(rdfs:label obo:BFO_0000031 "generically dependent continuant
 AnnotationAssertion(rdfs:label obo:BFO_0000031 "generically dependent continuant"@en)
 SubClassOf(obo:BFO_0000031 obo:BFO_0000002)
 
-# Class: obo:BFO_0000034 (function)
-
-AnnotationAssertion(obo:IAO_0000112 obo:BFO_0000034 "the function of a hammer to drive in nails"@en)
-AnnotationAssertion(obo:IAO_0000112 obo:BFO_0000034 "the function of a heart pacemaker to regulate the beating of a heart through electricity"@en)
-AnnotationAssertion(obo:IAO_0000112 obo:BFO_0000034 "the function of amylase in saliva to break down starch into sugar"@en)
-AnnotationAssertion(obo:IAO_0000116 obo:BFO_0000034 "BFO 2 Reference: In the past, we have distinguished two varieties of function, artifactual function and biological function. These are not asserted subtypes of BFO:function however, since the same function – for example: to pump, to transport – can exist both in artifacts and in biological entities. The asserted subtypes of function that would be needed in order to yield a separate monoheirarchy are not artifactual function, biological function, etc., but rather transporting function, pumping function, etc."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:BFO_0000034 "A function is a disposition that exists in virtue of the bearer’s physical make-up and this physical make-up is something the bearer possesses because it came into being, either through evolution (in the case of natural biological entities) or through intentional design (in the case of artifacts), in order to realize processes of a certain sort. (axiom label in BFO2 Reference: [064-001])"@en)
-AnnotationAssertion(rdfs:isDefinedBy obo:BFO_0000034 obo:bfo.owl)
-AnnotationAssertion(rdfs:label obo:BFO_0000034 "function"@en)
-SubClassOf(obo:BFO_0000034 obo:BFO_0000016)
-
 # Class: obo:BFO_0000040 (material entity)
 
 AnnotationAssertion(obo:IAO_0000112 obo:BFO_0000040 "a flame"@en)
@@ -1805,24 +1786,6 @@ AnnotationAssertion(obo:IAO_0000116 obo:ENVO_01000254 "1. Stub class to serve as
 AnnotationAssertion(rdfs:comment obo:ENVO_01000254 "In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class \"system\". The relation \"environed_by\" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.")
 AnnotationAssertion(rdfs:label obo:ENVO_01000254 "environmental system")
 SubClassOf(obo:ENVO_01000254 obo:BFO_0000040)
-
-# Class: obo:ERO_0000007 (technique)
-
-AnnotationAssertion(obo:IAO_0000115 obo:ERO_0000007 "A technique is a planned process used to accomplish a specific activity or task.")
-AnnotationAssertion(rdfs:label obo:ERO_0000007 "technique"@en)
-SubClassOf(obo:ERO_0000007 obo:OBI_0000011)
-
-# Class: obo:ERO_0002002 (embryonic stem cell line)
-
-AnnotationAssertion(obo:IAO_0000115 obo:ERO_0002002 "A stem cell line comprised of embryonic stem cells, totipotent cells cultured from an early embryo.")
-AnnotationAssertion(rdfs:label obo:ERO_0002002 "embryonic stem cell line"@en)
-SubClassOf(obo:ERO_0002002 obo:ERO_0002003)
-
-# Class: obo:ERO_0002003 (stem cell line)
-
-AnnotationAssertion(obo:IAO_0000115 obo:ERO_0002003 "A cell line comprised of stem cells,relatively undifferentiated cells that retain the ability to divide and proliferate provide progenitor cells that can differentiate into specialized cell types.")
-AnnotationAssertion(rdfs:label obo:ERO_0002003 "stem cell line"@en)
-SubClassOf(obo:ERO_0002003 obo:CLO_0000031)
 
 # Class: obo:GENO_0000000 (genomic genotype (sex-agnostic))
 
@@ -1912,7 +1875,7 @@ AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000017 "The notion of a 'reference
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000017 "reference sequence")
 AnnotationAssertion(rdfs:comment obo:GENO_0000017 "A reference sequence is one that serves as a standard against which 'variant' versions of the feature are compared, or against which located sequence features within the reference region are aligned in order to assign position information.  Being 'reference' does not imply anything about the frequency or function of features bearing the sequence. Only that some agent has used it to serve a reference role in defining a variant or locating a sequence.")
 AnnotationAssertion(rdfs:label obo:GENO_0000017 "reference sequence")
-EquivalentClasses(obo:GENO_0000017 ObjectIntersectionOf(obo:GENO_0000702 ObjectSomeValuesFrom(obo:RO_0000087 obo:GENO_0000152)))
+EquivalentClasses(obo:GENO_0000017 ObjectIntersectionOf(obo:GENO_0000702 ObjectSomeValuesFrom(obo:GENO_0000968 obo:GENO_0000152)))
 
 # Class: obo:GENO_0000019 (obsolete_sequence feature collection)
 
@@ -1974,7 +1937,7 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000036 "Being a 'reference allele' is
 
 In model organism datasets, 'reference' alleles are typically (but not always) the 'wild-type' variant at a given locus, representing a functional and unaltered version of the feature that is part of a defined genomic background, and against which natural or experimentally-induced alterations are compared.")
 AnnotationAssertion(rdfs:label obo:GENO_0000036 "reference allele")
-EquivalentClasses(obo:GENO_0000036 ObjectIntersectionOf(obo:GENO_0000512 ObjectSomeValuesFrom(obo:RO_0000087 obo:GENO_0000152)))
+EquivalentClasses(obo:GENO_0000036 ObjectIntersectionOf(obo:GENO_0000512 ObjectSomeValuesFrom(obo:GENO_0000968 obo:GENO_0000152)))
 
 # Class: obo:GENO_0000037 (obsolete_unspecified feature)
 
@@ -2056,7 +2019,6 @@ SubClassOf(obo:GENO_0000091 oboInOwl:ObsoleteClass)
 
 AnnotationAssertion(rdfs:label obo:GENO_0000092 "gene trap insertion")
 SubClassOf(obo:GENO_0000092 obo:SO_0000667)
-SubClassOf(obo:GENO_0000092 ObjectSomeValuesFrom(obo:RO_0002353 obo:GENO_0000172))
 
 # Class: obo:GENO_0000093 (integrated transgene)
 
@@ -2080,8 +2042,6 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000106 "1. Genomic material here is c
 2. Genomic material need not be inherited from an immediate ancestor cell or organism (e.g. a replicative plasmid or transposon acquired through some experimental modification), but such cases must be capable of being inherited by progeny cells or organisms.")
 AnnotationAssertion(rdfs:label obo:GENO_0000106 "genomic material")
 SubClassOf(obo:GENO_0000106 obo:GENO_0000482)
-SubClassOf(obo:GENO_0000106 ObjectSomeValuesFrom(obo:BFO_0000050 obo:GENO_0000108))
-SubClassOf(obo:GENO_0000106 ObjectSomeValuesFrom(obo:GENO_0000248 ObjectUnionOf(obo:CL_0000000 obo:NCBITaxon_10239)))
 SubClassOf(obo:GENO_0000106 ObjectSomeValuesFrom(obo:RO_0000091 obo:GENO_0000139))
 
 # Class: obo:GENO_0000108 (material genome)
@@ -2286,66 +2246,6 @@ SubClassOf(obo:GENO_0000152 obo:GENO_0000773)
 
 AnnotationAssertion(rdfs:label obo:GENO_0000160 "unspecified life cycle stage")
 SubClassOf(obo:GENO_0000160 obo:UBERON_0000105)
-
-# Class: obo:GENO_0000164 (genetic insertion technique)
-
-AnnotationAssertion(rdfs:comment obo:GENO_0000164 "objective is to insert some specified sequence into the genome of a cell or virus")
-AnnotationAssertion(rdfs:label obo:GENO_0000164 "genetic insertion technique")
-SubClassOf(obo:GENO_0000164 obo:OBI_0600043)
-
-# Class: obo:GENO_0000165 (mutagen treatment technique)
-
-AnnotationAssertion(rdfs:label obo:GENO_0000165 "mutagen treatment technique")
-SubClassOf(obo:GENO_0000165 obo:OBI_0600043)
-
-# Class: obo:GENO_0000166 (targeted gene mutation technique)
-
-AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000166 "a genetic alteration technique that creates a variant/allele of a known gene - either by prospective targeting of a specific the gene through homologous recombination, or by retrospective sequence analysis to determine the insertion locus of a randomly integrated transgene (e.g. as done in gene trapping).")
-AnnotationAssertion(rdfs:comment obo:GENO_0000166 "This is represented axiomatically by the requirement that a 'gene variant' (ie an allele/variant of a known gene) is the specified_output of this technique.  This is contrasted to non-targted/random insertions/alterations where the altered locus is not known, and therefore no variant allele of a gene is created.")
-AnnotationAssertion(rdfs:label obo:GENO_0000166 "targeted gene mutation technique")
-SubClassOf(obo:GENO_0000166 obo:OBI_0600043)
-SubClassOf(obo:GENO_0000166 ObjectSomeValuesFrom(obo:OBI_0000299 obo:GENO_0000515))
-
-# Class: obo:GENO_0000169 (random genetic insertion technique)
-
-AnnotationAssertion(rdfs:comment obo:GENO_0000169 "Is considered to be 'non-targeted' in the sense that the insertion occurs randomly and not through homologous recombination.")
-AnnotationAssertion(rdfs:label obo:GENO_0000169 "random genetic insertion technique")
-SubClassOf(obo:GENO_0000169 obo:GENO_0000164)
-
-# Class: obo:GENO_0000170 (targeted genetic insertion technique)
-
-AnnotationAssertion(rdfs:label obo:GENO_0000170 "targeted genetic insertion technique")
-SubClassOf(obo:GENO_0000170 obo:GENO_0000164)
-SubClassOf(obo:GENO_0000170 ObjectSomeValuesFrom(obo:OBI_0000299 obo:GENO_0000515))
-
-# Class: obo:GENO_0000171 (enhancer trapping technique)
-
-AnnotationAssertion(rdfs:label obo:GENO_0000171 "enhancer trapping technique")
-SubClassOf(obo:GENO_0000171 obo:GENO_0000170)
-SubClassOf(obo:GENO_0000171 ObjectSomeValuesFrom(obo:OBI_0000299 obo:GENO_0000515))
-
-# Class: obo:GENO_0000172 (gene trapping technique)
-
-AnnotationAssertion(rdfs:label obo:GENO_0000172 "gene trapping technique")
-SubClassOf(obo:GENO_0000172 obo:GENO_0000170)
-SubClassOf(obo:GENO_0000172 ObjectSomeValuesFrom(obo:OBI_0000299 obo:GENO_0000515))
-
-# Class: obo:GENO_0000173 (promoter trapping technique)
-
-AnnotationAssertion(rdfs:label obo:GENO_0000173 "promoter trapping technique")
-SubClassOf(obo:GENO_0000173 obo:GENO_0000170)
-SubClassOf(obo:GENO_0000173 ObjectSomeValuesFrom(obo:OBI_0000299 obo:GENO_0000515))
-
-# Class: obo:GENO_0000174 (targeted knock-in technique)
-
-AnnotationAssertion(rdfs:label obo:GENO_0000174 "targeted knock-in technique")
-SubClassOf(obo:GENO_0000174 obo:GENO_0000170)
-SubClassOf(obo:GENO_0000174 ObjectSomeValuesFrom(obo:OBI_0000299 obo:GENO_0000515))
-
-# Class: obo:GENO_0000175 (random transgene insertion technique)
-
-AnnotationAssertion(rdfs:label obo:GENO_0000175 "random transgene insertion technique")
-SubClassOf(obo:GENO_0000175 obo:GENO_0000169)
 
 # Class: obo:GENO_0000324 (obsolete_chromosome complement)
 
@@ -2833,7 +2733,7 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000611 "A genomic genotype that sp
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000611 "Being a 'genomic background' implies that a variant genotype was derived from this background (which is the case for most model organism database genotypes/strains). This is a subtly different notion than being a 'reference genotype' , which can be any genotype that serves as a basis for comparison. But in a sense all background genotypes are by default reference genotypes, in that the derived variant genotype is compared against it.")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000611 "background genotype")
 AnnotationAssertion(rdfs:label obo:GENO_0000611 "genomic background"@en)
-EquivalentClasses(obo:GENO_0000611 ObjectIntersectionOf(obo:GENO_0000899 ObjectSomeValuesFrom(obo:RO_0000087 obo:GENO_0000152)))
+EquivalentClasses(obo:GENO_0000611 ObjectIntersectionOf(obo:GENO_0000899 ObjectSomeValuesFrom(obo:GENO_0000968 obo:GENO_0000152)))
 SubClassOf(obo:GENO_0000611 ObjectSomeValuesFrom(obo:IAO_0000219 obo:GENO_0000010))
 
 # Class: obo:GENO_0000614 (chromosomal region)
@@ -2953,7 +2853,7 @@ SubClassOf(obo:GENO_0000640 obo:GENO_0000638)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000642 "A transgene whose product is used as a selectable marker.")
 AnnotationAssertion(rdfs:label obo:GENO_0000642 "selectable marker transgene"@en)
-EquivalentClasses(obo:GENO_0000642 ObjectIntersectionOf(obo:SO_0000902 ObjectSomeValuesFrom(obo:RO_0000087 obo:GENO_0000911)))
+EquivalentClasses(obo:GENO_0000642 ObjectIntersectionOf(obo:SO_0000902 ObjectSomeValuesFrom(obo:GENO_0000207 obo:GENO_0000911)))
 SubClassOf(obo:GENO_0000642 ObjectSomeValuesFrom(obo:GENO_0000207 obo:SO_0000783))
 
 # Class: obo:GENO_0000644 (karyotype)
@@ -3047,7 +2947,7 @@ EquivalentClasses(obo:GENO_0000666 ObjectIntersectionOf(obo:GENO_0000481 ObjectS
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000667 "A transgene that codes for a product used as a reporter of gene expression or activity.")
 AnnotationAssertion(rdfs:label obo:GENO_0000667 "reporter transgene"@en)
-EquivalentClasses(obo:GENO_0000667 ObjectIntersectionOf(obo:SO_0000902 ObjectSomeValuesFrom(obo:RO_0000087 obo:GENO_0000910)))
+EquivalentClasses(obo:GENO_0000667 ObjectIntersectionOf(obo:SO_0000902 ObjectSomeValuesFrom(obo:GENO_0000207 obo:GENO_0000910)))
 SubClassOf(obo:GENO_0000667 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GENO_0000640))
 SubClassOf(obo:GENO_0000667 ObjectSomeValuesFrom(obo:GENO_0000207 obo:SO_0000783))
 
@@ -3215,6 +3115,7 @@ SubClassOf(obo:GENO_0000768 oboInOwl:ObsoleteClass)
 
 # Class: obo:GENO_0000770 (phenotypic inheritance process)
 
+AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000770 obo:GENO_0000484)
 AnnotationAssertion(rdfs:label obo:GENO_0000770 "phenotypic inheritance process"@en)
 SubClassOf(obo:GENO_0000770 obo:GENO_0000351)
 
@@ -3635,6 +3536,7 @@ SubClassOf(obo:GENO_0000902 obo:GENO_0000815)
 # Class: obo:GENO_0000904 (organismal entity)
 
 AnnotationAssertion(obo:GENO_0000905 obo:GENO_0000904 "true"^^xsd:boolean)
+AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000904 obo:GENO_0000484)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000904 "A material entity that is an organism, derived from an organism, or composed of organisms (e.g. a cell line, biosample, tissue culture, population, etc).")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000904 "useful organizational term to collect entities that have genomes/genotypes.")
 AnnotationAssertion(rdfs:label obo:GENO_0000904 "organismal entity"@en)
@@ -3647,15 +3549,15 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000907 "The molecular product resu
 AnnotationAssertion(rdfs:label obo:GENO_0000907 "gene product"@en)
 SubClassOf(obo:GENO_0000907 obo:SO_0000110)
 
-# Class: obo:GENO_0000910 (reporter role)
+# Class: obo:GENO_0000910 (reporter)
 
-AnnotationAssertion(rdfs:label obo:GENO_0000910 "reporter role"@en)
-SubClassOf(obo:GENO_0000910 obo:OBI_0000086)
+AnnotationAssertion(rdfs:label obo:GENO_0000910 "reporter"@en)
+SubClassOf(obo:GENO_0000910 obo:GENO_0000788)
 
-# Class: obo:GENO_0000911 (selectable marker role)
+# Class: obo:GENO_0000911 (selectable marker)
 
-AnnotationAssertion(rdfs:label obo:GENO_0000911 "selectable marker role"@en)
-SubClassOf(obo:GENO_0000911 obo:OBI_0000086)
+AnnotationAssertion(rdfs:label obo:GENO_0000911 "selectable marker"@en)
+SubClassOf(obo:GENO_0000911 obo:GENO_0000788)
 
 # Class: obo:GENO_0000912 (selectable marker region)
 
@@ -4039,11 +3941,6 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000965 "A pair of integers represe
 AnnotationAssertion(rdfs:label obo:GENO_0000965 "sequence interval")
 SubClassOf(obo:GENO_0000965 obo:IAO_0000030)
 
-# Class: obo:GO_0003674 (molecular function)
-
-AnnotationAssertion(rdfs:label obo:GO_0003674 "molecular function")
-SubClassOf(obo:GO_0003674 obo:BFO_0000034)
-
 # Class: obo:GO_0032502 (developmental process)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GO_0032502 "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition. [database_cross_reference: GOC:isa_complete]")
@@ -4134,36 +4031,11 @@ AnnotationAssertion(obo:IAO_0000115 obo:OBI_0000181 "a population is a collectio
 AnnotationAssertion(rdfs:label obo:OBI_0000181 "population"@en)
 SubClassOf(obo:OBI_0000181 obo:GENO_0000113)
 
-# Class: obo:OBI_0000435 (genotyping assay)
-
-AnnotationAssertion(obo:IAO_0000115 obo:OBI_0000435 "An assay which generates data about a genotype from a specimen of genomic DNA. A variety of techniques and instruments can be used to produce information about sequence variation at particular genomic positions.")
-AnnotationAssertion(rdfs:label obo:OBI_0000435 "genotyping assay")
-SubClassOf(obo:OBI_0000435 obo:ERO_0000007)
-
-# Class: obo:OBI_0001148 (targeted gene knock-out technique)
-
-AnnotationAssertion(obo:IAO_0000115 obo:OBI_0001148 "A genetic transformation that renders a gene non-functional, e.g. due to a point mutation, or the removal of all, or part of, the gene using recombinant methods.")
-AnnotationAssertion(rdfs:comment obo:OBI_0001148 "A genetic transformation that involves the insertion of a protein coding cDNA sequence at a particular locus in an organism's chromosome. Typically, this is done in mice since the technology for this process is more refined, and because mouse embryonic stem cells are easily manipulated. The difference between knock-in technology and transgenic technology is that a knock-in involves a gene inserted into a specific locus, and is a \"targeted\" insertion.")
-AnnotationAssertion(rdfs:label obo:OBI_0001148 "targeted gene knock-out technique")
-SubClassOf(obo:OBI_0001148 obo:GENO_0000166)
-
-# Class: obo:OBI_0001149 (targeted gene knock-in technique)
-
-AnnotationAssertion(rdfs:label obo:OBI_0001149 "targeted gene knock-in technique"@en)
-SubClassOf(obo:OBI_0001149 obo:GENO_0000166)
-
 # Class: obo:OBI_0100026 (organism)
 
 AnnotationAssertion(obo:IAO_0000116 obo:OBI_0100026 "Stub class to serve as root of hierarchy for imports from NCBI Taxonomy.")
 AnnotationAssertion(rdfs:label obo:OBI_0100026 "organism")
 SubClassOf(obo:OBI_0100026 obo:BFO_0000040)
-
-# Class: obo:OBI_0600043 (genetic modification technique)
-
-AnnotationAssertion(obo:IAO_0000115 obo:OBI_0600043 "the introduction. alteration or integration of genetic material into a cell or organism")
-AnnotationAssertion(rdfs:label obo:OBI_0600043 "genetic modification technique")
-SubClassOf(obo:OBI_0600043 obo:ERO_0000007)
-SubClassOf(obo:OBI_0600043 ObjectSomeValuesFrom(obo:OBI_0000299 ObjectIntersectionOf(obo:GENO_0000106 ObjectSomeValuesFrom(obo:GENO_0000211 obo:GENO_0000002))))
 
 # Class: obo:PATO_0000016 (obsolete_color brightness)
 
@@ -4559,7 +4431,7 @@ AnnotationAssertion(obo:IAO_0000112 obo:SO_0001505 "'GRCh37.p10' (a human refere
 AnnotationAssertion(obo:IAO_0000115 obo:SO_0001505 "A genome sequence that is used as a standard against which other genome sequences are compared, or into which alterations are intentionally introduced.")
 AnnotationAssertion(rdfs:label obo:SO_0001505 "reference genome sequence")
 SubClassOf(obo:SO_0001505 obo:GENO_0000017)
-SubClassOf(obo:SO_0001505 ObjectSomeValuesFrom(obo:RO_0000087 obo:GENO_0000152))
+SubClassOf(obo:SO_0001505 ObjectSomeValuesFrom(obo:GENO_0000968 obo:GENO_0000152))
 
 # Class: obo:SO_0001742 (copy_number_gain)
 
