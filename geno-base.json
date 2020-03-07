@@ -2127,6 +2127,20 @@
       "type" : "PROPERTY",
       "lbl" : "is_reference_allele_of"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000972",
+      "meta" : {
+        "definition" : {
+          "val" : "An inheritance pattern wherein the trait is determined by inheritance of translocation or inversion of sections of one or more chromosomes, possibly together with environmental factors.",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+          "val" : "Alliance of Genomic Resources"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosomal rearrangement inheritance"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000000",
       "meta" : {
         "basicPropertyValues" : [ {
@@ -2154,6 +2168,20 @@
       "type" : "CLASS",
       "lbl" : "genomic background"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000971",
+      "meta" : {
+        "definition" : {
+          "val" : "An inheritance pattern wherein the trait is determined by inheritance of duplicated sections of one or more chromosomes, encompassing either 0 or multiple genes, possibly together with environmental factors.",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+          "val" : "Alliance of Genomic Resources"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosomal duplication inheritance"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000850",
       "meta" : {
         "definition" : {
@@ -2163,6 +2191,20 @@
       },
       "type" : "CLASS",
       "lbl" : "P-element construct"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000970",
+      "meta" : {
+        "definition" : {
+          "val" : "An inheritance pattern wherein the trait is determined by inheritance of missing sections of one or more chromosomes, encompassing either 0 or multiple genes, possibly together with environmental factors.",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+          "val" : "Alliance of Genomic Resources"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosomal deletion inheritance"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000618",
       "meta" : {
@@ -2602,6 +2644,20 @@
       "id" : "http://purl.obolibrary.org/obo/GENO_0000606",
       "type" : "CLASS",
       "lbl" : "hemizygous insertion-linked"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000969",
+      "meta" : {
+        "definition" : {
+          "val" : "An inheritance pattern wherein the trait is determined by inheritance of extra, missing, or re-arranged chromosomes possibly together with environmental factors.",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+          "val" : "The Alliance of Genomic Resources"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosomal inheritance"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000608",
       "meta" : {
@@ -5278,11 +5334,11 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
           "val" : "a tornado"
         }, {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
-          "val" : "BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here."
-        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
           "val" : "an aggregate of human beings."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here."
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
           "val" : "a photon"
@@ -6306,10 +6362,10 @@
           "val" : "a chair"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
-          "val" : "an organism"
+          "val" : "a molecule"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
-          "val" : "a molecule"
+          "val" : "an organism"
         } ]
       },
       "type" : "CLASS",
@@ -7319,13 +7375,13 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000051"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/SO_0000577",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0000830"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000818",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000714"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000577",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000830"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000492",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000683",
@@ -7426,6 +7482,10 @@
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0001062",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000040"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000970",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000969"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000780",
       "pred" : "is_a",
@@ -7579,13 +7639,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000391"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000383",
-      "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000655"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000616",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000207",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000618"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000383",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000655"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000408",
       "pred" : "subPropertyOf",
@@ -7615,13 +7675,13 @@
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000207",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000513"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000680",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000501",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000512"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000680",
+      "pred" : "is_a",
+      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000146",
       "pred" : "is_a",
@@ -7719,6 +7779,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000874"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000969",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000141"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/BFO_0000003",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000001"
@@ -7767,21 +7831,21 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000961"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000243",
-      "pred" : "subPropertyOf",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000637",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002525",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000902"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000414",
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000243",
       "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000418"
+      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000889",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000141"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000414",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000418"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000931",
       "pred" : "is_a",
@@ -7847,13 +7911,13 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000708"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000968",
-      "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/RO_0000053"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000714",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000726",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000481"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000968",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0000053"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000633",
       "pred" : "is_a",
@@ -7943,6 +8007,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000105"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000971",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000969"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000392",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000133"
@@ -7971,13 +8039,13 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002200"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000105",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000351"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ZP_0005531",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000575"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000105",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000351"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000141",
       "pred" : "is_a",
@@ -8167,13 +8235,13 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000408"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000608",
-      "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000207"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000667",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000207",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000783"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000608",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000207"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000504",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000231",
@@ -8251,13 +8319,13 @@
       "pred" : "is_a",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000955",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000956"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_1000032",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000955",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000956"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PCO_0000020",
       "pred" : "is_a",
@@ -8303,13 +8371,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000016"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000515",
-      "pred" : "http://purl.obolibrary.org/obo/GENO_0000382",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000029",
       "pred" : "is_a",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000515",
+      "pred" : "http://purl.obolibrary.org/obo/GENO_0000382",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000847",
       "pred" : "subPropertyOf",
@@ -8318,6 +8386,10 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000393",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000392"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000972",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000969"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000684",
       "pred" : "is_a",
@@ -8331,11 +8403,11 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000040"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000870",
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000915",
       "pred" : "is_a",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000915",
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000870",
       "pred" : "is_a",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
@@ -8399,13 +8471,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000856"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000715",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002162",
-      "obj" : "http://purl.obolibrary.org/obo/OBI_0100026"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000529",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000443",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000715",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002162",
+      "obj" : "http://purl.obolibrary.org/obo/OBI_0100026"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000920",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -8467,13 +8539,13 @@
       "pred" : "inverseOf",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000413"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000500",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000497"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_0001745",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001744"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000500",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000497"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000953",
       "pred" : "is_a",
@@ -8755,13 +8827,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000715"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000891",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000112",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000113"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000891",
+      "pred" : "is_a",
+      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000394",
       "pred" : "is_a",
@@ -8795,13 +8867,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000002"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000244",
-      "pred" : "subPropertyOf",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_1000012",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_1000011"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000244",
+      "pred" : "subPropertyOf",
+      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000907",
       "pred" : "is_a",
@@ -8879,13 +8951,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000737"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000791",
-      "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000790"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_1000008",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001483"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000791",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000790"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/OBI_0000086",
       "pred" : "is_a",
@@ -9139,13 +9211,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000830"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000338",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000346"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000737",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000714"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000338",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000346"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000897",
       "pred" : "is_a",
@@ -9159,21 +9231,21 @@
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000239",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000702"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/RO_0002525",
-      "pred" : "subPropertyOf",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000655"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000654",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000051"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000415",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002525",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000655"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000649",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000611"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000415",
+      "pred" : "is_a",
+      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0000086",
       "pred" : "subPropertyOf",
@@ -9318,10 +9390,13 @@
         "pred" : "http://purl.org/dc/elements/1.1/title",
         "val" : "GENO ontology"
       }, {
+        "pred" : "http://purl.org/dc/elements/1.1/type",
+        "val" : "http://purl.obolibrary.org/obo/IAO_8000001"
+      }, {
         "pred" : "http://purl.org/dc/terms/license",
         "val" : "Unspecified"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/geno/releases/2019-10-15/geno-base.json"
+      "version" : "http://purl.obolibrary.org/obo/geno/releases/2020-03-07/geno-base.json"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ {
@@ -9502,13 +9577,13 @@
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/RO_0002351",
       "allValuesFromEdges" : [ {
-        "sub" : "http://purl.obolibrary.org/obo/GENO_0000119",
-        "pred" : "http://purl.obolibrary.org/obo/RO_0002351",
-        "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_7955"
-      }, {
         "sub" : "http://purl.obolibrary.org/obo/GENO_0000887",
         "pred" : "http://purl.obolibrary.org/obo/RO_0002351",
         "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_8090"
+      }, {
+        "sub" : "http://purl.obolibrary.org/obo/GENO_0000119",
+        "pred" : "http://purl.obolibrary.org/obo/RO_0002351",
+        "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_7955"
       } ]
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/GENO_0000368",

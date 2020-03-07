@@ -11,11 +11,12 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/geno-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2019-10-15/geno-base.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2020-03-07/geno-base.owl"/>
         <dc:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dc:description>
         <dc:title>GENO ontology</dc:title>
+        <dc:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/IAO_8000001</dc:type>
         <terms:license>Unspecified</terms:license>
     </owl:Ontology>
     
@@ -6481,6 +6482,50 @@ As we saw for &apos;copy number complement&apos;, the defining sequence here is 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <obo:IAO_0000115>A pair of integers representing start and end position of a location on a sequence coordinate system.</obo:IAO_0000115>
         <rdfs:label>sequence interval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000969 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000969">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000141"/>
+        <obo:IAO_0000115>An inheritance pattern wherein the trait is determined by inheritance of extra, missing, or re-arranged chromosomes possibly together with environmental factors.</obo:IAO_0000115>
+        <obo:IAO_0000119>The Alliance of Genomic Resources</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">chromosomal inheritance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000970 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000970">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000969"/>
+        <obo:IAO_0000115>An inheritance pattern wherein the trait is determined by inheritance of missing sections of one or more chromosomes, encompassing either 0 or multiple genes, possibly together with environmental factors.</obo:IAO_0000115>
+        <obo:IAO_0000119>Alliance of Genomic Resources</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">chromosomal deletion inheritance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000971 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000971">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000969"/>
+        <obo:IAO_0000115>An inheritance pattern wherein the trait is determined by inheritance of duplicated sections of one or more chromosomes, encompassing either 0 or multiple genes, possibly together with environmental factors.</obo:IAO_0000115>
+        <obo:IAO_0000119>Alliance of Genomic Resources</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">chromosomal duplication inheritance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000972 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000972">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000969"/>
+        <obo:IAO_0000115>An inheritance pattern wherein the trait is determined by inheritance of translocation or inversion of sections of one or more chromosomes, possibly together with environmental factors.</obo:IAO_0000115>
+        <obo:IAO_0000119>Alliance of Genomic Resources</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">chromosomal rearrangement inheritance</rdfs:label>
     </owl:Class>
     
 

@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: geno/releases/2019-10-15/geno-base.owl
+data-version: geno/releases/2020-03-07/geno-base.owl
 ontology: geno/geno-base
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
+property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
 property_value: http://purl.org/dc/terms/license "Unspecified" xsd:string
 
 [Term]
@@ -2096,6 +2097,34 @@ id: GENO:0000965
 name: sequence interval
 def: "A pair of integers representing start and end position of a location on a sequence coordinate system." []
 is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: GENO:0000969
+name: chromosomal inheritance
+def: "An inheritance pattern wherein the trait is determined by inheritance of extra, missing, or re-arranged chromosomes possibly together with environmental factors." []
+is_a: GENO:0000141 ! inheritance pattern
+property_value: IAO:0000119 "The Alliance of Genomic Resources" xsd:string
+
+[Term]
+id: GENO:0000970
+name: chromosomal deletion inheritance
+def: "An inheritance pattern wherein the trait is determined by inheritance of missing sections of one or more chromosomes, encompassing either 0 or multiple genes, possibly together with environmental factors." []
+is_a: GENO:0000969 ! chromosomal inheritance
+property_value: IAO:0000119 "Alliance of Genomic Resources" xsd:string
+
+[Term]
+id: GENO:0000971
+name: chromosomal duplication inheritance
+def: "An inheritance pattern wherein the trait is determined by inheritance of duplicated sections of one or more chromosomes, encompassing either 0 or multiple genes, possibly together with environmental factors." []
+is_a: GENO:0000969 ! chromosomal inheritance
+property_value: IAO:0000119 "Alliance of Genomic Resources" xsd:string
+
+[Term]
+id: GENO:0000972
+name: chromosomal rearrangement inheritance
+def: "An inheritance pattern wherein the trait is determined by inheritance of translocation or inversion of sections of one or more chromosomes, possibly together with environmental factors." []
+is_a: GENO:0000969 ! chromosomal inheritance
+property_value: IAO:0000119 "Alliance of Genomic Resources" xsd:string
 
 [Term]
 id: GO:0032502

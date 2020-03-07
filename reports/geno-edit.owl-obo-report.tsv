@@ -314,4 +314,3 @@ INFO	missing_superclass	GENO:0000885	rdfs:subClassOf
 INFO	missing_superclass	SO:0000804	rdfs:subClassOf		
 INFO	missing_superclass	SO:0000830	rdfs:subClassOf		
 INFO	missing_superclass	SO:0001059	rdfs:subClassOf		
-INFO	missing_superclass	oboInOwl:ObsoleteClass	rdfs:subClassOf		
