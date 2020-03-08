@@ -99,6 +99,16 @@ Declaration(Class(obo:GENO_0000149))
 Declaration(Class(obo:GENO_0000150))
 Declaration(Class(obo:GENO_0000152))
 Declaration(Class(obo:GENO_0000160))
+Declaration(Class(obo:GENO_0000164))
+Declaration(Class(obo:GENO_0000165))
+Declaration(Class(obo:GENO_0000166))
+Declaration(Class(obo:GENO_0000169))
+Declaration(Class(obo:GENO_0000170))
+Declaration(Class(obo:GENO_0000171))
+Declaration(Class(obo:GENO_0000172))
+Declaration(Class(obo:GENO_0000173))
+Declaration(Class(obo:GENO_0000174))
+Declaration(Class(obo:GENO_0000175))
 Declaration(Class(obo:GENO_0000324))
 Declaration(Class(obo:GENO_0000338))
 Declaration(Class(obo:GENO_0000339))
@@ -405,7 +415,6 @@ Declaration(Class(obo:ZP_0000755))
 Declaration(Class(obo:ZP_0005531))
 Declaration(Class(obo:ZP_0005692))
 Declaration(Class(<http://purl.org/oban/association>))
-Declaration(Class(oboInOwl:ObsoleteClass))
 Declaration(Class(<http://www.ncbi.nlm.nih.gov/gene/20423>))
 Declaration(Class(<http://www.ncbi.nlm.nih.gov/gene/30269>))
 Declaration(Class(<http://www.ncbi.nlm.nih.gov/gene/399483>))
@@ -1881,24 +1890,24 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000017 "A reference sequence is one t
 AnnotationAssertion(rdfs:label obo:GENO_0000017 "reference sequence")
 EquivalentClasses(obo:GENO_0000017 ObjectIntersectionOf(obo:GENO_0000702 ObjectSomeValuesFrom(obo:GENO_0000968 obo:GENO_0000152)))
 
-# Class: obo:GENO_0000019 (obsolete_sequence feature collection)
+# Class: obo:GENO_0000019 (obsolete sequence feature collection)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000019 "a collection more than one sequence features (ie a collection of discontinuous sequence features)")
 AnnotationAssertion(oboInOwl:hasDbXref obo:GENO_0000019 "perhaps not same as SO:sequence collection, as here we explicitly include features that can have an extent of zero (and SO:sequence collection is a collection of regions that have an extent of at least one)")
 AnnotationAssertion(rdfs:comment obo:GENO_0000019 "1. Note that members of this class can be features with extents of zero (e.g. junctions).  This is likely different than the SO:sequence feature class which has members that are regions.")
-AnnotationAssertion(rdfs:label obo:GENO_0000019 "obsolete_sequence feature collection")
-SubClassOf(obo:GENO_0000019 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000019 "obsolete sequence feature collection"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000019 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000022 (obsolete_genomic feature collection)
+# Class: obo:GENO_0000022 (obsolete genomic feature collection)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000022 "A sequence feature collection comprised of discontiguous sequences from a single genome")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000022 "Previously called 'genetic locus collection'.  Difference between 'genetic' and 'genomic', as used here, is that 'genomic' implies a feature is a heritable part of some genome, while 'genetic' implies that it is part of some feature that is capable of contributing to gene expression in a cell or other biological system.")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000022 "genomic feature collection")
 AnnotationAssertion(rdfs:comment obo:GENO_0000022 "Conceptually, members of this collection are meant to be about the sum total genetic material in a single cell or organism. But these members need not be associated with an actual material in a real cell or organism individual.  For example, things like a 'reference genome' may not actually represent the material genome of any individual cell or organism in reality. Here, there may be no genomic material referents of the sequences in such a collection because the genome is tied to an idealized, hypothetical cell or organism instance. The key is that conceptually, they are still tied to the idea of being contained in a single genome. In the case of a genotype, the individual seqeunce members are not all about the genetic material of a singel cell or organism. Rather, it is the resolved sequence contained in the genotype that is meant to be about the total genomic sequence content of a genome - which we deem acceptable for classifying as a genetic locus collection.")
-AnnotationAssertion(rdfs:label obo:GENO_0000022 "obsolete_genomic feature collection")
-SubClassOf(obo:GENO_0000022 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000022 "obsolete genomic feature collection"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000022 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000029 (obsolete_reference single locus complement)
+# Class: obo:GENO_0000029 (obsolete reference single locus complement)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000029 "A single locus complement that serves as a standard against which 'variant' sequences are compared")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000029 "reference allelic complement")
@@ -1913,8 +1922,8 @@ SC axioms:
 'has member' exactly 0 'variant allele'
 'has member' only 'reference genomic feature'
 'has member' some 'reference genomic feature'")
-AnnotationAssertion(rdfs:label obo:GENO_0000029 "obsolete_reference single locus complement")
-SubClassOf(obo:GENO_0000029 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000029 "obsolete reference single locus complement"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000029 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000030 (variant single locus complement)
 
@@ -1943,7 +1952,7 @@ In model organism datasets, 'reference' alleles are typically (but not always) t
 AnnotationAssertion(rdfs:label obo:GENO_0000036 "reference allele")
 EquivalentClasses(obo:GENO_0000036 ObjectIntersectionOf(obo:GENO_0000512 ObjectSomeValuesFrom(obo:GENO_0000968 obo:GENO_0000152)))
 
-# Class: obo:GENO_0000037 (obsolete_unspecified feature)
+# Class: obo:GENO_0000037 (obsolete unspecified feature)
 
 AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000037 obo:GENO_0000484)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000037 "A genomic feature known to exist, but remaining uncharacterized with respect to its identity (e.g. which allele exists at a given gene locus).")
@@ -1953,10 +1962,10 @@ AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000037 "Not required at present fo
 Eq Class def: 'genomic feature'
  and (has_sequence_attribute some unspecified)")
 AnnotationAssertion(rdfs:comment obo:GENO_0000037 "An unspecified feature is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).")
-AnnotationAssertion(rdfs:label obo:GENO_0000037 "obsolete_unspecified feature")
-SubClassOf(obo:GENO_0000037 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000037 "obsolete unspecified feature"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000037 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000042 (obsolete_reference junction)
+# Class: obo:GENO_0000042 (obsolete reference junction)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000042 "A junction found at a chromosomal position where an insertion has occurred on the homologous chromosome, such that the junction represents the reference feature paired with the hemizygously inserted feature.")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000042 "hemizygous reference junction")
@@ -1970,8 +1979,8 @@ is_variant_with some insertion")
 AnnotationAssertion(rdfs:comment obo:GENO_0000042 "In the case of a transgenic insertion that creates a hemizygous locus, the refernce locus that this insertion is variant_with is the junction on the homologous chromosome at the same position where the insertion occurred. This is the 'hemizygous reference' junction.
 
 The junction-insertion pair represents the allelic complement at that locus, which is considered to be hemizygous. Most genotype syntaxes represent this hemizygous state with a ' /0' notation.")
-AnnotationAssertion(rdfs:label obo:GENO_0000042 "obsolete_reference junction")
-SubClassOf(obo:GENO_0000042 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000042 "obsolete reference junction"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000042 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000047 (danio rerio gene)
 
@@ -1991,7 +2000,7 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000057 "A gene that originates fro
 AnnotationAssertion(rdfs:label obo:GENO_0000057 "mus musculus gene")
 EquivalentClasses(obo:GENO_0000057 ObjectIntersectionOf(obo:SO_0000704 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_10090)))
 
-# Class: obo:GENO_0000060 (obsolete_reference gene allele)
+# Class: obo:GENO_0000060 (obsolete reference gene allele)
 
 AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000060 "A reference human sonic hedgehog (shh) gene spans bases 155,592,680-155,604,967 on Chromosome 7, according to genome build GRCh37, and produces a primary funcitonal transcript that is 4454 bp in length and produces a 462 amino acid protein involved in cell signaling events behind various aspects of cell differentiation and development.
 http://useast.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000164690
@@ -2011,13 +2020,13 @@ is_reference_allele_of some gene")
 AnnotationAssertion(rdfs:comment obo:GENO_0000060 "Being a 'reference gene' is a role or status assigned in the context of a specific dataset or analysis.  In human variation datasets, 'reference' status is typically assigned based on factors such as being the most common version/allele in a population, being an ancestral allele, or being indentified first as a prototypical example of a gene.
 
 In model organism datasets, 'reference' genes are typically the 'wild-type' allele for a given gene, representing a functional and unaltered version of the gene that is part of a defined genomic background, and against which natural or experimentally-induced versions are compared.")
-AnnotationAssertion(rdfs:label obo:GENO_0000060 "obsolete_reference gene allele")
-SubClassOf(obo:GENO_0000060 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000060 "obsolete reference gene allele"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000060 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000091 (obsolete_experimental insertion)
+# Class: obo:GENO_0000091 (obsolete experimental insertion)
 
-AnnotationAssertion(rdfs:label obo:GENO_0000091 "obsolete_experimental insertion")
-SubClassOf(obo:GENO_0000091 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000091 "obsolete experimental insertion"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000091 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000092 (gene trap insertion)
 
@@ -2093,11 +2102,11 @@ SubClassOf(obo:GENO_0000119 obo:GENO_0000112)
 SubClassOf(obo:GENO_0000119 ObjectSomeValuesFrom(obo:RO_0002351 obo:NCBITaxon_7955))
 SubClassOf(obo:GENO_0000119 ObjectAllValuesFrom(obo:RO_0002351 obo:NCBITaxon_7955))
 
-# Class: obo:GENO_0000125 (obsolete_sequence feature collection attribute)
+# Class: obo:GENO_0000125 (obsolete sequence feature collection attribute)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000125 "sequence attribute that can inhere only in a collection of more than one sequence features")
-AnnotationAssertion(rdfs:label obo:GENO_0000125 "obsolete_sequence feature collection attribute")
-SubClassOf(obo:GENO_0000125 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000125 "obsolete sequence feature collection attribute"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000125 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000131 (in cis)
 
@@ -2177,12 +2186,12 @@ These genetic and environmental \"interactions\" of alleles play out at the leve
 AnnotationAssertion(rdfs:label obo:GENO_0000141 "inheritance pattern")
 SubClassOf(obo:GENO_0000141 obo:BFO_0000016)
 
-# Class: obo:GENO_0000142 (obsolete_dominant inheritance)
+# Class: obo:GENO_0000142 (obsolete dominant inheritance)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000142 "disposition inhering in a genetic locus variant that is realized in its inheritance by some offspring such that at least a partial variant-associated phenotype is apparent in heterozygotes")
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000142 "Triage until decide if want to define this as grouping class that would result in multiple-inheritance.")
-AnnotationAssertion(rdfs:label obo:GENO_0000142 "obsolete_dominant inheritance")
-SubClassOf(obo:GENO_0000142 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000142 "obsolete dominant inheritance"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000142 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000143 (co-dominant autosomal inheritance)
 
@@ -2233,11 +2242,11 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:GENO_0000149 "http://purl.obolibrary.
 AnnotationAssertion(rdfs:label obo:GENO_0000149 "X-linked recessive inheritance"@en)
 SubClassOf(obo:GENO_0000149 obo:GENO_0000936)
 
-# Class: obo:GENO_0000150 (obsolete_autosomal recessive inheritance)
+# Class: obo:GENO_0000150 (obsolete autosomal recessive inheritance)
 
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000150 "duplicate term, use GENO:0000148")
-AnnotationAssertion(rdfs:label obo:GENO_0000150 "obsolete_autosomal recessive inheritance")
-SubClassOf(obo:GENO_0000150 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000150 "obsolete autosomal recessive inheritance"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000150 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000152 (reference)
 
@@ -2251,11 +2260,61 @@ SubClassOf(obo:GENO_0000152 obo:GENO_0000773)
 AnnotationAssertion(rdfs:label obo:GENO_0000160 "unspecified life cycle stage")
 SubClassOf(obo:GENO_0000160 obo:UBERON_0000105)
 
-# Class: obo:GENO_0000324 (obsolete_chromosome complement)
+# Class: obo:GENO_0000164 (obsolete genetic insertion technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000164 "obsolete genetic insertion technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000164 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000165 (obsolete mutagen treatment technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000165 "obsolete mutagen treatment technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000165 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000166 (obsolete targeted gene mutation technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000166 "obsolete targeted gene mutation technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000166 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000169 (obsolete random genetic insertion technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000169 "obsolete random genetic insertion technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000169 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000170 (obsolete targeted genetic insertion technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000170 "obsolete targeted genetic insertion technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000170 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000171 (obsolete enhancer trapping technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000171 "obsolete enhancer trapping technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000171 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000172 (obsolete gene trapping technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000172 "obsolete gene trapping technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000172 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000173 (obsolete promoter trapping technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000173 "obsolete promoter trapping technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000173 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000174 (obsolete targeted knock-in technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000174 "obsolete targeted knock-in technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000174 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000175 (obsolete random transgene insertion technique)
+
+AnnotationAssertion(rdfs:label obo:GENO_0000175 "obsolete random transgene insertion technique"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000175 "true"^^xsd:boolean)
+
+# Class: obo:GENO_0000324 (obsolete chromosome complement)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000324 "A single locus complement that represents the collection of all chromosome sequences for a given chromosome in a single genome")
-AnnotationAssertion(rdfs:label obo:GENO_0000324 "obsolete_chromosome complement")
-SubClassOf(obo:GENO_0000324 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000324 "obsolete chromosome complement"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000324 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000338 (gained aneusomic chromosome)
 
@@ -2363,13 +2422,13 @@ AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000402 "trans-heterozygous")
 AnnotationAssertion(rdfs:label obo:GENO_0000402 "compound heterozygous")
 SubClassOf(obo:GENO_0000402 obo:GENO_0000135)
 
-# Class: obo:GENO_0000415 (obsolete_reagent sequence feature)
+# Class: obo:GENO_0000415 (obsolete reagent sequence feature)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000415 "A sequence feature that references some biological macromolecule applied as a reagent in an experiment or technique (e.g. a morpholino expression plasmid, or oligonucleotide probe)")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000415 "replaced with SO:engineered_region")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000415 "extra-genomic sequence")
-AnnotationAssertion(rdfs:label obo:GENO_0000415 "obsolete_reagent sequence feature")
-SubClassOf(obo:GENO_0000415 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000415 "obsolete reagent sequence feature"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000415 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000458 (simple heterozygous)
 
@@ -2424,7 +2483,7 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000482 "This class is different from 
 AnnotationAssertion(rdfs:label obo:GENO_0000482 "genetic material"@en)
 SubClassOf(obo:GENO_0000482 obo:CHEBI_33696)
 
-# Class: obo:GENO_0000491 (obsolete_mutant allele)
+# Class: obo:GENO_0000491 (obsolete mutant allele)
 
 AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000491 obo:GENO_0000484)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000491 "An allele that is variant with respect to some wild-type allele, in virtue of its being very rare in a population (typically <1%), or being an experimentally-induced alteration that derives from a wild-type feature in a given strain.")
@@ -2435,8 +2494,8 @@ Eq class definition:
 allele
  and (mutation or ('has subsequence' some mutation))")
 AnnotationAssertion(rdfs:comment obo:GENO_0000491 "'Mutant' is typically contrasted with 'wild-type', where 'mutant' indicates a natural but very rare allele in a population (typically <1%), or an experimentally-induced variation that derives from a wild-type background locus for a given strain, which can be selected for in establishing a mutant line.")
-AnnotationAssertion(rdfs:label obo:GENO_0000491 "obsolete_mutant allele")
-SubClassOf(obo:GENO_0000491 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000491 "obsolete mutant allele"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000491 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000492 (mutation)
 
@@ -2955,15 +3014,15 @@ EquivalentClasses(obo:GENO_0000667 ObjectIntersectionOf(obo:SO_0000902 ObjectSom
 SubClassOf(obo:GENO_0000667 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GENO_0000640))
 SubClassOf(obo:GENO_0000667 ObjectSomeValuesFrom(obo:GENO_0000207 obo:SO_0000783))
 
-# Class: obo:GENO_0000680 (obsolete_null feature)
+# Class: obo:GENO_0000680 (obsolete null feature)
 
 AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000680 "A junction between bases, a deletion variant, a terminus at the end of a chromosome.")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000680 "A genomic feature that has an extent of zero.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000680 "Former logical def: 
 'genomic feature'
  and (has_extent value 0)")
-AnnotationAssertion(rdfs:label obo:GENO_0000680 "obsolete_null feature"@en)
-SubClassOf(obo:GENO_0000680 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000680 "obsolete null feature"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000680 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000681 (novel extrachromosomal replicon)
 
@@ -3084,15 +3143,15 @@ EquivalentClasses(obo:GENO_0000721 ObjectIntersectionOf(obo:GENO_0000702 ObjectS
 AnnotationAssertion(rdfs:label obo:GENO_0000722 "amino acid sequence"@en)
 EquivalentClasses(obo:GENO_0000722 ObjectIntersectionOf(obo:GENO_0000702 ObjectSomeValuesFrom(obo:GENO_0000783 obo:GENO_0000782) ObjectAllValuesFrom(obo:GENO_0000783 obo:GENO_0000782)))
 
-# Class: obo:GENO_0000724 (obsolete_biological sequence or collection)
+# Class: obo:GENO_0000724 (obsolete biological sequence or collection)
 
-AnnotationAssertion(rdfs:label obo:GENO_0000724 "obsolete_biological sequence or collection"@en)
-SubClassOf(obo:GENO_0000724 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000724 "obsolete biological sequence or collection"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000724 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000725 (obsolete_biological sequence collection)
+# Class: obo:GENO_0000725 (obsolete biological sequence collection)
 
-AnnotationAssertion(rdfs:label obo:GENO_0000725 "obsolete_biological sequence collection"@en)
-SubClassOf(obo:GENO_0000725 obo:GENO_0000724)
+AnnotationAssertion(rdfs:label obo:GENO_0000725 "obsolete biological sequence collection"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000725 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000736 (location-qualified sequence feature)
 
@@ -3108,14 +3167,14 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000737 "A sequence feature whose i
 AnnotationAssertion(rdfs:label obo:GENO_0000737 "expression-qualified sequence feature"@en)
 SubClassOf(obo:GENO_0000737 obo:GENO_0000714)
 
-# Class: obo:GENO_0000768 (obsolete_genomic position)
+# Class: obo:GENO_0000768 (obsolete genomic position)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000768 "A sequence feature position based on a genomic coordinate system, where the position specifies start and end coordinates based on its alignment with some reference genomic sequence.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000768 "This 'genomic position' concept differs from the faldo:Position concecpt in that the former describes the start AND end points/coordinates of a feature, while the latter describes a single point/coordinate at the beginning OR end of a feature.")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000768 "genomic coordinates"@en)
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000768 "remodeling notion of sequence feature position around the idea of a 'genomic locus'")
-AnnotationAssertion(rdfs:label obo:GENO_0000768 "obsolete_genomic position")
-SubClassOf(obo:GENO_0000768 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000768 "obsolete genomic position"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000768 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000770 (phenotypic inheritance process)
 
@@ -3123,11 +3182,11 @@ AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000770 obo:GENO_0000484)
 AnnotationAssertion(rdfs:label obo:GENO_0000770 "phenotypic inheritance process"@en)
 SubClassOf(obo:GENO_0000770 obo:GENO_0000351)
 
-# Class: obo:GENO_0000772 (obsolete_unspecified)
+# Class: obo:GENO_0000772 (obsolete unspecified)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000772 "A sequence attribute inhering in a feature whose identity is not specified.")
-AnnotationAssertion(rdfs:label obo:GENO_0000772 "obsolete_unspecified"@en)
-SubClassOf(obo:GENO_0000772 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000772 "obsolete unspecified"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000772 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000773 (variation attribute)
 
@@ -3142,12 +3201,12 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000777 "An intrinsic genotype that
 AnnotationAssertion(rdfs:label obo:GENO_0000777 "variant genomic genotype"@en)
 EquivalentClasses(obo:GENO_0000777 ObjectIntersectionOf(obo:GENO_0000899 ObjectSomeValuesFrom(obo:IAO_0000219 obo:GENO_0000033)))
 
-# Class: obo:GENO_0000778 (obsolete_sequence information entity)
+# Class: obo:GENO_0000778 (obsolete sequence information entity)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000778 "An information entity that is intented to represent some biological sequence, sequence feature, qualified sequence feature, or a collection of one or more of these entities.")
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000778 "eliminating classes that are not necessary or add uneeded complexity.")
-AnnotationAssertion(rdfs:label obo:GENO_0000778 "obsolete_sequence information entity"@en)
-SubClassOf(obo:GENO_0000778 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000778 "obsolete sequence information entity"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000778 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000779 (biological sequence unit)
 
@@ -3237,14 +3296,14 @@ AnnotationAssertion(rdfs:label obo:GENO_0000839 "knockdown reagent targeted gene
 SubClassOf(obo:GENO_0000839 obo:GENO_0000527)
 SubClassOf(obo:GENO_0000839 ObjectSomeValuesFrom(obo:GENO_0000382 obo:GENO_0000504))
 
-# Class: obo:GENO_0000848 (obsolete_coding sequence alteration)
+# Class: obo:GENO_0000848 (obsolete coding sequence alteration)
 
 AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000848 obo:GENO_0000484)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000848 "A sequence alteration within the coding sequence of a gene.")
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000848 "Not required at this poitn, so marked exploratory and obsoleted.  
 Asserted under sequence_alteration.")
-AnnotationAssertion(rdfs:label obo:GENO_0000848 "obsolete_coding sequence alteration"@en)
-SubClassOf(obo:GENO_0000848 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000848 "obsolete coding sequence alteration"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000848 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000850 (P-element construct)
 
@@ -3269,12 +3328,12 @@ AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000861 "non-integrated transgene")
 AnnotationAssertion(rdfs:label obo:GENO_0000861 "extra-chromosomal transgene"@en)
 SubClassOf(obo:GENO_0000861 obo:SO_0000902)
 
-# Class: obo:GENO_0000870 (obsolete_sequence feature collection)
+# Class: obo:GENO_0000870 (obsolete sequence feature collection)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000870 "A collection of more than one sequence feature.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:GENO_0000870 "http://purl.obolibrary.org/obo/SO_0001260 ! sequence_collection")
-AnnotationAssertion(rdfs:label obo:GENO_0000870 "obsolete_sequence feature collection"@en)
-SubClassOf(obo:GENO_0000870 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000870 "obsolete sequence feature collection"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000870 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000871 (haplotype)
 
@@ -3324,7 +3383,7 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000875 "A quality inhering in an '
 AnnotationAssertion(rdfs:label obo:GENO_0000875 "allelic state"@en)
 SubClassOf(obo:GENO_0000875 obo:GENO_0000788)
 
-# Class: obo:GENO_0000876 (obsolete_genetic dosage)
+# Class: obo:GENO_0000876 (obsolete genetic dosage)
 
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000876 "allelic dosage")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000876 "an attribute inhering in a feature based on the total number or relative stoichiometry of functional copies present in a particular genome.")
@@ -3333,8 +3392,8 @@ AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000876 "Remodeled this concept as 
 AnnotationAssertion(rdfs:comment obo:GENO_0000876 "Genetic dosage reflects how many 'functional' copies of a sequence are present in a genome. In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This sets it apart from the notion of 'copy number', which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its copy number, but not increase its dosage.
 
 Duplications of a sequence can occur at new locations in the genome, such that the resulting sequence represents a distinct sequence feature from the copy at its native locus.  For example, duplication of a region containing the human APOE gene on a different chromosome creates a sequence feature that shares sequence from the original gene, but not location, and therefore represents a different sequence feature.  The notions of dosage and copy number are therefore concerned with sequence-level entities (how many copies of a 'sequence' exist), as opposed to sequence feature-level entities.  The notion of a single-locus complement would be used to describe how many of a particular features are present in a genome - and describe which alleles of this feature are found.")
-AnnotationAssertion(rdfs:label obo:GENO_0000876 "obsolete_genetic dosage"@en)
-SubClassOf(obo:GENO_0000876 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000876 "obsolete genetic dosage"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000876 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000877 (allele origin)
 
@@ -3385,13 +3444,13 @@ These acquired mutations are called 'somatic' because they typically affect  som
 AnnotationAssertion(rdfs:label obo:GENO_0000882 "somatic allele origin"@en)
 SubClassOf(obo:GENO_0000882 obo:GENO_0000877)
 
-# Class: obo:GENO_0000883 (obsolete_gametic)
+# Class: obo:GENO_0000883 (obsolete gametic)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000883 "a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells).")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000883 "germ-line")
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000883 "replaced by GENO:0000900 ! 'germline'")
-AnnotationAssertion(rdfs:label obo:GENO_0000883 "obsolete_gametic"@en)
-SubClassOf(obo:GENO_0000883 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000883 "obsolete gametic"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000883 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000885 (diplotype)
 
@@ -3435,7 +3494,7 @@ AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000889 "unknown inheritance")
 AnnotationAssertion(rdfs:label obo:GENO_0000889 "undetermined inheritance")
 SubClassOf(obo:GENO_0000889 obo:GENO_0000141)
 
-# Class: obo:GENO_0000890 (obsolete_canonical allele)
+# Class: obo:GENO_0000890 (obsolete canonical allele)
 
 AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000890 "The canonical allele that represents a single nucleotide variation in the BRCA2 gene, which can be described by various contextual alleles such as “NC_000013.11:g.32319070T>A” and “NG_012772.3:g.8591T>A”.")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000890 "One of a set of sequence features or haplotypes that exist at a particular genetic locus. <see ClinGen Allele Model>")
@@ -3446,10 +3505,10 @@ AnnotationAssertion(dcterms:source obo:GENO_0000890 "ClinGen Allele Model (http:
 AnnotationAssertion(rdfs:comment obo:GENO_0000890 "As a 'sequence feature or collection' (sensu SO), a 'canonical allele' is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence). Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand.
 
 In the ClinGen allele model, 'canonical alleles  are contrasted with 'contextual alleles'. Contextual alleles are informational representation that describe a canonical allele using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation (e.g. different chromosomal or transcript references)")
-AnnotationAssertion(rdfs:label obo:GENO_0000890 "obsolete_canonical allele")
-SubClassOf(obo:GENO_0000890 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000890 "obsolete canonical allele"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000890 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000891 (obsolete_contextual allele)
+# Class: obo:GENO_0000891 (obsolete contextual allele)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000891 "An informational artifact that describes a canonical allele by defining its sequence and position relative to a particular reference sequence.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000891 "The notion of a 'contextual allele' is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.")
@@ -3459,8 +3518,8 @@ AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000891 "No longer needed by  ClinG
 Former axiom: denotes some 'obsolete_canonical allele'")
 AnnotationAssertion(dcterms:source obo:GENO_0000891 "ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)")
 AnnotationAssertion(rdfs:comment obo:GENO_0000891 "The notion of a 'contextual allele' derives from the ClinGen Allele model. Here, each genetic allele in a patient corresponds to a single 'canonical allele', which in turn may aggregate any number of 'contextual allele' representations that are may be defined against different reference sequences. Accordingly, many contextual alleles can describe a single canonical allele. For example, the contextual alleles “NC_000013.11:g.32319070T>A” and “NG_012772.3:g.8591T>A” both describe the same underlying canonical allele, a single nucleotide variation, in the BRCA2 gene.")
-AnnotationAssertion(rdfs:label obo:GENO_0000891 "obsolete_contextual allele")
-SubClassOf(obo:GENO_0000891 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000891 "obsolete contextual allele"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000891 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000892 (heteroplasmic mitochondrial inheritance)
 
@@ -3509,13 +3568,13 @@ AnnotationAssertion(rdfs:label obo:GENO_0000899 "genomic genotype"@en)
 EquivalentClasses(obo:GENO_0000899 ObjectIntersectionOf(obo:GENO_0000719 ObjectSomeValuesFrom(obo:IAO_0000219 obo:SO_0001026)))
 SubClassOf(obo:GENO_0000899 ObjectSomeValuesFrom(obo:GENO_0000385 obo:GENO_0000611))
 
-# Class: obo:GENO_0000901 (obsolete_allele cellular context)
+# Class: obo:GENO_0000901 (obsolete allele cellular context)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000901 "A quality inhering in a particular allele in virtue of its presence only in a particular type of cell in an organism (e.g. somatic vs germ cells)")
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000901 "decided this attribute is not needed, and moved its child 'germline' and 'somatic' concepts under allele origin")
 AnnotationAssertion(rdfs:comment obo:GENO_0000901 "Cellular context of an allele is typically defined in the context of evaluating an individual organism, as alleles that are somatic in one organism can be germline in others.")
-AnnotationAssertion(rdfs:label obo:GENO_0000901 "obsolete_allele cellular context")
-SubClassOf(obo:GENO_0000901 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000901 "obsolete allele cellular context"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000901 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000902 (genomic feature location)
 
@@ -3555,11 +3614,13 @@ SubClassOf(obo:GENO_0000907 obo:SO_0000110)
 
 # Class: obo:GENO_0000910 (reporter)
 
+AnnotationAssertion(rdfs:label obo:GENO_0000910 "obsolete reporter role"@en)
 AnnotationAssertion(rdfs:label obo:GENO_0000910 "reporter"@en)
 SubClassOf(obo:GENO_0000910 obo:GENO_0000788)
 
 # Class: obo:GENO_0000911 (selectable marker)
 
+AnnotationAssertion(rdfs:label obo:GENO_0000911 "obsolete selectable marker role"@en)
 AnnotationAssertion(rdfs:label obo:GENO_0000911 "selectable marker"@en)
 SubClassOf(obo:GENO_0000911 obo:GENO_0000788)
 
@@ -3575,7 +3636,7 @@ AnnotationAssertion(rdfs:label obo:GENO_0000914 "reference genome"@en)
 SubClassOf(obo:GENO_0000914 obo:SO_0001026)
 SubClassOf(obo:GENO_0000914 ObjectSomeValuesFrom(obo:GENO_0000239 obo:SO_0001505))
 
-# Class: obo:GENO_0000915 (obsolete_haplotype)
+# Class: obo:GENO_0000915 (obsolete haplotype)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000915 "A haplotype is an allele that represents one of many possible versions of a 'haplotype block', which defines a region of genomic sequence that is typically 'co-inherited' across generations due to a lack of historically observed recombination within it.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000915 "Former comment: \"Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. 'SNP allele' haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project.\"")
@@ -3598,10 +3659,10 @@ b. The second is a region containing multiple linked single nucleotide polymorph
 c. A third, which is related to the previous case, occurs when the extent of region containing linked SNPs is that of a single gene.  In this case, the haplotype represents a 'gene allele' - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.
 
 The GENO definition of 'haplotype' is broadly inclusive of these and any other scenarios where distinct 'alleles' of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.")
-AnnotationAssertion(rdfs:label obo:GENO_0000915 "obsolete_haplotype"@en)
-SubClassOf(obo:GENO_0000915 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000915 "obsolete haplotype"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000915 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000916 (obsolete_haplotype block)
+# Class: obo:GENO_0000916 (obsolete haplotype block)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000916 "A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations.")
 AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000916 "Derived from DOI: 10.1126/science.1069424 and http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block.")
@@ -3613,8 +3674,8 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 -----------------------
 
 * One difference however is that gene instnaces are necessarily 'functional' - so non-functional  alleles of a gene locus wont qualify as gene instances. no such requirement exists for haplotype block instnaces.")
-AnnotationAssertion(rdfs:label obo:GENO_0000916 "obsolete_haplotype block"@en)
-SubClassOf(obo:GENO_0000916 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000916 "obsolete haplotype block"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000916 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000918 (organellar plasmy)
 
@@ -3660,7 +3721,7 @@ A set may also include multiple copies of the same sequence. For example, in a '
 AnnotationAssertion(rdfs:label obo:GENO_0000922 "biological sequence set"@en)
 SubClassOf(obo:GENO_0000922 obo:GENO_0000921)
 
-# Class: obo:GENO_0000923 (obsolete_functional copy number complement)
+# Class: obo:GENO_0000923 (obsolete functional copy number complement)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000923 "A set of all features representing *functional* versions of a specified sequence (typically that of a gene) in a particular genome.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000923 "Formerly considered modeling this as an informational entity, defined as \"An information entity that describes the total number of functional copies of a gene or region of sequence in a particular genome.\"")
@@ -3669,20 +3730,20 @@ AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000923 "genetic dosage"@en)
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000923 "Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000963.")
 AnnotationAssertion(rdfs:comment obo:GENO_0000923 "As for copy number complements, the defining 'sequence' here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a functional copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify if that alteration eliminates the function of the allele.  This represents an important distinction between 'copy number' and 'functional copy number'. The former is not concerned with the functionality of sequence copies - only that there is a duplication of sequence in the genome. Thus, the addition of a non-functional allele of a gene will increase its copy number, but not increase its 'functional copy number (aka its dosage).")
 AnnotationAssertion(rdfs:comment obo:GENO_0000923 "The notion of 'functional copy number' (aka 'genetic dosage') describes how many 'functional' copies of a sequence are present in a genome - i.e. sequences that retain their normal activity and/or produce gene products that retain their normal activity.  In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a 'copy number complement', which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.")
-AnnotationAssertion(rdfs:label obo:GENO_0000923 "obsolete_functional copy number complement")
-SubClassOf(obo:GENO_0000923 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000923 "obsolete functional copy number complement"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000923 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000924 (obsolete_intrinsic sequence feature attribute)
+# Class: obo:GENO_0000924 (obsolete intrinsic sequence feature attribute)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000924 "A sequence feature attribute that reflects feature-level characteristics that depend only on the sequence, location, or genomic context of a feature  or  collection, but are independent of how it may be concretized in physical form.")
-AnnotationAssertion(rdfs:label obo:GENO_0000924 "obsolete_intrinsic sequence feature attribute"@en)
-SubClassOf(obo:GENO_0000924 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000924 "obsolete intrinsic sequence feature attribute"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000924 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000925 (obsolete_extrinsic sequence feature attribute)
+# Class: obo:GENO_0000925 (obsolete extrinsic sequence feature attribute)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000925 "A sequence feature attribute that reflects characteristics of the physical molecule in which the feature is concretized (e.g. its cellular context, source of origin, etc.)")
-AnnotationAssertion(rdfs:label obo:GENO_0000925 "obsolete_extrinsic sequence feature attribute"@en)
-SubClassOf(obo:GENO_0000925 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000925 "obsolete extrinsic sequence feature attribute"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000925 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000926 (allelic cellular distribution)
 
@@ -3865,7 +3926,7 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000954 "'Sets' are used to model enti
 AnnotationAssertion(rdfs:label obo:GENO_0000954 "allele set"@en)
 SubClassOf(obo:GENO_0000954 obo:GENO_0000660)
 
-# Class: obo:GENO_0000955 (obsolete_variant copy number complement)
+# Class: obo:GENO_0000955 (obsolete variant copy number complement)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000955 "A copy number complement' that has an abnormal number of members (e.g. more or less than two for an autosomal sequence in a diploid genome, as a result of deletion or duplication event(s).")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000955 "copy number variation"@en)
@@ -3873,10 +3934,10 @@ AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000955 "Decided to implement copy 
 AnnotationAssertion(rdfs:comment obo:GENO_0000955 "In a 'normal' diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s).
 
 Note that the 'copy number variation' class in GENO is related to but ontologically distinct form the SO 'copy_number_variation' class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set is in conflict with the genome's normal ploidy (e.g. not two for a diploid genome). The SO class, which is defined as a sequence feature level concept and therefore represents a single continuous extent of sequence, refers to a single copy of duplicated (or deleted) sequence that comprises the set defined by the GENO CNV class.")
-AnnotationAssertion(rdfs:label obo:GENO_0000955 "obsolete_variant copy number complement")
-SubClassOf(obo:GENO_0000955 obo:GENO_0000956)
+AnnotationAssertion(rdfs:label obo:GENO_0000955 "obsolete variant copy number complement"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000955 "true"^^xsd:boolean)
 
-# Class: obo:GENO_0000956 (obsolete_copy number complement)
+# Class: obo:GENO_0000956 (obsolete copy number complement)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000956 "A set of all features in a particular genome whose sequence aligns with a particular location on a reference genome.  Such features are typically on the scale of complete genes or larger.")
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000956 "Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000961.")
@@ -3885,8 +3946,8 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000956 "1. Features described by 'cop
 2. A copy number complement, like any sequence feature complement, is a set of features in a particular genome that meet some criterion. The criterion in this case is that their sequence maps to that of a particular location in a reference sequence.  So a copy number complement is the set of all features that share or align with a specified sequence defined on some reference. The sequence of member sequences need not exactly match that of the reference, as copies may accrue some alterations. What is important is that conceptually they represent exact or inexact copies of the reference sequence at a defining location.
 
 3. In a 'normal' diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s). In GENO, a 'copy number variation' refers to a copy number complement' that has an abnormal number of members.")
-AnnotationAssertion(rdfs:label obo:GENO_0000956 "obsolete_copy number complement"@en)
-SubClassOf(obo:GENO_0000956 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:GENO_0000956 "obsolete copy number complement"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:GENO_0000956 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000960 (genomic sequence)
 
@@ -4069,13 +4130,13 @@ AnnotationAssertion(obo:IAO_0000116 obo:OBI_0100026 "Stub class to serve as root
 AnnotationAssertion(rdfs:label obo:OBI_0100026 "organism")
 SubClassOf(obo:OBI_0100026 obo:BFO_0000040)
 
-# Class: obo:PATO_0000016 (obsolete_color brightness)
+# Class: obo:PATO_0000016 (obsolete color brightness)
 
 AnnotationAssertion(obo:IAO_0000116 obo:PATO_0000016 "'Value' label chosen here according to http://www.uwgb.edu/heuerc/2D/ColorTerms.html")
 AnnotationAssertion(obo:IAO_0000116 obo:PATO_0000016 "Was parent of chromosomal band intensity before moving this class to live as a sequence feature attribute.")
 AnnotationAssertion(obo:IAO_0000118 obo:PATO_0000016 "color value")
-AnnotationAssertion(rdfs:label obo:PATO_0000016 "obsolete_color brightness"@en)
-SubClassOf(obo:PATO_0000016 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:PATO_0000016 "obsolete color brightness"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:PATO_0000016 "true"^^xsd:boolean)
 
 # Class: obo:PATO_0000383 (female)
 
@@ -4139,17 +4200,17 @@ SubClassOf(obo:SO_0000110 obo:GENO_0000701)
 SubClassOf(Annotation(obo:GENO_0000834 "true"^^xsd:boolean) Annotation(rdfs:comment "Formalizes the first identity criteria for a sequence feature of its sequence.") obo:SO_0000110 ObjectSomeValuesFrom(obo:GENO_0000239 obo:GENO_0000702))
 SubClassOf(Annotation(obo:GENO_0000834 "true"^^xsd:boolean) Annotation(rdfs:comment "Formalizes the second identify criteiria for a sequence feature of its genomic position. We use the FALDO model to represent positional information, which links features to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence. (But features can also be linked to Positions directly through the location property).") obo:SO_0000110 ObjectSomeValuesFrom(obo:GENO_0000903 obo:GENO_0000815))
 
-# Class: obo:SO_0000143 (obsolete_assembly_component)
+# Class: obo:SO_0000143 (obsolete assembly_component)
 
 AnnotationAssertion(obo:IAO_0000115 obo:SO_0000143 "A region of known length which may be used to manufacture a longer region.")
-AnnotationAssertion(rdfs:label obo:SO_0000143 "obsolete_assembly_component"@en)
-SubClassOf(obo:SO_0000143 obo:SO_0001410)
+AnnotationAssertion(rdfs:label obo:SO_0000143 "obsolete assembly_component"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:SO_0000143 "true"^^xsd:boolean)
 
-# Class: obo:SO_0000149 (obsolete_contig)
+# Class: obo:SO_0000149 (obsolete contig)
 
 AnnotationAssertion(obo:IAO_0000115 obo:SO_0000149 "A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N's from unavailable bases.")
-AnnotationAssertion(rdfs:label obo:SO_0000149 "obsolete_contig"@en)
-SubClassOf(obo:SO_0000149 obo:SO_0000143)
+AnnotationAssertion(rdfs:label obo:SO_0000149 "obsolete contig"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:SO_0000149 "true"^^xsd:boolean)
 
 # Class: obo:SO_0000159 (deletion)
 
@@ -4256,11 +4317,11 @@ SubClassOf(obo:SO_0000341 ObjectSomeValuesFrom(obo:GENO_0000207 obo:GENO_0000618
 AnnotationAssertion(rdfs:label obo:SO_0000577 "centromere"@en)
 SubClassOf(obo:SO_0000577 obo:SO_0000830)
 
-# Class: obo:SO_0000637 (obsolete_engineered_plasmid)
+# Class: obo:SO_0000637 (obsolete engineered_plasmid)
 
 AnnotationAssertion(obo:IAO_0000116 obo:SO_0000637 "Obsoleted as we didnt want to commit to constructs being plasmids - but rather wanted a classification of more general types of engineered regions used to replicate and deliver sequence to target cells/genomes. Replaced by GENO:0000856 ! engineered genetic construct.")
-AnnotationAssertion(rdfs:label obo:SO_0000637 "obsolete_engineered_plasmid"@en)
-SubClassOf(obo:SO_0000637 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:SO_0000637 "obsolete engineered_plasmid"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:SO_0000637 "true"^^xsd:boolean)
 
 # Class: obo:SO_0000667 (insertion)
 
@@ -4414,12 +4475,12 @@ AnnotationAssertion(rdfs:label obo:SO_0001218 "transgenic_insertion"^^xsd:string
 SubClassOf(obo:SO_0001218 obo:SO_0000667)
 SubClassOf(obo:SO_0001218 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GENO_0000093))
 
-# Class: obo:SO_0001410 (obsolete_experimental_feature)
+# Class: obo:SO_0001410 (obsolete experimental_feature)
 
 AnnotationAssertion(obo:IAO_0000115 obo:SO_0001410 "A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer.")
 AnnotationAssertion(obo:IAO_0000231 obo:SO_0001410 "not currently needed to support modeling use cases. can re-introduce if becomes necessary.")
-AnnotationAssertion(rdfs:label obo:SO_0001410 "obsolete_experimental_feature"@en)
-SubClassOf(obo:SO_0001410 oboInOwl:ObsoleteClass)
+AnnotationAssertion(rdfs:label obo:SO_0001410 "obsolete experimental_feature"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:SO_0001410 "true"^^xsd:boolean)
 
 # Class: obo:SO_0001477 (gene_trap_construct)
 
