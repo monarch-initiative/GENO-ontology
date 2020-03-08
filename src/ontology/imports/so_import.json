@@ -1,0 +1,3780 @@
+{
+  "graphs" : [ {
+    "nodes" : [ {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000165",
+      "meta" : {
+        "definition" : {
+          "val" : "A cis-acting sequence that increases the utilization of (some) eukaryotic promoters, and can function in either orientation and in any location (upstream or downstream) relative to the promoter.",
+          "xrefs" : [ "http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Enhancer_(genetics)"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:regulatory",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_qualifier:enhancer",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "An enhancer may participate in an enhanceosome GO:0034206. A protein-DNA complex formed by the association of a distinct set of general and specific transcription factors with a region of enhancer DNA. The cooperative assembly of an enhanceosome confers specificity of transcriptional regulation. This comment is a place holder should we start to make cross products with GO."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "enhancer"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000016",
+      "meta" : {
+        "definition" : {
+          "val" : "A transition of a guanine to an adenine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "G to A transition",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "G_to_A_transition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000285",
+      "meta" : {
+        "definition" : {
+          "val" : "A gene that is foreign.",
+          "xrefs" : [ "SO:xp" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "foreign gene",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "foreign_gene"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000015",
+      "meta" : {
+        "definition" : {
+          "val" : "A transition of an adenine to a guanine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "A to G transition",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "A_to_G_transition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000442",
+      "meta" : {
+        "definition" : {
+          "val" : "A double stranded oligonucleotide.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "ds oligo",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "double stranded oligonucleotide",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "ds-oligonucleotide",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "This term is mapped to MGED. Do not obsolete without consulting MGED ontology."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "ds_oligo"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000167",
+      "meta" : {
+        "definition" : {
+          "val" : "A regulatory_region composed of the TSS(s) and binding sites for TF_complexes of the basal transcription machinery.",
+          "xrefs" : [ "SO:regcreative" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Promoter"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_qualifier:promoter",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:regulatory",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "promoter sequence",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "This term is mapped to MGED. Do not obsolete without consulting MGED ontology. The region on a DNA molecule involved in RNA polymerase binding to initiate transcription."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "promoter"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001410",
+      "meta" : {
+        "definition" : {
+          "val" : "A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer.",
+          "xrefs" : [ "SO:cb" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "experimental_output_artefact",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "experimental output artefact",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "analysis feature",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "experimental_feature"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000014",
+      "meta" : {
+        "definition" : {
+          "val" : "A substitution of a purine, A or G, for another purine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "purine transition",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "purine_transition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001013",
+      "meta" : {
+        "definition" : {
+          "val" : "A multiple nucleotide polymorphism with alleles of common length > 1, for example AAA/TTT.",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs2067431" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "multiple nucleotide polymorphism",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "MNP"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000013",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "T to C transition",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "T_to_C_transition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000019",
+      "meta" : {
+        "definition" : {
+          "val" : "A transversion from cytidine to adenine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "C to A transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "C_to_A_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000281",
+      "meta" : {
+        "definition" : {
+          "val" : "A gene that is engineered and foreign.",
+          "xrefs" : [ "SO:xp" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "engineered foreign gene",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "engineered_foreign_gene"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000018",
+      "meta" : {
+        "definition" : {
+          "val" : "Change of a pyrimidine nucleotide, C or T, into a purine nucleotide, A or G.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "pyrimidine to purine transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "pyrimidine_to_purine_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000017",
+      "meta" : {
+        "definition" : {
+          "val" : "Change of a pyrimidine nucleotide, C or T, into a purine nucleotide, A or G, or vice versa.",
+          "xrefs" : [ "EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html" ]
+        },
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Transversion"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000280",
+      "meta" : {
+        "definition" : {
+          "val" : "A gene that is engineered.",
+          "xrefs" : [ "SO:xp" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "engineered gene",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "engineered_gene"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000719",
+      "meta" : {
+        "definition" : {
+          "val" : "An ordered and oriented set of scaffolds based on somewhat weaker sets of inferential evidence such as one set of mate pair reads together with supporting evidence from ESTs or location of markers from SNP or microsatellite maps, or cytogenetic localization of contained markers.",
+          "xrefs" : [ "FB:WG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "superscaffold",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "pseudochromosome",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "ultracontig"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001409",
+      "meta" : {
+        "definition" : {
+          "val" : "A region which is intended for use in an experiment.",
+          "xrefs" : [ "SO:cb" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "biomaterial region",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "biomaterial_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
+      "type" : "PROPERTY",
+      "lbl" : "definition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001247",
+      "meta" : {
+        "definition" : {
+          "val" : "An oligo composed of synthetic nucleotides.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "synthetic oligo",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "synthetic_oligo"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000023",
+      "meta" : {
+        "definition" : {
+          "val" : "Change of a purine nucleotide, A or G , into a pyrimidine nucleotide C or T.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "purine to pyrimidine transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "purine_to_pyrimidine_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000022",
+      "meta" : {
+        "definition" : {
+          "val" : "A transversion from T to G.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "T to G transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "T_to_G_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001645",
+      "meta" : {
+        "definition" : {
+          "val" : "A measurable sequence feature that varies within a population.",
+          "xrefs" : [ "SO:db" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "genetic marker",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2010-05-28T02:33:07Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "genetic_marker"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000021",
+      "meta" : {
+        "definition" : {
+          "val" : "A transversion from T to A.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "T to A transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "T_to_A_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001524",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "chromosomally aberrant genome",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2010-03-05T02:21:00Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosomally_aberrant_genome"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000831",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of a gene.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "gene member region",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "A manufactured term used to allow the parts of a gene to have an is_a path to the root."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "gene_member_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000830",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of a chromosome.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "chromosome part",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "This is a manufactured term, that serves the purpose of allow the parts of a chromosome to have an is_a path to the root."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosome_part"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001248",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of the genome of known length that is composed by ordering and aligning two or more different regions.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Genome_assembly#Genome_assembly"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "assembly"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000159",
+      "meta" : {
+        "definition" : {
+          "val" : "The point at which one or more contiguous nucleotides were excised.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "loinc:LA6692-3"
+        }, {
+          "val" : "http://en.wikipedia.org/wiki/Nucleotide_deletion"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "deleted_sequence",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "nucleotide deletion",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "nucleotide_deletion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "SO:1000033"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "deletion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000020",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "C to G transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "C_to_G_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000005",
+      "meta" : {
+        "definition" : {
+          "val" : "When no simple or well defined DNA mutation event describes the observed DNA change, the keyword \"complex\" should be used. Usually there are multiple equally plausible explanations for the change.",
+          "xrefs" : [ "EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "complex substitution",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "complex_substitution"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000155",
+      "meta" : {
+        "definition" : {
+          "val" : "A self replicating, using the hosts cellular machinery, often circular nucleic acid molecule that is distinct from a chromosome in the organism.",
+          "xrefs" : [ "SO:ma" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "plasmid sequence",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "This term is mapped to MGED. Do not obsolete without consulting MGED ontology."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "plasmid"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000034",
+      "meta" : {
+        "definition" : {
+          "val" : "Morpholino oligos are synthesized from four different Morpholino subunits, each of which contains one of the four genetic bases (A, C, G, T) linked to a 6-membered morpholine ring. Eighteen to 25 subunits of these four subunit types are joined in a specific order by non-ionic phosphorodiamidate intersubunit linkages to give a Morpholino.",
+          "xrefs" : [ "http://www.gene-tools.com/" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "morpholino oligo",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "morphant",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "morpholino",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "morpholino_oligo"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000002",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence alteration where the length of the change in the variant is the same as that of the reference.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "loinc:LA6690-7"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "substitution"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000009",
+      "meta" : {
+        "definition" : {
+          "val" : "Change of a pyrimidine nucleotide, C or T, into an other pyrimidine nucleotide, or change of a purine nucleotide, A or G, into an other purine nucleotide.",
+          "xrefs" : [ "EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html" ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000008",
+      "meta" : {
+        "definition" : {
+          "val" : "A single nucleotide change which has occurred at the same position of a corresponding nucleotide in a reference sequence.",
+          "xrefs" : [ "SO:immuno_workshop" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Point_mutation"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "point mutation",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "point_mutation"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001483",
+      "meta" : {
+        "definition" : {
+          "val" : "SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist.",
+          "xrefs" : [ "SO:bm" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "single nucleotide variant",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-10-08T11:37:49Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "SNV"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/so#has_part",
+      "meta" : {
+        "definition" : {
+          "val" : "Inverse of part_of.",
+          "xrefs" : [ "http://precedings.nature.com/documents/3495/version/1" ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Example: operon has_part gene."
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "has_part"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000705",
+      "meta" : {
+        "definition" : {
+          "val" : "Two or more adjacent copies of a region (of length greater than 1).",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Tandem_repeat"
+        }, {
+          "val" : "http://www.sci.sdsu.edu/~smaloy/Glossary/T.html"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "tandem repeat",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:repeat_region",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_qualifier:tandem",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "tandem_repeat"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000704",
+      "meta" : {
+        "definition" : {
+          "val" : "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.",
+          "xrefs" : [ "SO:immuno_workshop" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Gene"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_feature:gene",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "This term is mapped to MGED. Do not obsolete without consulting MGED ontology. A gene may be considered as a unit of inheritance."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "gene"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000667",
+      "meta" : {
+        "definition" : {
+          "val" : "The sequence of one or more nucleotides added between two adjacent nucleotides in the sequence.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA", "http://purl.obolibrary.org/obo/so#DBVAR" ],
+        "xrefs" : [ {
+          "val" : "loinc:LA6687-3"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "nucleotide_insertion",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "nucleotide insertion",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "insertion",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/dbvar/" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "SO:1000034"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "insertion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001478",
+      "meta" : {
+        "definition" : {
+          "val" : "A promoter trap construct is a type of engineered plasmid which is designed to integrate into a genome and express a reporter when inserted in close proximity to a promoter element. Promoter traps typically do not contain promoter elements and are mutagenic.",
+          "xrefs" : [ "ZFIN:dh" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "promoter trap construct",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-09-01T03:52:01Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "promoter_trap_construct"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0005836",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of sequence that is involved in the control of a biological process.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Regulatory_region"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "regulatory region",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:regulatory",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_qualifier:other",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "regulatory_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000012",
+      "meta" : {
+        "definition" : {
+          "val" : "The transition of cytidine to thymine occurring at a pCpG site as a consequence of the spontaneous deamination of 5'-methylcytidine.",
+          "xrefs" : [ "EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "C to T transition at pCpG site",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "C_to_T_transition_at_pCpG_site"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000011",
+      "meta" : {
+        "definition" : {
+          "val" : "A transition of a cytidine to a thymine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "C to T transition",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "C_to_T_transition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001235",
+      "meta" : {
+        "definition" : {
+          "val" : "A region containing at least one unique origin of replication and a unique termination site.",
+          "xrefs" : [ "ISBN:0716719207" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Replicon_(genetics)"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "replicon"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000784",
+      "meta" : {
+        "definition" : {
+          "val" : "An attribute to describe a region from another species.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "foreign"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001477",
+      "meta" : {
+        "definition" : {
+          "val" : "A gene trap construct is a type of engineered plasmid which is designed to integrate into a genome and produce a fusion transcript between exons of the gene into which it inserts and a reporter element in the construct. Gene traps contain a splice acceptor, do not contain promoter elements for the reporter, and are mutagenic. Gene traps may be bicistronic with the second cassette containing a promoter driving an a selectable marker.",
+          "xrefs" : [ "ZFIN:dh" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "gene trap construct",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-09-01T03:49:09Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "gene_trap_construct"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000010",
+      "meta" : {
+        "definition" : {
+          "val" : "A substitution of a pyrimidine, C or T, for another pyrimidine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "pyrimidine transition",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "pyrimidine_transition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000149",
+      "meta" : {
+        "definition" : {
+          "val" : "A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N's from unavailable bases.",
+          "xrefs" : [ "SO:ls" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Contig"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "contig"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001876",
+      "meta" : {
+        "definition" : {
+          "val" : "A partial DNA sequence assembly of a chromosome or full genome, which contains gaps that are filled with N's.",
+          "xrefs" : [ "GMOD:ea" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "partial genomic sequence assembly",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence assembly with N-gaps",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "pseudomolecule",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2012-02-14T05:05:32Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Requested by Bayer Cropscience January, 2012."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "partial_genomic_sequence_assembly"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001479",
+      "meta" : {
+        "definition" : {
+          "val" : "An enhancer trap construct is a type of engineered plasmid which is designed to integrate into a genome and express a reporter when the expression from a basic minimal promoter is enhanced by genomic enhancer elements. Enhancer traps contain promoter elements and are not usually mutagenic.",
+          "xrefs" : [ "ZFIN:dh" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "enhancer trap construct",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-09-01T03:53:26Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "enhancer_trap_construct"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000148",
+      "meta" : {
+        "definition" : {
+          "val" : "One or more contigs that have been ordered and oriented using end-read information. Contains gaps that are filled with N's.",
+          "xrefs" : [ "SO:ls" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "scaffold",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "supercontig"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000341",
+      "meta" : {
+        "definition" : {
+          "val" : "A cytologically distinguishable feature of a chromosome, often made visible by staining, and usually alternating light and dark.",
+          "xrefs" : [ "SO:ma" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Cytological_band"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "cytoband",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "chromosome band",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "cytological band",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosome_band"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000340",
+      "meta" : {
+        "definition" : {
+          "val" : "Structural unit composed of a nucleic acid molecule which controls its own replication through the interaction of specific proteins at one or more origins of replication.",
+          "xrefs" : [ "SO:ma" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Chromosome"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "This term is mapped to MGED. Do not obsolete without consulting MGED ontology."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosome"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000036",
+      "meta" : {
+        "definition" : {
+          "val" : "A continuous nucleotide sequence is inverted in the same position.",
+          "xrefs" : [ "EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#DBVAR", "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "loinc:LA6689-9"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "inversion",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/dbvar/" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "inversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000035",
+      "meta" : {
+        "definition" : {
+          "val" : "An insertion which derives from, or is identical in sequence to, nucleotides present at a known location in the genome.",
+          "xrefs" : [ "EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html", "NCBI:th" ]
+        },
+        "xrefs" : [ {
+          "val" : "loinc:LA6686-5"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "nucleotide_duplication",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "nucleotide duplication",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "duplication"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000039",
+      "meta" : {
+        "definition" : {
+          "val" : "A tandem duplication where the individual regions are in the same orientation.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "direct tandem duplication",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "direct_tandem_duplication"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000040",
+      "meta" : {
+        "definition" : {
+          "val" : "A tandem duplication where the individual regions are not in the same orientation.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "inverted tandem duplication",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "mirror duplication",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "inverted_tandem_duplication"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000733",
+      "meta" : {
+        "definition" : {
+          "val" : "An attribute describing a located_sequence_feature.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "feature attribute",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "feature_attribute"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000337",
+      "meta" : {
+        "definition" : {
+          "val" : "A double stranded RNA duplex, at least 20bp long, used experimentally to inhibit gene function by RNA interference.",
+          "xrefs" : [ "SO:rd" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "RNAi reagent",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "RNAi_reagent"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000696",
+      "meta" : {
+        "definition" : {
+          "val" : "A short oligonucleotide sequence, of length on the order of 10's of bases; either single or double stranded.",
+          "xrefs" : [ "SO:ma" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Oligonucleotide"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "oligonucleotide",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "oligo"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001785",
+      "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#DBVAR" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "structural alteration",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2011-03-25T02:27:41Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "structural_alteration"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001026",
+      "meta" : {
+        "definition" : {
+          "val" : "A genome is the sum of genetic material within a cell or virion.",
+          "xrefs" : [ "SO:immuno_workshop" ]
+        },
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Genome"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "genome"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000699",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence_feature with an extent of zero.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "breakpoint",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "boundary",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "A junction is a boundary between regions. A boundary has an extent of zero."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "junction"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000577",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of chromosome where the spindle fibers attach during mitosis and meiosis.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Centromere"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_feature:centromere",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "centromere"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000027",
+      "meta" : {
+        "definition" : {
+          "val" : "A transversion from guanine to thymine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "G to T transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "G_to_T_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000026",
+      "meta" : {
+        "definition" : {
+          "val" : "A transversion from guanine to cytidine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "G to C transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "G_to_C_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000695",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence used in experiment.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Requested by Lynn Crosby, jan 2006."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "reagent"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001784",
+      "meta" : {
+        "definition" : {
+          "val" : "A structural sequence alteration or rearrangement encompassing one or more genome fragments, with 4 or more breakpoints.",
+          "xrefs" : [ "FB:reference_manual", "NCBI:th", "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#DBVAR" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "complex_chromosomal_mutation",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "complex",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/dbvar/" ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "complex chromosomal mutation",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "SO:1000146"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2011-03-23T03:21:19Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "complex_structural_alteration"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000025",
+      "meta" : {
+        "definition" : {
+          "val" : "A transversion from adenine to thymine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "A to T transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "A_to_T_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000694",
+      "meta" : {
+        "definition" : {
+          "val" : "SNPs are single base pair positions in genomic DNA at which different sequence alternatives exist in normal individuals in some population(s), wherein the least frequent variant has an abundance of 1% or greater.",
+          "xrefs" : [ "SO:cb" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "single nucleotide polymorphism",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "SNP"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000024",
+      "meta" : {
+        "definition" : {
+          "val" : "A transversion from adenine to cytidine.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "A to C transversion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "A_to_C_transversion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000293",
+      "meta" : {
+        "definition" : {
+          "val" : "A repetitive element that is engineered and foreign.",
+          "xrefs" : [ "SO:xp" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "engineered foreign repetitive element",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "engineered_foreign_repetitive_element"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001260",
+      "meta" : {
+        "definition" : {
+          "val" : "A collection of discontinuous sequences.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence collection",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sequence_collection"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0002072",
+      "meta" : {
+        "definition" : {
+          "val" : "A position or feature where two sequences have been compared.",
+          "xrefs" : [ ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:misc_feature",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_note:sequence_comparison",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence comparison",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2015-11-23T14:14:32Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sequence_comparison"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000727",
+      "meta" : {
+        "definition" : {
+          "val" : "A regulatory region where transcription factor binding sites clustered to regulate various aspects of transcription activities. (CRMs can be located a few kb to hundred kb upstream of the basal promoter, in the coding sequence, within introns, or in the downstream 3'UTR sequences, as well as on different chromosome). A single gene can be regulated by multiple CRMs to give precise control of its spatial and temporal expression. CRMs function as nodes in large, intertwined regulatory network.",
+          "xrefs" : [ "PMID:19660565", "SO:SG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "TF module",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "transcription factor module",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "cis regulatory module",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Requested by Stephen Grossmann Dec 2004."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "CRM"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000726",
+      "meta" : {
+        "definition" : {
+          "val" : "The simplest repeated component of a repeat region. A single repeat.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "xrefs" : [ {
+          "val" : "http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "repeat unit",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Added to comply with the feature table. A single repeat."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "repeat_unit"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001019",
+      "meta" : {
+        "definition" : {
+          "val" : "A variation that increases or decreases the copy number of a given region.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Copy_number_variation"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "CNP",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "copy number polymorphism",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "CNV",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "copy number variation",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "copy_number_variation"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000207",
+      "meta" : {
+        "definition" : {
+          "val" : "SSLP are a kind of sequence alteration where the number of repeated sequences in intergenic regions may differ.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Simple_sequence_length_polymorphism"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "SSLP",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "simple sequence length variation",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "simple sequence length polymorphism",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "simple_sequence_length_variation"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001654",
+      "meta" : {
+        "definition" : {
+          "val" : "A binding site that, in the nucleotide molecule, interacts selectively and non-covalently with polypeptide residues.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "nucleotide to protein binding site",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2010-08-03T12:26:05Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "nucleotide_to_protein_binding_site"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000289",
+      "meta" : {
+        "definition" : {
+          "val" : "A repeat_region containing repeat_units of 2 to 10 bp repeated in tandem.",
+          "xrefs" : [ "NCBI:th", "http://www.informatics.jax.org/silver/glossary.shtml" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Microsatellite"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_qualifier:microsatellite",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "short tandem repeat",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "microsatellite locus",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "microsatellite marker",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:repeat_region",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "STR",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/books/NBK21126/def-item/A9651/" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "microsatellite"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001411",
+      "meta" : {
+        "definition" : {
+          "val" : "A region defined by its disposition to be involved in a biological process.",
+          "xrefs" : [ "SO:cb" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_misc_feature",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_note:biological_region",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "biological region",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "biological_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000443",
+      "meta" : {
+        "definition" : {
+          "val" : "An attribute to describe the kind of biological sequence.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "polymer attribute",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "polymer_attribute"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000032",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence alteration which included an insertion and a deletion, affecting 2 or more bases.",
+          "xrefs" : [ "http://varnomen.hgvs.org/recommendations/DNA/variant/delins/" ]
+        },
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Indel"
+        }, {
+          "val" : "loinc:LA9659-9"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "indel",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "deletion-insertion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Indels can have a different number of bases than the corresponding reference sequence. The term name was changed from indel to delins on 2/24/2019 to align with the HGVS nomenclature term for a deletion-insertion. Indel was causing confusion in the annotation community (github issue 445). The HGVS nomenclature definition of deletion-insertion (delins) is a sequence change where, compared to a reference sequence, one or more nucleotides are replaced by one or more other nucleotides and which is not a substitution, inversion or conversion."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "delins"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0005855",
+      "meta" : {
+        "definition" : {
+          "val" : "A collection of related genes.",
+          "xrefs" : [ "SO:ma" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "gene group",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "gene_group"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000000",
+      "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "Sequence_Ontology"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001055",
+      "meta" : {
+        "definition" : {
+          "val" : "A regulatory_region that modulates the transcription of a gene or genes.",
+          "xrefs" : [ "PMID:9679020", "SO:regcreative" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "transcription-control region",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_qualifier:transcriptional_cis_regulatory_region",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:regulatory",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "transcriptional cis regulatory region",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transcriptional_cis_regulatory_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000002",
+      "meta" : {
+        "definition" : {
+          "val" : "A folded sequence.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_feature:misc_structure",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence secondary structure",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sequence_secondary_structure"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000001",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000240",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "chromosome variation",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosome_variation"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000183",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "http://snpeff.sourceforge.net/SnpEff_manual.html"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "snpEff:CHROMOSOME_LARGE_DELETION",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "chromosome structure variation",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosome_structure_variation"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000637",
+      "meta" : {
+        "definition" : {
+          "val" : "A plasmid that is engineered.",
+          "xrefs" : [ "SO:xp" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "engineered plasmid gene",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "engineered plasmid",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "engineered_plasmid"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000235",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of a nucleotide molecule that binds a Transcription Factor or Transcription Factor complex [GO:0005667].",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "transcription factor binding site",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "TF binding site",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "TF_binding_site"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000110",
+      "meta" : {
+        "definition" : {
+          "val" : "Any extent of continuous biological sequence.",
+          "xrefs" : [ "LAMHDI:mb", "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "located sequence feature",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_note:sequence_feature",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_note:other",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_feature:misc_feature",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence feature",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "located_sequence_feature",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sequence_feature"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000199",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of nucleotide sequence that has translocated to a new position. The observed adjacency of two previously separated regions.",
+          "xrefs" : [ "NCBI:th", "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#DBVAR" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "transchr",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/dbvar/" ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "translocated sequence",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "translocation"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000353",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence of nucleotides that has been algorithmically derived from an alignment of two or more different sequences.",
+          "xrefs" : [ "SO:ma" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Sequence_assembly"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence assembly",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sequence_assembly"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "The relationship between a feature and an attribute."
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "has_quality"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000628",
+      "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "chromosomal structural element",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosomal_structural_element"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000902",
+      "meta" : {
+        "definition" : {
+          "val" : "A transgene is a gene that has been transferred naturally or by any of a number of genetic engineering techniques from one organism to another.",
+          "xrefs" : [ "SO:xp" ]
+        },
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Transgene"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transgene"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_1000173",
+      "meta" : {
+        "definition" : {
+          "val" : "A duplication consisting of 2 identical adjacent regions.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#DBVAR" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "tandem duplication",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "erverted",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/dbvar/" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "tandem_duplication"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000348",
+      "meta" : {
+        "definition" : {
+          "val" : "An attribute describing a sequence consisting of nucleobases bound to repeating units. The forms found in nature are deoxyribonucleic acid (DNA), where the repeating units are 2-deoxy-D-ribose rings connected to a phosphate backbone, and ribonucleic acid (RNA), where the repeating units are D-ribose rings connected to a phosphate backbone.",
+          "xrefs" : [ "CHEBI:33696", "RSC:cb" ]
+        },
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Nucleic_acid"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "nucleic acid",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "nucleic_acid"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001679",
+      "meta" : {
+        "definition" : {
+          "val" : "A regulatory region that is involved in the control of the process of transcription.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "transcription regulatory region",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2010-10-12T03:49:35Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transcription_regulatory_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0002007",
+      "meta" : {
+        "definition" : {
+          "val" : "An MNV is a multiple nucleotide variant (substitution) in which the inserted sequence is the same length as the replaced sequence.",
+          "xrefs" : [ "NCBI:th" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "multiple nucleotide variant",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "multiple nucleotide substitution",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2014-01-13T03:48:40Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "MNV"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000105",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of the chromosome between the centromere and the telomere. Human chromosomes have two arms, the p arm (short) and the q arm (long) which are separated from each other by the centromere.",
+          "xrefs" : [ "http://www.medterms.com/script/main/art.asp?articlekey=5152" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "chromosome arm",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "chromosome_arm"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000781",
+      "meta" : {
+        "definition" : {
+          "val" : "Attribute describing sequence that has been integrated with foreign sequence.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transgenic"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000143",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of known length which may be used to manufacture a longer region.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "assembly component",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "assembly_component"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000783",
+      "meta" : {
+        "definition" : {
+          "val" : "An attribute to describe a region that was modified in vitro.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "engineered"
+    }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#hasDbXref",
+      "type" : "PROPERTY",
+      "lbl" : "database_cross_reference"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/so#part_of",
+      "meta" : {
+        "definition" : {
+          "val" : "X part_of Y if X is a subregion of Y.",
+          "xrefs" : [ "http://precedings.nature.com/documents/3495/version/1" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Example: amino_acid part_of polypeptide."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "part_of"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/so#member_of",
+      "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "A subtype of part_of. Inverse is collection_of. Winston, M, Chaffin, R, Herrmann: A taxonomy of part-whole relations. Cognitive Science 1987, 11:417-444."
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "member_of"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001507",
+      "meta" : {
+        "definition" : {
+          "val" : "A collection of one or more sequences of an individual.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "variant collection",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2010-03-03T02:13:28Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "variant_collection"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000657",
+      "meta" : {
+        "definition" : {
+          "val" : "A region of sequence containing one or more repeat units.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_qualifier:other",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:repeat_region",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "repeat region",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "repeat_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001746",
+      "meta" : {
+        "definition" : {
+          "val" : "Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from the father and no copies of the same chromosome or region from the mother.",
+          "xrefs" : [ "SO:bm" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "paternal uniparental disomy",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2011-02-28T02:03:30Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "paternal_uniparental_disomy"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001745",
+      "meta" : {
+        "definition" : {
+          "val" : "Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from the mother and no copies of the same chromosome or region from the father.",
+          "xrefs" : [ "SO:bm" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "maternal uniparental disomy",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2011-02-28T02:03:01Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "maternal_uniparental_disomy"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001506",
+      "meta" : {
+        "definition" : {
+          "val" : "A collection of sequences (often chromosomes) of an individual.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "variant genome",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2010-03-03T02:11:25Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "variant_genome"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001505",
+      "meta" : {
+        "definition" : {
+          "val" : "A collection of sequences (often chromosomes) taken as the standard for a given organism and genome assembly.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "reference genome",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2010-03-03T02:10:03Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "reference_genome"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001742",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence alteration whereby the copy number of a given regions is greater than the reference sequence.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#DBVAR" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "gain",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/dbvar/" ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "copy number gain",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2011-02-28T01:54:09Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "copy_number_gain"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001500",
+      "meta" : {
+        "definition" : {
+          "val" : "A biological_region characterized as a single heritable trait in a phenotype screen. The heritable phenotype may be mapped to a chromosome but generally has not been characterized to a specific gene locus.",
+          "xrefs" : [ "JAX:hdene" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "phenotypic marker",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "heritable phenotypic marker",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-12-07T01:50:55Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "heritable_phenotypic_marker"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000410",
+      "meta" : {
+        "definition" : {
+          "val" : "A binding site that, in the molecule, interacts selectively and non-covalently with polypeptide molecules.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "protein binding site",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_feature:protein_bind",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "See GO:0042277 : peptide binding."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "protein_binding_site"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001744",
+      "meta" : {
+        "definition" : {
+          "val" : "Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from one parent and no copies of the same chromosome or region from the other parent.",
+          "xrefs" : [ "SO:BM" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#DBVAR" ],
+        "xrefs" : [ {
+          "val" : "http:http://en.wikipedia.org/wiki/Uniparental_disomy"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "uniparental disomy",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "UPD",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/dbvar/" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2011-02-28T02:01:05Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "UPD"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001743",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence alteration whereby the copy number of a given region is less than the reference sequence.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#DBVAR" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "loss",
+          "xrefs" : [ "http://www.ncbi.nlm.nih.gov/dbvar/" ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "copy number loss",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "kareneilbeck"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2011-02-28T01:55:02Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "copy_number_loss"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000771",
+      "meta" : {
+        "definition" : {
+          "val" : "A quantitative trait locus (QTL) is a polymorphic locus which contains alleles that differentially affect the expression of a continuously distributed phenotypic trait. Usually it is a marker described by statistical association to quantitative variation in the particular phenotypic trait that is thought to be controlled by the cumulative action of alleles at multiple loci.",
+          "xrefs" : [ "http://rgd.mcw.edu/tu/qtls/" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "quantitative trait locus",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Added in respose to request by Simon Twigger November 14th 2005."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "QTL"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001183",
+      "meta" : {
+        "definition" : {
+          "val" : "An attribute describing a sequence composed of nucleobases bound to a morpholino backbone. A morpholino backbone consists of morpholine (CHEBI:34856) rings connected by phosphorodiamidate linkages.",
+          "xrefs" : [ "RSC:cb" ]
+        },
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Morpholino"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "morpholino backbone",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Do not use this for feature annotation. Use morpholino_oligo (SO:0000034) instead."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "morpholino_backbone"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000804",
+      "meta" : {
+        "definition" : {
+          "val" : "A region that is engineered.",
+          "xrefs" : [ "SO:xp" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "engineered sequence",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "engineered region",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "construct",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "engineered_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000409",
+      "meta" : {
+        "definition" : {
+          "val" : "A biological_region of sequence that, in the molecule, interacts selectively and non-covalently with other molecules. A region on the surface of a molecule that may interact with another molecule. When applied to polypeptides: Amino acids involved in binding or interactions. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids.",
+          "xrefs" : [ "EBIBS:GAR", "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#biosapiens", "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Binding_site"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "binding_or_interaction_site",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "site",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "binding site",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_feature:misc_binding",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "BS:00033"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "See GO:0005488 : binding."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "binding_site"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000805",
+      "meta" : {
+        "definition" : {
+          "val" : "A region that is engineered and foreign.",
+          "xrefs" : [ "SO:xp" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "engineered foreign region",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "engineered_foreign_region"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001218",
+      "meta" : {
+        "definition" : {
+          "val" : "An insertion that derives from another organism, via the use of recombinant DNA technology.",
+          "xrefs" : [ "SO:bm" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "transgenic insertion",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transgenic_insertion"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000400",
+      "meta" : {
+        "definition" : {
+          "val" : "An attribute describes a quality of sequence.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence attribute",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sequence_attribute"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0001059",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence_alteration is a sequence_feature whose extent is the deviation from another sequence.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:misc_feature",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasNarrowSynonym",
+          "val" : "uncharacterised_change_in_nucleotide_sequence",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_note:sequence_alteration",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence alteration",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasNarrowSynonym",
+          "val" : "partially_characterised_change_in_DNA_sequence",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "sequence variation",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_feature:variation",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasNarrowSynonym",
+          "val" : "partially characterised change in DNA sequence",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "SO:1000007"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Merged with partially characterized change in nucleotide sequence."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "SO:1000004"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sequence_alteration"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000248",
+      "meta" : {
+        "definition" : {
+          "val" : "A kind of kind of sequence alteration where the copies of a region present varies across a population.",
+          "xrefs" : [ "SO:ke" ]
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "sequence length alteration",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sequence_length_alteration"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/SO_0000005",
+      "meta" : {
+        "definition" : {
+          "val" : "The many tandem repeats (identical or related) of a short basic repeating unit; many have a base composition or other property different from the genome average that allows them to be separated from the bulk (main band) genomic DNA.",
+          "xrefs" : [ "http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/so#SOFA" ],
+        "xrefs" : [ {
+          "val" : "http://en.wikipedia.org/wiki/Satellite_DNA"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "satellite DNA",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "INSDC_qualifier:satellite",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasBroadSynonym",
+          "val" : "INSDC_feature:repeat_region",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "sequence"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "satellite_DNA"
+    } ],
+    "edges" : [ {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000771",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000036",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001479",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000637"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000657",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_part",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000726"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000011",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000010"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000149",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000353"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000235",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001654"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000831",
+      "pred" : "http://purl.obolibrary.org/obo/so#member_of",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000285",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000442",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000696"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000637",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000155"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000009",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001483"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000340",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001235"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000159",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000235",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001679"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000637",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000783"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001743",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001019"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000155",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001235"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001785",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000014",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000009"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000285",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000784"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000289",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000005"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000443",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000400"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000727",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_part",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000235"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000148",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001876"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000409",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001506",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001026"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000281",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000280"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000035",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000667"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001235",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000667",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001645",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000022",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000018"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000005",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000705"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001524",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001506"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001218",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000667"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000410",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000409"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001745",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001744"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000281",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000285"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001183",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000348"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001026",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_part",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001235"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001248",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001410"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000173",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000035"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0005855",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000783",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000733"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000293",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000805"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000804",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001409"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000020",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000018"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000199",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001785"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000010",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000009"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000280",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000804"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000705",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000657"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000805",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000783"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000805",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000784"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001507",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001260"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000781",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000733"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000002",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000039",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000173"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001784",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001785"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000830",
+      "pred" : "http://purl.obolibrary.org/obo/so#part_of",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000340"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001026",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001260"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001411",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001784",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000183"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000667",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000733",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000400"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000704",
+      "pred" : "http://purl.obolibrary.org/obo/so#member_of",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0005855"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000105",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000830"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000699",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000110"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000830",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000240",
+      "pred" : "http://purl.obolibrary.org/obo/so#part_of",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001524"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000337",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000442"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001055",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001679"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000240",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001507"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000348",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000443"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000167",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001055"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000018",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000017"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000016",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000014"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000026",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000023"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001477",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000637"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000149",
+      "pred" : "http://purl.obolibrary.org/obo/so#part_of",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000148"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000002",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000281",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000783"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000281",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000784"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000293",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000657"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000024",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000023"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000012",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000011"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000353",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001248"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000637",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000804"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000696",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000695"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001218",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000781"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001876",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000353"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000704",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000008",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001483"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001409",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001505",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001026"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000719",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001876"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/so#member_of",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/so#part_of"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000149",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000143"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000040",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000173"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001742",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001019"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000784",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000733"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000023",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000017"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001247",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000696"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001013",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0002007"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001679",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0005836"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000183",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000240"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0005836",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000831"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001746",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001744"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000726",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001019",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000248"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000695",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001409"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000143",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001410"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000577",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000628"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001654",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000410"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000017",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001483"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000021",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000018"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000280",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000281",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000805"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001500",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001645"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0002007",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000002"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000831",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001507",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_part",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000902",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000781"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000804",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000783"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001410",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000248",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000805",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000804"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000207",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000248"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000341",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000830"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000628",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000830"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000727",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001055"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000036",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000902",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000657",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000002",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001411"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000034",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001183"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000159",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000694",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001483"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000293",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000783"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001483",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000002"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000034",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001247"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0002072",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000110"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000019",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000018"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000027",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000023"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000148",
+      "pred" : "http://purl.obolibrary.org/obo/so#part_of",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000719"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000005",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000002"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000280",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000783"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000001",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000110"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001744",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000032",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000293",
+      "pred" : "http://purl.obolibrary.org/obo/so#has_quality",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000784"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000025",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000023"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000015",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000014"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_1000013",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_1000010"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001059",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0002072"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001478",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000637"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0000165",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000727"
+    } ],
+    "id" : "http://purl.obolibrary.org/obo/geno/imports/so_import.owl",
+    "meta" : {
+      "subsets" : [ ],
+      "xrefs" : [ ],
+      "basicPropertyValues" : [ ],
+      "version" : "http://purl.obolibrary.org/obo/geno/releases/2019-09-09/imports/so_import.owl"
+    },
+    "equivalentNodesSets" : [ ],
+    "logicalDefinitionAxioms" : [ {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000804",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000001" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000783"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000805",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000001" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000783"
+      }, {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000784"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000280",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000704" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000783"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000285",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000704" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000784"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000902",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000704" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000781"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000281",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000280" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000783"
+      }, {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000784"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0001507",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0001260" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_part",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0001059"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000293",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000657" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000783"
+      }, {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000784"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000034",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0001247" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0001183"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0001218",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000667" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000781"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000637",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0000155" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_quality",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000783"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0000727",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0001055" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_part",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000235"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/SO_0001026",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/SO_0001260" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/so#has_part",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0001235"
+      } ]
+    } ],
+    "domainRangeAxioms" : [ ],
+    "propertyChainAxioms" : [ ]
+  } ]
+}

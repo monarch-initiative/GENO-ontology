@@ -1,0 +1,26 @@
+{
+  "graphs" : [ {
+    "nodes" : [ ],
+    "edges" : [ ],
+    "id" : "http://purl.obolibrary.org/obo/json",
+    "meta" : {
+      "subsets" : [ ],
+      "xrefs" : [ ],
+      "basicPropertyValues" : [ {
+        "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+        "val" : "\n          This is an OWL translation of an ontology whose native representational form is .obo. The translation was performed using the oboInOwl xslt library. For details, see http://www.berkeleybop.org/obo-conv.cgi\n        "
+      }, {
+        "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+        "val" : "OBO Format metamodel. This meta-ontology is self-describing. OBO metamodel properties are described using OBO metamodel properties"
+      }, {
+        "pred" : "http://www.w3.org/2000/01/rdf-schema#label",
+        "val" : ""
+      } ],
+      "version" : "http://purl.obolibrary.org/obo/geno/releases/2019-09-09"
+    },
+    "equivalentNodesSets" : [ ],
+    "logicalDefinitionAxioms" : [ ],
+    "domainRangeAxioms" : [ ],
+    "propertyChainAxioms" : [ ]
+  } ]
+}

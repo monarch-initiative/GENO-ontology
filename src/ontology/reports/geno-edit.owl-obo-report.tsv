@@ -1,0 +1,272 @@
+Level	Rule Name	Subject	Property	Value
+ERROR	duplicate_definition	GENO:0000847	IAO:0000115	A relation used to describe  an environment contextualizing the identity of an entity.	
+ERROR	duplicate_definition	GENO:0000873	IAO:0000115	A relation used to describe  an environment contextualizing the identity of an entity.	
+ERROR	duplicate_definition	GENO:0000846	IAO:0000115	A relation used to describe  a process contextualizing the identity of an entity.	
+ERROR	duplicate_definition	GENO:0000874	IAO:0000115	A relation used to describe  a process contextualizing the identity of an entity.	
+ERROR	duplicate_definition	GENO:0000719	IAO:0000115	A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.	
+ERROR	duplicate_definition	GENO:0000899	IAO:0000115	A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.	
+ERROR	misused_obsolete_label	GENO:0000242	rdfs:label	obsolete_specifies	
+ERROR	misused_obsolete_label	GENO:0000243	rdfs:label	obsolete_approximates_sequence	
+ERROR	misused_obsolete_label	GENO:0000244	rdfs:label	obsolete_resolves_to_sequence	
+ERROR	misused_obsolete_label	GENO:0000253	rdfs:label	obsolete_is_specified_by	
+ERROR	misused_obsolete_label	GENO:0000359	rdfs:label	obsolete_is_phenotype_of_genotype	
+ERROR	misused_obsolete_label	GENO:0000368	rdfs:label	obsolete_participates_in_inheritance_process	
+ERROR	misused_obsolete_label	GENO:0000410	rdfs:label	obsolete_is_genetic_variant_of	
+ERROR	misused_obsolete_label	GENO:0000411	rdfs:label	obsolete_has_genetic_variant	
+ERROR	misused_obsolete_label	GENO:0000486	rdfs:label	obsolete_is_variant_with@en	
+ERROR	misused_obsolete_label	GENO:0000488	rdfs:label	obsolete_is_expression_variant_with@en	
+ERROR	misused_obsolete_label	GENO:0000712	rdfs:label	ObsoleteDataProperty@en	
+ERROR	misused_obsolete_label	GENO:0000741	rdfs:label	obsolete_has_regulatory_part@en	
+ERROR	misused_obsolete_label	GENO:0000742	rdfs:label	obsolete_is_alteration_within@en	
+ERROR	misused_obsolete_label	GENO:0000767	rdfs:label	obsolete_has_position_component@en	
+ERROR	misused_obsolete_label	GENO:0000910	rdfs:label	obsolete reporter role@en	
+ERROR	misused_obsolete_label	GENO:0000911	rdfs:label	obsolete selectable marker role@en	
+ERROR	misused_obsolete_label	RO:0002354	rdfs:label	obsolete_formed as result of@en	
+ERROR	duplicate_label	http://biohackathon.org/resource/faldo#reference	rdfs:label	reference	
+ERROR	duplicate_label	GENO:0000152	rdfs:label	reference	
+ERROR	multiple_definitions	BFO:0000020	IAO:0000115	b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])@en	
+ERROR	multiple_definitions	BFO:0000020	IAO:0000115	b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])@en	
+ERROR	multiple_labels	BFO:0000002	rdfs:label	continuant	
+ERROR	multiple_labels	BFO:0000002	rdfs:label	continuant@en	
+ERROR	multiple_labels	BFO:0000003	rdfs:label	occurrent	
+ERROR	multiple_labels	BFO:0000003	rdfs:label	occurrent@en	
+ERROR	multiple_labels	BFO:0000004	rdfs:label	independent continuant	
+ERROR	multiple_labels	BFO:0000004	rdfs:label	independent continuant@en	
+ERROR	multiple_labels	BFO:0000015	rdfs:label	process	
+ERROR	multiple_labels	BFO:0000015	rdfs:label	process@en	
+ERROR	multiple_labels	BFO:0000016	rdfs:label	disposition	
+ERROR	multiple_labels	BFO:0000016	rdfs:label	disposition@en	
+ERROR	multiple_labels	BFO:0000017	rdfs:label	realizable entity	
+ERROR	multiple_labels	BFO:0000017	rdfs:label	realizable entity@en	
+ERROR	multiple_labels	BFO:0000019	rdfs:label	quality	
+ERROR	multiple_labels	BFO:0000019	rdfs:label	quality@en	
+ERROR	multiple_labels	BFO:0000020	rdfs:label	specifically dependent continuant	
+ERROR	multiple_labels	BFO:0000020	rdfs:label	specifically dependent continuant@en	
+ERROR	multiple_labels	BFO:0000023	rdfs:label	role	
+ERROR	multiple_labels	BFO:0000023	rdfs:label	role@en	
+ERROR	multiple_labels	BFO:0000031	rdfs:label	generically dependent continuant	
+ERROR	multiple_labels	BFO:0000031	rdfs:label	generically dependent continuant@en	
+ERROR	multiple_labels	BFO:0000040	rdfs:label	material entity	
+ERROR	multiple_labels	BFO:0000040	rdfs:label	material entity@en	
+ERROR	multiple_labels	GENO:0000910	rdfs:label	obsolete reporter role@en	
+ERROR	multiple_labels	GENO:0000910	rdfs:label	reporter@en	
+ERROR	multiple_labels	GENO:0000911	rdfs:label	obsolete selectable marker role@en	
+ERROR	multiple_labels	GENO:0000911	rdfs:label	selectable marker@en	
+ERROR	multiple_labels	IAO:0000030	rdfs:label	information content entity	
+ERROR	multiple_labels	IAO:0000030	rdfs:label	information content entity@en	
+WARN	missing_definition	http://biohackathon.org/resource/faldo#BothStrandsPosition	IAO:0000115		
+WARN	missing_definition	http://biohackathon.org/resource/faldo#ForwardStrandPosition	IAO:0000115		
+WARN	missing_definition	http://biohackathon.org/resource/faldo#ReverseStrandPosition	IAO:0000115		
+WARN	missing_definition	http://biohackathon.org/resource/faldo#StrandedPosition	IAO:0000115		
+WARN	missing_definition	http://biohackathon.org/resource/faldo#begin	IAO:0000115		
+WARN	missing_definition	http://biohackathon.org/resource/faldo#end	IAO:0000115		
+WARN	missing_definition	http://biohackathon.org/resource/faldo#location	IAO:0000115		
+WARN	missing_definition	http://biohackathon.org/resource/faldo#position	IAO:0000115		
+WARN	missing_definition	BFO:0000050	IAO:0000115		
+WARN	missing_definition	BFO:0000051	IAO:0000115		
+WARN	missing_definition	CHEBI:23367	IAO:0000115		
+WARN	missing_definition	CHEBI:33696	IAO:0000115		
+WARN	missing_definition	CL:0000000	IAO:0000115		
+WARN	missing_definition	ENVO:01000254	IAO:0000115		
+WARN	missing_definition	GENO:0000092	IAO:0000115		
+WARN	missing_definition	GENO:0000113	IAO:0000115		
+WARN	missing_definition	GENO:0000118	IAO:0000115		
+WARN	missing_definition	GENO:0000119	IAO:0000115		
+WARN	missing_definition	GENO:0000134	IAO:0000115		
+WARN	missing_definition	GENO:0000135	IAO:0000115		
+WARN	missing_definition	GENO:0000136	IAO:0000115		
+WARN	missing_definition	GENO:0000137	IAO:0000115		
+WARN	missing_definition	GENO:0000139	IAO:0000115		
+WARN	missing_definition	GENO:0000140	IAO:0000115		
+WARN	missing_definition	GENO:0000160	IAO:0000115		
+WARN	missing_definition	GENO:0000220	IAO:0000115		
+WARN	missing_definition	GENO:0000243	IAO:0000115		
+WARN	missing_definition	GENO:0000244	IAO:0000115		
+WARN	missing_definition	GENO:0000251	IAO:0000115		
+WARN	missing_definition	GENO:0000252	IAO:0000115		
+WARN	missing_definition	GENO:0000253	IAO:0000115		
+WARN	missing_definition	GENO:0000351	IAO:0000115		
+WARN	missing_definition	GENO:0000383	IAO:0000115		
+WARN	missing_definition	GENO:0000387	IAO:0000115		
+WARN	missing_definition	GENO:0000391	IAO:0000115		
+WARN	missing_definition	GENO:0000392	IAO:0000115		
+WARN	missing_definition	GENO:0000393	IAO:0000115		
+WARN	missing_definition	GENO:0000394	IAO:0000115		
+WARN	missing_definition	GENO:0000458	IAO:0000115		
+WARN	missing_definition	GENO:0000495	IAO:0000115		
+WARN	missing_definition	GENO:0000502	IAO:0000115		
+WARN	missing_definition	GENO:0000533	IAO:0000115		
+WARN	missing_definition	GENO:0000575	IAO:0000115		
+WARN	missing_definition	GENO:0000604	IAO:0000115		
+WARN	missing_definition	GENO:0000605	IAO:0000115		
+WARN	missing_definition	GENO:0000606	IAO:0000115		
+WARN	missing_definition	GENO:0000616	IAO:0000115		
+WARN	missing_definition	GENO:0000618	IAO:0000115		
+WARN	missing_definition	GENO:0000619	IAO:0000115		
+WARN	missing_definition	GENO:0000620	IAO:0000115		
+WARN	missing_definition	GENO:0000621	IAO:0000115		
+WARN	missing_definition	GENO:0000622	IAO:0000115		
+WARN	missing_definition	GENO:0000623	IAO:0000115		
+WARN	missing_definition	GENO:0000624	IAO:0000115		
+WARN	missing_definition	GENO:0000625	IAO:0000115		
+WARN	missing_definition	GENO:0000626	IAO:0000115		
+WARN	missing_definition	GENO:0000632	IAO:0000115		
+WARN	missing_definition	GENO:0000633	IAO:0000115		
+WARN	missing_definition	GENO:0000640	IAO:0000115		
+WARN	missing_definition	GENO:0000650	IAO:0000115		
+WARN	missing_definition	GENO:0000651	IAO:0000115		
+WARN	missing_definition	GENO:0000655	IAO:0000115		
+WARN	missing_definition	GENO:0000708	IAO:0000115		
+WARN	missing_definition	GENO:0000712	IAO:0000115		
+WARN	missing_definition	GENO:0000720	IAO:0000115		
+WARN	missing_definition	GENO:0000721	IAO:0000115		
+WARN	missing_definition	GENO:0000722	IAO:0000115		
+WARN	missing_definition	GENO:0000740	IAO:0000115		
+WARN	missing_definition	GENO:0000741	IAO:0000115		
+WARN	missing_definition	GENO:0000743	IAO:0000115		
+WARN	missing_definition	GENO:0000761	IAO:0000115		
+WARN	missing_definition	GENO:0000770	IAO:0000115		
+WARN	missing_definition	GENO:0000779	IAO:0000115		
+WARN	missing_definition	GENO:0000780	IAO:0000115		
+WARN	missing_definition	GENO:0000781	IAO:0000115		
+WARN	missing_definition	GENO:0000782	IAO:0000115		
+WARN	missing_definition	GENO:0000790	IAO:0000115		
+WARN	missing_definition	GENO:0000791	IAO:0000115		
+WARN	missing_definition	GENO:0000793	IAO:0000115		
+WARN	missing_definition	GENO:0000794	IAO:0000115		
+WARN	missing_definition	GENO:0000833	IAO:0000115		
+WARN	missing_definition	GENO:0000839	IAO:0000115		
+WARN	missing_definition	GENO:0000840	IAO:0000115		
+WARN	missing_definition	GENO:0000841	IAO:0000115		
+WARN	missing_definition	GENO:0000843	IAO:0000115		
+WARN	missing_definition	GENO:0000844	IAO:0000115		
+WARN	missing_definition	GENO:0000845	IAO:0000115		
+WARN	missing_definition	GENO:0000849	IAO:0000115		
+WARN	missing_definition	GENO:0000867	IAO:0000115		
+WARN	missing_definition	GENO:0000887	IAO:0000115		
+WARN	missing_definition	GENO:0000905	IAO:0000115		
+WARN	missing_definition	GENO:0000906	IAO:0000115		
+WARN	missing_definition	GENO:0000909	IAO:0000115		
+WARN	missing_definition	GENO:0000910	IAO:0000115		
+WARN	missing_definition	GENO:0000911	IAO:0000115		
+WARN	missing_definition	GENO:0000912	IAO:0000115		
+WARN	missing_definition	GENO:0000964	IAO:0000115		
+WARN	missing_definition	HP:0000118	IAO:0000115		
+WARN	missing_definition	HsapDv:0000000	IAO:0000115		
+WARN	missing_definition	IAO:0000102	IAO:0000115		
+WARN	missing_definition	MP:0000001	IAO:0000115		
+WARN	missing_definition	NCBITaxon:10090	IAO:0000115		
+WARN	missing_definition	NCBITaxon:10239	IAO:0000115		
+WARN	missing_definition	NCBITaxon:7955	IAO:0000115		
+WARN	missing_definition	NCBITaxon:8090	IAO:0000115		
+WARN	missing_definition	NCBITaxon:9606	IAO:0000115		
+WARN	missing_definition	OBI:0000086	IAO:0000115		
+WARN	missing_definition	OBI:0100026	IAO:0000115		
+WARN	missing_definition	PATO:0000383	IAO:0000115		
+WARN	missing_definition	PATO:0000384	IAO:0000115		
+WARN	missing_definition	PATO:0001894	IAO:0000115		
+WARN	missing_definition	RO:0000087	IAO:0000115		
+WARN	missing_definition	RO:0001000	IAO:0000115		
+WARN	missing_definition	RO:0002091	IAO:0000115		
+WARN	missing_definition	RO:0002093	IAO:0000115		
+WARN	missing_definition	RO:0002201	IAO:0000115		
+WARN	missing_definition	RO:0002222	IAO:0000115		
+WARN	missing_definition	RO:0002350	IAO:0000115		
+WARN	missing_definition	RO:0002352	IAO:0000115		
+WARN	missing_definition	RO:0002353	IAO:0000115		
+WARN	missing_definition	RO:0002354	IAO:0000115		
+WARN	missing_definition	RO:0002525	IAO:0000115		
+WARN	missing_definition	SO:0000165	IAO:0000115		
+WARN	missing_definition	SO:0000207	IAO:0000115		
+WARN	missing_definition	SO:0000248	IAO:0000115		
+WARN	missing_definition	SO:0000281	IAO:0000115		
+WARN	missing_definition	SO:0000337	IAO:0000115		
+WARN	missing_definition	SO:0000577	IAO:0000115		
+WARN	missing_definition	SO:0000699	IAO:0000115		
+WARN	missing_definition	SO:0000804	IAO:0000115		
+WARN	missing_definition	SO:0001785	IAO:0000115		
+WARN	missing_definition	SO:0005836	IAO:0000115		
+WARN	missing_definition	SO:1000013	IAO:0000115		
+WARN	missing_definition	SO:1000020	IAO:0000115		
+WARN	missing_definition	UBERON:0000105	IAO:0000115		
+WARN	missing_definition	UBERON:0001062	IAO:0000115		
+WARN	missing_definition	UPHENO:0001001	IAO:0000115		
+WARN	missing_definition	ZP:0000199	IAO:0000115		
+WARN	missing_definition	ZP:0000386	IAO:0000115		
+WARN	missing_definition	ZP:0000755	IAO:0000115		
+WARN	missing_definition	ZP:0005531	IAO:0000115		
+WARN	missing_definition	ZP:0005692	IAO:0000115		
+WARN	missing_definition	http://purl.org/oban/association	IAO:0000115		
+WARN	missing_definition	http://purl.org/oban/association_has_object	IAO:0000115		
+WARN	missing_definition	http://purl.org/oban/association_has_predicate	IAO:0000115		
+WARN	missing_definition	http://purl.org/oban/association_has_subject	IAO:0000115		
+WARN	missing_definition	http://www.ncbi.nlm.nih.gov/gene/20423	IAO:0000115		
+WARN	missing_definition	http://www.ncbi.nlm.nih.gov/gene/30269	IAO:0000115		
+WARN	missing_definition	http://www.ncbi.nlm.nih.gov/gene/399483	IAO:0000115		
+WARN	missing_definition	http://www.ncbi.nlm.nih.gov/gene/6469	IAO:0000115		
+WARN	invalid_xref	GENO:0000010	oboInOwl:hasDbXref	OBI:genetic population background information	
+WARN	invalid_xref	GENO:0000014	oboInOwl:hasDbXref	http://purl.obolibrary.org/obo/SO_0001023 ! allele	
+WARN	invalid_xref	GENO:0000019	oboInOwl:hasDbXref	perhaps not same as SO:sequence collection, as here we explicitly include features that can have an extent of zero (and SO:sequence collection is a collection of regions that have an extent of at least one)	
+WARN	invalid_xref	GENO:0000033	oboInOwl:hasDbXref	http://purl.obolibrary.org/obo/SO_0001506 ! variant_genome (definition of SO term here is too vague to know if has same meaning as GENO class here)	
+WARN	invalid_xref	GENO:0000666	oboInOwl:hasDbXref	SO:0000831 (gene member region)	
+WARN	invalid_xref	GENO:0000870	oboInOwl:hasDbXref	http://purl.obolibrary.org/obo/SO_0001260 ! sequence_collection	
+INFO	lowercase_definition	BFO:0000004	IAO:0000115	b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])@en	
+INFO	lowercase_definition	BFO:0000015	IAO:0000115	p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])@en	
+INFO	lowercase_definition	BFO:0000016	IAO:0000600	b is a disposition means: b is a realizable entity & b’s bearer is some material entity & b is such that if it ceases to exist, then its bearer is physically changed, & b’s realization occurs when and because this bearer is in some special physical circumstances, & this realization occurs in virtue of the bearer’s physical make-up. (axiom label in BFO2 Reference: [062-002])@en	
+INFO	lowercase_definition	BFO:0000019	IAO:0000600	a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])@en	
+INFO	lowercase_definition	BFO:0000020	IAO:0000115	b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])@en	
+INFO	lowercase_definition	BFO:0000020	IAO:0000115	b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])@en	
+INFO	lowercase_definition	BFO:0000023	IAO:0000600	b is a role means: b is a realizable entity and b exists because there is some single bearer that is in some special physical, social, or institutional set of circumstances in which this bearer does not have to be and b is not such that, if it ceases to exist, then the physical make-up of the bearer is thereby changed. (axiom label in BFO2 Reference: [061-001])@en	
+INFO	lowercase_definition	BFO:0000031	IAO:0000115	b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])@en	
+INFO	lowercase_definition	GENO:0000019	IAO:0000115	a collection more than one sequence features (ie a collection of discontinuous sequence features)	
+INFO	lowercase_definition	GENO:0000111	IAO:0000115	a population of homo sapiens grouped together in virtue of their sharing some commonality (either an inherent attribute or an externally assigned role)	
+INFO	lowercase_definition	GENO:0000125	IAO:0000115	sequence attribute that can inhere only in a collection of more than one sequence features	
+INFO	lowercase_definition	GENO:0000142	IAO:0000115	disposition inhering in a genetic locus variant that is realized in its inheritance by some offspring such that at least a partial variant-associated phenotype is apparent in heterozygotes	
+INFO	lowercase_definition	GENO:0000359	IAO:0000115	shortcut relation used to link a phenotype directly to a genotype of an organism	
+INFO	lowercase_definition	GENO:0000513	IAO:0000115	a sequence attribute of a chromosome or chromosomal region that has been abnormally duplicated or lost, as the result of a non-disjunction event or unbalanced translocation.	
+INFO	lowercase_definition	GENO:0000602	IAO:0000115	an allelic state where a single allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.	
+INFO	lowercase_definition	GENO:0000603	IAO:0000115	an allelic state where more than one type of allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.	
+INFO	lowercase_definition	GENO:0000608	IAO:0000115	a relation to link a single locus complement to its zygosity.	
+INFO	lowercase_definition	GENO:0000634	IAO:0000115	relation between an molecular agent and its molecular target	
+INFO	lowercase_definition	GENO:0000883	IAO:0000115	a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells).	
+INFO	lowercase_definition	IAO:0000030	IAO:0000115	an information content entity is an entity that is generically dependent on some artifact and stands in relation of aboutness to some entity@en	
+INFO	lowercase_definition	IAO:0000136	IAO:0000115	is_about is a (currently) primitive relation that relates an information artifact to an entity.	
+INFO	lowercase_definition	OBI:0000181	IAO:0000115	a population is a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area	
+INFO	lowercase_definition	RO:0000052	IAO:0000115	a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence	
+INFO	lowercase_definition	RO:0000053	IAO:0000115	a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence	
+INFO	lowercase_definition	RO:0000056	IAO:0000115	a relation between a continuant and a process, in which the continuant is somehow involved in the process	
+INFO	lowercase_definition	RO:0000057	IAO:0000115	a relation between a process and a continuant, in which the continuant is somehow involved in the process	
+INFO	lowercase_definition	RO:0000086	IAO:0000115	a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence	
+INFO	lowercase_definition	RO:0000091	IAO:0000115	a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence	
+INFO	lowercase_definition	RO:0002131	IAO:0000115	x overlaps y if and only if there exists some z such that x has part z and z part of y	
+INFO	lowercase_definition	RO:0002162	IAO:0000115	x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed.	
+INFO	lowercase_definition	RO:0002233	IAO:0000115	p has direct input c iff c is a participant in p, c is present at the start of p, and the state of c is modified during p.	
+INFO	lowercase_definition	RO:0002234	IAO:0000115	p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p.	
+INFO	lowercase_definition	RO:0002351	IAO:0000115	has member is a mereological relation between a collection and an item.	
+INFO	lowercase_definition	RO:0002522	IAO:0000115	x bounds the sequence of y iff the upstream-most part of x is upstream of or coincident with the upstream-most part of y, and the downstream-most part of x is downstream of or coincident with the downstream-most part of y	
+INFO	lowercase_definition	RO:0002524	IAO:0000115	x has subsequence y iff all of the sequence parts of x are sequence parts of y	
+INFO	lowercase_definition	RO:0002526	IAO:0000115	x overlaps the sequence of x if and only if x has a subsequence z and z is a subsequence of y.	
+INFO	lowercase_definition	RO:0002528	IAO:0000115	inverse of downstream of sequence of	
+INFO	lowercase_definition	RO:0002529	IAO:0000115	x is downstream of the sequence of y iff either (1) x and y have sequence units, and all units of x are downstream of all units of y, or (2) x and y are sequence units, and x is either immediately downstream of y, or transitively downstream of y.	
+INFO	missing_superclass	BFO:0000001	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000009	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000017	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000030	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000036	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000047	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000054	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000057	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000460	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000494	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000512	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000666	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000720	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000721	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000722	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000777	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000779	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000823	rdfs:subClassOf		
+INFO	missing_superclass	GENO:0000885	rdfs:subClassOf		
+INFO	missing_superclass	SO:0000804	rdfs:subClassOf		
+INFO	missing_superclass	SO:0000830	rdfs:subClassOf		
+INFO	missing_superclass	SO:0001059	rdfs:subClassOf		

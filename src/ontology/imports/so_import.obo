@@ -1,0 +1,1323 @@
+format-version: 1.2
+data-version: geno/releases/2019-09-09/imports/so_import.owl
+subsetdef: biosapiens ""
+subsetdef: DBVAR ""
+subsetdef: SOFA ""
+ontology: geno/imports/so_import
+
+[Term]
+id: SO:0000000
+name: Sequence_Ontology
+namespace: sequence
+subset: SOFA
+is_obsolete: true
+
+[Term]
+id: SO:0000001
+name: region
+namespace: sequence
+def: "A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids." [SO:ke]
+subset: SOFA
+synonym: "sequence" EXACT []
+is_a: SO:0000110 ! sequence_feature
+
+[Term]
+id: SO:0000002
+name: sequence_secondary_structure
+namespace: sequence
+def: "A folded sequence." [SO:ke]
+synonym: "INSDC_feature:misc_structure" EXACT []
+synonym: "sequence secondary structure" EXACT []
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0000005
+name: satellite_DNA
+namespace: sequence
+def: "The many tandem repeats (identical or related) of a short basic repeating unit; many have a base composition or other property different from the genome average that allows them to be separated from the bulk (main band) genomic DNA." [http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html]
+subset: SOFA
+synonym: "INSDC_feature:repeat_region" BROAD []
+synonym: "INSDC_qualifier:satellite" EXACT []
+synonym: "satellite DNA" EXACT []
+xref: http://en.wikipedia.org/wiki/Satellite_DNA "wiki"
+is_a: SO:0000705 ! tandem_repeat
+
+[Term]
+id: SO:0000034
+name: morpholino_oligo
+namespace: sequence
+def: "Morpholino oligos are synthesized from four different Morpholino subunits, each of which contains one of the four genetic bases (A, C, G, T) linked to a 6-membered morpholine ring. Eighteen to 25 subunits of these four subunit types are joined in a specific order by non-ionic phosphorodiamidate intersubunit linkages to give a Morpholino." [http://www.gene-tools.com/]
+synonym: "morphant" BROAD []
+synonym: "morpholino" EXACT []
+synonym: "morpholino oligo" EXACT []
+is_a: SO:0001247 ! synthetic_oligo
+intersection_of: SO:0001247 ! synthetic_oligo
+intersection_of: has_quality SO:0001183 ! morpholino_backbone
+relationship: has_quality SO:0001183 ! morpholino_backbone
+
+[Term]
+id: SO:0000105
+name: chromosome_arm
+namespace: sequence
+def: "A region of the chromosome between the centromere and the telomere. Human chromosomes have two arms, the p arm (short) and the q arm (long) which are separated from each other by the centromere." [http://www.medterms.com/script/main/art.asp?articlekey=5152]
+synonym: "chromosome arm" EXACT []
+is_a: SO:0000830 ! chromosome_part
+
+[Term]
+id: SO:0000110
+name: sequence_feature
+namespace: sequence
+def: "Any extent of continuous biological sequence." [LAMHDI:mb, SO:ke]
+subset: SOFA
+synonym: "INSDC_feature:misc_feature" EXACT []
+synonym: "INSDC_note:other" EXACT []
+synonym: "INSDC_note:sequence_feature" EXACT []
+synonym: "located sequence feature" RELATED []
+synonym: "located_sequence_feature" EXACT []
+synonym: "sequence feature" EXACT []
+disjoint_from: SO:0000400 ! sequence_attribute
+
+[Term]
+id: SO:0000143
+name: assembly_component
+namespace: sequence
+def: "A region of known length which may be used to manufacture a longer region." [SO:ke]
+subset: SOFA
+synonym: "assembly component" EXACT []
+is_a: SO:0001410 ! experimental_feature
+
+[Term]
+id: SO:0000148
+name: supercontig
+namespace: sequence
+def: "One or more contigs that have been ordered and oriented using end-read information. Contains gaps that are filled with N's." [SO:ls]
+subset: SOFA
+synonym: "scaffold" RELATED []
+is_a: SO:0001876 ! partial_genomic_sequence_assembly
+relationship: part_of SO:0000719 ! ultracontig
+
+[Term]
+id: SO:0000149
+name: contig
+namespace: sequence
+def: "A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N's from unavailable bases." [SO:ls]
+subset: SOFA
+xref: http://en.wikipedia.org/wiki/Contig "wiki"
+is_a: SO:0000143 ! assembly_component
+is_a: SO:0000353 ! sequence_assembly
+relationship: part_of SO:0000148 ! supercontig
+
+[Term]
+id: SO:0000155
+name: plasmid
+namespace: sequence
+def: "A self replicating, using the hosts cellular machinery, often circular nucleic acid molecule that is distinct from a chromosome in the organism." [SO:ma]
+comment: This term is mapped to MGED. Do not obsolete without consulting MGED ontology.
+synonym: "plasmid sequence" EXACT []
+is_a: SO:0001235 ! replicon
+
+[Term]
+id: SO:0000159
+name: deletion
+namespace: sequence
+alt_id: SO:1000033
+def: "The point at which one or more contiguous nucleotides were excised." [SO:ke]
+subset: SOFA
+synonym: "deleted_sequence" EXACT []
+synonym: "nucleotide deletion" EXACT []
+synonym: "nucleotide_deletion" EXACT []
+xref: http://en.wikipedia.org/wiki/Nucleotide_deletion "wiki"
+xref: loinc:LA6692-3 "Deletion"
+is_a: SO:0001059 ! sequence_alteration
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0000165
+name: enhancer
+namespace: sequence
+def: "A cis-acting sequence that increases the utilization of (some) eukaryotic promoters, and can function in either orientation and in any location (upstream or downstream) relative to the promoter." [http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html]
+comment: An enhancer may participate in an enhanceosome GO:0034206. A protein-DNA complex formed by the association of a distinct set of general and specific transcription factors with a region of enhancer DNA. The cooperative assembly of an enhanceosome confers specificity of transcriptional regulation. This comment is a place holder should we start to make cross products with GO.
+subset: SOFA
+synonym: "INSDC_feature:regulatory" BROAD []
+synonym: "INSDC_qualifier:enhancer" EXACT []
+xref: http://en.wikipedia.org/wiki/Enhancer_(genetics) "wiki"
+is_a: SO:0000727 ! CRM
+
+[Term]
+id: SO:0000167
+name: promoter
+namespace: sequence
+def: "A regulatory_region composed of the TSS(s) and binding sites for TF_complexes of the basal transcription machinery." [SO:regcreative]
+comment: This term is mapped to MGED. Do not obsolete without consulting MGED ontology. The region on a DNA molecule involved in RNA polymerase binding to initiate transcription.
+subset: SOFA
+synonym: "INSDC_feature:regulatory" BROAD []
+synonym: "INSDC_qualifier:promoter" EXACT []
+synonym: "promoter sequence" EXACT []
+xref: http://en.wikipedia.org/wiki/Promoter "wiki"
+is_a: SO:0001055 ! transcriptional_cis_regulatory_region
+
+[Term]
+id: SO:0000199
+name: translocation
+namespace: sequence
+def: "A region of nucleotide sequence that has translocated to a new position. The observed adjacency of two previously separated regions." [NCBI:th, SO:ke]
+subset: DBVAR
+synonym: "transchr" RELATED [http://www.ncbi.nlm.nih.gov/dbvar/]
+synonym: "translocated sequence" EXACT []
+is_a: SO:0001785 ! structural_alteration
+
+[Term]
+id: SO:0000207
+name: simple_sequence_length_variation
+namespace: sequence
+def: "SSLP are a kind of sequence alteration where the number of repeated sequences in intergenic regions may differ." [SO:ke]
+synonym: "simple sequence length polymorphism" RELATED []
+synonym: "simple sequence length variation" EXACT []
+synonym: "SSLP" RELATED []
+xref: http://en.wikipedia.org/wiki/Simple_sequence_length_polymorphism "WIKI"
+is_a: SO:0000248 ! sequence_length_alteration
+
+[Term]
+id: SO:0000235
+name: TF_binding_site
+namespace: sequence
+def: "A region of a nucleotide molecule that binds a Transcription Factor or Transcription Factor complex [GO:0005667]." [SO:ke]
+subset: SOFA
+synonym: "TF binding site" EXACT []
+synonym: "transcription factor binding site" EXACT []
+is_a: SO:0001654 ! nucleotide_to_protein_binding_site
+is_a: SO:0001679 ! transcription_regulatory_region
+
+[Term]
+id: SO:0000240
+name: chromosome_variation
+namespace: sequence
+synonym: "chromosome variation" EXACT []
+is_a: SO:0001507 ! variant_collection
+relationship: part_of SO:0001524 ! chromosomally_aberrant_genome
+
+[Term]
+id: SO:0000248
+name: sequence_length_alteration
+namespace: sequence
+def: "A kind of kind of sequence alteration where the copies of a region present varies across a population." [SO:ke]
+synonym: "sequence length alteration" EXACT []
+is_a: SO:0001059 ! sequence_alteration
+
+[Term]
+id: SO:0000280
+name: engineered_gene
+namespace: sequence
+def: "A gene that is engineered." [SO:xp]
+synonym: "engineered gene" EXACT []
+is_a: SO:0000704 ! gene
+is_a: SO:0000804 ! engineered_region
+intersection_of: SO:0000704 ! gene
+intersection_of: has_quality SO:0000783 ! engineered
+relationship: has_quality SO:0000783 ! engineered
+
+[Term]
+id: SO:0000281
+name: engineered_foreign_gene
+namespace: sequence
+def: "A gene that is engineered and foreign." [SO:xp]
+synonym: "engineered foreign gene" EXACT []
+is_a: SO:0000280 ! engineered_gene
+is_a: SO:0000285 ! foreign_gene
+is_a: SO:0000805 ! engineered_foreign_region
+intersection_of: SO:0000280 ! engineered_gene
+intersection_of: has_quality SO:0000783 ! engineered
+intersection_of: has_quality SO:0000784 ! foreign
+relationship: has_quality SO:0000783 ! engineered
+relationship: has_quality SO:0000784 ! foreign
+
+[Term]
+id: SO:0000285
+name: foreign_gene
+namespace: sequence
+def: "A gene that is foreign." [SO:xp]
+synonym: "foreign gene" EXACT []
+is_a: SO:0000704 ! gene
+intersection_of: SO:0000704 ! gene
+intersection_of: has_quality SO:0000784 ! foreign
+relationship: has_quality SO:0000784 ! foreign
+
+[Term]
+id: SO:0000289
+name: microsatellite
+namespace: sequence
+def: "A repeat_region containing repeat_units of 2 to 10 bp repeated in tandem." [http://www.informatics.jax.org/silver/glossary.shtml, NCBI:th]
+subset: SOFA
+synonym: "INSDC_feature:repeat_region" BROAD []
+synonym: "INSDC_qualifier:microsatellite" EXACT []
+synonym: "microsatellite locus" EXACT []
+synonym: "microsatellite marker" EXACT []
+synonym: "short tandem repeat" EXACT []
+synonym: "STR" EXACT [http://www.ncbi.nlm.nih.gov/books/NBK21126/def-item/A9651/]
+xref: http://en.wikipedia.org/wiki/Microsatellite "wiki"
+is_a: SO:0000005 ! satellite_DNA
+
+[Term]
+id: SO:0000293
+name: engineered_foreign_repetitive_element
+namespace: sequence
+def: "A repetitive element that is engineered and foreign." [SO:xp]
+synonym: "engineered foreign repetitive element" EXACT []
+is_a: SO:0000657 ! repeat_region
+is_a: SO:0000805 ! engineered_foreign_region
+intersection_of: SO:0000657 ! repeat_region
+intersection_of: has_quality SO:0000783 ! engineered
+intersection_of: has_quality SO:0000784 ! foreign
+relationship: has_quality SO:0000783 ! engineered
+relationship: has_quality SO:0000784 ! foreign
+
+[Term]
+id: SO:0000337
+name: RNAi_reagent
+namespace: sequence
+def: "A double stranded RNA duplex, at least 20bp long, used experimentally to inhibit gene function by RNA interference." [SO:rd]
+subset: SOFA
+synonym: "RNAi reagent" EXACT []
+is_a: SO:0000442 ! ds_oligo
+
+[Term]
+id: SO:0000340
+name: chromosome
+namespace: sequence
+def: "Structural unit composed of a nucleic acid molecule which controls its own replication through the interaction of specific proteins at one or more origins of replication." [SO:ma]
+comment: This term is mapped to MGED. Do not obsolete without consulting MGED ontology.
+subset: SOFA
+xref: http://en.wikipedia.org/wiki/Chromosome "wiki"
+is_a: SO:0001235 ! replicon
+
+[Term]
+id: SO:0000341
+name: chromosome_band
+namespace: sequence
+def: "A cytologically distinguishable feature of a chromosome, often made visible by staining, and usually alternating light and dark." [SO:ma]
+subset: SOFA
+synonym: "chromosome band" EXACT []
+synonym: "cytoband" EXACT []
+synonym: "cytological band" EXACT []
+xref: http://en.wikipedia.org/wiki/Cytological_band "wiki"
+is_a: SO:0000830 ! chromosome_part
+
+[Term]
+id: SO:0000348
+name: nucleic_acid
+namespace: sequence
+def: "An attribute describing a sequence consisting of nucleobases bound to repeating units. The forms found in nature are deoxyribonucleic acid (DNA), where the repeating units are 2-deoxy-D-ribose rings connected to a phosphate backbone, and ribonucleic acid (RNA), where the repeating units are D-ribose rings connected to a phosphate backbone." [CHEBI:33696, RSC:cb]
+synonym: "nucleic acid" EXACT []
+xref: http://en.wikipedia.org/wiki/Nucleic_acid "wiki"
+is_a: SO:0000443 ! polymer_attribute
+
+[Term]
+id: SO:0000353
+name: sequence_assembly
+namespace: sequence
+def: "A sequence of nucleotides that has been algorithmically derived from an alignment of two or more different sequences." [SO:ma]
+subset: SOFA
+synonym: "sequence assembly" EXACT []
+xref: http://en.wikipedia.org/wiki/Sequence_assembly "wiki"
+is_a: SO:0001248 ! assembly
+
+[Term]
+id: SO:0000400
+name: sequence_attribute
+namespace: sequence
+def: "An attribute describes a quality of sequence." [SO:ke]
+synonym: "sequence attribute" EXACT []
+
+[Term]
+id: SO:0000409
+name: binding_site
+namespace: sequence
+alt_id: BS:00033
+def: "A biological_region of sequence that, in the molecule, interacts selectively and non-covalently with other molecules. A region on the surface of a molecule that may interact with another molecule. When applied to polypeptides: Amino acids involved in binding or interactions. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [EBIBS:GAR, SO:ke]
+comment: See GO:0005488 : binding.
+subset: biosapiens
+subset: SOFA
+synonym: "binding site" EXACT []
+synonym: "binding_or_interaction_site" EXACT []
+synonym: "INSDC_feature:misc_binding" EXACT []
+synonym: "site" RELATED []
+xref: http://en.wikipedia.org/wiki/Binding_site "wiki"
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0000410
+name: protein_binding_site
+namespace: sequence
+def: "A binding site that, in the molecule, interacts selectively and non-covalently with polypeptide molecules." [SO:ke]
+comment: See GO:0042277 : peptide binding.
+subset: SOFA
+synonym: "INSDC_feature:protein_bind" EXACT []
+synonym: "protein binding site" EXACT []
+is_a: SO:0000409 ! binding_site
+
+[Term]
+id: SO:0000442
+name: ds_oligo
+namespace: sequence
+def: "A double stranded oligonucleotide." [SO:ke]
+comment: This term is mapped to MGED. Do not obsolete without consulting MGED ontology.
+subset: SOFA
+synonym: "double stranded oligonucleotide" EXACT []
+synonym: "ds oligo" EXACT []
+synonym: "ds-oligonucleotide" EXACT []
+is_a: SO:0000696 ! oligo
+
+[Term]
+id: SO:0000443
+name: polymer_attribute
+namespace: sequence
+def: "An attribute to describe the kind of biological sequence." [SO:ke]
+synonym: "polymer attribute" EXACT []
+is_a: SO:0000400 ! sequence_attribute
+
+[Term]
+id: SO:0000577
+name: centromere
+namespace: sequence
+def: "A region of chromosome where the spindle fibers attach during mitosis and meiosis." [SO:ke]
+subset: SOFA
+synonym: "INSDC_feature:centromere" EXACT []
+xref: http://en.wikipedia.org/wiki/Centromere "wiki"
+is_a: SO:0000628 ! chromosomal_structural_element
+
+[Term]
+id: SO:0000628
+name: chromosomal_structural_element
+namespace: sequence
+subset: SOFA
+synonym: "chromosomal structural element" EXACT []
+is_a: SO:0000830 ! chromosome_part
+
+[Term]
+id: SO:0000637
+name: engineered_plasmid
+namespace: sequence
+def: "A plasmid that is engineered." [SO:xp]
+synonym: "engineered plasmid" EXACT []
+synonym: "engineered plasmid gene" RELATED []
+is_a: SO:0000155 ! plasmid
+is_a: SO:0000804 ! engineered_region
+intersection_of: SO:0000155 ! plasmid
+intersection_of: has_quality SO:0000783 ! engineered
+relationship: has_quality SO:0000783 ! engineered
+
+[Term]
+id: SO:0000657
+name: repeat_region
+namespace: sequence
+def: "A region of sequence containing one or more repeat units." [SO:ke]
+subset: SOFA
+synonym: "INSDC_feature:repeat_region" BROAD []
+synonym: "INSDC_qualifier:other" EXACT []
+synonym: "repeat region" EXACT []
+is_a: SO:0001411 ! biological_region
+relationship: has_part SO:0000726 ! repeat_unit
+
+[Term]
+id: SO:0000667
+name: insertion
+namespace: sequence
+alt_id: SO:1000034
+def: "The sequence of one or more nucleotides added between two adjacent nucleotides in the sequence." [SO:ke]
+subset: DBVAR
+subset: SOFA
+synonym: "insertion" EXACT dbvar [http://www.ncbi.nlm.nih.gov/dbvar/]
+synonym: "nucleotide insertion" EXACT []
+synonym: "nucleotide_insertion" EXACT []
+xref: loinc:LA6687-3 "Insertion"
+is_a: SO:0001059 ! sequence_alteration
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0000694
+name: SNP
+namespace: sequence
+def: "SNPs are single base pair positions in genomic DNA at which different sequence alternatives exist in normal individuals in some population(s), wherein the least frequent variant has an abundance of 1% or greater." [SO:cb]
+subset: SOFA
+synonym: "single nucleotide polymorphism" EXACT []
+is_a: SO:0001483 ! SNV
+
+[Term]
+id: SO:0000695
+name: reagent
+namespace: sequence
+def: "A sequence used in experiment." [SO:ke]
+comment: Requested by Lynn Crosby, jan 2006.
+subset: SOFA
+is_a: SO:0001409 ! biomaterial_region
+
+[Term]
+id: SO:0000696
+name: oligo
+namespace: sequence
+def: "A short oligonucleotide sequence, of length on the order of 10's of bases; either single or double stranded." [SO:ma]
+subset: SOFA
+synonym: "oligonucleotide" EXACT []
+xref: http://en.wikipedia.org/wiki/Oligonucleotide "wiki"
+is_a: SO:0000695 ! reagent
+
+[Term]
+id: SO:0000699
+name: junction
+namespace: sequence
+def: "A sequence_feature with an extent of zero." [SO:ke]
+comment: A junction is a boundary between regions. A boundary has an extent of zero.
+subset: SOFA
+synonym: "boundary" EXACT []
+synonym: "breakpoint" EXACT []
+is_a: SO:0000110 ! sequence_feature
+
+[Term]
+id: SO:0000704
+name: gene
+namespace: sequence
+def: "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions." [SO:immuno_workshop]
+comment: This term is mapped to MGED. Do not obsolete without consulting MGED ontology. A gene may be considered as a unit of inheritance.
+subset: SOFA
+synonym: "INSDC_feature:gene" EXACT []
+xref: http://en.wikipedia.org/wiki/Gene "wiki"
+is_a: SO:0001411 ! biological_region
+relationship: member_of SO:0005855 ! gene_group
+
+[Term]
+id: SO:0000705
+name: tandem_repeat
+namespace: sequence
+def: "Two or more adjacent copies of a region (of length greater than 1)." [SO:ke]
+subset: SOFA
+synonym: "INSDC_feature:repeat_region" BROAD []
+synonym: "INSDC_qualifier:tandem" EXACT []
+synonym: "tandem repeat" EXACT []
+xref: http://en.wikipedia.org/wiki/Tandem_repeat "wiki"
+xref: http://www.sci.sdsu.edu/~smaloy/Glossary/T.html
+is_a: SO:0000657 ! repeat_region
+
+[Term]
+id: SO:0000719
+name: ultracontig
+namespace: sequence
+def: "An ordered and oriented set of scaffolds based on somewhat weaker sets of inferential evidence such as one set of mate pair reads together with supporting evidence from ESTs or location of markers from SNP or microsatellite maps, or cytogenetic localization of contained markers." [FB:WG]
+subset: SOFA
+synonym: "pseudochromosome" EXACT []
+synonym: "superscaffold" RELATED []
+is_a: SO:0001876 ! partial_genomic_sequence_assembly
+
+[Term]
+id: SO:0000726
+name: repeat_unit
+namespace: sequence
+def: "The simplest repeated component of a repeat region. A single repeat." [SO:ke]
+comment: Added to comply with the feature table. A single repeat.
+synonym: "repeat unit" EXACT []
+xref: http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0000727
+name: CRM
+namespace: sequence
+def: "A regulatory region where transcription factor binding sites clustered to regulate various aspects of transcription activities. (CRMs can be located a few kb to hundred kb upstream of the basal promoter, in the coding sequence, within introns, or in the downstream 3'UTR sequences, as well as on different chromosome). A single gene can be regulated by multiple CRMs to give precise control of its spatial and temporal expression. CRMs function as nodes in large, intertwined regulatory network." [PMID:19660565, SO:SG]
+comment: Requested by Stephen Grossmann Dec 2004.
+subset: SOFA
+synonym: "cis regulatory module" EXACT []
+synonym: "TF module" EXACT []
+synonym: "transcription factor module" EXACT []
+is_a: SO:0001055 ! transcriptional_cis_regulatory_region
+intersection_of: SO:0001055 ! transcriptional_cis_regulatory_region
+intersection_of: has_part SO:0000235 ! TF_binding_site
+relationship: has_part SO:0000235 ! TF_binding_site
+
+[Term]
+id: SO:0000733
+name: feature_attribute
+namespace: sequence
+def: "An attribute describing a located_sequence_feature." [SO:ke]
+synonym: "feature attribute" EXACT []
+is_a: SO:0000400 ! sequence_attribute
+
+[Term]
+id: SO:0000771
+name: QTL
+namespace: sequence
+def: "A quantitative trait locus (QTL) is a polymorphic locus which contains alleles that differentially affect the expression of a continuously distributed phenotypic trait. Usually it is a marker described by statistical association to quantitative variation in the particular phenotypic trait that is thought to be controlled by the cumulative action of alleles at multiple loci." [http://rgd.mcw.edu/tu/qtls/]
+comment: Added in respose to request by Simon Twigger November 14th 2005.
+synonym: "quantitative trait locus" EXACT []
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0000781
+name: transgenic
+namespace: sequence
+def: "Attribute describing sequence that has been integrated with foreign sequence." [SO:ke]
+is_a: SO:0000733 ! feature_attribute
+
+[Term]
+id: SO:0000783
+name: engineered
+namespace: sequence
+def: "An attribute to describe a region that was modified in vitro." [SO:ke]
+is_a: SO:0000733 ! feature_attribute
+
+[Term]
+id: SO:0000784
+name: foreign
+namespace: sequence
+def: "An attribute to describe a region from another species." [SO:ke]
+is_a: SO:0000733 ! feature_attribute
+
+[Term]
+id: SO:0000804
+name: engineered_region
+namespace: sequence
+def: "A region that is engineered." [SO:xp]
+synonym: "construct" EXACT []
+synonym: "engineered region" EXACT []
+synonym: "engineered sequence" EXACT []
+is_a: SO:0001409 ! biomaterial_region
+intersection_of: SO:0000001 ! region
+intersection_of: has_quality SO:0000783 ! engineered
+relationship: has_quality SO:0000783 ! engineered
+
+[Term]
+id: SO:0000805
+name: engineered_foreign_region
+namespace: sequence
+def: "A region that is engineered and foreign." [SO:xp]
+synonym: "engineered foreign region" EXACT []
+is_a: SO:0000804 ! engineered_region
+intersection_of: SO:0000001 ! region
+intersection_of: has_quality SO:0000783 ! engineered
+intersection_of: has_quality SO:0000784 ! foreign
+relationship: has_quality SO:0000783 ! engineered
+relationship: has_quality SO:0000784 ! foreign
+
+[Term]
+id: SO:0000830
+name: chromosome_part
+namespace: sequence
+def: "A region of a chromosome." [SO:ke]
+comment: This is a manufactured term, that serves the purpose of allow the parts of a chromosome to have an is_a path to the root.
+subset: SOFA
+synonym: "chromosome part" EXACT []
+is_a: SO:0001411 ! biological_region
+relationship: part_of SO:0000340 ! chromosome
+
+[Term]
+id: SO:0000831
+name: gene_member_region
+namespace: sequence
+def: "A region of a gene." [SO:ke]
+comment: A manufactured term used to allow the parts of a gene to have an is_a path to the root.
+subset: SOFA
+synonym: "gene member region" EXACT []
+is_a: SO:0001411 ! biological_region
+relationship: member_of SO:0000704 ! gene
+
+[Term]
+id: SO:0000902
+name: transgene
+namespace: sequence
+def: "A transgene is a gene that has been transferred naturally or by any of a number of genetic engineering techniques from one organism to another." [SO:xp]
+xref: http://en.wikipedia.org/wiki/Transgene "wiki"
+is_a: SO:0000704 ! gene
+intersection_of: SO:0000704 ! gene
+intersection_of: has_quality SO:0000781 ! transgenic
+relationship: has_quality SO:0000781 ! transgenic
+
+[Term]
+id: SO:0001013
+name: MNP
+namespace: sequence
+def: "A multiple nucleotide polymorphism with alleles of common length > 1, for example AAA/TTT." [http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs2067431]
+synonym: "multiple nucleotide polymorphism" RELATED []
+is_a: SO:0002007 ! MNV
+
+[Term]
+id: SO:0001019
+name: copy_number_variation
+namespace: sequence
+def: "A variation that increases or decreases the copy number of a given region." [SO:ke]
+subset: SOFA
+synonym: "CNP" EXACT []
+synonym: "CNV" EXACT []
+synonym: "copy number polymorphism" EXACT []
+synonym: "copy number variation" EXACT []
+xref: http://en.wikipedia.org/wiki/Copy_number_variation "wiki"
+is_a: SO:0000248 ! sequence_length_alteration
+
+[Term]
+id: SO:0001026
+name: genome
+namespace: sequence
+def: "A genome is the sum of genetic material within a cell or virion." [SO:immuno_workshop]
+xref: http://en.wikipedia.org/wiki/Genome "wiki"
+is_a: SO:0001260 ! sequence_collection
+intersection_of: SO:0001260 ! sequence_collection
+intersection_of: has_part SO:0001235 ! replicon
+relationship: has_part SO:0001235 ! replicon
+
+[Term]
+id: SO:0001055
+name: transcriptional_cis_regulatory_region
+namespace: sequence
+def: "A regulatory_region that modulates the transcription of a gene or genes." [PMID:9679020, SO:regcreative]
+subset: SOFA
+synonym: "INSDC_feature:regulatory" BROAD []
+synonym: "INSDC_qualifier:transcriptional_cis_regulatory_region" EXACT []
+synonym: "transcription-control region" EXACT []
+synonym: "transcriptional cis regulatory region" EXACT []
+is_a: SO:0001679 ! transcription_regulatory_region
+
+[Term]
+id: SO:0001059
+name: sequence_alteration
+namespace: sequence
+alt_id: SO:1000004
+alt_id: SO:1000007
+def: "A sequence_alteration is a sequence_feature whose extent is the deviation from another sequence." [SO:ke]
+comment: Merged with partially characterized change in nucleotide sequence.
+subset: SOFA
+synonym: "INSDC_feature:misc_feature" BROAD []
+synonym: "INSDC_feature:variation" EXACT []
+synonym: "INSDC_note:sequence_alteration" EXACT []
+synonym: "partially characterised change in DNA sequence" NARROW []
+synonym: "partially_characterised_change_in_DNA_sequence" NARROW []
+synonym: "sequence alteration" EXACT []
+synonym: "sequence variation" RELATED []
+synonym: "uncharacterised_change_in_nucleotide_sequence" NARROW []
+is_a: SO:0002072 ! sequence_comparison
+
+[Term]
+id: SO:0001183
+name: morpholino_backbone
+namespace: sequence
+def: "An attribute describing a sequence composed of nucleobases bound to a morpholino backbone. A morpholino backbone consists of morpholine (CHEBI:34856) rings connected by phosphorodiamidate linkages." [RSC:cb]
+comment: Do not use this for feature annotation. Use morpholino_oligo (SO:0000034) instead.
+synonym: "morpholino backbone" EXACT []
+xref: http://en.wikipedia.org/wiki/Morpholino "wiki"
+is_a: SO:0000348 ! nucleic_acid
+
+[Term]
+id: SO:0001218
+name: transgenic_insertion
+namespace: sequence
+def: "An insertion that derives from another organism, via the use of recombinant DNA technology." [SO:bm]
+synonym: "transgenic insertion" EXACT []
+is_a: SO:0000667 ! insertion
+intersection_of: SO:0000667 ! insertion
+intersection_of: has_quality SO:0000781 ! transgenic
+relationship: has_quality SO:0000781 ! transgenic
+
+[Term]
+id: SO:0001235
+name: replicon
+namespace: sequence
+def: "A region containing at least one unique origin of replication and a unique termination site." [ISBN:0716719207]
+subset: SOFA
+xref: http://en.wikipedia.org/wiki/Replicon_(genetics) "wiki"
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0001247
+name: synthetic_oligo
+namespace: sequence
+def: "An oligo composed of synthetic nucleotides." [SO:ke]
+synonym: "synthetic oligo" EXACT []
+is_a: SO:0000696 ! oligo
+
+[Term]
+id: SO:0001248
+name: assembly
+namespace: sequence
+def: "A region of the genome of known length that is composed by ordering and aligning two or more different regions." [SO:ke]
+subset: SOFA
+xref: http://en.wikipedia.org/wiki/Genome_assembly#Genome_assembly "wiki"
+is_a: SO:0001410 ! experimental_feature
+
+[Term]
+id: SO:0001260
+name: sequence_collection
+namespace: sequence
+def: "A collection of discontinuous sequences." [SO:ke]
+synonym: "sequence collection" EXACT []
+
+[Term]
+id: SO:0001409
+name: biomaterial_region
+namespace: sequence
+def: "A region which is intended for use in an experiment." [SO:cb]
+subset: SOFA
+synonym: "biomaterial region" EXACT []
+is_a: SO:0000001 ! region
+
+[Term]
+id: SO:0001410
+name: experimental_feature
+namespace: sequence
+def: "A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer." [SO:cb]
+subset: SOFA
+synonym: "analysis feature" RELATED []
+synonym: "experimental output artefact" EXACT []
+synonym: "experimental_output_artefact" EXACT []
+is_a: SO:0000001 ! region
+
+[Term]
+id: SO:0001411
+name: biological_region
+namespace: sequence
+def: "A region defined by its disposition to be involved in a biological process." [SO:cb]
+subset: SOFA
+synonym: "biological region" EXACT []
+synonym: "INSDC_misc_feature" BROAD []
+synonym: "INSDC_note:biological_region" EXACT []
+is_a: SO:0000001 ! region
+
+[Term]
+id: SO:0001477
+name: gene_trap_construct
+namespace: sequence
+def: "A gene trap construct is a type of engineered plasmid which is designed to integrate into a genome and produce a fusion transcript between exons of the gene into which it inserts and a reporter element in the construct. Gene traps contain a splice acceptor, do not contain promoter elements for the reporter, and are mutagenic. Gene traps may be bicistronic with the second cassette containing a promoter driving an a selectable marker." [ZFIN:dh]
+synonym: "gene trap construct" EXACT []
+is_a: SO:0000637 ! engineered_plasmid
+created_by: kareneilbeck
+creation_date: 2009-09-01T03:49:09Z
+
+[Term]
+id: SO:0001478
+name: promoter_trap_construct
+namespace: sequence
+def: "A promoter trap construct is a type of engineered plasmid which is designed to integrate into a genome and express a reporter when inserted in close proximity to a promoter element. Promoter traps typically do not contain promoter elements and are mutagenic." [ZFIN:dh]
+synonym: "promoter trap construct" EXACT []
+is_a: SO:0000637 ! engineered_plasmid
+created_by: kareneilbeck
+creation_date: 2009-09-01T03:52:01Z
+
+[Term]
+id: SO:0001479
+name: enhancer_trap_construct
+namespace: sequence
+def: "An enhancer trap construct is a type of engineered plasmid which is designed to integrate into a genome and express a reporter when the expression from a basic minimal promoter is enhanced by genomic enhancer elements. Enhancer traps contain promoter elements and are not usually mutagenic." [ZFIN:dh]
+synonym: "enhancer trap construct" EXACT []
+is_a: SO:0000637 ! engineered_plasmid
+created_by: kareneilbeck
+creation_date: 2009-09-01T03:53:26Z
+
+[Term]
+id: SO:0001483
+name: SNV
+namespace: sequence
+def: "SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist." [SO:bm]
+subset: SOFA
+synonym: "single nucleotide variant" EXACT []
+is_a: SO:1000002 ! substitution
+created_by: kareneilbeck
+creation_date: 2009-10-08T11:37:49Z
+
+[Term]
+id: SO:0001500
+name: heritable_phenotypic_marker
+namespace: sequence
+def: "A biological_region characterized as a single heritable trait in a phenotype screen. The heritable phenotype may be mapped to a chromosome but generally has not been characterized to a specific gene locus." [JAX:hdene]
+synonym: "heritable phenotypic marker" EXACT []
+synonym: "phenotypic marker" EXACT []
+is_a: SO:0001645 ! genetic_marker
+created_by: kareneilbeck
+creation_date: 2009-12-07T01:50:55Z
+
+[Term]
+id: SO:0001505
+name: reference_genome
+namespace: sequence
+def: "A collection of sequences (often chromosomes) taken as the standard for a given organism and genome assembly." [SO:ke]
+synonym: "reference genome" RELATED []
+is_a: SO:0001026 ! genome
+created_by: kareneilbeck
+creation_date: 2010-03-03T02:10:03Z
+
+[Term]
+id: SO:0001506
+name: variant_genome
+namespace: sequence
+def: "A collection of sequences (often chromosomes) of an individual." [SO:ke]
+synonym: "variant genome" RELATED []
+is_a: SO:0001026 ! genome
+created_by: kareneilbeck
+creation_date: 2010-03-03T02:11:25Z
+
+[Term]
+id: SO:0001507
+name: variant_collection
+namespace: sequence
+def: "A collection of one or more sequences of an individual." [SO:ke]
+synonym: "variant collection" RELATED []
+is_a: SO:0001260 ! sequence_collection
+intersection_of: SO:0001260 ! sequence_collection
+intersection_of: has_part SO:0001059 ! sequence_alteration
+relationship: has_part SO:0001059 ! sequence_alteration
+created_by: kareneilbeck
+creation_date: 2010-03-03T02:13:28Z
+
+[Term]
+id: SO:0001524
+name: chromosomally_aberrant_genome
+namespace: sequence
+synonym: "chromosomally aberrant genome" RELATED []
+is_a: SO:0001506 ! variant_genome
+created_by: kareneilbeck
+creation_date: 2010-03-05T02:21:00Z
+
+[Term]
+id: SO:0001645
+name: genetic_marker
+namespace: sequence
+def: "A measurable sequence feature that varies within a population." [SO:db]
+synonym: "genetic marker" RELATED []
+is_a: SO:0001411 ! biological_region
+created_by: kareneilbeck
+creation_date: 2010-05-28T02:33:07Z
+
+[Term]
+id: SO:0001654
+name: nucleotide_to_protein_binding_site
+namespace: sequence
+def: "A binding site that, in the nucleotide molecule, interacts selectively and non-covalently with polypeptide residues." [SO:ke]
+subset: SOFA
+synonym: "nucleotide to protein binding site" RELATED []
+is_a: SO:0000410 ! protein_binding_site
+created_by: kareneilbeck
+creation_date: 2010-08-03T12:26:05Z
+
+[Term]
+id: SO:0001679
+name: transcription_regulatory_region
+namespace: sequence
+def: "A regulatory region that is involved in the control of the process of transcription." [SO:ke]
+subset: SOFA
+synonym: "transcription regulatory region" EXACT []
+is_a: SO:0005836 ! regulatory_region
+created_by: kareneilbeck
+creation_date: 2010-10-12T03:49:35Z
+
+[Term]
+id: SO:0001742
+name: copy_number_gain
+namespace: sequence
+def: "A sequence alteration whereby the copy number of a given regions is greater than the reference sequence." [SO:ke]
+subset: DBVAR
+synonym: "copy number gain" EXACT []
+synonym: "gain" RELATED dbvar [http://www.ncbi.nlm.nih.gov/dbvar/]
+is_a: SO:0001019 ! copy_number_variation
+created_by: kareneilbeck
+creation_date: 2011-02-28T01:54:09Z
+
+[Term]
+id: SO:0001743
+name: copy_number_loss
+namespace: sequence
+def: "A sequence alteration whereby the copy number of a given region is less than the reference sequence." [SO:ke]
+subset: DBVAR
+synonym: "copy number loss" EXACT []
+synonym: "loss" RELATED dbvar [http://www.ncbi.nlm.nih.gov/dbvar/]
+is_a: SO:0001019 ! copy_number_variation
+created_by: kareneilbeck
+creation_date: 2011-02-28T01:55:02Z
+
+[Term]
+id: SO:0001744
+name: UPD
+namespace: sequence
+def: "Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from one parent and no copies of the same chromosome or region from the other parent." [SO:BM]
+subset: DBVAR
+synonym: "uniparental disomy" EXACT []
+synonym: "UPD" EXACT dbvar [http://www.ncbi.nlm.nih.gov/dbvar/]
+xref: http:http\://en.wikipedia.org/wiki/Uniparental_disomy "wikipedia"
+is_a: SO:0001059 ! sequence_alteration
+created_by: kareneilbeck
+creation_date: 2011-02-28T02:01:05Z
+
+[Term]
+id: SO:0001745
+name: maternal_uniparental_disomy
+namespace: sequence
+def: "Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from the mother and no copies of the same chromosome or region from the father." [SO:bm]
+synonym: "maternal uniparental disomy" EXACT []
+is_a: SO:0001744 ! UPD
+created_by: kareneilbeck
+creation_date: 2011-02-28T02:03:01Z
+
+[Term]
+id: SO:0001746
+name: paternal_uniparental_disomy
+namespace: sequence
+def: "Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from the father and no copies of the same chromosome or region from the mother." [SO:bm]
+synonym: "paternal uniparental disomy" EXACT []
+is_a: SO:0001744 ! UPD
+created_by: kareneilbeck
+creation_date: 2011-02-28T02:03:30Z
+
+[Term]
+id: SO:0001784
+name: complex_structural_alteration
+namespace: sequence
+alt_id: SO:1000146
+def: "A structural sequence alteration or rearrangement encompassing one or more genome fragments, with 4 or more breakpoints." [FB:reference_manual, NCBI:th, SO:ke]
+subset: DBVAR
+synonym: "complex" RELATED dbvar [http://www.ncbi.nlm.nih.gov/dbvar/]
+synonym: "complex chromosomal mutation" EXACT []
+synonym: "complex_chromosomal_mutation" EXACT []
+is_a: SO:0001785 ! structural_alteration
+is_a: SO:1000183 ! chromosome_structure_variation
+created_by: kareneilbeck
+creation_date: 2011-03-23T03:21:19Z
+
+[Term]
+id: SO:0001785
+name: structural_alteration
+namespace: sequence
+subset: DBVAR
+synonym: "structural alteration" EXACT []
+is_a: SO:0001059 ! sequence_alteration
+created_by: kareneilbeck
+creation_date: 2011-03-25T02:27:41Z
+
+[Term]
+id: SO:0001876
+name: partial_genomic_sequence_assembly
+namespace: sequence
+def: "A partial DNA sequence assembly of a chromosome or full genome, which contains gaps that are filled with N's." [GMOD:ea]
+comment: Requested by Bayer Cropscience January, 2012.
+synonym: "partial genomic sequence assembly" EXACT []
+synonym: "pseudomolecule" BROAD []
+synonym: "sequence assembly with N-gaps" EXACT []
+is_a: SO:0000353 ! sequence_assembly
+created_by: kareneilbeck
+creation_date: 2012-02-14T05:05:32Z
+
+[Term]
+id: SO:0002007
+name: MNV
+namespace: sequence
+def: "An MNV is a multiple nucleotide variant (substitution) in which the inserted sequence is the same length as the replaced sequence." [NCBI:th]
+synonym: "multiple nucleotide substitution" EXACT []
+synonym: "multiple nucleotide variant" EXACT []
+is_a: SO:1000002 ! substitution
+created_by: kareneilbeck
+creation_date: 2014-01-13T03:48:40Z
+
+[Term]
+id: SO:0002072
+name: sequence_comparison
+namespace: sequence
+def: "A position or feature where two sequences have been compared." []
+synonym: "INSDC_feature:misc_feature" BROAD []
+synonym: "INSDC_note:sequence_comparison" EXACT []
+synonym: "sequence comparison" EXACT []
+is_a: SO:0000110 ! sequence_feature
+created_by: kareneilbeck
+creation_date: 2015-11-23T14:14:32Z
+
+[Term]
+id: SO:0005836
+name: regulatory_region
+namespace: sequence
+def: "A region of sequence that is involved in the control of a biological process." [SO:ke]
+subset: SOFA
+synonym: "INSDC_feature:regulatory" BROAD []
+synonym: "INSDC_qualifier:other" EXACT []
+synonym: "regulatory region" EXACT []
+xref: http://en.wikipedia.org/wiki/Regulatory_region "wiki"
+is_a: SO:0000831 ! gene_member_region
+
+[Term]
+id: SO:0005855
+name: gene_group
+namespace: sequence
+def: "A collection of related genes." [SO:ma]
+subset: SOFA
+synonym: "gene group" EXACT []
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:1000002
+name: substitution
+namespace: sequence
+def: "A sequence alteration where the length of the change in the variant is the same as that of the reference." [SO:ke]
+subset: SOFA
+xref: loinc:LA6690-7 "Substitution"
+is_a: SO:0001059 ! sequence_alteration
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:1000005
+name: complex_substitution
+namespace: sequence
+def: "When no simple or well defined DNA mutation event describes the observed DNA change, the keyword \"complex\" should be used. Usually there are multiple equally plausible explanations for the change." [EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html]
+subset: SOFA
+synonym: "complex substitution" EXACT []
+is_a: SO:1000002 ! substitution
+
+[Term]
+id: SO:1000008
+name: point_mutation
+namespace: sequence
+def: "A single nucleotide change which has occurred at the same position of a corresponding nucleotide in a reference sequence." [SO:immuno_workshop]
+subset: SOFA
+synonym: "point mutation" EXACT []
+xref: http://en.wikipedia.org/wiki/Point_mutation "wiki"
+is_a: SO:0001483 ! SNV
+
+[Term]
+id: SO:1000009
+name: transition
+namespace: sequence
+def: "Change of a pyrimidine nucleotide, C or T, into an other pyrimidine nucleotide, or change of a purine nucleotide, A or G, into an other purine nucleotide." [EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html]
+is_a: SO:0001483 ! SNV
+
+[Term]
+id: SO:1000010
+name: pyrimidine_transition
+namespace: sequence
+def: "A substitution of a pyrimidine, C or T, for another pyrimidine." [SO:ke]
+synonym: "pyrimidine transition" EXACT []
+is_a: SO:1000009 ! transition
+
+[Term]
+id: SO:1000011
+name: C_to_T_transition
+namespace: sequence
+def: "A transition of a cytidine to a thymine." [SO:ke]
+synonym: "C to T transition" EXACT []
+is_a: SO:1000010 ! pyrimidine_transition
+
+[Term]
+id: SO:1000012
+name: C_to_T_transition_at_pCpG_site
+namespace: sequence
+def: "The transition of cytidine to thymine occurring at a pCpG site as a consequence of the spontaneous deamination of 5'-methylcytidine." [EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html]
+synonym: "C to T transition at pCpG site" EXACT []
+is_a: SO:1000011 ! C_to_T_transition
+
+[Term]
+id: SO:1000013
+name: T_to_C_transition
+namespace: sequence
+synonym: "T to C transition" EXACT []
+is_a: SO:1000010 ! pyrimidine_transition
+
+[Term]
+id: SO:1000014
+name: purine_transition
+namespace: sequence
+def: "A substitution of a purine, A or G, for another purine." [SO:ke]
+synonym: "purine transition" EXACT []
+is_a: SO:1000009 ! transition
+
+[Term]
+id: SO:1000015
+name: A_to_G_transition
+namespace: sequence
+def: "A transition of an adenine to a guanine." [SO:ke]
+synonym: "A to G transition" EXACT []
+is_a: SO:1000014 ! purine_transition
+
+[Term]
+id: SO:1000016
+name: G_to_A_transition
+namespace: sequence
+def: "A transition of a guanine to an adenine." [SO:ke]
+synonym: "G to A transition" EXACT []
+is_a: SO:1000014 ! purine_transition
+
+[Term]
+id: SO:1000017
+name: transversion
+namespace: sequence
+def: "Change of a pyrimidine nucleotide, C or T, into a purine nucleotide, A or G, or vice versa." [EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html]
+xref: http://en.wikipedia.org/wiki/Transversion "wiki"
+is_a: SO:0001483 ! SNV
+
+[Term]
+id: SO:1000018
+name: pyrimidine_to_purine_transversion
+namespace: sequence
+def: "Change of a pyrimidine nucleotide, C or T, into a purine nucleotide, A or G." [SO:ke]
+synonym: "pyrimidine to purine transversion" EXACT []
+is_a: SO:1000017 ! transversion
+
+[Term]
+id: SO:1000019
+name: C_to_A_transversion
+namespace: sequence
+def: "A transversion from cytidine to adenine." [SO:ke]
+synonym: "C to A transversion" EXACT []
+is_a: SO:1000018 ! pyrimidine_to_purine_transversion
+
+[Term]
+id: SO:1000020
+name: C_to_G_transversion
+namespace: sequence
+synonym: "C to G transversion" EXACT []
+is_a: SO:1000018 ! pyrimidine_to_purine_transversion
+
+[Term]
+id: SO:1000021
+name: T_to_A_transversion
+namespace: sequence
+def: "A transversion from T to A." [SO:ke]
+synonym: "T to A transversion" EXACT []
+is_a: SO:1000018 ! pyrimidine_to_purine_transversion
+
+[Term]
+id: SO:1000022
+name: T_to_G_transversion
+namespace: sequence
+def: "A transversion from T to G." [SO:ke]
+synonym: "T to G transversion" EXACT []
+is_a: SO:1000018 ! pyrimidine_to_purine_transversion
+
+[Term]
+id: SO:1000023
+name: purine_to_pyrimidine_transversion
+namespace: sequence
+def: "Change of a purine nucleotide, A or G , into a pyrimidine nucleotide C or T." [SO:ke]
+synonym: "purine to pyrimidine transversion" EXACT []
+is_a: SO:1000017 ! transversion
+
+[Term]
+id: SO:1000024
+name: A_to_C_transversion
+namespace: sequence
+def: "A transversion from adenine to cytidine." [SO:ke]
+synonym: "A to C transversion" EXACT []
+is_a: SO:1000023 ! purine_to_pyrimidine_transversion
+
+[Term]
+id: SO:1000025
+name: A_to_T_transversion
+namespace: sequence
+def: "A transversion from adenine to thymine." [SO:ke]
+synonym: "A to T transversion" EXACT []
+is_a: SO:1000023 ! purine_to_pyrimidine_transversion
+
+[Term]
+id: SO:1000026
+name: G_to_C_transversion
+namespace: sequence
+def: "A transversion from guanine to cytidine." [SO:ke]
+synonym: "G to C transversion" EXACT []
+is_a: SO:1000023 ! purine_to_pyrimidine_transversion
+
+[Term]
+id: SO:1000027
+name: G_to_T_transversion
+namespace: sequence
+def: "A transversion from guanine to thymine." [SO:ke]
+synonym: "G to T transversion" EXACT []
+is_a: SO:1000023 ! purine_to_pyrimidine_transversion
+
+[Term]
+id: SO:1000032
+name: delins
+namespace: sequence
+def: "A sequence alteration which included an insertion and a deletion, affecting 2 or more bases." [http://varnomen.hgvs.org/recommendations/DNA/variant/delins/]
+comment: Indels can have a different number of bases than the corresponding reference sequence. The term name was changed from indel to delins on 2/24/2019 to align with the HGVS nomenclature term for a deletion-insertion. Indel was causing confusion in the annotation community (github issue 445). The HGVS nomenclature definition of deletion-insertion (delins) is a sequence change where, compared to a reference sequence, one or more nucleotides are replaced by one or more other nucleotides and which is not a substitution, inversion or conversion.
+synonym: "deletion-insertion" EXACT []
+synonym: "indel" EXACT []
+xref: http://en.wikipedia.org/wiki/Indel "wiki"
+xref: loinc:LA9659-9 "Insertion and Deletion"
+is_a: SO:0001059 ! sequence_alteration
+
+[Term]
+id: SO:1000035
+name: duplication
+namespace: sequence
+def: "An insertion which derives from, or is identical in sequence to, nucleotides present at a known location in the genome." [EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html, NCBI:th]
+synonym: "nucleotide duplication" EXACT []
+synonym: "nucleotide_duplication" RELATED []
+xref: loinc:LA6686-5 "Duplication"
+is_a: SO:0000667 ! insertion
+
+[Term]
+id: SO:1000036
+name: inversion
+namespace: sequence
+def: "A continuous nucleotide sequence is inverted in the same position." [EBI:www.ebi.ac.uk/mutations/recommendations/mutevent.html]
+subset: DBVAR
+subset: SOFA
+synonym: "inversion" EXACT dbvar [http://www.ncbi.nlm.nih.gov/dbvar/]
+xref: loinc:LA6689-9 "Inversion"
+is_a: SO:0001059 ! sequence_alteration
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:1000039
+name: direct_tandem_duplication
+namespace: sequence
+def: "A tandem duplication where the individual regions are in the same orientation." [SO:ke]
+synonym: "direct tandem duplication" EXACT []
+is_a: SO:1000173 ! tandem_duplication
+
+[Term]
+id: SO:1000040
+name: inverted_tandem_duplication
+namespace: sequence
+def: "A tandem duplication where the individual regions are not in the same orientation." [SO:ke]
+synonym: "inverted tandem duplication" EXACT []
+synonym: "mirror duplication" RELATED []
+is_a: SO:1000173 ! tandem_duplication
+
+[Term]
+id: SO:1000173
+name: tandem_duplication
+namespace: sequence
+def: "A duplication consisting of 2 identical adjacent regions." [SO:ke]
+subset: DBVAR
+synonym: "erverted" RELATED dbvar [http://www.ncbi.nlm.nih.gov/dbvar/]
+synonym: "tandem duplication" EXACT []
+is_a: SO:1000035 ! duplication
+
+[Term]
+id: SO:1000183
+name: chromosome_structure_variation
+namespace: sequence
+synonym: "chromosome structure variation" EXACT []
+synonym: "snpEff:CHROMOSOME_LARGE_DELETION" EXACT VAR []
+xref: http://snpeff.sourceforge.net/SnpEff_manual.html
+is_a: SO:0000240 ! chromosome_variation
+
+[Typedef]
+id: has_part
+name: has_part
+namespace: sequence
+def: "Inverse of part_of." [http://precedings.nature.com/documents/3495/version/1]
+comment: Example: operon has_part gene.
+
+[Typedef]
+id: has_quality
+name: has_quality
+namespace: sequence
+comment: The relationship between a feature and an attribute.
+
+[Typedef]
+id: member_of
+name: member_of
+namespace: sequence
+comment: A subtype of part_of. Inverse is collection_of. Winston, M, Chaffin, R, Herrmann: A taxonomy of part-whole relations. Cognitive Science 1987, 11:417-444.
+subset: SOFA
+is_transitive: true
+is_a: part_of ! part_of
+
+[Typedef]
+id: part_of
+name: part_of
+namespace: sequence
+def: "X part_of Y if X is a subregion of Y." [http://precedings.nature.com/documents/3495/version/1]
+comment: Example: amino_acid part_of polypeptide.
+subset: SOFA
+is_transitive: true
+
