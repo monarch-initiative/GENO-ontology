@@ -61,12 +61,15 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Not required at present for any specific use case, so marking as exploratory and obsoleting for simplicity.\n\nEq Class axiom:\n'gene allele'\n and (has_sequence_attribute some reference)\n\nSC axioms:\nis_variant_with some 'gene allele'\nis_reference_allele_of some gene"
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
           "val" : "reference gene"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_reference gene allele"
+      "lbl" : "obsolete reference gene allele"
     }, {
       "id" : "http://purl.obolibrary.org/obo/NCBITaxon_10090",
       "type" : "CLASS",
@@ -166,6 +169,36 @@
       "type" : "CLASS",
       "lbl" : "SNV"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000173",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete promoter trapping technique"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000172",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete gene trapping technique"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000175",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete random transgene insertion technique"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000054",
       "meta" : {
         "definition" : {
@@ -179,6 +212,9 @@
       "id" : "http://purl.obolibrary.org/obo/PATO_0000016",
       "meta" : {
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "Was parent of chromosomal band intensity before moving this class to live as a sequence feature attribute."
         }, {
@@ -190,7 +226,17 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_color brightness"
+      "lbl" : "obsolete color brightness"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000174",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete targeted knock-in technique"
     }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002162",
       "meta" : {
@@ -201,6 +247,26 @@
       },
       "type" : "PROPERTY",
       "lbl" : "in taxon"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000171",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete enhancer trapping technique"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000170",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete targeted genetic insertion technique"
     }, {
       "id" : "http://www.ncbi.nlm.nih.gov/gene/6469",
       "meta" : {
@@ -214,6 +280,36 @@
       },
       "type" : "CLASS",
       "lbl" : "homo sapiens SHH gene"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000169",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete random genetic insertion technique"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000166",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete targeted gene mutation technique"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000165",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete mutagen treatment technique"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000047",
       "meta" : {
@@ -266,10 +362,14 @@
         "definition" : {
           "val" : "A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N's from unavailable bases.",
           "xrefs" : [ ]
-        }
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_contig"
+      "lbl" : "obsolete contig"
     }, {
       "id" : "http://purl.obolibrary.org/obo/SO_0001479",
       "meta" : {
@@ -486,8 +586,14 @@
       "lbl" : "gene trap insertion"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000091",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
       "type" : "CLASS",
-      "lbl" : "obsolete_experimental insertion"
+      "lbl" : "obsolete experimental insertion"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000093",
       "meta" : {
@@ -884,12 +990,15 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Decided to represent haplotypes as collections of discrete alleles, rather than continuous features defined by such sets.\n\nFormer SC axioms:\n- is_allele_of some 'haplotype block'\n- 'has part' some sequence_alteration"
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
           "val" : "Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype and http://purl.obolibrary.org/obo/SO_0001024 ! haplotype."
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_haplotype"
+      "lbl" : "obsolete haplotype"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000914",
       "meta" : {
@@ -938,6 +1047,9 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Decided to represent haplotypes as collections of discrete alleles, rather than continuous features defined by such sets."
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
           "val" : "A haplotype block is a class of genomic sequence defined by a  lack of evidence for historical recombination, such that sequence alterations within it tend to be co-inherited across successive generations. A haplotype is considered to be one of many possible versions of a 'haplotype block' - defined by the set of co-inherited alterations it contains.  In this sense, the relationship between 'haplotype' and 'haplotype block' is analogous to the relationship between 'gene allele' and 'gene'* - a 'gene allele' is one of many possible instances of a 'gene', while  a 'haplotype' is one of many possible instances of a 'haplotype block'.\n\nThe boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations. A haplotype block may span any number of sequence alterations, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.\n\n-----------------------\n\n* One difference however is that gene instnaces are necessarily 'functional' - so non-functional  alleles of a gene locus wont qualify as gene instances. no such requirement exists for haplotype block instnaces."
         }, {
@@ -946,7 +1058,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_haplotype block"
+      "lbl" : "obsolete haplotype block"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000911",
       "type" : "CLASS",
@@ -1094,6 +1206,9 @@
           "xrefs" : [ ]
         },
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
           "val" : "Cellular context of an allele is typically defined in the context of evaluating an individual organism, as alleles that are somatic in one organism can be germline in others."
         }, {
@@ -1102,7 +1217,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_allele cellular context"
+      "lbl" : "obsolete allele cellular context"
     }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002525",
       "type" : "PROPERTY",
@@ -1411,10 +1526,14 @@
         "definition" : {
           "val" : "A sequence feature attribute that reflects characteristics of the physical molecule in which the feature is concretized (e.g. its cellular context, source of origin, etc.)",
           "xrefs" : [ ]
-        }
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_extrinsic sequence feature attribute"
+      "lbl" : "obsolete extrinsic sequence feature attribute"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000928",
       "meta" : {
@@ -1469,10 +1588,14 @@
         "definition" : {
           "val" : "A sequence feature attribute that reflects feature-level characteristics that depend only on the sequence, location, or genomic context of a feature  or  collection, but are independent of how it may be concretized in physical form.",
           "xrefs" : [ ]
-        }
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_intrinsic sequence feature attribute"
+      "lbl" : "obsolete intrinsic sequence feature attribute"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000923",
       "meta" : {
@@ -1496,12 +1619,15 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000963."
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
           "val" : "As for copy number complements, the defining 'sequence' here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a functional copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify if that alteration eliminates the function of the allele.  This represents an important distinction between 'copy number' and 'functional copy number'. The former is not concerned with the functionality of sequence copies - only that there is a duplication of sequence in the genome. Thus, the addition of a non-functional allele of a gene will increase its copy number, but not increase its 'functional copy number (aka its dosage)."
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_functional copy number complement"
+      "lbl" : "obsolete functional copy number complement"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000953",
       "meta" : {
@@ -1626,10 +1752,13 @@
         }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
           "val" : "In a 'normal' diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s).\n\nNote that the 'copy number variation' class in GENO is related to but ontologically distinct form the SO 'copy_number_variation' class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set is in conflict with the genome's normal ploidy (e.g. not two for a diploid genome). The SO class, which is defined as a sequence feature level concept and therefore represents a single continuous extent of sequence, refers to a single copy of duplicated (or deleted) sequence that comprises the set defined by the GENO CNV class."
+        }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_variant copy number complement"
+      "lbl" : "obsolete variant copy number complement"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000713",
       "meta" : {
@@ -1713,12 +1842,15 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000961."
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
           "val" : "1. Features described by 'copy number' are larger regions of sequence spanning one or more complete genes, or large chromosomal segment. Copies of these regions often become distributed across a genome at unknown locations. By contrast, short repeats, such as tri-nucelotide 'CAG' repeats in the Huntingtin gene, occur at defined locations (adjacent to the originating 'CAG' sequence), and can therefore be modeled as proper alleles.  \n\n2. A copy number complement, like any sequence feature complement, is a set of features in a particular genome that meet some criterion. The criterion in this case is that their sequence maps to that of a particular location in a reference sequence.  So a copy number complement is the set of all features that share or align with a specified sequence defined on some reference. The sequence of member sequences need not exactly match that of the reference, as copies may accrue some alterations. What is important is that conceptually they represent exact or inexact copies of the reference sequence at a defining location.\n\n3. In a 'normal' diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s). In GENO, a 'copy number variation' refers to a copy number complement' that has an abnormal number of members."
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_copy number complement"
+      "lbl" : "obsolete copy number complement"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000714",
       "meta" : {
@@ -2634,12 +2766,15 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Not required at this poitn, so marked exploratory and obsoleted.  \nAsserted under sequence_alteration."
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000114",
           "val" : "http://purl.obolibrary.org/obo/GENO_0000484"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_coding sequence alteration"
+      "lbl" : "obsolete coding sequence alteration"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000606",
       "type" : "CLASS",
@@ -2723,8 +2858,14 @@
       "lbl" : "has_interval"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000724",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
       "type" : "CLASS",
-      "lbl" : "obsolete_biological sequence or collection"
+      "lbl" : "obsolete biological sequence or collection"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000965",
       "meta" : {
@@ -2854,6 +2995,16 @@
       "type" : "PROPERTY",
       "lbl" : "has_qualifying_process"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000725",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete biological sequence collection"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000967",
       "meta" : {
         "definition" : {
@@ -2863,10 +3014,6 @@
       },
       "type" : "PROPERTY",
       "lbl" : "has_reference_sequence"
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/GENO_0000725",
-      "type" : "CLASS",
-      "lbl" : "obsolete_biological sequence collection"
     }, {
       "id" : "http://purl.obolibrary.org/obo/SO_1000036",
       "meta" : {
@@ -2975,23 +3122,12 @@
       "type" : "CLASS",
       "lbl" : "microsatellite alteration"
     }, {
-      "id" : "http://purl.obolibrary.org/obo/GENO_0000634",
-      "meta" : {
-        "definition" : {
-          "val" : "relation between an molecular agent and its molecular target",
-          "xrefs" : [ ]
-        },
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
-          "val" : "Used to link a gene targeting reagent such as a morpholino, to an instance of a reagent targeted gene variant."
-        } ]
-      },
-      "type" : "PROPERTY",
-      "lbl" : "is_targeted_by"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000876",
       "meta" : {
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
           "val" : "allelic dosage"
         }, {
@@ -3009,7 +3145,21 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_genetic dosage"
+      "lbl" : "obsolete genetic dosage"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000634",
+      "meta" : {
+        "definition" : {
+          "val" : "relation between an molecular agent and its molecular target",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "Used to link a gene targeting reagent such as a morpholino, to an instance of a reagent targeted gene variant."
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "is_targeted_by"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000513",
       "meta" : {
@@ -3067,10 +3217,14 @@
         },
         "xrefs" : [ {
           "val" : "http://purl.obolibrary.org/obo/SO_0001260 ! sequence_collection"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_sequence feature collection"
+      "lbl" : "obsolete sequence feature collection"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000872",
       "meta" : {
@@ -3853,6 +4007,9 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
           "val" : "http://dataexchange.clinicalgenome.org/allele/resource/contextual_allele/"
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "The notion of a 'contextual allele' is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model."
         }, {
@@ -3864,7 +4021,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_contextual allele"
+      "lbl" : "obsolete contextual allele"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000894",
       "meta" : {
@@ -3934,6 +4091,20 @@
       "type" : "CLASS",
       "lbl" : "abnormal(ly) absent adaxial cell"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000772",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence attribute inhering in a feature whose identity is not specified.",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete unspecified"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000651",
       "meta" : {
         "basicPropertyValues" : [ {
@@ -3944,25 +4115,18 @@
       "type" : "PROPERTY",
       "lbl" : "is_mutant_allele_of"
     }, {
-      "id" : "http://purl.obolibrary.org/obo/GENO_0000772",
-      "meta" : {
-        "definition" : {
-          "val" : "A sequence attribute inhering in a feature whose identity is not specified.",
-          "xrefs" : [ ]
-        }
-      },
-      "type" : "CLASS",
-      "lbl" : "obsolete_unspecified"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/SO_0000637",
       "meta" : {
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "Obsoleted as we didnt want to commit to constructs being plasmids - but rather wanted a classification of more general types of engineered regions used to replicate and deliver sequence to target cells/genomes. Replaced by GENO:0000856 ! engineered genetic construct."
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_engineered_plasmid"
+      "lbl" : "obsolete engineered_plasmid"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000779",
       "meta" : {
@@ -3976,6 +4140,26 @@
       },
       "type" : "CLASS",
       "lbl" : "biological sequence unit"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000415",
+      "meta" : {
+        "definition" : {
+          "val" : "A sequence feature that references some biological macromolecule applied as a reagent in an experiment or technique (e.g. a morpholino expression plasmid, or oligonucleotide probe)",
+          "xrefs" : [ ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "replaced with SO:engineered_region"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
+          "val" : "extra-genomic sequence"
+        }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete reagent sequence feature"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000536",
       "meta" : {
@@ -3997,23 +4181,6 @@
       "type" : "CLASS",
       "lbl" : "genotype"
     }, {
-      "id" : "http://purl.obolibrary.org/obo/GENO_0000415",
-      "meta" : {
-        "definition" : {
-          "val" : "A sequence feature that references some biological macromolecule applied as a reagent in an experiment or technique (e.g. a morpholino expression plasmid, or oligonucleotide probe)",
-          "xrefs" : [ ]
-        },
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
-          "val" : "replaced with SO:engineered_region"
-        }, {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
-          "val" : "extra-genomic sequence"
-        } ]
-      },
-      "type" : "CLASS",
-      "lbl" : "obsolete_reagent sequence feature"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000778",
       "meta" : {
         "definition" : {
@@ -4023,10 +4190,13 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "eliminating classes that are not necessary or add uneeded complexity."
+        }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_sequence information entity"
+      "lbl" : "obsolete sequence information entity"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000899",
       "meta" : {
@@ -4111,12 +4281,15 @@
           "pred" : "http://purl.org/dc/terms/source",
           "val" : "ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)"
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs."
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_canonical allele"
+      "lbl" : "obsolete canonical allele"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000885",
       "meta" : {
@@ -4288,10 +4461,13 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
           "val" : "germ-line"
+        }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_gametic"
+      "lbl" : "obsolete gametic"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000882",
       "meta" : {
@@ -4431,10 +4607,13 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "remodeling notion of sequence feature position around the idea of a 'genomic locus'"
+        }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_genomic position"
+      "lbl" : "obsolete genomic position"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000647",
       "meta" : {
@@ -4599,6 +4778,9 @@
           "xrefs" : [ ]
         },
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "Former logical def: \n'genomic feature'\n and (has_extent value 0)"
         }, {
@@ -4607,7 +4789,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_null feature"
+      "lbl" : "obsolete null feature"
     }, {
       "id" : "http://purl.obolibrary.org/obo/NCBITaxon_9606",
       "type" : "CLASS",
@@ -4988,10 +5170,6 @@
       "type" : "PROPERTY",
       "lbl" : "has_sequence_unit"
     }, {
-      "id" : "http://biohackathon.org/resource/faldo#location",
-      "type" : "PROPERTY",
-      "lbl" : "location"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/SO_0001410",
       "meta" : {
         "definition" : {
@@ -4999,12 +5177,19 @@
           "xrefs" : [ ]
         },
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "not currently needed to support modeling use cases. can re-introduce if becomes necessary."
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_experimental_feature"
+      "lbl" : "obsolete experimental_feature"
+    }, {
+      "id" : "http://biohackathon.org/resource/faldo#location",
+      "type" : "PROPERTY",
+      "lbl" : "location"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000580",
       "meta" : {
@@ -5154,10 +5339,14 @@
         "definition" : {
           "val" : "A single locus complement that represents the collection of all chromosome sequences for a given chromosome in a single genome",
           "xrefs" : [ ]
-        }
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_chromosome complement"
+      "lbl" : "obsolete chromosome complement"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000447",
       "meta" : {
@@ -6072,12 +6261,15 @@
           "xrefs" : [ ]
         },
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Triage until decide if want to define this as grouping class that would result in multiple-inheritance."
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_dominant inheritance"
+      "lbl" : "obsolete dominant inheritance"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000141",
       "meta" : {
@@ -6305,10 +6497,13 @@
         "basicPropertyValues" : [ {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
           "val" : "1. Note that members of this class can be features with extents of zero (e.g. junctions).  This is likely different than the SO:sequence feature class which has members that are regions."
+        }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_sequence feature collection"
+      "lbl" : "obsolete sequence feature collection"
     }, {
       "id" : "http://purl.obolibrary.org/obo/SO_0000110",
       "meta" : {
@@ -6362,10 +6557,10 @@
           "val" : "a chair"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
-          "val" : "a molecule"
+          "val" : "an organism"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
-          "val" : "an organism"
+          "val" : "a molecule"
         } ]
       },
       "type" : "CLASS",
@@ -6388,6 +6583,9 @@
           "xrefs" : [ ]
         },
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Not required for any specific use case at this point so removed for simplicity. \nFormely asserted as allele and inferred as varaint allele. \nEq class definition:\nallele\n and (mutation or ('has subsequence' some mutation))"
         }, {
@@ -6402,7 +6600,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_mutant allele"
+      "lbl" : "obsolete mutant allele"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000010",
       "meta" : {
@@ -6497,10 +6695,14 @@
         "definition" : {
           "val" : "sequence attribute that can inhere only in a collection of more than one sequence features",
           "xrefs" : [ ]
-        }
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_sequence feature collection attribute"
+      "lbl" : "obsolete sequence feature collection attribute"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000488",
       "meta" : {
@@ -6779,10 +6981,24 @@
         "definition" : {
           "val" : "A region of known length which may be used to manufacture a longer region.",
           "xrefs" : [ ]
-        }
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_assembly_component"
+      "lbl" : "obsolete assembly_component"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000164",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "obsolete genetic insertion technique"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000042",
       "meta" : {
@@ -6791,6 +7007,9 @@
           "xrefs" : [ ]
         },
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Eliminating unecessary defined/organizational classes. Former logical def:\n\njunction\n and (has_sequence_attribute some reference)\n\nSubclass axiom:\nis_variant_with some insertion"
         }, {
@@ -6802,7 +7021,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_reference junction"
+      "lbl" : "obsolete reference junction"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000160",
       "type" : "CLASS",
@@ -6818,6 +7037,9 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Not required at present for any specific use case, so marking as exploratory and obsoleting for simplicity.\n\nEq Class def: 'genomic feature'\n and (has_sequence_attribute some unspecified)"
         }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000114",
           "val" : "http://purl.obolibrary.org/obo/GENO_0000484"
         }, {
@@ -6829,7 +7051,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_unspecified feature"
+      "lbl" : "obsolete unspecified feature"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000033",
       "meta" : {
@@ -6922,12 +7144,15 @@
       "id" : "http://purl.obolibrary.org/obo/GENO_0000150",
       "meta" : {
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "duplicate term, use GENO:0000148"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_autosomal recessive inheritance"
+      "lbl" : "obsolete autosomal recessive inheritance"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000394",
       "type" : "CLASS",
@@ -6985,6 +7210,9 @@
           "xrefs" : [ ]
         },
         "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
           "val" : "reference allelic complement"
         }, {
@@ -6996,7 +7224,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_reference single locus complement"
+      "lbl" : "obsolete reference single locus complement"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000149",
       "meta" : {
@@ -7040,10 +7268,13 @@
         }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
           "val" : "Conceptually, members of this collection are meant to be about the sum total genetic material in a single cell or organism. But these members need not be associated with an actual material in a real cell or organism individual.  For example, things like a 'reference genome' may not actually represent the material genome of any individual cell or organism in reality. Here, there may be no genomic material referents of the sequences in such a collection because the genome is tied to an idealized, hypothetical cell or organism instance. The key is that conceptually, they are still tied to the idea of being contained in a single genome. In the case of a genotype, the individual seqeunce members are not all about the genetic material of a singel cell or organism. Rather, it is the resolved sequence contained in the genotype that is meant to be about the total genomic sequence content of a genome - which we deem acceptable for classifying as a genetic locus collection."
+        }, {
+          "pred" : "http://www.w3.org/2002/07/owl#deprecated",
+          "val" : "true"
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "obsolete_genomic feature collection"
+      "lbl" : "obsolete genomic feature collection"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000143",
       "meta" : {
@@ -7283,10 +7514,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000147"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000890",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000930",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000929"
@@ -7306,10 +7533,6 @@
       "sub" : "http://purl.obolibrary.org/obo/SO_1000011",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_1000010"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000016",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/NCBITaxon_8090",
       "pred" : "is_a",
@@ -7363,10 +7586,6 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0003302"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000125",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_0001785",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
@@ -7375,13 +7594,13 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000051"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000818",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000714"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_0000577",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000830"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000818",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000714"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000492",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000683",
@@ -7511,10 +7730,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000133"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000876",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000619",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000618"
@@ -7526,10 +7741,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000902",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000815"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000778",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000014",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000408",
@@ -7578,10 +7789,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000339",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000346"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000142",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000118",
       "pred" : "is_a",
@@ -7678,10 +7885,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000501",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000512"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000680",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000146",
       "pred" : "is_a",
@@ -7787,10 +7990,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000001"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000956",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000659",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000701"
@@ -7818,10 +8017,6 @@
       "sub" : "http://purl.obolibrary.org/obo/OBI_0000011",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000015"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000022",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://biohackathon.org/resource/faldo#begin",
       "pred" : "subPropertyOf",
@@ -7854,10 +8049,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000486",
       "pred" : "subPropertyOf",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000925",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000714",
       "pred" : "is_a",
@@ -7935,13 +8126,13 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000580"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000781",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000779"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_0001742",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001019"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000781",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000779"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000338",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000207",
@@ -7966,10 +8157,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000910",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000788"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000916",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000525",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -7999,10 +8186,6 @@
       "pred" : "subPropertyOf",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/SO_0000143",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0001410"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000629",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000105"
@@ -8014,10 +8197,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000392",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000133"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000324",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MP_0000001",
       "pred" : "is_a",
@@ -8075,13 +8254,13 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0003303"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000482",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/CHEBI_33696"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000963",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000872"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000482",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/CHEBI_33696"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000904",
       "pred" : "is_a",
@@ -8091,13 +8270,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000893",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000949"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000939",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000146"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000893",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000949"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_0000337",
       "pred" : "is_a",
@@ -8159,10 +8338,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000934"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000150",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ZP_0000755",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000575"
@@ -8174,10 +8349,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000965",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/IAO_0000030"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000725",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000724"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000660",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002351",
@@ -8214,10 +8385,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000948",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000935"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000768",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000501",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000683",
@@ -8291,10 +8458,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_1000023"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000724",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://www.ncbi.nlm.nih.gov/gene/399483",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000047"
@@ -8315,17 +8478,9 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000619"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000848",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_1000032",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000955",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000956"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PCO_0000020",
       "pred" : "is_a",
@@ -8334,10 +8489,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000242",
       "pred" : "subPropertyOf",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/SO_0000637",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_0000248",
       "pred" : "is_a",
@@ -8371,10 +8522,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000016"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000029",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000515",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000382",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
@@ -8395,21 +8542,9 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001059"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000924",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000254",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000040"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000915",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000870",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_1000009",
       "pred" : "is_a",
@@ -8418,10 +8553,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000093",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000902"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000772",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/HsapDv_0000000",
       "pred" : "is_a",
@@ -8459,10 +8590,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_1000009"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000091",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000621",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000618"
@@ -8471,13 +8598,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000856"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000529",
-      "pred" : "http://purl.obolibrary.org/obo/GENO_0000443",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000715",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002162",
       "obj" : "http://purl.obolibrary.org/obo/OBI_0100026"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000529",
+      "pred" : "http://purl.obolibrary.org/obo/GENO_0000443",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000920",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -8510,10 +8637,6 @@
       "sub" : "http://purl.obolibrary.org/obo/SO_1000022",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_1000018"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000883",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000252",
       "pred" : "inverseOf",
@@ -8590,10 +8713,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000911",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000788"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000060",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000949",
       "pred" : "is_a",
@@ -8695,10 +8814,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000888"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000042",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002526",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002131"
@@ -8710,10 +8825,6 @@
       "sub" : "http://purl.obolibrary.org/obo/SO_0005836",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000666"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000491",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000715",
       "pred" : "is_a",
@@ -8759,13 +8870,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000481"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000160",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000736",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000714"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000160",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000105"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000702",
       "pred" : "is_a",
@@ -8799,10 +8910,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_1000023"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000923",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000108",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000040"
@@ -8830,10 +8937,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000112",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000113"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000891",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000394",
       "pred" : "is_a",
@@ -8903,10 +9006,6 @@
       "pred" : "inverseOf",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000248"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000901",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000685",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000773"
@@ -8967,10 +9066,6 @@
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000614"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000037",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
-    }, {
       "sub" : "http://biohackathon.org/resource/faldo#reference",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000708"
@@ -8994,10 +9089,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000719",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000536"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/SO_0000149",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0000143"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000368",
       "pred" : "subPropertyOf",
@@ -9043,13 +9134,13 @@
       "pred" : "subPropertyOf",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PCO_0000000",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/BFO_0000040"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000343",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000248",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000340"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PCO_0000000",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/BFO_0000040"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000616",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -9098,10 +9189,6 @@
       "sub" : "http://purl.obolibrary.org/obo/RO_0002234",
       "pred" : "inverseOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002353"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000019",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/SO_0000341",
       "pred" : "http://purl.obolibrary.org/obo/GENO_0000207",
@@ -9211,13 +9298,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000830"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000737",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000714"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000338",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000346"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000737",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000714"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000897",
       "pred" : "is_a",
@@ -9242,10 +9329,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000649",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000611"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000415",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0000086",
       "pred" : "subPropertyOf",
@@ -9318,10 +9401,6 @@
       "sub" : "http://purl.obolibrary.org/obo/IAO_0000219",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/IAO_0000136"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/SO_0001410",
-      "pred" : "is_a",
-      "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000253",
       "pred" : "subPropertyOf",
@@ -9396,7 +9475,7 @@
         "pred" : "http://purl.org/dc/terms/license",
         "val" : "Unspecified"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/geno/releases/2020-03-07/geno-base.json"
+      "version" : "http://purl.obolibrary.org/obo/geno/releases/2020-03-08/geno-base.json"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ {
@@ -9577,13 +9656,13 @@
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/RO_0002351",
       "allValuesFromEdges" : [ {
-        "sub" : "http://purl.obolibrary.org/obo/GENO_0000887",
-        "pred" : "http://purl.obolibrary.org/obo/RO_0002351",
-        "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_8090"
-      }, {
         "sub" : "http://purl.obolibrary.org/obo/GENO_0000119",
         "pred" : "http://purl.obolibrary.org/obo/RO_0002351",
         "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_7955"
+      }, {
+        "sub" : "http://purl.obolibrary.org/obo/GENO_0000887",
+        "pred" : "http://purl.obolibrary.org/obo/RO_0002351",
+        "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_8090"
       } ]
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/GENO_0000368",

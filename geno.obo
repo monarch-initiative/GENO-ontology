@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2020-03-07
+data-version: releases/2020-03-08
 ontology: geno
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
@@ -303,29 +303,29 @@ property_value: IAO:0000118 "reference sequence" xsd:string
 
 [Term]
 id: GENO:0000019
-name: obsolete_sequence feature collection
+name: obsolete sequence feature collection
 def: "a collection more than one sequence features (ie a collection of discontinuous sequence features)" []
 comment: 1. Note that members of this class can be features with extents of zero (e.g. junctions).  This is likely different than the SO:sequence feature class which has members that are regions.
 xref: perhaps not same as SO:sequence collection\, as here we explicitly include features that can have an extent of zero (and SO\:sequence collection is a collection of regions that have an extent of at least one)
-is_a: ObsoleteClass
+is_obsolete: true
 
 [Term]
 id: GENO:0000022
-name: obsolete_genomic feature collection
+name: obsolete genomic feature collection
 def: "A sequence feature collection comprised of discontiguous sequences from a single genome" []
 comment: Conceptually, members of this collection are meant to be about the sum total genetic material in a single cell or organism. But these members need not be associated with an actual material in a real cell or organism individual.  For example, things like a 'reference genome' may not actually represent the material genome of any individual cell or organism in reality. Here, there may be no genomic material referents of the sequences in such a collection because the genome is tied to an idealized, hypothetical cell or organism instance. The key is that conceptually, they are still tied to the idea of being contained in a single genome. In the case of a genotype, the individual seqeunce members are not all about the genetic material of a singel cell or organism. Rather, it is the resolved sequence contained in the genotype that is meant to be about the total genomic sequence content of a genome - which we deem acceptable for classifying as a genetic locus collection.
-is_a: ObsoleteClass
 property_value: IAO:0000116 "Previously called 'genetic locus collection'.  Difference between 'genetic' and 'genomic', as used here, is that 'genomic' implies a feature is a heritable part of some genome, while 'genetic' implies that it is part of some feature that is capable of contributing to gene expression in a cell or other biological system." xsd:string
 property_value: IAO:0000118 "genomic feature collection" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000029
-name: obsolete_reference single locus complement
+name: obsolete reference single locus complement
 def: "A single locus complement that serves as a standard against which 'variant' sequences are compared" []
-is_a: ObsoleteClass
 property_value: IAO:0000118 "reference allelic complement" xsd:string
 property_value: IAO:0000118 "reference single locus feature complement" xsd:string
 property_value: IAO:0000231 "Not required at present for any specific use case, so marking as exploratory and obsoleting for simplicity.\n\nEq Class axiom:\n'single locus complement'\n and (has_sequence_attribute some reference)\n\nSC axioms:\n'has member' exactly 0 'variant allele'\n'has member' only 'reference genomic feature'\n'has member' some 'reference genomic feature'" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000030
@@ -361,22 +361,22 @@ relationship: GENO:0000968 GENO:0000152 ! sequence role reference
 
 [Term]
 id: GENO:0000037
-name: obsolete_unspecified feature
+name: obsolete unspecified feature
 def: "A genomic feature known to exist, but remaining uncharacterized with respect to its identity (e.g. which allele exists at a given gene locus)." []
 comment: An unspecified feature is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).
-is_a: ObsoleteClass
 property_value: IAO:0000114 GENO:0000484
 property_value: IAO:0000116 "Uses as a term of convenience for describing data reporting unspecified alleles in a genotype (i.e. in cases where zygosoty for a given locus is not known).  Typlically recorded in genotype syntaxes as a ' /? '." xsd:string
 property_value: IAO:0000231 "Not required at present for any specific use case, so marking as exploratory and obsoleting for simplicity.\n\nEq Class def: 'genomic feature'\n and (has_sequence_attribute some unspecified)" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000042
-name: obsolete_reference junction
+name: obsolete reference junction
 def: "A junction found at a chromosomal position where an insertion has occurred on the homologous chromosome, such that the junction represents the reference feature paired with the hemizygously inserted feature." []
 comment: In the case of a transgenic insertion that creates a hemizygous locus, the refernce locus that this insertion is variant_with is the junction on the homologous chromosome at the same position where the insertion occurred. This is the 'hemizygous reference' junction.\n\nThe junction-insertion pair represents the allelic complement at that locus, which is considered to be hemizygous. Most genotype syntaxes represent this hemizygous state with a ' /0' notation.
-is_a: ObsoleteClass
 property_value: IAO:0000118 "hemizygous reference junction" xsd:string
 property_value: IAO:0000231 "Eliminating unecessary defined/organizational classes. Former logical def:\n\njunction\n and (has_sequence_attribute some reference)\n\nSubclass axiom:\nis_variant_with some insertion" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000047
@@ -407,18 +407,18 @@ relationship: RO:0002162 NCBITaxon:10090 ! in taxon Mus musculus
 
 [Term]
 id: GENO:0000060
-name: obsolete_reference gene allele
+name: obsolete reference gene allele
 def: "A version/allele of a gene that serves as a standard against which variant genes are compared." []
 comment: Being a 'reference gene' is a role or status assigned in the context of a specific dataset or analysis.  In human variation datasets, 'reference' status is typically assigned based on factors such as being the most common version/allele in a population, being an ancestral allele, or being indentified first as a prototypical example of a gene.\n\nIn model organism datasets, 'reference' genes are typically the 'wild-type' allele for a given gene, representing a functional and unaltered version of the gene that is part of a defined genomic background, and against which natural or experimentally-induced versions are compared.
-is_a: ObsoleteClass
 property_value: IAO:0000112 "A reference human sonic hedgehog (shh) gene spans bases 155,592,680-155,604,967 on Chromosome 7, according to genome build GRCh37, and produces a primary funcitonal transcript that is 4454 bp in length and produces a 462 amino acid protein involved in cell signaling events behind various aspects of cell differentiation and development.\nhttp://useast.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000164690\n\nNote that this may be slightly different than the extend described in other gene databases, such as Entrez Gene:http://www.ncbi.nlm.nih.gov/gene/6469" xsd:string
 property_value: IAO:0000118 "reference gene" xsd:string
 property_value: IAO:0000231 "Not required at present for any specific use case, so marking as exploratory and obsoleting for simplicity.\n\nEq Class axiom:\n'gene allele'\n and (has_sequence_attribute some reference)\n\nSC axioms:\nis_variant_with some 'gene allele'\nis_reference_allele_of some gene" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000091
-name: obsolete_experimental insertion
-is_a: ObsoleteClass
+name: obsolete experimental insertion
+is_obsolete: true
 
 [Term]
 id: GENO:0000092
@@ -488,9 +488,9 @@ relationship: RO:0002351 NCBITaxon:7955 ! has member Danio rerio
 
 [Term]
 id: GENO:0000125
-name: obsolete_sequence feature collection attribute
+name: obsolete sequence feature collection attribute
 def: "sequence attribute that can inhere only in a collection of more than one sequence features" []
-is_a: ObsoleteClass
+is_obsolete: true
 
 [Term]
 id: GENO:0000131
@@ -568,10 +568,10 @@ property_value: IAO:0000118 "phenotypic inheritance pattern" xsd:string
 
 [Term]
 id: GENO:0000142
-name: obsolete_dominant inheritance
+name: obsolete dominant inheritance
 def: "disposition inhering in a genetic locus variant that is realized in its inheritance by some offspring such that at least a partial variant-associated phenotype is apparent in heterozygotes" []
-is_a: ObsoleteClass
 property_value: IAO:0000231 "Triage until decide if want to define this as grouping class that would result in multiple-inheritance." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000143
@@ -624,9 +624,9 @@ is_a: GENO:0000936 ! X-linked inheritance
 
 [Term]
 id: GENO:0000150
-name: obsolete_autosomal recessive inheritance
-is_a: ObsoleteClass
+name: obsolete autosomal recessive inheritance
 property_value: IAO:0000231 "duplicate term, use GENO:0000148" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000152
@@ -641,10 +641,60 @@ name: unspecified life cycle stage
 is_a: UBERON:0000105 ! life cycle stage
 
 [Term]
+id: GENO:0000164
+name: obsolete genetic insertion technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000165
+name: obsolete mutagen treatment technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000166
+name: obsolete targeted gene mutation technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000169
+name: obsolete random genetic insertion technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000170
+name: obsolete targeted genetic insertion technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000171
+name: obsolete enhancer trapping technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000172
+name: obsolete gene trapping technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000173
+name: obsolete promoter trapping technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000174
+name: obsolete targeted knock-in technique
+is_obsolete: true
+
+[Term]
+id: GENO:0000175
+name: obsolete random transgene insertion technique
+is_obsolete: true
+
+[Term]
 id: GENO:0000324
-name: obsolete_chromosome complement
+name: obsolete chromosome complement
 def: "A single locus complement that represents the collection of all chromosome sequences for a given chromosome in a single genome" []
-is_a: ObsoleteClass
+is_obsolete: true
 
 [Term]
 id: GENO:0000338
@@ -748,11 +798,11 @@ property_value: IAO:0000118 "trans-heterozygous" xsd:string
 
 [Term]
 id: GENO:0000415
-name: obsolete_reagent sequence feature
+name: obsolete reagent sequence feature
 def: "A sequence feature that references some biological macromolecule applied as a reagent in an experiment or technique (e.g. a morpholino expression plasmid, or oligonucleotide probe)" []
-is_a: ObsoleteClass
 property_value: IAO:0000116 "replaced with SO:engineered_region" xsd:string
 property_value: IAO:0000118 "extra-genomic sequence" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000458
@@ -811,13 +861,13 @@ property_value: IAO:0000114 GENO:0000484
 
 [Term]
 id: GENO:0000491
-name: obsolete_mutant allele
+name: obsolete mutant allele
 def: "An allele that is variant with respect to some wild-type allele, in virtue of its being very rare in a population (typically <1%), or being an experimentally-induced alteration that derives from a wild-type feature in a given strain." []
 comment: 'Mutant' is typically contrasted with 'wild-type', where 'mutant' indicates a natural but very rare allele in a population (typically <1%), or an experimentally-induced variation that derives from a wild-type background locus for a given strain, which can be selected for in establishing a mutant line.
-is_a: ObsoleteClass
 property_value: IAO:0000114 GENO:0000484
 property_value: IAO:0000119 "Based on use of 'mutant' as described in PMID: 25741868 ACMG Guidelines" xsd:string
 property_value: IAO:0000231 "Not required for any specific use case at this point so removed for simplicity. \nFormely asserted as allele and inferred as varaint allele. \nEq class definition:\nallele\n and (mutation or ('has subsequence' some mutation))" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000492
@@ -1266,11 +1316,11 @@ relationship: GENO:0000207 GENO:0000910 ! has_sequence_attribute reporter
 
 [Term]
 id: GENO:0000680
-name: obsolete_null feature
+name: obsolete null feature
 def: "A genomic feature that has an extent of zero." []
-is_a: ObsoleteClass
 property_value: IAO:0000112 "A junction between bases, a deletion variant, a terminus at the end of a chromosome." xsd:string
 property_value: IAO:0000116 "Former logical def: \n'genomic feature'\n and (has_extent value 0)" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000681
@@ -1391,13 +1441,13 @@ relationship: GENO:0000783 GENO:0000782 ! has_sequence_unit amino acid residue
 
 [Term]
 id: GENO:0000724
-name: obsolete_biological sequence or collection
-is_a: ObsoleteClass
+name: obsolete biological sequence or collection
+is_obsolete: true
 
 [Term]
 id: GENO:0000725
-name: obsolete_biological sequence collection
-is_a: GENO:0000724 ! obsolete_biological sequence or collection
+name: obsolete biological sequence collection
+is_obsolete: true
 
 [Term]
 id: GENO:0000736
@@ -1415,12 +1465,12 @@ is_a: GENO:0000714 ! qualified genomic feature
 
 [Term]
 id: GENO:0000768
-name: obsolete_genomic position
+name: obsolete genomic position
 def: "A sequence feature position based on a genomic coordinate system, where the position specifies start and end coordinates based on its alignment with some reference genomic sequence." []
-is_a: ObsoleteClass
 property_value: IAO:0000116 "This 'genomic position' concept differs from the faldo:Position concecpt in that the former describes the start AND end points/coordinates of a feature, while the latter describes a single point/coordinate at the beginning OR end of a feature." xsd:string
 property_value: IAO:0000118 "genomic coordinates" xsd:string
 property_value: IAO:0000231 "remodeling notion of sequence feature position around the idea of a 'genomic locus'" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000770
@@ -1430,9 +1480,9 @@ property_value: IAO:0000114 GENO:0000484
 
 [Term]
 id: GENO:0000772
-name: obsolete_unspecified
+name: obsolete unspecified
 def: "A sequence attribute inhering in a feature whose identity is not specified." []
-is_a: ObsoleteClass
+is_obsolete: true
 
 [Term]
 id: GENO:0000773
@@ -1452,10 +1502,10 @@ relationship: IAO:0000219 GENO:0000033 ! denotes variant genome
 
 [Term]
 id: GENO:0000778
-name: obsolete_sequence information entity
+name: obsolete sequence information entity
 def: "An information entity that is intented to represent some biological sequence, sequence feature, qualified sequence feature, or a collection of one or more of these entities." []
-is_a: ObsoleteClass
 property_value: IAO:0000231 "eliminating classes that are not necessary or add uneeded complexity." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000779
@@ -1534,11 +1584,11 @@ relationship: GENO:0000382 GENO:0000504 ! has_variant_part reagent targeted gene
 
 [Term]
 id: GENO:0000848
-name: obsolete_coding sequence alteration
+name: obsolete coding sequence alteration
 def: "A sequence alteration within the coding sequence of a gene." []
-is_a: ObsoleteClass
 property_value: IAO:0000114 GENO:0000484
 property_value: IAO:0000231 "Not required at this poitn, so marked exploratory and obsoleted.  \nAsserted under sequence_alteration." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000850
@@ -1563,10 +1613,10 @@ property_value: IAO:0000118 "non-integrated transgene" xsd:string
 
 [Term]
 id: GENO:0000870
-name: obsolete_sequence feature collection
+name: obsolete sequence feature collection
 def: "A collection of more than one sequence feature." []
 xref: http://purl.obolibrary.org/obo/SO_0001260 ! sequence_collection
-is_a: ObsoleteClass
+is_obsolete: true
 
 [Term]
 id: GENO:0000871
@@ -1606,13 +1656,13 @@ is_a: GENO:0000788 ! sequence feature attribute
 
 [Term]
 id: GENO:0000876
-name: obsolete_genetic dosage
+name: obsolete genetic dosage
 comment: Genetic dosage reflects how many 'functional' copies of a sequence are present in a genome. In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This sets it apart from the notion of 'copy number', which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its copy number, but not increase its dosage.\n\nDuplications of a sequence can occur at new locations in the genome, such that the resulting sequence represents a distinct sequence feature from the copy at its native locus.  For example, duplication of a region containing the human APOE gene on a different chromosome creates a sequence feature that shares sequence from the original gene, but not location, and therefore represents a different sequence feature.  The notions of dosage and copy number are therefore concerned with sequence-level entities (how many copies of a 'sequence' exist), as opposed to sequence feature-level entities.  The notion of a single-locus complement would be used to describe how many of a particular features are present in a genome - and describe which alleles of this feature are found.
-is_a: ObsoleteClass
 property_value: IAO:0000118 "allelic dosage" xsd:string
 property_value: IAO:0000118 "an attribute inhering in a feature based on the total number or relative stoichiometry of functional copies present in a particular genome." xsd:string
 property_value: IAO:0000118 "gene dosage" xsd:string
 property_value: IAO:0000231 "Remodeled this concept as a 'genetic dosage complement' - a sequence-level class, as opposed to a sequence feature attribute." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000877
@@ -1661,11 +1711,11 @@ property_value: IAO:0000119 "Derived from https://www.cancer.gov/publications/di
 
 [Term]
 id: GENO:0000883
-name: obsolete_gametic
+name: obsolete gametic
 def: "a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells)." []
-is_a: ObsoleteClass
 property_value: IAO:0000118 "germ-line" xsd:string
 property_value: IAO:0000231 "replaced by GENO:0000900 ! 'germline'" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000885
@@ -1707,26 +1757,26 @@ property_value: IAO:0000118 "unknown inheritance" xsd:string
 
 [Term]
 id: GENO:0000890
-name: obsolete_canonical allele
+name: obsolete canonical allele
 def: "One of a set of sequence features or haplotypes that exist at a particular genetic locus. <see ClinGen Allele Model>" []
 comment: As a 'sequence feature or collection' (sensu SO), a 'canonical allele' is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence). Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand.\n\nIn the ClinGen allele model, 'canonical alleles  are contrasted with 'contextual alleles'. Contextual alleles are informational representation that describe a canonical allele using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation (e.g. different chromosomal or transcript references)
-is_a: ObsoleteClass
 property_value: http://purl.org/dc/terms/source "ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)" xsd:string
 property_value: IAO:0000112 "The canonical allele that represents a single nucleotide variation in the BRCA2 gene, which can be described by various contextual alleles such as “NC_000013.11:g.32319070T>A” and “NG_012772.3:g.8591T>A”." xsd:string
 property_value: IAO:0000116 "The notion of a 'canonical allele' is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model." xsd:string
 property_value: IAO:0000119 http://dataexchange.clinicalgenome.org/allele/resource/canonical_allele/ xsd:string
 property_value: IAO:0000231 "No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000891
-name: obsolete_contextual allele
+name: obsolete contextual allele
 def: "An informational artifact that describes a canonical allele by defining its sequence and position relative to a particular reference sequence." []
 comment: The notion of a 'contextual allele' derives from the ClinGen Allele model. Here, each genetic allele in a patient corresponds to a single 'canonical allele', which in turn may aggregate any number of 'contextual allele' representations that are may be defined against different reference sequences. Accordingly, many contextual alleles can describe a single canonical allele. For example, the contextual alleles “NC_000013.11:g.32319070T>A” and “NG_012772.3:g.8591T>A” both describe the same underlying canonical allele, a single nucleotide variation, in the BRCA2 gene.
-is_a: ObsoleteClass
 property_value: http://purl.org/dc/terms/source "ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)" xsd:string
 property_value: IAO:0000116 "The notion of a 'contextual allele' is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model." xsd:string
 property_value: IAO:0000119 http://dataexchange.clinicalgenome.org/allele/resource/contextual_allele/ xsd:string
 property_value: IAO:0000231 "No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs.\n\nFormer axiom: denotes some 'obsolete_canonical allele'" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000892
@@ -1774,11 +1824,11 @@ property_value: IAO:0000118 "complete genotype" xsd:string
 
 [Term]
 id: GENO:0000901
-name: obsolete_allele cellular context
+name: obsolete allele cellular context
 def: "A quality inhering in a particular allele in virtue of its presence only in a particular type of cell in an organism (e.g. somatic vs germ cells)" []
 comment: Cellular context of an allele is typically defined in the context of evaluating an individual organism, as alleles that are somatic in one organism can be germline in others.
-is_a: ObsoleteClass
 property_value: IAO:0000231 "decided this attribute is not needed, and moved its child 'germline' and 'somatic' concepts under allele origin" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000902
@@ -1809,11 +1859,13 @@ is_a: SO:0000110 ! sequence_feature
 
 [Term]
 id: GENO:0000910
+name: obsolete reporter role
 name: reporter
 is_a: GENO:0000788 ! sequence feature attribute
 
 [Term]
 id: GENO:0000911
+name: obsolete selectable marker role
 name: selectable marker
 is_a: GENO:0000788 ! sequence feature attribute
 
@@ -1831,22 +1883,22 @@ relationship: GENO:0000239 SO:0001505 ! has_sequence reference genome sequence
 
 [Term]
 id: GENO:0000915
-name: obsolete_haplotype
+name: obsolete haplotype
 def: "A haplotype is an allele that represents one of many possible versions of a 'haplotype block', which defines a region of genomic sequence that is typically 'co-inherited' across generations due to a lack of historically observed recombination within it." []
 comment: 1. The relationship between 'haplotype' and 'haplotype block' is analogous to the relationship between 'gene allele' and 'gene':  a 'gene allele' is one of many possible instances of a 'gene', while a 'haplotype' is one of many possible instances of a 'haplotype block'.  In this sense, a gene allele can be considered to be a haplotype whose extent is that of a gene (as it is generally true that there is a low probability of recombination within any given gene).\n\n2. Haplotypes typically contain more than one 'genetically-linked' loci where sequence alterations are known to exist, such that a set of alterations will be co-inherited together across many generations of reproduction.  A common use of 'haplotype' is in phasing of patient WGS or WES data, where this term refers to sequence containing two or more alterations that are beleived to occur 'in cis' on the same chromosomal strand.  \n\nGENO's definition is consistent with but more inclusive than this view, allowing for haplotypes with one or zero established alterations as long as there is a low probability of recombination within the region it spans (such that alterations found in cis are likely to remain in cis across successive generations). As a result, GENO considers any allele that spans an extent greater than that of a single sequence alteration to be a haplotype - as long as there is an expectation of low recombination frequency within the haplotype block occupied by the allele. For example, a 'gene allele' is a haplotype representing a particular version of a gene that contains one or more sequence alterations - as a 'gene' is a region of sequence with a low probability of recombination that is generally expeted to be inherited as a unit. \n\n3. As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term 'haplotype' is most commonly used to describe the following scenarios of genetic linkage between 'alleles':\n\na. The first is regions containing multiple linked 'gene alleles' - i.e. specific versions of entire genes that are co-inherited because they reside in tightly linked clusters on a single chromosome.  \nb. The second is a region containing multiple linked single nucleotide polymorphisms (SNPs) that tend to occur together on a chromosomal strand (i.e. be statistically associated).  This use of 'haplotype' is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur 'in cis' on the same chromosomal strand.  \nc. A third, which is related to the previous case, occurs when the extent of region containing linked SNPs is that of a single gene.  In this case, the haplotype represents a 'gene allele' - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.\n\nThe GENO definition of 'haplotype' is broadly inclusive of these and any other scenarios where distinct 'alleles' of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.
-is_a: ObsoleteClass
 property_value: IAO:0000116 "Former comment: \"Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. 'SNP allele' haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project.\"" xsd:string
 property_value: IAO:0000119 "Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype and http://purl.obolibrary.org/obo/SO_0001024 ! haplotype." xsd:string
 property_value: IAO:0000231 "Decided to represent haplotypes as collections of discrete alleles, rather than continuous features defined by such sets.\n\nFormer SC axioms:\n- is_allele_of some 'haplotype block'\n- 'has part' some sequence_alteration" xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000916
-name: obsolete_haplotype block
+name: obsolete haplotype block
 def: "A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations." []
 comment: A haplotype block is a class of genomic sequence defined by a  lack of evidence for historical recombination, such that sequence alterations within it tend to be co-inherited across successive generations. A haplotype is considered to be one of many possible versions of a 'haplotype block' - defined by the set of co-inherited alterations it contains.  In this sense, the relationship between 'haplotype' and 'haplotype block' is analogous to the relationship between 'gene allele' and 'gene'* - a 'gene allele' is one of many possible instances of a 'gene', while  a 'haplotype' is one of many possible instances of a 'haplotype block'.\n\nThe boundaries of haplotype blocks are defined in efforts to identify haplotypes that exist in organisms or populations. A haplotype block may span any number of sequence alterations, and may cover small or large chromosomal regions - depending on the number of recombination events that have occurred between the alterations defining the haplotype.\n\n-----------------------\n\n* One difference however is that gene instnaces are necessarily 'functional' - so non-functional  alleles of a gene locus wont qualify as gene instances. no such requirement exists for haplotype block instnaces.
-is_a: ObsoleteClass
 property_value: IAO:0000119 "Derived from DOI: 10.1126/science.1069424 and http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block." xsd:string
 property_value: IAO:0000231 "Decided to represent haplotypes as collections of discrete alleles, rather than continuous features defined by such sets." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000918
@@ -1889,27 +1941,27 @@ is_a: GENO:0000921 ! biological sequence or set
 
 [Term]
 id: GENO:0000923
-name: obsolete_functional copy number complement
+name: obsolete functional copy number complement
 def: "A set of all features representing *functional* versions of a specified sequence (typically that of a gene) in a particular genome." []
 comment: As for copy number complements, the defining 'sequence' here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a functional copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify if that alteration eliminates the function of the allele.  This represents an important distinction between 'copy number' and 'functional copy number'. The former is not concerned with the functionality of sequence copies - only that there is a duplication of sequence in the genome. Thus, the addition of a non-functional allele of a gene will increase its copy number, but not increase its 'functional copy number (aka its dosage).
 comment: The notion of 'functional copy number' (aka 'genetic dosage') describes how many 'functional' copies of a sequence are present in a genome - i.e. sequences that retain their normal activity and/or produce gene products that retain their normal activity.  In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a 'copy number complement', which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.
-is_a: ObsoleteClass
 property_value: IAO:0000116 "Formerly considered modeling this as an informational entity, defined as \"An information entity that describes the total number of functional copies of a gene or region of sequence in a particular genome.\"" xsd:string
 property_value: IAO:0000118 "functional feature complement" xsd:string
 property_value: IAO:0000118 "genetic dosage" xsd:string
 property_value: IAO:0000231 "Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000963." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000924
-name: obsolete_intrinsic sequence feature attribute
+name: obsolete intrinsic sequence feature attribute
 def: "A sequence feature attribute that reflects feature-level characteristics that depend only on the sequence, location, or genomic context of a feature  or  collection, but are independent of how it may be concretized in physical form." []
-is_a: ObsoleteClass
+is_obsolete: true
 
 [Term]
 id: GENO:0000925
-name: obsolete_extrinsic sequence feature attribute
+name: obsolete extrinsic sequence feature attribute
 def: "A sequence feature attribute that reflects characteristics of the physical molecule in which the feature is concretized (e.g. its cellular context, source of origin, etc.)" []
-is_a: ObsoleteClass
+is_obsolete: true
 
 [Term]
 id: GENO:0000926
@@ -2094,20 +2146,20 @@ is_a: GENO:0000660 ! genomic feature set
 
 [Term]
 id: GENO:0000955
-name: obsolete_variant copy number complement
+name: obsolete variant copy number complement
 def: "A copy number complement' that has an abnormal number of members (e.g. more or less than two for an autosomal sequence in a diploid genome, as a result of deletion or duplication event(s)." []
 comment: In a 'normal' diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s).\n\nNote that the 'copy number variation' class in GENO is related to but ontologically distinct form the SO 'copy_number_variation' class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set is in conflict with the genome's normal ploidy (e.g. not two for a diploid genome). The SO class, which is defined as a sequence feature level concept and therefore represents a single continuous extent of sequence, refers to a single copy of duplicated (or deleted) sequence that comprises the set defined by the GENO CNV class.
-is_a: GENO:0000956 ! obsolete_copy number complement
 property_value: IAO:0000118 "copy number variation" xsd:string
 property_value: IAO:0000231 "Decided to implement copy number related classes at the sequence level, rather than the sequence feature level." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000956
-name: obsolete_copy number complement
+name: obsolete copy number complement
 def: "A set of all features in a particular genome whose sequence aligns with a particular location on a reference genome.  Such features are typically on the scale of complete genes or larger." []
 comment: 1. Features described by 'copy number' are larger regions of sequence spanning one or more complete genes, or large chromosomal segment. Copies of these regions often become distributed across a genome at unknown locations. By contrast, short repeats, such as tri-nucelotide 'CAG' repeats in the Huntingtin gene, occur at defined locations (adjacent to the originating 'CAG' sequence), and can therefore be modeled as proper alleles.  \n\n2. A copy number complement, like any sequence feature complement, is a set of features in a particular genome that meet some criterion. The criterion in this case is that their sequence maps to that of a particular location in a reference sequence.  So a copy number complement is the set of all features that share or align with a specified sequence defined on some reference. The sequence of member sequences need not exactly match that of the reference, as copies may accrue some alterations. What is important is that conceptually they represent exact or inexact copies of the reference sequence at a defining location.\n\n3. In a 'normal' diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s). In GENO, a 'copy number variation' refers to a copy number complement' that has an abnormal number of members.
-is_a: ObsoleteClass
 property_value: IAO:0000231 "Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000961." xsd:string
+is_obsolete: true
 
 [Term]
 id: GENO:0000960
@@ -2504,11 +2556,11 @@ property_value: IAO:0000116 "Stub class to serve as root of hierarchy for import
 
 [Term]
 id: PATO:0000016
-name: obsolete_color brightness
-is_a: ObsoleteClass
+name: obsolete color brightness
 property_value: IAO:0000116 "'Value' label chosen here according to http://www.uwgb.edu/heuerc/2D/ColorTerms.html" xsd:string
 property_value: IAO:0000116 "Was parent of chromosomal band intensity before moving this class to live as a sequence feature attribute." xsd:string
 property_value: IAO:0000118 "color value" xsd:string
+is_obsolete: true
 
 [Term]
 id: PATO:0000383
@@ -2589,15 +2641,15 @@ property_value: IAO:0000116 "GENO defines three levels of sequence-related artif
 
 [Term]
 id: SO:0000143
-name: obsolete_assembly_component
+name: obsolete assembly_component
 def: "A region of known length which may be used to manufacture a longer region." []
-is_a: SO:0001410 ! obsolete_experimental_feature
+is_obsolete: true
 
 [Term]
 id: SO:0000149
-name: obsolete_contig
+name: obsolete contig
 def: "A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N's from unavailable bases." []
-is_a: SO:0000143 ! obsolete_assembly_component
+is_obsolete: true
 
 [Term]
 id: SO:0000159
@@ -2694,9 +2746,9 @@ is_a: SO:0000830 ! chromosome part
 
 [Term]
 id: SO:0000637
-name: obsolete_engineered_plasmid
-is_a: ObsoleteClass
+name: obsolete engineered_plasmid
 property_value: IAO:0000116 "Obsoleted as we didnt want to commit to constructs being plasmids - but rather wanted a classification of more general types of engineered regions used to replicate and deliver sequence to target cells/genomes. Replaced by GENO:0000856 ! engineered genetic construct." xsd:string
+is_obsolete: true
 
 [Term]
 id: SO:0000667
@@ -2832,10 +2884,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/so.owl
 
 [Term]
 id: SO:0001410
-name: obsolete_experimental_feature
+name: obsolete experimental_feature
 def: "A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer." []
-is_a: ObsoleteClass
 property_value: IAO:0000231 "not currently needed to support modeling use cases. can re-introduce if becomes necessary." xsd:string
+is_obsolete: true
 
 [Term]
 id: SO:0001477
@@ -3615,7 +3667,7 @@ inverse_of: GENO:0000661 ! is_sex_agnostic_part_of
 id: GENO:0000651
 name: is_mutant_allele_of
 comment: A relation between a mutant allele (ie rare variant present in less than  1% of a population, or an experimentally-altered variant such as a knocked-out gene in a model organism), and the gene it is a variant of.
-domain: GENO:0000491 ! obsolete_mutant allele
+domain: GENO:0000491 ! obsolete mutant allele
 is_a: GENO:0000641 ! is_variant_allele_of
 
 [Typedef]

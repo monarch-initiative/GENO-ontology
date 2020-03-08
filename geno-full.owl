@@ -12,7 +12,7 @@
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/geno-full.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2020-03-07/geno-full.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2020-03-08/geno-full.owl"/>
         <dc:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dc:description>
@@ -3141,11 +3141,11 @@ A genomic feature being an allele_of a gene is based on its location in a host g
     <!-- http://purl.obolibrary.org/obo/GENO_0000019 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000019">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>a collection more than one sequence features (ie a collection of discontinuous sequence features)</obo:IAO_0000115>
         <oboInOwl:hasDbXref>perhaps not same as SO:sequence collection, as here we explicitly include features that can have an extent of zero (and SO:sequence collection is a collection of regions that have an extent of at least one)</oboInOwl:hasDbXref>
         <rdfs:comment>1. Note that members of this class can be features with extents of zero (e.g. junctions).  This is likely different than the SO:sequence feature class which has members that are regions.</rdfs:comment>
-        <rdfs:label>obsolete_sequence feature collection</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete sequence feature collection</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3153,12 +3153,12 @@ A genomic feature being an allele_of a gene is based on its location in a host g
     <!-- http://purl.obolibrary.org/obo/GENO_0000022 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000022">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature collection comprised of discontiguous sequences from a single genome</obo:IAO_0000115>
         <obo:IAO_0000116>Previously called &apos;genetic locus collection&apos;.  Difference between &apos;genetic&apos; and &apos;genomic&apos;, as used here, is that &apos;genomic&apos; implies a feature is a heritable part of some genome, while &apos;genetic&apos; implies that it is part of some feature that is capable of contributing to gene expression in a cell or other biological system.</obo:IAO_0000116>
         <obo:IAO_0000118>genomic feature collection</obo:IAO_0000118>
         <rdfs:comment>Conceptually, members of this collection are meant to be about the sum total genetic material in a single cell or organism. But these members need not be associated with an actual material in a real cell or organism individual.  For example, things like a &apos;reference genome&apos; may not actually represent the material genome of any individual cell or organism in reality. Here, there may be no genomic material referents of the sequences in such a collection because the genome is tied to an idealized, hypothetical cell or organism instance. The key is that conceptually, they are still tied to the idea of being contained in a single genome. In the case of a genotype, the individual seqeunce members are not all about the genetic material of a singel cell or organism. Rather, it is the resolved sequence contained in the genotype that is meant to be about the total genomic sequence content of a genome - which we deem acceptable for classifying as a genetic locus collection.</rdfs:comment>
-        <rdfs:label>obsolete_genomic feature collection</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete genomic feature collection</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3166,7 +3166,6 @@ A genomic feature being an allele_of a gene is based on its location in a host g
     <!-- http://purl.obolibrary.org/obo/GENO_0000029 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000029">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A single locus complement that serves as a standard against which &apos;variant&apos; sequences are compared</obo:IAO_0000115>
         <obo:IAO_0000118>reference allelic complement</obo:IAO_0000118>
         <obo:IAO_0000118>reference single locus feature complement</obo:IAO_0000118>
@@ -3180,7 +3179,8 @@ SC axioms:
 &apos;has member&apos; exactly 0 &apos;variant allele&apos;
 &apos;has member&apos; only &apos;reference genomic feature&apos;
 &apos;has member&apos; some &apos;reference genomic feature&apos;</obo:IAO_0000231>
-        <rdfs:label>obsolete_reference single locus complement</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete reference single locus complement</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3283,7 +3283,6 @@ In model organism datasets, &apos;reference&apos; alleles are typically (but not
     <!-- http://purl.obolibrary.org/obo/GENO_0000037 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000037">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <obo:IAO_0000115>A genomic feature known to exist, but remaining uncharacterized with respect to its identity (e.g. which allele exists at a given gene locus).</obo:IAO_0000115>
         <obo:IAO_0000116>Uses as a term of convenience for describing data reporting unspecified alleles in a genotype (i.e. in cases where zygosoty for a given locus is not known).  Typlically recorded in genotype syntaxes as a &apos; /? &apos;.</obo:IAO_0000116>
@@ -3292,7 +3291,8 @@ In model organism datasets, &apos;reference&apos; alleles are typically (but not
 Eq Class def: &apos;genomic feature&apos;
  and (has_sequence_attribute some unspecified)</obo:IAO_0000231>
         <rdfs:comment>An unspecified feature is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).</rdfs:comment>
-        <rdfs:label>obsolete_unspecified feature</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete unspecified feature</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3300,7 +3300,6 @@ Eq Class def: &apos;genomic feature&apos;
     <!-- http://purl.obolibrary.org/obo/GENO_0000042 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000042">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A junction found at a chromosomal position where an insertion has occurred on the homologous chromosome, such that the junction represents the reference feature paired with the hemizygously inserted feature.</obo:IAO_0000115>
         <obo:IAO_0000118>hemizygous reference junction</obo:IAO_0000118>
         <obo:IAO_0000231>Eliminating unecessary defined/organizational classes. Former logical def:
@@ -3313,7 +3312,8 @@ is_variant_with some insertion</obo:IAO_0000231>
         <rdfs:comment>In the case of a transgenic insertion that creates a hemizygous locus, the refernce locus that this insertion is variant_with is the junction on the homologous chromosome at the same position where the insertion occurred. This is the &apos;hemizygous reference&apos; junction.
 
 The junction-insertion pair represents the allelic complement at that locus, which is considered to be hemizygous. Most genotype syntaxes represent this hemizygous state with a &apos; /0&apos; notation.</rdfs:comment>
-        <rdfs:label>obsolete_reference junction</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete reference junction</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3402,7 +3402,6 @@ The junction-insertion pair represents the allelic complement at that locus, whi
     <!-- http://purl.obolibrary.org/obo/GENO_0000060 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000060">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000112>A reference human sonic hedgehog (shh) gene spans bases 155,592,680-155,604,967 on Chromosome 7, according to genome build GRCh37, and produces a primary funcitonal transcript that is 4454 bp in length and produces a 462 amino acid protein involved in cell signaling events behind various aspects of cell differentiation and development.
 http://useast.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000164690
 
@@ -3421,7 +3420,8 @@ is_reference_allele_of some gene</obo:IAO_0000231>
         <rdfs:comment>Being a &apos;reference gene&apos; is a role or status assigned in the context of a specific dataset or analysis.  In human variation datasets, &apos;reference&apos; status is typically assigned based on factors such as being the most common version/allele in a population, being an ancestral allele, or being indentified first as a prototypical example of a gene.
 
 In model organism datasets, &apos;reference&apos; genes are typically the &apos;wild-type&apos; allele for a given gene, representing a functional and unaltered version of the gene that is part of a defined genomic background, and against which natural or experimentally-induced versions are compared.</rdfs:comment>
-        <rdfs:label>obsolete_reference gene allele</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete reference gene allele</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3429,8 +3429,8 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
     <!-- http://purl.obolibrary.org/obo/GENO_0000091 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000091">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <rdfs:label>obsolete_experimental insertion</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete experimental insertion</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3573,9 +3573,9 @@ Note that at present, a material genome and genetic material are necessarily par
     <!-- http://purl.obolibrary.org/obo/GENO_0000125 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000125">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>sequence attribute that can inhere only in a collection of more than one sequence features</obo:IAO_0000115>
-        <rdfs:label>obsolete_sequence feature collection attribute</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete sequence feature collection attribute</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3722,10 +3722,10 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000142 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000142">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>disposition inhering in a genetic locus variant that is realized in its inheritance by some offspring such that at least a partial variant-associated phenotype is apparent in heterozygotes</obo:IAO_0000115>
         <obo:IAO_0000231>Triage until decide if want to define this as grouping class that would result in multiple-inheritance.</obo:IAO_0000231>
-        <rdfs:label>obsolete_dominant inheritance</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete dominant inheritance</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3810,9 +3810,9 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000150">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231>duplicate term, use GENO:0000148</obo:IAO_0000231>
-        <rdfs:label>obsolete_autosomal recessive inheritance</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete autosomal recessive inheritance</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -3837,12 +3837,102 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000164 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000164">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete genetic insertion technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000165 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000165">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete mutagen treatment technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000166 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000166">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete targeted gene mutation technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000169 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000169">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete random genetic insertion technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000170 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000170">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete targeted genetic insertion technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000171 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000171">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete enhancer trapping technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000172 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000172">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete gene trapping technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000173 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000173">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete promoter trapping technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000174 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000174">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete targeted knock-in technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000175 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000175">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete random transgene insertion technique</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GENO_0000324 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000324">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A single locus complement that represents the collection of all chromosome sequences for a given chromosome in a single genome</obo:IAO_0000115>
-        <rdfs:label>obsolete_chromosome complement</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete chromosome complement</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -4029,11 +4119,11 @@ Similarly, large sequence features lost from genome are akin to deletions and th
     <!-- http://purl.obolibrary.org/obo/GENO_0000415 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000415">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature that references some biological macromolecule applied as a reagent in an experiment or technique (e.g. a morpholino expression plasmid, or oligonucleotide probe)</obo:IAO_0000115>
         <obo:IAO_0000116>replaced with SO:engineered_region</obo:IAO_0000116>
         <obo:IAO_0000118>extra-genomic sequence</obo:IAO_0000118>
-        <rdfs:label>obsolete_reagent sequence feature</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete reagent sequence feature</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -4166,7 +4256,6 @@ Similarly, large sequence features lost from genome are akin to deletions and th
     <!-- http://purl.obolibrary.org/obo/GENO_0000491 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000491">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <obo:IAO_0000115>An allele that is variant with respect to some wild-type allele, in virtue of its being very rare in a population (typically &lt;1%), or being an experimentally-induced alteration that derives from a wild-type feature in a given strain.</obo:IAO_0000115>
         <obo:IAO_0000119>Based on use of &apos;mutant&apos; as described in PMID: 25741868 ACMG Guidelines</obo:IAO_0000119>
@@ -4176,7 +4265,8 @@ Eq class definition:
 allele
  and (mutation or (&apos;has subsequence&apos; some mutation))</obo:IAO_0000231>
         <rdfs:comment>&apos;Mutant&apos; is typically contrasted with &apos;wild-type&apos;, where &apos;mutant&apos; indicates a natural but very rare allele in a population (typically &lt;1%), or an experimentally-induced variation that derives from a wild-type background locus for a given strain, which can be selected for in establishing a mutant line.</rdfs:comment>
-        <rdfs:label>obsolete_mutant allele</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete mutant allele</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -5159,13 +5249,13 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
     <!-- http://purl.obolibrary.org/obo/GENO_0000680 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000680">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000112>A junction between bases, a deletion variant, a terminus at the end of a chromosome.</obo:IAO_0000112>
         <obo:IAO_0000115>A genomic feature that has an extent of zero.</obo:IAO_0000115>
         <obo:IAO_0000116>Former logical def: 
 &apos;genomic feature&apos;
  and (has_extent value 0)</obo:IAO_0000116>
-        <rdfs:label xml:lang="en">obsolete_null feature</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete null feature</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -5505,8 +5595,8 @@ A complements may contain 0, 1, or more than one members. For example, the compl
     <!-- http://purl.obolibrary.org/obo/GENO_0000724 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000724">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
-        <rdfs:label xml:lang="en">obsolete_biological sequence or collection</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete biological sequence or collection</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -5514,8 +5604,8 @@ A complements may contain 0, 1, or more than one members. For example, the compl
     <!-- http://purl.obolibrary.org/obo/GENO_0000725 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000725">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000724"/>
-        <rdfs:label xml:lang="en">obsolete_biological sequence collection</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete biological sequence collection</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -5545,12 +5635,12 @@ A complements may contain 0, 1, or more than one members. For example, the compl
     <!-- http://purl.obolibrary.org/obo/GENO_0000768 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000768">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature position based on a genomic coordinate system, where the position specifies start and end coordinates based on its alignment with some reference genomic sequence.</obo:IAO_0000115>
         <obo:IAO_0000116>This &apos;genomic position&apos; concept differs from the faldo:Position concecpt in that the former describes the start AND end points/coordinates of a feature, while the latter describes a single point/coordinate at the beginning OR end of a feature.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">genomic coordinates</obo:IAO_0000118>
         <obo:IAO_0000231>remodeling notion of sequence feature position around the idea of a &apos;genomic locus&apos;</obo:IAO_0000231>
-        <rdfs:label>obsolete_genomic position</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete genomic position</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -5568,9 +5658,9 @@ A complements may contain 0, 1, or more than one members. For example, the compl
     <!-- http://purl.obolibrary.org/obo/GENO_0000772 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000772">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence attribute inhering in a feature whose identity is not specified.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">obsolete_unspecified</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete unspecified</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -5616,10 +5706,10 @@ A complements may contain 0, 1, or more than one members. For example, the compl
     <!-- http://purl.obolibrary.org/obo/GENO_0000778 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000778">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>An information entity that is intented to represent some biological sequence, sequence feature, qualified sequence feature, or a collection of one or more of these entities.</obo:IAO_0000115>
         <obo:IAO_0000231>eliminating classes that are not necessary or add uneeded complexity.</obo:IAO_0000231>
-        <rdfs:label xml:lang="en">obsolete_sequence information entity</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete sequence information entity</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -5909,12 +5999,12 @@ This contrasts to the use of the term &apos;genotype in model orgnaism communiti
     <!-- http://purl.obolibrary.org/obo/GENO_0000848 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000848">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <obo:IAO_0000115>A sequence alteration within the coding sequence of a gene.</obo:IAO_0000115>
         <obo:IAO_0000231>Not required at this poitn, so marked exploratory and obsoleted.  
 Asserted under sequence_alteration.</obo:IAO_0000231>
-        <rdfs:label xml:lang="en">obsolete_coding sequence alteration</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete coding sequence alteration</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -5957,10 +6047,10 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
     <!-- http://purl.obolibrary.org/obo/GENO_0000870 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000870">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A collection of more than one sequence feature.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/SO_0001260 ! sequence_collection</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">obsolete_sequence feature collection</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete sequence feature collection</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6041,7 +6131,6 @@ Each of these more specific definition serves a purpose for a particular type of
     <!-- http://purl.obolibrary.org/obo/GENO_0000876 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000876">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000118>allelic dosage</obo:IAO_0000118>
         <obo:IAO_0000118>an attribute inhering in a feature based on the total number or relative stoichiometry of functional copies present in a particular genome.</obo:IAO_0000118>
         <obo:IAO_0000118>gene dosage</obo:IAO_0000118>
@@ -6049,7 +6138,8 @@ Each of these more specific definition serves a purpose for a particular type of
         <rdfs:comment>Genetic dosage reflects how many &apos;functional&apos; copies of a sequence are present in a genome. In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This sets it apart from the notion of &apos;copy number&apos;, which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its copy number, but not increase its dosage.
 
 Duplications of a sequence can occur at new locations in the genome, such that the resulting sequence represents a distinct sequence feature from the copy at its native locus.  For example, duplication of a region containing the human APOE gene on a different chromosome creates a sequence feature that shares sequence from the original gene, but not location, and therefore represents a different sequence feature.  The notions of dosage and copy number are therefore concerned with sequence-level entities (how many copies of a &apos;sequence&apos; exist), as opposed to sequence feature-level entities.  The notion of a single-locus complement would be used to describe how many of a particular features are present in a genome - and describe which alleles of this feature are found.</rdfs:comment>
-        <rdfs:label xml:lang="en">obsolete_genetic dosage</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete genetic dosage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6130,11 +6220,11 @@ These acquired mutations are called &apos;somatic&apos; because they typically a
     <!-- http://purl.obolibrary.org/obo/GENO_0000883 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000883">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells).</obo:IAO_0000115>
         <obo:IAO_0000118>germ-line</obo:IAO_0000118>
         <obo:IAO_0000231>replaced by GENO:0000900 ! &apos;germline&apos;</obo:IAO_0000231>
-        <rdfs:label xml:lang="en">obsolete_gametic</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete gametic</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6253,7 +6343,6 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
     <!-- http://purl.obolibrary.org/obo/GENO_0000890 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000890">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000112>The canonical allele that represents a single nucleotide variation in the BRCA2 gene, which can be described by various contextual alleles such as “NC_000013.11:g.32319070T&gt;A” and “NG_012772.3:g.8591T&gt;A”.</obo:IAO_0000112>
         <obo:IAO_0000115>One of a set of sequence features or haplotypes that exist at a particular genetic locus. &lt;see ClinGen Allele Model&gt;</obo:IAO_0000115>
         <obo:IAO_0000116>The notion of a &apos;canonical allele&apos; is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.</obo:IAO_0000116>
@@ -6263,7 +6352,8 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
         <rdfs:comment>As a &apos;sequence feature or collection&apos; (sensu SO), a &apos;canonical allele&apos; is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence). Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand.
 
 In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;contextual alleles&apos;. Contextual alleles are informational representation that describe a canonical allele using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation (e.g. different chromosomal or transcript references)</rdfs:comment>
-        <rdfs:label>obsolete_canonical allele</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete canonical allele</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6271,7 +6361,6 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
     <!-- http://purl.obolibrary.org/obo/GENO_0000891 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000891">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>An informational artifact that describes a canonical allele by defining its sequence and position relative to a particular reference sequence.</obo:IAO_0000115>
         <obo:IAO_0000116>The notion of a &apos;contextual allele&apos; is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.</obo:IAO_0000116>
         <obo:IAO_0000119>http://dataexchange.clinicalgenome.org/allele/resource/contextual_allele/</obo:IAO_0000119>
@@ -6280,7 +6369,8 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
 Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_0000231>
         <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
         <rdfs:comment>The notion of a &apos;contextual allele&apos; derives from the ClinGen Allele model. Here, each genetic allele in a patient corresponds to a single &apos;canonical allele&apos;, which in turn may aggregate any number of &apos;contextual allele&apos; representations that are may be defined against different reference sequences. Accordingly, many contextual alleles can describe a single canonical allele. For example, the contextual alleles “NC_000013.11:g.32319070T&gt;A” and “NG_012772.3:g.8591T&gt;A” both describe the same underlying canonical allele, a single nucleotide variation, in the BRCA2 gene.</rdfs:comment>
-        <rdfs:label>obsolete_contextual allele</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete contextual allele</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6416,11 +6506,11 @@ A genomic genotype is an information artifact with a representational syntax tha
     <!-- http://purl.obolibrary.org/obo/GENO_0000901 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000901">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A quality inhering in a particular allele in virtue of its presence only in a particular type of cell in an organism (e.g. somatic vs germ cells)</obo:IAO_0000115>
         <obo:IAO_0000231>decided this attribute is not needed, and moved its child &apos;germline&apos; and &apos;somatic&apos; concepts under allele origin</obo:IAO_0000231>
         <rdfs:comment>Cellular context of an allele is typically defined in the context of evaluating an individual organism, as alleles that are somatic in one organism can be germline in others.</rdfs:comment>
-        <rdfs:label>obsolete_allele cellular context</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete allele cellular context</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6491,6 +6581,7 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000910">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:label xml:lang="en">obsolete reporter role</rdfs:label>
         <rdfs:label xml:lang="en">reporter</rdfs:label>
     </owl:Class>
     
@@ -6500,6 +6591,7 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000911">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000788"/>
+        <rdfs:label xml:lang="en">obsolete selectable marker role</rdfs:label>
         <rdfs:label xml:lang="en">selectable marker</rdfs:label>
     </owl:Class>
     
@@ -6533,7 +6625,6 @@ For example, we would define an  &apos;HLA gene block&apos; as a subclass of &ap
     <!-- http://purl.obolibrary.org/obo/GENO_0000915 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000915">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A haplotype is an allele that represents one of many possible versions of a &apos;haplotype block&apos;, which defines a region of genomic sequence that is typically &apos;co-inherited&apos; across generations due to a lack of historically observed recombination within it.</obo:IAO_0000115>
         <obo:IAO_0000116>Former comment: &quot;Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case - e.g. &apos;SNP allele&apos; haplotypes are identified and analysed in studies to uncover the genetic basis of common disease by efforts like the International HapMap Project.&quot;</obo:IAO_0000116>
         <obo:IAO_0000119>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype and http://purl.obolibrary.org/obo/SO_0001024 ! haplotype.</obo:IAO_0000119>
@@ -6555,7 +6646,8 @@ b. The second is a region containing multiple linked single nucleotide polymorph
 c. A third, which is related to the previous case, occurs when the extent of region containing linked SNPs is that of a single gene.  In this case, the haplotype represents a &apos;gene allele&apos; - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.
 
 The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
-        <rdfs:label xml:lang="en">obsolete_haplotype</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete haplotype</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6563,7 +6655,6 @@ The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and a
     <!-- http://purl.obolibrary.org/obo/GENO_0000916 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000916">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequences it contain are typically co-inherited/transmitted across generations.</obo:IAO_0000115>
         <obo:IAO_0000119>Derived from DOI: 10.1126/science.1069424 and http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block.</obo:IAO_0000119>
         <obo:IAO_0000231>Decided to represent haplotypes as collections of discrete alleles, rather than continuous features defined by such sets.</obo:IAO_0000231>
@@ -6574,7 +6665,8 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 -----------------------
 
 * One difference however is that gene instnaces are necessarily &apos;functional&apos; - so non-functional  alleles of a gene locus wont qualify as gene instances. no such requirement exists for haplotype block instnaces.</rdfs:comment>
-        <rdfs:label xml:lang="en">obsolete_haplotype block</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete haplotype block</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6656,7 +6748,6 @@ A set may also include multiple copies of the same sequence. For example, in a &
     <!-- http://purl.obolibrary.org/obo/GENO_0000923 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000923">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A set of all features representing *functional* versions of a specified sequence (typically that of a gene) in a particular genome.</obo:IAO_0000115>
         <obo:IAO_0000116>Formerly considered modeling this as an informational entity, defined as &quot;An information entity that describes the total number of functional copies of a gene or region of sequence in a particular genome.&quot;</obo:IAO_0000116>
         <obo:IAO_0000118>functional feature complement</obo:IAO_0000118>
@@ -6664,7 +6755,8 @@ A set may also include multiple copies of the same sequence. For example, in a &
         <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000963.</obo:IAO_0000231>
         <rdfs:comment>As for copy number complements, the defining &apos;sequence&apos; here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a functional copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify if that alteration eliminates the function of the allele.  This represents an important distinction between &apos;copy number&apos; and &apos;functional copy number&apos;. The former is not concerned with the functionality of sequence copies - only that there is a duplication of sequence in the genome. Thus, the addition of a non-functional allele of a gene will increase its copy number, but not increase its &apos;functional copy number (aka its dosage).</rdfs:comment>
         <rdfs:comment>The notion of &apos;functional copy number&apos; (aka &apos;genetic dosage&apos;) describes how many &apos;functional&apos; copies of a sequence are present in a genome - i.e. sequences that retain their normal activity and/or produce gene products that retain their normal activity.  In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.</rdfs:comment>
-        <rdfs:label>obsolete_functional copy number complement</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete functional copy number complement</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6672,9 +6764,9 @@ A set may also include multiple copies of the same sequence. For example, in a &
     <!-- http://purl.obolibrary.org/obo/GENO_0000924 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000924">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature attribute that reflects feature-level characteristics that depend only on the sequence, location, or genomic context of a feature  or  collection, but are independent of how it may be concretized in physical form.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">obsolete_intrinsic sequence feature attribute</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete intrinsic sequence feature attribute</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6682,9 +6774,9 @@ A set may also include multiple copies of the same sequence. For example, in a &
     <!-- http://purl.obolibrary.org/obo/GENO_0000925 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000925">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A sequence feature attribute that reflects characteristics of the physical molecule in which the feature is concretized (e.g. its cellular context, source of origin, etc.)</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">obsolete_extrinsic sequence feature attribute</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete extrinsic sequence feature attribute</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6977,14 +7069,14 @@ A set may also include multiple copies of the same sequence. For example, in a &
     <!-- http://purl.obolibrary.org/obo/GENO_0000955 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000955">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000956"/>
         <obo:IAO_0000115>A copy number complement&apos; that has an abnormal number of members (e.g. more or less than two for an autosomal sequence in a diploid genome, as a result of deletion or duplication event(s).</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">copy number variation</obo:IAO_0000118>
         <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level.</obo:IAO_0000231>
         <rdfs:comment>In a &apos;normal&apos; diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s).
 
 Note that the &apos;copy number variation&apos; class in GENO is related to but ontologically distinct form the SO &apos;copy_number_variation&apos; class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set is in conflict with the genome&apos;s normal ploidy (e.g. not two for a diploid genome). The SO class, which is defined as a sequence feature level concept and therefore represents a single continuous extent of sequence, refers to a single copy of duplicated (or deleted) sequence that comprises the set defined by the GENO CNV class.</rdfs:comment>
-        <rdfs:label>obsolete_variant copy number complement</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete variant copy number complement</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -6992,7 +7084,6 @@ Note that the &apos;copy number variation&apos; class in GENO is related to but 
     <!-- http://purl.obolibrary.org/obo/GENO_0000956 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000956">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A set of all features in a particular genome whose sequence aligns with a particular location on a reference genome.  Such features are typically on the scale of complete genes or larger.</obo:IAO_0000115>
         <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000961.</obo:IAO_0000231>
         <rdfs:comment>1. Features described by &apos;copy number&apos; are larger regions of sequence spanning one or more complete genes, or large chromosomal segment. Copies of these regions often become distributed across a genome at unknown locations. By contrast, short repeats, such as tri-nucelotide &apos;CAG&apos; repeats in the Huntingtin gene, occur at defined locations (adjacent to the originating &apos;CAG&apos; sequence), and can therefore be modeled as proper alleles.  
@@ -7000,7 +7091,8 @@ Note that the &apos;copy number variation&apos; class in GENO is related to but 
 2. A copy number complement, like any sequence feature complement, is a set of features in a particular genome that meet some criterion. The criterion in this case is that their sequence maps to that of a particular location in a reference sequence.  So a copy number complement is the set of all features that share or align with a specified sequence defined on some reference. The sequence of member sequences need not exactly match that of the reference, as copies may accrue some alterations. What is important is that conceptually they represent exact or inexact copies of the reference sequence at a defining location.
 
 3. In a &apos;normal&apos; diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s). In GENO, a &apos;copy number variation&apos; refers to a copy number complement&apos; that has an abnormal number of members.</rdfs:comment>
-        <rdfs:label xml:lang="en">obsolete_copy number complement</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete copy number complement</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -7678,11 +7770,11 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/PATO_0000016 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000016">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000116>&apos;Value&apos; label chosen here according to http://www.uwgb.edu/heuerc/2D/ColorTerms.html</obo:IAO_0000116>
         <obo:IAO_0000116>Was parent of chromosomal band intensity before moving this class to live as a sequence feature attribute.</obo:IAO_0000116>
         <obo:IAO_0000118>color value</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">obsolete_color brightness</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete color brightness</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -7828,9 +7920,9 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/SO_0000143 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000143">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001410"/>
         <obo:IAO_0000115>A region of known length which may be used to manufacture a longer region.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">obsolete_assembly_component</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete assembly_component</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -7838,9 +7930,9 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/SO_0000149 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000149">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000143"/>
         <obo:IAO_0000115>A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N&apos;s from unavailable bases.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">obsolete_contig</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete contig</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -8016,9 +8108,9 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
     <!-- http://purl.obolibrary.org/obo/SO_0000637 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000637">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000116>Obsoleted as we didnt want to commit to constructs being plasmids - but rather wanted a classification of more general types of engineered regions used to replicate and deliver sequence to target cells/genomes. Replaced by GENO:0000856 ! engineered genetic construct.</obo:IAO_0000116>
-        <rdfs:label xml:lang="en">obsolete_engineered_plasmid</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete engineered_plasmid</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -8289,10 +8381,10 @@ For a particular instance of a sequence alteration, howver, we may in some cases
     <!-- http://purl.obolibrary.org/obo/SO_0001410 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001410">
-        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115>A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer.</obo:IAO_0000115>
         <obo:IAO_0000231>not currently needed to support modeling use cases. can re-introduce if becomes necessary.</obo:IAO_0000231>
-        <rdfs:label xml:lang="en">obsolete_experimental_feature</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete experimental_feature</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -8979,12 +9071,6 @@ For a particular instance of a sequence alteration, howver, we may in some cases
     <owl:Class rdf:about="http://www.geneontology.org/formats/oboInOwl#Definition">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000102"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#ObsoleteClass -->
-
-    <owl:Class rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
     
 
 
