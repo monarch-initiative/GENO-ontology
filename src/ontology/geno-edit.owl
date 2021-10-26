@@ -3422,7 +3422,7 @@ SubClassOf(obo:GENO_0000879 obo:GENO_0000888)
 
 # Class: obo:GENO_0000880 (de novo allele origin)
 
-AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000880 "Describes an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis.")
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000880 "Describes an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis. De novo alleles are* heritable* but *not inherited*.")
 AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000880 "Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/de-novo-mutation  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation")
 AnnotationAssertion(rdfs:comment obo:GENO_0000880 "We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed constitutively  in either parent, but can be passed to offspring in virtue of their being present in the individual's germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. 
 		
@@ -4039,6 +4039,7 @@ SubClassOf(obo:GENO_0000972 obo:GENO_0000969)
 
 # Class: obo:GENO_0000974 (inherited allele origin)
 
+AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000974 "exploratory")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000974 "Describes an allele that is inherited from a parent.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000974 "Need to consider if/how this is different than 'germline allele origin'.
 
@@ -4048,6 +4049,7 @@ SubClassOf(obo:GENO_0000974 obo:GENO_0000877)
 
 # Class: obo:GENO_0000975 (uniparental allele origin)
 
+AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000975 "exploratory")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000975 "Describes an allele that is part of an allelic complement where both alleles are inherited from the same parent.")
 AnnotationAssertion(rdfs:comment obo:GENO_0000975 "From Wikidedia: Uniparental inheritance is a non-mendelian form of inheritance that consists of the transmission of genotypes from one parental type to all progeny. That is, all the genes in offspring will originate from only the mother or only the father. This phenomenon is most commonly observed in eukaryotic organelles such as mitochondria and chloroplasts. 
 https://en.wikipedia.org/wiki/Uniparental_inheritance")
@@ -4056,6 +4058,7 @@ SubClassOf(obo:GENO_0000975 obo:GENO_0000974)
 
 # Class: obo:GENO_0000976 (biparental allele origin)
 
+AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000976 "exploratory")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000976 "Describes an allele that is part of an allelic complement where one allele is maternally inherited  and other paternally inherited.")
 AnnotationAssertion(rdfs:comment obo:GENO_0000976 "Biparental inheritance of alleles is typical of normal mendelian inheritance, where offspring inherit a maternal and a paternal copies of a given gene.")
 AnnotationAssertion(rdfs:label obo:GENO_0000976 "biparental allele origin"@en)
