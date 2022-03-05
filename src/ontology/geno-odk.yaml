@@ -1,6 +1,7 @@
 id: geno
 title: "GENO ontology"
 github_org: monarch-initiative
+git_main_branch: develop
 repo: GENO-ontology
 report_fail_on: None
 export_formats:
@@ -14,6 +15,8 @@ primary_release: full
 import_group:
   products:
     - id: ro
+    - id: omo
+      module_type: mirror
   #  - id: iao
   #  - id: faldo
   #  - id: go

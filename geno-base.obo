@@ -1,10 +1,11 @@
 format-version: 1.2
-data-version: geno/releases/2020-03-08/geno-base.owl
+data-version: geno/releases/2022-03-05/geno-base.owl
 ontology: geno/geno-base
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
-property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
-property_value: http://purl.org/dc/terms/license "Unspecified" xsd:string
+property_value: http://purl.org/dc/elements/1.1/type IAO:8000001
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by-sa/2.0/
+property_value: owl:versionInfo "2022-03-05" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1638,8 +1639,8 @@ property_value: IAO:0000118 "paternally inherited" xsd:string
 [Term]
 id: GENO:0000880
 name: de novo allele origin
-def: "Describes an attribute describing an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis." []
-comment: We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed in either parent, but can be passed to offspring in virtue of their being present in the individual's germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. \n		\nDe novo variants appear for the first time in one family member. They often explain genetic disorders in which an affected child has a mutation in every cell in the body but the parents do not, and there is no family history of the disorder.
+def: "Describes an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis. De novo alleles are* heritable* but *not inherited*." []
+comment: We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed constitutively  in either parent, but can be passed to offspring in virtue of their being present in the individual's germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. \n		\nDe novo variants appear for the first time in one family member. They often explain genetic disorders in which an affected child has a mutation in every cell in the body but the parents do not, and there is no family history of the disorder.
 is_a: GENO:0000877 ! allele origin
 property_value: IAO:0000119 "Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/de-novo-mutation  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation" xsd:string
 
@@ -1688,9 +1689,9 @@ relationship: RO:0002351 NCBITaxon:8090 ! has member Oryzias latipes
 [Term]
 id: GENO:0000888
 name: germline allele origin
-def: "Describes an allele that is inherited from a parent in virtue of the allele being present in one or both of the parent's germ cells (sperm or egg)." []
-comment: We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. Germline variants are both *inherited* (passed down from a parent) and *heritable* (passable down to offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  De novo mutations in germ cells are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present a germ cells.
-is_a: GENO:0000877 ! allele origin
+def: "Describes an allele that is inherited from a parent in virtue of the allele being present in the germline of one of the parents." []
+comment: We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. Germline variants are both *inherited* (present constitutively in a parent and passed down to offspring) and *heritable* (passable down to future offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  Traits caused by de novo mutations in germ cells are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present a germ cells.
+is_a: GENO:0000974 ! inherited allele origin
 property_value: IAO:0000118 "hereditary" xsd:string
 property_value: IAO:0000118 "parental origin" xsd:string
 property_value: IAO:0000118 "parentally inherited" xsd:string
@@ -2177,6 +2178,30 @@ name: chromosomal rearrangement inheritance
 def: "An inheritance pattern wherein the trait is determined by inheritance of translocation or inversion of sections of one or more chromosomes, possibly together with environmental factors." []
 is_a: GENO:0000969 ! chromosomal inheritance
 property_value: IAO:0000119 "Alliance of Genomic Resources" xsd:string
+
+[Term]
+id: GENO:0000974
+name: inherited allele origin
+def: "Describes an allele that is inherited from a parent." []
+is_a: GENO:0000877 ! allele origin
+property_value: IAO:0000114 "exploratory" xsd:string
+property_value: IAO:0000116 "Need to consider if/how this is different than 'germline allele origin'.\n\nOne scenario that potentially distinguishes them is the case where a de novo mutation occurs in the germ cells of a parent, and is passed to offspring.  This does not qualify as 'germline allele origin', as currently defined.  But it would qualify as 'inherited'" xsd:string
+
+[Term]
+id: GENO:0000975
+name: uniparental allele origin
+def: "Describes an allele that is part of an allelic complement where both alleles are inherited from the same parent." []
+comment: From Wikidedia: Uniparental inheritance is a non-mendelian form of inheritance that consists of the transmission of genotypes from one parental type to all progeny. That is, all the genes in offspring will originate from only the mother or only the father. This phenomenon is most commonly observed in eukaryotic organelles such as mitochondria and chloroplasts. \nhttps://en.wikipedia.org/wiki/Uniparental_inheritance
+is_a: GENO:0000974 ! inherited allele origin
+property_value: IAO:0000114 "exploratory" xsd:string
+
+[Term]
+id: GENO:0000976
+name: biparental allele origin
+def: "Describes an allele that is part of an allelic complement where one allele is maternally inherited  and other paternally inherited." []
+comment: Biparental inheritance of alleles is typical of normal mendelian inheritance, where offspring inherit a maternal and a paternal copies of a given gene.
+is_a: GENO:0000974 ! inherited allele origin
+property_value: IAO:0000114 "exploratory" xsd:string
 
 [Term]
 id: GO:0032502

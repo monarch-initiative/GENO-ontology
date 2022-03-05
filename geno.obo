@@ -1,9 +1,10 @@
 format-version: 1.2
-data-version: releases/2020-03-08
+data-version: releases/2022-03-05
 ontology: geno
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
-property_value: http://purl.org/dc/terms/license "Unspecified" xsd:string
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by-sa/2.0/
+property_value: owl:versionInfo "2022-03-05" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -204,14 +205,6 @@ name: cell line
 def: "A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history (i.e. has been successively passaged together in culture)." []
 is_a: GENO:0000904 ! organismal entity
 relationship: RO:0001000 OBI:0100026 ! derives from organism
-
-[Term]
-id: DbXref
-is_a: IAO:0000102 ! data about an ontology part
-
-[Term]
-id: Definition
-is_a: IAO:0000102 ! data about an ontology part
 
 [Term]
 id: ENVO:01000254
@@ -1689,8 +1682,8 @@ property_value: IAO:0000118 "paternally inherited" xsd:string
 [Term]
 id: GENO:0000880
 name: de novo allele origin
-def: "Describes an attribute describing an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis." []
-comment: We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed in either parent, but can be passed to offspring in virtue of their being present in the individual's germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. \n		\nDe novo variants appear for the first time in one family member. They often explain genetic disorders in which an affected child has a mutation in every cell in the body but the parents do not, and there is no family history of the disorder.
+def: "Describes an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis. De novo alleles are* heritable* but *not inherited*." []
+comment: We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed constitutively  in either parent, but can be passed to offspring in virtue of their being present in the individual's germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. \n		\nDe novo variants appear for the first time in one family member. They often explain genetic disorders in which an affected child has a mutation in every cell in the body but the parents do not, and there is no family history of the disorder.
 is_a: GENO:0000877 ! allele origin
 property_value: IAO:0000119 "Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/de-novo-mutation  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation" xsd:string
 
@@ -1740,9 +1733,9 @@ relationship: RO:0002351 NCBITaxon:8090 ! has member Oryzias latipes
 [Term]
 id: GENO:0000888
 name: germline allele origin
-def: "Describes an allele that is inherited from a parent in virtue of the allele being present in one or both of the parent's germ cells (sperm or egg)." []
-comment: We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. Germline variants are both *inherited* (passed down from a parent) and *heritable* (passable down to offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  De novo mutations in germ cells are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present a germ cells.
-is_a: GENO:0000877 ! allele origin
+def: "Describes an allele that is inherited from a parent in virtue of the allele being present in the germline of one of the parents." []
+comment: We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. Germline variants are both *inherited* (present constitutively in a parent and passed down to offspring) and *heritable* (passable down to future offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  Traits caused by de novo mutations in germ cells are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present a germ cells.
+is_a: GENO:0000974 ! inherited allele origin
 property_value: IAO:0000118 "hereditary" xsd:string
 property_value: IAO:0000118 "parental origin" xsd:string
 property_value: IAO:0000118 "parentally inherited" xsd:string
@@ -2235,6 +2228,30 @@ is_a: GENO:0000969 ! chromosomal inheritance
 property_value: IAO:0000119 "Alliance of Genomic Resources" xsd:string
 
 [Term]
+id: GENO:0000974
+name: inherited allele origin
+def: "Describes an allele that is inherited from a parent." []
+is_a: GENO:0000877 ! allele origin
+property_value: IAO:0000114 "exploratory" xsd:string
+property_value: IAO:0000116 "Need to consider if/how this is different than 'germline allele origin'.\n\nOne scenario that potentially distinguishes them is the case where a de novo mutation occurs in the germ cells of a parent, and is passed to offspring.  This does not qualify as 'germline allele origin', as currently defined.  But it would qualify as 'inherited'" xsd:string
+
+[Term]
+id: GENO:0000975
+name: uniparental allele origin
+def: "Describes an allele that is part of an allelic complement where both alleles are inherited from the same parent." []
+comment: From Wikidedia: Uniparental inheritance is a non-mendelian form of inheritance that consists of the transmission of genotypes from one parental type to all progeny. That is, all the genes in offspring will originate from only the mother or only the father. This phenomenon is most commonly observed in eukaryotic organelles such as mitochondria and chloroplasts. \nhttps://en.wikipedia.org/wiki/Uniparental_inheritance
+is_a: GENO:0000974 ! inherited allele origin
+property_value: IAO:0000114 "exploratory" xsd:string
+
+[Term]
+id: GENO:0000976
+name: biparental allele origin
+def: "Describes an allele that is part of an allelic complement where one allele is maternally inherited  and other paternally inherited." []
+comment: Biparental inheritance of alleles is typical of normal mendelian inheritance, where offspring inherit a maternal and a paternal copies of a given gene.
+is_a: GENO:0000974 ! inherited allele origin
+property_value: IAO:0000114 "exploratory" xsd:string
+
+[Term]
 id: GO:0032502
 name: developmental process
 def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition. [database_cross_reference: GOC:isa_complete]" []
@@ -2257,6 +2274,7 @@ property_value: IAO:0000119 "A spatiotemporal region encompassing some part of t
 id: IAO:0000027
 name: data item
 is_a: IAO:0000030 ! information content entity
+property_value: IAO:0000111 "data item" xsd:string
 
 [Term]
 id: IAO:0000030
@@ -2285,8 +2303,9 @@ property_value: IAO:0000119 "OBI_0000266" xsd:string
 [Term]
 id: IAO:0000102
 name: data about an ontology part
-def: "data about an ontology part is a data item about a part of an ontology, for example a term" []
+def: "Data about an ontology part is a data item about a part of an ontology, for example a term" []
 is_a: IAO:0000027 ! data item
+property_value: IAO:0000111 "data about an ontology part" xsd:string
 property_value: IAO:0000117 "Person:Alan Ruttenberg" xsd:string
 property_value: IAO:0000118 "ontology metadata" xsd:string
 
@@ -2306,6 +2325,7 @@ id: IAO:0000409
 name: denotator type
 def: "A denotator type indicates how a term should be interpreted from an ontological perspective." []
 is_a: IAO:0000102 ! data about an ontology part
+property_value: IAO:0000111 "denotator type" xsd:string
 property_value: IAO:0000112 "The Basic Formal Ontology ontology makes a distinction between Universals and defined classes, where the formal are \"natural kinds\" and the latter arbitrary collections of entities." xsd:string
 property_value: IAO:0000117 "Alan Ruttenberg" xsd:string
 property_value: IAO:0000119 "Barry Smith, Werner Ceusters" xsd:string
@@ -2314,189 +2334,168 @@ property_value: IAO:0000119 "Barry Smith, Werner Ceusters" xsd:string
 id: IAO:8000000
 name: ontology module
 is_a: IAO:0000102 ! data about an ontology part
+property_value: IAO:0000111 "ontology module" xsd:string
 property_value: IAO:0000116 "I have placed this under 'data about an ontology part', but this can be discussed. I think this is OK if 'part' is interpreted reflexively, as an ontology module is the whole ontology rather than part of it." xsd:string
 property_value: IAO:0000118 "ontology file" xsd:string
 property_value: IAO:0000232 "This class and it's subclasses are applied to OWL ontologies. Using an rdf:type triple will result in problems with OWL-DL. I propose that dcterms:type is instead used to connect an ontology URI with a class from this hierarchy. The class hierarchy is not disjoint, so multiple assertions can be made about a single ontology." xsd:string
-created_by: cjm
-creation_date: 2018-05-20T20:55:03Z
 
 [Term]
 id: IAO:8000001
 name: base ontology module
 def: "An ontology module that comprises only of asserted axioms local to the ontology, excludes import directives, and excludes axioms or declarations from external ontologies." []
 is_a: IAO:8000000 ! ontology module
+property_value: IAO:0000111 "base ontology module" xsd:string
 property_value: seeAlso https://github.com/INCATools/ontology-starter-kit/issues/50
-created_by: cjm
-creation_date: 2018-05-20T20:55:30Z
 
 [Term]
 id: IAO:8000002
 name: editors ontology module
 def: "An ontology module that is intended to be directly edited, typically managed in source control, and typically not intended for direct consumption by end-users." []
 is_a: IAO:8000000 ! ontology module
+property_value: IAO:0000111 "editors ontology module" xsd:string
 property_value: IAO:0000118 "source ontology module" xsd:string
-created_by: cjm
-creation_date: 2018-05-20T20:55:47Z
 
 [Term]
 id: IAO:8000003
 name: main release ontology module
 def: "An ontology module that is intended to be the primary release product and the one consumed by the majority of tools." []
 is_a: IAO:8000000 ! ontology module
+property_value: IAO:0000111 "main release ontology module" xsd:string
 property_value: IAO:0000116 "TODO: Add logical axioms that state that a main release ontology module is derived from (directly or indirectly) an editors module" xsd:string
-created_by: cjm
-creation_date: 2018-05-20T20:56:13Z
 
 [Term]
 id: IAO:8000004
 name: bridge ontology module
 def: "An ontology module that consists entirely of axioms that connect or bridge two distinct ontology modules. For example, the Uberon-to-ZFA bridge module." []
 is_a: IAO:8000000 ! ontology module
+property_value: IAO:0000111 "bridge ontology module" xsd:string
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/inter-anatomy-ontology-bridge-ontologies
-created_by: cjm
-creation_date: 2018-05-20T20:56:23Z
 
 [Term]
 id: IAO:8000005
 name: import ontology module
 def: "A subset ontology module that is intended to be imported from another ontology." []
 is_a: IAO:8000006 ! subset ontology module
+property_value: IAO:0000111 "import ontology module" xsd:string
 property_value: IAO:0000116 "TODO: add axioms that indicate this is the output of a module extraction process." xsd:string
 property_value: IAO:0000118 "import file" xsd:string
 property_value: seeAlso http://robot.obolibrary.org/extract
-created_by: cjm
-creation_date: 2018-05-20T20:56:47Z
 
 [Term]
 id: IAO:8000006
 name: subset ontology module
 def: "An ontology module that is extracted from a main ontology module and includes only a subset of entities or axioms." []
 is_a: IAO:8000000 ! ontology module
+property_value: IAO:0000111 "subset ontology module" xsd:string
 property_value: IAO:0000118 "ontology slim" xsd:string
 property_value: IAO:0000118 "subset ontology" xsd:string
 property_value: seeAlso http://robot.obolibrary.org/filter
 property_value: seeAlso http://www.geneontology.org/page/go-slim-and-subset-guide
-created_by: cjm
-creation_date: 2018-05-20T20:58:11Z
 
 [Term]
 id: IAO:8000007
 name: curation subset ontology module
 def: "A subset ontology that is intended as a whitelist for curators using the ontology. Such a subset will exclude classes that curators should not use for curation." []
 is_a: IAO:8000006 ! subset ontology module
-created_by: cjm
-creation_date: 2018-05-20T20:58:38Z
+property_value: IAO:0000111 "curation subset ontology module" xsd:string
 
 [Term]
 id: IAO:8000008
 name: analysis subset ontology module
 def: "An ontology module that is intended for usage in analysis or discovery applications." []
 is_a: IAO:8000006 ! subset ontology module
-created_by: cjm
-creation_date: 2018-05-20T20:58:49Z
+property_value: IAO:0000111 "analysis ontology module" xsd:string
 
 [Term]
 id: IAO:8000009
 name: single layer subset ontology module
 def: "A subset ontology that is largely comprised of a single layer or strata in an ontology class hierarchy. The purpose is typically for rolling up for visualization. The classes in the layer need not be disjoint." []
 is_a: IAO:8000006 ! subset ontology module
+property_value: IAO:0000111 "single layer ontology module" xsd:string
 property_value: IAO:0000118 "ribbon subset" xsd:string
-created_by: cjm
-creation_date: 2018-05-20T20:59:19Z
 
 [Term]
 id: IAO:8000010
 name: exclusion subset ontology module
 def: "A subset of an ontology that is intended to be excluded for some purpose. For example, a blacklist of classes." []
 is_a: IAO:8000006 ! subset ontology module
+property_value: IAO:0000111 "exclusion subset ontology module" xsd:string
 property_value: IAO:0000118 "antislim" xsd:string
-created_by: cjm
-creation_date: 2018-05-20T20:59:57Z
 
 [Term]
 id: IAO:8000011
 name: external import ontology module
 def: "An imported ontology module that is derived from an external ontology. Derivation methods include the OWLAPI SLME approach." []
 is_a: IAO:8000005 ! import ontology module
+property_value: IAO:0000111 "external import ontology module" xsd:string
 property_value: IAO:0000118 "external import" xsd:string
-created_by: cjm
-creation_date: 2018-05-20T21:00:14Z
 
 [Term]
 id: IAO:8000012
 name: species subset ontology module
 def: "A subset ontology that is crafted to either include or exclude a taxonomic grouping of species." []
 is_a: IAO:8000006 ! subset ontology module
+property_value: IAO:0000111 "species subset ontology module" xsd:string
 property_value: IAO:0000118 "taxon subset" xsd:string
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Taxon-constraints
-created_by: cjm
-creation_date: 2018-05-20T21:14:16Z
 
 [Term]
 id: IAO:8000013
 name: reasoned ontology module
 def: "An ontology module that contains axioms generated by a reasoner. The generated axioms are typically direct SubClassOf axioms, but other possibilities are available." []
 is_a: IAO:8000000 ! ontology module
+property_value: IAO:0000111 "reasoned ontology module" xsd:string
 property_value: seeAlso http://robot.obolibrary.org/reason
-created_by: cjm
-creation_date: 2018-05-20T21:20:33Z
 
 [Term]
 id: IAO:8000014
 name: generated ontology module
 def: "An ontology module that is automatically generated, for example via a SPARQL query or via template and a CSV." []
 is_a: IAO:8000000 ! ontology module
+property_value: IAO:0000111 "generated ontology module" xsd:string
 property_value: IAO:0000116 "TODO: Add axioms (using PROV-O?) that indicate this is the output-of some reasoning process" xsd:string
-created_by: cjm
-creation_date: 2018-05-20T21:21:12Z
 
 [Term]
 id: IAO:8000015
 name: template generated ontology module
 def: "An ontology module that is automatically generated from a template specification and fillers for slots in that template." []
 is_a: IAO:8000014 ! generated ontology module
+property_value: IAO:0000111 "template generated ontology module" xsd:string
 property_value: seeAlso http://robot.obolibrary.org/template
 property_value: seeAlso https://doi.org/10.1186/s13326-017-0126-0
 property_value: seeAlso https://github.com/dosumis/dead_simple_owl_design_patterns/
-created_by: cjm
-creation_date: 2018-05-20T21:21:21Z
 
 [Term]
 id: IAO:8000016
 name: taxonomic bridge ontology module
 is_a: IAO:8000004 ! bridge ontology module
-created_by: cjm
-creation_date: 2018-05-20T21:28:15Z
+property_value: IAO:0000111 "taxonomic bridge ontology module" xsd:string
 
 [Term]
 id: IAO:8000017
 name: ontology module subsetted by expressivity
 is_a: IAO:8000006 ! subset ontology module
-created_by: cjm
-creation_date: 2018-05-22T04:15:54Z
+property_value: IAO:0000111 "ontology module subsetted by expressivity" xsd:string
 
 [Term]
 id: IAO:8000018
 name: obo basic subset ontology module
 def: "A subset ontology that is designed for basic applications to continue to make certain simplifying assumptions; many of these simplifying assumptions were based on the initial version of the Gene Ontology, and have become enshrined in many popular and useful tools such as term enrichment tools.\n\nExamples of such assumptions include: traversing the ontology graph ignoring relationship types using a naive algorithm will not lead to cycles (i.e. the ontology is a DAG); every referenced term is declared in the ontology (i.e. there are no dangling clauses).\n\nAn ontology is OBO Basic if and only if it has the following characteristics:\nDAG\nUnidirectional\nNo Dangling Clauses\nFully Asserted\nFully Labeled\nNo equivalence axioms\nSingly labeled edges\nNo qualifier lists\nNo disjointness axioms\nNo owl-axioms header\nNo imports" []
 is_a: IAO:8000017 ! ontology module subsetted by expressivity
+property_value: IAO:0000111 "obo basic subset ontology module" xsd:string
 property_value: seeAlso "6.2"
-created_by: cjm
-creation_date: 2018-05-22T04:16:10Z
 
 [Term]
 id: IAO:8000019
 name: ontology module subsetted by OWL profile
 is_a: IAO:8000017 ! ontology module subsetted by expressivity
-created_by: cjm
-creation_date: 2018-05-22T04:16:28Z
+property_value: IAO:0000111 "ontology module subsetted by OWL profile" xsd:string
 
 [Term]
 id: IAO:8000020
 name: EL++ ontology module
 is_a: IAO:8000019 ! ontology module subsetted by OWL profile
-created_by: cjm
-creation_date: 2018-05-22T04:16:48Z
+property_value: IAO:0000111 "EL++ ontology module" xsd:string
 
 [Term]
 id: MP:0000001
@@ -3252,18 +3251,6 @@ id: StrandedPosition
 name: Stranded position
 comment: Part of the coordinate system denoting on which strand the feature can be found. If you do not yet know which stand the feature is on, you should tag the position with just this class. If you know more you should use one of the subclasses. This means a region described with a '.' in GFF3. A GFF3 unstranded position does not have this type in FALDO -- those are just a 'position'.
 is_a: Position ! Position
-
-[Term]
-id: Subset
-is_a: IAO:0000102 ! data about an ontology part
-
-[Term]
-id: Synonym
-is_a: IAO:0000102 ! data about an ontology part
-
-[Term]
-id: SynonymType
-is_a: IAO:0000102 ! data about an ontology part
 
 [Term]
 id: UBERON:0000105

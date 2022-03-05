@@ -32,3 +32,5 @@ src/patterns/data/**/*.ofn
 src/patterns/data/**/*.txt
 src/patterns/imports/seed_sorted.txt
 src/patterns/pattern_owl_seed.txt
+src/ontology/reports/validate_profile_owl2dl_geno.owl.txt
+src/ontology/imports/*_terms.txt
