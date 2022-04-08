@@ -11,13 +11,14 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/geno-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2020-03-08/geno-base.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2022-03-05/geno-base.owl"/>
         <dc:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dc:description>
         <dc:title>GENO ontology</dc:title>
-        <dc:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/IAO_8000001</dc:type>
-        <terms:license>Unspecified</terms:license>
+        <dc:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by-sa/2.0/"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-03-05</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -5603,9 +5604,9 @@ Duplications of a sequence can occur at new locations in the genome, such that t
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000880">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
-        <obo:IAO_0000115>Describes an attribute describing an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis.</obo:IAO_0000115>
+        <obo:IAO_0000115>Describes an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis. De novo alleles are* heritable* but *not inherited*.</obo:IAO_0000115>
         <obo:IAO_0000119>Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/de-novo-mutation  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation</obo:IAO_0000119>
-        <rdfs:comment>We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble&apos; by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed in either parent, but can be passed to offspring in virtue of their being present in the individual&apos;s germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. 
+        <rdfs:comment>We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble&apos; by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed constitutively  in either parent, but can be passed to offspring in virtue of their being present in the individual&apos;s germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. 
 		
 De novo variants appear for the first time in one family member. They often explain genetic disorders in which an affected child has a mutation in every cell in the body but the parents do not, and there is no family history of the disorder.</rdfs:comment>
         <rdfs:label xml:lang="en">de novo allele origin</rdfs:label>
@@ -5720,13 +5721,13 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
     <!-- http://purl.obolibrary.org/obo/GENO_0000888 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000888">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
-        <obo:IAO_0000115>Describes an allele that is inherited from a parent in virtue of the allele being present in one or both of the parent&apos;s germ cells (sperm or egg).</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000974"/>
+        <obo:IAO_0000115>Describes an allele that is inherited from a parent in virtue of the allele being present in the germline of one of the parents.</obo:IAO_0000115>
         <obo:IAO_0000118>hereditary</obo:IAO_0000118>
         <obo:IAO_0000118>parental origin</obo:IAO_0000118>
         <obo:IAO_0000118>parentally inherited</obo:IAO_0000118>
         <obo:IAO_0000119>Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/germline-variant  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation</obo:IAO_0000119>
-        <rdfs:comment>We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble&apos; by offspring. Germline variants are both *inherited* (passed down from a parent) and *heritable* (passable down to offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  De novo mutations in germ cells are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present a germ cells.</rdfs:comment>
+        <rdfs:comment>We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble&apos; by offspring. Germline variants are both *inherited* (present constitutively in a parent and passed down to offspring) and *heritable* (passable down to future offspring).  By contrast, somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  Traits caused by de novo mutations in germ cells are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present a germ cells.</rdfs:comment>
         <rdfs:label xml:lang="en">germline allele origin</rdfs:label>
     </owl:Class>
     
@@ -6618,6 +6619,45 @@ As we saw for &apos;copy number complement&apos;, the defining sequence here is 
         <obo:IAO_0000115>An inheritance pattern wherein the trait is determined by inheritance of translocation or inversion of sections of one or more chromosomes, possibly together with environmental factors.</obo:IAO_0000115>
         <obo:IAO_0000119>Alliance of Genomic Resources</obo:IAO_0000119>
         <rdfs:label xml:lang="en">chromosomal rearrangement inheritance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000974 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000974">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000877"/>
+        <obo:IAO_0000114>exploratory</obo:IAO_0000114>
+        <obo:IAO_0000115>Describes an allele that is inherited from a parent.</obo:IAO_0000115>
+        <obo:IAO_0000116>Need to consider if/how this is different than &apos;germline allele origin&apos;.
+
+One scenario that potentially distinguishes them is the case where a de novo mutation occurs in the germ cells of a parent, and is passed to offspring.  This does not qualify as &apos;germline allele origin&apos;, as currently defined.  But it would qualify as &apos;inherited&apos;</obo:IAO_0000116>
+        <rdfs:label xml:lang="en">inherited allele origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000975 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000975">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000974"/>
+        <obo:IAO_0000114>exploratory</obo:IAO_0000114>
+        <obo:IAO_0000115>Describes an allele that is part of an allelic complement where both alleles are inherited from the same parent.</obo:IAO_0000115>
+        <rdfs:comment>From Wikidedia: Uniparental inheritance is a non-mendelian form of inheritance that consists of the transmission of genotypes from one parental type to all progeny. That is, all the genes in offspring will originate from only the mother or only the father. This phenomenon is most commonly observed in eukaryotic organelles such as mitochondria and chloroplasts. 
+https://en.wikipedia.org/wiki/Uniparental_inheritance</rdfs:comment>
+        <rdfs:label xml:lang="en">uniparental allele origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000976 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000976">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000974"/>
+        <obo:IAO_0000114>exploratory</obo:IAO_0000114>
+        <obo:IAO_0000115>Describes an allele that is part of an allelic complement where one allele is maternally inherited  and other paternally inherited.</obo:IAO_0000115>
+        <rdfs:comment>Biparental inheritance of alleles is typical of normal mendelian inheritance, where offspring inherit a maternal and a paternal copies of a given gene.</rdfs:comment>
+        <rdfs:label xml:lang="en">biparental allele origin</rdfs:label>
     </owl:Class>
     
 
