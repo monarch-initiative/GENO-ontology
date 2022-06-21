@@ -25,7 +25,7 @@ Finally, GENO also supports modelling of G2P associations, focusing on the inter
 
 GENO  is orthogonal to but has contact points with a number of existing community ontologies, including the [Sequence Ontology (SO)](http://www.sequenceontology.org/), the [Human Phenotype Ontology (HPO)](http://www.human-phenotype-ontology.org/), the [Feature Annotation Location Description Ontology(FALDO)](https://github.com/JervenBolleman/FALDO), and the [Variation Ontology (VariO)](http://variationontology.org/). We will work with developers of these models to align representations and re-use common terms where possible. Further documentation for GENO is under development, but at present a high level overview of its core model can be found in the slide deck [here](https://github.com/monarch-initiative/GENO-ontology/blob/develop/docs/GENO_Overview(2017-02-24).pptx).
 
-GENO is an open source ontology, implemented in OWL2 under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/2.0/).
+GENO is an open source ontology, implemented in OWL2 under a [Creative Commons 4.0 BY license](https://creativecommons.org/licenses/by/4.0/).
 
 
 
