@@ -22,7 +22,7 @@ Annotation(dce:description "GENO is an OWL model of genotypes, their more fundam
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013")
 Annotation(dce:title "GENO ontology")
-Annotation(dcterms:license <https://creativecommons.org/licenses/by-sa/2.0/>)
+Annotation(dcterms:license <https://creativecommons.org/licenses/by/4.0/>)
 
 Declaration(Class(<http://biohackathon.org/resource/faldo#BothStrandsPosition>))
 Declaration(Class(<http://biohackathon.org/resource/faldo#ExactPosition>))
