@@ -1,4 +1,11 @@
 Level	Rule Name	Subject	Property	Value
+ERROR	duplicate_definition	has_qualifying_environment	IAO:0000115	A relation used to describe  an environment contextualizing the identity of an entity.
+ERROR	duplicate_definition	microsatellite alteration	IAO:0000115	A relation used to describe  an environment contextualizing the identity of an entity.
+ERROR	duplicate_definition	has_qualifying_process	IAO:0000115	A relation used to describe  a process contextualizing the identity of an entity.
+ERROR	duplicate_definition	repeat region alteration	IAO:0000115	A relation used to describe  a process contextualizing the identity of an entity.
+ERROR	duplicate_definition	intrinsic genotype	IAO:0000115	A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.
+ERROR	duplicate_definition	genomic genotype	IAO:0000115	A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.
+ERROR	duplicate_label	reference	rdfs:label	reference
 ERROR	misused_obsolete_label	obsolete_specifies	rdfs:label	obsolete_specifies
 ERROR	misused_obsolete_label	obsolete_approximates_sequence	rdfs:label	obsolete_approximates_sequence
 ERROR	misused_obsolete_label	obsolete_resolves_to_sequence	rdfs:label	obsolete_resolves_to_sequence
@@ -15,74 +22,21 @@ ERROR	misused_obsolete_label	obsolete_is_alteration_within	rdfs:label	obsolete_i
 ERROR	misused_obsolete_label	obsolete_has_position_component	rdfs:label	obsolete_has_position_component@en
 ERROR	misused_obsolete_label	reporter	rdfs:label	obsolete reporter role@en
 ERROR	misused_obsolete_label	selectable marker	rdfs:label	obsolete selectable marker role@en
-ERROR	misused_obsolete_label	obsolete_formed as result of	rdfs:label	obsolete_formed as result of@en
-ERROR	multiple_definitions	specifically dependent continuant	IAO:0000115	b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])@en
-ERROR	multiple_definitions	specifically dependent continuant	IAO:0000115	b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])@en
-ERROR	duplicate_label	reference	rdfs:label	reference
-ERROR	duplicate_label	reference	rdfs:label	reference
-ERROR	duplicate_definition	has_qualifying_environment	IAO:0000115	A relation used to describe  an environment contextualizing the identity of an entity.
-ERROR	duplicate_definition	microsatellite alteration	IAO:0000115	A relation used to describe  an environment contextualizing the identity of an entity.
-ERROR	duplicate_definition	has_qualifying_process	IAO:0000115	A relation used to describe  a process contextualizing the identity of an entity.
-ERROR	duplicate_definition	repeat region alteration	IAO:0000115	A relation used to describe  a process contextualizing the identity of an entity.
-ERROR	duplicate_definition	intrinsic genotype	IAO:0000115	A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.
-ERROR	duplicate_definition	genomic genotype	IAO:0000115	A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.
-ERROR	multiple_labels	continuant	rdfs:label	continuant
-ERROR	multiple_labels	continuant	rdfs:label	continuant@en
-ERROR	multiple_labels	occurrent	rdfs:label	occurrent
-ERROR	multiple_labels	occurrent	rdfs:label	occurrent@en
-ERROR	multiple_labels	independent continuant	rdfs:label	independent continuant
-ERROR	multiple_labels	independent continuant	rdfs:label	independent continuant@en
-ERROR	multiple_labels	process	rdfs:label	process
-ERROR	multiple_labels	process	rdfs:label	process@en
-ERROR	multiple_labels	disposition	rdfs:label	disposition
-ERROR	multiple_labels	disposition	rdfs:label	disposition@en
-ERROR	multiple_labels	realizable entity	rdfs:label	realizable entity
-ERROR	multiple_labels	realizable entity	rdfs:label	realizable entity@en
-ERROR	multiple_labels	quality	rdfs:label	quality
-ERROR	multiple_labels	quality	rdfs:label	quality@en
-ERROR	multiple_labels	specifically dependent continuant	rdfs:label	specifically dependent continuant
-ERROR	multiple_labels	specifically dependent continuant	rdfs:label	specifically dependent continuant@en
-ERROR	multiple_labels	role	rdfs:label	role
-ERROR	multiple_labels	role	rdfs:label	role@en
-ERROR	multiple_labels	generically dependent continuant	rdfs:label	generically dependent continuant
-ERROR	multiple_labels	generically dependent continuant	rdfs:label	generically dependent continuant@en
-ERROR	multiple_labels	material entity	rdfs:label	material entity
-ERROR	multiple_labels	material entity	rdfs:label	material entity@en
 ERROR	multiple_labels	reporter	rdfs:label	obsolete reporter role@en
 ERROR	multiple_labels	reporter	rdfs:label	reporter@en
 ERROR	multiple_labels	selectable marker	rdfs:label	obsolete selectable marker role@en
 ERROR	multiple_labels	selectable marker	rdfs:label	selectable marker@en
-ERROR	multiple_labels	information content entity	rdfs:label	information content entity
-ERROR	multiple_labels	information content entity	rdfs:label	information content entity@en
 WARN	annotation_whitespace	obsolete_approximates_sequence	IAO:0000116	Created subproperties 'approximates_sequence' and 'resolves to sequence'. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The 'resolves_to_sequence' property can be used when the sequence variant artifact is able to completely resolve a sequence, and the 'approximates_sequence' property can be used when it does not. 
 WARN	annotation_whitespace	obsolete_resolves_to_sequence	IAO:0000116	Created subproperties 'approximates_sequence' and 'resolves to sequence'. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The 'resolves_to_sequence' property can be used when the sequence variant artifact is able to completely resolve a sequence, and the 'approximates_sequence' property can be used when it does not. 
-WARN	annotation_whitespace	chromosome band	IAO:0000119	http://ghr.nlm.nih.gov/handbook/howgeneswork/genelocation and http://people.rit.edu/rhrsbi/GeneticsPages/Handouts/ChromosomeNomenclature.pdf, both of which define the nomenclature for the banding hierarchy we use here:chromosome > arm > region > band > sub-bandNote that an alternate nomenclature for this hierarchy is here (http://www.ncbi.nlm.nih.gov/Class/MLACourse/Original8Hour/Genetics/chrombanding.html):chromosome > arm > band > sub-band > sub-sub-band
+WARN	duplicate_label_synonym	reference sequence	IAO:0000118	reference sequence
+WARN	duplicate_label_synonym	wild-type allele	IAO:0000118	wild-type allele
+WARN	equivalent_class_axiom_no_genus	genomic sequence	is_sequence_of	genomic feature
 WARN	invalid_xref	background genome	oboInOwl:hasDbXref	OBI:genetic population background information
 WARN	invalid_xref	gene allele	oboInOwl:hasDbXref	SO:0001023 ! allele
 WARN	invalid_xref	obsolete sequence feature collection	oboInOwl:hasDbXref	perhaps not same as SO:sequence collection, as here we explicitly include features that can have an extent of zero (and SO:sequence collection is a collection of regions that have an extent of at least one)
 WARN	invalid_xref	variant genome	oboInOwl:hasDbXref	SO:0001506 ! variant_genome (definition of SO term here is too vague to know if has same meaning as GENO class here)
 WARN	invalid_xref	gene part	oboInOwl:hasDbXref	SO:0000831 (gene member region)
 WARN	invalid_xref	obsolete sequence feature collection	oboInOwl:hasDbXref	SO:0001260 ! sequence_collection
-WARN	equivalent_class_axiom_no_genus	genomic sequence	is_sequence_of	genomic feature
-WARN	duplicate_label_synonym	reference sequence	IAO:0000118	reference sequence
-WARN	duplicate_label_synonym	wild-type allele	IAO:0000118	wild-type allele
-WARN	duplicate_label_synonym	insertion	IAO:0000118	insertion
-WARN	duplicate_label_synonym	UPD	IAO:0000118	UPD
-WARN	duplicate_label_synonym	inversion	IAO:0000118	inversion
-WARN	missing_definition	Both strands	IAO:0000115	
-WARN	missing_definition	Positive strand	IAO:0000115	
-WARN	missing_definition	Negative strand	IAO:0000115	
-WARN	missing_definition	Stranded position	IAO:0000115	
-WARN	missing_definition	begin	IAO:0000115	
-WARN	missing_definition	end	IAO:0000115	
-WARN	missing_definition	location	IAO:0000115	
-WARN	missing_definition	position	IAO:0000115	
-WARN	missing_definition	is part of	IAO:0000115	
-WARN	missing_definition	has part	IAO:0000115	
-WARN	missing_definition	molecular entity	IAO:0000115	
-WARN	missing_definition	nucleic acid	IAO:0000115	
-WARN	missing_definition	cell	IAO:0000115	
-WARN	missing_definition	environmental system	IAO:0000115	
 WARN	missing_definition	gene trap insertion	IAO:0000115	
 WARN	missing_definition	taxonomic group	IAO:0000115	
 WARN	missing_definition	mus musculus strain	IAO:0000115	
@@ -166,67 +120,6 @@ WARN	missing_definition	reporter	IAO:0000115
 WARN	missing_definition	selectable marker	IAO:0000115	
 WARN	missing_definition	selectable marker region	IAO:0000115	
 WARN	missing_definition	mosaic	IAO:0000115	
-WARN	missing_definition	human phenotypic abnormality	IAO:0000115	
-WARN	missing_definition	human life cycle stage	IAO:0000115	
-WARN	missing_definition	data about an ontology part	IAO:0000115	
-WARN	missing_definition	mammalian phenotype	IAO:0000115	
-WARN	missing_definition	Mus musculus	IAO:0000115	
-WARN	missing_definition	Viruses	IAO:0000115	
-WARN	missing_definition	Danio rerio	IAO:0000115	
-WARN	missing_definition	Oryzias latipes	IAO:0000115	
-WARN	missing_definition	Homo sapiens	IAO:0000115	
-WARN	missing_definition	reagent role	IAO:0000115	
-WARN	missing_definition	organism	IAO:0000115	
-WARN	missing_definition	female	IAO:0000115	
-WARN	missing_definition	male	IAO:0000115	
-WARN	missing_definition	phenotypic sex	IAO:0000115	
-WARN	missing_definition	has role	IAO:0000115	
-WARN	missing_definition	derives from	IAO:0000115	
-WARN	missing_definition	starts during	IAO:0000115	
-WARN	missing_definition	ends during	IAO:0000115	
-WARN	missing_definition	phenotype of	IAO:0000115	
-WARN	missing_definition	temporally related to	IAO:0000115	
-WARN	missing_definition	is member of	IAO:0000115	
-WARN	missing_definition	input of	IAO:0000115	
-WARN	missing_definition	output of	IAO:0000115	
-WARN	missing_definition	obsolete_formed as result of	IAO:0000115	
-WARN	missing_definition	is subsequence of	IAO:0000115	
-WARN	missing_definition	enhancer	IAO:0000115	
-WARN	missing_definition	simple_sequence_length_variation	IAO:0000115	
-WARN	missing_definition	sequence_length_variation	IAO:0000115	
-WARN	missing_definition	engineered_foreign_gene	IAO:0000115	
-WARN	missing_definition	RNAi_reagent	IAO:0000115	
-WARN	missing_definition	centromere	IAO:0000115	
-WARN	missing_definition	junction	IAO:0000115	
-WARN	missing_definition	engineered_region	IAO:0000115	
-WARN	missing_definition	structural_alteration	IAO:0000115	
-WARN	missing_definition	regulatory_region	IAO:0000115	
-WARN	missing_definition	T_to_C_transition	IAO:0000115	
-WARN	missing_definition	C_to_G_transversion	IAO:0000115	
-WARN	missing_definition	life cycle stage	IAO:0000115	
-WARN	missing_definition	anatomical entity	IAO:0000115	
-WARN	missing_definition	Phenotype	IAO:0000115	
-WARN	missing_definition	abnormal(ly) malformed endocardium cell	IAO:0000115	
-WARN	missing_definition	abnormal(ly) absent dorso-rostral cluster	IAO:0000115	
-WARN	missing_definition	abnormal(ly) disrupted diencephalon development	IAO:0000115	
-WARN	missing_definition	abnormal(ly) disrupted neutrophil aggregation	IAO:0000115	
-WARN	missing_definition	abnormal(ly) absent adaxial cell	IAO:0000115	
-WARN	missing_definition	association	IAO:0000115	
-WARN	missing_definition	association has object	IAO:0000115	
-WARN	missing_definition	association has predicate	IAO:0000115	
-WARN	missing_definition	association has subject	IAO:0000115	
-WARN	missing_definition	mus musculus shh gene	IAO:0000115	
-WARN	missing_definition	danio rerio shha gene	IAO:0000115	
-WARN	missing_definition	danio rerio cdkn1ca gene	IAO:0000115	
-WARN	missing_definition	homo sapiens SHH gene	IAO:0000115	
-INFO	lowercase_definition	independent continuant	IAO:0000115	b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])@en
-INFO	lowercase_definition	process	IAO:0000115	p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])@en
-INFO	lowercase_definition	disposition	IAO:0000600	b is a disposition means: b is a realizable entity & b’s bearer is some material entity & b is such that if it ceases to exist, then its bearer is physically changed, & b’s realization occurs when and because this bearer is in some special physical circumstances, & this realization occurs in virtue of the bearer’s physical make-up. (axiom label in BFO2 Reference: [062-002])@en
-INFO	lowercase_definition	quality	IAO:0000600	a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])@en
-INFO	lowercase_definition	specifically dependent continuant	IAO:0000115	b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])@en
-INFO	lowercase_definition	specifically dependent continuant	IAO:0000115	b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])@en
-INFO	lowercase_definition	role	IAO:0000600	b is a role means: b is a realizable entity and b exists because there is some single bearer that is in some special physical, social, or institutional set of circumstances in which this bearer does not have to be and b is not such that, if it ceases to exist, then the physical make-up of the bearer is thereby changed. (axiom label in BFO2 Reference: [061-001])@en
-INFO	lowercase_definition	generically dependent continuant	IAO:0000115	b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])@en
 INFO	lowercase_definition	obsolete sequence feature collection	IAO:0000115	a collection more than one sequence features (ie a collection of discontinuous sequence features)
 INFO	lowercase_definition	human population	IAO:0000115	a population of homo sapiens grouped together in virtue of their sharing some commonality (either an inherent attribute or an externally assigned role)
 INFO	lowercase_definition	obsolete sequence feature collection attribute	IAO:0000115	sequence attribute that can inhere only in a collection of more than one sequence features
@@ -238,26 +131,6 @@ INFO	lowercase_definition	heteroplasmic	IAO:0000115	an allelic state where more 
 INFO	lowercase_definition	has_zygosity	IAO:0000115	a relation to link a single locus complement to its zygosity.
 INFO	lowercase_definition	is_targeted_by	IAO:0000115	relation between an molecular agent and its molecular target
 INFO	lowercase_definition	obsolete gametic	IAO:0000115	a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells).
-INFO	lowercase_definition	information content entity	IAO:0000115	an information content entity is an entity that is generically dependent on some artifact and stands in relation of aboutness to some entity@en
-INFO	lowercase_definition	is about	IAO:0000115	is_about is a (currently) primitive relation that relates an information artifact to an entity.
-INFO	lowercase_definition	population	IAO:0000115	a population is a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area
-INFO	lowercase_definition	inheres_in	IAO:0000115	a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence
-INFO	lowercase_definition	bearer of	IAO:0000115	a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence
-INFO	lowercase_definition	participates in	IAO:0000115	a relation between a continuant and a process, in which the continuant is somehow involved in the process
-INFO	lowercase_definition	has participant	IAO:0000115	a relation between a process and a continuant, in which the continuant is somehow involved in the process
-INFO	lowercase_definition	has quality	IAO:0000115	a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence
-INFO	lowercase_definition	has disposition	IAO:0000115	a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence
-INFO	lowercase_definition	overlaps	IAO:0000115	x overlaps y if and only if there exists some z such that x has part z and z part of y
-INFO	lowercase_definition	in taxon	IAO:0000115	x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed.
-INFO	lowercase_definition	has input	IAO:0000115	p has direct input c iff c is a participant in p, c is present at the start of p, and the state of c is modified during p.
-INFO	lowercase_definition	has output	IAO:0000115	p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p.
-INFO	lowercase_definition	has member	IAO:0000115	has member is a mereological relation between a collection and an item.
-INFO	lowercase_definition	bounds sequence of	IAO:0000115	x bounds the sequence of y iff the upstream-most part of x is upstream of or coincident with the upstream-most part of y, and the downstream-most part of x is downstream of or coincident with the downstream-most part of y
-INFO	lowercase_definition	has subsequence	IAO:0000115	x has subsequence y iff all of the sequence parts of x are sequence parts of y
-INFO	lowercase_definition	overlaps sequence of	IAO:0000115	x overlaps the sequence of x if and only if x has a subsequence z and z is a subsequence of y.
-INFO	lowercase_definition	is upstream of sequence of	IAO:0000115	inverse of downstream of sequence of
-INFO	lowercase_definition	is downstream of sequence of	IAO:0000115	x is downstream of the sequence of y iff either (1) x and y have sequence units, and all units of x are downstream of all units of y, or (2) x and y are sequence units, and x is either immediately downstream of y, or transitively downstream of y.
-INFO	missing_superclass	entity	rdfs:subClassOf	
 INFO	missing_superclass	genomic variation complement	rdfs:subClassOf	
 INFO	missing_superclass	reference sequence	rdfs:subClassOf	
 INFO	missing_superclass	variant single locus complement	rdfs:subClassOf	
@@ -276,6 +149,3 @@ INFO	missing_superclass	variant genomic genotype	rdfs:subClassOf
 INFO	missing_superclass	biological sequence unit	rdfs:subClassOf	
 INFO	missing_superclass	allelic genotype	rdfs:subClassOf	
 INFO	missing_superclass	diplotype	rdfs:subClassOf	
-INFO	missing_superclass	engineered_region	rdfs:subClassOf	
-INFO	missing_superclass	chromosome part	rdfs:subClassOf	
-INFO	missing_superclass	sequence_alteration	rdfs:subClassOf	
