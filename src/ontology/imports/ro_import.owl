@@ -17,9 +17,9 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/imports/ro_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2022-03-05/imports/ro_import.owl"/>
-        <dc:source rdf:resource="http://purl.obolibrary.org/obo/ro/releases/2022-02-07/ro.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-03-05</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2022-08-10/imports/ro_import.owl"/>
+        <dc:source rdf:resource="http://purl.obolibrary.org/obo/ro/releases/2022-07-19/ro.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-08-10</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -320,6 +320,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
@@ -343,12 +349,6 @@
     <!-- http://www.geneontology.org/formats/oboInOwl#inSubset -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#shorthand -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand"/>
     
 
 
@@ -990,6 +990,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -1454,7 +1455,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000115>p results in the developmental progression of s iff p is a developmental process and s is an anatomical structure and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss).</obo:IAO_0000115>
         <obo:IAO_0000116>This property and its subproperties are being used primarily for the definition of GO developmental processes. The property hierarchy mirrors the core GO hierarchy. In future we may be able to make do with a more minimal set of properties, but due to the way GO is currently structured we require highly specific relations to avoid incorrect entailments. To avoid this, the corresponding genus terms in GO should be declared mutually disjoint.</obo:IAO_0000116>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <oboInOwl:shorthand>results_in_developmental_progression_of</oboInOwl:shorthand>
         <rdfs:label xml:lang="en">results in developmental progression of</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://wiki.geneontology.org/index.php/Ontology_extensions"/>
     </owl:ObjectProperty>
@@ -1475,7 +1475,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
-        <oboInOwl:shorthand>results_in_formation_of</oboInOwl:shorthand>
         <rdfs:label xml:lang="en">results in formation of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2857,13 +2856,14 @@ Environmental exposures include those imposed by natural environments, experimen
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002233"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000112>A diagnostic testing device utilizes a specimen.</obo:IAO_0000112>
-        <obo:IAO_0000115>X utilizes Y means X and Y are material entities, and X is capable of some process P that has input Y.</obo:IAO_0000115>
-        <obo:IAO_0000117>Asiyah Lin</obo:IAO_0000117>
-        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 Bill Duncan</obo:IAO_0000117>
+        <obo:IAO_0000115>X device utilizes material Y means X and Y are material entities, and X is capable of some process P that has input Y.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0003-2620-0345</obo:IAO_0000117>
         <obo:IAO_0000232>A diagnostic testing device utilizes a specimen means that the diagnostic testing device is capable of an assay, and this assay a specimen as its input.</obo:IAO_0000232>
         <obo:IAO_0000232>See github ticket https://github.com/oborel/obo-relations/issues/497</obo:IAO_0000232>
-        <oboInOwl:creation_date>2021-11-08</oboInOwl:creation_date>
-        <rdfs:label xml:lang="en">utilizes</rdfs:label>
+        <oboInOwl:creation_date>2021-11-08T12:00:00Z</oboInOwl:creation_date>
+        <oboInOwl:hasBroadSynonym>utilizes</oboInOwl:hasBroadSynonym>
+        <rdfs:label xml:lang="en">device utilizes material</rdfs:label>
     </owl:ObjectProperty>
     
 

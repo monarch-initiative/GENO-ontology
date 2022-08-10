@@ -1,11 +1,11 @@
 format-version: 1.2
-data-version: geno/releases/2022-03-05/geno-base.owl
+data-version: geno/releases/2022-08-10/geno-base.owl
 ontology: geno/geno-base
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
 property_value: http://purl.org/dc/elements/1.1/type IAO:8000001
-property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by-sa/2.0/
-property_value: owl:versionInfo "2022-03-05" xsd:string
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by/4.0/
+property_value: owl:versionInfo "2022-08-10" xsd:string
 
 [Term]
 id: BFO:0000001

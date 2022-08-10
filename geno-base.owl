@@ -11,14 +11,14 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/geno-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2022-03-05/geno-base.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2022-08-10/geno-base.owl"/>
         <dc:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dc:description>
         <dc:title>GENO ontology</dc:title>
         <dc:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
-        <terms:license rdf:resource="https://creativecommons.org/licenses/by-sa/2.0/"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-03-05</owl:versionInfo>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-08-10</owl:versionInfo>
     </owl:Ontology>
     
 
