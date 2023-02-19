@@ -1,10 +1,10 @@
 format-version: 1.2
-data-version: releases/2022-08-10
+data-version: releases/2023-02-19
 ontology: geno
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by/4.0/
-property_value: owl:versionInfo "2022-08-10" xsd:string
+property_value: owl:versionInfo "2023-02-19" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -476,7 +476,7 @@ is_a: GENO:0000112 ! strain or breed
 id: GENO:0000119
 name: danio rerio strain
 is_a: GENO:0000112 ! strain or breed
-relationship: RO:0002351 NCBITaxon:7955 ! has member Danio rerio
+relationship: RO:0002351 NCBITaxon:7955 {all_only="true"} ! has member Danio rerio
 relationship: RO:0002351 NCBITaxon:7955 ! has member Danio rerio
 
 [Term]
@@ -1269,7 +1269,7 @@ property_value: IAO:0000118 "unspecified background genotype" xsd:string
 id: GENO:0000659
 name: sequence feature set
 def: "A set of sequence features." []
-comment: 'Sets' are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an 'empty' set) or 1 member (a 'singleton' or 'unit' set), consistent with the concept of 'mathematical sets'. Sets may also include duplicates (i.e. contain more than one member representing the same feature).\n\nThe notion of a 'complement' is a special case of a set, where the members necessarily comprise an exhaustive collection of all objects that make up some well-defined set. It is useful for defining many biologically-relevant sets of sequence features. For example, a 'haplotype' is the set of all genetically-linked alleles on a single chromosomal strand at a defined location - e.g. the SNP alleles \{rs7412-C, rs429358-C} comprise the haplotype defining the APOEɛ4 gene allele [1]. And a 'single locus complement' is the set of all alleles at a specified location in a particular genome  - e.g. the APOEɛ4 and APOEɛ4 gene alleles ([1], [2]) that make up the 'Gs270' APOE genotype [3].\n\n[1] https://www.snpedia.com/index.php/APOE-%CE%B54\n[2] https://www.snpedia.com/index.php/APOE-%CE%B52\n[3] https://www.snpedia.com/index.php/Gs270
+comment: 'Sets' are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an 'empty' set) or 1 member (a 'singleton' or 'unit' set), consistent with the concept of 'mathematical sets'. Sets may also include duplicates (i.e. contain more than one member representing the same feature).\n\nThe notion of a 'complement' is a special case of a set, where the members necessarily comprise an exhaustive collection of all objects that make up some well-defined set. It is useful for defining many biologically-relevant sets of sequence features. For example, a 'haplotype' is the set of all genetically-linked alleles on a single chromosomal strand at a defined location - e.g. the SNP alleles \{rs7412-C, rs429358-C\} comprise the haplotype defining the APOEɛ4 gene allele [1]. And a 'single locus complement' is the set of all alleles at a specified location in a particular genome  - e.g. the APOEɛ4 and APOEɛ4 gene alleles ([1], [2]) that make up the 'Gs270' APOE genotype [3].\n\n[1] https://www.snpedia.com/index.php/APOE-%CE%B54\n[2] https://www.snpedia.com/index.php/APOE-%CE%B52\n[3] https://www.snpedia.com/index.php/Gs270
 is_a: GENO:0000701 ! sequence feature or set
 relationship: RO:0002351 SO:0000110 ! has member sequence_feature
 property_value: IAO:0000112 "1. The set of all alleles at a particular location in a genome (a 'single locus complement')  - e.g. {APOE-epsilon2 / APOE-epsilon4} at the APOE locus\n\n2. The set of all alleles that comprise a haplotype - e.g. the SNPs {rs7412-T, rs429358-T} in the APOEɛ2 allele.\n\n3. The set of all chromosomes in a genome - e.g. {human Chr1, 2, 3,  . . . 22, X, Y}" xsd:string
@@ -1390,7 +1390,7 @@ property_value: IAO:0000112 "Consider wild-type zebrafish shha gene in the conte
 id: GENO:0000715
 name: qualified genomic feature set
 def: "A set of qualified sequence features that carry genomic sequence." []
-comment: A 'complement' refers to an exhaustive collection of all objects that make up some well-defined set. This notion is useful for defining biologically-relevant sets of sequence features. For example, a haplotype is defined as the set of all genetically-linked alleles on a single chromosomal strand at a defined location - e.g. the SNP alleles \{rs7412-C, rs429358-C} comprise the haplotype defining the APOEɛ4 gene allele.\n\nA complements may contain 0, 1, or more than one members. For example, the complement of alleles at a defined locus across homologous chromosomes in an individual's genome will consist of two members for autosomal locations, and one member for non-homologous locations on the X and Y chromosome.
+comment: A 'complement' refers to an exhaustive collection of all objects that make up some well-defined set. This notion is useful for defining biologically-relevant sets of sequence features. For example, a haplotype is defined as the set of all genetically-linked alleles on a single chromosomal strand at a defined location - e.g. the SNP alleles \{rs7412-C, rs429358-C\} comprise the haplotype defining the APOEɛ4 gene allele.\n\nA complements may contain 0, 1, or more than one members. For example, the complement of alleles at a defined locus across homologous chromosomes in an individual's genome will consist of two members for autosomal locations, and one member for non-homologous locations on the X and Y chromosome.
 is_a: GENO:0000897 ! genomic entity
 is_a: GENO:0000920 ! qualified sequence feature set
 relationship: GENO:0000726 GENO:0000660 ! has_sequence_feature genomic feature set
@@ -1728,7 +1728,7 @@ id: GENO:0000887
 name: oryzias latipes strain
 is_a: GENO:0000112 ! strain or breed
 relationship: RO:0002351 NCBITaxon:8090 ! has member Oryzias latipes
-relationship: RO:0002351 NCBITaxon:8090 ! has member Oryzias latipes
+relationship: RO:0002351 NCBITaxon:8090 {all_only="true"} ! has member Oryzias latipes
 
 [Term]
 id: GENO:0000888
@@ -1756,7 +1756,7 @@ comment: As a 'sequence feature or collection' (sensu SO), a 'canonical allele' 
 property_value: http://purl.org/dc/terms/source "ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)" xsd:string
 property_value: IAO:0000112 "The canonical allele that represents a single nucleotide variation in the BRCA2 gene, which can be described by various contextual alleles such as “NC_000013.11:g.32319070T>A” and “NG_012772.3:g.8591T>A”." xsd:string
 property_value: IAO:0000116 "The notion of a 'canonical allele' is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model." xsd:string
-property_value: IAO:0000119 http://dataexchange.clinicalgenome.org/allele/resource/canonical_allele/ xsd:string
+property_value: IAO:0000119 "http://dataexchange.clinicalgenome.org/allele/resource/canonical_allele/" xsd:string
 property_value: IAO:0000231 "No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs." xsd:string
 is_obsolete: true
 
@@ -1767,7 +1767,7 @@ def: "An informational artifact that describes a canonical allele by defining it
 comment: The notion of a 'contextual allele' derives from the ClinGen Allele model. Here, each genetic allele in a patient corresponds to a single 'canonical allele', which in turn may aggregate any number of 'contextual allele' representations that are may be defined against different reference sequences. Accordingly, many contextual alleles can describe a single canonical allele. For example, the contextual alleles “NC_000013.11:g.32319070T>A” and “NG_012772.3:g.8591T>A” both describe the same underlying canonical allele, a single nucleotide variation, in the BRCA2 gene.
 property_value: http://purl.org/dc/terms/source "ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)" xsd:string
 property_value: IAO:0000116 "The notion of a 'contextual allele' is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model." xsd:string
-property_value: IAO:0000119 http://dataexchange.clinicalgenome.org/allele/resource/contextual_allele/ xsd:string
+property_value: IAO:0000119 "http://dataexchange.clinicalgenome.org/allele/resource/contextual_allele/" xsd:string
 property_value: IAO:0000231 "No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs.\n\nFormer axiom: denotes some 'obsolete_canonical allele'" xsd:string
 is_obsolete: true
 
@@ -2297,7 +2297,7 @@ property_value: IAO:0000111 "curation status specification" xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000116 "Better to represent curation as a process with parts and then relate labels to that process (in IAO meeting)" xsd:string
 property_value: IAO:0000117 "PERSON:Bill Bug" xsd:string
-property_value: IAO:0000119 GROUP:OBI:<http://purl.obolibrary.org/obo/obi> xsd:string
+property_value: IAO:0000119 "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>" xsd:string
 property_value: IAO:0000119 "OBI_0000266" xsd:string
 
 [Term]
@@ -2483,7 +2483,7 @@ name: obo basic subset ontology module
 def: "A subset ontology that is designed for basic applications to continue to make certain simplifying assumptions; many of these simplifying assumptions were based on the initial version of the Gene Ontology, and have become enshrined in many popular and useful tools such as term enrichment tools.\n\nExamples of such assumptions include: traversing the ontology graph ignoring relationship types using a naive algorithm will not lead to cycles (i.e. the ontology is a DAG); every referenced term is declared in the ontology (i.e. there are no dangling clauses).\n\nAn ontology is OBO Basic if and only if it has the following characteristics:\nDAG\nUnidirectional\nNo Dangling Clauses\nFully Asserted\nFully Labeled\nNo equivalence axioms\nSingly labeled edges\nNo qualifier lists\nNo disjointness axioms\nNo owl-axioms header\nNo imports" []
 is_a: IAO:8000017 ! ontology module subsetted by expressivity
 property_value: IAO:0000111 "obo basic subset ontology module" xsd:string
-property_value: seeAlso "6.2"
+property_value: seeAlso 6.2
 
 [Term]
 id: IAO:8000019
@@ -2656,7 +2656,7 @@ name: deletion
 def: "The point at which one or more contiguous nucleotides were excised." []
 xref: http://en.wikipedia.org/wiki/Nucleotide_deletion
 is_a: SO:0001059 ! sequence_alteration
-property_value: http://purl.obolibrary.org/obo/IAO_alt_id SO:1000033 xsd:string
+property_value: http://purl.obolibrary.org/obo/IAO_alt_id "SO:1000033" xsd:string
 property_value: IAO:0000118 "deleted_sequence" xsd:string
 property_value: IAO:0000118 "nucleotide deletion" xsd:string
 property_value: IAO:0000118 "nucleotide_deletion" xsd:string
@@ -2713,7 +2713,7 @@ name: microsatellite
 def: "A repeat_region containing repeat_units of 2 to 10 bp repeated in tandem." []
 comment: A defined feature that includes any type of VNTR or SSLP locus.
 is_a: GENO:0000481 ! genomic feature
-property_value: IAO:0000119 http://en.wikipedia.org/wiki/Microsatellite_%28genetics%29 xsd:string
+property_value: IAO:0000119 "http://en.wikipedia.org/wiki/Microsatellite_%28genetics%29" xsd:string
 
 [Term]
 id: SO:0000337
@@ -2754,7 +2754,7 @@ id: SO:0000667
 name: insertion
 def: "The sequence of one or more nucleotides added between two adjacent nucleotides in the sequence." []
 is_a: SO:0001059 ! sequence_alteration
-property_value: http://purl.obolibrary.org/obo/IAO_alt_id SO:1000034 xsd:string
+property_value: http://purl.obolibrary.org/obo/IAO_alt_id "SO:1000034" xsd:string
 property_value: IAO:0000118 "insertion" xsd:string
 property_value: IAO:0000118 "nucleotide insertion" xsd:string
 property_value: IAO:0000118 "nucleotide_insertion" xsd:string
@@ -2865,8 +2865,8 @@ is_a: GENO:0000512 ! allele
 intersection_of: GENO:0000512 ! allele
 intersection_of: GENO:0000784 GENO:0000481 ! completely_varies_with genomic feature
 relationship: GENO:0000784 GENO:0000481 ! completely_varies_with genomic feature
-property_value: http://purl.obolibrary.org/obo/IAO_alt_id SO:1000004 xsd:string
-property_value: http://purl.obolibrary.org/obo/IAO_alt_id SO:1000007 xsd:string
+property_value: http://purl.obolibrary.org/obo/IAO_alt_id "SO:1000004" xsd:string
+property_value: http://purl.obolibrary.org/obo/IAO_alt_id "SO:1000007" xsd:string
 property_value: IAO:0000112 "A few examples highlighting the distinction of 'sequence alterations' from their parent 'variant allele': \n\n1. Consider NM_000059.3(BRCA2):c.631G>A variation in the BRCA2 gene.  This mutation of a single nucleotide creates a gene allele whose extent is that of the entire BRCA2 gene.  This version of the full BRCA2 gene is a 'variant allele', while the extent of sequence spanning just the single altered base is a 'sequence alteration'.  See https://www.ncbi.nlm.nih.gov/snp/80358871.\n\n2. Consider the NM_000059.3(BRCA2):c.132_133ins8 variation in the BRCA2 gene.  This 8 bp insertion creates a gene allele whose extent is that of the entire BRCA2 gene. This version of the full BRCA2 gene is a 'variant allele', while the extent of sequence spanning just the 8 bp insertion is a 'sequence alteration'.   See https://www.ncbi.nlm.nih.gov/snp/483353112.\n\n3. Consider the NM_000059.3(BRCA2):c.22_23delAG variation in the BRCA2 gene.  This 2 bp deletion creates a gene allele whose extent is that of the entire BRCA2 gene. This version of the full BRCA2 gene is a 'variant allele', while the junction where the deletion occured is a 'sequence alteration' with an extent of zero.  See https://www.ncbi.nlm.nih.gov/snp/483353112." xsd:string
 property_value: IAO:0000118 "sequence variation" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/so.owl
@@ -4074,7 +4074,7 @@ is_a: GENO:0000655 ! is_sequence_part_of
 id: RO:0002526
 name: overlaps sequence of
 def: "x overlaps the sequence of x if and only if x has a subsequence z and z is a subsequence of y." []
-property_value: http://purl.org/dc/terms/source http://biorxiv.org/content/early/2014/06/27/006650.abstract xsd:string
+property_value: http://purl.org/dc/terms/source "http://biorxiv.org/content/early/2014/06/27/006650.abstract" xsd:string
 is_a: RO:0002131 ! overlaps
 
 [Typedef]

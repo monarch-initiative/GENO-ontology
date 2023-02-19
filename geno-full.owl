@@ -12,13 +12,13 @@
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/geno-full.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2022-08-10/geno-full.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2023-02-19/geno-full.owl"/>
         <dc:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dc:description>
         <dc:title>GENO ontology</dc:title>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-08-10</owl:versionInfo>
+        <owl:versionInfo>2023-02-19</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -3246,7 +3246,7 @@ A genomic feature being an allele_of a gene is based on its location in a host g
         <obo:IAO_0000115>a collection more than one sequence features (ie a collection of discontinuous sequence features)</obo:IAO_0000115>
         <oboInOwl:hasDbXref>perhaps not same as SO:sequence collection, as here we explicitly include features that can have an extent of zero (and SO:sequence collection is a collection of regions that have an extent of at least one)</oboInOwl:hasDbXref>
         <rdfs:comment>1. Note that members of this class can be features with extents of zero (e.g. junctions).  This is likely different than the SO:sequence feature class which has members that are regions.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete sequence feature collection</rdfs:label>
+        <rdfs:label>obsolete sequence feature collection</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3259,7 +3259,7 @@ A genomic feature being an allele_of a gene is based on its location in a host g
         <obo:IAO_0000116>Previously called &apos;genetic locus collection&apos;.  Difference between &apos;genetic&apos; and &apos;genomic&apos;, as used here, is that &apos;genomic&apos; implies a feature is a heritable part of some genome, while &apos;genetic&apos; implies that it is part of some feature that is capable of contributing to gene expression in a cell or other biological system.</obo:IAO_0000116>
         <obo:IAO_0000118>genomic feature collection</obo:IAO_0000118>
         <rdfs:comment>Conceptually, members of this collection are meant to be about the sum total genetic material in a single cell or organism. But these members need not be associated with an actual material in a real cell or organism individual.  For example, things like a &apos;reference genome&apos; may not actually represent the material genome of any individual cell or organism in reality. Here, there may be no genomic material referents of the sequences in such a collection because the genome is tied to an idealized, hypothetical cell or organism instance. The key is that conceptually, they are still tied to the idea of being contained in a single genome. In the case of a genotype, the individual seqeunce members are not all about the genetic material of a singel cell or organism. Rather, it is the resolved sequence contained in the genotype that is meant to be about the total genomic sequence content of a genome - which we deem acceptable for classifying as a genetic locus collection.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete genomic feature collection</rdfs:label>
+        <rdfs:label>obsolete genomic feature collection</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3281,7 +3281,7 @@ SC axioms:
 &apos;has member&apos; exactly 0 &apos;variant allele&apos;
 &apos;has member&apos; only &apos;reference genomic feature&apos;
 &apos;has member&apos; some &apos;reference genomic feature&apos;</obo:IAO_0000231>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete reference single locus complement</rdfs:label>
+        <rdfs:label>obsolete reference single locus complement</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3393,7 +3393,7 @@ In model organism datasets, &apos;reference&apos; alleles are typically (but not
 Eq Class def: &apos;genomic feature&apos;
  and (has_sequence_attribute some unspecified)</obo:IAO_0000231>
         <rdfs:comment>An unspecified feature is known to exist as the partner of a characterized allele when the zygosity at that locus is not known.   Its specific sequence/identity, however, is unknown (ie whether it is a reference or variant allele).</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete unspecified feature</rdfs:label>
+        <rdfs:label>obsolete unspecified feature</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3414,7 +3414,7 @@ is_variant_with some insertion</obo:IAO_0000231>
         <rdfs:comment>In the case of a transgenic insertion that creates a hemizygous locus, the refernce locus that this insertion is variant_with is the junction on the homologous chromosome at the same position where the insertion occurred. This is the &apos;hemizygous reference&apos; junction.
 
 The junction-insertion pair represents the allelic complement at that locus, which is considered to be hemizygous. Most genotype syntaxes represent this hemizygous state with a &apos; /0&apos; notation.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete reference junction</rdfs:label>
+        <rdfs:label>obsolete reference junction</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3522,7 +3522,7 @@ is_reference_allele_of some gene</obo:IAO_0000231>
         <rdfs:comment>Being a &apos;reference gene&apos; is a role or status assigned in the context of a specific dataset or analysis.  In human variation datasets, &apos;reference&apos; status is typically assigned based on factors such as being the most common version/allele in a population, being an ancestral allele, or being indentified first as a prototypical example of a gene.
 
 In model organism datasets, &apos;reference&apos; genes are typically the &apos;wild-type&apos; allele for a given gene, representing a functional and unaltered version of the gene that is part of a defined genomic background, and against which natural or experimentally-induced versions are compared.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete reference gene allele</rdfs:label>
+        <rdfs:label>obsolete reference gene allele</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3531,7 +3531,7 @@ In model organism datasets, &apos;reference&apos; genes are typically the &apos;
     <!-- http://purl.obolibrary.org/obo/GENO_0000091 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000091">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete experimental insertion</rdfs:label>
+        <rdfs:label>obsolete experimental insertion</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3676,7 +3676,7 @@ Note that at present, a material genome and genetic material are necessarily par
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000125">
         <obo:IAO_0000115>sequence attribute that can inhere only in a collection of more than one sequence features</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete sequence feature collection attribute</rdfs:label>
+        <rdfs:label>obsolete sequence feature collection attribute</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3826,7 +3826,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000142">
         <obo:IAO_0000115>disposition inhering in a genetic locus variant that is realized in its inheritance by some offspring such that at least a partial variant-associated phenotype is apparent in heterozygotes</obo:IAO_0000115>
         <obo:IAO_0000231>Triage until decide if want to define this as grouping class that would result in multiple-inheritance.</obo:IAO_0000231>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete dominant inheritance</rdfs:label>
+        <rdfs:label>obsolete dominant inheritance</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3913,7 +3913,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000150">
         <obo:IAO_0000231>duplicate term, use GENO:0000148</obo:IAO_0000231>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete autosomal recessive inheritance</rdfs:label>
+        <rdfs:label>obsolete autosomal recessive inheritance</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3942,7 +3942,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000164 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000164">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete genetic insertion technique</rdfs:label>
+        <rdfs:label>obsolete genetic insertion technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3951,7 +3951,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000165 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000165">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete mutagen treatment technique</rdfs:label>
+        <rdfs:label>obsolete mutagen treatment technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3960,7 +3960,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000166 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000166">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete targeted gene mutation technique</rdfs:label>
+        <rdfs:label>obsolete targeted gene mutation technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3969,7 +3969,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000169 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000169">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete random genetic insertion technique</rdfs:label>
+        <rdfs:label>obsolete random genetic insertion technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3978,7 +3978,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000170 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000170">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete targeted genetic insertion technique</rdfs:label>
+        <rdfs:label>obsolete targeted genetic insertion technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3987,7 +3987,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000171 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000171">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete enhancer trapping technique</rdfs:label>
+        <rdfs:label>obsolete enhancer trapping technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -3996,7 +3996,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000172 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000172">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete gene trapping technique</rdfs:label>
+        <rdfs:label>obsolete gene trapping technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -4005,7 +4005,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000173 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000173">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete promoter trapping technique</rdfs:label>
+        <rdfs:label>obsolete promoter trapping technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -4014,7 +4014,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000174 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000174">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete targeted knock-in technique</rdfs:label>
+        <rdfs:label>obsolete targeted knock-in technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -4023,7 +4023,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
     <!-- http://purl.obolibrary.org/obo/GENO_0000175 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000175">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete random transgene insertion technique</rdfs:label>
+        <rdfs:label>obsolete random transgene insertion technique</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -4033,7 +4033,7 @@ These genetic and environmental &quot;interactions&quot; of alleles play out at 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000324">
         <obo:IAO_0000115>A single locus complement that represents the collection of all chromosome sequences for a given chromosome in a single genome</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete chromosome complement</rdfs:label>
+        <rdfs:label>obsolete chromosome complement</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -4224,7 +4224,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
         <obo:IAO_0000115>A sequence feature that references some biological macromolecule applied as a reagent in an experiment or technique (e.g. a morpholino expression plasmid, or oligonucleotide probe)</obo:IAO_0000115>
         <obo:IAO_0000116>replaced with SO:engineered_region</obo:IAO_0000116>
         <obo:IAO_0000118>extra-genomic sequence</obo:IAO_0000118>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete reagent sequence feature</rdfs:label>
+        <rdfs:label>obsolete reagent sequence feature</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -4367,7 +4367,7 @@ Eq class definition:
 allele
  and (mutation or (&apos;has subsequence&apos; some mutation))</obo:IAO_0000231>
         <rdfs:comment>&apos;Mutant&apos; is typically contrasted with &apos;wild-type&apos;, where &apos;mutant&apos; indicates a natural but very rare allele in a population (typically &lt;1%), or an experimentally-induced variation that derives from a wild-type background locus for a given strain, which can be selected for in establishing a mutant line.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete mutant allele</rdfs:label>
+        <rdfs:label>obsolete mutant allele</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -5356,7 +5356,7 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
         <obo:IAO_0000116>Former logical def: 
 &apos;genomic feature&apos;
  and (has_extent value 0)</obo:IAO_0000116>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete null feature</rdfs:label>
+        <rdfs:label>obsolete null feature</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -5453,12 +5453,7 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000702">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000921"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000896"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:nodeID="genid237"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <obo:IAO_0000115>A linear ordering of units representing monomers of a biological macromolecule (e.g. nucleotides in DNA and RNA, amino acids in polypeptides).</obo:IAO_0000115>
@@ -5472,15 +5467,14 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
         <rdfs:comment>&apos;Sequences&apos; differ from &apos;sequence features&apos; in that instances are distinguished only by their inherent ordering of units, and not by any positional aspect related to alignment with some reference sequence. Accordingly, the &apos;ATG&apos; translational start codon of the human AKT gene is the same *sequence* as the &apos;ATG&apos; start codon of the human SHH gene, but these represent two distinct *sequence features* in virtue of their different positions in the genome.</rdfs:comment>
         <rdfs:label xml:lang="en">biological sequence</rdfs:label>
     </owl:Class>
+    <owl:Restriction rdf:nodeID="genid237">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000896"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000896"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid237"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     <owl:Axiom>
@@ -5507,43 +5501,31 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000714">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000897"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000919"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:nodeID="genid240"/>
+        <rdfs:subClassOf rdf:nodeID="genid242"/>
         <obo:IAO_0000112>Consider wild-type zebrafish shha gene in the context of being targeted by morpholino MO-1 vs morpholino MO-2 in separate experiments. These shha genes share identical sequence and position, but represent distinct instances of a &apos;qualified sequence feature&apos; because of their different external contexts. This is important because these qualified features could have distinct phenotypes associated with them (just as two different sequence variants (alleles) of the same gene can have potentially different associated phenotypes).</obo:IAO_0000112>
         <obo:IAO_0000115>A qualified sequence feature that carries sequence derived from the genome of a cell or organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">qualified genomic feature</rdfs:label>
     </owl:Class>
+    <owl:Restriction rdf:nodeID="genid240">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Restriction>
+    <owl:Restriction rdf:nodeID="genid242">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
+    </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid240"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>This axiom is an initial attempt to formalize the identity criteria of an extrinnsic context that separates qualified sequence features from sequence features (i.e. the context of its material bearer).  As we further develop our efforts here this will get refined and more precise.</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid242"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>Formalizes one identity criteria of the sequence feature component of a qualified sequence feature (which itself is identified by its sequence and its genomic position).</rdfs:comment>
     </owl:Axiom>
@@ -5697,7 +5679,7 @@ A complements may contain 0, 1, or more than one members. For example, the compl
     <!-- http://purl.obolibrary.org/obo/GENO_0000724 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000724">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete biological sequence or collection</rdfs:label>
+        <rdfs:label>obsolete biological sequence or collection</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -5706,7 +5688,7 @@ A complements may contain 0, 1, or more than one members. For example, the compl
     <!-- http://purl.obolibrary.org/obo/GENO_0000725 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000725">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete biological sequence collection</rdfs:label>
+        <rdfs:label>obsolete biological sequence collection</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -5741,7 +5723,7 @@ A complements may contain 0, 1, or more than one members. For example, the compl
         <obo:IAO_0000116>This &apos;genomic position&apos; concept differs from the faldo:Position concecpt in that the former describes the start AND end points/coordinates of a feature, while the latter describes a single point/coordinate at the beginning OR end of a feature.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">genomic coordinates</obo:IAO_0000118>
         <obo:IAO_0000231>remodeling notion of sequence feature position around the idea of a &apos;genomic locus&apos;</obo:IAO_0000231>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete genomic position</rdfs:label>
+        <rdfs:label>obsolete genomic position</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -5761,7 +5743,7 @@ A complements may contain 0, 1, or more than one members. For example, the compl
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000772">
         <obo:IAO_0000115>A sequence attribute inhering in a feature whose identity is not specified.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete unspecified</rdfs:label>
+        <rdfs:label>obsolete unspecified</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -5810,7 +5792,7 @@ A complements may contain 0, 1, or more than one members. For example, the compl
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000778">
         <obo:IAO_0000115>An information entity that is intented to represent some biological sequence, sequence feature, qualified sequence feature, or a collection of one or more of these entities.</obo:IAO_0000115>
         <obo:IAO_0000231>eliminating classes that are not necessary or add uneeded complexity.</obo:IAO_0000231>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete sequence information entity</rdfs:label>
+        <rdfs:label>obsolete sequence information entity</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -5952,132 +5934,80 @@ This contrasts to the use of the term &apos;genotype in model orgnaism communiti
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000833">
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032502"/>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002091"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002093"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/oban/association_has_object"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/oban/association_has_subject"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
-                            </owl:Restriction>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:nodeID="genid280"/>
+        <rdfs:subClassOf rdf:nodeID="genid282"/>
+        <rdfs:subClassOf rdf:nodeID="genid292"/>
+        <rdfs:subClassOf rdf:nodeID="genid294"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <obo:IAO_0000116>Exploratory class looking at creating more specific subtypes of associatiosn, and defining identity criteria for each.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">genotype-phenotype association</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
-                <owl:someValuesFrom>
+    <owl:Restriction rdf:nodeID="genid280">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
+    </owl:Restriction>
+    <owl:Restriction rdf:nodeID="genid282">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032502"/>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032502"/>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002091"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002093"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002091"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002093"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
+                            </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction rdf:nodeID="genid292">
+        <owl:onProperty rdf:resource="http://purl.org/oban/association_has_object"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
+    </owl:Restriction>
+    <owl:Restriction rdf:nodeID="genid294">
+        <owl:onProperty rdf:resource="http://purl.org/oban/association_has_subject"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid280"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/oban/association_has_object"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid282"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/oban/association_has_subject"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENO_0000536"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000536"/>
-                            </owl:Restriction>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid292"/>
+        <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid294"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     
@@ -6105,7 +6035,7 @@ This contrasts to the use of the term &apos;genotype in model orgnaism communiti
         <obo:IAO_0000115>A sequence alteration within the coding sequence of a gene.</obo:IAO_0000115>
         <obo:IAO_0000231>Not required at this poitn, so marked exploratory and obsoleted.  
 Asserted under sequence_alteration.</obo:IAO_0000231>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete coding sequence alteration</rdfs:label>
+        <rdfs:label>obsolete coding sequence alteration</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6151,7 +6081,7 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000870">
         <obo:IAO_0000115>A collection of more than one sequence feature.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/SO_0001260 ! sequence_collection</oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete sequence feature collection</rdfs:label>
+        <rdfs:label>obsolete sequence feature collection</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6240,7 +6170,7 @@ Each of these more specific definition serves a purpose for a particular type of
         <rdfs:comment>Genetic dosage reflects how many &apos;functional&apos; copies of a sequence are present in a genome. In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This sets it apart from the notion of &apos;copy number&apos;, which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its copy number, but not increase its dosage.
 
 Duplications of a sequence can occur at new locations in the genome, such that the resulting sequence represents a distinct sequence feature from the copy at its native locus.  For example, duplication of a region containing the human APOE gene on a different chromosome creates a sequence feature that shares sequence from the original gene, but not location, and therefore represents a different sequence feature.  The notions of dosage and copy number are therefore concerned with sequence-level entities (how many copies of a &apos;sequence&apos; exist), as opposed to sequence feature-level entities.  The notion of a single-locus complement would be used to describe how many of a particular features are present in a genome - and describe which alleles of this feature are found.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete genetic dosage</rdfs:label>
+        <rdfs:label>obsolete genetic dosage</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6325,7 +6255,7 @@ These acquired mutations are called &apos;somatic&apos; because they typically a
         <obo:IAO_0000115>a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells).</obo:IAO_0000115>
         <obo:IAO_0000118>germ-line</obo:IAO_0000118>
         <obo:IAO_0000231>replaced by GENO:0000900 ! &apos;germline&apos;</obo:IAO_0000231>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete gametic</rdfs:label>
+        <rdfs:label>obsolete gametic</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6454,7 +6384,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
         <rdfs:comment>As a &apos;sequence feature or collection&apos; (sensu SO), a &apos;canonical allele&apos; is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence). Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand.
 
 In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;contextual alleles&apos;. Contextual alleles are informational representation that describe a canonical allele using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation (e.g. different chromosomal or transcript references)</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete canonical allele</rdfs:label>
+        <rdfs:label>obsolete canonical allele</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6471,7 +6401,7 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
 Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_0000231>
         <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
         <rdfs:comment>The notion of a &apos;contextual allele&apos; derives from the ClinGen Allele model. Here, each genetic allele in a patient corresponds to a single &apos;canonical allele&apos;, which in turn may aggregate any number of &apos;contextual allele&apos; representations that are may be defined against different reference sequences. Accordingly, many contextual alleles can describe a single canonical allele. For example, the contextual alleles “NC_000013.11:g.32319070T&gt;A” and “NG_012772.3:g.8591T&gt;A” both describe the same underlying canonical allele, a single nucleotide variation, in the BRCA2 gene.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete contextual allele</rdfs:label>
+        <rdfs:label>obsolete contextual allele</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6611,7 +6541,7 @@ A genomic genotype is an information artifact with a representational syntax tha
         <obo:IAO_0000115>A quality inhering in a particular allele in virtue of its presence only in a particular type of cell in an organism (e.g. somatic vs germ cells)</obo:IAO_0000115>
         <obo:IAO_0000231>decided this attribute is not needed, and moved its child &apos;germline&apos; and &apos;somatic&apos; concepts under allele origin</obo:IAO_0000231>
         <rdfs:comment>Cellular context of an allele is typically defined in the context of evaluating an individual organism, as alleles that are somatic in one organism can be germline in others.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete allele cellular context</rdfs:label>
+        <rdfs:label>obsolete allele cellular context</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6748,7 +6678,7 @@ b. The second is a region containing multiple linked single nucleotide polymorph
 c. A third, which is related to the previous case, occurs when the extent of region containing linked SNPs is that of a single gene.  In this case, the haplotype represents a &apos;gene allele&apos; - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.
 
 The GENO definition of &apos;haplotype&apos; is broadly inclusive of these and any other scenarios where distinct &apos;alleles&apos; of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete haplotype</rdfs:label>
+        <rdfs:label>obsolete haplotype</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6767,7 +6697,7 @@ The boundaries of haplotype blocks are defined in efforts to identify haplotypes
 -----------------------
 
 * One difference however is that gene instnaces are necessarily &apos;functional&apos; - so non-functional  alleles of a gene locus wont qualify as gene instances. no such requirement exists for haplotype block instnaces.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete haplotype block</rdfs:label>
+        <rdfs:label>obsolete haplotype block</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6857,7 +6787,7 @@ A set may also include multiple copies of the same sequence. For example, in a &
         <obo:IAO_0000231>Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000963.</obo:IAO_0000231>
         <rdfs:comment>As for copy number complements, the defining &apos;sequence&apos; here is specified in terms of a location on a reference sequence - typically the location where a gene or set of genes resides.  But the criteria for membership in a functional copy number complement require only that the feature can perform the functions associated with the gene or genes at the defining location.  A gene allele that varies by only one nucleotide from the wild-type gene may not qualify if that alteration eliminates the function of the allele.  This represents an important distinction between &apos;copy number&apos; and &apos;functional copy number&apos;. The former is not concerned with the functionality of sequence copies - only that there is a duplication of sequence in the genome. Thus, the addition of a non-functional allele of a gene will increase its copy number, but not increase its &apos;functional copy number (aka its dosage).</rdfs:comment>
         <rdfs:comment>The notion of &apos;functional copy number&apos; (aka &apos;genetic dosage&apos;) describes how many &apos;functional&apos; copies of a sequence are present in a genome - i.e. sequences that retain their normal activity and/or produce gene products that retain their normal activity.  In diploid organisms, the normal dosage is 2 for autosomal genes/regions. Dosage increases if there is a duplication of the gene/region. Dosage decreases if there is either a deletion of a gene/region, or an inactivating mutation that eliminates gene function. This latter condition sets it apart from the notion of a &apos;copy number complement&apos;, which reflects how many actual copies of a sequence exist in a genome. Addition of a non-functional allele of a gene will increase its genomic sequence complement count (i.e. its copy number), but not increase its dosage.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete functional copy number complement</rdfs:label>
+        <rdfs:label>obsolete functional copy number complement</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6867,7 +6797,7 @@ A set may also include multiple copies of the same sequence. For example, in a &
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000924">
         <obo:IAO_0000115>A sequence feature attribute that reflects feature-level characteristics that depend only on the sequence, location, or genomic context of a feature  or  collection, but are independent of how it may be concretized in physical form.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete intrinsic sequence feature attribute</rdfs:label>
+        <rdfs:label>obsolete intrinsic sequence feature attribute</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -6877,7 +6807,7 @@ A set may also include multiple copies of the same sequence. For example, in a &
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000925">
         <obo:IAO_0000115>A sequence feature attribute that reflects characteristics of the physical molecule in which the feature is concretized (e.g. its cellular context, source of origin, etc.)</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete extrinsic sequence feature attribute</rdfs:label>
+        <rdfs:label>obsolete extrinsic sequence feature attribute</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -7177,7 +7107,7 @@ A set may also include multiple copies of the same sequence. For example, in a &
         <rdfs:comment>In a &apos;normal&apos; diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s).
 
 Note that the &apos;copy number variation&apos; class in GENO is related to but ontologically distinct form the SO &apos;copy_number_variation&apos; class. The GENO class refers to a *set* of all copies of a sequence in a genome, where the number of members in the set is in conflict with the genome&apos;s normal ploidy (e.g. not two for a diploid genome). The SO class, which is defined as a sequence feature level concept and therefore represents a single continuous extent of sequence, refers to a single copy of duplicated (or deleted) sequence that comprises the set defined by the GENO CNV class.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete variant copy number complement</rdfs:label>
+        <rdfs:label>obsolete variant copy number complement</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -7193,7 +7123,7 @@ Note that the &apos;copy number variation&apos; class in GENO is related to but 
 2. A copy number complement, like any sequence feature complement, is a set of features in a particular genome that meet some criterion. The criterion in this case is that their sequence maps to that of a particular location in a reference sequence.  So a copy number complement is the set of all features that share or align with a specified sequence defined on some reference. The sequence of member sequences need not exactly match that of the reference, as copies may accrue some alterations. What is important is that conceptually they represent exact or inexact copies of the reference sequence at a defining location.
 
 3. In a &apos;normal&apos; diploid genome, the copy number complement for any feature (on a non-Y chromosome) contains two members.  A copy number variation occurs when a complement contains more or less than two members - as the result of deletion or duplication event(s). In GENO, a &apos;copy number variation&apos; refers to a copy number complement&apos; that has an abnormal number of members.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete copy number complement</rdfs:label>
+        <rdfs:label>obsolete copy number complement</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -7388,8 +7318,8 @@ https://en.wikipedia.org/wiki/Uniparental_inheritance</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0000118">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pulling in HP &apos;phenotypic abnormality&apos; root here</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human phenotypic abnormality</rdfs:label>
+        <rdfs:comment>pulling in HP &apos;phenotypic abnormality&apos; root here</rdfs:comment>
+        <rdfs:label>human phenotypic abnormality</rdfs:label>
     </owl:Class>
     
 
@@ -7800,7 +7730,7 @@ No imports</obo:IAO_0000115>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MP_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <rdfs:comment>where to place this depends on if we take the organismal view or the quality centric view.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mammalian phenotype</rdfs:label>
+        <rdfs:label>mammalian phenotype</rdfs:label>
     </owl:Class>
     
 
@@ -7897,7 +7827,7 @@ No imports</obo:IAO_0000115>
         <obo:IAO_0000116>&apos;Value&apos; label chosen here according to http://www.uwgb.edu/heuerc/2D/ColorTerms.html</obo:IAO_0000116>
         <obo:IAO_0000116>Was parent of chromosomal band intensity before moving this class to live as a sequence feature attribute.</obo:IAO_0000116>
         <obo:IAO_0000118>color value</obo:IAO_0000118>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete color brightness</rdfs:label>
+        <rdfs:label>obsolete color brightness</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -7994,18 +7924,8 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000110">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000701"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000903"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:nodeID="genid366"/>
+        <rdfs:subClassOf rdf:nodeID="genid368"/>
         <obo:IAO_0000115>Any extent of continuous biological sequence.</obo:IAO_0000115>
         <obo:IAO_0000116>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
@@ -8014,27 +7934,25 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
         <rdfs:comment>A sequence feature is an extent of &apos;located&apos; biological sequence, whose identity is determined by both its inherent sequence (ordering of monomeric units) and its position (start and end coordinates based on alignment with some reference). By contrast, &apos;biological sequences&apos; are identified and distinguished only by their inehrent sequence, and not their position.  Accordingly, the &apos;ATG&apos; start codon in the coding DNA sequence of the human AKT gene is the same &apos;sequence&apos; as the &apos;ATG&apos; start codon in the human SHH gene, but these represent two distinct &apos;sequence features&apos; in virtue of their different positions in the genome.</rdfs:comment>
         <rdfs:label>sequence_feature</rdfs:label>
     </owl:Class>
+    <owl:Restriction rdf:nodeID="genid366">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
+    </owl:Restriction>
+    <owl:Restriction rdf:nodeID="genid368">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000903"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
+    </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid366"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>Formalizes the first identity criteria for a sequence feature of its sequence.</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000903"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid368"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>Formalizes the second identify criteiria for a sequence feature of its genomic position. We use the FALDO model to represent positional information, which links features to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence. (But features can also be linked to Positions directly through the location property).</rdfs:comment>
     </owl:Axiom>
@@ -8045,7 +7963,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000143">
         <obo:IAO_0000115>A region of known length which may be used to manufacture a longer region.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete assembly_component</rdfs:label>
+        <rdfs:label>obsolete assembly_component</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -8055,7 +7973,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000149">
         <obo:IAO_0000115>A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N&apos;s from unavailable bases.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete contig</rdfs:label>
+        <rdfs:label>obsolete contig</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -8071,16 +7989,16 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
                 <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The point at which one or more contiguous nucleotides were excised.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deleted_sequence</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide deletion</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide_deletion</obo:IAO_0000118>
+        <obo:IAO_0000115>The point at which one or more contiguous nucleotides were excised.</obo:IAO_0000115>
+        <obo:IAO_0000118>deleted_sequence</obo:IAO_0000118>
+        <obo:IAO_0000118>nucleotide deletion</obo:IAO_0000118>
+        <obo:IAO_0000118>nucleotide_deletion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_alt_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000033</obo:IAO_alt_id>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000159</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <obo:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Nucleotide_deletion</obo:IAO_xref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deletion</rdfs:label>
+        <obo:IAO_alt_id>SO:1000033</obo:IAO_alt_id>
+        <obo:IAO_id>SO:0000159</obo:IAO_id>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <obo:IAO_xref>http://en.wikipedia.org/wiki/Nucleotide_deletion</obo:IAO_xref>
+        <rdfs:label>deletion</rdfs:label>
     </owl:Class>
     
 
@@ -8108,13 +8026,13 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000199">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region of nucleotide sequence that has translocated to a new position.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transchr</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">translocated sequence</obo:IAO_0000118>
+        <obo:IAO_0000115>A region of nucleotide sequence that has translocated to a new position.</obo:IAO_0000115>
+        <obo:IAO_0000118>transchr</obo:IAO_0000118>
+        <obo:IAO_0000118>translocated sequence</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000199</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">translocation</rdfs:label>
+        <obo:IAO_id>SO:0000199</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <rdfs:label>translocation</rdfs:label>
     </owl:Class>
     
 
@@ -8123,12 +8041,12 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000207">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000248"/>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SSLP</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">simple sequence length polymorphism</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">simple sequence length variation</obo:IAO_0000118>
+        <obo:IAO_0000118>SSLP</obo:IAO_0000118>
+        <obo:IAO_0000118>simple sequence length polymorphism</obo:IAO_0000118>
+        <obo:IAO_0000118>simple sequence length variation</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000207</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">simple_sequence_length_variation</rdfs:label>
+        <obo:IAO_id>SO:0000207</obo:IAO_id>
+        <rdfs:label>simple_sequence_length_variation</rdfs:label>
     </owl:Class>
     
 
@@ -8137,10 +8055,10 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000248">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000002"/>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence length variation</obo:IAO_0000118>
+        <obo:IAO_0000118>sequence length variation</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000248</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_length_variation</rdfs:label>
+        <obo:IAO_id>SO:0000248</obo:IAO_id>
+        <rdfs:label>sequence_length_variation</rdfs:label>
     </owl:Class>
     
 
@@ -8233,7 +8151,7 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000637">
         <obo:IAO_0000116>Obsoleted as we didnt want to commit to constructs being plasmids - but rather wanted a classification of more general types of engineered regions used to replicate and deliver sequence to target cells/genomes. Replaced by GENO:0000856 ! engineered genetic construct.</obo:IAO_0000116>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete engineered_plasmid</rdfs:label>
+        <rdfs:label>obsolete engineered_plasmid</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -8243,16 +8161,16 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000667">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The sequence of one or more nucleotides added between two adjacent nucleotides in the sequence.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insertion</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide insertion</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide_insertion</obo:IAO_0000118>
+        <obo:IAO_0000115>The sequence of one or more nucleotides added between two adjacent nucleotides in the sequence.</obo:IAO_0000115>
+        <obo:IAO_0000118>insertion</obo:IAO_0000118>
+        <obo:IAO_0000118>nucleotide insertion</obo:IAO_0000118>
+        <obo:IAO_0000118>nucleotide_insertion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_alt_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000034</obo:IAO_alt_id>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000667</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insertion</rdfs:label>
+        <obo:IAO_alt_id>SO:1000034</obo:IAO_alt_id>
+        <obo:IAO_id>SO:0000667</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <rdfs:label>insertion</rdfs:label>
     </owl:Class>
     
 
@@ -8261,12 +8179,12 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000694">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001483"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNPs are single base pair positions in genomic DNA at which different sequence alternatives exist in normal individuals in some population(s), wherein the least frequent variant has an abundance of 1% or greater.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single nucleotide polymorphism</obo:IAO_0000118>
+        <obo:IAO_0000115>SNPs are single base pair positions in genomic DNA at which different sequence alternatives exist in normal individuals in some population(s), wherein the least frequent variant has an abundance of 1% or greater.</obo:IAO_0000115>
+        <obo:IAO_0000118>single nucleotide polymorphism</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000694</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNP</rdfs:label>
+        <obo:IAO_id>SO:0000694</obo:IAO_id>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <rdfs:label>SNP</rdfs:label>
     </owl:Class>
     
 
@@ -8394,11 +8312,11 @@ Note that transgenes as defined here are not necessarily from a different taxon 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001013">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000002"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A multiple nucleotide polymorphism with alleles of common length &gt; 1, for example AAA/TTT.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multiple nucleotide polymorphism</obo:IAO_0000118>
+        <obo:IAO_0000115>A multiple nucleotide polymorphism with alleles of common length &gt; 1, for example AAA/TTT.</obo:IAO_0000115>
+        <obo:IAO_0000118>multiple nucleotide polymorphism</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001013</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MNP</rdfs:label>
+        <obo:IAO_id>SO:0001013</obo:IAO_id>
+        <rdfs:label>MNP</rdfs:label>
     </owl:Class>
     
 
@@ -8407,16 +8325,16 @@ Note that transgenes as defined here are not necessarily from a different taxon 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001019">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A variation that increases or decreases the copy number of a given region.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CNP</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CNV</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy number polymorphism</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy number variation</obo:IAO_0000118>
+        <obo:IAO_0000115>A variation that increases or decreases the copy number of a given region.</obo:IAO_0000115>
+        <obo:IAO_0000118>CNP</obo:IAO_0000118>
+        <obo:IAO_0000118>CNV</obo:IAO_0000118>
+        <obo:IAO_0000118>copy number polymorphism</obo:IAO_0000118>
+        <obo:IAO_0000118>copy number variation</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001019</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <obo:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Copy_number_variation</obo:IAO_xref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy_number_variation</rdfs:label>
+        <obo:IAO_id>SO:0001019</obo:IAO_id>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <obo:IAO_xref>http://en.wikipedia.org/wiki/Copy_number_variation</obo:IAO_xref>
+        <rdfs:label>copy_number_variation</rdfs:label>
     </owl:Class>
     
 
@@ -8462,13 +8380,13 @@ Note that transgenes as defined here are not necessarily from a different taxon 
 2. Consider the NM_000059.3(BRCA2):c.132_133ins8 variation in the BRCA2 gene.  This 8 bp insertion creates a gene allele whose extent is that of the entire BRCA2 gene. This version of the full BRCA2 gene is a &apos;variant allele&apos;, while the extent of sequence spanning just the 8 bp insertion is a &apos;sequence alteration&apos;.   See https://www.ncbi.nlm.nih.gov/snp/483353112.
 
 3. Consider the NM_000059.3(BRCA2):c.22_23delAG variation in the BRCA2 gene.  This 2 bp deletion creates a gene allele whose extent is that of the entire BRCA2 gene. This version of the full BRCA2 gene is a &apos;variant allele&apos;, while the junction where the deletion occured is a &apos;sequence alteration&apos; with an extent of zero.  See https://www.ncbi.nlm.nih.gov/snp/483353112.</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence_alteration is a sequence_feature whose extent is the deviation from another sequence.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence variation</obo:IAO_0000118>
+        <obo:IAO_0000115>A sequence_alteration is a sequence_feature whose extent is the deviation from another sequence.</obo:IAO_0000115>
+        <obo:IAO_0000118>sequence variation</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_alt_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000004</obo:IAO_alt_id>
-        <obo:IAO_alt_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000007</obo:IAO_alt_id>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001059</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
+        <obo:IAO_alt_id>SO:1000004</obo:IAO_alt_id>
+        <obo:IAO_alt_id>SO:1000007</obo:IAO_alt_id>
+        <obo:IAO_id>SO:0001059</obo:IAO_id>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
         <rdfs:comment>1. A &apos;sequence alteration&apos; is an allele whose sequence deviates in its entirety from that of other features found at the same genomic location (i.e. it deviates along its entire extent). In this sense, &apos;sequence alterations&apos; represent the minimal extent an allele can take - i.e. that which is variable with some other feature along its entire sequence). An example is a SNP or insertion. 
 
 Alleles whose extent goes beyond the specific sequence that is known to be variable are not sequence alterations. These are alleles that represent alternate versions of some larger, named feature. The classic example here is a &apos;gene allele&apos;, which spans the extent of an entire gene, and contains one or more sequence alterations (regions known to vary) as part.
@@ -8478,7 +8396,7 @@ Alleles whose extent goes beyond the specific sequence that is known to be varia
 For a particular instance of a sequence alteration, howver, we may in some cases be able to rdf:type it as a &apos;varaint allele&apos; and a &apos;sequence alteration&apos;, in situations where we can be confident that the feature will *never* be considered a reference. For example, experimentally generated mutations in model organism genes that are created expressly to vary from an established reference.
 
 3. Note that we consider novel features gained in a genome to be sequence alterations, including aneusomic chromosomes gained through a non-disjunction event during replication, or extrachromosomal replicons that become part of the heritable genome of a cell or organism.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_alteration</rdfs:label>
+        <rdfs:label>sequence_alteration</rdfs:label>
     </owl:Class>
     
 
@@ -8493,11 +8411,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000093"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An insertion that derives from another organism, via the use of recombinant DNA technology.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transgenic insertion</obo:IAO_0000118>
+        <obo:IAO_0000115>An insertion that derives from another organism, via the use of recombinant DNA technology.</obo:IAO_0000115>
+        <obo:IAO_0000118>transgenic insertion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001218</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transgenic_insertion</rdfs:label>
+        <obo:IAO_id>SO:0001218</obo:IAO_id>
+        <rdfs:label>transgenic_insertion</rdfs:label>
     </owl:Class>
     
 
@@ -8507,7 +8425,7 @@ For a particular instance of a sequence alteration, howver, we may in some cases
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001410">
         <obo:IAO_0000115>A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer.</obo:IAO_0000115>
         <obo:IAO_0000231>not currently needed to support modeling use cases. can re-introduce if becomes necessary.</obo:IAO_0000231>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete experimental_feature</rdfs:label>
+        <rdfs:label>obsolete experimental_feature</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -8547,14 +8465,14 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001483">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000002"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNVs are single base pair positions in genomic DNA at which different sequence alternatives exist.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single nucleotide variant</obo:IAO_0000118>
+        <obo:IAO_0000115>SNVs are single base pair positions in genomic DNA at which different sequence alternatives exist.</obo:IAO_0000115>
+        <obo:IAO_0000118>single nucleotide variant</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kareneilbeck</obo:IAO_created_by>
-        <obo:IAO_creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thu Oct 08 11:37:49 PDT 2009</obo:IAO_creation_date>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001483</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNV</rdfs:label>
+        <obo:IAO_created_by>kareneilbeck</obo:IAO_created_by>
+        <obo:IAO_creation_date>Thu Oct 08 11:37:49 PDT 2009</obo:IAO_creation_date>
+        <obo:IAO_id>SO:0001483</obo:IAO_id>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <rdfs:label>SNV</rdfs:label>
     </owl:Class>
     
 
@@ -8584,15 +8502,15 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001742">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001019"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence alteration whereby the copy number of a given regions is greater than the reference sequence.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy number gain</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gain</obo:IAO_0000118>
+        <obo:IAO_0000115>A sequence alteration whereby the copy number of a given regions is greater than the reference sequence.</obo:IAO_0000115>
+        <obo:IAO_0000118>copy number gain</obo:IAO_0000118>
+        <obo:IAO_0000118>gain</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kareneilbeck</obo:IAO_created_by>
-        <obo:IAO_creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mon Feb 28 01:54:09 PST 2011</obo:IAO_creation_date>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001742</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy_number_gain</rdfs:label>
+        <obo:IAO_created_by>kareneilbeck</obo:IAO_created_by>
+        <obo:IAO_creation_date>Mon Feb 28 01:54:09 PST 2011</obo:IAO_creation_date>
+        <obo:IAO_id>SO:0001742</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <rdfs:label>copy_number_gain</rdfs:label>
     </owl:Class>
     
 
@@ -8601,15 +8519,15 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001743">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001019"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence alteration whereby the copy number of a given region is less than the reference sequence.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy number loss</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loss</obo:IAO_0000118>
+        <obo:IAO_0000115>A sequence alteration whereby the copy number of a given region is less than the reference sequence.</obo:IAO_0000115>
+        <obo:IAO_0000118>copy number loss</obo:IAO_0000118>
+        <obo:IAO_0000118>loss</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kareneilbeck</obo:IAO_created_by>
-        <obo:IAO_creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mon Feb 28 01:55:02 PST 2011</obo:IAO_creation_date>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001743</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy_number_loss</rdfs:label>
+        <obo:IAO_created_by>kareneilbeck</obo:IAO_created_by>
+        <obo:IAO_creation_date>Mon Feb 28 01:55:02 PST 2011</obo:IAO_creation_date>
+        <obo:IAO_id>SO:0001743</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <rdfs:label>copy_number_loss</rdfs:label>
     </owl:Class>
     
 
@@ -8618,16 +8536,16 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001744">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from one parent and no copies of the same chromosome or region from the other parent.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UPD</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uniparental disomy</obo:IAO_0000118>
+        <obo:IAO_0000115>Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from one parent and no copies of the same chromosome or region from the other parent.</obo:IAO_0000115>
+        <obo:IAO_0000118>UPD</obo:IAO_0000118>
+        <obo:IAO_0000118>uniparental disomy</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kareneilbeck</obo:IAO_created_by>
-        <obo:IAO_creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mon Feb 28 02:01:05 PST 2011</obo:IAO_creation_date>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001744</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <obo:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http:http\://en.wikipedia.org/wiki/Uniparental_disomy</obo:IAO_xref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UPD</rdfs:label>
+        <obo:IAO_created_by>kareneilbeck</obo:IAO_created_by>
+        <obo:IAO_creation_date>Mon Feb 28 02:01:05 PST 2011</obo:IAO_creation_date>
+        <obo:IAO_id>SO:0001744</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <obo:IAO_xref>http:http\://en.wikipedia.org/wiki/Uniparental_disomy</obo:IAO_xref>
+        <rdfs:label>UPD</rdfs:label>
     </owl:Class>
     
 
@@ -8636,13 +8554,13 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001745">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001744"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from the mother and no copies of the same chromosome or region from the father.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maternal uniparental disomy</obo:IAO_0000118>
+        <obo:IAO_0000115>Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from the mother and no copies of the same chromosome or region from the father.</obo:IAO_0000115>
+        <obo:IAO_0000118>maternal uniparental disomy</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kareneilbeck</obo:IAO_created_by>
-        <obo:IAO_creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mon Feb 28 02:03:01 PST 2011</obo:IAO_creation_date>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001745</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maternal_uniparental_disomy</rdfs:label>
+        <obo:IAO_created_by>kareneilbeck</obo:IAO_created_by>
+        <obo:IAO_creation_date>Mon Feb 28 02:03:01 PST 2011</obo:IAO_creation_date>
+        <obo:IAO_id>SO:0001745</obo:IAO_id>
+        <rdfs:label>maternal_uniparental_disomy</rdfs:label>
     </owl:Class>
     
 
@@ -8651,13 +8569,13 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001746">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001744"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from the father and no copies of the same chromosome or region from the mother.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paternal uniparental disomy</obo:IAO_0000118>
+        <obo:IAO_0000115>Uniparental disomy is a sequence_alteration where a diploid individual receives two copies for all or part of a chromosome from the father and no copies of the same chromosome or region from the mother.</obo:IAO_0000115>
+        <obo:IAO_0000118>paternal uniparental disomy</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kareneilbeck</obo:IAO_created_by>
-        <obo:IAO_creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mon Feb 28 02:03:30 PST 2011</obo:IAO_creation_date>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001746</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paternal_uniparental_disomy</rdfs:label>
+        <obo:IAO_created_by>kareneilbeck</obo:IAO_created_by>
+        <obo:IAO_creation_date>Mon Feb 28 02:03:30 PST 2011</obo:IAO_creation_date>
+        <obo:IAO_id>SO:0001746</obo:IAO_id>
+        <rdfs:label>paternal_uniparental_disomy</rdfs:label>
     </owl:Class>
     
 
@@ -8666,14 +8584,14 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001784">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001785"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural sequence alteration where there are multiple equally plausible explanations for the change.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complex</obo:IAO_0000118>
+        <obo:IAO_0000115>A structural sequence alteration where there are multiple equally plausible explanations for the change.</obo:IAO_0000115>
+        <obo:IAO_0000118>complex</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kareneilbeck</obo:IAO_created_by>
-        <obo:IAO_creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wed Mar 23 03:21:19 PDT 2011</obo:IAO_creation_date>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001784</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complex_structural_alteration</rdfs:label>
+        <obo:IAO_created_by>kareneilbeck</obo:IAO_created_by>
+        <obo:IAO_creation_date>Wed Mar 23 03:21:19 PDT 2011</obo:IAO_creation_date>
+        <obo:IAO_id>SO:0001784</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <rdfs:label>complex_structural_alteration</rdfs:label>
     </owl:Class>
     
 
@@ -8683,11 +8601,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001785">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kareneilbeck</obo:IAO_created_by>
-        <obo:IAO_creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fri Mar 25 02:27:41 PDT 2011</obo:IAO_creation_date>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0001785</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structural_alteration</rdfs:label>
+        <obo:IAO_created_by>kareneilbeck</obo:IAO_created_by>
+        <obo:IAO_creation_date>Fri Mar 25 02:27:41 PDT 2011</obo:IAO_creation_date>
+        <obo:IAO_id>SO:0001785</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <rdfs:label>structural_alteration</rdfs:label>
     </owl:Class>
     
 
@@ -8708,11 +8626,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any change in genomic DNA caused by a single event.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any change in genomic DNA caused by a single event.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000002</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substitution</rdfs:label>
+        <obo:IAO_id>SO:1000002</obo:IAO_id>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <rdfs:label>substitution</rdfs:label>
     </owl:Class>
     
 
@@ -8721,12 +8639,12 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000005">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000002"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When no simple or well defined DNA mutation event describes the observed DNA change, the keyword \&quot;complex\&quot; should be used. Usually there are multiple equally plausible explanations for the change.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complex substitution</obo:IAO_0000118>
+        <obo:IAO_0000115>When no simple or well defined DNA mutation event describes the observed DNA change, the keyword \&quot;complex\&quot; should be used. Usually there are multiple equally plausible explanations for the change.</obo:IAO_0000115>
+        <obo:IAO_0000118>complex substitution</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000005</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complex_substitution</rdfs:label>
+        <obo:IAO_id>SO:1000005</obo:IAO_id>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <rdfs:label>complex_substitution</rdfs:label>
     </owl:Class>
     
 
@@ -8735,13 +8653,13 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000008">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001483"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A single nucleotide change which has occurred at the same position of a corresponding nucleotide in a reference sequence.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">point mutation</obo:IAO_0000118>
+        <obo:IAO_0000115>A single nucleotide change which has occurred at the same position of a corresponding nucleotide in a reference sequence.</obo:IAO_0000115>
+        <obo:IAO_0000118>point mutation</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000008</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <obo:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Point_mutation</obo:IAO_xref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">point_mutation</rdfs:label>
+        <obo:IAO_id>SO:1000008</obo:IAO_id>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <obo:IAO_xref>http://en.wikipedia.org/wiki/Point_mutation</obo:IAO_xref>
+        <rdfs:label>point_mutation</rdfs:label>
     </owl:Class>
     
 
@@ -8750,10 +8668,10 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000009">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001483"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change of a pyrimidine nucleotide, C or T, into an other pyrimidine nucleotide, or change of a purine nucleotide, A or G, into an other purine nucleotide.</obo:IAO_0000115>
+        <obo:IAO_0000115>Change of a pyrimidine nucleotide, C or T, into an other pyrimidine nucleotide, or change of a purine nucleotide, A or G, into an other purine nucleotide.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000009</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transition</rdfs:label>
+        <obo:IAO_id>SO:1000009</obo:IAO_id>
+        <rdfs:label>transition</rdfs:label>
     </owl:Class>
     
 
@@ -8762,11 +8680,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000010">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000009"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A substitution of a pyrimidine, C or T, for another pyrimidine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyrimidine transition</obo:IAO_0000118>
+        <obo:IAO_0000115>A substitution of a pyrimidine, C or T, for another pyrimidine.</obo:IAO_0000115>
+        <obo:IAO_0000118>pyrimidine transition</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000010</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyrimidine_transition</rdfs:label>
+        <obo:IAO_id>SO:1000010</obo:IAO_id>
+        <rdfs:label>pyrimidine_transition</rdfs:label>
     </owl:Class>
     
 
@@ -8775,11 +8693,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000011">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000010"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transition of a cytidine to a thymine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C to T transition</obo:IAO_0000118>
+        <obo:IAO_0000115>A transition of a cytidine to a thymine.</obo:IAO_0000115>
+        <obo:IAO_0000118>C to T transition</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000011</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C_to_T_transition</rdfs:label>
+        <obo:IAO_id>SO:1000011</obo:IAO_id>
+        <rdfs:label>C_to_T_transition</rdfs:label>
     </owl:Class>
     
 
@@ -8788,11 +8706,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000012">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000011"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The transition of cytidine to thymine occurring at a pCpG site as a consequence of the spontaneous deamination of 5&apos;-methylcytidine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C to T transition at pCpG site</obo:IAO_0000118>
+        <obo:IAO_0000115>The transition of cytidine to thymine occurring at a pCpG site as a consequence of the spontaneous deamination of 5&apos;-methylcytidine.</obo:IAO_0000115>
+        <obo:IAO_0000118>C to T transition at pCpG site</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000012</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C_to_T_transition_at_pCpG_site</rdfs:label>
+        <obo:IAO_id>SO:1000012</obo:IAO_id>
+        <rdfs:label>C_to_T_transition_at_pCpG_site</rdfs:label>
     </owl:Class>
     
 
@@ -8801,10 +8719,10 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000013">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000010"/>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T to C transition</obo:IAO_0000118>
+        <obo:IAO_0000118>T to C transition</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000013</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T_to_C_transition</rdfs:label>
+        <obo:IAO_id>SO:1000013</obo:IAO_id>
+        <rdfs:label>T_to_C_transition</rdfs:label>
     </owl:Class>
     
 
@@ -8813,11 +8731,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000014">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000009"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A substitution of a purine, A or G, for another purine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">purine transition</obo:IAO_0000118>
+        <obo:IAO_0000115>A substitution of a purine, A or G, for another purine.</obo:IAO_0000115>
+        <obo:IAO_0000118>purine transition</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000014</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">purine_transition</rdfs:label>
+        <obo:IAO_id>SO:1000014</obo:IAO_id>
+        <rdfs:label>purine_transition</rdfs:label>
     </owl:Class>
     
 
@@ -8826,11 +8744,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000015">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000014"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transition of an adenine to a guanine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A to G transition</obo:IAO_0000118>
+        <obo:IAO_0000115>A transition of an adenine to a guanine.</obo:IAO_0000115>
+        <obo:IAO_0000118>A to G transition</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000015</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A_to_G_transition</rdfs:label>
+        <obo:IAO_id>SO:1000015</obo:IAO_id>
+        <rdfs:label>A_to_G_transition</rdfs:label>
     </owl:Class>
     
 
@@ -8839,11 +8757,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000016">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000014"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transition of a guanine to an adenine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G to A transition</obo:IAO_0000118>
+        <obo:IAO_0000115>A transition of a guanine to an adenine.</obo:IAO_0000115>
+        <obo:IAO_0000118>G to A transition</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000016</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_to_A_transition</rdfs:label>
+        <obo:IAO_id>SO:1000016</obo:IAO_id>
+        <rdfs:label>G_to_A_transition</rdfs:label>
     </owl:Class>
     
 
@@ -8852,11 +8770,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000017">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001483"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change of a pyrimidine nucleotide, C or T, into a purine nucleotide, A or G, or vice versa.</obo:IAO_0000115>
+        <obo:IAO_0000115>Change of a pyrimidine nucleotide, C or T, into a purine nucleotide, A or G, or vice versa.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000017</obo:IAO_id>
-        <obo:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Transversion</obo:IAO_xref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transversion</rdfs:label>
+        <obo:IAO_id>SO:1000017</obo:IAO_id>
+        <obo:IAO_xref>http://en.wikipedia.org/wiki/Transversion</obo:IAO_xref>
+        <rdfs:label>transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8865,11 +8783,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000018">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000017"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change of a pyrimidine nucleotide, C or T, into a purine nucleotide, A or G.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyrimidine to purine transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>Change of a pyrimidine nucleotide, C or T, into a purine nucleotide, A or G.</obo:IAO_0000115>
+        <obo:IAO_0000118>pyrimidine to purine transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000018</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyrimidine_to_purine_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000018</obo:IAO_id>
+        <rdfs:label>pyrimidine_to_purine_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8878,11 +8796,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000019">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transversion from cytidine to adenine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C to A transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>A transversion from cytidine to adenine.</obo:IAO_0000115>
+        <obo:IAO_0000118>C to A transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000019</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C_to_A_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000019</obo:IAO_id>
+        <rdfs:label>C_to_A_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8891,10 +8809,10 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000020">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000018"/>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C to G transversion</obo:IAO_0000118>
+        <obo:IAO_0000118>C to G transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000020</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C_to_G_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000020</obo:IAO_id>
+        <rdfs:label>C_to_G_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8903,11 +8821,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000021">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transversion from T to A.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T to A transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>A transversion from T to A.</obo:IAO_0000115>
+        <obo:IAO_0000118>T to A transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000021</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T_to_A_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000021</obo:IAO_id>
+        <rdfs:label>T_to_A_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8916,11 +8834,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000022">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transversion from T to G.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T to G transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>A transversion from T to G.</obo:IAO_0000115>
+        <obo:IAO_0000118>T to G transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000022</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T_to_G_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000022</obo:IAO_id>
+        <rdfs:label>T_to_G_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8929,11 +8847,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000023">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000017"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change of a purine nucleotide, A or G , into a pyrimidine nucleotide C or T.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">purine to pyrimidine transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>Change of a purine nucleotide, A or G , into a pyrimidine nucleotide C or T.</obo:IAO_0000115>
+        <obo:IAO_0000118>purine to pyrimidine transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000023</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">purine_to_pyrimidine_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000023</obo:IAO_id>
+        <rdfs:label>purine_to_pyrimidine_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8942,11 +8860,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000024">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000023"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transversion from adenine to cytidine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A to C transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>A transversion from adenine to cytidine.</obo:IAO_0000115>
+        <obo:IAO_0000118>A to C transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000024</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A_to_C_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000024</obo:IAO_id>
+        <rdfs:label>A_to_C_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8955,11 +8873,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000025">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000023"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transversion from adenine to thymine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A to T transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>A transversion from adenine to thymine.</obo:IAO_0000115>
+        <obo:IAO_0000118>A to T transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000025</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A_to_T_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000025</obo:IAO_id>
+        <rdfs:label>A_to_T_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8968,11 +8886,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000026">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000023"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transversion from guanine to cytidine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G to C transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>A transversion from guanine to cytidine.</obo:IAO_0000115>
+        <obo:IAO_0000118>G to C transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000026</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_to_C_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000026</obo:IAO_id>
+        <rdfs:label>G_to_C_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8981,11 +8899,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000027">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000023"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transversion from guanine to thymine.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G to T transversion</obo:IAO_0000118>
+        <obo:IAO_0000115>A transversion from guanine to thymine.</obo:IAO_0000115>
+        <obo:IAO_0000118>G to T transversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000027</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_to_T_transversion</rdfs:label>
+        <obo:IAO_id>SO:1000027</obo:IAO_id>
+        <rdfs:label>G_to_T_transversion</rdfs:label>
     </owl:Class>
     
 
@@ -8994,12 +8912,12 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000032">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence alteration which included an insertion and a deletion, affecting 2 or more bases.</obo:IAO_0000115>
+        <obo:IAO_0000115>A sequence alteration which included an insertion and a deletion, affecting 2 or more bases.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000032</obo:IAO_id>
-        <obo:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Indel</obo:IAO_xref>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indels can have a different number of bases than the corresponding reference sequence.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">indel</rdfs:label>
+        <obo:IAO_id>SO:1000032</obo:IAO_id>
+        <obo:IAO_xref>http://en.wikipedia.org/wiki/Indel</obo:IAO_xref>
+        <rdfs:comment>Indels can have a different number of bases than the corresponding reference sequence.</rdfs:comment>
+        <rdfs:label>indel</rdfs:label>
     </owl:Class>
     
 
@@ -9008,12 +8926,12 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000035">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000667"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">One or more nucleotides are added between two adjacent nucleotides in the sequence; the inserted sequence derives from, or is identical in sequence to, nucleotides adjacent to insertion point.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide duplication</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide_duplication</obo:IAO_0000118>
+        <obo:IAO_0000115>One or more nucleotides are added between two adjacent nucleotides in the sequence; the inserted sequence derives from, or is identical in sequence to, nucleotides adjacent to insertion point.</obo:IAO_0000115>
+        <obo:IAO_0000118>nucleotide duplication</obo:IAO_0000118>
+        <obo:IAO_0000118>nucleotide_duplication</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000035</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">duplication</rdfs:label>
+        <obo:IAO_id>SO:1000035</obo:IAO_id>
+        <rdfs:label>duplication</rdfs:label>
     </owl:Class>
     
 
@@ -9022,13 +8940,13 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000036">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A continuous nucleotide sequence is inverted in the same position.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inversion</obo:IAO_0000118>
+        <obo:IAO_0000115>A continuous nucleotide sequence is inverted in the same position.</obo:IAO_0000115>
+        <obo:IAO_0000118>inversion</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000036</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inversion</rdfs:label>
+        <obo:IAO_id>SO:1000036</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <obo:IAO_subset>SOFA</obo:IAO_subset>
+        <rdfs:label>inversion</rdfs:label>
     </owl:Class>
     
 
@@ -9037,11 +8955,11 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000039">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000173"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tandem duplication where the individual regions are in the same orientation.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">direct tandem duplication</obo:IAO_0000118>
+        <obo:IAO_0000115>A tandem duplication where the individual regions are in the same orientation.</obo:IAO_0000115>
+        <obo:IAO_0000118>direct tandem duplication</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000039</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">direct_tandem_duplication</rdfs:label>
+        <obo:IAO_id>SO:1000039</obo:IAO_id>
+        <rdfs:label>direct_tandem_duplication</rdfs:label>
     </owl:Class>
     
 
@@ -9050,12 +8968,12 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000040">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000173"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tandem duplication where the individual regions are not in the same orientation.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inverted tandem duplication</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mirror duplication</obo:IAO_0000118>
+        <obo:IAO_0000115>A tandem duplication where the individual regions are not in the same orientation.</obo:IAO_0000115>
+        <obo:IAO_0000118>inverted tandem duplication</obo:IAO_0000118>
+        <obo:IAO_0000118>mirror duplication</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000040</obo:IAO_id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inverted_tandem_duplication</rdfs:label>
+        <obo:IAO_id>SO:1000040</obo:IAO_id>
+        <rdfs:label>inverted_tandem_duplication</rdfs:label>
     </owl:Class>
     
 
@@ -9064,13 +8982,13 @@ For a particular instance of a sequence alteration, howver, we may in some cases
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000173">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000035"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A duplication consisting of 2 identical adjacent regions.</obo:IAO_0000115>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">erverted</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tandem duplication</obo:IAO_0000118>
+        <obo:IAO_0000115>A duplication consisting of 2 identical adjacent regions.</obo:IAO_0000115>
+        <obo:IAO_0000118>erverted</obo:IAO_0000118>
+        <obo:IAO_0000118>tandem duplication</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:1000173</obo:IAO_id>
-        <obo:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DBVAR</obo:IAO_subset>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tandem_duplication</rdfs:label>
+        <obo:IAO_id>SO:1000173</obo:IAO_id>
+        <obo:IAO_subset>DBVAR</obo:IAO_subset>
+        <rdfs:label>tandem_duplication</rdfs:label>
     </owl:Class>
     
 
@@ -9097,7 +9015,7 @@ For a particular instance of a sequence alteration, howver, we may in some cases
         </rdfs:subClassOf>
         <obo:IAO_0000116>Stub class to serve as root of hierarchy for imports of anatomical entities from UBERON, CARO, or taxon-specific anatomy ontologies.</obo:IAO_0000116>
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/CARO_0000000</oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
+        <rdfs:label>anatomical entity</rdfs:label>
     </owl:Class>
     
 
@@ -9526,5 +9444,5 @@ Codes for: http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
 
 
 
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
 
