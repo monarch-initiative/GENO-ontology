@@ -748,7 +748,6 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000359 "Might expand to something lik
 phenotype and (is_phenotype_of some (organism and (has_part some ('material genome' and (is_subject_of some (genome and (is_specified_by some genotype)))))))")
 AnnotationAssertion(rdfs:label obo:GENO_0000359 "obsolete_is_phenotype_of_genotype")
 SubObjectPropertyOf(obo:GENO_0000359 oboInOwl:ObsoleteProperty)
-ObjectPropertyDomain(obo:GENO_0000359 obo:UPHENO_0001001)
 
 # Object Property: obo:GENO_0000368 (obsolete_participates_in_inheritance_process)
 
@@ -818,7 +817,6 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000410 "Domain = genomic feature inst
 Range = punned gene class IRI")
 AnnotationAssertion(rdfs:label obo:GENO_0000410 "obsolete_is_genetic_variant_of")
 SubObjectPropertyOf(obo:GENO_0000410 oboInOwl:ObsoleteProperty)
-InverseObjectProperties(obo:GENO_0000410 obo:GENO_0000411)
 AnnotationAssertion(owl:deprecated obo:GENO_0000410 "true"^^xsd:boolean)
 
 # Object Property: obo:GENO_0000411 (obsolete_has_genetic_variant)
