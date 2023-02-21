@@ -624,7 +624,7 @@ SubObjectPropertyOf(<http://biohackathon.org/resource/faldo#location> obo:GENO_0
 # Object Property: <http://biohackathon.org/resource/faldo#reference> (reference)
 
 AnnotationAssertion(obo:IAO_0000115 <http://biohackathon.org/resource/faldo#reference> "The reference is the resource that the position value is anchored to.  For example, a contig or chromosome in a genome assembly.")
-AnnotationAssertion(rdfs:label <http://biohackathon.org/resource/faldo#reference> "reference")
+AnnotationAssertion(rdfs:label <http://biohackathon.org/resource/faldo#reference> "reference (faldo)")
 SubObjectPropertyOf(<http://biohackathon.org/resource/faldo#reference> obo:GENO_0000708)
 
 # Object Property: obo:BFO_0000050 (is part of)
@@ -697,18 +697,20 @@ A geno:karyotype 'specifies' a geno:karyotype feature collection.")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000242 "A relationship between an information content entity representing a specification, and the entity it specifies.")
 AnnotationAssertion(rdfs:label obo:GENO_0000242 "obsolete_specifies")
 SubObjectPropertyOf(obo:GENO_0000242 oboInOwl:ObsoleteProperty)
-InverseObjectProperties(obo:GENO_0000242 obo:GENO_0000253)
+AnnotationAssertion(owl:deprecated obo:GENO_0000242 "true"^^xsd:boolean)
 
 # Object Property: obo:GENO_0000243 (obsolete_approximates_sequence)
 
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000243 "Created subproperties 'approximates_sequence' and 'resolves to sequence'. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The 'resolves_to_sequence' property can be used when the sequence variant artifact is able to completely resolve a sequence, and the 'approximates_sequence' property can be used when it does not. ")
 AnnotationAssertion(rdfs:label obo:GENO_0000243 "obsolete_approximates_sequence")
+AnnotationAssertion(owl:deprecated obo:GENO_0000243 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000243 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000244 (obsolete_resolves_to_sequence)
 
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000244 "Created subproperties 'approximates_sequence' and 'resolves to sequence'. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The 'resolves_to_sequence' property can be used when the sequence variant artifact is able to completely resolve a sequence, and the 'approximates_sequence' property can be used when it does not. ")
 AnnotationAssertion(rdfs:label obo:GENO_0000244 "obsolete_resolves_to_sequence")
+AnnotationAssertion(owl:deprecated obo:GENO_0000244 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000244 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000248 (is_proper_part_of)
@@ -732,6 +734,7 @@ InverseObjectProperties(obo:GENO_0000252 obo:IAO_0000136)
 
 AnnotationAssertion(rdfs:label obo:GENO_0000253 "obsolete_is_specified_by")
 SubObjectPropertyOf(obo:GENO_0000253 oboInOwl:ObsoleteProperty)
+AnnotationAssertion(owl:deprecated obo:GENO_0000253 "true"^^xsd:boolean)
 
 # Object Property: obo:GENO_0000359 (obsolete_is_phenotype_of_genotype)
 
@@ -739,18 +742,19 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000359 "shortcut relation used to 
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000359 "is_phenotype_of_organism_with_genotype")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000359 "is_phenotype_with_genotype")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000359 "phenotype_has_genotype")
+AnnotationAssertion(owl:deprecated obo:GENO_0000359 "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:comment obo:GENO_0000359 "Might expand to something like:
 
 phenotype and (is_phenotype_of some (organism and (has_part some ('material genome' and (is_subject_of some (genome and (is_specified_by some genotype)))))))")
 AnnotationAssertion(rdfs:label obo:GENO_0000359 "obsolete_is_phenotype_of_genotype")
 SubObjectPropertyOf(obo:GENO_0000359 oboInOwl:ObsoleteProperty)
-ObjectPropertyDomain(obo:GENO_0000359 obo:UPHENO_0001001)
 
 # Object Property: obo:GENO_0000368 (obsolete_participates_in_inheritance_process)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000368 "A relation to link variant loci, phenotypes, or disease to the type of inheritance process they are involved in, based on how the genetic interactions between alleles at the causative locus determine the pattern of inheritance of a specific phenotype/disease from one generation to the next.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000368 "Exploratory/temporary property, as we formalize our phenotypic inheritance model.")
 AnnotationAssertion(rdfs:label obo:GENO_0000368 "obsolete_participates_in_inheritance_process")
+AnnotationAssertion(owl:deprecated obo:GENO_0000368 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000368 oboInOwl:ObsoleteProperty)
 ObjectPropertyRange(obo:GENO_0000368 obo:GENO_0000141)
 
@@ -813,7 +817,7 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000410 "Domain = genomic feature inst
 Range = punned gene class IRI")
 AnnotationAssertion(rdfs:label obo:GENO_0000410 "obsolete_is_genetic_variant_of")
 SubObjectPropertyOf(obo:GENO_0000410 oboInOwl:ObsoleteProperty)
-InverseObjectProperties(obo:GENO_0000410 obo:GENO_0000411)
+AnnotationAssertion(owl:deprecated obo:GENO_0000410 "true"^^xsd:boolean)
 
 # Object Property: obo:GENO_0000411 (obsolete_has_genetic_variant)
 
@@ -824,6 +828,7 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000411 "Domain = punned gene class
 Range = genomic feature")
 AnnotationAssertion(rdfs:label obo:GENO_0000411 "obsolete_has_genetic_variant")
 SubObjectPropertyOf(obo:GENO_0000411 oboInOwl:ObsoleteProperty)
+AnnotationAssertion(owl:deprecated obo:GENO_0000411 "true"^^xsd:boolean)
 
 # Object Property: obo:GENO_0000413 (has_allele)
 
@@ -890,12 +895,14 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000486 "A relation between two seq
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000486 "Decided there was no need for a contrasting is_expression_variant_with property, so removed it and this parent grouping property.")
 AnnotationAssertion(rdfs:comment obo:GENO_0000486 "This proeprty is most commonly used to relate two different alleles of a given gene.  It is not a relation between an allele and the gene it is a variant of.")
 AnnotationAssertion(rdfs:label obo:GENO_0000486 "obsolete_is_variant_with"@en)
+AnnotationAssertion(owl:deprecated obo:GENO_0000486 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000486 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000488 (obsolete_is_expression_variant_with)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000488 "A relation between two instances of a given gene that vary in their level of expression as a result of external factors influencing expression (e.g. gnee-knockdown reagents, epigenetic modification, alteration of endogenous gene-regulation pathways).")
 AnnotationAssertion(rdfs:label obo:GENO_0000488 "obsolete_is_expression_variant_with"@en)
+AnnotationAssertion(owl:deprecated obo:GENO_0000488 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000488 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000580 (has_qualifier)
@@ -1030,6 +1037,7 @@ SubObjectPropertyOf(obo:GENO_0000740 obo:RO_0002200)
 
 AnnotationAssertion(rdfs:comment obo:GENO_0000741 "Proposal for a property linking variants to smaller components that are regulatory, and therefore should not inherit phenotypes.")
 AnnotationAssertion(rdfs:label obo:GENO_0000741 "obsolete_has_regulatory_part"@en)
+AnnotationAssertion(owl:deprecated obo:GENO_0000741 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000741 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000742 (obsolete_is_alteration_within)
@@ -1038,6 +1046,7 @@ AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000742 obo:GENO_0000484)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000742 "A relation linking a sequence_alteration to the gene it alters.")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000742 "is_within_allele_of")
 AnnotationAssertion(rdfs:label obo:GENO_0000742 "obsolete_is_alteration_within"@en)
+AnnotationAssertion(owl:deprecated obo:GENO_0000742 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000742 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000743 (has_asserted_phenotype)
@@ -1056,6 +1065,7 @@ SubObjectPropertyOf(obo:GENO_0000761 obo:GENO_0000655)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000767 "A relation linking a sequence feature to its component Position that represents an identifying criteria for sequence feature instances.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000767 "For representing positional data, we advocate use of the FALDO model, which links to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence.  The positional_component property in GENO is meant primarily to formalize the identity criteria or sequence features and qualified sequence features, to illustrate the distinction between them.")
 AnnotationAssertion(rdfs:label obo:GENO_0000767 "obsolete_has_position_component"@en)
+AnnotationAssertion(owl:deprecated obo:GENO_0000767 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000767 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000783 (has_sequence_unit)
@@ -1508,6 +1518,7 @@ DataPropertyRange(obo:GENO_0000703 xsd:string)
 # Data Property: obo:GENO_0000712 (ObsoleteDataProperty)
 
 AnnotationAssertion(rdfs:label obo:GENO_0000712 "ObsoleteDataProperty"@en)
+AnnotationAssertion(owl:deprecated obo:GENO_0000712 "true"^^xsd:boolean)
 
 # Data Property: obo:GENO_0000866 (has_quantifier)
 
@@ -3122,7 +3133,6 @@ SubClassOf(obo:GENO_0000715 ObjectSomeValuesFrom(obo:RO_0002351 obo:GENO_0000714
 
 # Class: obo:GENO_0000719 (intrinsic genotype)
 
-AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000719 "A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000719 "Genotype vs Genome in GENO: An (intrinsic) genotype is an information artifact representing an indirect syntax for specifying a genome sequence.  This syntax has reference and variant components -  a 'background genotype' and 'genomic variation complement' - that must be operated on to resolve a specifie genome sequence.  Specifically, the genome sequence is resolved by substituting all sequences specified by the 'genomic variation complement' for the corresponding sequences in the 'reference genome'.  So, while the total sequence content represented in a genotype may be greater than that in a genome, the intended resolution of these sequences is to arrive at a single genome sequence. It is this end-point that we consider when holding that a genotype 'specifies' a genome.")
 AnnotationAssertion(rdfs:comment obo:GENO_0000719 "1. A genomic genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome ('genomic background'), and all specific variants from this reference (the 'genomic variation complement').  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the 'genomic variation complement' for the corresponding sequences in the reference  'genomic background' sequence.
 
@@ -3370,13 +3380,11 @@ SubClassOf(obo:GENO_0000872 obo:GENO_0000922)
 
 # Class: obo:GENO_0000873 (microsatellite alteration)
 
-AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000873 "A relation used to describe  an environment contextualizing the identity of an entity.")
 AnnotationAssertion(rdfs:label obo:GENO_0000873 "microsatellite alteration"@en)
 SubClassOf(obo:GENO_0000873 obo:GENO_0000874)
 
 # Class: obo:GENO_0000874 (repeat region alteration)
 
-AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000874 "A relation used to describe  a process contextualizing the identity of an entity.")
 AnnotationAssertion(rdfs:label obo:GENO_0000874 "repeat region alteration"@en)
 SubClassOf(obo:GENO_0000874 obo:SO_0001059)
 
@@ -3617,13 +3625,11 @@ SubClassOf(obo:GENO_0000907 obo:SO_0000110)
 
 # Class: obo:GENO_0000910 (reporter)
 
-AnnotationAssertion(rdfs:label obo:GENO_0000910 "obsolete reporter role"@en)
 AnnotationAssertion(rdfs:label obo:GENO_0000910 "reporter"@en)
 SubClassOf(obo:GENO_0000910 obo:GENO_0000788)
 
 # Class: obo:GENO_0000911 (selectable marker)
 
-AnnotationAssertion(rdfs:label obo:GENO_0000911 "obsolete selectable marker role"@en)
 AnnotationAssertion(rdfs:label obo:GENO_0000911 "selectable marker"@en)
 SubClassOf(obo:GENO_0000911 obo:GENO_0000788)
 
