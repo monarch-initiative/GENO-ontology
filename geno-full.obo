@@ -1,10 +1,10 @@
 format-version: 1.2
-data-version: geno/releases/2023-02-19/geno-full.owl
+data-version: geno/releases/2023-02-21/geno-full.owl
 ontology: geno/geno-full
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by/4.0/
-property_value: owl:versionInfo "2023-02-19" xsd:string
+property_value: owl:versionInfo "2023-02-21" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1400,7 +1400,6 @@ property_value: IAO:0000116 "Because there are cases there may be zero or only o
 [Term]
 id: GENO:0000719
 name: intrinsic genotype
-def: "A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype." []
 comment: 1. A genomic genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome ('genomic background'), and all specific variants from this reference (the 'genomic variation complement').  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the 'genomic variation complement' for the corresponding sequences in the reference  'genomic background' sequence.\n\n2. 'Heritable' genomic sequence is that which is passed on to subsequent generations of cells/organisms, and includes all chromosomal sequences, the mitochondrial genome, and any transmissable extrachromosomal replicons.
 is_a: GENO:0000536 ! genotype
 property_value: IAO:0000116 "Genotype vs Genome in GENO: An (intrinsic) genotype is an information artifact representing an indirect syntax for specifying a genome sequence.  This syntax has reference and variant components -  a 'background genotype' and 'genomic variation complement' - that must be operated on to resolve a specifie genome sequence.  Specifically, the genome sequence is resolved by substituting all sequences specified by the 'genomic variation complement' for the corresponding sequences in the 'reference genome'.  So, while the total sequence content represented in a genotype may be greater than that in a genome, the intended resolution of these sequences is to arrive at a single genome sequence. It is this end-point that we consider when holding that a genotype 'specifies' a genome." xsd:string
@@ -1632,13 +1631,11 @@ property_value: IAO:0000118 "copy number complement" xsd:string
 [Term]
 id: GENO:0000873
 name: microsatellite alteration
-def: "A relation used to describe  an environment contextualizing the identity of an entity." []
 is_a: GENO:0000874 ! repeat region alteration
 
 [Term]
 id: GENO:0000874
 name: repeat region alteration
-def: "A relation used to describe  a process contextualizing the identity of an entity." []
 is_a: SO:0001059 ! sequence_alteration
 
 [Term]
@@ -1852,13 +1849,11 @@ is_a: SO:0000110 ! sequence_feature
 
 [Term]
 id: GENO:0000910
-name: obsolete reporter role
 name: reporter
 is_a: GENO:0000788 ! sequence feature attribute
 
 [Term]
 id: GENO:0000911
-name: obsolete selectable marker role
 name: selectable marker
 is_a: GENO:0000788 ! sequence feature attribute
 
@@ -3407,19 +3402,21 @@ name: obsolete_specifies
 def: "A relationship between an information content entity representing a specification, and the entity it specifies." []
 property_value: IAO:0000112 "A geno:intrinnsic genotype 'specifies' a SO:genome.\nA geno:karyotype 'specifies' a geno:karyotype feature collection." xsd:string
 is_a: ObsoleteProperty
-inverse_of: GENO:0000253 ! obsolete_is_specified_by
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000243
 name: obsolete_approximates_sequence
 property_value: IAO:0000116 "Created subproperties 'approximates_sequence' and 'resolves to sequence'. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The 'resolves_to_sequence' property can be used when the sequence variant artifact is able to completely resolve a sequence, and the 'approximates_sequence' property can be used when it does not. " xsd:string
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000244
 name: obsolete_resolves_to_sequence
 property_value: IAO:0000116 "Created subproperties 'approximates_sequence' and 'resolves to sequence'. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The 'resolves_to_sequence' property can be used when the sequence variant artifact is able to completely resolve a sequence, and the 'approximates_sequence' property can be used when it does not. " xsd:string
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000248
@@ -3442,6 +3439,7 @@ inverse_of: IAO:0000136 ! is about
 id: GENO:0000253
 name: obsolete_is_specified_by
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000359
@@ -3451,8 +3449,8 @@ comment: Might expand to something like:\n\nphenotype and (is_phenotype_of some 
 property_value: IAO:0000118 "is_phenotype_of_organism_with_genotype" xsd:string
 property_value: IAO:0000118 "is_phenotype_with_genotype" xsd:string
 property_value: IAO:0000118 "phenotype_has_genotype" xsd:string
-domain: UPHENO:0001001 ! Phenotype
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000368
@@ -3461,6 +3459,7 @@ def: "A relation to link variant loci, phenotypes, or disease to the type of inh
 property_value: IAO:0000116 "Exploratory/temporary property, as we formalize our phenotypic inheritance model." xsd:string
 range: GENO:0000141 ! inheritance pattern
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000382
@@ -3511,7 +3510,7 @@ comment: Domain = genomic feature instance\nRange = punned gene class IRI
 property_value: IAO:0000118 "is_variant_instance_of" xsd:string
 property_value: IAO:0000231 "formerly grouped is_allele_of and is_expression_variant_of proerpties under feature to class proeprty (now renmaed has_affected_locus)" xsd:string
 is_a: ObsoleteProperty
-inverse_of: GENO:0000411 ! obsolete_has_genetic_variant
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000411
@@ -3521,6 +3520,7 @@ comment: Domain = punned gene class\nRange = genomic feature
 property_value: IAO:0000118 "has_variant_instance" xsd:string
 property_value: IAO:0000231 "formerly grouped has_allele and has_expression_variant proerpties under cllass to feature property (now renamed locus_affected_by)" xsd:string
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000413
@@ -3586,12 +3586,14 @@ def: "A relation between two sequence features at a given genomic locus that var
 comment: This proeprty is most commonly used to relate two different alleles of a given gene.  It is not a relation between an allele and the gene it is a variant of.
 property_value: IAO:0000231 "Decided there was no need for a contrasting is_expression_variant_with property, so removed it and this parent grouping property." xsd:string
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000488
 name: obsolete_is_expression_variant_with
 def: "A relation between two instances of a given gene that vary in their level of expression as a result of external factors influencing expression (e.g. gnee-knockdown reagents, epigenetic modification, alteration of endogenous gene-regulation pathways)." []
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000580
@@ -3724,6 +3726,7 @@ id: GENO:0000741
 name: obsolete_has_regulatory_part
 comment: Proposal for a property linking variants to smaller components that are regulatory, and therefore should not inherit phenotypes.
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000742
@@ -3733,6 +3736,7 @@ property_value: IAO:0000114 GENO:0000484
 property_value: IAO:0000118 "is_within_allele_of" xsd:string
 holds_over_chain: GENO:0000383 GENO:0000408
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000743
@@ -3751,6 +3755,7 @@ name: obsolete_has_position_component
 def: "A relation linking a sequence feature to its component Position that represents an identifying criteria for sequence feature instances." []
 property_value: IAO:0000116 "For representing positional data, we advocate use of the FALDO model, which links to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence.  The positional_component property in GENO is meant primarily to formalize the identity criteria or sequence features and qualified sequence features, to illustrate the distinction between them." xsd:string
 is_a: ObsoleteProperty
+is_obsolete: true
 
 [Typedef]
 id: GENO:0000783
@@ -4172,7 +4177,7 @@ is_a: GENO:0000708 ! faldo properties
 
 [Typedef]
 id: reference
-name: reference
+name: reference (faldo)
 def: "The reference is the resource that the position value is anchored to.  For example, a contig or chromosome in a genome assembly." []
 is_a: GENO:0000708 ! faldo properties
 
