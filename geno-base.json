@@ -16,9 +16,9 @@
         "val" : "https://creativecommons.org/licenses/by/4.0/"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2023-02-19"
+        "val" : "2023-02-21"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/geno/releases/2023-02-19/geno-base.json"
+      "version" : "http://purl.obolibrary.org/obo/geno/releases/2023-02-21/geno-base.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000484",
@@ -116,7 +116,7 @@
       }
     }, {
       "id" : "http://biohackathon.org/resource/faldo#reference",
-      "lbl" : "reference",
+      "lbl" : "reference (faldo)",
       "type" : "PROPERTY",
       "meta" : {
         "definition" : {
@@ -1386,7 +1386,8 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
           "val" : "A geno:intrinnsic genotype 'specifies' a SO:genome.\nA geno:karyotype 'specifies' a geno:karyotype feature collection."
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000243",
@@ -1396,7 +1397,8 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "Created subproperties 'approximates_sequence' and 'resolves to sequence'. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The 'resolves_to_sequence' property can be used when the sequence variant artifact is able to completely resolve a sequence, and the 'approximates_sequence' property can be used when it does not. "
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000244",
@@ -1406,7 +1408,8 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "Created subproperties 'approximates_sequence' and 'resolves to sequence'. Genotypes and other sequence variant artifacts are not always expected to completely specify a sequence, but rather provide some approximation based on available knowledge. The 'resolves_to_sequence' property can be used when the sequence variant artifact is able to completely resolve a sequence, and the 'approximates_sequence' property can be used when it does not. "
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000248",
@@ -1431,7 +1434,10 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000253",
       "lbl" : "obsolete_is_specified_by",
-      "type" : "PROPERTY"
+      "type" : "PROPERTY",
+      "meta" : {
+        "deprecated" : true
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000324",
       "lbl" : "obsolete chromosome complement",
@@ -1598,7 +1604,8 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
           "val" : "phenotype_has_genotype"
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000368",
@@ -1611,7 +1618,8 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "Exploratory/temporary property, as we formalize our phenotypic inheritance model."
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000382",
@@ -1710,7 +1718,8 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "formerly grouped is_allele_of and is_expression_variant_of proerpties under feature to class proeprty (now renmaed has_affected_locus)"
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000411",
@@ -1727,7 +1736,8 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "formerly grouped has_allele and has_expression_variant proerpties under cllass to feature property (now renamed locus_affected_by)"
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000413",
@@ -1923,7 +1933,8 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "Decided there was no need for a contrasting is_expression_variant_with property, so removed it and this parent grouping property."
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000488",
@@ -1932,7 +1943,8 @@
       "meta" : {
         "definition" : {
           "val" : "A relation between two instances of a given gene that vary in their level of expression as a result of external factors influencing expression (e.g. gnee-knockdown reagents, epigenetic modification, alteration of endogenous gene-regulation pathways)."
-        }
+        },
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000491",
@@ -2901,7 +2913,10 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000712",
       "lbl" : "ObsoleteDataProperty",
-      "type" : "PROPERTY"
+      "type" : "PROPERTY",
+      "meta" : {
+        "deprecated" : true
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000713",
       "lbl" : "qualified sequence feature or collection",
@@ -2943,9 +2958,6 @@
       "lbl" : "intrinsic genotype",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype."
-        },
         "comments" : [ "1. A genomic genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome ('genomic background'), and all specific variants from this reference (the 'genomic variation complement').  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the 'genomic variation complement' for the corresponding sequences in the reference  'genomic background' sequence.\n\n2. 'Heritable' genomic sequence is that which is passed on to subsequent generations of cells/organisms, and includes all chromosomal sequences, the mitochondrial genome, and any transmissable extrachromosomal replicons." ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
@@ -3024,7 +3036,8 @@
       "lbl" : "obsolete_has_regulatory_part",
       "type" : "PROPERTY",
       "meta" : {
-        "comments" : [ "Proposal for a property linking variants to smaller components that are regulatory, and therefore should not inherit phenotypes." ]
+        "comments" : [ "Proposal for a property linking variants to smaller components that are regulatory, and therefore should not inherit phenotypes." ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000742",
@@ -3040,7 +3053,8 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000118",
           "val" : "is_within_allele_of"
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000743",
@@ -3067,7 +3081,8 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "For representing positional data, we advocate use of the FALDO model, which links to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence.  The positional_component property in GENO is meant primarily to formalize the identity criteria or sequence features and qualified sequence features, to illustrate the distinction between them."
-        } ]
+        } ],
+        "deprecated" : true
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000768",
@@ -3497,21 +3512,11 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000873",
       "lbl" : "microsatellite alteration",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A relation used to describe  an environment contextualizing the identity of an entity."
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000874",
       "lbl" : "repeat region alteration",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A relation used to describe  a process contextualizing the identity of an entity."
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000875",
       "lbl" : "allelic state",
@@ -8704,10 +8709,6 @@
       "pred" : "inverseOf",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000251"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000242",
-      "pred" : "inverseOf",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000253"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000252",
       "pred" : "inverseOf",
       "obj" : "http://purl.obolibrary.org/obo/IAO_0000136"
@@ -8723,10 +8724,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000408",
       "pred" : "inverseOf",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000413"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GENO_0000410",
-      "pred" : "inverseOf",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000411"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000414",
       "pred" : "inverseOf",
@@ -8947,9 +8944,6 @@
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/GENO_0000251",
       "domainClassIds" : [ "http://purl.obolibrary.org/obo/GENO_0000702" ]
-    }, {
-      "predicateId" : "http://purl.obolibrary.org/obo/GENO_0000359",
-      "domainClassIds" : [ "http://purl.obolibrary.org/obo/UPHENO_0001001" ]
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/GENO_0000408",
       "domainClassIds" : [ "http://purl.obolibrary.org/obo/GENO_0000481" ]
