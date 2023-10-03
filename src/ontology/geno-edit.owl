@@ -312,6 +312,7 @@ Declaration(Class(obo:GENO_0000972))
 Declaration(Class(obo:GENO_0000974))
 Declaration(Class(obo:GENO_0000975))
 Declaration(Class(obo:GENO_0000976))
+Declaration(Class(obo:GENO_0000978))
 Declaration(Class(obo:GO_0032502))
 Declaration(Class(obo:HP_0000118))
 Declaration(Class(obo:HsapDv_0000000))
@@ -621,7 +622,7 @@ SubObjectPropertyOf(<http://biohackathon.org/resource/faldo#end> obo:GENO_000070
 AnnotationAssertion(rdfs:label <http://biohackathon.org/resource/faldo#location> "location"@en)
 SubObjectPropertyOf(<http://biohackathon.org/resource/faldo#location> obo:GENO_0000708)
 
-# Object Property: <http://biohackathon.org/resource/faldo#reference> (reference)
+# Object Property: <http://biohackathon.org/resource/faldo#reference> (reference (faldo))
 
 AnnotationAssertion(obo:IAO_0000115 <http://biohackathon.org/resource/faldo#reference> "The reference is the resource that the position value is anchored to.  For example, a contig or chromosome in a genome assembly.")
 AnnotationAssertion(rdfs:label <http://biohackathon.org/resource/faldo#reference> "reference (faldo)")
@@ -696,8 +697,8 @@ AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000242 "A geno:intrinnsic genotype
 A geno:karyotype 'specifies' a geno:karyotype feature collection.")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000242 "A relationship between an information content entity representing a specification, and the entity it specifies.")
 AnnotationAssertion(rdfs:label obo:GENO_0000242 "obsolete_specifies")
-SubObjectPropertyOf(obo:GENO_0000242 oboInOwl:ObsoleteProperty)
 AnnotationAssertion(owl:deprecated obo:GENO_0000242 "true"^^xsd:boolean)
+SubObjectPropertyOf(obo:GENO_0000242 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000243 (obsolete_approximates_sequence)
 
@@ -733,8 +734,8 @@ InverseObjectProperties(obo:GENO_0000252 obo:IAO_0000136)
 # Object Property: obo:GENO_0000253 (obsolete_is_specified_by)
 
 AnnotationAssertion(rdfs:label obo:GENO_0000253 "obsolete_is_specified_by")
-SubObjectPropertyOf(obo:GENO_0000253 oboInOwl:ObsoleteProperty)
 AnnotationAssertion(owl:deprecated obo:GENO_0000253 "true"^^xsd:boolean)
+SubObjectPropertyOf(obo:GENO_0000253 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000359 (obsolete_is_phenotype_of_genotype)
 
@@ -742,11 +743,11 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000359 "shortcut relation used to 
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000359 "is_phenotype_of_organism_with_genotype")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000359 "is_phenotype_with_genotype")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000359 "phenotype_has_genotype")
-AnnotationAssertion(owl:deprecated obo:GENO_0000359 "true"^^xsd:boolean)
 AnnotationAssertion(rdfs:comment obo:GENO_0000359 "Might expand to something like:
 
 phenotype and (is_phenotype_of some (organism and (has_part some ('material genome' and (is_subject_of some (genome and (is_specified_by some genotype)))))))")
 AnnotationAssertion(rdfs:label obo:GENO_0000359 "obsolete_is_phenotype_of_genotype")
+AnnotationAssertion(owl:deprecated obo:GENO_0000359 "true"^^xsd:boolean)
 SubObjectPropertyOf(obo:GENO_0000359 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000368 (obsolete_participates_in_inheritance_process)
@@ -816,8 +817,8 @@ AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000410 "formerly grouped is_allele
 AnnotationAssertion(rdfs:comment obo:GENO_0000410 "Domain = genomic feature instance
 Range = punned gene class IRI")
 AnnotationAssertion(rdfs:label obo:GENO_0000410 "obsolete_is_genetic_variant_of")
-SubObjectPropertyOf(obo:GENO_0000410 oboInOwl:ObsoleteProperty)
 AnnotationAssertion(owl:deprecated obo:GENO_0000410 "true"^^xsd:boolean)
+SubObjectPropertyOf(obo:GENO_0000410 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000411 (obsolete_has_genetic_variant)
 
@@ -827,8 +828,8 @@ AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000411 "formerly grouped has_allel
 AnnotationAssertion(rdfs:comment obo:GENO_0000411 "Domain = punned gene class
 Range = genomic feature")
 AnnotationAssertion(rdfs:label obo:GENO_0000411 "obsolete_has_genetic_variant")
-SubObjectPropertyOf(obo:GENO_0000411 oboInOwl:ObsoleteProperty)
 AnnotationAssertion(owl:deprecated obo:GENO_0000411 "true"^^xsd:boolean)
+SubObjectPropertyOf(obo:GENO_0000411 oboInOwl:ObsoleteProperty)
 
 # Object Property: obo:GENO_0000413 (has_allele)
 
@@ -2136,7 +2137,7 @@ SubClassOf(obo:GENO_0000132 obo:GENO_0000886)
 
 # Class: obo:GENO_0000133 (zygosity)
 
-AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000133 "An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different).")
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000133 "An allelic state that describes the degree of similarity between features in a 'single locus complement', within the genome of a cell or organism (i.e., whether the alleles or haplotypes that reside at the same location on paired chromosomes are the same or different).")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000133 "allelic state")
 AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000133 "derived from https://en.wikipedia.org/wiki/Zygosity")
 AnnotationAssertion(oboInOwl:hasDbXref obo:GENO_0000133 "http://semanticscience.org/resource/SIO_001263")
@@ -2146,16 +2147,19 @@ SubClassOf(obo:GENO_0000133 ObjectSomeValuesFrom(obo:RO_0000052 obo:GENO_0000516
 
 # Class: obo:GENO_0000134 (hemizygous)
 
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000134 "A zygosity quality inhering in a 'single locus complement' with half the number of alleles than normal (e.g. a single allele in a diploid genome, for example, a locus on the Y chromosome in a eukaryotic male genome, or a transgene that is present only in one of the two parental chromosome sets)")
 AnnotationAssertion(rdfs:label obo:GENO_0000134 "hemizygous")
 SubClassOf(obo:GENO_0000134 obo:GENO_0000391)
 
 # Class: obo:GENO_0000135 (heterozygous)
 
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000135 "A zygosity quality inhering in a 'single locus complement' where the copies of the feature at this location have at least one difference in sequence  (in a eukaryotic diploid genome, this means having two distinct alleles on each of the two homologous chromosomes, one inherited from each parent).")
 AnnotationAssertion(rdfs:label obo:GENO_0000135 "heterozygous")
 SubClassOf(obo:GENO_0000135 obo:GENO_0000391)
 
 # Class: obo:GENO_0000136 (homozygous)
 
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000136 "A zygosity quality inhering in a 'single locus complement' where all copies of the feature at this location have the same sequence (in a eukaryotic diploid genome, this means having identical alleles on each of the two homologous chromosomes, one inherited from each parent).")
 AnnotationAssertion(rdfs:label obo:GENO_0000136 "homozygous")
 SubClassOf(obo:GENO_0000136 obo:GENO_0000391)
 
@@ -2411,11 +2415,13 @@ SubClassOf(obo:GENO_0000351 obo:BFO_0000015)
 
 # Class: obo:GENO_0000391 (disomic zygosity)
 
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000391 "A zygosity quality inhering in a 'single locus complement' in a genome with a normal ploidy of two (i.e. two copies of autosomal chromosomes). Disomic zygosity terms describe the degree of similarity of the two sequence features that reside at a particular location across homozygous chromosomes (or the state of being the only feature at a given locus in the case of hemizygosity).")
 AnnotationAssertion(rdfs:label obo:GENO_0000391 "disomic zygosity")
 SubClassOf(obo:GENO_0000391 obo:GENO_0000133)
 
 # Class: obo:GENO_0000392 (aneusomic zygosity)
 
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000392 "A zygosity quality inhering in a 'single locus complement' in a genome with an abnormal ploidy at the location (i.e. an autosomal locus with one or three copies in a diploid genome).")
 AnnotationAssertion(rdfs:label obo:GENO_0000392 "aneusomic zygosity")
 SubClassOf(obo:GENO_0000392 obo:GENO_0000133)
 
@@ -4069,6 +4075,12 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000976 "Describes an allele that i
 AnnotationAssertion(rdfs:comment obo:GENO_0000976 "Biparental inheritance of alleles is typical of normal mendelian inheritance, where offspring inherit a maternal and a paternal copies of a given gene.")
 AnnotationAssertion(rdfs:label obo:GENO_0000976 "biparental allele origin"@en)
 SubClassOf(obo:GENO_0000976 obo:GENO_0000974)
+
+# Class: obo:GENO_0000978 (nullizygous)
+
+AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000978 "A disomic zygosity quality inhering in a 'single locus complement' that is comprised of two non-functional copies of a gene. Loss of function may result from the gene being entirely missing via a deletion, or mutated in a way that eliminates its function.")
+AnnotationAssertion(rdfs:label obo:GENO_0000978 "nullizygous"@en)
+SubClassOf(obo:GENO_0000978 obo:GENO_0000391)
 
 # Class: obo:GO_0032502 (developmental process)
 
