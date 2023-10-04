@@ -4079,6 +4079,7 @@ SubClassOf(obo:GENO_0000976 obo:GENO_0000974)
 # Class: obo:GENO_0000978 (nullizygous)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000978 "A disomic zygosity quality inhering in a 'single locus complement' that is comprised of two non-functional copies of a gene. Loss of function may result from the gene being entirely missing via a deletion, or mutated in a way that eliminates its function.")
+AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:GENO_0000978 "homozygous null")
 AnnotationAssertion(rdfs:label obo:GENO_0000978 "nullizygous"@en)
 SubClassOf(obo:GENO_0000978 obo:GENO_0000391)
 
