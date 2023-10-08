@@ -1,24 +1,28 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/geno.owl#"
      xml:base="http://purl.obolibrary.org/obo/geno.owl"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dce="http://purl.org/dc/elements/1.1/"
+     xmlns:obi="http://purl.obolibrary.org/obo/obi.owl#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:property="http://property/"
+     xmlns:urigen-plugin="http://urigen-plugin/"
+     xmlns:genotype_model="http://www.lamhdi.org/obo/genotype_model/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2023-02-21/geno.owl"/>
-        <dc:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2023-10-08/geno.owl"/>
+        <dce:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
-Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dc:description>
-        <dc:title>GENO ontology</dc:title>
-        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>2023-02-21</owl:versionInfo>
+Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dce:description>
+        <dce:title>GENO ontology</dce:title>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <owl:versionInfo>2023-10-08</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -614,8 +618,8 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
     }</obo:IAO_0000112>
         <obo:IAO_0000115>Links an annotation property to a SPARQL CONSTRUCT query which is meant to provide semantics for a shortcut relation.</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:resource="https://github.com/ontodev/robot/issues/963"/>
-        <dc:contributor rdf:resource="https://orcid.org/0000-0002-7356-1779"/>
-        <dc:contributor rdf:resource="https://orcid.org/0000-0002-8688-6599"/>
+        <dce:contributor rdf:resource="https://orcid.org/0000-0002-7356-1779"/>
+        <dce:contributor rdf:resource="https://orcid.org/0000-0002-8688-6599"/>
         <rdfs:label>defined by construct</rdfs:label>
     </owl:AnnotationProperty>
     
@@ -2438,7 +2442,7 @@ Example 2: a collection of information entities such as a genotype being compris
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002526">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <obo:IAO_0000115>x overlaps the sequence of x if and only if x has a subsequence z and z is a subsequence of y.</obo:IAO_0000115>
-        <terms:source>http://biorxiv.org/content/early/2014/06/27/006650.abstract</terms:source>
+        <dcterms:source>http://biorxiv.org/content/early/2014/06/27/006650.abstract</dcterms:source>
         <rdfs:label>overlaps sequence of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -3723,7 +3727,7 @@ Note that at present, a material genome and genetic material are necessarily par
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000516"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different).</obo:IAO_0000115>
+        <obo:IAO_0000115>An allelic state that describes the degree of similarity between features in a &apos;single locus complement&apos;, within the genome of a cell or organism (i.e., whether the alleles or haplotypes that reside at the same location on paired chromosomes are the same or different).</obo:IAO_0000115>
         <obo:IAO_0000118>allelic state</obo:IAO_0000118>
         <obo:IAO_0000119>derived from https://en.wikipedia.org/wiki/Zygosity</obo:IAO_0000119>
         <oboInOwl:hasDbXref>http://semanticscience.org/resource/SIO_001263</oboInOwl:hasDbXref>
@@ -3736,6 +3740,7 @@ Note that at present, a material genome and genetic material are necessarily par
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000134">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000391"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; with half the number of alleles than normal (e.g. a single allele in a diploid genome, for example, a locus on the Y chromosome in a eukaryotic male genome, or a transgene that is present only in one of the two parental chromosome sets)</obo:IAO_0000115>
         <rdfs:label>hemizygous</rdfs:label>
     </owl:Class>
     
@@ -3745,6 +3750,7 @@ Note that at present, a material genome and genetic material are necessarily par
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000135">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000391"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; where the copies of the feature at this location have at least one difference in sequence  (in a eukaryotic diploid genome, this means having two distinct alleles on each of the two homologous chromosomes, one inherited from each parent).</obo:IAO_0000115>
         <rdfs:label>heterozygous</rdfs:label>
     </owl:Class>
     
@@ -3754,6 +3760,7 @@ Note that at present, a material genome and genetic material are necessarily par
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000136">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000391"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; where all copies of the feature at this location have the same sequence (in a eukaryotic diploid genome, this means having identical alleles on each of the two homologous chromosomes, one inherited from each parent).</obo:IAO_0000115>
         <rdfs:label>homozygous</rdfs:label>
     </owl:Class>
     
@@ -4186,6 +4193,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000391">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000133"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; in a genome with a normal ploidy of two (i.e. two copies of autosomal chromosomes). Disomic zygosity terms describe the degree of similarity of the two sequence features that reside at a particular location across homozygous chromosomes (or the state of being the only feature at a given locus in the case of hemizygosity).</obo:IAO_0000115>
         <rdfs:label>disomic zygosity</rdfs:label>
     </owl:Class>
     
@@ -4195,6 +4203,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000392">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000133"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; in a genome with an abnormal ploidy at the location (i.e. an autosomal locus with one or three copies in a diploid genome).</obo:IAO_0000115>
         <rdfs:label>aneusomic zygosity</rdfs:label>
     </owl:Class>
     
@@ -5376,7 +5385,6 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
     <!-- http://purl.obolibrary.org/obo/GENO_0000681 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000681">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000494"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000684"/>
         <rdfs:subClassOf>
             <owl:Class>
@@ -5387,6 +5395,12 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
                     </owl:Restriction>
                 </owl:complementOf>
             </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000207"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000139"/>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An extrachromosomal replicon that is variant in a genome in virtue of its being a novel addition to the genome - i.e. it is not present in the reference for the genome in which it is found.</obo:IAO_0000115>
         <obo:IAO_0000118>aberrant extrachromosomal replicon</obo:IAO_0000118>
@@ -5464,7 +5478,7 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000702">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000921"/>
-        <rdfs:subClassOf rdf:nodeID="genid254"/>
+        <rdfs:subClassOf rdf:nodeID="genid255"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <obo:IAO_0000115>A linear ordering of units representing monomers of a biological macromolecule (e.g. nucleotides in DNA and RNA, amino acids in polypeptides).</obo:IAO_0000115>
@@ -5478,14 +5492,14 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
         <rdfs:comment>&apos;Sequences&apos; differ from &apos;sequence features&apos; in that instances are distinguished only by their inherent ordering of units, and not by any positional aspect related to alignment with some reference sequence. Accordingly, the &apos;ATG&apos; translational start codon of the human AKT gene is the same *sequence* as the &apos;ATG&apos; start codon of the human SHH gene, but these represent two distinct *sequence features* in virtue of their different positions in the genome.</rdfs:comment>
         <rdfs:label xml:lang="en">biological sequence</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid254">
+    <owl:Restriction rdf:nodeID="genid255">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000896"/>
         <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid254"/>
+        <owl:annotatedTarget rdf:nodeID="genid255"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     <owl:Axiom>
@@ -5512,31 +5526,31 @@ The notion of a &apos;genomic feature set&apos; differs from that of a &apos;gen
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000714">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000897"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000919"/>
-        <rdfs:subClassOf rdf:nodeID="genid257"/>
-        <rdfs:subClassOf rdf:nodeID="genid259"/>
+        <rdfs:subClassOf rdf:nodeID="genid258"/>
+        <rdfs:subClassOf rdf:nodeID="genid260"/>
         <obo:IAO_0000112>Consider wild-type zebrafish shha gene in the context of being targeted by morpholino MO-1 vs morpholino MO-2 in separate experiments. These shha genes share identical sequence and position, but represent distinct instances of a &apos;qualified sequence feature&apos; because of their different external contexts. This is important because these qualified features could have distinct phenotypes associated with them (just as two different sequence variants (alleles) of the same gene can have potentially different associated phenotypes).</obo:IAO_0000112>
         <obo:IAO_0000115>A qualified sequence feature that carries sequence derived from the genome of a cell or organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">qualified genomic feature</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid257">
+    <owl:Restriction rdf:nodeID="genid258">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
         <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid259">
+    <owl:Restriction rdf:nodeID="genid260">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000726"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000481"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid257"/>
+        <owl:annotatedTarget rdf:nodeID="genid258"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>This axiom is an initial attempt to formalize the identity criteria of an extrinnsic context that separates qualified sequence features from sequence features (i.e. the context of its material bearer).  As we further develop our efforts here this will get refined and more precise.</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000714"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid259"/>
+        <owl:annotatedTarget rdf:nodeID="genid260"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>Formalizes one identity criteria of the sequence feature component of a qualified sequence feature (which itself is identified by its sequence and its genomic position).</rdfs:comment>
     </owl:Axiom>
@@ -5944,19 +5958,19 @@ This contrasts to the use of the term &apos;genotype in model orgnaism communiti
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000833">
         <rdfs:subClassOf rdf:resource="http://purl.org/oban/association"/>
-        <rdfs:subClassOf rdf:nodeID="genid302"/>
-        <rdfs:subClassOf rdf:nodeID="genid304"/>
-        <rdfs:subClassOf rdf:nodeID="genid314"/>
-        <rdfs:subClassOf rdf:nodeID="genid316"/>
+        <rdfs:subClassOf rdf:nodeID="genid303"/>
+        <rdfs:subClassOf rdf:nodeID="genid305"/>
+        <rdfs:subClassOf rdf:nodeID="genid315"/>
+        <rdfs:subClassOf rdf:nodeID="genid317"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/GENO_0000484"/>
         <obo:IAO_0000116>Exploratory class looking at creating more specific subtypes of associatiosn, and defining identity criteria for each.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">genotype-phenotype association</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid302">
+    <owl:Restriction rdf:nodeID="genid303">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid304">
+    <owl:Restriction rdf:nodeID="genid305">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000580"/>
         <owl:someValuesFrom>
             <owl:Class>
@@ -5978,11 +5992,11 @@ This contrasts to the use of the term &apos;genotype in model orgnaism communiti
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid314">
+    <owl:Restriction rdf:nodeID="genid315">
         <owl:onProperty rdf:resource="http://purl.org/oban/association_has_object"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid316">
+    <owl:Restriction rdf:nodeID="genid317">
         <owl:onProperty rdf:resource="http://purl.org/oban/association_has_subject"/>
         <owl:someValuesFrom>
             <owl:Class>
@@ -5999,25 +6013,25 @@ This contrasts to the use of the term &apos;genotype in model orgnaism communiti
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid302"/>
+        <owl:annotatedTarget rdf:nodeID="genid303"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid304"/>
+        <owl:annotatedTarget rdf:nodeID="genid305"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid314"/>
+        <owl:annotatedTarget rdf:nodeID="genid315"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GENO_0000833"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid316"/>
+        <owl:annotatedTarget rdf:nodeID="genid317"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
     </owl:Axiom>
     
@@ -6111,7 +6125,7 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
         <obo:IAO_0000116>Consider if we dont want to define this as a &apos;complement&apos;, as it implies a complet set of memebrs of a defined type.  But many haplotypes will be incomplete, due to lack of knowledge of other variation bound by the haplotype block.
 
 Instead, we can create an &apos;allele set&apos; class as the haplotype parent?</obo:IAO_0000116>
-        <terms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</terms:source>
+        <dcterms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</dcterms:source>
         <rdfs:comment>A haplotype is a set of non-overlapping alleles that reside in close proximity on the same DNA strand. We model them as &apos;complements&apos; because they include all known/relevant alleles within a defined region in the genome (e.g. a &apos;gene&apos;, or a &apos;haplotype block&apos;) - where this set may consist of 0, 1, or more alterations from some reference.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction. 
 
 As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is most commonly used to describe the following scenarios of genetic linkage between &apos;alleles&apos;:
@@ -6388,7 +6402,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
         <obo:IAO_0000116>The notion of a &apos;canonical allele&apos; is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.</obo:IAO_0000116>
         <obo:IAO_0000119>http://dataexchange.clinicalgenome.org/allele/resource/canonical_allele/</obo:IAO_0000119>
         <obo:IAO_0000231>No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs.</obo:IAO_0000231>
-        <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
+        <dcterms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</dcterms:source>
         <rdfs:comment>As a &apos;sequence feature or collection&apos; (sensu SO), a &apos;canonical allele&apos; is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence). Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand.
 
 In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;contextual alleles&apos;. Contextual alleles are informational representation that describe a canonical allele using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation (e.g. different chromosomal or transcript references)</rdfs:comment>
@@ -6407,7 +6421,7 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
         <obo:IAO_0000231>No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs.
 
 Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_0000231>
-        <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
+        <dcterms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</dcterms:source>
         <rdfs:comment>The notion of a &apos;contextual allele&apos; derives from the ClinGen Allele model. Here, each genetic allele in a patient corresponds to a single &apos;canonical allele&apos;, which in turn may aggregate any number of &apos;contextual allele&apos; representations that are may be defined against different reference sequences. Accordingly, many contextual alleles can describe a single canonical allele. For example, the contextual alleles “NC_000013.11:g.32319070T&gt;A” and “NG_012772.3:g.8591T&gt;A” both describe the same underlying canonical allele, a single nucleotide variation, in the BRCA2 gene.</rdfs:comment>
         <rdfs:label>obsolete contextual allele</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -7310,6 +7324,17 @@ https://en.wikipedia.org/wiki/Uniparental_inheritance</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GENO_0000978 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000978">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000391"/>
+        <obo:IAO_0000115>A disomic zygosity quality inhering in a &apos;single locus complement&apos; that is comprised of two non-functional copies of a gene. Loss of function may result from the gene being entirely missing via a deletion, or mutated in a way that eliminates its function.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>homozygous null</oboInOwl:hasNarrowSynonym>
+        <rdfs:label xml:lang="en">nullizygous</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0032502 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0032502">
@@ -7930,8 +7955,8 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000110">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000701"/>
-        <rdfs:subClassOf rdf:nodeID="genid395"/>
-        <rdfs:subClassOf rdf:nodeID="genid397"/>
+        <rdfs:subClassOf rdf:nodeID="genid396"/>
+        <rdfs:subClassOf rdf:nodeID="genid398"/>
         <obo:IAO_0000115>Any extent of continuous biological sequence.</obo:IAO_0000115>
         <obo:IAO_0000116>GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.
 1. &apos;Biological sequence&apos; identity is dependent only on the ordering of units that comprise the sequence.
@@ -7940,25 +7965,25 @@ chromosome &gt; arm &gt; band &gt; sub-band &gt; sub-sub-band</obo:IAO_0000119>
         <rdfs:comment>A sequence feature is an extent of &apos;located&apos; biological sequence, whose identity is determined by both its inherent sequence (ordering of monomeric units) and its position (start and end coordinates based on alignment with some reference). By contrast, &apos;biological sequences&apos; are identified and distinguished only by their inehrent sequence, and not their position.  Accordingly, the &apos;ATG&apos; start codon in the coding DNA sequence of the human AKT gene is the same &apos;sequence&apos; as the &apos;ATG&apos; start codon in the human SHH gene, but these represent two distinct &apos;sequence features&apos; in virtue of their different positions in the genome.</rdfs:comment>
         <rdfs:label>sequence_feature</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid395">
+    <owl:Restriction rdf:nodeID="genid396">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000239"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000702"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid397">
+    <owl:Restriction rdf:nodeID="genid398">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENO_0000903"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000815"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid395"/>
+        <owl:annotatedTarget rdf:nodeID="genid396"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>Formalizes the first identity criteria for a sequence feature of its sequence.</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid397"/>
+        <owl:annotatedTarget rdf:nodeID="genid398"/>
         <obo:GENO_0000834 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:GENO_0000834>
         <rdfs:comment>Formalizes the second identify criteiria for a sequence feature of its genomic position. We use the FALDO model to represent positional information, which links features to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence. (But features can also be linked to Positions directly through the location property).</rdfs:comment>
     </owl:Axiom>
@@ -9450,5 +9475,5 @@ Codes for: http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
 
 
 
-<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
 

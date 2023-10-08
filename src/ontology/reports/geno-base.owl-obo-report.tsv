@@ -14,9 +14,6 @@ WARN	missing_definition	gene trap insertion	IAO:0000115
 WARN	missing_definition	taxonomic group	IAO:0000115	
 WARN	missing_definition	mus musculus strain	IAO:0000115	
 WARN	missing_definition	danio rerio strain	IAO:0000115	
-WARN	missing_definition	hemizygous	IAO:0000115	
-WARN	missing_definition	heterozygous	IAO:0000115	
-WARN	missing_definition	homozygous	IAO:0000115	
 WARN	missing_definition	unspecified zygosity	IAO:0000115	
 WARN	missing_definition	heritable	IAO:0000115	
 WARN	missing_definition	non-heritable	IAO:0000115	
@@ -27,8 +24,6 @@ WARN	missing_definition	is_subject_of	IAO:0000115
 WARN	missing_definition	biological process	IAO:0000115	
 WARN	missing_definition	is_variant_part_of	IAO:0000115	
 WARN	missing_definition	is_reference_part_of	IAO:0000115	
-WARN	missing_definition	disomic zygosity	IAO:0000115	
-WARN	missing_definition	aneusomic zygosity	IAO:0000115	
 WARN	missing_definition	trisomic homozygous	IAO:0000115	
 WARN	missing_definition	trisomic heterozygous	IAO:0000115	
 WARN	missing_definition	simple heterozygous	IAO:0000115	
