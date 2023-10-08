@@ -1,10 +1,10 @@
 format-version: 1.2
-data-version: geno/releases/2023-02-21/geno-full.owl
+data-version: geno/releases/2023-10-08/geno-full.owl
 ontology: geno/geno-full
 property_value: http://purl.org/dc/elements/1.1/description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. \n\nDocumentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013" xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "GENO ontology" xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by/4.0/
-property_value: owl:versionInfo "2023-02-21" xsd:string
+property_value: owl:versionInfo "2023-10-08" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -500,7 +500,7 @@ is_a: GENO:0000886 ! allelic phase
 [Term]
 id: GENO:0000133
 name: zygosity
-def: "An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different)." []
+def: "An allelic state that describes the degree of similarity between features in a 'single locus complement', within the genome of a cell or organism (i.e., whether the alleles or haplotypes that reside at the same location on paired chromosomes are the same or different)." []
 xref: http://semanticscience.org/resource/SIO_001263
 is_a: GENO:0000875 ! allelic state
 relationship: RO:0000052 GENO:0000516 ! inheres_in single locus complement
@@ -510,16 +510,19 @@ property_value: IAO:0000119 "derived from https://en.wikipedia.org/wiki/Zygosity
 [Term]
 id: GENO:0000134
 name: hemizygous
+def: "A zygosity quality inhering in a 'single locus complement' with half the number of alleles than normal (e.g. a single allele in a diploid genome, for example, a locus on the Y chromosome in a eukaryotic male genome, or a transgene that is present only in one of the two parental chromosome sets)" []
 is_a: GENO:0000391 ! disomic zygosity
 
 [Term]
 id: GENO:0000135
 name: heterozygous
+def: "A zygosity quality inhering in a 'single locus complement' where the copies of the feature at this location have at least one difference in sequence  (in a eukaryotic diploid genome, this means having two distinct alleles on each of the two homologous chromosomes, one inherited from each parent)." []
 is_a: GENO:0000391 ! disomic zygosity
 
 [Term]
 id: GENO:0000136
 name: homozygous
+def: "A zygosity quality inhering in a 'single locus complement' where all copies of the feature at this location have the same sequence (in a eukaryotic diploid genome, this means having identical alleles on each of the two homologous chromosomes, one inherited from each parent)." []
 is_a: GENO:0000391 ! disomic zygosity
 
 [Term]
@@ -765,11 +768,13 @@ property_value: IAO:0000116 "Stub class to serve as root of hierarchy for import
 [Term]
 id: GENO:0000391
 name: disomic zygosity
+def: "A zygosity quality inhering in a 'single locus complement' in a genome with a normal ploidy of two (i.e. two copies of autosomal chromosomes). Disomic zygosity terms describe the degree of similarity of the two sequence features that reside at a particular location across homozygous chromosomes (or the state of being the only feature at a given locus in the case of hemizygosity)." []
 is_a: GENO:0000133 ! zygosity
 
 [Term]
 id: GENO:0000392
 name: aneusomic zygosity
+def: "A zygosity quality inhering in a 'single locus complement' in a genome with an abnormal ploidy at the location (i.e. an autosomal locus with one or three copies in a diploid genome)." []
 is_a: GENO:0000133 ! zygosity
 
 [Term]
@@ -1320,8 +1325,8 @@ id: GENO:0000681
 name: novel extrachromosomal replicon
 def: "An extrachromosomal replicon that is variant in a genome in virtue of its being a novel addition to the genome - i.e. it is not present in the reference for the genome in which it is found." []
 comment: Extrachromosomal replicons are replicated and passed on to descendents, and thus part of the heritable genome of a cell or organism. In cases where the presence of such a replicon is exogenous or aberrant (i.e. not included in the reference for that genome), the replicon is considered a 'sequence alteration'.
-is_a: GENO:0000494 ! extrachromosomal replicon
 is_a: GENO:0000684 ! novel replicon
+relationship: GENO:0000207 GENO:0000139 ! has_sequence_attribute heritable
 property_value: IAO:0000118 "aberrant extrachromosomal replicon" xsd:string
 property_value: IAO:0000118 "exogenous extrachromosomal replicon" xsd:string
 property_value: IAO:0000118 "transgenic extrachromosomal replicon" xsd:string
@@ -1369,7 +1374,7 @@ disjoint_from: GENO:0000815 ! sequence feature location
 disjoint_from: SO:0000110 ! sequence_feature
 property_value: IAO:0000116 "GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.\n1. 'Biological sequence' identity is dependent only on the ordering of units that comprise the sequence.\n2. 'Sequence feature' identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of 'sequence feature' in the Sequence Ontology).\n3. 'Qualified sequence feature' identity is additionally dependent on some aspect of the physical context of the genetic material in which the feature is concretized. This third criteria is extrinsic to its sequence and its genomic location. For example, the feature's physical concretization being targeted by a gene knockdown reagent in a cell (e.g. the zebrafish Shha gene as targeted by the morpholino 'Shha-MO1'), or its being transiently expressed from a recombinant expression construct (e.g. the human SHH gene as expressed in a  mouse Shh knock-out cell line), or its having been epigenetically modified in a way that alters its expression level or pattern (e.g. the human SHH gene with a specific methylation pattern)." xsd:string
 property_value: IAO:0000118 "biomacromolecular sequence" xsd:string
-property_value: IAO:0000118 "state" xsd:string {http://purl.obolibrary.org/obo/IAO_0000116="In the VMC model, the notion of a GENO:biological sequence is called the 'state' of an allele."}
+property_value: IAO:0000118 "state" xsd:string {IAO:0000116="In the VMC model, the notion of a GENO:biological sequence is called the 'state' of an allele."}
 
 [Term]
 id: GENO:0000713
@@ -1383,7 +1388,7 @@ name: qualified genomic feature
 def: "A qualified sequence feature that carries sequence derived from the genome of a cell or organism." []
 is_a: GENO:0000897 ! genomic entity
 is_a: GENO:0000919 ! qualified sequence feature
-relationship: GENO:0000726 GENO:0000481 {http://purl.obolibrary.org/obo/GENO_0000834="true", comment="Formalizes one identity criteria of the sequence feature component of a qualified sequence feature (which itself is identified by its sequence and its genomic position)."} ! has_sequence_feature genomic feature
+relationship: GENO:0000726 GENO:0000481 {GENO:0000834="true", comment="Formalizes one identity criteria of the sequence feature component of a qualified sequence feature (which itself is identified by its sequence and its genomic position)."} ! has_sequence_feature genomic feature
 property_value: IAO:0000112 "Consider wild-type zebrafish shha gene in the context of being targeted by morpholino MO-1 vs morpholino MO-2 in separate experiments. These shha genes share identical sequence and position, but represent distinct instances of a 'qualified sequence feature' because of their different external contexts. This is important because these qualified features could have distinct phenotypes associated with them (just as two different sequence variants (alleles) of the same gene can have potentially different associated phenotypes)." xsd:string
 
 [Term]
@@ -1563,8 +1568,8 @@ property_value: IAO:0000118 "single locus genotype" xsd:string
 id: GENO:0000833
 name: genotype-phenotype association
 is_a: http://purl.org/oban/association ! association
-relationship: GENO:0000580 ENVO:01000254 {http://purl.obolibrary.org/obo/GENO_0000834="true"} ! has_qualifier environmental system
-relationship: http://purl.org/oban/association_has_object UPHENO:0001001 {http://purl.obolibrary.org/obo/GENO_0000834="true"} ! Phenotype
+relationship: GENO:0000580 ENVO:01000254 {GENO:0000834="true"} ! has_qualifier environmental system
+relationship: http://purl.org/oban/association_has_object UPHENO:0001001 {GENO:0000834="true"} ! Phenotype
 property_value: IAO:0000114 GENO:0000484
 property_value: IAO:0000116 "Exploratory class looking at creating more specific subtypes of associatiosn, and defining identity criteria for each." xsd:string
 
@@ -2247,6 +2252,13 @@ is_a: GENO:0000974 ! inherited allele origin
 property_value: IAO:0000114 "exploratory" xsd:string
 
 [Term]
+id: GENO:0000978
+name: nullizygous
+def: "A disomic zygosity quality inhering in a 'single locus complement' that is comprised of two non-functional copies of a gene. Loss of function may result from the gene being entirely missing via a deletion, or mutated in a way that eliminates its function." []
+synonym: "homozygous null" NARROW []
+is_a: GENO:0000391 ! disomic zygosity
+
+[Term]
 id: GO:0032502
 name: developmental process
 def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition. [database_cross_reference: GOC:isa_complete]" []
@@ -2629,8 +2641,8 @@ name: sequence_feature
 def: "Any extent of continuous biological sequence." []
 comment: A sequence feature is an extent of 'located' biological sequence, whose identity is determined by both its inherent sequence (ordering of monomeric units) and its position (start and end coordinates based on alignment with some reference). By contrast, 'biological sequences' are identified and distinguished only by their inehrent sequence, and not their position.  Accordingly, the 'ATG' start codon in the coding DNA sequence of the human AKT gene is the same 'sequence' as the 'ATG' start codon in the human SHH gene, but these represent two distinct 'sequence features' in virtue of their different positions in the genome.
 is_a: GENO:0000701 ! sequence feature or set
-relationship: GENO:0000239 GENO:0000702 {http://purl.obolibrary.org/obo/GENO_0000834="true", comment="Formalizes the first identity criteria for a sequence feature of its sequence."} ! has_sequence biological sequence
-relationship: GENO:0000903 GENO:0000815 {http://purl.obolibrary.org/obo/GENO_0000834="true", comment="Formalizes the second identify criteiria for a sequence feature of its genomic position. We use the FALDO model to represent positional information, which links features to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence. (But features can also be linked to Positions directly through the location property)."} ! has_location sequence feature location
+relationship: GENO:0000239 GENO:0000702 {GENO:0000834="true", comment="Formalizes the first identity criteria for a sequence feature of its sequence."} ! has_sequence biological sequence
+relationship: GENO:0000903 GENO:0000815 {GENO:0000834="true", comment="Formalizes the second identify criteiria for a sequence feature of its genomic position. We use the FALDO model to represent positional information, which links features to positional information through an instance of a Region class that represents the mapping of the feature onto some reference sequence. (But features can also be linked to Positions directly through the location property)."} ! has_location sequence feature location
 property_value: IAO:0000116 "GENO defines three levels of sequence-related artifacts, which are distinguished by their identity criteria.\n1. 'Biological sequence' identity is dependent only on the ordering of units that comprise the sequence.\n2. 'Sequence feature' identity is dependent on its sequence and the genomic location of the sequence (this is consistent with the definition of 'sequence feature' in the Sequence Ontology).\n3. 'Qualified sequence feature' identity is additionally dependent on some aspect of the physical context of the genetic material in which the feature is concretized. This third criteria is extrinsic to its sequence and its genomic location. For example, the feature's physical concretization being targeted by a gene knockdown reagent in a cell (e.g. the zebrafish Shha gene as targeted by the morpholino 'Shha-MO1'), or its being transiently expressed from a recombinant expression construct (e.g. the human SHH gene as expressed in a  mouse Shh knock-out cell line), or its having been epigenetically modified in a way that alters its expression level or pattern (e.g. the human SHH gene with a specific methylation pattern)." xsd:string
 
 [Term]

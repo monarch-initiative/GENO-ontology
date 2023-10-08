@@ -13,9 +13,9 @@
         "val" : "https://creativecommons.org/licenses/by/4.0/"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2023-02-21"
+        "val" : "2023-10-08"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/geno/releases/2023-02-21/geno-full.json"
+      "version" : "http://purl.obolibrary.org/obo/geno/releases/2023-10-08/geno-full.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000484",
@@ -1362,7 +1362,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different)."
+          "val" : "An allelic state that describes the degree of similarity between features in a 'single locus complement', within the genome of a cell or organism (i.e., whether the alleles or haplotypes that reside at the same location on paired chromosomes are the same or different)."
         },
         "xrefs" : [ {
           "val" : "http://semanticscience.org/resource/SIO_001263"
@@ -1378,15 +1378,30 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000134",
       "lbl" : "hemizygous",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A zygosity quality inhering in a 'single locus complement' with half the number of alleles than normal (e.g. a single allele in a diploid genome, for example, a locus on the Y chromosome in a eukaryotic male genome, or a transgene that is present only in one of the two parental chromosome sets)"
+        }
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000135",
       "lbl" : "heterozygous",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A zygosity quality inhering in a 'single locus complement' where the copies of the feature at this location have at least one difference in sequence  (in a eukaryotic diploid genome, this means having two distinct alleles on each of the two homologous chromosomes, one inherited from each parent)."
+        }
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000136",
       "lbl" : "homozygous",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A zygosity quality inhering in a 'single locus complement' where all copies of the feature at this location have the same sequence (in a eukaryotic diploid genome, this means having identical alleles on each of the two homologous chromosomes, one inherited from each parent)."
+        }
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000137",
       "lbl" : "unspecified zygosity",
@@ -2005,11 +2020,21 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000391",
       "lbl" : "disomic zygosity",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A zygosity quality inhering in a 'single locus complement' in a genome with a normal ploidy of two (i.e. two copies of autosomal chromosomes). Disomic zygosity terms describe the degree of similarity of the two sequence features that reside at a particular location across homozygous chromosomes (or the state of being the only feature at a given locus in the case of hemizygosity)."
+        }
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000392",
       "lbl" : "aneusomic zygosity",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A zygosity quality inhering in a 'single locus complement' in a genome with an abnormal ploidy at the location (i.e. an autosomal locus with one or three copies in a diploid genome)."
+        }
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000393",
       "lbl" : "trisomic homozygous",
@@ -5036,6 +5061,19 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000114",
           "val" : "exploratory"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/GENO_0000978",
+      "lbl" : "nullizygous",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A disomic zygosity quality inhering in a 'single locus complement' that is comprised of two non-functional copies of a gene. Loss of function may result from the gene being entirely missing via a deletion, or mutated in a way that eliminates its function."
+        },
+        "synonyms" : [ {
+          "pred" : "hasNarrowSynonym",
+          "val" : "homozygous null"
         } ]
       }
     }, {
@@ -9035,11 +9073,11 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000681",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000494"
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000684"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000681",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GENO_0000684"
+      "pred" : "http://purl.obolibrary.org/obo/GENO_0000207",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000139"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000684",
       "pred" : "is_a",
@@ -9582,6 +9620,10 @@
       "sub" : "http://purl.obolibrary.org/obo/GENO_0000976",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GENO_0000974"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GENO_0000978",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GENO_0000391"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0032502",
       "pred" : "is_a",

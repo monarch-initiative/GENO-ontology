@@ -1,24 +1,29 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/geno/geno-base.owl#"
      xml:base="http://purl.obolibrary.org/obo/geno/geno-base.owl"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dce="http://purl.org/dc/elements/1.1/"
+     xmlns:obi="http://purl.obolibrary.org/obo/obi.owl#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:property="http://property/"
+     xmlns:urigen-plugin="http://urigen-plugin/"
+     xmlns:genotype_model="http://www.lamhdi.org/obo/genotype_model/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/geno-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2023-02-21/geno-base.owl"/>
-        <dc:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2023-10-08/geno-base.owl"/>
+        <dce:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
-Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dc:description>
-        <dc:title>GENO ontology</dc:title>
-        <dc:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
-        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>2023-02-21</owl:versionInfo>
+Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dce:description>
+        <dce:title>GENO ontology</dce:title>
+        <dce:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <owl:versionInfo>2023-10-08</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -205,6 +210,12 @@ Documentation is under development as well, and for now a slidedeck is available
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
     
 
 
@@ -1853,7 +1864,7 @@ Example 2: a collection of information entities such as a genotype being compris
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002526">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <obo:IAO_0000115>x overlaps the sequence of x if and only if x has a subsequence z and z is a subsequence of y.</obo:IAO_0000115>
-        <terms:source>http://biorxiv.org/content/early/2014/06/27/006650.abstract</terms:source>
+        <dcterms:source>http://biorxiv.org/content/early/2014/06/27/006650.abstract</dcterms:source>
         <rdfs:label>overlaps sequence of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -3075,7 +3086,7 @@ Note that at present, a material genome and genetic material are necessarily par
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GENO_0000516"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different).</obo:IAO_0000115>
+        <obo:IAO_0000115>An allelic state that describes the degree of similarity between features in a &apos;single locus complement&apos;, within the genome of a cell or organism (i.e., whether the alleles or haplotypes that reside at the same location on paired chromosomes are the same or different).</obo:IAO_0000115>
         <obo:IAO_0000118>allelic state</obo:IAO_0000118>
         <obo:IAO_0000119>derived from https://en.wikipedia.org/wiki/Zygosity</obo:IAO_0000119>
         <oboInOwl:hasDbXref>http://semanticscience.org/resource/SIO_001263</oboInOwl:hasDbXref>
@@ -3088,6 +3099,7 @@ Note that at present, a material genome and genetic material are necessarily par
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000134">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000391"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; with half the number of alleles than normal (e.g. a single allele in a diploid genome, for example, a locus on the Y chromosome in a eukaryotic male genome, or a transgene that is present only in one of the two parental chromosome sets)</obo:IAO_0000115>
         <rdfs:label>hemizygous</rdfs:label>
     </owl:Class>
     
@@ -3097,6 +3109,7 @@ Note that at present, a material genome and genetic material are necessarily par
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000135">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000391"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; where the copies of the feature at this location have at least one difference in sequence  (in a eukaryotic diploid genome, this means having two distinct alleles on each of the two homologous chromosomes, one inherited from each parent).</obo:IAO_0000115>
         <rdfs:label>heterozygous</rdfs:label>
     </owl:Class>
     
@@ -3106,6 +3119,7 @@ Note that at present, a material genome and genetic material are necessarily par
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000136">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000391"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; where all copies of the feature at this location have the same sequence (in a eukaryotic diploid genome, this means having identical alleles on each of the two homologous chromosomes, one inherited from each parent).</obo:IAO_0000115>
         <rdfs:label>homozygous</rdfs:label>
     </owl:Class>
     
@@ -3543,6 +3557,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000391">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000133"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; in a genome with a normal ploidy of two (i.e. two copies of autosomal chromosomes). Disomic zygosity terms describe the degree of similarity of the two sequence features that reside at a particular location across homozygous chromosomes (or the state of being the only feature at a given locus in the case of hemizygosity).</obo:IAO_0000115>
         <rdfs:label>disomic zygosity</rdfs:label>
     </owl:Class>
     
@@ -3552,6 +3567,7 @@ Similarly, large sequence features lost from genome are akin to deletions and th
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000392">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000133"/>
+        <obo:IAO_0000115>A zygosity quality inhering in a &apos;single locus complement&apos; in a genome with an abnormal ploidy at the location (i.e. an autosomal locus with one or three copies in a diploid genome).</obo:IAO_0000115>
         <rdfs:label>aneusomic zygosity</rdfs:label>
     </owl:Class>
     
@@ -5437,7 +5453,7 @@ Constructs are typically packaged as part  of delivery systems such as plasmids 
         <obo:IAO_0000116>Consider if we dont want to define this as a &apos;complement&apos;, as it implies a complet set of memebrs of a defined type.  But many haplotypes will be incomplete, due to lack of knowledge of other variation bound by the haplotype block.
 
 Instead, we can create an &apos;allele set&apos; class as the haplotype parent?</obo:IAO_0000116>
-        <terms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</terms:source>
+        <dcterms:source>Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.</dcterms:source>
         <rdfs:comment>A haplotype is a set of non-overlapping alleles that reside in close proximity on the same DNA strand. We model them as &apos;complements&apos; because they include all known/relevant alleles within a defined region in the genome (e.g. a &apos;gene&apos;, or a &apos;haplotype block&apos;) - where this set may consist of 0, 1, or more alterations from some reference.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction. 
 
 As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term &apos;haplotype&apos; is most commonly used to describe the following scenarios of genetic linkage between &apos;alleles&apos;:
@@ -5696,7 +5712,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118015/figure/sap-26-03-165-g002/<
         <obo:IAO_0000116>The notion of a &apos;canonical allele&apos; is taken from the ClinGen Allele model (http://dataexchange.clinicalgenome.org/allele/).  It is implemented in GENO to provide an ontological representation of this concept that will support data integration efforts, but may be replaced by should an IRI become available from the ClinGen model.</obo:IAO_0000116>
         <obo:IAO_0000119>http://dataexchange.clinicalgenome.org/allele/resource/canonical_allele/</obo:IAO_0000119>
         <obo:IAO_0000231>No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs.</obo:IAO_0000231>
-        <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
+        <dcterms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</dcterms:source>
         <rdfs:comment>As a &apos;sequence feature or collection&apos; (sensu SO), a &apos;canonical allele&apos; is considered here as an extent of biological sequence encoded in nucleic acid molecules of a cell or organism (as opposed to an information artifact that is about such a sequence). Canonical alleles can include haplotypes that contain more than one discontinuous sequence alteration that exist in cis on the same chromosomal strand.
 
 In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;contextual alleles&apos;. Contextual alleles are informational representation that describe a canonical allele using a particular reference sequence. A single canonical allele can be described by many contextual alleles that each use a different reference sequence in their representation (e.g. different chromosomal or transcript references)</rdfs:comment>
@@ -5715,7 +5731,7 @@ In the ClinGen allele model, &apos;canonical alleles  are contrasted with &apos;
         <obo:IAO_0000231>No longer needed by  ClinGen for their interpretation models, and will likely be replaced in ClinGen and elsewhere by VMC/GA4GH modeling constructs.
 
 Former axiom: denotes some &apos;obsolete_canonical allele&apos;</obo:IAO_0000231>
-        <terms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</terms:source>
+        <dcterms:source>ClinGen Allele Model (http://dataexchange.clinicalgenome.org/allele/)</dcterms:source>
         <rdfs:comment>The notion of a &apos;contextual allele&apos; derives from the ClinGen Allele model. Here, each genetic allele in a patient corresponds to a single &apos;canonical allele&apos;, which in turn may aggregate any number of &apos;contextual allele&apos; representations that are may be defined against different reference sequences. Accordingly, many contextual alleles can describe a single canonical allele. For example, the contextual alleles “NC_000013.11:g.32319070T&gt;A” and “NG_012772.3:g.8591T&gt;A” both describe the same underlying canonical allele, a single nucleotide variation, in the BRCA2 gene.</rdfs:comment>
         <rdfs:label>obsolete contextual allele</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -6600,6 +6616,17 @@ https://en.wikipedia.org/wiki/Uniparental_inheritance</rdfs:comment>
         <obo:IAO_0000115>Describes an allele that is part of an allelic complement where one allele is maternally inherited  and other paternally inherited.</obo:IAO_0000115>
         <rdfs:comment>Biparental inheritance of alleles is typical of normal mendelian inheritance, where offspring inherit a maternal and a paternal copies of a given gene.</rdfs:comment>
         <rdfs:label xml:lang="en">biparental allele origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENO_0000978 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENO_0000978">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENO_0000391"/>
+        <obo:IAO_0000115>A disomic zygosity quality inhering in a &apos;single locus complement&apos; that is comprised of two non-functional copies of a gene. Loss of function may result from the gene being entirely missing via a deletion, or mutated in a way that eliminates its function.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>homozygous null</oboInOwl:hasNarrowSynonym>
+        <rdfs:label xml:lang="en">nullizygous</rdfs:label>
     </owl:Class>
     
 
@@ -8134,5 +8161,5 @@ Codes for: http://www.uniprot.org/uniprot/Q15465</rdfs:comment>
 
 
 
-<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
 
