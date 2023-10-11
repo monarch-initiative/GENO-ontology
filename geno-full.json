@@ -13,9 +13,9 @@
         "val" : "https://creativecommons.org/licenses/by/4.0/"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2023-10-08"
+        "val" : "2023-10-11"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/geno/releases/2023-10-08/geno-full.json"
+      "version" : "http://purl.obolibrary.org/obo/geno/releases/2023-10-11/geno-full.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/GENO_0000484",
