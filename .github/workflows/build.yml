@@ -1,11 +1,6 @@
 name: Build release files
 on:
   workflow_dispatch:
-  push:
-    branches: [ develop ]
-    paths:
-      - 'src/ontology/imports/**_import.owl'
-      - 'src/ontology/components/**.owl'
 
 jobs:
   build:
