@@ -8,7 +8,7 @@ A review of the modeling and use cases supported by GENO is can be found in the 
 
 A detailed example of how GENO can be used to represent a complex Drosophila genotype is described in the **document [here](https://docs.google.com/document/d/15U4sDU8Hd_lSZJZJl8NywleNxHcX7wfnoT8j316STQo/edit#)**.
 
-[Contribution guide](CONTRIBUTING.md)
+[Contribution and release guide](CONTRIBUTING.md)
 
 -----------------
 
