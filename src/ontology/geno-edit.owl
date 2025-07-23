@@ -1035,7 +1035,6 @@ ObjectPropertyRange(obo:GENO_0000726 obo:SO_0000110)
 # Object Property: obo:GENO_0000740 (has_inferred_phenotype)
 
 AnnotationAssertion(rdfs:label obo:GENO_0000740 "has_inferred_phenotype"@en)
-SubObjectPropertyOf(obo:GENO_0000740 obo:RO_0002200)
 
 # Object Property: obo:GENO_0000741 (obsolete_has_regulatory_part)
 
