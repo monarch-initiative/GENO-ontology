@@ -17,6 +17,8 @@ import_group:
     - id: ro
     - id: omo
       module_type: mirror
+    - id: tmp
+      module_type: custom
   #  - id: iao
   #  - id: faldo
   #  - id: go
