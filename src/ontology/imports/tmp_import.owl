@@ -1,0 +1,22 @@
+Prefix(:=<http://purl.obolibrary.org/obo/geno/imports/tmp_import.owl>)
+Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
+
+Ontology(<http://purl.obolibrary.org/obo/geno/imports/tmp_import.owl>
+
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/geno#alliance>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#SubsetProperty>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#inSubset>))
+
+############################
+#   Annotation Properties
+############################
+
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/geno#alliance> <http://www.geneontology.org/formats/oboInOwl#SubsetProperty>)
+
+)

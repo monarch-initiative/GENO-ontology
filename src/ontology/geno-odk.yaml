@@ -4,6 +4,8 @@ github_org: monarch-initiative
 git_main_branch: develop
 repo: GENO-ontology
 report_fail_on: None
+workflows:
+  - qc
 export_formats:
   - owl
   - obo
@@ -17,6 +19,9 @@ import_group:
     - id: ro
     - id: omo
       module_type: mirror
+    - id: tmp
+      module_type: custom
+      mirror_type: no_mirror
   #  - id: iao
   #  - id: faldo
   #  - id: go
