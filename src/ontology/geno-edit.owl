@@ -576,6 +576,7 @@ Declaration(AnnotationProperty(obo:IAO_creation_date))
 Declaration(AnnotationProperty(obo:IAO_id))
 Declaration(AnnotationProperty(obo:IAO_subset))
 Declaration(AnnotationProperty(obo:IAO_xref))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/geno#agr_zyg>))
 Declaration(AnnotationProperty(dce:description))
 Declaration(AnnotationProperty(dce:title))
 Declaration(AnnotationProperty(dcterms:license))
@@ -604,6 +605,12 @@ AnnotationPropertyRange(obo:GENO_0000905 xsd:boolean)
 # Annotation Property: obo:GENO_0000909 (gene symbol)
 
 AnnotationAssertion(rdfs:label obo:GENO_0000909 "gene symbol"@en)
+
+# Annotation Property: <http://purl.obolibrary.org/obo/geno#agr_zyg> (agr_zyg)
+
+AnnotationAssertion(obo:IAO_0000115 <http://purl.obolibrary.org/obo/geno#agr_zyg> "Set of zygosity terms for the Alliance of Genome Resources, used for AGM metadata")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/geno#agr_zyg> "agr_zyg")
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/geno#agr_zyg> oboInOwl:SubsetProperty)
 
 
 ############################
@@ -1252,12 +1259,12 @@ AnnotationAssertion(obo:IAO_0000115 obo:OBI_0000299 "A relation between a planne
 AnnotationAssertion(rdfs:label obo:OBI_0000299 "has_specified_output")
 SubObjectPropertyOf(obo:OBI_0000299 obo:RO_0002234)
 
-# Object Property: obo:RO_0000052 (inheres in)
+# Object Property: obo:RO_0000052 (characteristic of)
 
 AnnotationAssertion(obo:IAO_0000115 obo:RO_0000052 "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence")
 AnnotationAssertion(rdfs:label obo:RO_0000052 "inheres_in")
 
-# Object Property: obo:RO_0000053 (bearer of)
+# Object Property: obo:RO_0000053 (has characteristic)
 
 AnnotationAssertion(obo:IAO_0000115 obo:RO_0000053 "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence")
 AnnotationAssertion(rdfs:label obo:RO_0000053 "bearer of"@en)
@@ -1333,7 +1340,7 @@ ObjectPropertyRange(obo:RO_0002200 obo:UPHENO_0001001)
 AnnotationAssertion(rdfs:label obo:RO_0002201 "phenotype of"@en)
 ObjectPropertyDomain(obo:RO_0002201 obo:UPHENO_0001001)
 
-# Object Property: obo:RO_0002222 (temporal relation)
+# Object Property: obo:RO_0002222 (temporally related to)
 
 AnnotationAssertion(rdfs:label obo:RO_0002222 "temporally related to"@en)
 
@@ -1375,7 +1382,7 @@ SubObjectPropertyOf(obo:RO_0002352 obo:RO_0000056)
 AnnotationAssertion(rdfs:label obo:RO_0002353 "output of"@en)
 SubObjectPropertyOf(obo:RO_0002353 obo:RO_0000056)
 
-# Object Property: obo:RO_0002354 (obsolete_formed as result of)
+# Object Property: obo:RO_0002354 (formed as result of)
 
 AnnotationAssertion(rdfs:label obo:RO_0002354 "obsolete_formed as result of"@en)
 SubObjectPropertyOf(obo:RO_0002354 oboInOwl:ObsoleteProperty)
@@ -1421,7 +1428,7 @@ AnnotationAssertion(rdfs:label obo:RO_0002528 "is upstream of sequence of"@en)
 AnnotationAssertion(obo:IAO_0000115 obo:RO_0002529 "x is downstream of the sequence of y iff either (1) x and y have sequence units, and all units of x are downstream of all units of y, or (2) x and y are sequence units, and x is either immediately downstream of y, or transitively downstream of y.")
 AnnotationAssertion(rdfs:label obo:RO_0002529 "is downstream of sequence of"@en)
 
-# Object Property: obo:RO_0003301 (is model of)
+# Object Property: obo:RO_0003301 (has role in modeling)
 
 AnnotationAssertion(obo:IAO_0000115 obo:RO_0003301 "Relation between a research artifact and an entity it is used to study, in virtue of its replicating or approximating features of the studied entity.")
 AnnotationAssertion(obo:IAO_0000116 obo:RO_0003301 "To Do: decide on scope of this relation - inclusive of computational models in domain, or only physical models?  Restricted to linking biological systems and phenomena?  Inclusive of only diseases in range, or broader?")
@@ -1468,7 +1475,7 @@ AnnotationAssertion(obo:IAO_0000118 obo:RO_0003306 "contributes to penetrance of
 AnnotationAssertion(rdfs:label obo:RO_0003306 "contributes to frequency of condition"@en)
 SubObjectPropertyOf(obo:RO_0003306 obo:RO_0003304)
 
-# Object Property: obo:RO_0003307 (is preventative for condition)
+# Object Property: obo:RO_0003307 (ameliorates condition)
 
 AnnotationAssertion(obo:IAO_0000115 obo:RO_0003307 "A relationship between an entity (a genotype, genetic variation or environment) and a condition (a phenotype or disease) where the entity prevents or reduces the severity of a condition.")
 AnnotationAssertion(rdfs:comment obo:RO_0003307 "Genetic variations can span any level of granularity from a full genome or genotype to an individual gene  or sequence alteration.  These variations can be represented at the physical level (DNA/RNA macromolecules or their parts, as in the ChEBI ontology and Molecular Sequence Ontology) or at the abstract level (generically dependent continuant sequence features that are carried by these macromolecules, as in the Sequence Ontology and Genotype Ontology).  The causal relations in this hierarchy can be used in linking either physical or abstract genetic variations to phenotypes or diseases they cause or contribute to. 
@@ -2150,18 +2157,21 @@ SubClassOf(obo:GENO_0000133 ObjectSomeValuesFrom(obo:RO_0000052 obo:GENO_0000516
 # Class: obo:GENO_0000134 (hemizygous)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000134 "A zygosity quality inhering in a 'single locus complement' with half the number of alleles than normal (e.g. a single allele in a diploid genome, for example, a locus on the Y chromosome in a eukaryotic male genome, or a transgene that is present only in one of the two parental chromosome sets)")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000134 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000134 "hemizygous")
 SubClassOf(obo:GENO_0000134 obo:GENO_0000391)
 
 # Class: obo:GENO_0000135 (heterozygous)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000135 "A zygosity quality inhering in a 'single locus complement' where the copies of the feature at this location have at least one difference in sequence  (in a eukaryotic diploid genome, this means having two distinct alleles on each of the two homologous chromosomes, one inherited from each parent).")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000135 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000135 "heterozygous")
 SubClassOf(obo:GENO_0000135 obo:GENO_0000391)
 
 # Class: obo:GENO_0000136 (homozygous)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000136 "A zygosity quality inhering in a 'single locus complement' where all copies of the feature at this location have the same sequence (in a eukaryotic diploid genome, this means having identical alleles on each of the two homologous chromosomes, one inherited from each parent).")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000136 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000136 "homozygous")
 SubClassOf(obo:GENO_0000136 obo:GENO_0000391)
 
@@ -2170,6 +2180,7 @@ SubClassOf(obo:GENO_0000136 obo:GENO_0000391)
 AnnotationAssertion(Annotation(rdfs:comment "MGI uses this term when zygosity is not known.") obo:IAO_0000118 obo:GENO_0000137 "indeterminite zygosity")
 AnnotationAssertion(Annotation(rdfs:comment "(this is how the GVF10 format/standard refers to loci without enough data to make an accurate call . . . see http://www.sequenceontology.org/resources/gvf.html#quick_gvf_examples)") obo:IAO_0000118 obo:GENO_0000137 "no-call zygosity")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000137 "unknown zygosity")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000137 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000137 "unspecified zygosity")
 SubClassOf(obo:GENO_0000137 obo:GENO_0000133)
 
@@ -2418,22 +2429,26 @@ SubClassOf(obo:GENO_0000351 obo:BFO_0000015)
 # Class: obo:GENO_0000391 (disomic zygosity)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000391 "A zygosity quality inhering in a 'single locus complement' in a genome with a normal ploidy of two (i.e. two copies of autosomal chromosomes). Disomic zygosity terms describe the degree of similarity of the two sequence features that reside at a particular location across homozygous chromosomes (or the state of being the only feature at a given locus in the case of hemizygosity).")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000391 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000391 "disomic zygosity")
 SubClassOf(obo:GENO_0000391 obo:GENO_0000133)
 
 # Class: obo:GENO_0000392 (aneusomic zygosity)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000392 "A zygosity quality inhering in a 'single locus complement' in a genome with an abnormal ploidy at the location (i.e. an autosomal locus with one or three copies in a diploid genome).")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000392 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000392 "aneusomic zygosity")
 SubClassOf(obo:GENO_0000392 obo:GENO_0000133)
 
 # Class: obo:GENO_0000393 (trisomic homozygous)
 
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000393 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000393 "trisomic homozygous")
 SubClassOf(obo:GENO_0000393 obo:GENO_0000392)
 
 # Class: obo:GENO_0000394 (trisomic heterozygous)
 
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000394 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000394 "trisomic heterozygous")
 SubClassOf(obo:GENO_0000394 obo:GENO_0000392)
 
@@ -2441,6 +2456,7 @@ SubClassOf(obo:GENO_0000394 obo:GENO_0000392)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000402 "A heterozygous quality inhering in a single locus complement comprised of two different varaint alleles and no wild type locus. (e.g.fgf8a<ti282a>/fgf8a<x15>)")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000402 "trans-heterozygous")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000402 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000402 "compound heterozygous")
 SubClassOf(obo:GENO_0000402 obo:GENO_0000135)
 
@@ -2454,6 +2470,7 @@ AnnotationAssertion(owl:deprecated obo:GENO_0000415 "true"^^xsd:boolean)
 
 # Class: obo:GENO_0000458 (simple heterozygous)
 
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000458 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:comment obo:GENO_0000458 "a heterozygous quality inhering in a single locus complement comprised of one variant allele and one wild-type/reference allele (e.g.fgf8a<ti282a/+>)")
 AnnotationAssertion(rdfs:label obo:GENO_0000458 "simple heterozygous")
 SubClassOf(obo:GENO_0000458 obo:GENO_0000135)
@@ -2788,27 +2805,32 @@ SubClassOf(obo:GENO_0000575 obo:UPHENO_0001001)
 # Class: obo:GENO_0000602 (homoplasmic)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000602 "an allelic state where a single allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000602 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000602 "homoplasmic"@en)
 SubClassOf(obo:GENO_0000602 obo:GENO_0000918)
 
 # Class: obo:GENO_0000603 (heteroplasmic)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000603 "an allelic state where more than one type of allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000603 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000603 "heteroplasmic"@en)
 SubClassOf(obo:GENO_0000603 obo:GENO_0000918)
 
 # Class: obo:GENO_0000604 (hemizygous X-linked)
 
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000604 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000604 "hemizygous X-linked"@en)
 SubClassOf(obo:GENO_0000604 obo:GENO_0000134)
 
 # Class: obo:GENO_0000605 (hemizygous Y-linked)
 
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000605 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000605 "hemizygous Y-linked"@en)
 SubClassOf(obo:GENO_0000605 obo:GENO_0000134)
 
 # Class: obo:GENO_0000606 (hemizygous insertion-linked)
 
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000606 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000606 "hemizygous insertion-linked"@en)
 SubClassOf(obo:GENO_0000606 obo:GENO_0000134)
 
@@ -3697,6 +3719,7 @@ AnnotationAssertion(owl:deprecated obo:GENO_0000916 "true"^^xsd:boolean)
 # Class: obo:GENO_0000918 (organellar plasmy)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000918 "An allelic state that describes the number of different alleles of a gene from an organellar genome (i.e. mitochondrial, plastid) that may exist in a cell.")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000918 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:comment obo:GENO_0000918 "Cells with a population of organelles from a single origin that all share the same organellar genome will contain only one allele of each organellar gene, while cells with populations of organelles of  different origins may contain more than one allele of a given organellar gene.")
 AnnotationAssertion(rdfs:label obo:GENO_0000918 "organellar plasmy"@en)
 SubClassOf(obo:GENO_0000918 obo:GENO_0000875)
@@ -4082,6 +4105,7 @@ SubClassOf(obo:GENO_0000976 obo:GENO_0000974)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000978 "A disomic zygosity quality inhering in a 'single locus complement' that is comprised of two non-functional copies of a gene. Loss of function may result from the gene being entirely missing via a deletion, or mutated in a way that eliminates its function.")
 AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:GENO_0000978 "homozygous null")
+AnnotationAssertion(oboInOwl:inSubset obo:GENO_0000978 <http://purl.obolibrary.org/obo/geno#agr_zyg>)
 AnnotationAssertion(rdfs:label obo:GENO_0000978 "nullizygous"@en)
 SubClassOf(obo:GENO_0000978 obo:GENO_0000391)
 
@@ -4942,7 +4966,7 @@ AnnotationAssertion(rdfs:label obo:UBERON_0001062 "anatomical entity")
 SubClassOf(obo:UBERON_0001062 obo:BFO_0000040)
 SubClassOf(obo:UBERON_0001062 ObjectSomeValuesFrom(obo:RO_0001000 obo:OBI_0100026))
 
-# Class: obo:UPHENO_0001001 (Phenotype)
+# Class: obo:UPHENO_0001001 (phenotype)
 
 AnnotationAssertion(obo:IAO_0000116 obo:UPHENO_0001001 "Stub node that gathers root classes from various taxon-specific phenotype ontologies, as connectors to bringing classes from these ontolgies into the GENO framework.")
 AnnotationAssertion(rdfs:comment obo:UPHENO_0001001 "1. From OGMS: A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species (from OGMS, and used in OBI, but treatment as a quality is at odds with previous OBI discussions and their treatemnt of 'comparative phenotype assessment, where a phenotype is described as a quality or disposition)
