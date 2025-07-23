@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                2454963920855a4e187cdbc6da28f9add4aff1d7b7fb5db4fc2ca21a71d6a351
+CONFIG_HASH=                5e58b2b5c7935728de3437c6768c83ff8850c228dd720c99fd818c122d48080a
 
 
 # ----------------------------------------
@@ -419,7 +419,7 @@ $(IMPORTDIR)/omo_import.owl: $(MIRRORDIR)/omo.owl | all_robot_plugins
 		 $(ANNOTATE_CONVERT_FILE)
 
 ## Module for ontology: tmp (custom)
-$(IMPORTDIR)/tmp_import.owl: $(MIRRORDIR)/tmp.owl
+$(IMPORTDIR)/tmp_import.owl: 
 	@echo "ERROR: You have configured tmp as a custom module;"
 	@echo "       This rule needs to be overwritten in geno.Makefile!"
 	@false
@@ -474,11 +474,7 @@ mirror-omo: | $(TMPDIR)
 
 
 ## ONTOLOGY: tmp
-.PHONY: mirror-tmp
-.PRECIOUS: $(MIRRORDIR)/tmp.owl
-mirror-tmp: | $(TMPDIR)
-	curl -L $(OBOBASE)/tmp.owl --create-dirs -o $(TMPDIR)/tmp-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/tmp-download.owl -o $(TMPDIR)/$@.owl
+## You have configured your default mirror type to no_mirror.
 
 
 ## ONTOLOGY: obi

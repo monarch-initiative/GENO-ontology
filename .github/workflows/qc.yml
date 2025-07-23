@@ -31,3 +31,4 @@ jobs:
           DEFAULT_BRANCH: develop
         run: cd src/ontology && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' test IMP=false PAT=false MIR=false
 
+

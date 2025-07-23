@@ -86,17 +86,12 @@ WARN	missing_definition	reporter	IAO:0000115
 WARN	missing_definition	selectable marker	IAO:0000115	
 WARN	missing_definition	selectable marker region	IAO:0000115	
 WARN	missing_definition	mosaic	IAO:0000115	
-INFO	lowercase_definition	obsolete sequence feature collection	IAO:0000115	a collection more than one sequence features (ie a collection of discontinuous sequence features)
 INFO	lowercase_definition	human population	IAO:0000115	a population of homo sapiens grouped together in virtue of their sharing some commonality (either an inherent attribute or an externally assigned role)
-INFO	lowercase_definition	obsolete sequence feature collection attribute	IAO:0000115	sequence attribute that can inhere only in a collection of more than one sequence features
-INFO	lowercase_definition	obsolete dominant inheritance	IAO:0000115	disposition inhering in a genetic locus variant that is realized in its inheritance by some offspring such that at least a partial variant-associated phenotype is apparent in heterozygotes
-INFO	lowercase_definition	obsolete_is_phenotype_of_genotype	IAO:0000115	shortcut relation used to link a phenotype directly to a genotype of an organism
 INFO	lowercase_definition	aneusomic	IAO:0000115	a sequence attribute of a chromosome or chromosomal region that has been abnormally duplicated or lost, as the result of a non-disjunction event or unbalanced translocation.
 INFO	lowercase_definition	homoplasmic	IAO:0000115	an allelic state where a single allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.
 INFO	lowercase_definition	heteroplasmic	IAO:0000115	an allelic state where more than one type of allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.
 INFO	lowercase_definition	has_zygosity	IAO:0000115	a relation to link a single locus complement to its zygosity.
 INFO	lowercase_definition	is_targeted_by	IAO:0000115	relation between an molecular agent and its molecular target
-INFO	lowercase_definition	obsolete gametic	IAO:0000115	a quality inhering in a feature in virtue of its presence only in the genome of gametes (germ cells).
 INFO	missing_superclass	genomic variation complement	rdfs:subClassOf	
 INFO	missing_superclass	reference sequence	rdfs:subClassOf	
 INFO	missing_superclass	variant single locus complement	rdfs:subClassOf	
