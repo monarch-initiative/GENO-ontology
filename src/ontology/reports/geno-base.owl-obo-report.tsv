@@ -86,6 +86,7 @@ WARN	missing_definition	reporter	IAO:0000115
 WARN	missing_definition	selectable marker	IAO:0000115	
 WARN	missing_definition	selectable marker region	IAO:0000115	
 WARN	missing_definition	mosaic	IAO:0000115	
+WARN	missing_subset_declaration	obo:geno#agr_zyg	rdfs:subPropertyOf	
 INFO	lowercase_definition	human population	IAO:0000115	a population of homo sapiens grouped together in virtue of their sharing some commonality (either an inherent attribute or an externally assigned role)
 INFO	lowercase_definition	aneusomic	IAO:0000115	a sequence attribute of a chromosome or chromosomal region that has been abnormally duplicated or lost, as the result of a non-disjunction event or unbalanced translocation.
 INFO	lowercase_definition	homoplasmic	IAO:0000115	an allelic state where a single allele exists at a particular location in the organellar genome (mitochondrial or plastid) of a cell/organism.
