@@ -1892,7 +1892,7 @@ AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000014 "The reference/wild-type cd
 
 http://useast.ensembl.org/Danio_rerio/Gene/Summary?g=ENSDARG00000056722
 
-http://zfin.org/action/feature/feature-detail?zdbID=ZDB-ALT-111117-8")
+https://zfin.org/ZDB-ALT-111117-8")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000014 "A genomic feature that represents one of a set of versions of a gene (i.e. a haplotype whose extent is that of a gene)")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000014 "Regarding the distinction between a 'gene' and a 'gene allele':  Every zebrafish genome contains a 'gene allele' for every zebrafish gene. Many will be 'wild-type' or at least functional gene alleles. But some may be alleles that are mutated or truncated so as to lack functionality.  According to current SO criteria defining genes, a 'gene' no longer exists in the case of a non-functional or deleted variant. But the 'gene allele' does exist -  and its extent is that of the remaining/altered sequence based on alignment with a  reference gene.  Even for completely deleted genes, an allele of the gene exists (and here is equivalent to the junction corresponding to the where gene would live based on a reference alignment).
 
@@ -2776,7 +2776,7 @@ In GENO, we use the term 'intrinsic' for genotypes describing variation in genom
 Two more precise conccepts are subsumed by the notion of an 'intrinsic genotype': (1) 'allelic genotypes', which specify allelic state at a single genomic location; and (2) 'genomic genotypes', which specify allelic state across an entire genome.  In both cases, allelic state is typically specified in terms of a differential between a reference and a set of 1 or more known variant features.
 
 3. The Genotype Partonomy:
-'Genomic genotypes' describing sequence variation across an entire genome are 'decomposed' in GENO into a partonomy  of more granular levels of variation. These levels are defined to be meaningful to biologists in their attempts to relate genetic variation to phenotypic features. They include 'genomic variation complement' (GVC), 'variant single locus complement' (VSLC), 'allele', 'haplotype', 'sequence alteration', and 'genomic background' classes.  For example, the components of the zebrafish genotype \"fgf8a<ti282a/ti282a>; fgf3<t24149/+>[AB]\", described at  zfin.org/ZDB-FISH-150901-9362, include the following elements:
+'Genomic genotypes' describing sequence variation across an entire genome are 'decomposed' in GENO into a partonomy  of more granular levels of variation. These levels are defined to be meaningful to biologists in their attempts to relate genetic variation to phenotypic features. They include 'genomic variation complement' (GVC), 'variant single locus complement' (VSLC), 'allele', 'haplotype', 'sequence alteration', and 'genomic background' classes.  For example, the components of the zebrafish genotype \"fgf8a<ti282a/ti282a>; fgf3<t24149/+>[AB]\", described at  https://zfin.org/ZDB-FISH-150901-9362, include the following elements:
 
  - GVC: fgf8a<ti282a/ti282a>; fgf3<t24149/+> (total intrinsic variation in the genome)
  - Genomic Background: AB (the reference against which the GVC is variant)
