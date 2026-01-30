@@ -21,7 +21,7 @@ Import(<http://purl.obolibrary.org/obo/geno/imports/obi_import.owl>)
 Import(<http://purl.obolibrary.org/obo/geno/imports/omo_import.owl>)
 Import(<http://purl.obolibrary.org/obo/geno/imports/ro_import.owl>)
 Import(<http://purl.obolibrary.org/obo/geno/imports/tmp_import.owl>)
-Annotation(dce:description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
+Annotation(dce:description "GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations.
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013")
 Annotation(dce:title "GENO ontology")
@@ -801,7 +801,7 @@ SubObjectPropertyOf(obo:GENO_0000387 obo:GENO_0000655)
 
 AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000408 "<fgf8a^ti282a>  is_allele_of  the 'danio rerio fgf8a' gene locus.")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000408 "A relation linking an instance of a variable feature (aka an allele) to a genomic location/locus it occupies. This is typically a gene locus, but a feature may be an allele of other types of named loci such as QTLs, or alleles of some unnamed locus of arbitrary size.")
-AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000408 "Domain = allele 
+AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000408 "Domain = allele
 Range = genomic locus (but in practice it is common to use a punned gene class IRI as the subject of this relation).")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000408 "Note that  the allele <fgf8a^ti282a>  is not necessarily an instance of the danio rerio fgf8a gene class, given that we adopt the SO definition of genes as 'producing a functional product'.  If the <fgf8a^ti282a> allele is nonfunctional or null, it is an allele_of the danio rerio fgf8a gene class, but not an instance (rdf:type) of this class. It would, however, bean instance of  a  'danio rerio fgf8a gene allele' class - because being a 'gene allele' as defined in GENO requires only occupying the genomic position where for a gene, but not necessarily producing a functional product.")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000408 "is_sequence_variant_of")
@@ -809,7 +809,7 @@ AnnotationAssertion(rdfs:comment obo:GENO_0000408 "To allow users to make import
 
 While conceptually it is most correct to say features are alleles_of some genomic locus, it is common practice to say that they are alleles of the class of feature defined to reside at that locus (typically a gene).  Accordingly, we may write things like \"fgf8a<ti282a> is an allele of the Danio rerio fgf8a gene\", and we may create data where fgf8a<ti282a> is asserted as an allele_of  the fgf8a gene class IRI. But here we mean more precisely that it is an allele of the locus at which the fgf8a gene resides.  Allowing for this means that we dont have to create 'feature-based location/locus' terms mirroing all feature class terms already in exiistence (e.g. for every gene).
 
-It is important to be clear that the location/locus that a feature is an allele_of is defined exclusively by its genomic position, and not on the sequence it may contains. This is particularly relevant when considering transgenic insertions. For example, this means that the insertion of the S. cerevisiae GAL4 gene sequence within the D. melanogaster Bx gene locus would create an allele of the D. melanogaster Bx gene, but not an allele of the S. cerevisiae GAL4 gene. The transgene that results from such an insertion, while expressing S. cerevisiae GAL4 gene sequence, is not an allele of this gene because it does not reside at the S. cerevisiae GAL4 locus. 
+It is important to be clear that the location/locus that a feature is an allele_of is defined exclusively by its genomic position, and not on the sequence it may contains. This is particularly relevant when considering transgenic insertions. For example, this means that the insertion of the S. cerevisiae GAL4 gene sequence within the D. melanogaster Bx gene locus would create an allele of the D. melanogaster Bx gene, but not an allele of the S. cerevisiae GAL4 gene. The transgene that results from such an insertion, while expressing S. cerevisiae GAL4 gene sequence, is not an allele of this gene because it does not reside at the S. cerevisiae GAL4 locus.
 
 This departs from how some databases use the term 'allele' - where transgenes expressing an exogenous gene are considered to be alleles of the exogenous genes they carry.  For example, in the example above, Flybase describes the S. cerevisiae GAL4 transgene as an allele_of the  S. cerevisiae GAL4 gene (and gives it the allele identifier FBal0040476). A GENO representation on the other hand would say that the S. cerevisiae GAL4 transgene derives_sequence_from the S. cerevisiae GAL4 gene, but is not an allele_of this gene. In a GENO model, FBal0040476 would be typed as a transgene insertion, but not considered an allele_of the Scer\\GAL4 gene.
 
@@ -956,7 +956,7 @@ AnnotationAssertion(rdfs:label obo:GENO_0000634 "is_targeted_by"@en)
 
 # Object Property: obo:GENO_0000639 (sequence_derives_from)
 
-AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000639 "1. Used to specify derivation of transgene components from a gene class, or a engineered construct instance. 
+AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000639 "1. Used to specify derivation of transgene components from a gene class, or a engineered construct instance.
 
 2. Used to specify the genetic background/strain of origin of an allele  (i.e. that an allele was originally isolated from a specific background strain, and propagated into new genetic backgrounds.
 
@@ -1478,7 +1478,7 @@ SubObjectPropertyOf(obo:RO_0003306 obo:RO_0003304)
 # Object Property: obo:RO_0003307 (ameliorates condition)
 
 AnnotationAssertion(obo:IAO_0000115 obo:RO_0003307 "A relationship between an entity (a genotype, genetic variation or environment) and a condition (a phenotype or disease) where the entity prevents or reduces the severity of a condition.")
-AnnotationAssertion(rdfs:comment obo:RO_0003307 "Genetic variations can span any level of granularity from a full genome or genotype to an individual gene  or sequence alteration.  These variations can be represented at the physical level (DNA/RNA macromolecules or their parts, as in the ChEBI ontology and Molecular Sequence Ontology) or at the abstract level (generically dependent continuant sequence features that are carried by these macromolecules, as in the Sequence Ontology and Genotype Ontology).  The causal relations in this hierarchy can be used in linking either physical or abstract genetic variations to phenotypes or diseases they cause or contribute to. 
+AnnotationAssertion(rdfs:comment obo:RO_0003307 "Genetic variations can span any level of granularity from a full genome or genotype to an individual gene  or sequence alteration.  These variations can be represented at the physical level (DNA/RNA macromolecules or their parts, as in the ChEBI ontology and Molecular Sequence Ontology) or at the abstract level (generically dependent continuant sequence features that are carried by these macromolecules, as in the Sequence Ontology and Genotype Ontology).  The causal relations in this hierarchy can be used in linking either physical or abstract genetic variations to phenotypes or diseases they cause or contribute to.
 
 Environments include natural environments or exposures, experimentally applied conditions, or clinical interventions.")
 AnnotationAssertion(rdfs:label obo:RO_0003307 "is preventative for condition"@en)
@@ -1829,7 +1829,7 @@ SubClassOf(obo:ENVO_01000254 obo:BFO_0000040)
 AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000000 "Example zebrafish intrinsic genotype:
 
 Genotype = fgf8a<ti282a/+>; shha<tb392/tb392> (AB)
-reference component (genomic background) = AB 
+reference component (genomic background) = AB
 variant component ('genomic variation complement') = fgf8a<ti282a/+>; shha<tb392/tb392>
 
 . . . and within this variant component, there are two 'variant single locus complements' represented:
@@ -2211,7 +2211,7 @@ AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000141 "mode of inheritance")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000141 "phenotypic inheritance pattern")
 AnnotationAssertion(oboInOwl:hasDbXref obo:GENO_0000141 "http://purl.obolibrary.org/obo/HP_0000005")
 AnnotationAssertion(oboInOwl:hasDbXref obo:GENO_0000141 "http://purl.obolibrary.org/obo/NCIT_C45827")
-AnnotationAssertion(rdfs:comment obo:GENO_0000141 "An inheritance pattern results from the disposition of a genetic variant to cause a particular trait or phenotype when it is present in a particular genetic and environmental context.  Here, \"genetic context\" refers to the allelic state of the variant, which depends on what other alleles exist at the same location/locus in the genome. Zygosities such as heterozygous and homozygous are simple, common examples of 'states' of an allele. 
+AnnotationAssertion(rdfs:comment obo:GENO_0000141 "An inheritance pattern results from the disposition of a genetic variant to cause a particular trait or phenotype when it is present in a particular genetic and environmental context.  Here, \"genetic context\" refers to the allelic state of the variant, which depends on what other alleles exist at the same location/locus in the genome. Zygosities such as heterozygous and homozygous are simple, common examples of 'states' of an allele.
 
 These genetic and environmental \"interactions\" of alleles play out at the level of the gene products produced by the causal alleles, and are observable in the pattern with which the trait caused by an allele is inherited across generations of individuals. Thus, an inheritance pattern such as dominance is not inherent to a single allele or its phenotype, but rather a result of the relationship between two alleles of a gene and the phenotype that results in a given environment. This also means that the 'dominance' of an allele is context dependent - Allele 1 can be dominant over Allele 2 in the context of Phenotype X, but recessive to Allele 3 in the context of Phenotype Y.")
 AnnotationAssertion(rdfs:label obo:GENO_0000141 "inheritance pattern")
@@ -2503,9 +2503,9 @@ SubClassOf(obo:GENO_0000480 obo:GENO_0000773)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000481 "A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000481 "This class was created largely as a modeling convenience to support organizing data for schema definitions.  We may consider obsoleting it if it ends up causing confusion or complicating classification of terms in the ontology.")
-AnnotationAssertion(rdfs:comment obo:GENO_0000481 "1. A feature being 'of genomic origin' here means only that its sequence has been located to the genome of some organism by alignment with some reference genome. This is because the sequence was originally identified in, or artificially created to replicate, sequence from an organism's genome. 
+AnnotationAssertion(rdfs:comment obo:GENO_0000481 "1. A feature being 'of genomic origin' here means only that its sequence has been located to the genome of some organism by alignment with some reference genome. This is because the sequence was originally identified in, or artificially created to replicate, sequence from an organism's genome.
 
-2. The location of a genomic feature is defined by start and end coordinates based on alignment with a reference genome. Genomic features can span any size from a complete chromosome, to a chromosomal band or region, to a gene, to a single base pair or even junction between base pairs (this would be a sequence feature with an extent of zero). 
+2. The location of a genomic feature is defined by start and end coordinates based on alignment with a reference genome. Genomic features can span any size from a complete chromosome, to a chromosomal band or region, to a gene, to a single base pair or even junction between base pairs (this would be a sequence feature with an extent of zero).
 
 3. As sequence features, instances of genomic features are identified by both their inherent *sequence* and their *position* in a genome - as determined by an alignment with some reference sequence. Accordingly, the 'ATG' start codon in the coding DNA sequence of the human AKT gene and the 'ATG' start codon in the human SHH gene represent two distinct genomic features despite having he same sequence, in virtue of their different positions in the genome.")
 AnnotationAssertion(rdfs:label obo:GENO_0000481 "genomic feature"@en)
@@ -2527,8 +2527,8 @@ SubClassOf(obo:GENO_0000482 obo:CHEBI_33696)
 AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000491 obo:GENO_0000484)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000491 "An allele that is variant with respect to some wild-type allele, in virtue of its being very rare in a population (typically <1%), or being an experimentally-induced alteration that derives from a wild-type feature in a given strain.")
 AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000491 "Based on use of 'mutant' as described in PMID: 25741868 ACMG Guidelines")
-AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000491 "Not required for any specific use case at this point so removed for simplicity. 
-Formely asserted as allele and inferred as varaint allele. 
+AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000491 "Not required for any specific use case at this point so removed for simplicity.
+Formely asserted as allele and inferred as varaint allele.
 Eq class definition:
 allele
  and (mutation or ('has subsequence' some mutation))")
@@ -2635,7 +2635,7 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000512 "One of a set of sequence f
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000512 "A landsacpe review found mostly gene-centric definitions of 'allele' that represented a particular version of a gene, or variation within a gene sequence [1][2][3][4][5][6][6a].  But we also found 'allele' used to refer to other types and extents of variation - including single nucleotide polymorphisms, repeat regions, and copy number variations [7][8][9][10][11], where such variations don't neccessarily impact a gene.
 
 To be maximally accommodating of how this term is used across research communities, GENO defines 'allele' broadly and allow alleles can span any locus or extent of sequence. While 'alleles' encountered in public datases typically overlap a gene, many do not. But GENO does define the 'gene allele' class as a subtype of 'allele' to refers more specifically to a specifc version of an entire gene.
-	
+
 [1] https://isogg.org/wiki/Allele (retrieved 2018-03-17)
 [2] http://semanticscience.org/resource/allele (retrieved 2018-03-17)
 [3] https://en.wikipedia.org/wiki/Allele (retrieved 2018-03-17)
@@ -2695,9 +2695,9 @@ AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000524 "In an experiment where shh
 
 This notation parallels those used for more traditional 'intrinsic' genotypes, where the affected gene is presented with its alteration in angled brackets < >. In the extrinsic genotype shown here, the variation in shha is affected by a specific concentration of an shha-targeting morpholino (instead of a mutation in the shha gene). And the variation in shhb is affected by its overexpression from a pFLAG Shhb expression construct.")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000524 "A specification of the known state of gene expression across a genome, and how it varies from some baseline/reference state.")
-AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000524 "We acknowledge that this is not a 'genotype' in the traditional sense, but this terminological choice highlights similarities that play out in parallel modeling of intrinsic and extrinsic genotype partonomies, and parallel syntactic formats for labeling instances of these genotypes. 
+AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000524 "We acknowledge that this is not a 'genotype' in the traditional sense, but this terminological choice highlights similarities that play out in parallel modeling of intrinsic and extrinsic genotype partonomies, and parallel syntactic formats for labeling instances of these genotypes.
 
-Our rationale here is that what we care about from perspective of G2P associations is identifying genomic features that impact phenotype - where experimental approaches include permanent introduction of intrinsic modifications to genomic sequence, and transient introduction of extrinsic factors that modify expression of specific genes. As the former is described by the traditional notion of a genotype, it seems a rational leap to consider the latter akin to an 'extrinsic genotype' wherein the alterations are externally  applied rather than inherent to the genome. 
+Our rationale here is that what we care about from perspective of G2P associations is identifying genomic features that impact phenotype - where experimental approaches include permanent introduction of intrinsic modifications to genomic sequence, and transient introduction of extrinsic factors that modify expression of specific genes. As the former is described by the traditional notion of a genotype, it seems a rational leap to consider the latter akin to an 'extrinsic genotype' wherein the alterations are externally  applied rather than inherent to the genome.
 
 Finally, there is some precedent to thinking about such extrinsic modifications in terms of a genotype, in the EFO:0000513 ! genotype: \"The total sum of the genetic information of an organism that is known and relevant to the experiment being performed, including chromosomal, plasmid, viral or other genetic material which has been introduced into the organism either prior to or during the experiment.\"")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000524 "experimental genotype")
@@ -2765,17 +2765,17 @@ SubClassOf(obo:GENO_0000534 obo:GENO_0000737)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000536 "A specification of the genetic state of an organism, whether complete (defined over the whole genome) or incomplete (defined over a subset of the genome). Genotypes typically describe this genetic state as a diff between some variant component and a canonical reference.")
 AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000536 "As information artifacts, genotypes specify the state of a genome be defining a diff between some canonical reference and a variant or alternate sequence that replaces the corresponding portion of the reference. We can consider a genotype then as a collection of these reference and variant features, along with some rule for operating on them and resolve a final single sequence. This is valid ontologically because we commit only to sequence features being GDCs - which allows for their concretization in either biological or informational patterns. Accordingly, a particular gene allele, such as shh<tbx292>, can be part of a genome in a biological sense and part of a genotype in an informational sense. This idea underpins the 'genotype partonomy' at the core of the GENO model that decomposes a complete genotype into its more fundamental parts, including alleles and allele complements, as described in the comment above.")
-AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000536 "Core definition above adapted from the GA4GH VMC data model definition here: https://docs.google.com/document/d/12E8WbQlvfZWk5NrxwLytmympPby6vsv60RxCeD5wc1E/edit#heading=h.4e32jj4jtmsl (retrieved 2018-04-09). 
+AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000536 "Core definition above adapted from the GA4GH VMC data model definition here: https://docs.google.com/document/d/12E8WbQlvfZWk5NrxwLytmympPby6vsv60RxCeD5wc1E/edit#heading=h.4e32jj4jtmsl (retrieved 2018-04-09).
 Note however that the VMC genotype concept likely is not intended to cover 'effective' and 'extrinsic' genotype concepts defined in GENO.")
-AnnotationAssertion(rdfs:comment obo:GENO_0000536 "1. Scope of 'Genetic State': 
+AnnotationAssertion(rdfs:comment obo:GENO_0000536 "1. Scope of 'Genetic State':
 'Genetic state' is considered quite broadly in GENO to describe two general kinds of 'states'.  First, is traditional notion of 'allelic state' - defined as the complement of alleles present at a particular location or locations in a genome (i.e. across all homologous chromosomes containing this location). Here, a genotype can describe allelic state at a specific locus in a genome (an 'allelic genotype'), or describe the allelic state across the entire genome ('genomic genotype'). Second, this concept can also describe states of genomic features 'extrinsic' to their intrinsic sequence, such as the expression status of a gene as a result of being specifically targeted by experimental interventions such as RNAi, morpholinos, or CRISPRs.
 
 2. Genotype Subtypes:
-In GENO, we use the term 'intrinsic' for genotypes describing variation in genomic sequence, and 'extrinsic' for genotypes describing variation in gene expression (e.g. resulting from the targeted experimental knock-down or over-expression of endogenous genes).  We use the term 'effective genotype' to describe the total intrinsic and extrinsic variation in a cell or organism at the time a phenotypic assessment is performed. 
+In GENO, we use the term 'intrinsic' for genotypes describing variation in genomic sequence, and 'extrinsic' for genotypes describing variation in gene expression (e.g. resulting from the targeted experimental knock-down or over-expression of endogenous genes).  We use the term 'effective genotype' to describe the total intrinsic and extrinsic variation in a cell or organism at the time a phenotypic assessment is performed.
 
 Two more precise conccepts are subsumed by the notion of an 'intrinsic genotype': (1) 'allelic genotypes', which specify allelic state at a single genomic location; and (2) 'genomic genotypes', which specify allelic state across an entire genome.  In both cases, allelic state is typically specified in terms of a differential between a reference and a set of 1 or more known variant features.
 
-3. The Genotype Partonomy: 
+3. The Genotype Partonomy:
 'Genomic genotypes' describing sequence variation across an entire genome are 'decomposed' in GENO into a partonomy  of more granular levels of variation. These levels are defined to be meaningful to biologists in their attempts to relate genetic variation to phenotypic features. They include 'genomic variation complement' (GVC), 'variant single locus complement' (VSLC), 'allele', 'haplotype', 'sequence alteration', and 'genomic background' classes.  For example, the components of the zebrafish genotype \"fgf8a<ti282a/ti282a>; fgf3<t24149/+>[AB]\", described at  zfin.org/ZDB-FISH-150901-9362, include the following elements:
 
  - GVC: fgf8a<ti282a/ti282a>; fgf3<t24149/+> (total intrinsic variation in the genome)
@@ -2967,7 +2967,7 @@ SubClassOf(obo:GENO_0000642 ObjectSomeValuesFrom(obo:GENO_0000207 obo:SO_0000783
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000644 "A genotype that describes what is known about variation in a genome at a gross structural level, in terms of the number and appearance of chromosomes in the nucleus of a eukaryotic cell.")
 AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000644 "Derived from http://en.wikipedia.org/wiki/Karyotype (accessed 2017-03-28)")
-AnnotationAssertion(rdfs:comment obo:GENO_0000644 "Karyotypes describe structural variation across a genome at the level of chromosomal morphology and banding patterns detectable in stained chromosomal spreads. This coarser level does not capture more granular levels of variation commonly represented in other forms of genotypes (e.g. specific alleles and sequence alterations).   
+AnnotationAssertion(rdfs:comment obo:GENO_0000644 "Karyotypes describe structural variation across a genome at the level of chromosomal morphology and banding patterns detectable in stained chromosomal spreads. This coarser level does not capture more granular levels of variation commonly represented in other forms of genotypes (e.g. specific alleles and sequence alterations).
 
 A base karyotype representing a genome with no known structural variation can be as simple as '46XY', but karyotypes typically contains some gross variant component (such as a chromosome duplication or translocation).")
 AnnotationAssertion(rdfs:label obo:GENO_0000644 "karyotype"@en)
@@ -3062,7 +3062,7 @@ SubClassOf(obo:GENO_0000667 ObjectSomeValuesFrom(obo:GENO_0000207 obo:SO_0000783
 
 AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000680 "A junction between bases, a deletion variant, a terminus at the end of a chromosome.")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000680 "A genomic feature that has an extent of zero.")
-AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000680 "Former logical def: 
+AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000680 "Former logical def:
 'genomic feature'
  and (has_extent value 0)")
 AnnotationAssertion(rdfs:label obo:GENO_0000680 "obsolete null feature")
@@ -3309,7 +3309,7 @@ AnnotationAssertion(obo:IAO_0000112 obo:GENO_0000823 "1. The zebrafish \"fgf8a<t
    ##fileformat=VCFv4.2
    ##FORMAT=<ID=GT, Description=\"Genotype, 0=REF, 1=ALT\">
    #CHROM      POS       REF  ALT   FILTER  FORMAT   SAMP001
-        20         2300608    C      T      PASS        GT	         0/1	
+        20         2300608    C      T      PASS        GT	         0/1
         20         2301308    T      G      PASS        GT	         1/1
    (derived from https://faculty.washington.edu/browning/beagle/intro-to-vcf.html)
 
@@ -3343,7 +3343,7 @@ SubClassOf(obo:GENO_0000839 ObjectSomeValuesFrom(obo:GENO_0000382 obo:GENO_00005
 
 AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000848 obo:GENO_0000484)
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000848 "A sequence alteration within the coding sequence of a gene.")
-AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000848 "Not required at this poitn, so marked exploratory and obsoleted.  
+AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000848 "Not required at this poitn, so marked exploratory and obsoleted.
 Asserted under sequence_alteration.")
 AnnotationAssertion(rdfs:label obo:GENO_0000848 "obsolete coding sequence alteration")
 AnnotationAssertion(owl:deprecated obo:GENO_0000848 "true"^^xsd:boolean)
@@ -3358,7 +3358,7 @@ SubClassOf(obo:GENO_0000850 obo:GENO_0000856)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000856 "An engineered region that is used to transfer foreign genetic material into a host cell.")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000856 "engineered_genetic_vector")
-AnnotationAssertion(rdfs:comment obo:GENO_0000856 "Constructs can be engineered to carry inserts of DNA from external sources, for purposes of cloning and propagation or gene expression in host cells.  
+AnnotationAssertion(rdfs:comment obo:GENO_0000856 "Constructs can be engineered to carry inserts of DNA from external sources, for purposes of cloning and propagation or gene expression in host cells.
 
 Constructs are typically packaged as part  of delivery systems such as plasmids or viral vectors.")
 AnnotationAssertion(rdfs:label obo:GENO_0000856 "engineered genetic construct"@en)
@@ -3385,15 +3385,15 @@ AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000871 "Consider if we dont want t
 
 Instead, we can create an 'allele set' class as the haplotype parent?")
 AnnotationAssertion(dcterms:source obo:GENO_0000871 "Informed by https://isogg.org/wiki/Haplotype and https://en.wikipedia.org/wiki/Haplotype.")
-AnnotationAssertion(rdfs:comment obo:GENO_0000871 "A haplotype is a set of non-overlapping alleles that reside in close proximity on the same DNA strand. We model them as 'complements' because they include all known/relevant alleles within a defined region in the genome (e.g. a 'gene', or a 'haplotype block') - where this set may consist of 0, 1, or more alterations from some reference.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction. 
+AnnotationAssertion(rdfs:comment obo:GENO_0000871 "A haplotype is a set of non-overlapping alleles that reside in close proximity on the same DNA strand. We model them as 'complements' because they include all known/relevant alleles within a defined region in the genome (e.g. a 'gene', or a 'haplotype block') - where this set may consist of 0, 1, or more alterations from some reference.  Because they are genetically linked, the alleles comprising a haplotype are likely to be co-inherited and survive descent across many generations of reproduction.
 
 As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term 'haplotype' is most commonly used to describe the following scenarios of genetic linkage between 'alleles':
 
-1. The 'alleles' comprising the haplotype are 'single nucleotide polymorphisms' (SNPs) or other small alterations, which  collectively tend to occur together on a chromosomal strand). This use of 'haplotype' is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur 'in cis' on the same chromosomal strand.  
+1. The 'alleles' comprising the haplotype are 'single nucleotide polymorphisms' (SNPs) or other small alterations, which  collectively tend to occur together on a chromosomal strand). This use of 'haplotype' is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur 'in cis' on the same chromosomal strand.
 
 2. The 'alleles' comprising the haplotype are SNPs or other short alterations, which collectively define a specific version of a gene. In this case, the locaiton bounding the haplotype corresponds to a gene locus, and the haplotype defines a specific allele of that gene (i.e 'gene allele'). \"Star alleles\" of PGx genes are examples of this category of haplotype (e.g. https://www.ebi.ac.uk/cgi-bin/ipd/imgt/hla/get_allele_hgvs.cgi?A*33:01:01, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4724253/).
 
-3. Each of the 'alleles' comprising the haplotype is itself a 'gene allele' (i.e. a specific version of an entire gene), such that the haolotype contains multiple complete 'gene alleles' that are co-inherited because they reside in tightly linked clusters on a single chromosome.   
+3. Each of the 'alleles' comprising the haplotype is itself a 'gene allele' (i.e. a specific version of an entire gene), such that the haolotype contains multiple complete 'gene alleles' that are co-inherited because they reside in tightly linked clusters on a single chromosome.
 
 Each of these more specific definition serves a purpose for a particular type of genetic analysis or use case. The GENO definition of 'haplotype' is broadly inclusive of these and any other scenarios where distinct 'alleles' of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.")
 AnnotationAssertion(rdfs:label obo:GENO_0000871 "haplotype"@en)
@@ -3462,8 +3462,8 @@ SubClassOf(obo:GENO_0000879 obo:GENO_0000888)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000880 "Describes an allele that originated through a mutation event in a germ cell of one of the parents, or in the fertilized egg itself during early embryogenesis. De novo alleles are* heritable* but *not inherited*.")
 AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000880 "Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/de-novo-mutation  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation")
-AnnotationAssertion(rdfs:comment obo:GENO_0000880 "We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed constitutively  in either parent, but can be passed to offspring in virtue of their being present in the individual's germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell. 
-		
+AnnotationAssertion(rdfs:comment obo:GENO_0000880 "We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. De novo variants are *heritable* but not *inherited* - as they are not observed constitutively  in either parent, but can be passed to offspring in virtue of their being present in the individual's germ cells. By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring), and somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.
+
 De novo variants appear for the first time in one family member. They often explain genetic disorders in which an affected child has a mutation in every cell in the body but the parents do not, and there is no family history of the disorder.")
 AnnotationAssertion(rdfs:label obo:GENO_0000880 "de novo allele origin"@en)
 SubClassOf(obo:GENO_0000880 obo:GENO_0000877)
@@ -3480,7 +3480,7 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000882 "Describes an allele that r
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000882 "acquired")
 AnnotationAssertion(obo:IAO_0000119 obo:GENO_0000882 "Derived from https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/somatic-variant  and  https://ghr.nlm.nih.gov/primer/mutationsanddisorders/genemutation")
 AnnotationAssertion(rdfs:comment obo:GENO_0000882 "We distinguish germline, somatic, and de novo allele origin based on a combination two key criteria - whether the allele *inherited* from a parent, and whether it is *heritble' by offspring. Somatic variants are neither inherited or heritable - having originated via a spontaneous mutation in a non-germ cell.  By contrast, germline variants are both inherited (passed down from a parent) and heritable (passable down to offspring). De novo mutations are not inherited but are typically heritable, as they originated through a spontaneous mutation that made them present in germ cells.
-		
+
 These acquired mutations are called 'somatic' because they typically affect  somatic (non-germ) cells.  But when spontaneous do mutations occur in the germ cells of an organism, these can be passed on to offspring in whom they will be considered de novo mutations.")
 AnnotationAssertion(rdfs:label obo:GENO_0000882 "somatic allele origin"@en)
 SubClassOf(obo:GENO_0000882 obo:GENO_0000877)
@@ -3587,7 +3587,7 @@ SubClassOf(obo:GENO_0000897 ObjectSomeValuesFrom(obo:RO_0002162 obo:OBI_0100026)
 # Class: obo:GENO_0000898 (haplotype block)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000898 "A sequence feature representing a region of the genome over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.")
-AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000898 "Consider whether we might better model a 'haplotype block' at the level of a sequence location, rather than a sequence region - e.g. as 
+AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000898 "Consider whether we might better model a 'haplotype block' at the level of a sequence location, rather than a sequence region - e.g. as
 \"A genomic location over which there is little evidence for historical recombination, such that sequence alterations it contains are typically co-inherited across generations.\" Look at how teh concept is used in research, and if people think of each version of sequence in a haplotype block to be an instance. I think we would just call these versions 'alleles', and then  could define haplotype block as a location.
 
 Current definition is based on http://purl.obolibrary.org/obo/SO_0000355 ! haplotype_block (def = A region of the genome which is co-inherited as the result of the lack of historic recombination within it). If we stick with a region-level treatment, consdier if as a defined region of genomic sequence where variation is known to occur, a haplotype block should be classified as a subtype of allele.")
@@ -3599,7 +3599,7 @@ SubClassOf(obo:GENO_0000898 obo:GENO_0000481)
 # Class: obo:GENO_0000899 (genomic genotype)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000899 "A genotype that describes the total variation in heritable genomic sequence of a cell or organism, typically in terms of alterations from some reference or background genotype.")
-AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000899 "'Genomic Genotype' vs 'Genome' in GENO: 
+AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000899 "'Genomic Genotype' vs 'Genome' in GENO:
 A genomic genotype is an information artifact with a representational syntax that can specify what is known about the complete sequence of a genome. This syntax describes 'reference' and 'variant' components - namely a 'background genotype' and 'genomic variation complement' - that must be operated on to resolve the genome sequence.  Specifically, the genome sequence is determined by substituting all sequences specified by the 'genomic variation complement' for the corresponding sequences in the reference 'background genotype'.  So, while the total sequence content described in a genotype may exceed that of a single a genome (in that it includes a reference genome and variatoin complement), the intended resolution of these sequences is to arrive at a single genome sequence. It is this end-point that we consider when asserting that a genotype 'specifies' a genome.")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000899 "complete genotype")
 AnnotationAssertion(rdfs:comment obo:GENO_0000899 "1. A genomic genotype is a short-hand specification of a genome that uses a representational syntax comprised of information about a reference genome ('genomic background'), and all specific variants from this reference (the 'genomic variation complement').  Conceptually, this variant genome sequence can be resolved by substituting all sequences specified by the 'genomic variation complement' for the corresponding sequences in the reference  'genomic background' sequence.
@@ -3629,8 +3629,8 @@ For example, we would define an  'HLA gene block' as a subclass of 'genomic feat
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000902 "genomic location")
 AnnotationAssertion(obo:IAO_0000118 obo:GENO_0000902 "genomic locus")
 AnnotationAssertion(oboInOwl:hasDbXref obo:GENO_0000902 "VMC:Location")
-AnnotationAssertion(rdfs:comment obo:GENO_0000902 "1. A genomic location (aka locus) is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic location is occupied_by a 'sequence feature' - where the identity of this feature depends on both it sequence, and its location in the genome (i.e. the locus it occupies).  For example, the 'ATG' sequence beginning the ORF of the human SHH gene shares the *same sequence* as the 'ATG' beginning the ORF of the human AKT gene. But these are *distinct sequence features* because they occupy different genomic locations. 
-	
+AnnotationAssertion(rdfs:comment obo:GENO_0000902 "1. A genomic location (aka locus) is defined by its begin and end coordinates on a reference genome, independent of a particular sequence that may reside there.  In GENO, we say that a genomic location is occupied_by a 'sequence feature' - where the identity of this feature depends on both it sequence, and its location in the genome (i.e. the locus it occupies).  For example, the 'ATG' sequence beginning the ORF of the human SHH gene shares the *same sequence* as the 'ATG' beginning the ORF of the human AKT gene. But these are *distinct sequence features* because they occupy different genomic locations.
+
 2. A given genomic location (e.g. the human SHH gene locus) may be occupied by different alleles (e.g. different alleles of the SHH gene). Within the genome of a single diploid organism, there is potential for two alleles to exist at such a locus (i.e. two different versions of the SHH gene).  And across genomes of all members of a species, many more alleles of the SHH gene may exist and occupy this same locus.
 
 3. The notion of a genomic location in the realm of biological sequences is analogous to a BFO:spatiotemporal region in the realm of physical entities. A spatiotemporal region can be occupied_by physical objects, while a genomic location is occupied_by sequence features. Just as a spatiotemporal region is distinct from an object that occupies it, so too a genomic locus is distinct from a sequence feature that occupies it.  As a more concrete example, consider the distinction between a street address and the building that occupies it as analogous to the relationship between a genomic location and the feature that resides there.")
@@ -3687,14 +3687,14 @@ Former SC axioms:
 - 'has part' some sequence_alteration")
 AnnotationAssertion(rdfs:comment obo:GENO_0000915 "1. The relationship between 'haplotype' and 'haplotype block' is analogous to the relationship between 'gene allele' and 'gene':  a 'gene allele' is one of many possible instances of a 'gene', while a 'haplotype' is one of many possible instances of a 'haplotype block'.  In this sense, a gene allele can be considered to be a haplotype whose extent is that of a gene (as it is generally true that there is a low probability of recombination within any given gene).
 
-2. Haplotypes typically contain more than one 'genetically-linked' loci where sequence alterations are known to exist, such that a set of alterations will be co-inherited together across many generations of reproduction.  A common use of 'haplotype' is in phasing of patient WGS or WES data, where this term refers to sequence containing two or more alterations that are beleived to occur 'in cis' on the same chromosomal strand.  
+2. Haplotypes typically contain more than one 'genetically-linked' loci where sequence alterations are known to exist, such that a set of alterations will be co-inherited together across many generations of reproduction.  A common use of 'haplotype' is in phasing of patient WGS or WES data, where this term refers to sequence containing two or more alterations that are beleived to occur 'in cis' on the same chromosomal strand.
 
-GENO's definition is consistent with but more inclusive than this view, allowing for haplotypes with one or zero established alterations as long as there is a low probability of recombination within the region it spans (such that alterations found in cis are likely to remain in cis across successive generations). As a result, GENO considers any allele that spans an extent greater than that of a single sequence alteration to be a haplotype - as long as there is an expectation of low recombination frequency within the haplotype block occupied by the allele. For example, a 'gene allele' is a haplotype representing a particular version of a gene that contains one or more sequence alterations - as a 'gene' is a region of sequence with a low probability of recombination that is generally expeted to be inherited as a unit. 
+GENO's definition is consistent with but more inclusive than this view, allowing for haplotypes with one or zero established alterations as long as there is a low probability of recombination within the region it spans (such that alterations found in cis are likely to remain in cis across successive generations). As a result, GENO considers any allele that spans an extent greater than that of a single sequence alteration to be a haplotype - as long as there is an expectation of low recombination frequency within the haplotype block occupied by the allele. For example, a 'gene allele' is a haplotype representing a particular version of a gene that contains one or more sequence alterations - as a 'gene' is a region of sequence with a low probability of recombination that is generally expeted to be inherited as a unit.
 
 3. As highlighted in https://en.wikipedia.org/wiki/Haplotype, the term 'haplotype' is most commonly used to describe the following scenarios of genetic linkage between 'alleles':
 
-a. The first is regions containing multiple linked 'gene alleles' - i.e. specific versions of entire genes that are co-inherited because they reside in tightly linked clusters on a single chromosome.  
-b. The second is a region containing multiple linked single nucleotide polymorphisms (SNPs) that tend to occur together on a chromosomal strand (i.e. be statistically associated).  This use of 'haplotype' is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur 'in cis' on the same chromosomal strand.  
+a. The first is regions containing multiple linked 'gene alleles' - i.e. specific versions of entire genes that are co-inherited because they reside in tightly linked clusters on a single chromosome.
+b. The second is a region containing multiple linked single nucleotide polymorphisms (SNPs) that tend to occur together on a chromosomal strand (i.e. be statistically associated).  This use of 'haplotype' is commonly seen in phasing of patient WGS or WES data, to describe a state where two or more alterations that are believed to occur 'in cis' on the same chromosomal strand.
 c. A third, which is related to the previous case, occurs when the extent of region containing linked SNPs is that of a single gene.  In this case, the haplotype represents a 'gene allele' - a version of an entire gene defined by the set of sequence alterations it contains. We may consider this a haplotype as most genes are small enough that there is little chance of recombination events moving cis alterations onto separate chromosomes.
 
 The GENO definition of 'haplotype' is broadly inclusive of these and any other scenarios where distinct 'alleles' of any kind on the same chromosomal strand are genetically linked, and thus tend to be co-inherited across successive generations.")
@@ -3755,7 +3755,7 @@ SubClassOf(obo:GENO_0000921 obo:BFO_0000031)
 # Class: obo:GENO_0000922 (biological sequence set)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000922 "A set of biological sequences.")
-AnnotationAssertion(rdfs:comment obo:GENO_0000922 "'Sets' are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an 'empty' set) or 1 member (a 'singleton' or 'unit' set), consistent with the concept of 'mathematical sets'. 
+AnnotationAssertion(rdfs:comment obo:GENO_0000922 "'Sets' are used to represent entities that are typically collections of more than one member. But we allow for sets that contain 0 members (an 'empty' set) or 1 member (a 'singleton' or 'unit' set), consistent with the concept of 'mathematical sets'.
 
 A set may also include multiple copies of the same sequence. For example, in a 'copy number complement', members are all copies of this same biological sequence.")
 AnnotationAssertion(rdfs:label obo:GENO_0000922 "biological sequence set"@en)
@@ -3981,7 +3981,7 @@ AnnotationAssertion(owl:deprecated obo:GENO_0000955 "true"^^xsd:boolean)
 
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000956 "A set of all features in a particular genome whose sequence aligns with a particular location on a reference genome.  Such features are typically on the scale of complete genes or larger.")
 AnnotationAssertion(obo:IAO_0000231 obo:GENO_0000956 "Decided to implement copy number related classes at the sequence level, rather than the sequence feature level. Replaced by GENO:0000961.")
-AnnotationAssertion(rdfs:comment obo:GENO_0000956 "1. Features described by 'copy number' are larger regions of sequence spanning one or more complete genes, or large chromosomal segment. Copies of these regions often become distributed across a genome at unknown locations. By contrast, short repeats, such as tri-nucelotide 'CAG' repeats in the Huntingtin gene, occur at defined locations (adjacent to the originating 'CAG' sequence), and can therefore be modeled as proper alleles.  
+AnnotationAssertion(rdfs:comment obo:GENO_0000956 "1. Features described by 'copy number' are larger regions of sequence spanning one or more complete genes, or large chromosomal segment. Copies of these regions often become distributed across a genome at unknown locations. By contrast, short repeats, such as tri-nucelotide 'CAG' repeats in the Huntingtin gene, occur at defined locations (adjacent to the originating 'CAG' sequence), and can therefore be modeled as proper alleles.
 
 2. A copy number complement, like any sequence feature complement, is a set of features in a particular genome that meet some criterion. The criterion in this case is that their sequence maps to that of a particular location in a reference sequence.  So a copy number complement is the set of all features that share or align with a specified sequence defined on some reference. The sequence of member sequences need not exactly match that of the reference, as copies may accrue some alterations. What is important is that conceptually they represent exact or inexact copies of the reference sequence at a defining location.
 
@@ -4005,7 +4005,7 @@ AnnotationAssertion(obo:IAO_0000116 obo:GENO_0000961 "The identity of a 'copy nu
 We represent the notion of copy number at the \"sequence level\" (as opposed to the \"sequence feature level\")  because we are concerned only with the number of copies of a sequence in a genome, and not the location of the features bearing this sequence. Consider a copy number complement comprised of three copies of the sequence defined by the location Chr8 100000-200000 on a GRCh38.2 reference genome.  In one person's genome, this sequence may appear at its normal location on Chromosome 8, as well as in duplications on chromosomes 5, and 12. In another genome the sequence might appear three times as well, but on chromosomes 8, 9, and 15.  When representing causal associations linking copy number to disease, it is important that these are considered to be *the same* copy number complement - because what a curator associates with a disease is the presence of three copies of some sequence in a genome, independent of their location. The \"sequence level\" representation here supports this use case.  By contrast, a \"feature level\" representation, where identity of a copy number complement would be based on the identity of member *features*), does not - because we have two sets comprised of entirely different features (based on location being tied to their identity).")
 AnnotationAssertion(rdfs:comment obo:GENO_0000961 "The count of how many of a particular sequences are found in a genome is the sequences 'copy number'. In diploid organisms, the normal copy number for sequences at most locations is 2 (a notable exception being those on the X-chromosome where normal copy number is 1). Variations in copy number occur if this count increases due to a duplication of the gene/region, or decreases due to a deletion of a gene/region. A driving use case for representing copy number is to support associations between variation in copy number of a particular sequence, and phenotypes or diseases that can result.
 
-A 'complement' refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a set may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features, such as 'copy number complements' representing the set of all copies of a particular sequence in a genome. 
+A 'complement' refers to an exhaustive collection of *all* objects that make up some well-defined set. Such a set may contain 0, 1, or more than one members. The notion of a complement is useful for defining many biologically-relevant sets of sequence features, such as 'copy number complements' representing the set of all copies of a particular sequence in a genome.
 
 The fact that we are counting how many copies of the same *sequence* exist in a genome here, as opposed to how many of the same *feature*, is what sets sequence-level concepts like 'copy number complement' apart from feature-level concepts like 'single locus complement'. To illustrate the difference, consider a duplication event that creates a new copy of the human APOE gene on a different chromosome. This creates an entirely new sequence feature at a distinct locus from that of the original APOE gene.  The 'copy number complement' for sequence defined by the APOE gene locus would have a count of three, as this sequence is present three times in the genome.  But the 'single locus complement' at the APOE gene locus would still have a count of two - because the duplicated copy is at a different location in the genome, and therefore does not represent a copy of the APOE locus.")
 AnnotationAssertion(rdfs:comment obo:GENO_0000961 "The notion of a 'complement' is useful as a special case of a set, where the members necessarily comprise an exhaustive collection of *all* objects that make up some well-defined set. Here, a 'copy number complement' represents 'represents the set of *all* copies of a specified sequence in a particular genome. Note that sequences can be duplicated in a set (i.e. contain more than one member representing the same sequence). In the 'copy number complement' example, each set member is a copy of this same biological sequence.")
@@ -4088,7 +4088,7 @@ SubClassOf(obo:GENO_0000974 obo:GENO_0000877)
 
 AnnotationAssertion(obo:IAO_0000114 obo:GENO_0000975 "exploratory")
 AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000975 "Describes an allele that is part of an allelic complement where both alleles are inherited from the same parent.")
-AnnotationAssertion(rdfs:comment obo:GENO_0000975 "From Wikidedia: Uniparental inheritance is a non-mendelian form of inheritance that consists of the transmission of genotypes from one parental type to all progeny. That is, all the genes in offspring will originate from only the mother or only the father. This phenomenon is most commonly observed in eukaryotic organelles such as mitochondria and chloroplasts. 
+AnnotationAssertion(rdfs:comment obo:GENO_0000975 "From Wikidedia: Uniparental inheritance is a non-mendelian form of inheritance that consists of the transmission of genotypes from one parental type to all progeny. That is, all the genes in offspring will originate from only the mother or only the father. This phenomenon is most commonly observed in eukaryotic organelles such as mitochondria and chloroplasts.
 https://en.wikipedia.org/wiki/Uniparental_inheritance")
 AnnotationAssertion(rdfs:label obo:GENO_0000975 "uniparental allele origin"@en)
 SubClassOf(obo:GENO_0000975 obo:GENO_0000974)
@@ -4344,7 +4344,7 @@ SubClassOf(obo:SO_0000248 obo:SO_1000002)
 
 # Class: obo:SO_0000281 (engineered_foreign_gene)
 
-AnnotationAssertion(obo:IAO_0000116 obo:SO_0000281 "See here for a list of engineered regions in ZFIN: http://zfin.org/cgi-bin/webdriver?MIval=aa-markerselect.apg&marker_type=REGION&query_results=t&compare=contains&WINSIZE=25.
+AnnotationAssertion(obo:IAO_0000116 obo:SO_0000281 "See here for a list of engineered foreign genes in ZFIN: https://zfin.org/search?q=&fq=type_1%3A%22Engineered+Foreign+Gene%22&category=Any, See here for a list of engineered regions in ZFIN: https://zfin.org/search?q=&fq=type%3A%22Engineered+Region%22&category=Any"
 
 Includes things like loxP sites, inducible promoters, ires elements, etc.")
 AnnotationAssertion(rdfs:label obo:SO_0000281 "engineered_foreign_gene")
@@ -4431,7 +4431,7 @@ SubClassOf(obo:SO_0000699 obo:SO_0000110)
 # Class: obo:SO_0000704 (gene)
 
 AnnotationAssertion(obo:IAO_0000115 obo:SO_0000704 "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.")
-AnnotationAssertion(obo:IAO_0000116 obo:SO_0000704 "Regarding the distinction between a 'gene' and a 'gene allele': 
+AnnotationAssertion(obo:IAO_0000116 obo:SO_0000704 "Regarding the distinction between a 'gene' and a 'gene allele':
 Every zebrafish genome contains a 'gene allele' for every zebrafish gene. Many will be 'wild-type' or at least functional gene alleles. But some may be alleles that are mutated or truncated so as to lack functionality.  According to current SO criteria defining genes, a 'gene' no longer exists in the case of a non-functional or deleted variant. But the 'gene allele' does exist -  and its extent is that of the remaining/altered sequence based on alignment with a  reference gene.  Even for completely deleted genes, an allele of the gene exists (and here is equivalent to the junction corresponding to the where gene would live based on a reference alignment).")
 AnnotationAssertion(rdfs:comment obo:SO_0000704 "A gene is any 'gene allele' that produces a functional transcript (ie one capable of translation into a protein, or independent functioning as an RNA), when encoded in the genome of some cell or virion.")
 AnnotationAssertion(rdfs:label obo:SO_0000704 "gene")
@@ -4470,7 +4470,7 @@ AnnotationAssertion(obo:IAO_0000115 obo:SO_0000902 "A gene that has been transfe
 AnnotationAssertion(rdfs:comment obo:SO_0000902 "On the relationship between 'transgenic insertions', 'transgenes', and 'alleles'
 Transgenic insertions are sequence alterations comprised of foreign/exogenous sequence. This sequence can be from the same or different species  as the host cell or genome - it is exogenous in virtue of it being additional sequence inserted into the original host genome. A given transgenic insertion may create one or more transgenes when introduced into a host genome. The extent of a transgene is spans all features needed to drive its expression in the host genome.  In most cases a transgenic insertion completely contains one or more transgenes that are fully competent to drive expression in the host genome.  But in some cases, a transgenic insertion may carry only part of the final transgene it creates - which requires additional endogenous sequences in the vicinity of its insertion site to complete a functional gene (e.g. this is the case for enhancer traps or gene  traps) to complete.
 
-In addition to the transgenes they create upon genomic integration, transgenic insertions can create variant alleles by disrupting a known endogenous gene/locus. Variant alleles are versions of a particular genomic features (typically genes), that are altered in their sequence relative to some reference.  An insertion that disrupts an endogenous gene would be considered a 'sequence alteration' (sensu SO) which creates a 'variant gene allele'. From the perspective of this disrupted gene, the origin or transgenic nature of this insertion is irrelevant - what matters here is that the gene's sequence has been altered to create an allele.  
+In addition to the transgenes they create upon genomic integration, transgenic insertions can create variant alleles by disrupting a known endogenous gene/locus. Variant alleles are versions of a particular genomic features (typically genes), that are altered in their sequence relative to some reference.  An insertion that disrupts an endogenous gene would be considered a 'sequence alteration' (sensu SO) which creates a 'variant gene allele'. From the perspective of this disrupted gene, the origin or transgenic nature of this insertion is irrelevant - what matters here is that the gene's sequence has been altered to create an allele.
 
 For the purposes of modeling, any transgene(s) created when an endogenous gene is interrupted by an insertion is considered/modeled separately from the allele of the endogenous gene that is created by the insertion.  The transgenic insertion, which is simply a sequence alteration in the host genome, is then linked to any transgenes that it contributes to or overlaps with or contains.  The model of the Flybase example HERE illustrates this approach.")
 AnnotationAssertion(rdfs:comment obo:SO_0000902 "Transgenes can exist as integrated into the host genome, or extra-chromosomally on replicons or transiently carried/expressed vectors.  What matters is that they are active in the context of a foreign biological system (typically a cell or organism).
@@ -4514,7 +4514,7 @@ SubClassOf(obo:SO_0001026 ObjectSomeValuesFrom(obo:RO_0002162 obo:OBI_0100026))
 
 # Class: obo:SO_0001059 (sequence_alteration)
 
-AnnotationAssertion(obo:IAO_0000112 obo:SO_0001059 "A few examples highlighting the distinction of 'sequence alterations' from their parent 'variant allele': 
+AnnotationAssertion(obo:IAO_0000112 obo:SO_0001059 "A few examples highlighting the distinction of 'sequence alterations' from their parent 'variant allele':
 
 1. Consider NM_000059.3(BRCA2):c.631G>A variation in the BRCA2 gene.  This mutation of a single nucleotide creates a gene allele whose extent is that of the entire BRCA2 gene.  This version of the full BRCA2 gene is a 'variant allele', while the extent of sequence spanning just the single altered base is a 'sequence alteration'.  See https://www.ncbi.nlm.nih.gov/snp/80358871.
 
@@ -4528,11 +4528,11 @@ AnnotationAssertion(obo:IAO_alt_id obo:SO_0001059 "SO:1000004")
 AnnotationAssertion(obo:IAO_alt_id obo:SO_0001059 "SO:1000007")
 AnnotationAssertion(obo:IAO_id obo:SO_0001059 "SO:0001059")
 AnnotationAssertion(obo:IAO_subset obo:SO_0001059 "SOFA")
-AnnotationAssertion(rdfs:comment obo:SO_0001059 "1. A 'sequence alteration' is an allele whose sequence deviates in its entirety from that of other features found at the same genomic location (i.e. it deviates along its entire extent). In this sense, 'sequence alterations' represent the minimal extent an allele can take - i.e. that which is variable with some other feature along its entire sequence). An example is a SNP or insertion. 
+AnnotationAssertion(rdfs:comment obo:SO_0001059 "1. A 'sequence alteration' is an allele whose sequence deviates in its entirety from that of other features found at the same genomic location (i.e. it deviates along its entire extent). In this sense, 'sequence alterations' represent the minimal extent an allele can take - i.e. that which is variable with some other feature along its entire sequence). An example is a SNP or insertion.
 
 Alleles whose extent goes beyond the specific sequence that is known to be variable are not sequence alterations. These are alleles that represent alternate versions of some larger, named feature. The classic example here is a 'gene allele', which spans the extent of an entire gene, and contains one or more sequence alterations (regions known to vary) as part.
 
-2. Sequence alterations are not necessarily 'variant' in the sense defined in GENO (i.e. being 'variant with' some reference sequence).  In any comparison of alleles at a particular location, the choice of a 'reference' is context-dependent - as comparisons in other contexts might consider a different allele to be the reference. So while sequence alterations are usually considered 'variant' in the context in which they are considered, this variant status may not hold at all times. For this reason, the 'sequence alteration' class is not made an rdfs:subClassOf 'variant allele'. 
+2. Sequence alterations are not necessarily 'variant' in the sense defined in GENO (i.e. being 'variant with' some reference sequence).  In any comparison of alleles at a particular location, the choice of a 'reference' is context-dependent - as comparisons in other contexts might consider a different allele to be the reference. So while sequence alterations are usually considered 'variant' in the context in which they are considered, this variant status may not hold at all times. For this reason, the 'sequence alteration' class is not made an rdfs:subClassOf 'variant allele'.
 
 For a particular instance of a sequence alteration, howver, we may in some cases be able to rdf:type it as a 'varaint allele' and a 'sequence alteration', in situations where we can be confident that the feature will *never* be considered a reference. For example, experimentally generated mutations in model organism genes that are created expressly to vary from an established reference.
 
@@ -5094,7 +5094,7 @@ is_variant_part_of  o  has_affected_locus  --> has_affected_locus") ObjectProper
 SubObjectPropertyOf(Annotation(rdfs:comment "Obsolete comment: Property chain to propagate inferred condition associations from an intrinsic genotype, GC, or VLSC to a gene class. (a separate chain is needed to propagate from the variant locus to the gene class, and another to propagate from a sequence alteration to the gene class).
 
 The following, shorter chain, would also suffice here:
-has_allele  o  inferred_to_cause_condition   ->    inferred_to_cause_condition") Annotation(rdfs:comment "Property chain to propagate inferred condition associations from an intrinsic genotype, GVC, or VLSC to an affected gene class, or from an extrinsic gneotype or component to an affected gene class. 
+has_allele  o  inferred_to_cause_condition   ->    inferred_to_cause_condition") Annotation(rdfs:comment "Property chain to propagate inferred condition associations from an intrinsic genotype, GVC, or VLSC to an affected gene class, or from an extrinsic gneotype or component to an affected gene class.
 
 The following, shorter chain, would also suffice here:
 has_affected_locus  o  inferred_to_cause_condition   ->    inferred_to_cause_condition
