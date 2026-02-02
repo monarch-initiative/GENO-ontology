@@ -16,14 +16,14 @@
      xmlns:urigen-plugin="http://urigen-plugin/"
      xmlns:genotype_model="http://www.lamhdi.org/obo/genotype_model/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/geno/geno-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2025-07-25/geno-base.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/geno/releases/2026-02-02/geno-base.owl"/>
         <dce:description>GENO is an OWL model of genotypes, their more fundamental sequence components, and links to related biological and experimental entities.  At present many parts of the model are exploratory and set to undergo refactoring.  In addition, many classes and properties have GENO URIs but are place holders for classes that will be imported from an external ontology (e.g. SO, ChEBI, OBI, etc).  Furthermore, ongoing work will implement a model of genotype-to-phenotype associations. This will support description of asserted and inferred relationships between a genotypes, phenotypes, and environments, and the evidence/provenance behind these associations. 
 
 Documentation is under development as well, and for now a slidedeck is available at http://www.slideshare.net/mhb120/brush-icbo-2013</dce:description>
         <dce:title>GENO ontology</dce:title>
         <dce:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>2025-07-25</owl:versionInfo>
+        <owl:versionInfo>2026-02-02</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -1834,7 +1834,7 @@ In model organisms, the majority of genotypes describe variation at a single  lo
 
 http://useast.ensembl.org/Danio_rerio/Gene/Summary?g=ENSDARG00000056722
 
-http://zfin.org/action/feature/feature-detail?zdbID=ZDB-ALT-111117-8</obo:IAO_0000112>
+https://zfin.org/ZDB-ALT-111117-8</obo:IAO_0000112>
         <obo:IAO_0000115>A genomic feature that represents one of a set of versions of a gene (i.e. a haplotype whose extent is that of a gene)</obo:IAO_0000115>
         <obo:IAO_0000116>Regarding the distinction between a &apos;gene&apos; and a &apos;gene allele&apos;:  Every zebrafish genome contains a &apos;gene allele&apos; for every zebrafish gene. Many will be &apos;wild-type&apos; or at least functional gene alleles. But some may be alleles that are mutated or truncated so as to lack functionality.  According to current SO criteria defining genes, a &apos;gene&apos; no longer exists in the case of a non-functional or deleted variant. But the &apos;gene allele&apos; does exist -  and its extent is that of the remaining/altered sequence based on alignment with a  reference gene.  Even for completely deleted genes, an allele of the gene exists (and here is equivalent to the junction corresponding to the where gene would live based on a reference alignment).
 
@@ -3476,7 +3476,7 @@ In GENO, we use the term &apos;intrinsic&apos; for genotypes describing variatio
 Two more precise conccepts are subsumed by the notion of an &apos;intrinsic genotype&apos;: (1) &apos;allelic genotypes&apos;, which specify allelic state at a single genomic location; and (2) &apos;genomic genotypes&apos;, which specify allelic state across an entire genome.  In both cases, allelic state is typically specified in terms of a differential between a reference and a set of 1 or more known variant features.
 
 3. The Genotype Partonomy: 
-&apos;Genomic genotypes&apos; describing sequence variation across an entire genome are &apos;decomposed&apos; in GENO into a partonomy  of more granular levels of variation. These levels are defined to be meaningful to biologists in their attempts to relate genetic variation to phenotypic features. They include &apos;genomic variation complement&apos; (GVC), &apos;variant single locus complement&apos; (VSLC), &apos;allele&apos;, &apos;haplotype&apos;, &apos;sequence alteration&apos;, and &apos;genomic background&apos; classes.  For example, the components of the zebrafish genotype &quot;fgf8a&lt;ti282a/ti282a&gt;; fgf3&lt;t24149/+&gt;[AB]&quot;, described at  zfin.org/ZDB-FISH-150901-9362, include the following elements:
+&apos;Genomic genotypes&apos; describing sequence variation across an entire genome are &apos;decomposed&apos; in GENO into a partonomy  of more granular levels of variation. These levels are defined to be meaningful to biologists in their attempts to relate genetic variation to phenotypic features. They include &apos;genomic variation complement&apos; (GVC), &apos;variant single locus complement&apos; (VSLC), &apos;allele&apos;, &apos;haplotype&apos;, &apos;sequence alteration&apos;, and &apos;genomic background&apos; classes.  For example, the components of the zebrafish genotype &quot;fgf8a&lt;ti282a/ti282a&gt;; fgf3&lt;t24149/+&gt;[AB]&quot;, described at  https://zfin.org/ZDB-FISH-150901-9362, include the following elements:
 
  - GVC: fgf8a&lt;ti282a/ti282a&gt;; fgf3&lt;t24149/+&gt; (total intrinsic variation in the genome)
  - Genomic Background: AB (the reference against which the GVC is variant)
