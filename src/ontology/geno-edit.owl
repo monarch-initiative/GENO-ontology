@@ -2190,7 +2190,7 @@ AnnotationAssertion(obo:IAO_0000115 obo:GENO_0000138 "The disposition of an enti
 AnnotationAssertion(rdfs:comment obo:GENO_0000138 "We can use these terms to describe the heritability of genetic matieral or sequence features - e.g. chromosomal DNA or genes are heritable in that they are passed on to child cells/organisms).  Such genetic material has a heritable disposition in a cell or virion, in virtue of its being replicated in its cellular host and inherited by progeny cells (such that the sequence content it encodes is stably propagated in the genetic material of subsequence generations of cells).
 
 We can also use these terms to describe the heritability of phenotypes/conditions - e.g. the passage of a particular trait or disease across generations of reproducing cells/organisms.")
-AnnotationAssertion(rdfs:label obo:GENO_0000138 "heritabililty")
+AnnotationAssertion(rdfs:label obo:GENO_0000138 "heritability")
 SubClassOf(obo:GENO_0000138 obo:BFO_0000016)
 
 # Class: obo:GENO_0000139 (heritable)
